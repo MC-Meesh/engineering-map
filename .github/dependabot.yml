@@ -1,5 +1,7 @@
 version: 2
 updates:
+  # Minor and patch updates, grouped into one monthly pull request. Major versions (Astro,
+  # sigma, js-yaml) change APIs and are upgraded deliberately; see docs/ROADMAP.md.
   - package-ecosystem: npm
     directory: /
     schedule:
@@ -7,7 +9,13 @@ updates:
     groups:
       npm:
         patterns: ['*']
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: monthly
+    groups:
+      actions:
+        patterns: ['*']
