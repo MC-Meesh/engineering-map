@@ -1,0 +1,49 @@
+id: ironcad
+type: tool
+name: IronCAD
+category: cad
+vendor: ironcad-co
+open_source: false
+status: active
+first_release: 1998
+stages:
+  - design
+built_on:
+  - acis
+  - parasolid
+  - d-cubed
+formats:
+  reads:
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+  writes:
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+website: https://www.ironcad.com/
+summary: Drag-and-drop design tool notable for running two kernels side by side.
+plain: >-
+  3D design software where you build parts by dragging and dropping shapes, notable for running two
+  geometry engines side by side.
+workflow: >-
+  A designer drags and drops shapes to build parts here, using ACIS or Parasolid geometry, and
+  exports STEP, IGES, SAT or Parasolid files to manufacturing and other CAD tools.
+native_files:
+  - ext: .ics
+    what: IronCAD scene file (parts and assemblies)
+notes: >-
+  Siemens lists IronCAD as a D-Cubed licensee without naming the component.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ironcad.com/
+    label: official page
+  - url: https://www.ironcad.com/support/IRONCADDRAFT_Help/Content/Design_Environments_Overview/Saving_Scenes_and_Parts_Assemblies.htm
+    label: 'native file format (IronCAD help: saving scenes)'
+  - url: https://www.ironcad.com/?p=217
+    label: 'IronCAD page: dual ACIS and Parasolid kernels'
+  - url: https://www.siemens.com/en-us/products/plm-components/d-cubed/
+    label: 'Siemens D-Cubed page: IronCAD among CAD licensees'

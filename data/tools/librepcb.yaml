@@ -1,0 +1,29 @@
+id: librepcb
+type: tool
+name: LibrePCB
+category: eda
+vendor: librepcb-project
+open_source: true
+license: GPL-3.0
+status: active
+first_release: 2013
+stages:
+  - design
+formats:
+  writes:
+    - gerber
+    - excellon
+open_source_alternative_to:
+  - altium-designer
+website: https://librepcb.org/
+summary: Open PCB tool built around a strict, versioned library model.
+plain: >-
+  Free software for designing circuit boards, built around a strict, versioned library of parts.
+workflow: >-
+  A designer draws the circuit and board here using its versioned parts library, then sends Gerber
+  and drill files to the board maker.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://librepcb.org/
+    label: official page

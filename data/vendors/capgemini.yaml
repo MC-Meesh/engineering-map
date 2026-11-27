@@ -1,0 +1,17 @@
+id: capgemini
+type: vendor
+name: Capgemini
+kind: company
+hq: FR
+founded: 1967
+status: active
+website: https://www.capgemini.com/
+wikipedia: https://en.wikipedia.org/wiki/Capgemini
+summary: IT services group that owns Open Cascade SAS.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.capgemini.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Capgemini
+    label: Wikipedia

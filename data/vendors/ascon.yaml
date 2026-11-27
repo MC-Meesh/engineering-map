@@ -1,0 +1,14 @@
+id: ascon
+type: vendor
+name: ASCON
+kind: company
+hq: RU
+founded: 1989
+status: active
+website: https://ascon.net/
+summary: Russian CAD vendor; KOMPAS-3D; the C3D kernel was spun out of it.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://ascon.net/
+    label: official page

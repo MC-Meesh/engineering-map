@@ -1,0 +1,38 @@
+id: isight
+type: tool
+name: Isight
+category: optimization
+vendor: dassault
+origin: engineous
+open_source: false
+status: active
+first_release: 1995
+stages:
+  - optimization
+competes_with:
+  - modefrontier
+  - heeds
+website: https://www.3ds.com/products/simulia/isight
+summary: Simulation process automation and design optimization from SIMULIA.
+plain: >-
+  Links several simulation tools into an automated process and runs it many times to find a better
+  design.
+workflow: >-
+  An engineer links 3D design (CAD), simulation and spreadsheet steps into one automated process
+  here, Isight runs it many times with changed inputs, and the better designs go back to the
+  engineering team.
+native_files:
+  - ext: .zmf
+    what: 'Zipped Isight model file'
+notes: >-
+  Sold as "Isight & the SIMULIA Execution Engine"; the Execution Engine was formerly Engineous
+  FIPER. first_release 1995 is unverified.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/products/simulia/isight
+    label: official page
+  - url: https://www.3ds.com/products/simulia/automation-optimization
+    label: SIMULIA automation and optimization page
+  - url: https://abaqus.uclouvain.be/English/IhrUserMap/ihr-t-Models-ModelsSavingDG.htm
+    label: 'Isight user guide (hosted copy): saving a model in the Design Gateway'

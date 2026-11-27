@@ -1,0 +1,14 @@
+id: opencourant-project
+type: vendor
+name: OpenCourant project
+kind: project
+status: active
+website: https://opencourant.org/
+summary: >-
+  Community project that continues the OpenRadioss code after Siemens withdrew it; an incubator
+  project of the Rocky Enterprise Software Foundation.
+confidence: high
+sources:
+  - url: https://opencourant.org/
+    label: OpenCourant site
+as_of: '2026-11-22'

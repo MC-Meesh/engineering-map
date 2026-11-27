@@ -1,0 +1,134 @@
+# Plain-language explanations for newcomers: what each kind of software does, who uses it,
+# and a glossary of the jargon the site uses. Our own words; general explanations, not claims
+# about any one product. A word in double square brackets is a glossary term (matched by id or term).
+categories:
+  cad:
+    plain: "Draws the 3D shape of a product as an exact digital model, the [[B-rep]] that every later step works from."
+    users: "Mechanical and industrial designers, architects and product engineers."
+    workflow: "The designer models the part here; the model is exported (often as STEP) to simulation for checking, to CAM for machining, and checked into PLM as the official version."
+    upstream: [plm-pdm, interop, geometry-kernel, meshing, visualization]
+    downstream: [cae-fea, cfd, multiphysics, meshing, cam, plm-pdm, interop]
+  geometry-kernel:
+    plain: "The engine inside CAD programs that calculates shapes: it builds, cuts and joins solids. Other companies license it rather than writing their own."
+    users: "Software companies that build CAD, CAM and simulation products."
+    workflow: "Nobody uses a kernel directly: CAD, CAM and simulation programs call it to build and edit shapes, and its native files are how those programs exchange exact geometry."
+    upstream: []
+    downstream: [cad, cam, cae-fea, interop, meshing]
+  interop:
+    plain: "Reads and writes other programs' files so a model made in one tool can be opened in another."
+    users: "Software developers and engineers who move models between systems."
+    workflow: "Sits between programs: it takes a model from one CAD system and writes it for another, or repairs it so simulation and manufacturing tools can use it."
+    upstream: [cad]
+    downstream: [cad, cae-fea, cfd, meshing, cam]
+  cae-fea:
+    plain: "Predicts how parts and assemblies bend, vibrate, move, break or wear out under load, either by splitting them into a [[mesh]] of small pieces ([[FEA]]) or by modelling them as linked bodies that move (multibody)."
+    users: "Structural, crash and durability engineers in automotive, aerospace and machinery."
+    workflow: "The analyst takes the CAD model, meshes it, runs the analysis and passes results to design (change the part), to optimization (try variants) and to post-processing for reports."
+    upstream: [cad, meshing, interop, systems-mbse]
+    downstream: [visualization, optimization, sdm, meshing, cad]
+  cfd:
+    plain: "Simulates how air, water or other fluids flow around or through a design, and how heat moves with them ([[CFD]])."
+    users: "Aerodynamics, thermal and process engineers."
+    workflow: "The analyst takes the shape from CAD, builds a fluid mesh around or inside it, runs the flow simulation and sends results to post-processing and back to design."
+    upstream: [cad, meshing, interop]
+    downstream: [visualization, optimization, sdm]
+  multiphysics:
+    plain: "Simulates several kinds of physics at once, such as heat with electricity, or the electromagnetic fields of antennas and motors."
+    users: "Electrical, RF, optics and process engineers, and researchers."
+    workflow: "Takes geometry from CAD, solves the coupled physics and passes results to post-processing, optimization or system-level models."
+    upstream: [cad, meshing, interop, eda]
+    downstream: [visualization, optimization, systems-mbse, sdm]
+  meshing:
+    plain: "Turns a CAD model into the [[mesh]] a simulation needs, and cleans up geometry that is not ready for analysis."
+    users: "Simulation analysts preparing models for a [[solver]]."
+    workflow: "Takes geometry from CAD, cleans it and meshes it, then writes the input file a solver (structural, crash or fluid) runs."
+    upstream: [cad, interop, geometry-kernel]
+    downstream: [cae-fea, cfd, multiphysics]
+  solver-library:
+    plain: "Building blocks for writing simulation software: open code for meshes, equations and the large matrix solves underneath."
+    users: "Researchers and developers who write their own simulation codes."
+    workflow: "Developers build simulation programs on top of it; its output goes to visualization tools."
+    upstream: [meshing]
+    downstream: [visualization, cae-fea, cfd]
+  eda:
+    plain: "Software for electronics: designing, simulating, checking or viewing chips or circuit boards, up to the files a factory builds from ([[EDA]], [[PCB]])."
+    users: "Electronics, chip and board designers."
+    workflow: "A circuit is drawn and simulated, then laid out; finished boards go to the board maker as Gerber and drill files, finished chips go to the chip factory as GDSII or OASIS layouts."
+    upstream: [systems-mbse]
+    downstream: [cam, cad, multiphysics]
+  cam:
+    plain: "Turns a 3D model into machine instructions: toolpaths for cutting machines ([[G-code]]) or layer-by-layer plans for 3D printers ([[CAM]])."
+    users: "Manufacturing engineers, machinists and additive manufacturing teams."
+    workflow: "Takes the finished 3D model from CAD, plans how the machine will cut or print it, and sends G-code (or a print file) to the machine on the shop floor."
+    upstream: [cad, interop]
+    downstream: []
+  plm-pdm:
+    plain: "Keeps the official record of a product: every part, its versions, who changed what and the bill of materials ([[PLM]], [[PDM]])."
+    users: "Engineering teams, change managers and manufacturing planners across a company."
+    workflow: "CAD files and parts are checked in here; manufacturing, purchasing and service read the released versions and the bill of materials from it."
+    upstream: [cad, eda, systems-mbse]
+    downstream: [cam, cad, digital-twin]
+  sdm:
+    plain: "Organizes simulation models, results and materials data, and runs simulations on large computer clusters ([[HPC]])."
+    users: "Simulation teams and IT groups that support them."
+    workflow: "Stores simulation models and results from the solvers and runs jobs on computer clusters; results feed reports and design decisions."
+    upstream: [cae-fea, cfd, multiphysics]
+    downstream: [visualization, optimization]
+  digital-twin:
+    plain: "Keeps a live digital copy of a real machine, plant or building, fed by sensor data, to monitor it and try changes safely ([[digital twin]])."
+    users: "Operations, plant and asset engineers."
+    workflow: "Takes models from design and PLM plus live sensor data from the real asset, and gives operators a view to monitor it and test changes."
+    upstream: [plm-pdm, cad, systems-mbse]
+    downstream: []
+  systems-mbse:
+    plain: "Works on a whole system at once rather than one part: either describing how it fits together (requirements and architecture, [[MBSE]]) or simulating how its parts behave together (system simulation)."
+    users: "Systems engineers in aerospace, automotive and defense."
+    workflow: "System models sit between requirements and detailed design: architecture tools record what the system must do, and system simulation tools predict how the whole machine behaves before and alongside detailed design."
+    upstream: []
+    downstream: [cad, eda, cae-fea, plm-pdm]
+  robotics-controls:
+    plain: "Programs and simulates robots and machine controllers, and the software that runs on them."
+    users: "Robotics, automation and controls engineers."
+    workflow: "Takes the robot and cell geometry from CAD, programs and simulates the motion, then loads the program onto the real robot or controller."
+    upstream: [cad]
+    downstream: []
+  optimization:
+    plain: "Runs many design variations automatically and searches for the best one under the goals and limits you set."
+    users: "Design and simulation engineers improving a product."
+    workflow: "Drives CAD and simulation tools in a loop, changing the design each run, and hands the best design back to the engineers."
+    upstream: [cad, cae-fea, cfd]
+    downstream: [cad, cae-fea]
+  ml-engineering:
+    plain: "Uses machine learning trained on past simulations to predict results in seconds instead of hours ([[ROM]])."
+    users: "Simulation engineers and data scientists."
+    workflow: "Learns from results of earlier simulations, then predicts new results in seconds for design teams."
+    upstream: [cae-fea, cfd, sdm]
+    downstream: [optimization]
+  visualization:
+    plain: "Turns simulation results into pictures, plots and animations people can read."
+    users: "Simulation engineers presenting results."
+    workflow: "Reads result files from solvers and turns them into pictures, plots and animations for reports and decisions."
+    upstream: [cae-fea, cfd, multiphysics, solver-library]
+    downstream: []
+glossary:
+  - {id: b-rep, term: "B-rep", plain: "Boundary representation: a solid described exactly by its faces, edges and the surfaces they lie on. The format of real CAD models."}
+  - {id: mesh, term: "Mesh", plain: "A shape broken into many small triangles, quads or tetrahedra. Simulations and 3D printers work on meshes; CAD works on exact surfaces."}
+  - {id: kernel, term: "Geometry kernel", plain: "The library inside a CAD program that does the shape math (building, cutting, joining solids)."}
+  - {id: fea, term: "FEA", plain: "Finite element analysis: predicting stress, vibration or heat by solving equations on each small piece of a mesh."}
+  - {id: cfd, term: "CFD", plain: "Computational fluid dynamics: simulating how fluids flow and carry heat."}
+  - {id: cae, term: "CAE", plain: "Computer-aided engineering: simulation and analysis software in general."}
+  - {id: cad, term: "CAD", plain: "Computer-aided design: software for drawing parts and products."}
+  - {id: cam, term: "CAM", plain: "Computer-aided manufacturing: software that turns a model into instructions for machines."}
+  - {id: g-code, term: "G-code", plain: "The line-by-line language most CNC machines and 3D printers follow: move here, at this speed, with the spindle on."}
+  - {id: plm, term: "PLM", plain: "Product lifecycle management: the company-wide record of a product from first idea to retirement."}
+  - {id: pdm, term: "PDM", plain: "Product data management: version control for CAD files and parts, usually inside or under PLM."}
+  - {id: eda, term: "EDA", plain: "Electronic design automation: software for designing chips and circuit boards."}
+  - {id: pcb, term: "PCB", plain: "Printed circuit board: the board electronic parts are soldered onto."}
+  - {id: mbse, term: "MBSE", plain: "Model-based systems engineering: describing a system with connected models instead of documents."}
+  - {id: solver, term: "Solver", plain: "The part of a simulation program that does the number crunching on the prepared model."}
+  - {id: hpc, term: "HPC", plain: "High-performance computing: clusters of many computers used for big simulations."}
+  - {id: digital-twin, term: "Digital twin", plain: "A digital model kept in step with a real product or plant through live data."}
+  - {id: rom, term: "ROM", plain: "Reduced-order model: a fast approximation of a full simulation, often learned from it."}
+  - {id: tessellation, term: "Tessellation", plain: "Approximating exact surfaces with triangles, as STL and other mesh formats do."}
+  - {id: neutral-format, term: "Neutral format", plain: "A file format no single CAD vendor owns, such as STEP or IGES, used to move models between programs."}
+  - {id: native-format, term: "Native format", plain: "The format a program saves its own work in, usually defined by its maker."}

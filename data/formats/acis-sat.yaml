@@ -1,0 +1,21 @@
+id: acis-sat
+type: format
+name: ACIS SAT/SAB
+extensions:
+  - .sat
+  - .sab
+kind: brep-exchange
+steward: Spatial (Dassault)
+steward_vendor: spatial
+open_spec: false
+first_published: 1989
+website: https://www.spatial.com/solutions/3d-modeling/3d-acis-modeler
+wikipedia: https://en.wikipedia.org/wiki/ACIS
+summary: Save format of the ACIS kernel; common for exchange between ACIS-based tools.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.spatial.com/solutions/3d-modeling/3d-acis-modeler
+    label: official page
+  - url: https://en.wikipedia.org/wiki/ACIS
+    label: Wikipedia

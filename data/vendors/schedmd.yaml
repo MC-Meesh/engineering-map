@@ -1,0 +1,14 @@
+id: schedmd
+type: vendor
+name: SchedMD
+kind: company
+hq: US
+founded: 2010
+status: active
+website: https://www.schedmd.com/
+summary: Develops and supports Slurm.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.schedmd.com/
+    label: official page

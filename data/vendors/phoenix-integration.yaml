@@ -1,0 +1,15 @@
+id: phoenix-integration
+type: vendor
+name: Phoenix Integration
+kind: company
+hq: US
+founded: 1995
+parent: ansys
+status: merged
+website: https://www.ansys.com/products/connect/ansys-modelcenter
+summary: ModelCenter MBSE integration.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ansys.com/products/connect/ansys-modelcenter
+    label: official page

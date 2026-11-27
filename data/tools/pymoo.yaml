@@ -1,0 +1,27 @@
+id: pymoo
+type: tool
+name: pymoo
+category: optimization
+vendor: pymoo-project
+open_source: true
+license: Apache-2.0
+status: active
+first_release: 2019
+stages:
+  - optimization
+website: https://pymoo.org/
+summary: Multi-objective evolutionary optimization in Python.
+plain: >-
+  A Python library for finding designs that balance several goals, using methods inspired by
+  evolution.
+workflow: >-
+  A developer connects pymoo to a model or simulation in Python, and its evolutionary search returns
+  a set of designs that trade off several goals for the engineers to choose from.
+files_note: 'A Python programming library for single and multi-objective optimization that programs call; its docs show saving a run checkpoint by serializing the algorithm object with dill.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://pymoo.org/
+    label: official page
+  - url: https://pymoo.org/misc/checkpoint.html
+    label: 'pymoo docs: checkpoints'

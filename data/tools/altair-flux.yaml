@@ -1,0 +1,49 @@
+id: altair-flux
+type: tool
+name: Simcenter Flux
+category: multiphysics
+vendor: altair
+open_source: false
+status: active
+first_release: 1982
+stages:
+  - analysis
+competes_with:
+  - maxwell
+website: https://www.siemens.com/en-us/products/simcenter/electromagnetics-simulation/flux/
+summary: Low-frequency electromagnetic and thermal FEM for electric machines, transformers and actuators.
+plain: >-
+  Simulates magnetic and electric fields and the heat they create inside devices like electric
+  motors, transformers and actuators, so engineers can improve them before building one.
+workflow: >-
+  An engineer brings in the geometry of a motor, transformer or actuator, simulates its magnetic
+  fields and heat here, and passes losses and performance figures back to the designers or on to
+  thermal and system models.
+native_files:
+  - ext: .FLU
+    what: 'Flux project, stored as a folder with the .FLU extension'
+notes: >-
+  Grenoble lab (LEG, now G2Elab) origin, commercialized through CEDRAT; Altair completed the CEDRAT
+  purchase in April 2016. First release year is approximate: a Jan 2022 Universite Grenoble Alpes
+  piece says Flux entered industry 40 years earlier. Renamed Simcenter Flux with the 2026-06-16
+  rebranding guide (the 2026.0 release notes still say Altair Flux 2026); Flux 3D and Flux PEEC were
+  removed in version 2026, with 3D work moved to SimLab.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/simcenter/electromagnetics-simulation/flux/
+    label: Siemens Simcenter Flux product page
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: Siemens Simcenter blog, Altair rebranding guide 2026-06-16
+  - url: >-
+      https://help.altair.com/flux/Flux/Help/english/ReleaseNote/2026Release/Flux/topics/ReleaseNotes2026.0.htm
+    label: Flux 2026.0 release notes
+  - url: https://www.sec.gov/Archives/edgar/data/0001701732/000119312517299201/d290748ds1.htm
+    label: Altair S-1 2017 (CEDRAT purchase April 2016)
+  - url: >-
+      https://univ-grenoble-alpes.fr/news/headlines/grenoble-born-software-flux-celebrates-its-40th-birthday-995326.kjsp
+    label: Universite Grenoble Alpes, Flux 40th birthday (Jan 2022)
+  - url: https://help.altair.com/simlab/help/en_us/topics/advanced/electromagnetic/ImportFluxProject.htm
+    label: 'Altair SimLab help: import an existing Flux project (.FLU folder)'
+  - url: https://help.altair.com/flux/Flux/Help/english/UserGuide/English/topics/WhatsNew.htm
+    label: 'Altair Flux help: what''s new (Flux 3D moved to SimLab)'

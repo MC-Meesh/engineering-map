@@ -1,0 +1,42 @@
+id: su2
+type: tool
+name: SU2
+category: cfd
+vendor: su2-foundation
+open_source: true
+license: LGPL-2.1
+status: active
+first_release: 2012
+stages:
+  - analysis
+  - optimization
+formats:
+  reads:
+    - cgns
+  writes:
+    - vtk-xml
+    - tecplot-plt
+open_source_alternative_to:
+  - fluent
+website: https://su2code.github.io/
+wikipedia: https://en.wikipedia.org/wiki/SU2_code
+summary: Open-source CFD from Stanford, known for its adjoint solvers for shape optimization.
+plain: >-
+  Free software from Stanford for simulating fluid flow, known for efficiently working out how to
+  change a shape to improve it.
+workflow: >-
+  A researcher brings in a CGNS mesh (the flow space split into small cells), runs the flow
+  simulation and the shape-improvement (adjoint) calculation here, and writes VTK or Tecplot files
+  to view in ParaView or Tecplot.
+native_files:
+  - ext: .su2
+    what: SU2 mesh file (readable text)
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://su2code.github.io/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/SU2_code
+    label: Wikipedia
+  - url: https://su2code.github.io/docs_v7/Mesh-File/
+    label: native file format (SU2 documentation)

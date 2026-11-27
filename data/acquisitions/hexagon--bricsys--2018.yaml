@@ -1,0 +1,19 @@
+id: hexagon--bricsys--2018
+type: acquisition
+acquirer: hexagon
+target: bricsys
+completed: '2018-10-23'
+status: divested
+summary: >-
+  DWG-native CAD. Price not disclosed. Bricsys moved to Octave when Hexagon completed that spin-off
+  on 2026-05-28.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.prnewswire.com/news-releases/hexagon-strengthens-its-construction-solutions-portfolio-for-aec-architecture-engineering-construction-market-with-bricsys-acquisition-300735832.html
+    label: Hexagon press release 2018-10-23
+  - url: https://www.digitalengineering247.com/article/hexagon-acquires-bricsys/news
+    label: 'Digital Engineering: Hexagon acquires Bricsys'
+  - url: https://investors.hexagon.com/en/share-information/octave-separation
+    label: 'Hexagon investors: Octave separation completed 2026-05-28'

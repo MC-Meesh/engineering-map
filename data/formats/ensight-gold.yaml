@@ -1,0 +1,17 @@
+id: ensight-gold
+type: format
+name: EnSight Gold
+extensions:
+  - .case
+  - .geo
+kind: results
+steward: Ansys
+steward_vendor: ansys
+open_spec: true
+website: https://www.ansys.com/products/fluids/ansys-ensight
+summary: Documented case-file results format written by many solvers for EnSight.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ansys.com/products/fluids/ansys-ensight
+    label: official page

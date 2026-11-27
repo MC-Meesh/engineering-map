@@ -1,0 +1,19 @@
+id: dassault--exa--2017
+type: acquisition
+acquirer: dassault
+target: exa
+announced: '2017-09-28'
+completed: '2017-11-17'
+status: completed
+value: about $400M ($24.25 per share, cash)
+notes: >-
+  The tender offer completed on 2017-11-17 and Dassault expected the merger to close the same day; a
+  closing 8-K would pin the day down.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.3ds.com/newsroom/press-releases/dassault-systemes-successfully-completes-tender-offer-exa-corporation
+    label: 'Dassault release 2017-11-17: tender offer completed'
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-acquire-exa-corporation
+    label: 'Dassault release 2017-09-28: to acquire Exa'

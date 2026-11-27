@@ -1,0 +1,32 @@
+id: modelcenter
+type: tool
+name: Ansys ModelCenter
+category: systems-mbse
+vendor: ansys
+origin: phoenix-integration
+open_source: false
+status: active
+first_release: 1997
+stages:
+  - requirements
+  - optimization
+integrates_with:
+  - cameo
+website: https://www.ansys.com/products/connect/ansys-modelcenter
+summary: Connects SysML architecture models to analysis tools for trade studies.
+plain: >-
+  Connects diagrams of a whole system's design, written in the SysML modeling language, to analysis
+  tools, so engineers can run studies that compare design options.
+workflow: >-
+  Systems engineers link their SysML model in Cameo to analysis tools here, run trade studies across
+  the design options, and return the results to the architecture model.
+native_files:
+  - ext: .pxcz
+    what: 'ModelCenter project file (older form .pxc)'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ansys.com/products/connect/ansys-modelcenter
+    label: official page
+  - url: https://ansyshelp.ansys.com/public/views/secured/corp/v261/en/opti_ug/opti_api_modelcenter.html
+    label: 'Ansys help (optiSLang): ModelCenter node uses .pxcz and .pxc project files'

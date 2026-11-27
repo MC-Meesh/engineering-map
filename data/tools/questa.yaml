@@ -1,0 +1,39 @@
+id: questa
+type: tool
+name: Questa One
+category: eda
+vendor: siemens
+origin: mentor
+open_source: false
+status: active
+first_release: 2005
+stages:
+  - test
+formats:
+  reads:
+    - verilog
+competes_with:
+  - vcs
+  - xcelium
+website: https://www.siemens.com/en-us/products/ic/questa-one/
+summary: >-
+  Simulation, formal and AI-assisted verification for digital IC designs; formerly Questa, itself
+  the successor to ModelSim.
+plain: >-
+  Siemens software for checking that a digital chip design behaves correctly, through simulation,
+  mathematical proof and AI help; successor to ModelSim.
+workflow: >-
+  A verification engineer takes the chip design code in Verilog or SystemVerilog (languages
+  describing a chip's circuits), tests it here by simulation and mathematical checks, and reports
+  bugs back before the code is turned into gates.
+notes: >-
+  Questa One was announced on 2025-05-13 and available from June 2025; Questa remains the family
+  trademark.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/ic/questa-one/
+    label: official page (Questa One)
+  - url: >-
+      https://press.siemens.com/global/en/pressrelease/siemens-leverages-ai-close-industrys-ic-verification-productivity-gap-new-questa-one
+    label: 'Siemens release 2025-05-13: Questa One'

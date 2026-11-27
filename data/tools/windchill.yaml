@@ -1,0 +1,47 @@
+id: windchill
+type: tool
+name: Windchill
+category: plm-pdm
+vendor: ptc
+open_source: false
+status: active
+first_release: 1998
+stages:
+  - lifecycle
+integrates_with:
+  - creo
+  - onshape
+competes_with:
+  - teamcenter
+  - enovia
+website: https://www.ptc.com/en/products/windchill
+wikipedia: https://en.wikipedia.org/wiki/Windchill_(software)
+summary: PTC enterprise PLM, tightly paired with Creo.
+plain: >-
+  PTC's enterprise software for keeping the official record of product designs, parts and changes;
+  closely paired with Creo.
+workflow: >-
+  Engineers check Creo parts, assemblies and drawings into Windchill, which keeps the official
+  product record, versions and changes; manufacturing, suppliers and other teams work from the
+  released data.
+files_note: 'Has no file type of its own: records live in the Windchill database, and content files are stored either in that database or in file vaults on network systems, set by type and life cycle state.'
+notes: >-
+  PTC dates Windchill to 1998. With Creo connected, designs live in a private workspace on the
+  Windchill server instead of a local folder and are shared by checking them in to the commonspace.
+  Windchill+, the SaaS edition, became available on 2022-04-19. PTC advertises unified data
+  management across Windchill and Onshape.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ptc.com/en/products/windchill
+    label: 'PTC Windchill page: Windchill/Onshape Connection'
+  - url: https://en.wikipedia.org/wiki/Windchill_(software)
+    label: Wikipedia
+  - url: https://support.ptc.com/help/wnc/r12.1.0.0/en/Windchill_Help_Center/filevault_chp/filevaultChp_About.html
+    label: 'Windchill Help Center 12.1: About External File Vaults'
+  - url: https://www.ptc.com/en/blogs/cad/a-quick-history-of-ptc-creo
+    label: 'PTC blog: Windchill introduced 1998'
+  - url: https://support.ptc.com/help/wnc/r12.1.0.0/en/Windchill_Help_Center/ProEWCInteg/ProEWCIntegGWQuickBasics.html
+    label: 'Windchill 12.1 help: workspace and commonspace'
+  - url: https://www.ptc.com/en/news/2022/ptc-announces-new-windchill-plus-offering
+    label: 'PTC release 2022-04-19: Windchill+ available'

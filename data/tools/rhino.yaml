@@ -1,0 +1,69 @@
+id: rhino
+type: tool
+name: Rhinoceros (Rhino)
+category: cad
+vendor: mcneel
+open_source: false
+status: active
+first_release: 1998
+stages:
+  - design
+  - manufacturing
+formats:
+  reads:
+    - rhino-3dm
+    - step
+    - iges
+    - stl
+    - obj
+    - 3mf
+    - dwg
+    - dxf
+    - ply
+  writes:
+    - rhino-3dm
+    - step
+    - iges
+    - stl
+    - obj
+    - 3mf
+    - dwg
+    - dxf
+    - ply
+integrates_with:
+  - revit
+  - autocad
+website: https://www.rhino3d.com/
+wikipedia: https://en.wikipedia.org/wiki/Rhinoceros_3D
+summary: Freeform NURBS modeler used across industrial design, architecture, jewelry and marine.
+plain: >-
+  3D modeling software for free-form shapes built from smooth, precisely defined curved surfaces
+  (NURBS), used in industrial design, architecture, jewelry and boat design.
+workflow: >-
+  A designer models free-form NURBS shapes here, often with Grasshopper, and exports 3DM, STEP or
+  IGES to engineering CAD (3D design) tools, or STL and 3MF for 3D printing and fabrication.
+native_files:
+  - ext: .3dm
+    what: Rhino 3D model file
+    format: rhino-3dm
+clarifies:
+  - text: >-
+      Rhino does not run on a licensed geometry kernel: its geometry functions (intersections,
+      Booleans, meshing) are McNeel's own code in the Rhino SDKs. openNURBS, also from McNeel, is a
+      free toolkit that only reads and writes Rhino's 3DM files so other programs can exchange data.
+    url: https://developer.rhino3d.com/guides/opennurbs/what-is-opennurbs/
+notes: >-
+  openNURBS handles Rhino's 3DM reading and writing, but intersections, Booleans, meshing and
+  similar geometry functions live only in the Rhino SDKs, McNeel's own code. Rhino.Inside lets Rhino
+  and Grasshopper run inside other 64-bit Windows applications such as Revit and AutoCAD.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.rhino3d.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Rhinoceros_3D
+    label: Wikipedia
+  - url: https://developer.rhino3d.com/guides/opennurbs/what-is-opennurbs/
+    label: native file format (McNeel developer documentation)
+  - url: https://www.rhino3d.com/features/rhino-inside/
+    label: 'Rhino.Inside page: runs inside Revit and AutoCAD'

@@ -1,0 +1,15 @@
+id: spaceclaim-corp
+type: vendor
+name: SpaceClaim Corp
+kind: company
+hq: US
+founded: 2005
+parent: ansys
+status: merged
+website: https://en.wikipedia.org/wiki/SpaceClaim
+summary: Direct-modeling CAD for simulation prep.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/SpaceClaim
+    label: official page

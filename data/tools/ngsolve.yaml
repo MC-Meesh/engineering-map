@@ -1,0 +1,47 @@
+id: ngsolve
+type: tool
+name: NGSolve
+category: solver-library
+vendor: ngsolve-team
+open_source: true
+license: LGPL-2.1
+status: active
+first_release: 2008
+stages:
+  - analysis
+built_on:
+  - netgen
+formats:
+  reads:
+    - step
+    - iges
+    - stl
+    - cgns
+  writes:
+    - vtk-xml
+    - vtk-legacy
+    - cgns
+    - abaqus-inp
+    - gmsh-msh
+    - openfoam-case
+website: https://ngsolve.org/
+summary: High-order finite element library with a Python front end, paired with Netgen.
+plain: >-
+  A free simulation library, driven from Python, that splits a shape into small pieces (finite
+  elements) to solve physics equations with high accuracy; it works with the Netgen mesher.
+workflow: >-
+  A researcher brings in STEP, IGES or STL geometry, meshes it with Netgen, writes the problem in
+  Python, solves it here, and exports results as VTK files for viewing or meshes as Gmsh, Abaqus or
+  OpenFOAM files for other simulation programs.
+files_note: 'A C++ library with a Python interface for finite element solvers; the bundled Netgen mesher imports CAD through OpenCascade and exports meshes to many solver formats.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://ngsolve.org/
+    label: official page
+  - url: https://docu.ngsolve.org/latest/i-tutorials/appendix-vtk/vtk.html
+    label: 'NGSolve docs: VTK output'
+  - url: https://github.com/NGSolve/netgen/tree/master/libsrc/interface
+    label: 'Netgen source: mesh import/export interface'
+  - url: https://github.com/NGSolve/netgen/blob/master/libsrc/occ/occgeom.cpp
+    label: 'Netgen source: OCC geometry loader'

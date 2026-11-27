@@ -1,0 +1,30 @@
+id: vault
+type: tool
+name: Autodesk Vault
+category: plm-pdm
+vendor: autodesk
+open_source: false
+status: active
+first_release: 2004
+stages:
+  - lifecycle
+integrates_with:
+  - inventor
+  - autocad
+  - revit
+website: https://www.autodesk.com/products/vault/overview
+summary: On-premises PDM for Autodesk design data.
+plain: >-
+  Keeps Autodesk design files organized on a company's own servers, tracking their versions and
+  changes.
+workflow: >-
+  Designers in Inventor, AutoCAD and Revit check files in and out of Vault on the company's servers,
+  which tracks versions and changes, and released files go on to manufacturing.
+files_note: 'Has no file type of its own: a SQL Server database tracks file status, history and relationships, while physical files sit in a server file store, all run by ADMS and reached over web services.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.autodesk.com/products/vault/overview
+    label: official page
+  - url: https://help.autodesk.com/cloudhelp/2017/ENU/Vault-Install/files/GUID-8E5D6085-A006-4D9F-B880-10E18BABFF6B.htm
+    label: 'Autodesk Vault help: Vault architecture'

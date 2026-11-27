@@ -1,0 +1,18 @@
+id: edif
+type: format
+name: EDIF
+extensions:
+  - .edf
+  - .edif
+kind: ecad
+standard: IEC 61690
+steward: EIA (legacy)
+open_spec: true
+first_published: 1985
+website: https://en.wikipedia.org/wiki/EDIF
+summary: Legacy netlist and schematic interchange; still used for FPGA netlists.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/EDIF
+    label: official page

@@ -1,0 +1,30 @@
+id: openbom
+type: tool
+name: OpenBOM
+category: plm-pdm
+vendor: openbom-co
+open_source: false
+status: active
+first_release: 2015
+stages:
+  - lifecycle
+integrates_with:
+  - solidworks
+  - onshape
+  - fusion
+website: https://www.openbom.com/
+summary: Lightweight cloud BOM management connected to many CAD tools.
+plain: >-
+  Online software for keeping parts lists (bills of materials) up to date, connected to many CAD (3D
+  design) programs.
+workflow: >-
+  Designers in SOLIDWORKS, Onshape or Fusion push their parts lists to OpenBOM online, where
+  purchasing and manufacturing teams keep the bill of materials current.
+files_note: 'Has no file type of its own: a multi-tenant SaaS platform holds BOMs and items in a graph data model, filled by CAD plug-ins and Excel import and synced to ERP and other systems over REST APIs.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.openbom.com/
+    label: official page
+  - url: https://help.openbom.com/import-data/
+    label: 'OpenBOM help: import data'

@@ -1,0 +1,32 @@
+id: webots
+type: tool
+name: Webots
+category: robotics-controls
+vendor: cyberbotics
+open_source: true
+license: Apache-2.0
+status: active
+first_release: 1998
+stages:
+  - analysis
+  - test
+formats:
+  reads:
+    - urdf
+competes_with:
+  - gazebo
+  - coppeliasim
+website: https://cyberbotics.com/
+wikipedia: https://en.wikipedia.org/wiki/Webots
+summary: Robot simulator, open source since 2018.
+plain: A robot simulator for testing robots in a virtual world; free and open source since 2018.
+workflow: >-
+  A robotics developer imports a robot as URDF, builds a virtual world, tests the robot's control
+  programs here, and moves the tested programs onto the real robot.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://cyberbotics.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Webots
+    label: Wikipedia

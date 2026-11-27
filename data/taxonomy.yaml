@@ -1,0 +1,55 @@
+# Domains group categories and drive node color (7 categorical slots, fixed order;
+# red is reserved for selection, the redline).
+# Simulation also holds post-processing and visualization.
+domains:
+  - id: design
+    name: Design
+    blurb: Geometry creation and the kernels and translators underneath it.
+  - id: simulation
+    name: Simulation
+    blurb: Structural, fluid and coupled-physics analysis, plus the meshers and numerical libraries they depend on.
+  - id: electronics
+    name: Electronics
+    blurb: Chip and board design, from RTL to Gerber.
+  - id: manufacturing
+    name: Manufacturing
+    blurb: Toolpaths, NC verification and additive build preparation.
+  - id: lifecycle
+    name: Data and lifecycle
+    blurb: Product and simulation data, compute, and the twins that live after launch.
+  - id: systems
+    name: Systems and controls
+    blurb: Requirements, architecture, system-level models and robot software.
+  - id: intelligence
+    name: Optimization and ML
+    blurb: Design exploration, optimizers and learned surrogates.
+
+categories:
+  - {id: cad, name: "CAD", domain: design, blurb: "Parametric, direct and surface modeling tools that author product geometry."}
+  - {id: geometry-kernel, name: "Kernels and components", domain: design, blurb: "Geometry kernels (the B-rep and mesh modeling engines) and the constraint solvers and other components that products license and build on."}
+  - {id: interop, name: "Translation and interop", domain: design, blurb: "SDKs and tools that read, write and repair other systems' files."}
+  - {id: cae-fea, name: "Structural FEA", domain: simulation, blurb: "Finite element and multibody analysis of stress, vibration, crash and durability."}
+  - {id: cfd, name: "CFD", domain: simulation, blurb: "Computational fluid dynamics, from finite volume to lattice Boltzmann."}
+  - {id: multiphysics, name: "Multiphysics and EM", domain: simulation, blurb: "Coupled physics, electromagnetics, optics, particles and process simulation."}
+  - {id: meshing, name: "Meshing and pre-processing", domain: simulation, blurb: "Turning CAD into analysis-ready meshes."}
+  - {id: solver-library, name: "Numerical libraries", domain: simulation, blurb: "Open frameworks and linear algebra that solvers are assembled from."}
+  - {id: eda, name: "EDA and PCB", domain: electronics, blurb: "IC design, circuit simulation and printed circuit board layout."}
+  - {id: cam, name: "CAM and additive", domain: manufacturing, blurb: "Toolpath generation, NC verification and slicing."}
+  - {id: plm-pdm, name: "PLM and PDM", domain: lifecycle, blurb: "Systems of record for parts, BOMs, revisions and change."}
+  - {id: sdm, name: "Simulation data and compute", domain: lifecycle, blurb: "Managing simulation inputs, results, materials and the HPC they run on."}
+  - {id: digital-twin, name: "Digital twin", domain: lifecycle, blurb: "Platforms that keep a live model of a product or plant in operation."}
+  - {id: systems-mbse, name: "Systems, MBSE and 1D", domain: systems, blurb: "Requirements, SysML architecture and system-level (0D/1D) simulation."}
+  - {id: robotics-controls, name: "Robotics and controls", domain: systems, blurb: "Robot simulation, middleware, PLC and embedded control tooling."}
+  - {id: optimization, name: "Optimization and DOE", domain: intelligence, blurb: "Design exploration, process integration and topology optimization."}
+  - {id: ml-engineering, name: "ML for engineering", domain: intelligence, blurb: "Learned surrogates and physics-ML frameworks that predict simulation results."}
+  - {id: visualization, name: "Visualization and post", domain: simulation, blurb: "Post-processing, scientific visualization and rendering."}
+
+# Workflow stages, in pipeline order.
+stages:
+  - {id: requirements, name: "Requirements and architecture", order: 1, blurb: "What the product must do and how it breaks down into systems."}
+  - {id: design, name: "Design", order: 2, blurb: "Authoring geometry, schematics and layouts."}
+  - {id: analysis, name: "Analysis", order: 3, blurb: "Predicting behavior with simulation before anything is built."}
+  - {id: optimization, name: "Optimization", order: 4, blurb: "Searching the design space instead of checking one point in it."}
+  - {id: manufacturing, name: "Manufacturing", order: 5, blurb: "Turning the model into toolpaths, prints, masks and boards."}
+  - {id: test, name: "Test and validation", order: 6, blurb: "Measuring the real thing and correlating it with the model."}
+  - {id: lifecycle, name: "Lifecycle and operations", order: 7, blurb: "Managing the product record and its life in service."}

@@ -1,0 +1,17 @@
+id: siemens-ag
+type: vendor
+name: Siemens AG
+kind: company
+hq: DE
+founded: 1847
+status: active
+website: https://www.siemens.com/
+wikipedia: https://en.wikipedia.org/wiki/Siemens
+summary: German industrial group; its Digital Industries business owns Siemens Digital Industries Software.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://jobs.sw.siemens.com/about-us/
+    label: 'Siemens DISW: a business unit of its parent company, Siemens AG'
+  - url: https://en.wikipedia.org/wiki/Siemens
+    label: Wikipedia (founded 1847)

@@ -1,0 +1,11 @@
+id: zuken--vitech--2021
+type: acquisition
+acquirer: zuken
+target: vitech
+completed: '2021'
+status: completed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.zuken.com/en/news/
+    label: source

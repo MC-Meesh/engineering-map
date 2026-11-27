@@ -1,0 +1,14 @@
+id: gmsh-team
+type: vendor
+name: Gmsh developers (Geuzaine and Remacle)
+kind: project
+hq: BE
+founded: 1996
+status: active
+website: https://gmsh.info/
+summary: Academic team behind Gmsh.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://gmsh.info/
+    label: official page

@@ -1,0 +1,32 @@
+id: modelon-impact
+type: tool
+name: Modelon Impact
+category: systems-mbse
+vendor: modelon
+open_source: false
+status: active
+first_release: 2020
+stages:
+  - analysis
+formats:
+  reads:
+    - modelica
+    - fmu
+  writes:
+    - modelica
+    - fmu
+competes_with:
+  - dymola
+website: https://modelon.com/modelon-impact/
+summary: Browser-based Modelica system simulation.
+plain: >-
+  Simulates whole systems built from connected components in a web browser, using the Modelica
+  modeling language.
+workflow: >-
+  An engineer builds a Modelica system model in the browser, simulates it, and exchanges Modelica
+  files or FMUs (packaged, ready-to-run models) with other system and control tools.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://modelon.com/modelon-impact/
+    label: official page

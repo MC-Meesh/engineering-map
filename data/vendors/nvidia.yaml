@@ -1,0 +1,17 @@
+id: nvidia
+type: vendor
+name: NVIDIA
+kind: company
+hq: US
+founded: 1993
+status: active
+website: https://www.nvidia.com/
+wikipedia: https://en.wikipedia.org/wiki/Nvidia
+summary: GPU maker; Omniverse, Isaac Sim and PhysicsNeMo target simulation and digital twins.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.nvidia.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Nvidia
+    label: Wikipedia

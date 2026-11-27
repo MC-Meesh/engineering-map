@@ -1,0 +1,21 @@
+id: brand-catia
+type: brand
+name: CATIA
+vendor: dassault
+website: https://www.3ds.com/products/catia
+products:
+  - catia
+  - cameo
+  - dymola
+summary: >-
+  Dassault's design brand: the CATIA modeler plus the CATIA Magic systems engineering and Dymola
+  modeling tools sold under it.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/products/catia
+    label: official brand page
+  - url: https://www.3ds.com/products/catia/catia-magic
+    label: CATIA Magic under the CATIA brand
+  - url: https://www.3ds.com/products/catia/dymola
+    label: Dymola under the CATIA brand

@@ -1,0 +1,36 @@
+id: zwcad
+type: tool
+name: ZWCAD
+category: cad
+vendor: zwsoft
+open_source: false
+status: active
+first_release: 2002
+stages:
+  - design
+built_on:
+  - d-cubed
+formats:
+  reads:
+    - dwg
+    - dxf
+  writes:
+    - dwg
+    - dxf
+competes_with:
+  - autocad
+website: https://www.zwsoft.com/zwcad
+summary: DWG-compatible 2D and 3D drafting.
+plain: 2D and 3D drafting software that works with AutoCAD's DWG files.
+workflow: >-
+  A drafter opens and edits DWG or DXF drawings shared with AutoCAD users, and sends them back to
+  clients, fabricators and other drafting tools in the same formats.
+notes: >-
+  Siemens lists ZWCAD as a D-Cubed licensee without naming the component.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.zwsoft.com/zwcad
+    label: official page
+  - url: https://www.siemens.com/en-us/products/plm-components/d-cubed/
+    label: 'Siemens D-Cubed page: ZWCAD among CAD licensees'

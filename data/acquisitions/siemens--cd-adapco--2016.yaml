@@ -1,0 +1,17 @@
+id: siemens--cd-adapco--2016
+type: acquisition
+acquirer: siemens
+target: cd-adapco
+announced: '2016-01-25'
+completed: 2016-04
+status: completed
+value: $970M
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://assets.new.siemens.com/siemens/assets/api/uuid:f0d312ca-5d93-4193-af41-aa35071fd149/pr20160125-acquire-cd-adapco.pdf
+    label: Siemens and CD-adapco joint release 2016-01-25 ($970M)
+  - url: >-
+      https://assets.new.siemens.com/siemens/assets/api/uuid:91b59c83-2c8c-485b-9b0a-186924ed11a9/PR20160804-Earnings-Release-Q3.pdf
+    label: Siemens Q3 FY2016 earnings release (closed April 2016)

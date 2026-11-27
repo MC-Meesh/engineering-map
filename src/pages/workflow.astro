@@ -1,0 +1,107 @@
+---
+import Base from '../layouts/Base.astro';
+import NodeLink from '../components/NodeLink.astro';
+import { taxonomy, tools, formats, categoryById } from '../lib/data';
+const stages = [...taxonomy.stages].sort((a, b) => a.order - b.order);
+const inStage = (s: string) => tools.filter((t) => t.stages.includes(s));
+const cols = stages.map((s) => {
+  const ts = inStage(s.id);
+  const byCat = new Map<string, typeof ts>();
+  for (const t of ts) {
+    if (!byCat.has(t.category)) byCat.set(t.category, []);
+    byCat.get(t.category)!.push(t);
+  }
+  const cats = [...byCat.entries()].sort((a, b) => b[1].length - a[1].length);
+  return { s, ts, cats };
+});
+const maxCat = Math.max(...cols.flatMap((c) => c.cats.map(([, l]) => l.length)));
+// Hand-offs: formats written in one stage and read in the next.
+const handoffs = stages.slice(0, -1).map((a, i) => {
+  const b = stages[i + 1];
+  const A = inStage(a.id);
+  const B = inStage(b.id);
+  const scored = formats
+    .map((f) => ({ f, w: A.filter((t) => t.formats?.writes?.includes(f.id)).length, r: B.filter((t) => t.formats?.reads?.includes(f.id)).length }))
+    .filter((x) => x.w > 0 && x.r > 0)
+    .sort((x, y) => Math.min(y.w, y.r) - Math.min(x.w, x.r) || y.w + y.r - (x.w + x.r))
+    .slice(0, 4);
+  return { a, b, scored };
+});
+---
+<Base title="Workflow" section="workflow" description="Engineering software along the product pipeline, from requirements to lifecycle, with the file formats that carry work between stages.">
+  <div class="page wide">
+    <header class="page-head">
+      <h1>From requirements to the field</h1>
+      <p class="lede">The same tools, laid along the product pipeline. Each column counts tools by category; between columns are the formats that carry work across the hand-off, ranked by how many tools write them on one side and read them on the other.</p>
+    </header>
+
+    <ol class="pipeline">
+      {cols.map(({ s, ts, cats }, i) => (
+        <li class="stage">
+          <h2 class="stage-h"><a href={`#${s.id}`}><span class="num step">{s.order}</span>{s.name}</a></h2>
+          <p class="stage-n"><b class="num">{ts.length}</b> tools</p>
+          <ul class="cats">
+            {cats.map(([cid, list]) => {
+              const c = categoryById.get(cid)!;
+              return (
+                <li data-tip={`${c.name} in ${s.name}|${list.length} tools|${list.slice(0, 6).map((t) => t.name).join(', ')}${list.length > 6 ? ' and more' : ''}`}>
+                  <span class="cn">{c.name}</span>
+                  <span class="cb"><i style={`width:${(list.length / maxCat) * 100}%; background: var(--d-${c.domain})`}></i></span>
+                  <span class="cv num">{list.length}</span>
+                </li>
+              );
+            })}
+          </ul>
+          {i < handoffs.length && handoffs[i].scored.length > 0 && (
+            <div class="handoff" aria-label={`Formats from ${s.name} to ${handoffs[i].b.name}`}>
+              <p class="hl">Hand-off to {handoffs[i].b.name.toLowerCase()}</p>
+              {handoffs[i].scored.map((x) => (
+                <a class="fmt" href={`/formats/${x.f.id}/`} data-tip={`${x.f.name}|${x.w} ${s.name.toLowerCase()} tools write it|${x.r} ${handoffs[i].b.name.toLowerCase()} tools read it`}>{x.f.name} <span class="muted num">{x.w}/{x.r}</span></a>
+              ))}
+            </div>
+          )}
+        </li>
+      ))}
+    </ol>
+    <p class="footnote">Hand-off figures read writers/readers. Tools appear in every stage they serve, so columns overlap.</p>
+
+    {cols.map(({ s, ts, cats }) => (
+      <section id={s.id} class="stage-detail">
+        <h2><span class="num step">{s.order}</span>{s.name} <span class="muted num">{ts.length}</span></h2>
+        <p class="muted">{s.blurb}</p>
+        {cats.map(([cid, list]) => (
+          <>
+            <h3><span class="sw" data-d={categoryById.get(cid)!.domain} aria-hidden="true"></span><a href={`/categories/${cid}/`}>{categoryById.get(cid)!.name}</a> <span class="muted num">{list.length}</span></h3>
+            <ul class="node-list">{list.sort((a, b) => a.name.localeCompare(b.name)).map((t) => <li><NodeLink id={t.id} /></li>)}</ul>
+          </>
+        ))}
+      </section>
+    ))}
+  </div>
+</Base>
+<script>
+  import '../scripts/tips.ts';
+</script>
+<style>
+  .page.wide { max-width: 1440px; }
+  .pipeline { list-style: none; padding: 0; margin: 0 0 0.5rem; display: grid; grid-template-columns: repeat(7, minmax(170px, 1fr)); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); overflow-x: auto; }
+  .stage { padding: 0.9rem 0.8rem 1rem; border-right: 1px solid var(--rule); display: flex; flex-direction: column; min-width: 170px; }
+  .stage:last-child { border-right: 0; }
+  .stage-h { font-size: var(--fs-1); margin: 0 0 0.2rem; }
+  .stage-h a { text-decoration: none; }
+  .step { display: inline-block; min-width: 1.4em; color: var(--red); font-family: var(--mono); }
+  .stage-n { font-size: var(--fs-0); color: var(--ink-2); margin: 0 0 0.7rem; }
+  .stage-n b { color: var(--ink); font-size: var(--fs-2); font-weight: 700; }
+  .cats { list-style: none; padding: 0; margin: 0 0 1rem; font-size: 11.5px; }
+  .cats li { display: grid; grid-template-columns: 1fr auto; column-gap: 0.4rem; padding: 0.18rem 0; cursor: default; }
+  .cats .cn { color: var(--ink); line-height: 1.25; }
+  .cats .cb { grid-column: 1; display: block; height: 6px; margin-top: 2px; }
+  .cats .cb i { display: block; height: 100%; border-radius: 0 3px 3px 0; min-width: 3px; }
+  .cats .cv { grid-column: 2; grid-row: 1 / span 2; align-self: end; color: var(--ink-2); }
+  .handoff { margin-top: auto; padding-top: 0.6rem; border-top: 1px dashed var(--ink-3); font-size: 11.5px; }
+  .handoff .hl { color: var(--ink-2); margin: 0 0 0.3rem; }
+  .handoff .fmt { display: flex; justify-content: space-between; gap: 0.5rem; text-decoration: none; padding: 0.15rem 0; border-bottom: 1px solid var(--rule-2); }
+  .handoff .fmt:hover { color: var(--red); }
+  .stage-detail { scroll-margin-top: calc(var(--header-h) + 1rem); }
+  @media (max-width: 1100px) { .pipeline { grid-template-columns: repeat(7, 200px); } }
+</style>

@@ -1,0 +1,32 @@
+id: capital
+type: tool
+name: Capital
+category: eda
+vendor: siemens
+open_source: false
+status: active
+stages:
+  - requirements
+  - design
+formats:
+  reads:
+    - jt
+website: https://www.siemens.com/en-us/products/capital/
+summary: >-
+  Siemens software for electrical and electronic systems: E/E architecture, in-vehicle networks and
+  AUTOSAR software, and wire harness design with 3D routing.
+plain: >-
+  Siemens software for designing the electrical and electronic systems of vehicles: the overall
+  architecture, the in-vehicle networks and the wiring harnesses routed in 3D.
+workflow: >-
+  Vehicle engineers define the electrical architecture and networks here, then route the wiring
+  harnesses in 3D against the car's mechanical model brought in as JT, and pass the harness designs
+  on to the teams that build the harnesses.
+notes: Came from Mentor (secondary sources); the page gives no history.
+confidence: medium
+sources:
+  - url: https://www.siemens.com/en-us/products/capital/
+    label: official page (E/E systems development)
+  - url: https://www.siemens.com/en-us/products/capital/offerings/wiring-harness-analyzer/
+    label: 'Siemens: Capital Wiring Harness Analyzer (reads KBL, VEC, JT)'
+as_of: '2026-11-22'

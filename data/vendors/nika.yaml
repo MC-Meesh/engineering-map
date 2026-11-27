@@ -1,0 +1,18 @@
+id: nika
+type: vendor
+name: NIKA GmbH
+kind: company
+hq: DE
+parent: flomerics
+status: merged
+summary: >-
+  Frankfurt developer of engineering fluid dynamics software (EFD.Lab, FloWorks), the base of
+  FLOEFD; bought by Flomerics in 2006.
+notes: >-
+  No acquisition record yet: the 2006 deal is known from trade press copies of the release and its
+  closing date is unconfirmed. Founding year not sourced.
+confidence: medium
+sources:
+  - url: https://www.plantengineering.com/flomerics-to-acquire-nika-gmbh
+    label: 'Plant Engineering 2006-07-01: Flomerics to acquire NIKA (Frankfurt)'
+as_of: '2026-11-22'

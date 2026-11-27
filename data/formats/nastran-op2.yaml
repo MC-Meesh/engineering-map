@@ -1,0 +1,15 @@
+id: nastran-op2
+type: format
+name: Nastran OP2
+extensions:
+  - .op2
+kind: results
+steward: de facto (MSC, Siemens)
+open_spec: false
+website: https://en.wikipedia.org/wiki/Nastran
+summary: Binary Nastran results; read by most pre and post-processors.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/Nastran
+    label: official page

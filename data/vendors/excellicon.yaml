@@ -1,0 +1,17 @@
+id: excellicon
+type: vendor
+name: Excellicon
+kind: company
+hq: US
+founded: 2009
+parent: siemens
+status: merged
+website: https://www.siemens.com/en-us/products/ic/ic-design/gencellicon/
+summary: Timing constraint development and verification tools for IC design.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://news.siemens.com/en-us/siemens-to-acquire-excellicon/
+    label: 'Siemens press release: to acquire Excellicon'
+  - url: https://www.siemens.com/en-us/products/ic/ic-design/gencellicon/
+    label: Gencellicon page (excellicon.com redirects here)

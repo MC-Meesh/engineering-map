@@ -1,0 +1,35 @@
+id: calibre
+type: tool
+name: Calibre
+category: eda
+vendor: siemens
+origin: mentor
+open_source: false
+status: active
+first_release: 1996
+stages:
+  - test
+formats:
+  reads:
+    - gdsii
+    - oasis
+competes_with:
+  - ic-validator
+website: https://www.siemens.com/en-us/products/ic/calibre-design/
+summary: Widely used DRC and LVS physical verification signoff tool.
+plain: >-
+  Checks a finished chip layout against the manufacturer's rules and confirms that the layout
+  matches the intended circuit, a final check before a chip is made.
+workflow: >-
+  When the chip layout is finished in a place-and-route or custom layout tool, it arrives here as
+  GDSII or OASIS for the final rule and circuit checks; once clean, it goes to the chip factory.
+notes: >-
+  1996 first release rests on a customer recollection (SemiWiki) and trade commentary; no dated
+  Mentor announcement found.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/ic/calibre-design/
+    label: Siemens EDA Calibre page
+  - url: https://blogs.sw.siemens.com/calibre/2017/05/17/1278/
+    label: Siemens Calibre blog 2017-05-17 (no release date; foundry rules since the late 1990s)

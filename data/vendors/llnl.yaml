@@ -1,0 +1,17 @@
+id: llnl
+type: vendor
+name: Lawrence Livermore National Laboratory
+kind: institution
+hq: US
+founded: 1952
+status: active
+website: https://www.llnl.gov/
+wikipedia: https://en.wikipedia.org/wiki/Lawrence_Livermore_National_Laboratory
+summary: US lab behind VisIt, MFEM, hypre and SUNDIALS.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.llnl.gov/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Lawrence_Livermore_National_Laboratory
+    label: Wikipedia

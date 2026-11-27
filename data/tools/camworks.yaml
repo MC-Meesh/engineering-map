@@ -1,0 +1,34 @@
+id: camworks
+type: tool
+name: CAMWorks
+category: cam
+vendor: hcl
+open_source: false
+status: active
+first_release: 1997
+stages:
+  - manufacturing
+formats:
+  writes:
+    - gcode
+plugin_of: solidworks
+competes_with:
+  - solidcam
+website: https://camworks.com/
+summary: Feature-based CAM integrated in SOLIDWORKS and Solid Edge.
+plain: >-
+  Machining (CAM) software that turns a 3D part designed in SOLIDWORKS or Solid Edge into
+  instructions for CNC (computer-controlled) cutting machines, recognizing features such as holes
+  and pockets to decide how to cut them.
+workflow: >-
+  A machinist opens a part designed in SOLIDWORKS or Solid Edge, lets CAMWorks recognize holes and
+  pockets and plan the cuts, and writes G-code, the line-by-line instructions the CNC machine
+  follows to cut the part.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.hcl-software.com/news/23-1-26-hclsoftware-releases-swiss-machining-in-hcl-camworks-2026
+    label: verification source
+  - url: https://camworks.com/
+    label: official page

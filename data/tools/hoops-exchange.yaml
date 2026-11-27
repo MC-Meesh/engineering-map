@@ -1,0 +1,59 @@
+id: hoops-exchange
+type: tool
+name: HOOPS Exchange
+category: interop
+vendor: tech-soft-3d
+open_source: false
+status: active
+first_release: 2010
+stages:
+  - design
+  - analysis
+formats:
+  reads:
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+    - jt
+    - catia-v5
+    - solidworks-native
+    - nx-prt
+    - creo-prt
+    - inventor-ipt
+    - stl
+    - gltf
+    - 3mf
+    - obj
+    - ifc
+    - rhino-3dm
+    - dwg
+  writes:
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+    - jt
+    - stl
+    - gltf
+    - 3mf
+    - obj
+    - usd
+competes_with:
+  - spatial-interop
+website: https://www.techsoft3d.com/products/hoops/exchange/
+summary: >-
+  SDK that reads most native and neutral CAD formats into one B-rep and tessellation model; embedded
+  in many CAE and viewer products.
+plain: >-
+  A software component that other programs build in to open most 3D design files and turn them into
+  one common model; used inside many simulation and viewer products.
+workflow: >-
+  Developers build HOOPS Exchange into simulation tools and viewers; when a user opens a CATIA,
+  SOLIDWORKS, Creo, NX or STEP file there, it reads the file into one model the host program can
+  use.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.techsoft3d.com/products/hoops/exchange/
+    label: verification source

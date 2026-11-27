@@ -1,0 +1,33 @@
+id: adams
+type: tool
+name: Adams
+category: cae-fea
+vendor: msc
+open_source: false
+status: active
+first_release: 1980
+stages:
+  - analysis
+formats:
+  reads:
+    - fmu
+  writes:
+    - fmu
+competes_with:
+  - simpack
+  - recurdyn
+  - motionsolve
+website: https://www.cadence.com/en_US/home/tools/msc-software/adams.html
+summary: Widely used multibody dynamics code for suspensions, vehicles and mechanisms.
+plain: >-
+  Simulates how connected moving parts behave together, such as a car suspension, a whole vehicle or
+  a mechanism, so engineers can study motion and forces before building a prototype.
+workflow: >-
+  An engineer builds a model of linked parts, such as a suspension, from the design, runs the motion
+  simulation here, and passes loads to strength and fatigue tools, or swaps FMU files (packaged
+  models another simulator can run) with control and system tools.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cadence.com/en_US/home/tools/msc-software/adams.html
+    label: verification source

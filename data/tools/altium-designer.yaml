@@ -1,0 +1,50 @@
+id: altium-designer
+type: tool
+name: Altium Designer
+category: eda
+vendor: altium
+open_source: false
+status: active
+first_release: 2005
+stages:
+  - design
+  - manufacturing
+formats:
+  reads:
+    - step
+  writes:
+    - gerber
+    - excellon
+    - odbpp
+    - ipc-2581
+    - step
+competes_with:
+  - allegro
+  - pads
+  - xpedition
+website: https://www.altium.com/altium-designer
+wikipedia: https://en.wikipedia.org/wiki/Altium_Designer
+summary: Unified schematic and PCB tool popular with professional board designers; tied to Altium 365.
+plain: >-
+  Software for designing electronic circuit boards in one place, from drawing the circuit diagram to
+  placing parts and routing the copper connections, linked to the Altium 365 online service.
+workflow: >-
+  An engineer draws the circuit and lays out the board here, imports STEP models of parts and
+  enclosures, then sends Gerber, drill, ODB++ or IPC-2581 files to the board maker and STEP models
+  to the mechanical 3D design (CAD) team.
+native_files:
+  - ext: .PrjPcb
+    what: PCB project file holding project options
+  - ext: .SchDoc
+    what: Schematic document
+  - ext: .PcbDoc
+    what: PCB layout document
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.altium.com/altium-designer
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Altium_Designer
+    label: Wikipedia
+  - url: https://www.altium.com/documentation/altium-designer/managing-project-documents
+    label: native file format (Altium documentation)

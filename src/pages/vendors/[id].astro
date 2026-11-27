@@ -1,0 +1,212 @@
+---
+import Base from '../../layouts/Base.astro';
+import NodeLink from '../../components/NodeLink.astro';
+import Sources from '../../components/Sources.astro';
+import { vendors, vendorById, toolById, categoryById, acquisitions, tools, formats } from '../../lib/data';
+import type { Vendor } from '../../lib/data';
+
+export function getStaticPaths() {
+  return vendors.map((v) => ({ params: { id: v.id }, props: { v } }));
+}
+const { v } = Astro.props as { v: Vendor };
+const kindLabel: Record<string, string> = { company: 'Company', project: 'Open-source project', institution: 'Institution' };
+const byCat = new Map<string, string[]>();
+for (const id of v.portfolio) {
+  const c = toolById.get(id)!.category;
+  if (!byCat.has(c)) byCat.set(c, []);
+  byCat.get(c)!.push(id);
+}
+const cats = [...byCat.entries()].sort((a, b) => b[1].length - a[1].length);
+const originatedElsewhere = v.originated.filter((id) => toolById.get(id)!.vendor !== v.id);
+const subs = v.subsidiaries.map((id) => vendorById.get(id)!).sort((a, b) => a.name.localeCompare(b.name));
+const deals = acquisitions.filter((a) => a.acquirer === v.id);
+const boughtBy = acquisitions.filter((a) => a.target === v.id);
+// Group-wide tool list for top-level groups with subsidiaries
+const groupTools = v.subsidiaries.length ? tools.filter((t) => t.ultimateOwner === v.id || t.ownerChain.includes(v.id)) : [];
+const stewarded = formats.filter((f) => f.steward_vendor === v.id);
+const chain = v.ownerChain;
+// Kernels and components: the ones the group owns, the ones its tools are built on, and the
+// other companies whose tools are built on the group's.
+const isSolver = (k: string) => { const sm = toolById.get(k)?.summary ?? ''; return /constraint solver/i.test(sm) && !/kernel/i.test(sm); };
+const kOf = (u: any): string[] => (u.built_on ?? []).filter((k: string) => toolById.get(k)?.category === 'geometry-kernel' && !isSolver(k));
+const inGroup = (t: { vendor: string; ownerChain?: string[]; ultimateOwner?: string }) => t.vendor === v.id || t.ultimateOwner === v.id || !!t.ownerChain?.includes(v.id);
+const own = tools.filter(inGroup);
+const ownIds = new Set(own.map((t) => t.id));
+const usedComps = [...new Set(own.flatMap((t) => t.built_on ?? []))].filter((id) => toolById.has(id));
+const ownComps = tools.filter((t) => ownIds.has(t.id) && t.category === 'geometry-kernel');
+const ownBlocks = tools.filter((t) => ownIds.has(t.id) && t.category !== 'geometry-kernel' && tools.some((u) => u.built_on?.includes(t.id) || (u as any).runs_on?.includes(t.id)));
+const onBlock = (cid: string) => tools.filter((u) => u.built_on?.includes(cid) || (u as any).runs_on?.includes(cid));
+const otherUses = (cid: string) => tools.filter((u) => !ownIds.has(u.id) && u.built_on?.includes(cid));
+const usesOwn = (cid: string) => own.filter((u) => u.built_on?.includes(cid));
+const theirComps = usedComps.filter((id) => !ownIds.has(id));
+const noComp = own.filter((t) => ['cad', 'cam', 'cae-fea', 'cfd', 'meshing'].includes(t.category) && !kOf(t).length && !(t as any).geometry_basis);
+const designToolsAll = own.filter((t) => t.category !== 'geometry-kernel' && (['cad', 'cam', 'cae-fea', 'cfd', 'meshing'].includes(t.category) || kOf(t).length > 0));
+const kname = (k: string) => toolById.get(k)?.name ?? k;
+const kOwner = (k: string) => { const c = toolById.get(k) as any; return vendorById.get(c?.ultimateOwner ?? c?.vendor)?.name?.replace(/ Digital Industries Software$/, '').replace(/ AG$/, '') ?? ''; };
+const ownUsed = ownComps.filter((c) => !isSolver(c.id) && designToolsAll.some((u) => kOf(u).includes(c.id)));
+const ownSolvers = ownComps.filter((c) => isSolver(c.id) && designToolsAll.some((u) => u.built_on?.includes(c.id)));
+const ownUnused = ownComps.filter((c) => !ownUsed.includes(c) && !ownSolvers.includes(c));
+const onOthers = designToolsAll.filter((u) => kOf(u).length && kOf(u).every((k) => !ownIds.has(k)));
+const unknownK = designToolsAll.filter((u) => !kOf(u).length);
+const geoOwned = ownComps.filter((c) => !isSolver(c.id));
+const vShort0 = v.name.replace(/ Digital Industries Software$/, '');
+// One direct answer: the kernels it owns and who uses them, then every design or simulation
+// product that does not use them and why (another company's kernel, its host's geometry, meshes,
+// its own code), then the ones nothing is recorded for.
+const basis = (u: any) => u.geometry_basis as { kind: string; host?: string; text: string; url: string } | undefined;
+const listN = (xs: string[]) => (xs.length < 3 ? xs.join(' and ') : `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}`);
+const usersIn = (k: string) => designToolsAll.filter((u) => kOf(u).includes(k)).map((u) => u.name);
+const byBasis = (kind: string) => designToolsAll.filter((u) => !kOf(u).length && basis(u)?.kind === kind);
+const hostOf = (u: any) => toolById.get(basis(u)?.host ?? '')?.name ?? 'its host program';
+const unknownAll = designToolsAll.filter((u) => !kOf(u).length && !basis(u));
+const answerParts = [
+  geoOwned.length ? `${vShort0} owns ${geoOwned.length === 1 ? 'one geometry kernel' : `${geoOwned.length} geometry kernels`}: ${listN(geoOwned.map((c) => `${c.name}${c.vendor !== v.id ? ` (through its subsidiary ${vendorById.get(c.vendor)?.name}` : ' ('}${usersIn(c.id).length ? `${c.vendor !== v.id ? '; ' : ''}used in ${listN(usersIn(c.id))}` : `${c.vendor !== v.id ? '; ' : ''}licensed to other companies only`})`))}.` : '',
+  [
+    ...onOthers.map((u) => `${u.name} uses ${listN(kOf(u).map((k) => `${kname(k)} (${kOwner(k)})`))}`),
+    ...(byBasis('host').length ? [`${listN(byBasis('host').map((u) => u.name))} work${byBasis('host').length > 1 ? '' : 's'} inside ${hostOf(byBasis('host')[0])} on its geometry`] : []),
+    ...(byBasis('mesh').length ? [`${listN(byBasis('mesh').map((u) => u.name))} work${byBasis('mesh').length > 1 ? '' : 's'} on meshes or imported geometry, with no B-rep kernel of their own`] : []),
+    ...(byBasis('own-code').length ? [`${listN(byBasis('own-code').map((u) => u.name))} use${byBasis('own-code').length > 1 ? '' : 's'} ${byBasis('own-code').length > 1 ? 'their' : 'its'} own geometry code`] : []),
+  ].length && geoOwned.length ? `Its products that do not use ${geoOwned.length > 1 ? 'them' : 'it'}: ${[
+    ...onOthers.map((u) => `${u.name} uses ${listN(kOf(u).map((k) => `${kname(k)} (${kOwner(k)})`))}`),
+    ...(byBasis('host').length ? [`${listN(byBasis('host').map((u) => u.name))} work${byBasis('host').length > 1 ? '' : 's'} inside ${hostOf(byBasis('host')[0])} on its geometry`] : []),
+    ...(byBasis('mesh').length ? [`${listN(byBasis('mesh').map((u) => u.name))} work${byBasis('mesh').length > 1 ? '' : 's'} on meshes or imported geometry, with no B-rep kernel of their own`] : []),
+    ...(byBasis('own-code').length ? [`${listN(byBasis('own-code').map((u) => u.name))} use${byBasis('own-code').length > 1 ? '' : 's'} ${byBasis('own-code').length > 1 ? 'their' : 'its'} own geometry code`] : []),
+  ].join('; ')}.` : '',
+  unknownAll.length ? `No kernel is recorded yet for ${listN(unknownAll.map((u) => u.name))}.` : '',
+  geoOwned.length || onOthers.length ? `This covers its CAD, CAM, structural, fluid and meshing products; its other products (such as electromagnetics, optimization, systems, data management and manufacturing tools) are not part of this answer.` : '',
+];
+const inShort = [
+  ...answerParts,
+  ownSolvers.length ? `${ownSolvers.map((c) => c.name).join(' and ')} ${ownSolvers.length > 1 ? 'are constraint solvers' : 'is a constraint solver'} (not a geometry kernel) that its tools also use.` : '',
+  !geoOwned.length && onOthers.length ? `${onOthers.map((u) => u.name).join(', ')} ${onOthers.length > 1 ? 'use' : 'uses'} another company's kernel: ${[...new Set(onOthers.flatMap(kOf))].map((k) => `${kname(k)} (${kOwner(k)})`).join(', ')}.` : '',
+].filter(Boolean).join(' ');
+const designTools = designToolsAll.sort((a, b) => Number(!a.built_on?.length) - Number(!b.built_on?.length) || a.name.localeCompare(b.name));
+const hasKernels = ownComps.length > 0 || theirComps.length > 0 || ownBlocks.length > 0;
+const vShort = v.name.replace(/ Digital Industries Software$/, '');
+const vPoss = /s$/.test(vShort) ? `${vShort}'` : `${vShort}'s`;
+---
+<Base title={v.name} description={v.summary} section="vendors">
+  <article class="page">
+    <header class="page-head">
+      <p class="crumbs"><a href="/vendors/">Vendors</a>{chain.length > 0 && <> / part of {chain.map((c, i) => <>{i > 0 && ', '}<a href={`/vendors/${c}/`}>{vendorById.get(c)?.name}</a></>)}</>}</p>
+      <h1><span class="sw vendor" aria-hidden="true"></span>{v.name}</h1>
+      <p class="lede">{v.summary}</p>
+      <p><a href={`/#n=${v.id}`}>Show on the map</a> <span class="muted">or in the</span> <a href={`/vendors/tree/#v-${v.id}`}>ownership tree</a></p>
+    </header>
+    <div class="two-col">
+      <div>
+        <dl class="spec">
+          <dt>Kind</dt><dd>{kindLabel[v.kind]}</dd>
+          {v.hq && <><dt>Headquarters</dt><dd class="mono">{v.hq}</dd></>}
+          {v.founded && <><dt>Founded</dt><dd class="num">{v.founded}</dd></>}
+          <dt>Ownership</dt>
+          <dd>{chain.length ? <>Part of {chain.map((c, i) => <>{i > 0 && <span class="muted">, in turn part of </span>}<a href={`/vendors/${c}/`}>{vendorById.get(c)?.name}</a></>)}</> : 'Independent'}{v.status === 'merged' && <span class="muted"> (merged; the brand or products continue under the parent)</span>}</dd>
+          {v.controlledTools > 0 && !v.parent && <><dt>Tools in the group, with subsidiaries</dt><dd class="num">{v.controlledTools}</dd></>}
+          {v.website && <><dt>Website</dt><dd><a href={v.website} rel="noopener">{new URL(v.website).hostname.replace(/^www\./, '')}</a></dd></>}
+        </dl>
+
+        {hasKernels && (
+          <section class="kernels">
+            <h2>Kernels and components</h2>
+            {inShort && <p class="k-short"><b>In short.</b> {inShort}</p>}
+            <p class="footnote">A geometry kernel is the engine inside design software that builds and edits shapes; other components handle constraints, translation or solving. Companies license them to each other.</p>
+            {ownComps.length > 0 && <>
+              <h3>Kernels and components {vShort} owns</h3>
+              <ul class="plain-list">{ownComps.map((c) => {
+                const inside = usesOwn(c.id).filter((u) => u.id !== c.id), outside = otherUses(c.id);
+                return <li><NodeLink id={c.id} /> <span class="muted">({isSolver(c.id) ? 'constraint solver' : 'geometry kernel'})</span>: {inside.length > 0 ? <>used in {vPoss} own {inside.map((u, i) => <>{i > 0 && ', '}<a href={`/tools/${u.id}/`}>{u.name}</a></>)}</> : <>no {vShort} product is recorded as built on it</>}{outside.length === 0 && c.category === 'geometry-kernel' && <>; no other company's product on this map is recorded as built on it yet</>}{outside.length > 0 && <>; licensed to other companies for {outside.map((u, i) => <>{i > 0 && ', '}<a href={`/tools/${u.id}/`}>{u.name}</a> <span class="muted">({vendorById.get(u.vendor)?.name ?? u.vendor}{u.category === 'geometry-kernel' ? ', a kernel of its own that began from it' : ''})</span></>)}</>}.</li>;
+              })}</ul>
+            </>}
+            {ownBlocks.length > 0 && <>
+              <h3>Other {vShort} products that other tools are built on or run on</h3>
+              <ul class="plain-list">{ownBlocks.map((c) => <li><NodeLink id={c.id} />: {[['built on it', tools.filter((u) => u.built_on?.includes(c.id))], ['runs on it', tools.filter((u) => (u as any).runs_on?.includes(c.id))]].filter(([, us]) => (us as any[]).length).map(([verb, us], j) => <>{j > 0 && '; '}{(us as any[]).map((u, i) => <>{i > 0 && ', '}<a href={`/tools/${u.id}/`}>{u.name}</a></>)}{' '}{(us as any[]).length > 1 ? (verb === 'runs on it' ? 'run on it' : 'are built on it') : (verb === 'built on it' ? 'is built on it' : verb)}</>)}.</li>)}</ul>
+            </>}
+            {ownComps.some((c) => !usesOwn(c.id).filter((u) => u.id !== c.id).length) && <p class="footnote">A company can own a kernel that none of its own products use: it licenses it to other software makers.</p>}
+            {designTools.some((u) => kOf(u).length) && <>
+              <h3>{vShort} design and simulation tools, by kernel</h3>
+              <ul class="plain-list">{designTools.filter((u) => kOf(u).length || (u as any).geometry_basis).map((u) => <li><a href={`/tools/${u.id}/`}>{u.name}</a>: {kOf(u).length ? kOf(u).map((k, i) => <>{i > 0 && ' and '}<a href={`/tools/${k}/`}>{toolById.get(k)?.name ?? k}</a> <span class="muted">({ownIds.has(k) ? vShort : vendorById.get(toolById.get(k)?.vendor ?? '')?.name?.replace(/ Digital Industries Software$/, '') ?? 'another company'})</span></>) : (u as any).geometry_basis ? <span>{(u as any).geometry_basis.text} <a class="muted" href={(u as any).geometry_basis.url} rel="noopener">source</a></span> : <span class="muted">no kernel recorded yet</span>}</li>)}</ul>
+              {noComp.length > 0 && <p class="footnote">No kernel recorded yet for {noComp.map((u, i) => <>{i > 0 && ', '}<a href={`/tools/${u.id}/`}>{u.name}</a></>)}.</p>}
+            </>}
+            {theirComps.length > 0 && <>
+              <h3>{vShort} tools built on other companies' kernels and components</h3>
+              <ul class="plain-list">{theirComps.map((cid) => { const c = toolById.get(cid)!; return <li><NodeLink id={cid} /> <span class="muted">by {vendorById.get(c.ultimateOwner ?? c.vendor)?.name}</span>: {usesOwn(cid).map((u, i) => <>{i > 0 && ', '}<a href={`/tools/${u.id}/`}>{u.name}</a></>)}.</li>; })}</ul>
+            </>}
+
+          </section>
+        )}
+        {cats.length > 0 && (
+          <section>
+            <h2>Sold under its own name <span class="muted num">{v.portfolio.length}</span></h2>{groupTools.length > v.portfolio.length && <p class="footnote">{groupTools.length} in the group with subsidiaries; see Everything in the group.</p>}
+            {cats.map(([c, ids]) => (
+              <>
+                <h3><a href={`/categories/${c}/`}>{categoryById.get(c)?.name}</a></h3>
+                <ul class="node-list">{ids.map((id) => <li><NodeLink id={id} /></li>)}</ul>
+              </>
+            ))}
+          </section>
+        )}
+        {originatedElsewhere.length > 0 && (
+          <section>
+            <h2>Originated here, now sold under another brand</h2>
+            <ul class="node-list">{originatedElsewhere.map((id) => <li><NodeLink id={id} sub={`now ${vendorById.get(toolById.get(id)!.vendor)?.name}`} /></li>)}</ul>
+          </section>
+        )}
+        {groupTools.length > v.portfolio.length && (
+          <section>
+            <h2>Everything in the group <span class="muted num">{groupTools.length}</span></h2>
+            <p class="footnote">Includes products sold under subsidiary brands.</p>
+            <ul class="node-list">{groupTools.filter((t) => t.vendor !== v.id).map((t) => <li><NodeLink id={t.id} sub={vendorById.get(t.vendor)?.name} /></li>)}</ul>
+          </section>
+        )}
+        {stewarded.length > 0 && (
+          <section>
+            <h2>Formats it stewards</h2>
+            <ul class="node-list">{stewarded.map((f) => <li><NodeLink id={f.id} /></li>)}</ul>
+          </section>
+        )}
+      </div>
+      <div>
+        {(deals.length > 0 || boughtBy.length > 0) && (
+          <section>
+            <h2>Acquisition timeline</h2>
+            <ol class="timeline">
+              {[...boughtBy.map((a) => ({ a, dir: 'in' })), ...deals.map((a) => ({ a, dir: 'out' }))]
+                .sort((x, y) => x.a.completed.localeCompare(y.a.completed))
+                .map(({ a, dir }) => (
+                  <li class={dir === 'in' ? 'acquired' : ''}>
+                    <span class="year num">{a.completed.slice(0, 4)}</span>
+                    <div>
+                      {dir === 'out'
+                        ? <>Acquired <a href={`/vendors/${a.target}/`}>{vendorById.get(a.target)?.name}</a>{a.value && <span class="muted">, {a.value}</span>}</>
+                        : <>Acquired by <a href={`/vendors/${a.acquirer}/`}>{vendorById.get(a.acquirer)?.name}</a>{a.value && <span class="muted">, {a.value}</span>}</>}
+                      {a.status !== 'completed' && <span class="tag">{a.status}</span>}
+                      {a.summary && <p class="footnote">{a.summary}</p>}
+                      <p class="footnote"><a href={a.sources[0].url} rel="noopener">source</a>{a.confidence === 'low' && <span class="muted">; not yet confirmed against a primary source</span>}</p>
+                    </div>
+                  </li>
+                ))}
+            </ol>
+          </section>
+        )}
+        {subs.length > 0 && (
+          <section>
+            <h2>Subsidiaries and absorbed companies <span class="muted num">{subs.length}</span></h2>
+            <ul class="node-list">{subs.map((s) => <li><NodeLink id={s.id} sub={s.portfolio.length ? `${s.portfolio.length} tools` : undefined} /></li>)}</ul>
+          </section>
+        )}
+        <Sources sources={v.sources} confidence={v.confidence} as_of={v.as_of} notes={v.notes} file={`data/vendors/${v.id}.yaml`} id={v.id} name={v.name} />
+      </div>
+    </div>
+  </article>
+</Base>
+<style>
+  .plain-list { padding-left: 1.1rem; margin: 0.3rem 0 0.8rem; }
+  .plain-list li { margin: 0.25rem 0; }
+  .k-short { border-left: 2px solid var(--ink); padding-left: 0.6rem; }
+  .timeline { list-style: none; padding: 0; margin: 0; border-left: 1px solid var(--ink); }
+  .timeline li { display: grid; grid-template-columns: 3.5rem 1fr; gap: 0.5rem; padding: 0.4rem 0 0.4rem 0; position: relative; }
+  .timeline li::before { content: ''; position: absolute; left: -4px; top: 0.85rem; width: 7px; height: 7px; background: var(--ink); border-radius: 50%; }
+  .timeline li.acquired::before { background: var(--red); }
+  .timeline .year { padding-left: 0.75rem; color: var(--ink-2); }
+  .timeline p { margin: 0.15rem 0 0; }
+</style>

@@ -1,0 +1,53 @@
+id: coreform-cubit
+type: tool
+name: Coreform Cubit
+category: meshing
+vendor: coreform
+origin: sandia
+open_source: false
+status: active
+first_release: 1991
+stages:
+  - analysis
+built_on:
+  - acis
+formats:
+  reads:
+    - step
+    - acis-sat
+  writes:
+    - exodus
+    - nastran-bdf
+    - abaqus-inp
+website: https://coreform.com/products/coreform-cubit/
+summary: Hex and tet meshing from Sandia's Cubit, the native mesher for the Exodus ecosystem.
+plain: >-
+  Software for breaking 3D shapes into meshes of small brick (hex) or triangular pyramid (tet)
+  cells, the step needed before a simulation can run; it grew out of Sandia National Laboratories.
+workflow: >-
+  An analyst imports STEP or SAT geometry, builds hex or tet meshes here, and writes Exodus II
+  meshes for codes such as MOOSE, or Nastran and Abaqus input files for commercial programs that run
+  the calculation.
+native_files:
+  - ext: .cub5
+    what: Cubit model file with geometry, mesh, blocks and sidesets
+  - ext: .cub
+    what: Cubit model file (also the legacy binary format)
+notes: >-
+  Sandia's own timeline dates CUBIT to 1991 (paving 1990). Coreform holds exclusive commercial
+  distribution rights; Sandia keeps a government-use version.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://coreform.com/products/coreform-cubit/
+    label: 'Coreform Cubit page: originated at Sandia'
+  - url: https://cubit.sandia.gov/capabilities/
+    label: 'Sandia Cubit capabilities: ACIS solid modeling engine'
+  - url: https://www.osti.gov/servlets/purl/1642808
+    label: 'Sandia CUBIT overview slides (OSTI): timeline, CUBIT 1991'
+  - url: https://cubit.sandia.gov/licensing/
+    label: 'Sandia Cubit licensing: commercial version via Coreform'
+  - url: https://coreform.com/cubit_help/environment_control/session_control/saving_and_restoring.htm
+    label: 'native file format (Coreform Cubit help: saving and restoring)'
+  - url: https://www.spatial.com/case-studies/coreform
+    label: 'Spatial case study: Coreform licenses 3D ACIS Modeler and 3D InterOp'

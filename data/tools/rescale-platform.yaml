@@ -1,0 +1,27 @@
+id: rescale-platform
+type: tool
+name: Rescale
+category: sdm
+vendor: rescale
+open_source: false
+status: active
+first_release: 2011
+stages:
+  - analysis
+website: https://rescale.com/
+summary: Cloud HPC platform with hundreds of preconfigured engineering solvers.
+plain: >-
+  A cloud service for running engineering simulations on rented high-performance computers, with
+  hundreds of simulation programs ready to use.
+workflow: >-
+  An engineer uploads input files, picks one of the ready-made simulation programs and a cloud
+  computer, runs the job here, and downloads the results through the website or from scripts and
+  programs.
+files_note: 'Has no file format of its own: it runs other solvers'' input files, which are uploaded, run as jobs and returned as results through the REST API, CLI or web interface.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://rescale.com/
+    label: official page
+  - url: https://rescale.com/documentation/main/rescale-advanced-features/rest-api/
+    label: 'data access (Rescale documentation: REST API)'

@@ -1,0 +1,29 @@
+id: openmdao
+type: tool
+name: OpenMDAO
+category: optimization
+vendor: openmdao-team
+open_source: true
+license: Apache-2.0
+status: active
+first_release: 2008
+stages:
+  - optimization
+open_source_alternative_to:
+  - modefrontier
+  - modelcenter
+website: https://openmdao.org/
+summary: NASA framework for gradient-based multidisciplinary design optimization.
+plain: >-
+  A free NASA framework for optimizing designs that involve several connected disciplines at once.
+workflow: >-
+  An engineer links models from several disciplines, such as aerodynamics and structures, into one
+  problem here, and the optimizer searches for the best overall design to hand back to the teams.
+files_note: 'A Python programming library that programs call to build and solve multidisciplinary models; its case recorder saves run data to a SQLite database file that a CaseReader reads back.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://openmdao.org/
+    label: official page
+  - url: https://openmdao.org/newdocs/versions/latest/features/recording/case_recording_options.html
+    label: 'OpenMDAO docs: case recording options'

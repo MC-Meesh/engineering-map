@@ -1,0 +1,14 @@
+id: jama
+type: vendor
+name: Jama Software
+kind: company
+hq: US
+founded: 2007
+status: active
+website: https://www.jamasoftware.com/
+summary: Jama Connect requirements management.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.jamasoftware.com/
+    label: official page

@@ -1,0 +1,29 @@
+id: optimus
+type: tool
+name: Optimus
+category: optimization
+vendor: noesis
+open_source: false
+status: active
+first_release: 2003
+stages:
+  - optimization
+competes_with:
+  - modefrontier
+website: https://www.noesissolutions.com/
+summary: Process integration and design optimization from Noesis Solutions.
+plain: >-
+  Software from Noesis Solutions that links simulation programs into one automated chain, runs it
+  again and again with changed inputs, and searches for the best design.
+workflow: >-
+  An engineer links simulation tools into an automated process here, Optimus runs it many times to
+  search the design space, and the best designs go back to the engineering team.
+notes: Noesis is a Cybernet Systems subsidiary (since 2010) and a Siemens partner
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.noesissolutions.com/about-noesis-solutions/news-events/cybernet-system-acquires-noesis-solutions
+    label: verification source
+  - url: https://www.noesissolutions.com/
+    label: official page

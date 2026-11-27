@@ -1,0 +1,14 @@
+id: flow-science
+type: vendor
+name: Flow Science
+kind: company
+hq: US
+founded: 1980
+status: active
+website: https://www.flow3d.com/
+summary: FLOW-3D free-surface CFD, widely used for casting and hydraulics.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.flow3d.com/
+    label: official page

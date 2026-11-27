@@ -1,0 +1,39 @@
+id: valor-npi
+type: tool
+name: Valor NPI
+category: eda
+vendor: siemens
+open_source: false
+status: active
+stages:
+  - manufacturing
+formats:
+  reads:
+    - odbpp
+    - ipc-2581
+    - gerber
+  writes:
+    - odbpp
+integrates_with:
+  - xpedition
+website: https://www.siemens.com/en-us/products/pcb/valor/
+summary: >-
+  PCB design-for-manufacturing analysis that checks a layout against fabrication and assembly rules
+  early; also built into Xpedition as Xpedition DFM.
+plain: >-
+  Checks a circuit board layout against fabrication and assembly rules early, to avoid manufacturing
+  problems.
+workflow: >-
+  A board designer loads the layout from Xpedition or another tool as ODB++, IPC-2581 or Gerber,
+  runs Valor's fabrication and assembly checks, sends fixes back to the layout, and the checked
+  ODB++ goes to the factory.
+files_note: 'Incoming manufacturing data and BOM are loaded into the Valor NPI database to build a product model, which is handed off to fabrication, assembly and test as an ODB++ data package.'
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/pcb/valor/
+    label: Valor page (Valor NPI, Xpedition DFM)
+  - url: https://www.plm.automation.siemens.com/media/global/en/Valor_NPI_10_Manufacturing_tcm27-66359.pdf
+    label: 'Siemens Valor NPI datasheet: data goes into Valor NPI database; ODB++ package hand-off'
+  - url: https://blogs.sw.siemens.com/valor-dfm-solutions/2022/06/17/whats-new-in-valor-npi-v11-5/
+    label: 'Siemens blog: Valor NPI v11.5 reads IPC-2581 rev C NetShort data, compares ODB++ model to returned Gerber/drill data'
+as_of: '2026-11-22'

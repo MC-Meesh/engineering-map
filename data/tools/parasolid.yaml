@@ -1,0 +1,52 @@
+id: parasolid
+type: tool
+name: Parasolid
+category: geometry-kernel
+vendor: siemens
+open_source: false
+status: active
+first_release: 1988
+stages:
+  - design
+formats:
+  reads:
+    - parasolid-xt
+  writes:
+    - parasolid-xt
+competes_with:
+  - acis
+  - cgm
+  - occt
+  - c3d
+website: https://www.siemens.com/en-us/products/plm-components/parasolid/
+wikipedia: https://en.wikipedia.org/wiki/Parasolid
+summary: >-
+  The most widely licensed commercial B-rep kernel; under Designcenter (formerly NX), Solid Edge, SOLIDWORKS, Onshape and
+  many CAE tools.
+plain: >-
+  The most widely licensed commercial geometry engine for solid 3D shapes; the hidden layer inside
+  Designcenter (formerly NX), Solid Edge, SOLIDWORKS, Onshape and many simulation tools.
+workflow: >-
+  Parasolid runs inside Designcenter (formerly NX), Solid Edge, SOLIDWORKS, Onshape and many simulation tools, doing their
+  solid modeling, and its X_T files let those programs pass exact geometry to each other.
+notes: >-
+  Siemens says Parasolid is licensed to more than 200 independent software vendors and gives model
+  compatibility across 350+ applications. Its licensee lists name companies, not products: for CAD,
+  Bentley Systems, Fujitsu, IronCAD, Onshape, Shapr3D and Top Systems; for CAM, CNC Software, DP
+  Technology, GO2cam, Missler Software, Renishaw, Thermwood and Vero Software; for CAE, Altair,
+  ANSYS, COMSOL, MIDAS IT, MSC Software and SimScale; for AEC, Bentley, Midas IT, Nemetschek Allplan
+  and Nemetschek Vectorworks; in the cloud, GrabCAD, Onshape, SimScale and Zazzle. Altair
+  standardized on Parasolid for data interoperability across its portfolio. Siemens says it builds
+  its own products (NX, Solid Edge, Simcenter, Teamcenter, Tecnomatix) with the same components it
+  licenses, without saying which product uses which.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/plm-components/parasolid/
+    label: 'Siemens Parasolid page: licensee lists by application area, 200+ vendors, 350+ applications'
+  - url: https://en.wikipedia.org/wiki/Parasolid
+    label: Wikipedia
+  - url: https://resources.sw.siemens.com/en-US/case-study-altair/
+    label: 'Siemens Altair case study: Parasolid in Inspire and across the Altair portfolio'
+  - url: https://www.plm.automation.siemens.com/media/global/en/Siemens%20SW%20PLM%20Components%20EB%20(1)_tcm27-61631.pdf
+    label: 'Siemens PLM Components e-book: own products built with the same components'

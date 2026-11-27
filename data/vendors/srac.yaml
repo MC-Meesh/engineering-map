@@ -1,0 +1,15 @@
+id: srac
+type: vendor
+name: Structural Research and Analysis Corp (SRAC)
+kind: company
+parent: dassault
+status: merged
+summary: >-
+  Maker of the COSMOS finite element products, including COSMOSWorks for SOLIDWORKS; bought by
+  Dassault in 2001.
+notes: Founding year and headquarters not stated in the cited release, so left out.
+confidence: medium
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-signs-agreement-acquire-srac
+    label: 'Dassault release 2001-03-30: agreement to acquire SRAC'
+as_of: '2026-11-22'

@@ -1,0 +1,23 @@
+<!-- The same two-link arm in MuJoCo MJCF. Example for the engineering map (CC0). -->
+<mujoco model="two_link_arm">
+  <option timestep="0.002" gravity="0 0 -9.81"/>
+  <worldbody>
+    <light pos="0 0 2"/>
+    <geom name="floor" type="plane" size="1 1 0.1"/>
+    <body name="base" pos="0 0 0.025">
+      <geom type="box" size="0.1 0.1 0.025" mass="2"/>
+      <body name="link1" pos="0 0 0.025">
+        <joint name="shoulder" type="hinge" axis="0 1 0" range="-1.57 1.57"/>
+        <geom type="capsule" fromto="0 0 0 0 0 0.3" size="0.02" mass="0.5"/>
+        <body name="link2" pos="0 0 0.3">
+          <joint name="elbow" type="hinge" axis="0 1 0" range="-2.5 2.5"/>
+          <geom type="capsule" fromto="0 0 0 0 0 0.25" size="0.015" mass="0.3"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor joint="shoulder" gear="20" ctrlrange="-1 1"/>
+    <motor joint="elbow" gear="10" ctrlrange="-1 1"/>
+  </actuator>
+</mujoco>

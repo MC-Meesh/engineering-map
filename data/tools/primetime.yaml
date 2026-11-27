@@ -1,0 +1,26 @@
+id: primetime
+type: tool
+name: Synopsys PrimeTime
+category: eda
+vendor: synopsys
+open_source: false
+status: active
+first_release: 1997
+stages:
+  - analysis
+competes_with:
+  - tempus
+website: https://www.synopsys.com/implementation-and-signoff/signoff/primetime.html
+summary: The reference static timing analysis signoff tool.
+plain: >-
+  Synopsys software that checks a chip design meets its timing, so signals arrive when they should,
+  before it is made.
+workflow: >-
+  After the chip's logic is built and placed, its list of connected gates (the netlist) and timing
+  data come here; PrimeTime checks every signal path is fast enough, and fixes go back to the layout
+  team before the chip is made.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.synopsys.com/implementation-and-signoff/signoff/primetime.html
+    label: official page

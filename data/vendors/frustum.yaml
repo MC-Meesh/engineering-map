@@ -1,0 +1,15 @@
+id: frustum
+type: vendor
+name: Frustum
+kind: company
+hq: US
+founded: 2012
+parent: ptc
+status: merged
+website: https://www.ptc.com/en/technologies/cad/generative-design
+summary: Generative design technology in Creo.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ptc.com/en/technologies/cad/generative-design
+    label: official page

@@ -1,0 +1,16 @@
+id: excellon
+type: format
+name: Excellon drill
+extensions:
+  - .drl
+  - .xln
+kind: ecad
+steward: de facto
+open_spec: true
+website: https://en.wikipedia.org/wiki/PCB_NC_formats
+summary: NC drill file that travels with Gerber layers.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/PCB_NC_formats
+    label: official page

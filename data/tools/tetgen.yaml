@@ -1,0 +1,53 @@
+id: tetgen
+type: tool
+name: TetGen
+category: meshing
+vendor: wias
+open_source: true
+license: AGPL-3.0
+status: active
+first_release: 2002
+stages:
+  - analysis
+formats:
+  reads:
+    - stl
+    - ply
+  writes:
+    - vtk-legacy
+competes_with:
+  - mmg
+website: https://wias-berlin.de/software/tetgen/
+summary: Delaunay tetrahedral mesh generator.
+plain: >-
+  Free software that fills a 3D shape with small four-sided cells (tetrahedra), producing a mesh
+  (the shape split into cells) for simulation.
+workflow: >-
+  A user gives TetGen a surface as an STL, PLY or .poly file; it fills the shape with tetrahedra and
+  writes .node and .ele lists or a VTK file, which a simulation program then uses to calculate on
+  the shape.
+native_files:
+  - ext: .node
+    what: 'Input or output: a list of nodes (points)'
+  - ext: .poly
+    what: 'Input: a piecewise linear complex (the boundary)'
+  - ext: .smesh
+    what: 'Input or output: a simple piecewise linear complex'
+  - ext: .ele
+    what: 'Input or output: a list of tetrahedra'
+  - ext: .face
+    what: 'Input or output: a list of triangular faces'
+confidence: medium
+as_of: '2026-11-22'
+notes: Competition with MMG is as benchmark peers among open-source tetrahedral meshers.
+sources:
+  - url: https://wias-berlin.de/software/tetgen/
+    label: official page
+  - url: https://arxiv.org/html/2409.05525
+    label: Tetrahedral meshing benchmark against TetGen, Gmsh, MMG3D and fTetWild
+  - url: https://wias-berlin.de/software/tetgen/fformats.html
+    label: 'native file format (TetGen manual: file formats)'
+  - url: https://wias-berlin.de/software/tetgen/1.5/doc/manual/manual006.html
+    label: 'TetGen manual: file formats'
+  - url: https://wias-berlin.de/software/tetgen/1.5/doc/manual/manual005.html
+    label: 'TetGen manual: command line switches'

@@ -1,0 +1,34 @@
+id: magics
+type: tool
+name: Materialise Magics
+category: cam
+vendor: materialise
+open_source: false
+status: active
+first_release: 1992
+stages:
+  - manufacturing
+formats:
+  reads:
+    - stl
+    - 3mf
+    - step
+  writes:
+    - stl
+    - 3mf
+competes_with:
+  - netfabb
+website: https://www.materialise.com/en/industrial/software/magics-data-build-preparation
+summary: 'Industrial build preparation: STL repair, support generation and nesting for AM.'
+plain: >-
+  Prepares 3D models for industrial 3D printing: repairing the model file, adding support structures
+  and packing many parts into one build.
+workflow: >-
+  A build engineer brings in parts as STL, 3MF or STEP, repairs them, adds supports and packs the
+  build platform here, and sends the prepared STL or 3MF files on to the industrial 3D printer's
+  software.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.materialise.com/en/industrial/software/magics-data-build-preparation
+    label: official page

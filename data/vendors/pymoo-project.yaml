@@ -1,0 +1,13 @@
+id: pymoo-project
+type: vendor
+name: pymoo project
+kind: project
+founded: 2019
+status: active
+website: https://pymoo.org/
+summary: Multi-objective optimization in Python.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://pymoo.org/
+    label: official page

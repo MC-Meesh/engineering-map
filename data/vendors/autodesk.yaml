@@ -1,0 +1,17 @@
+id: autodesk
+type: vendor
+name: Autodesk
+kind: company
+hq: US
+founded: 1982
+status: active
+website: https://www.autodesk.com/
+wikipedia: https://en.wikipedia.org/wiki/Autodesk
+summary: AutoCAD, Inventor, Fusion and Revit; mechanical, AEC and media design tools.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.autodesk.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Autodesk
+    label: Wikipedia

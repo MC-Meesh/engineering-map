@@ -1,0 +1,52 @@
+id: ansys-mechanical
+type: tool
+name: Ansys Mechanical
+category: cae-fea
+vendor: ansys
+open_source: false
+status: active
+first_release: 1971
+stages:
+  - analysis
+formats:
+  reads:
+    - ansys-cdb
+    - nastran-bdf
+    - abaqus-inp
+    - step
+    - parasolid-xt
+    - acis-sat
+  writes:
+    - ansys-cdb
+competes_with:
+  - abaqus
+  - simcenter-3d
+  - msc-nastran
+runs_on:
+  - ansys-workbench
+website: https://ansys.synopsys.com/products/structures/ansys-mechanical
+wikipedia: https://en.wikipedia.org/wiki/Ansys
+summary: >-
+  The Ansys structural environment (Workbench front end on the MAPDL solver); one of the most widely
+  used commercial FEA packages.
+plain: >-
+  Simulates how parts and structures respond to forces, so engineers can see stresses and find weak
+  spots before anything is built. One of the most widely used commercial tools of its kind.
+workflow: >-
+  An analyst brings in 3D design (CAD) geometry as STEP or Parasolid, or a ready mesh (the shape
+  split into small cells) from Nastran or Abaqus files, sets up and solves the structural simulation
+  here in Workbench, and reports stresses back to the designers.
+native_files:
+  - ext: .wbpj
+    what: Workbench project file, kept with a project folder
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://ansys.synopsys.com/products/structures/ansys-mechanical
+    label: verification source
+  - url: https://en.wikipedia.org/wiki/Ansys
+    label: Wikipedia
+  - url: https://ansyshelp.ansys.com/public/views/secured/corp/v251/en/wb2_help/wb2h_saving_managing_project_files.html
+    label: 'native file format (vendor help: saving project files)'
+  - url: https://ansys.synopsys.com/products/ansys-workbench
+    label: Ansys products are accessible through the Workbench environment (Ansys product page)

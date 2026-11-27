@@ -1,0 +1,144 @@
+---
+import Base from '../../layouts/Base.astro';
+import { formats, tools, taxonomy, toolById, formatsWithExamples } from '../../lib/data';
+const kindOrder = ['brep-exchange', 'native-cad', 'tessellated', 'scene', 'mesh', 'solver-input', 'results', 'systems', 'bim', 'ecad', 'ic', 'cam', 'robotics'];
+const kindLabel: Record<string, string> = {
+  'brep-exchange': 'Exact geometry', 'native-cad': 'Native CAD', tessellated: 'Tessellated', mesh: 'Mesh', 'solver-input': 'Solver input', results: 'Results', systems: 'Systems', bim: 'BIM', ecad: 'Electronics', ic: 'IC design', cam: 'Machining', robotics: 'Robotics', scene: 'Scene',
+};
+const withIo = tools.filter((t) => (t.formats?.reads?.length || 0) + (t.formats?.writes?.length || 0) > 0);
+const cats = taxonomy.categories.filter((c) => withIo.some((t) => t.category === c.id));
+const rows = kindOrder.flatMap((k) => formats.filter((f) => f.kind === k && f.readers.length + f.writers.length > 0).sort((a, b) => (b.readers.length + b.writers.length) - (a.readers.length + a.writers.length)));
+function cell(fid: string, cid: string) {
+  const ts = withIo.filter((t) => t.category === cid);
+  const r = ts.filter((t) => t.formats?.reads?.includes(fid)).length;
+  const w = ts.filter((t) => t.formats?.writes?.includes(fid)).length;
+  const any = ts.filter((t) => t.formats?.reads?.includes(fid) || t.formats?.writes?.includes(fid)).length;
+  return { r, w, any, of: ts.length };
+}
+const bin = (n: number) => (n === 0 ? 0 : n === 1 ? 1 : n <= 3 ? 2 : n <= 7 ? 3 : n <= 14 ? 4 : 5);
+// Widest-supported formats, for the lede
+const reach = rows.map((f) => ({ f, n: new Set([...f.readers, ...f.writers]).size, cats: cats.filter((c) => cell(f.id, c.id).any > 0).length })).sort((a, b) => b.cats - a.cats || b.n - a.n);
+const top = reach.slice(0, 3);
+// Per-category detail matrices
+const detail = cats.map((c) => {
+  const ts = withIo.filter((t) => t.category === c.id);
+  const fs = rows.filter((f) => ts.some((t) => t.formats?.reads?.includes(f.id) || t.formats?.writes?.includes(f.id)));
+  return { c, ts, fs };
+});
+---
+<Base title="Format interop matrix" section="formats" description="Which categories of engineering software read and write which file formats.">
+  <div class="page wide">
+    <header class="page-head">
+      <p class="crumbs"><a href="/formats/">Formats</a> / Interop matrix</p>
+      <h1>Format interop matrix</h1>
+      <p class="lede">Each cell counts the tools in a category that read or write a format. The formats that cross the most categories are {top.map((x, i) => <>{i > 0 && (i === top.length - 1 ? ' and ' : ', ')}<a href={`/formats/${x.f.id}/`}>{x.f.name}</a> ({x.cats})</>)}; most others live inside one corner of the industry.</p>
+      <p>{rows.filter((f) => formatsWithExamples.has(f.id)).length} of the {rows.length} formats here have <a href="/formats/examples/">example files</a> (marked <span class="exmark" aria-hidden="true">ex</span> below).</p>
+    </header>
+
+    <div class="legend" aria-hidden="true">
+      <span>Tools supporting the format</span>
+      {[1, 2, 3, 4, 5].map((b, i) => <span class="lg"><i class={`b${b}`}></i>{['1', '2 to 3', '4 to 7', '8 to 14', '15 or more'][i]}</span>)}
+    </div>
+
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <caption class="sr-only">Number of tools per category that read or write each format</caption>
+        <thead>
+          <tr>
+            <th scope="col" class="corner">Format</th>
+            {cats.map((c) => <th scope="col" class="colh"><a href={`/categories/${c.id}/`}><span class="sw" data-d={c.domain} aria-hidden="true"></span>{c.name}</a></th>)}
+            <th scope="col" class="colh total">All tools</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((f, i) => {
+            const newKind = i === 0 || rows[i - 1].kind !== f.kind;
+            const total = new Set([...f.readers, ...f.writers]).size;
+            return (
+              <tr class={newKind ? 'kind-start' : ''}>
+                <th scope="row"><a href={`/formats/${f.id}/`}>{f.name}</a>{formatsWithExamples.has(f.id) && <a class="exmark" href={`/formats/${f.id}/#examples`} title={`Example files for ${f.name}`}>ex</a>}{newKind && <span class="kind">{kindLabel[f.kind]}</span>}</th>
+                {cats.map((c) => {
+                  const x = cell(f.id, c.id);
+                  return x.any ? (
+                    <td class={`b${bin(x.any)}`} data-tip={`${f.name} in ${c.name}|${x.any} of ${x.of} tools with format data|${x.r} read, ${x.w} write`}>{x.any}</td>
+                  ) : <td class="b0"><span class="sr-only">0</span></td>;
+                })}
+                <td class="total num">{total}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+    <p class="footnote">Counts cover the major formats recorded per tool, not every import filter a product ships. A blank cell means no tool in the dataset records that pairing, which is not proof it is unsupported.</p>
+
+    <h2>Tool by tool</h2>
+    <p>The same data at full resolution, one category at a time. R means the tool reads the format, W that it writes it.</p>
+    {detail.map(({ c, ts, fs }) => (
+      <details class="cat-detail">
+        <summary><span class="sw" data-d={c.domain} aria-hidden="true"></span>{c.name} <span class="muted">{ts.length} tools, {fs.length} formats</span></summary>
+        <div class="matrix-wrap">
+          <table class="matrix small">
+            <thead><tr><th scope="col" class="corner">Tool</th>{fs.map((f) => <th scope="col" class="colh"><a href={`/formats/${f.id}/`}>{f.name}</a></th>)}</tr></thead>
+            <tbody>
+              {ts.map((t) => (
+                <tr>
+                  <th scope="row"><a href={`/tools/${t.id}/`}>{t.name}</a></th>
+                  {fs.map((f) => {
+                    const r = t.formats?.reads?.includes(f.id);
+                    const w = t.formats?.writes?.includes(f.id);
+                    const v = r && w ? 'RW' : r ? 'R' : w ? 'W' : '';
+                    return <td class={v ? `m-${v.toLowerCase()}` : 'b0'}>{v}</td>;
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </details>
+    ))}
+  </div>
+</Base>
+<script>
+  import '../../scripts/tips.ts';
+</script>
+<style>
+  .page.wide { max-width: 1400px; }
+  .exmark { font-family: var(--mono); font-size: 0.65rem; border: 1px solid var(--ink-3); border-radius: 2px; padding: 0 0.2rem; margin-left: 0.4rem; color: var(--ink-2); text-decoration: none; vertical-align: 0.1em; }
+  a.exmark:hover { border-color: var(--red); color: var(--red); }
+  .legend { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; font-size: var(--fs-0); color: var(--ink-2); margin: 0 0 1rem; }
+  .legend .lg { display: inline-flex; align-items: center; gap: 0.35rem; }
+  .legend i { display: inline-block; width: 14px; height: 14px; border-radius: 2px; }
+  .matrix-wrap { overflow-x: auto; border-top: 1px solid var(--ink); margin-bottom: 0.75rem; }
+  table.matrix { border-collapse: separate; border-spacing: 2px; font-size: 12px; }
+  .matrix th[scope='row'] { text-align: left; font-weight: 400; padding: 0 0.75rem 0 0; white-space: nowrap; position: sticky; left: 0; background: var(--paper); z-index: 1; }
+  .matrix .kind { display: block; font-size: 10px; color: var(--ink-2); }
+  .matrix tr.kind-start th[scope='row'], .matrix tr.kind-start td { border-top: 0; }
+  .matrix tr.kind-start > * { padding-top: 0.9rem; }
+  .matrix tr.kind-start td { background-clip: content-box; }
+  .matrix .corner { text-align: left; vertical-align: bottom; position: sticky; left: 0; background: var(--paper); z-index: 2; }
+  .matrix .colh { vertical-align: bottom; height: 185px; width: 34px; min-width: 34px; padding: 0 0 0.4rem; font-weight: 400; }
+  .matrix .colh a, .matrix .colh { writing-mode: vertical-rl; transform: rotate(180deg); text-align: left; white-space: nowrap; text-decoration: none; }
+  .matrix .colh .sw { margin: 0 0 0.4em 0; }
+  .matrix td { width: 34px; height: 26px; text-align: center; border-radius: 3px; font-variant-numeric: tabular-nums; }
+  .matrix.small td { width: 30px; height: 22px; font-size: 11px; }
+  .matrix td.total { color: var(--ink-2); padding-left: 0.5rem; }
+  .b0 { background: var(--rule-2); }
+  .b1, i.b1 { background: var(--seq-1); color: var(--ink); }
+  .b2, i.b2 { background: var(--seq-2); color: var(--ink); }
+  .b3, i.b3 { background: var(--seq-3); color: #0b0b0b; }
+  .b4, i.b4 { background: var(--seq-4); color: #fff; }
+  .b5, i.b5 { background: var(--seq-5); color: #fff; }
+  .m-r { background: var(--seq-2); color: var(--ink); }
+  .m-w { background: var(--sheet); outline: 1.5px solid var(--seq-4); outline-offset: -1.5px; color: var(--ink); }
+  .m-rw { background: var(--seq-4); color: #fff; }
+  .cat-detail { border-bottom: 1px solid var(--rule); padding: 0.6rem 0; }
+  .cat-detail summary { cursor: pointer; font-weight: 700; }
+  .cat-detail summary .muted { font-weight: 400; margin-left: 0.5rem; font-size: var(--fs-0); }
+  .cat-detail .matrix-wrap { margin-top: 0.75rem; }
+  @media (prefers-color-scheme: dark) {
+    .b3 { color: #fff; }
+    .b4, .b5 { color: #0b0b0b; }
+    .m-rw { color: #0b0b0b; }
+  }
+</style>

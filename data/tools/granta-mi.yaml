@@ -1,0 +1,37 @@
+id: granta-mi
+type: tool
+name: Ansys Granta MI
+category: sdm
+vendor: ansys
+origin: granta
+open_source: false
+status: active
+stages:
+  - design
+  - lifecycle
+website: https://www.ansys.com/products/materials/granta-mi
+summary: Enterprise materials data management feeding CAD and CAE.
+plain: >-
+  Keeps a company's approved material data in one place and feeds it to design and simulation tools,
+  so everyone uses the same material properties.
+workflow: >-
+  Materials experts load test results and approved properties into Granta MI's SQL database; design
+  (CAD) and simulation programs then pull the same values through its server, so every model in the
+  company uses one agreed set of material data.
+files_note: 'Has no file type of its own: materials data lives in Microsoft SQL Server or Azure SQL databases, shipped as SQL backups and reached through the Granta MI server software and its clients.'
+notes: >-
+  Granta Design, a 1994 Cambridge spin-out (Ashby, Cebon), was acquired by Ansys in early 2019.
+  Ansys is now part of Synopsys. The GRANTA MI product launch year was not found.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.enterprise.cam.ac.uk/news/spin-out-granta-design-acquired-by-ansys-uniting-pioneers-in-materials-software-and-engineering-simulation/
+    label: Cambridge Enterprise 2019-02-12 (Granta founded 1994, acquired by Ansys)
+  - url: >-
+      https://investors.ansys.com/news-releases/news-release-details/ansys-and-material-intelligence-leader-granta-design-sign
+    label: Ansys release 2019-01-22 (definitive agreement)
+  - url: https://www.ansys.com/products/materials/granta-mi
+    label: official page
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/Granta/v242/en/MI_Pro_Install/MI_Pro/mipro_install_deploy.html
+    label: 'Granta MI Pro install guide: deployment planning'

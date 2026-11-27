@@ -1,0 +1,17 @@
+id: bentley
+type: vendor
+name: Bentley Systems
+kind: company
+hq: US
+founded: 1984
+status: active
+website: https://www.bentley.com/
+wikipedia: https://en.wikipedia.org/wiki/Bentley_Systems
+summary: Infrastructure engineering software; MicroStation, STAAD, PLAXIS and the iTwin platform.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.bentley.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Bentley_Systems
+    label: Wikipedia

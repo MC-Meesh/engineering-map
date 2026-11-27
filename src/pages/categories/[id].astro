@@ -1,0 +1,95 @@
+---
+import Base from '../../layouts/Base.astro';
+import NodeLink from '../../components/NodeLink.astro';
+import { taxonomy, tools, vendorById, domainById, stageById, alternativesFor } from '../../lib/data';
+
+export function getStaticPaths() {
+  return taxonomy.categories.map((c) => ({ params: { id: c.id }, props: { c } }));
+}
+const { c } = Astro.props as { c: (typeof taxonomy.categories)[number] };
+const dom = domainById.get(c.domain)!;
+const ts = tools.filter((t) => t.category === c.id).sort((a, b) => (a.first_release ?? 9999) - (b.first_release ?? 9999));
+const owners = new Map<string, number>();
+for (const t of ts) owners.set(t.ultimateOwner, (owners.get(t.ultimateOwner) || 0) + 1);
+const ownerRows = [...owners.entries()].sort((a, b) => b[1] - a[1]);
+const shown = ownerRows.slice(0, 8);
+const other = ownerRows.slice(8).reduce((s, [, n]) => s + n, 0);
+const bars = other ? [...shown, ['__other', other] as [string, number]] : shown;
+const max = Math.max(...bars.map(([, n]) => n), 1);
+const oss = ts.filter((t) => t.open_source);
+const commercialWithAlts = ts.filter((t) => !t.open_source && alternativesFor(t.id).length);
+const barH = 26;
+const labelW = 270;
+const plotW = 420;
+---
+<Base title={c.name} description={c.blurb} section="categories">
+  <div class="page">
+    <header class="page-head">
+      <p class="crumbs"><a href="/categories/">Categories</a> / <span class="sw" data-d={c.domain} aria-hidden="true"></span>{dom.name}</p>
+      <h1>{c.name}</h1>
+      <p class="lede">{c.blurb}</p>
+      <p><a href={`/tools/?q=${encodeURIComponent(c.name)}`}>Filter the full tools table</a></p>
+    </header>
+
+    <div class="two-col">
+      <section>
+        <h2>Who owns this category</h2>
+        <p class="muted">Tools in the category by the group that owns them today, following acquisitions to the top.</p>
+        <svg class="bars" viewBox={`0 0 ${labelW + plotW + 40} ${bars.length * barH + 8}`} role="img" aria-label={`Tools per owner in ${c.name}`}>
+          {bars.map(([id, n], i) => {
+            const y = i * barH + 4;
+            const w = Math.max(8, (n / max) * plotW);
+            const name = id === '__other' ? `${ownerRows.length - 8} others` : vendorById.get(id)?.name ?? id;
+            return (
+              <g data-tip={`${name}|${n} of ${ts.length} tools`}>
+                <rect x="0" y={y - 2} width={labelW + plotW + 40} height={barH} fill="transparent" />
+                <text x={labelW - 10} y={y + barH / 2 + 2} text-anchor="end" class="bl">{name}</text>
+                <path d={`M${labelW} ${y + 5} h${w - 4} a4 4 0 0 1 4 4 v${barH - 18} a4 4 0 0 1 -4 4 h${-(w - 4)} z`} class={id === '__other' ? 'bo' : 'bf'} style={id === '__other' ? undefined : `fill: var(--d-${c.domain})`} />
+                <text x={labelW + w + 6} y={y + barH / 2 + 2} class="bv">{n}</text>
+              </g>
+            );
+          })}
+        </svg>
+      </section>
+      <section>
+        <h2>Open source here <span class="muted num">{oss.length}</span></h2>
+        {oss.length ? <ul class="node-list">{oss.map((t) => <li><NodeLink id={t.id} sub={t.license} /></li>)}</ul> : <p>No open-source tool in this category yet.</p>}
+        {commercialWithAlts.length > 0 && (
+          <>
+            <h3>Commercial tools with a named open alternative</h3>
+            <ul class="node-list">{commercialWithAlts.map((t) => <li><NodeLink id={t.id} sub={`vs ${alternativesFor(t.id).map((a) => a.name).join(', ')}`} /></li>)}</ul>
+          </>
+        )}
+      </section>
+    </div>
+
+    <h2>All {ts.length} tools, oldest first</h2>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th scope="col" class="n">First release</th><th scope="col">Tool</th><th scope="col">Vendor</th><th scope="col">Stages</th><th scope="col">Summary</th></tr></thead>
+        <tbody>
+          {ts.map((t) => (
+            <tr>
+              <td class="n">{t.first_release ?? ''}</td>
+              <td><NodeLink id={t.id} /></td>
+              <td><a href={`/vendors/${t.vendor}/`}>{vendorById.get(t.vendor)?.name}</a></td>
+              <td>{t.stages.map((s) => stageById.get(s)?.name).join(', ')}</td>
+              <td>{t.summary}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Base>
+<script>
+  import '../../scripts/tips.ts';
+</script>
+<style>
+  .bars { width: 100%; max-width: 690px; height: auto; font-family: var(--font); }
+  .bars .bl { font-size: 11px; fill: var(--ink); }
+  .bars .bv { font-size: 12px; fill: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .bars .bf { fill: var(--d-design); }
+  .bars .bo { fill: var(--ink-3); }
+  .bars g:hover .bf, .bars g:hover .bo { fill: var(--red); }
+</style>

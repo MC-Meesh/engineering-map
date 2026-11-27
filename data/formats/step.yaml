@@ -1,0 +1,22 @@
+id: step
+type: format
+name: STEP (ISO 10303)
+extensions:
+  - .step
+  - .stp
+  - .stpx
+kind: brep-exchange
+standard: ISO 10303-21 (AP203 AP214 AP242)
+steward: ISO TC 184/SC 4
+open_spec: true
+first_published: 1994
+website: https://www.iso.org/standard/66654.html
+wikipedia: https://en.wikipedia.org/wiki/ISO_10303
+summary: The neutral exchange standard for product data; AP242 carries B-rep geometry plus PMI.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.iso.org/standard/66654.html
+    label: official page
+  - url: https://en.wikipedia.org/wiki/ISO_10303
+    label: Wikipedia

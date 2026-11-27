@@ -1,0 +1,47 @@
+id: alibre-design
+type: tool
+name: Alibre Design
+category: cad
+vendor: alibre
+open_source: false
+status: active
+first_release: 1999
+stages:
+  - design
+built_on:
+  - acis
+  - d-cubed
+  - hoops-exchange
+formats:
+  reads:
+    - step
+    - iges
+    - acis-sat
+  writes:
+    - step
+    - iges
+    - stl
+    - acis-sat
+website: https://www.alibre.com/
+wikipedia: https://en.wikipedia.org/wiki/Alibre_Design
+summary: Low-cost parametric CAD for small shops.
+plain: >-
+  Affordable 3D design software for small workshops: you draw parts with dimensions that can be
+  changed later, and the model updates to match.
+workflow: >-
+  A small shop models parts and assemblies here, then exports STEP, IGES or SAT files to machining
+  (CAM) software and machinists, or STL files to the slicer software that prepares a 3D print.
+notes: >-
+  The version 28 component list names ACIS R2023, the D-Cubed 2D DCM and 3D DCM, HOOPS Exchange
+  2024.3 and HOOPS Visualize 2024.3.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.digitalengineering247.com/article/alibre-design-9-1-opening-up-3d-design
+    label: verification source
+  - url: https://www.alibre.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Alibre_Design
+    label: Wikipedia
+  - url: https://www.alibre.com/version28/
+    label: 'Alibre version 28 component list: ACIS, D-Cubed DCM, HOOPS'

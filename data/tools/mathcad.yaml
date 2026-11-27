@@ -1,0 +1,30 @@
+id: mathcad
+type: tool
+name: PTC Mathcad Prime
+category: systems-mbse
+vendor: ptc
+origin: mathsoft
+open_source: false
+status: active
+stages:
+  - analysis
+integrates_with:
+  - creo
+  - windchill
+aka:
+  - Mathcad
+website: https://www.ptc.com/en/products/mathcad
+summary: PTC's engineering calculation software, linked to Creo, Windchill and Excel and embedded in Creo as Creo Engineering Notebook.
+plain: >-
+  Software for writing engineering calculations as worksheets, with built-in links to Creo, Windchill
+  and Excel.
+notes: >-
+  Came to PTC with the 2006 Mathsoft deal. Sold stand-alone as Mathcad Prime and embedded in Creo as
+  Creo Engineering Notebook, whose worksheets are powered by Mathcad Prime.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ptc.com/en/products/mathcad
+    label: 'PTC Mathcad page: Creo, Windchill and Excel integrations; Creo Engineering Notebook'
+  - url: https://www.ptc.com/en/blogs/cad/a-quick-history-of-ptc-creo
+    label: 'PTC blog: Mathsoft (2006), Mathcad Prime and Creo Engineering Notebook'

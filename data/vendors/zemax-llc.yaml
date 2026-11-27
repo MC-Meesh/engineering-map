@@ -1,0 +1,15 @@
+id: zemax-llc
+type: vendor
+name: Zemax
+kind: company
+hq: US
+founded: 1990
+parent: ansys
+status: merged
+website: https://en.wikipedia.org/wiki/Zemax
+summary: OpticStudio optical design.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/Zemax
+    label: official page

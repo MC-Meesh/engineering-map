@@ -1,0 +1,17 @@
+id: inl
+type: vendor
+name: Idaho National Laboratory
+kind: institution
+hq: US
+founded: 1949
+status: active
+website: https://inl.gov/
+wikipedia: https://en.wikipedia.org/wiki/Idaho_National_Laboratory
+summary: US lab behind the MOOSE multiphysics framework.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://inl.gov/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Idaho_National_Laboratory
+    label: Wikipedia

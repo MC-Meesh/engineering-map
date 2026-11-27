@@ -1,0 +1,14 @@
+id: cyberbotics
+type: vendor
+name: Cyberbotics
+kind: company
+hq: CH
+founded: 1998
+status: active
+website: https://cyberbotics.com/
+summary: Webots robot simulator, open source since 2018.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://cyberbotics.com/
+    label: official page

@@ -1,0 +1,17 @@
+id: dspace
+type: vendor
+name: dSPACE
+kind: company
+hq: DE
+founded: 1988
+status: active
+website: https://www.dspace.com/
+wikipedia: https://en.wikipedia.org/wiki/DSPACE_GmbH
+summary: Hardware-in-the-loop and embedded code generation for automotive controls.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.dspace.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/DSPACE_GmbH
+    label: Wikipedia

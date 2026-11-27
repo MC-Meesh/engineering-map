@@ -1,0 +1,12 @@
+id: msc--e-xstream--2012
+type: acquisition
+acquirer: msc
+target: e-xstream
+completed: '2012'
+status: completed
+summary: Digimat material modeling.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://news.cision.com/hexagon/r/hexagon-acquires-vero-software,c9619016
+    label: source

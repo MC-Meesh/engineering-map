@@ -1,0 +1,12 @@
+id: bentley--seequent--2021
+type: acquisition
+acquirer: bentley
+target: seequent
+completed: '2021'
+status: completed
+value: about $1.05B
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.bentley.com/news/
+    label: source

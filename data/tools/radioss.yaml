@@ -1,0 +1,52 @@
+id: radioss
+type: tool
+name: Simcenter Radioss
+category: cae-fea
+vendor: altair
+open_source: false
+status: active
+first_release: 1986
+stages:
+  - analysis
+formats:
+  reads:
+    - lsdyna-k
+competes_with:
+  - ls-dyna
+  - esi-vps
+website: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/radioss/
+wikipedia: https://en.wikipedia.org/wiki/Radioss
+summary: >-
+  Explicit crash and impact solver (formerly Altair Radioss); its code base was open-sourced as
+  OpenRadioss in 2022 and withdrawn in 2026.
+plain: >-
+  Simulates crashes and impacts to show how structures crumple; its code was released as open source
+  in 2022 and withdrawn in 2026.
+workflow: >-
+  An analyst brings in a crash or impact model, often as an LS-DYNA keyword file from a
+  pre-processor, runs the crash simulation here in tiny time steps, and reviews how the structure
+  crumples in plots and animations.
+native_files:
+  - ext: .rad
+    what: 'Radioss input deck, ASCII: Starter (_0000) and Engine (_0001) files'
+  - ext: .h3d
+    what: 'Compressed binary model and results for HyperView'
+notes: >-
+  Originally developed by Mecalog (acquired by Altair in 2006). first_release 1986 is unconfirmed:
+  copies of Altair's 2006 release reportedly give Mecalog founded 1986 and Radioss first released
+  1987.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/radioss/
+    label: official page
+  - url: https://www.digitalengineering247.com/article/altair-engineering-to-acquire-mecalog/
+    label: 'Digital Engineering 2006-06-01: Altair to acquire Mecalog'
+  - url: https://en.wikipedia.org/wiki/Radioss
+    label: Wikipedia
+  - url: https://help.altair.com/hwsolvers/rad/topics/solvers/rad/file_ext_formats_rad_r.htm
+    label: 'Radioss help: file extensions and formats'
+  - url: https://help.altair.com/hwsolvers/rad/topics/solvers/rad/ls_dyna_keywords_r.htm
+    label: 'Radioss help: LS-DYNA input'

@@ -1,0 +1,17 @@
+id: pointwise-inc
+type: vendor
+name: Pointwise
+kind: company
+hq: US
+founded: 1994
+parent: cadence
+status: merged
+website: >-
+  https://www.cadence.com/en_US/home/tools/system-analysis/computational-fluid-dynamics/pointwise.html
+summary: CFD mesh generation.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.cadence.com/en_US/home/tools/system-analysis/computational-fluid-dynamics/pointwise.html
+    label: official page

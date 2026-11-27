@@ -1,0 +1,17 @@
+id: sandvik
+type: vendor
+name: Sandvik
+kind: company
+hq: SE
+founded: 1862
+status: active
+website: https://www.home.sandvik/
+wikipedia: https://en.wikipedia.org/wiki/Sandvik
+summary: Tooling maker that built a CAM software portfolio (Mastercam, GibbsCAM, Cimatron).
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.home.sandvik/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Sandvik
+    label: Wikipedia

@@ -1,0 +1,41 @@
+id: ls-dyna
+type: tool
+name: LS-DYNA
+category: cae-fea
+vendor: ansys
+origin: lstc
+open_source: false
+status: active
+first_release: 1987
+stages:
+  - analysis
+formats:
+  reads:
+    - lsdyna-k
+  writes:
+    - lsdyna-k
+competes_with:
+  - radioss
+  - esi-vps
+  - abaqus
+website: https://ansys.synopsys.com/products/structures/ansys-ls-dyna
+wikipedia: https://en.wikipedia.org/wiki/LS-DYNA
+summary: Explicit dynamics solver descended from LLNL DYNA3D; widely used for automotive crash.
+plain: Simulates very fast events such as car crashes and impacts, showing how structures crumple.
+workflow: >-
+  An analyst brings in a car or structure already split into small pieces in a preparation tool such
+  as ANSA or HyperMesh, saved as an LS-DYNA keyword file (.k), runs the crash or impact here, and
+  studies how it crumples in a results viewer such as META.
+native_files:
+  - ext: .k
+    what: Keyword input deck (also .key or .dyn)
+    format: lsdyna-k
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://ansys.synopsys.com/products/structures/ansys-ls-dyna
+    label: official page
+  - url: https://en.wikipedia.org/wiki/LS-DYNA
+    label: Wikipedia
+  - url: https://ansyshelp.ansys.com/public/views/secured/corp/v261/en/lsdyna_prepost/lspp_ug_pd-file.html
+    label: 'native file format (LS-PrePost documentation: file menu)'

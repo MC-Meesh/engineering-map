@@ -1,0 +1,39 @@
+id: ultrafluidx
+type: tool
+name: Simcenter Ultrafluid
+category: cfd
+vendor: altair
+origin: fluidyna
+open_source: false
+status: active
+first_release: 2016
+stages:
+  - analysis
+formats:
+  reads:
+    - stl
+competes_with:
+  - powerflow
+website: https://www.siemens.com/en-us/products/simcenter/fluids-thermal-simulation/ultrafluid/
+summary: >-
+  GPU lattice Boltzmann solver for external aerodynamics and aeroacoustics (formerly Altair
+  ultraFluidX).
+plain: Simulates airflow around vehicles and the noise it makes, on graphics processors.
+workflow: >-
+  An engineer brings in the vehicle shape as STL, simulates the airflow and wind noise on graphics
+  cards here, and passes the results back to the vehicle designers.
+native_files:
+  - ext: .xml
+    what: 'ultraFluidX solver input deck in XML'
+notes: first_release 2016 not confirmed by a primary source
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://news.siemens.com/en-gb/altair-acquires-fluidyna/
+    label: 'Altair release 2018-05-09: acquires FluiDyna'
+  - url: https://www.siemens.com/en-us/products/simcenter/fluids-thermal-simulation/ultrafluid/
+    label: official page
+  - url: https://help.altair.com/hwcfdsolvers/ufx/topics/solvers/ultraFluidX/simulation_parameters_r.htm
+    label: 'ultraFluidX help: simulation parameters (XML input deck, STL geometry example)'

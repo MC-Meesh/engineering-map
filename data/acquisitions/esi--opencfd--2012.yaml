@@ -1,0 +1,11 @@
+id: esi--opencfd--2012
+type: acquisition
+acquirer: esi
+target: opencfd
+completed: '2012'
+status: completed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.openfoam.com/
+    label: source

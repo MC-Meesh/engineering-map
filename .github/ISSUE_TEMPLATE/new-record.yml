@@ -1,0 +1,41 @@
+name: Suggest a tool, vendor, format or deal
+description: Something missing from the map.
+labels: [data, new-record]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of record
+      options:
+        - Tool or geometry kernel
+        - Vendor
+        - File format
+        - Acquisition
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What it is and how it connects
+      description: Who sells it, who first developed it, what it does, which formats it reads and writes, what it competes with.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Links that back up the details. Primary sources are best.
+    validations:
+      required: true
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Pull request
+      options:
+        - label: I am willing to open a pull request with the YAML file (see CONTRIBUTING.md).

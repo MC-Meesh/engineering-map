@@ -1,0 +1,29 @@
+id: xyce
+type: tool
+name: Xyce
+category: eda
+vendor: sandia
+open_source: true
+license: GPL-3.0
+status: active
+first_release: 1999
+stages:
+  - analysis
+formats:
+  reads:
+    - spice
+open_source_alternative_to:
+  - hspice
+  - spectre
+website: https://xyce.sandia.gov/
+summary: Massively parallel SPICE-compatible circuit simulator.
+plain: Free circuit simulator that runs across many processors and accepts SPICE-style circuits.
+workflow: >-
+  An engineer exports a circuit from schematic tools as a SPICE netlist (a text list of parts and
+  connections), simulates it here across many processors, and uses the results to check very large
+  circuits.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://xyce.sandia.gov/
+    label: official page

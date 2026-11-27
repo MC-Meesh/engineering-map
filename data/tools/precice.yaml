@@ -1,0 +1,39 @@
+id: precice
+type: tool
+name: preCICE
+category: multiphysics
+vendor: precice-project
+open_source: true
+license: LGPL-3.0
+status: active
+first_release: 2008
+stages:
+  - analysis
+integrates_with:
+  - openfoam-org
+  - openfoam-com
+  - calculix
+  - code-aster
+  - su2
+open_source_alternative_to:
+  - mpcci
+website: https://precice.org/
+summary: Open coupling library for partitioned multiphysics, with adapters for many open solvers.
+plain: >-
+  A free library that connects separate simulation programs so they can solve a combined problem
+  together, with ready adapters for many free simulation programs.
+workflow: >-
+  An analyst runs separate simulation programs such as OpenFOAM, CalculiX, code_aster or SU2 through
+  preCICE adapters, which exchange data between them as they run on one coupled problem.
+files_note: 'A programming library (C++ with C, Fortran and Python bindings) that solver programs call; data moves at run time over TCP/IP sockets or MPI, set up in an XML file, usually precice-config.xml.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://precice.org/
+    label: official page
+  - url: https://precice.org/docs/fundamentals/overview/
+    label: 'preCICE docs: overview (coupling library, bindings, adapters)'
+  - url: https://precice.org/docs/configuration/basics/communication/
+    label: 'preCICE docs: communication configuration (sockets, MPI ports)'
+  - url: https://precice.org/docs/configuration/basics/introduction/
+    label: 'preCICE docs: configuration introduction (precice-config.xml)'

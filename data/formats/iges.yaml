@@ -1,0 +1,20 @@
+id: iges
+type: format
+name: IGES
+extensions:
+  - .igs
+  - .iges
+kind: brep-exchange
+standard: ANSI US PRO/IPO-100
+steward: US Product Data Association (frozen)
+open_spec: true
+first_published: 1980
+website: https://en.wikipedia.org/wiki/IGES
+summary: >-
+  The original neutral CAD exchange format; frozen since 1996 but still everywhere, often as
+  surfaces only.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/IGES
+    label: official page

@@ -1,0 +1,21 @@
+id: brand-delmia
+type: brand
+name: DELMIA
+vendor: dassault
+website: https://www.3ds.com/products/delmia
+products:
+  - delmia
+  - delmia-apriso
+summary: >-
+  Dassault's manufacturing and operations brand: manufacturing engineering on 3DEXPERIENCE and
+  DELMIA Apriso operations management.
+notes: >-
+  The brand also covers DELMIA Quintiq, Ortems, DELMIAWorks, 3DLean and Augmented Experiences, which
+  have no records (supply chain and ERP sit outside this map).
+confidence: high
+sources:
+  - url: https://www.3ds.com/products/delmia
+    label: official brand page (a Dassault Systemes brand)
+  - url: https://www.3ds.com/about/company/history
+    label: Dassault company history (DELMIA brand created 2000)
+as_of: '2026-11-22'

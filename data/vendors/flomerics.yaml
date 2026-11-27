@@ -1,0 +1,20 @@
+id: flomerics
+type: vendor
+name: Flomerics
+kind: company
+hq: GB
+founded: 1988
+parent: mentor
+status: merged
+summary: FloTHERM and FloEFD electronics cooling CFD.
+notes: >-
+  Founded in late 1988 in Surrey, UK by former CHAM staff David Tatchell and Harvey Rosten. Bought
+  by Mentor Graphics in 2008; Mentor is now Siemens EDA.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/701811/000119312508190247/d10q.htm
+    label: Mentor Graphics 10-Q (quarter ended 2008-07-31)
+  - url: >-
+      https://blogs.sw.siemens.com/simulating-the-real-world/2013/11/14/happy-25th-birthday-flotherm/
+    label: 'Siemens blog: FloTHERM origins (1988)'

@@ -1,0 +1,42 @@
+id: e3-series
+type: tool
+name: E3.series
+category: eda
+vendor: zuken
+open_source: false
+status: active
+first_release: 1998
+stages:
+  - design
+  - manufacturing
+formats:
+  reads:
+    - dxf
+    - dwg
+  writes:
+    - dxf
+    - dwg
+    - step
+    - jt
+website: https://www.zuken.com/en/product/e3series/
+summary: Electrical and wire harness design.
+plain: >-
+  Software for designing electrical wiring and the cable bundles (harnesses) that connect equipment.
+workflow: >-
+  An engineer draws the electrical schematics and cable bundles here in an .e3s project, and passes
+  DXF or DWG drawings and STEP or JT 3D harness models to harness manufacturing and the mechanical
+  design team.
+native_files:
+  - ext: .e3s
+    what: 'single-user project file holding the entire E3.series project'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.zuken.com/en/product/e3series/
+    label: official page
+  - url: https://www.zuken.com/doc/e3/series/en/Content/reference/functions/Basic_Functionality/import.htm
+    label: 'Zuken E3.series help: File Import (DWG/DXF, DGN, images, EPLAN EXF, others)'
+  - url: https://www.zuken.com/doc/e3/series/en/Content/reference/functions/Basic_Functionality/export.htm
+    label: 'Zuken E3.series help: File Export (DXF/DWG, PDF, JT, STEP for 3D panels, VRML, SVG, XVL)'
+  - url: https://www.zuken.com/en/blog/working-remotely-using-e3-series/
+    label: 'Zuken blog: .e3s is the single-user project format'

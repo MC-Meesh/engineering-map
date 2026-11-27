@@ -1,0 +1,15 @@
+id: numeca
+type: vendor
+name: NUMECA International
+kind: company
+hq: BE
+founded: 1992
+parent: cadence
+status: merged
+website: https://www.cadence.com/en_US/home/tools/system-analysis/computational-fluid-dynamics.html
+summary: FINE turbomachinery and marine CFD; basis of Cadence Fidelity.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cadence.com/en_US/home/tools/system-analysis/computational-fluid-dynamics.html
+    label: official page

@@ -1,0 +1,68 @@
+id: inventor
+type: tool
+name: Autodesk Inventor
+category: cad
+vendor: autodesk
+open_source: false
+status: active
+first_release: 1999
+stages:
+  - design
+built_on:
+  - shapemanager
+formats:
+  reads:
+    - inventor-ipt
+    - step
+    - iges
+    - acis-sat
+    - dwg
+    - parasolid-xt
+  writes:
+    - inventor-ipt
+    - step
+    - iges
+    - acis-sat
+    - stl
+    - 3mf
+    - dwg
+integrates_with:
+  - fusion
+competes_with:
+  - solidworks
+  - solid-edge
+website: https://www.autodesk.com/products/inventor/overview
+wikipedia: https://en.wikipedia.org/wiki/Autodesk_Inventor
+summary: Autodesk's desktop parametric mechanical CAD.
+plain: >-
+  Autodesk's desktop 3D design software for mechanical parts and machines, where dimensions drive
+  the model and can be changed later.
+workflow: >-
+  An engineer models parts and assemblies here, keeps files in Vault, and exports STEP, IGES or DWG
+  files to suppliers and other CAD tools, or STL and 3MF files for 3D printing.
+native_files:
+  - ext: .ipt
+    what: Inventor part
+    format: inventor-ipt
+  - ext: .iam
+    what: Inventor assembly
+  - ext: .idw
+    what: Inventor drawing (drawings can also be saved as .dwg)
+  - ext: .ipn
+    what: Presentation file for exploded views and animations
+notes: >-
+  Inventor parts and assemblies can be sent to Fusion, where they are stored in a Fusion web client
+  project.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.autodesk.com/products/inventor/overview
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Autodesk_Inventor
+    label: Wikipedia
+  - url: https://help.autodesk.com/cloudhelp/2026/ENU/Inventor-Help/files/GUID-94B779C0-6B2B-499A-A4F9-2E4BAB49712F.htm
+    label: native file format (Autodesk Inventor help)
+  - url: https://www.sec.gov/Archives/edgar/data/769397/000119312503002078/d10k.htm
+    label: 'Autodesk FY2003 10-K: ShapeManager incorporated into Inventor Series'
+  - url: https://help.autodesk.com/cloudhelp/2025/ENU/Inventor-Help/files/GUID-C20AE9D3-DDC3-4BD9-82E9-32957507309C.htm
+    label: 'Inventor 2025 help: send Inventor parts and assemblies to Fusion'

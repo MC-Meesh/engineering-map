@@ -1,0 +1,47 @@
+id: openradioss
+type: tool
+name: OpenRadioss
+category: cae-fea
+vendor: altair
+open_source: true
+license: AGPL-3.0
+status: discontinued
+first_release: 2022
+stages:
+  - analysis
+built_on:
+  - radioss
+formats:
+  reads:
+    - lsdyna-k
+open_source_alternative_to:
+  - ls-dyna
+  - radioss
+website: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/radioss/rd/
+summary: >-
+  Open-source release of the Radioss explicit solver with LS-DYNA input support, withdrawn by
+  Siemens in 2026.
+plain: >-
+  The free, open-source edition of the Radioss crash and impact simulation program, which could read
+  LS-DYNA crash model files; Siemens withdrew it in 2026.
+workflow: >-
+  Analysts brought in crash models as LS-DYNA keyword files (a common text format for crash models)
+  and ran them here; since Siemens withdrew it in 2026, the community carries the code on as
+  OpenCourant.
+notes: >-
+  Siemens discontinued OpenRadioss on 2026-10-01, retiring the site and deleting the GitHub
+  repository; openradioss.org now redirects to a Simcenter Radioss R&D page describing a
+  members-only "Shared Source" program. The community fork OpenCourant (record opencourant), an
+  incubator project of the Rocky Enterprise Software Foundation, continues under AGPL-3.0 with full
+  history.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://opencourant.org/
+    label: 'OpenCourant site: OpenRadioss discontinued 2026-10-01'
+  - url: https://github.com/OpenCourant/OpenCourant
+    label: OpenCourant GitHub repo (AGPL-3.0)
+  - url: https://itsfoss.com/news/siemens-openradioss-fork/
+    label: It's FOSS 2026-10-05
+  - url: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/radioss/rd/
+    label: official page (Simcenter Radioss R&D)

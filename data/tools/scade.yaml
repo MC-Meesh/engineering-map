@@ -1,0 +1,32 @@
+id: scade
+type: tool
+name: Ansys SCADE
+category: robotics-controls
+vendor: ansys
+open_source: false
+status: active
+first_release: 1993
+stages:
+  - design
+  - test
+formats:
+  writes:
+    - fmu
+competes_with:
+  - simulink
+website: https://www.ansys.com/products/embedded-software/ansys-scade-suite
+summary: Qualified model-based code generation for safety-critical embedded software (avionics, rail).
+plain: >-
+  Turns diagrams of control software into program code for safety-critical computers in aircraft and
+  trains, using a code generator qualified (approved) under those industries' safety rules.
+workflow: >-
+  Engineers model the control software of an aircraft or train here, verify the model, generate
+  qualified code for the embedded computer, and can export an FMU (a packaged model another
+  simulator runs) to test it in system simulations.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ansys.com/products/embedded-software/ansys-scade-suite
+    label: official page
+  - url: https://ansys.synopsys.com/content/dam/product/embedded-software/ansys-scade-suite/ansys-scade-suite-2021-r2-datasheet.pdf
+    label: 'Ansys SCADE Suite 2021 R2 datasheet: FMU export (FMI 2.0 Model Exchange)'

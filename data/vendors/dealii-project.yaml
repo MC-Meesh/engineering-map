@@ -1,0 +1,13 @@
+id: dealii-project
+type: vendor
+name: deal.II authors
+kind: project
+founded: 1998
+status: active
+website: https://www.dealii.org/
+summary: Community behind the deal.II finite element library.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.dealii.org/
+    label: official page

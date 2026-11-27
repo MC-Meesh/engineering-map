@@ -1,0 +1,17 @@
+id: ptc--onshape-inc--2019
+type: acquisition
+acquirer: ptc
+target: onshape-inc
+completed: '2019-11-01'
+announced: '2019-10-23'
+status: completed
+value: about $470M net of cash acquired
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://en.wikipedia.org/wiki/Onshape
+    label: source
+  - url: https://www.ptc.com/en/news/2019/ptc-completes-acquisition-onshape
+    label: 'PTC release 2019-11-01: acquisition completed'
+  - url: https://www.ptc.com/en/news/2019/ptc-to-acquire-leading-saas-product-development-platform-provider-onshape
+    label: 'PTC release 2019-10-23: about $470M net of cash acquired'

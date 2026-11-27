@@ -1,0 +1,44 @@
+id: archicad
+type: tool
+name: Archicad
+category: cad
+vendor: graphisoft
+open_source: false
+status: active
+first_release: 1987
+stages:
+  - design
+formats:
+  reads:
+    - ifc
+    - dwg
+    - dxf
+  writes:
+    - ifc
+    - dwg
+    - dxf
+competes_with:
+  - revit
+website: https://graphisoft.com/solutions/archicad
+wikipedia: https://en.wikipedia.org/wiki/Archicad
+summary: Early BIM tool for architects, strong on openBIM and IFC.
+plain: >-
+  Software for architects to design buildings as 3D models that carry information about every
+  element (known as BIM), with strong support for sharing models through the open IFC format.
+workflow: >-
+  An architect models the building here, then shares it as IFC with structural, building services
+  and coordination tools, and as DWG or DXF with consultants who draft in 2D.
+native_files:
+  - ext: .pln
+    what: Solo project with model data and views
+  - ext: .pla
+    what: Archive project including library parts
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://graphisoft.com/solutions/archicad
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Archicad
+    label: Wikipedia
+  - url: https://help.graphisoft.com/AC/28/INT/_AC28_Help/120_Interoperability/120_Interoperability-3.htm
+    label: 'native file format (Graphisoft Archicad help: file types)'

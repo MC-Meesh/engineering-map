@@ -1,0 +1,11 @@
+id: synopsys--simpleware-ltd--2016
+type: acquisition
+acquirer: synopsys
+target: simpleware-ltd
+completed: '2016'
+status: completed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.synopsys.com/simpleware.html
+    label: source

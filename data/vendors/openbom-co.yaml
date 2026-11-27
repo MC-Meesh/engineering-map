@@ -1,0 +1,14 @@
+id: openbom-co
+type: vendor
+name: OpenBOM
+kind: company
+hq: US
+founded: 2015
+status: active
+website: https://www.openbom.com/
+summary: Cloud BOM and data management for hardware teams.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.openbom.com/
+    label: official page

@@ -1,0 +1,27 @@
+id: cognite-data-fusion
+type: tool
+name: Cognite Data Fusion
+category: digital-twin
+vendor: cognite
+open_source: false
+status: active
+first_release: 2018
+stages:
+  - lifecycle
+website: https://www.cognite.com/en/product/cognite_data_fusion_industrial_dataops_platform
+summary: Industrial data platform that contextualizes plant data into a knowledge graph.
+plain: >-
+  An industrial data platform that gathers data from a plant's many systems and links it together
+  into one connected map, so people can see how readings, equipment and documents relate.
+workflow: >-
+  Extractors stream readings, equipment data and documents in from plant and business systems;
+  Cognite links them into one graph, and engineers, apps and connected simulators use that connected
+  data.
+files_note: 'Works through APIs rather than files: extractors stream data in from industrial and business systems, and connectors sync data both ways with simulators and other tools.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.cognite.com/en/product/cognite_data_fusion_industrial_dataops_platform
+    label: official page
+  - url: https://docs.cognite.com/cdf/integration/
+    label: 'data access (Cognite documentation: integration)'

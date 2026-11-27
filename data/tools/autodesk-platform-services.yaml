@@ -1,0 +1,33 @@
+id: autodesk-platform-services
+type: tool
+name: Autodesk Platform Services
+category: plm-pdm
+vendor: autodesk
+open_source: false
+status: active
+stages:
+  - lifecycle
+aka:
+  - Autodesk Forge
+  - Forge
+website: https://aps.autodesk.com/
+summary: Autodesk's cloud development platform of web service APIs, formerly Forge; Autodesk also uses it to build its own industry clouds.
+plain: >-
+  Autodesk's set of online programming interfaces for reaching design data in its cloud; outside
+  developers and Autodesk's own products build on it.
+files_note: 'Works through web APIs, not files: the Data Management API reaches data in Fusion Team, BIM 360 Docs, Forma Data Management and the Object Storage Service.'
+notes: >-
+  The Forge brand became Autodesk Platform Services in late 2022 (announced at Autodesk University
+  2022), with the same APIs and services. Its Manufacturing Data Model API reads and writes Fusion
+  design data in the cloud.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://aps.autodesk.com/blog/what-autodesk-platform-services
+    label: 'APS blog 2022-12-15: APS (formerly Forge) is a set of web service APIs'
+  - url: https://aps.autodesk.com/blog/autodesk-forge-becoming-autodesk-platform-services
+    label: 'APS blog 2022-11-28: Forge renamed; used internally to build industry clouds'
+  - url: https://aps.autodesk.com/developer/overview/data-management-api
+    label: 'APS Data Management API: Fusion Team, BIM 360 Docs, Forma, OSS'
+  - url: https://aps.autodesk.com/en/docs/mfgdataapi/v3/developers_guide/overview/
+    label: 'APS Manufacturing Data Model API overview'

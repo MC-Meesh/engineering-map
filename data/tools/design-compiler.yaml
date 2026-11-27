@@ -1,0 +1,33 @@
+id: design-compiler
+type: tool
+name: Synopsys Design Compiler
+category: eda
+vendor: synopsys
+open_source: false
+status: active
+first_release: 1987
+stages:
+  - design
+formats:
+  reads:
+    - verilog
+  writes:
+    - verilog
+competes_with:
+  - genus
+  - yosys
+website: https://www.synopsys.com/implementation-and-signoff/rtl-synthesis-test/design-compiler-nxt.html
+summary: RTL logic synthesis; the tool that made RTL-based digital design mainstream.
+plain: >-
+  Turns a chip design written as code into a network of basic logic gates, a standard step in
+  digital chip design.
+workflow: >-
+  A chip designer hands over the design as Verilog code (text that describes the chip's circuits);
+  Design Compiler turns it into a gate-level netlist (a list of logic gates and the wires between
+  them, also in Verilog), which goes to layout tools that place and wire the gates.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.synopsys.com/implementation-and-signoff/rtl-synthesis-test/design-compiler-nxt.html
+    label: official page

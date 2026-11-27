@@ -1,0 +1,33 @@
+id: simlab
+type: tool
+name: Simcenter Simlab
+category: meshing
+vendor: altair
+open_source: false
+status: active
+stages:
+  - analysis
+built_on:
+  - parasolid
+website: https://www.siemens.com/en-us/products/simcenter/simulation-modeling-visualization/simlab/
+summary: >-
+  Process-oriented environment for structural, thermal, electromagnetic and fluid analysis with CAD
+  import, automated model setup and reusable workflows (formerly Altair SimLab).
+plain: >-
+  Sets up structural, heat, electromagnetic and flow simulations from imported 3D design (CAD)
+  models, using automated, reusable workflows.
+workflow: >-
+  An analyst imports 3D design models, sets up structural, heat, electromagnetic or flow models with
+  automated, reusable steps here, sends them to the calculation programs, and reviews the results.
+notes: >-
+  SimLab embeds Parasolid and runs Parasolid operations on geometry saved in its database; the help
+  does not say Parasolid is its only geometry engine.
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/simcenter/simulation-modeling-visualization/simlab/
+    label: official page
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://help.altair.com/simlab/help/en_us/topics/userinterface/parasolidtools.htm
+    label: 'Altair SimLab help: Parasolid CAD tools'
+as_of: '2026-11-22'

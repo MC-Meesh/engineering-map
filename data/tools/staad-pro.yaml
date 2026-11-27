@@ -1,0 +1,45 @@
+id: staad-pro
+type: tool
+name: STAAD.Pro
+category: cae-fea
+vendor: bentley
+open_source: false
+status: active
+first_release: 1980
+stages:
+  - analysis
+formats:
+  reads:
+    - dxf
+  writes:
+    - dxf
+competes_with:
+  - sap2000
+  - etabs
+website: https://www.bentley.com/software/staad/
+wikipedia: https://en.wikipedia.org/wiki/STAAD
+summary: Structural analysis and code checking for buildings and plants.
+plain: >-
+  Software that calculates the forces in building and industrial plant structures and checks them
+  against building codes and standards that set safe limits.
+workflow: >-
+  A structural engineer brings in the layout as DXF, models and analyzes the structure here, checks
+  it against the codes, and returns the results and DXF drawings to the design team.
+native_files:
+  - ext: .std
+    what: 'STAAD.Pro input file (model and commands)'
+  - ext: .anl
+    what: 'STAAD.Pro analysis results output'
+  - ext: .stz
+    what: 'STAAD.Pro project archive'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.bentley.com/software/staad/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/STAAD
+    label: Wikipedia
+  - url: https://docs.bentley.com/LiveContent/web/STAAD.Pro%20Help-v21/en/GUID-3305220A-D718-4173-B21D-27E2ED57C088.html
+    label: 'STAAD.Pro help: Import/Export tab (DXF, CIS/2, ADINA)'
+  - url: https://docs.bentley.com/LiveContent/web/STAAD.Pro%20Help-v2024/en/topics/Data_Files/c-stpst_SPRO_Archives.html
+    label: 'STAAD.Pro help: archives (.std, .anl, .stz)'

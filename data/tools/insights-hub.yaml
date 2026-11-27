@@ -1,0 +1,26 @@
+id: insights-hub
+type: tool
+name: Insights Hub
+category: digital-twin
+vendor: siemens
+open_source: false
+status: active
+first_release: 2016
+stages:
+  - lifecycle
+website: https://www.siemens.com/en-gb/products/insights-hub/
+summary: Siemens industrial IoT platform, formerly MindSphere.
+plain: >-
+  Siemens' online platform for collecting and using data from connected industrial machines;
+  formerly called MindSphere.
+workflow: >-
+  Connected machines upload time series, events and files through the MindConnect API; applications
+  then query the stored data to monitor equipment and plan maintenance.
+files_note: 'Works through APIs rather than files: agents upload time series, events and files through the MindConnect API, and applications query stored data through standard APIs.'
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-gb/products/insights-hub/
+    label: verification source
+  - url: https://documentation.mindsphere.io/MindSphere/apis/connectivity-mindconnect/api-mindconnect-overview.html
+    label: 'data access (Siemens documentation: MindConnect API)'

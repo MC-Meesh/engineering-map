@@ -1,0 +1,45 @@
+id: ansys-discovery
+type: tool
+name: Ansys Discovery
+category: cad
+vendor: ansys
+open_source: false
+status: active
+first_release: 2018
+stages:
+  - design
+  - analysis
+built_on:
+  - parasolid
+formats:
+  reads:
+    - step
+    - iges
+    - parasolid-xt
+  writes:
+    - step
+    - iges
+    - parasolid-xt
+website: https://ansys.synopsys.com/products/3d-design/ansys-discovery
+summary: Direct modeling with GPU-based live simulation for early design exploration.
+plain: >-
+  3D design software where you push and pull shapes directly and see quick simulation results update
+  live as you change them, for exploring ideas early in a design.
+workflow: >-
+  A designer opens or sketches geometry, pushes and pulls it while live simulation results update,
+  then exports STEP or Parasolid files to detailed CAD or passes promising shapes on to full Ansys
+  simulation.
+notes: >-
+  shares the SpaceClaim modeling engine; the 2025 R1 release notes say the SpaceClaim kernel moved
+  from ACIS to Parasolid (2024 R2 was the last ACIS release)
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://ansyshelp.ansys.com/public/views/secured/corp/v251/en/disco_unified_releasenotes/disco_changes.html
+    label: 'Ansys 2025 R1 Discovery release notes: kernel change'
+  - url: >-
+      https://ansys.synopsys.com/news-center/press-releases/02-13-18-ansys-discovery-live-enables-real-time-digital-exploration-for-every-engineer
+    label: 'Ansys press release 2018-02-13: Discovery Live launch'
+  - url: https://ansys.synopsys.com/products/3d-design/ansys-discovery
+    label: official page

@@ -1,0 +1,56 @@
+id: simscale-platform
+type: tool
+name: SimScale
+category: cfd
+vendor: simscale
+open_source: false
+status: active
+first_release: 2013
+stages:
+  - analysis
+built_on:
+  - openfoam-org
+  - code-aster
+  - parasolid
+formats:
+  reads:
+    - step
+    - stl
+website: https://www.simscale.com/
+wikipedia: https://en.wikipedia.org/wiki/SimScale
+summary: >-
+  Browser-based CFD, FEA and thermal simulation that runs open-source and in-house solvers in the
+  cloud.
+plain: >-
+  Runs fluid flow, structural and heat simulations in a web browser, with the computing done in the
+  cloud.
+workflow: >-
+  An engineer uploads 3D design files as STEP or STL in the browser, runs flow, structural or heat
+  simulations in the cloud using OpenFOAM, code_aster and in-house simulation programs, and views
+  the results online.
+notes: >-
+  Founded Nov 2012 in Munich; cloud platform launched Aug 2013. Uses OpenFOAM and Code_Aster plus
+  proprietary solvers (LBM, IBM). A staff forum post cited a modified OpenFOAM 2.3.1 with a newer
+  snappyHexMesh, so the OpenFOAM line is mixed and heavily customized. CalculiX appears only in
+  2017-era forum posts. Siemens lists SimScale as a Parasolid licensee for CAE and cloud
+  applications.
+files_note: Runs in the web browser with no installation; CAD files are uploaded into a project in its online Workbench, and the work stays in that project rather than in files you save.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.simscale.com/about-us/
+    label: SimScale about us timeline (launch Aug 2013)
+  - url: https://www.simscale.com/open-source-solver/
+    label: SimScale open source solver page
+  - url: https://www.simscale.com/docs/analysis-types/thermomechanical/
+    label: SimScale docs, Code_Aster based analysis
+  - url: https://www.simscale.com/
+    label: SimScale home page
+  - url: https://en.wikipedia.org/wiki/SimScale
+    label: Wikipedia
+  - url: https://www.simscale.com/product/
+    label: runs in the browser, no installation (SimScale product page)
+  - url: https://www.simscale.com/docs/cad-preparation/cad-upload/
+    label: CAD upload into a Workbench project (SimScale documentation)
+  - url: https://www.siemens.com/en-us/products/plm-components/parasolid/
+    label: 'Siemens Parasolid page: SimScale among CAE and cloud licensees'

@@ -1,0 +1,15 @@
+id: spatial
+type: vendor
+name: Spatial Corp
+kind: company
+hq: US
+founded: 1986
+parent: dassault
+status: active
+website: https://www.spatial.com/
+summary: Component vendor for 3D modeling (ACIS, CGM Modeler, InterOp, CGM meshing); a Dassault subsidiary.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.spatial.com/
+    label: official page

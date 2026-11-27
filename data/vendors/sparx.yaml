@@ -1,0 +1,14 @@
+id: sparx
+type: vendor
+name: Sparx Systems
+kind: company
+hq: AU
+founded: 1996
+status: active
+website: https://sparxsystems.com/
+summary: Enterprise Architect, a widely used UML and SysML modeling tool.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://sparxsystems.com/
+    label: official page

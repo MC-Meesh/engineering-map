@@ -1,0 +1,14 @@
+id: ccx-author
+type: vendor
+name: CalculiX authors (Dhondt, Wittig)
+kind: project
+hq: DE
+founded: 1998
+status: active
+website: http://www.calculix.de/
+summary: Authors of the CalculiX solver and pre/post-processor.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: http://www.calculix.de/
+    label: official page

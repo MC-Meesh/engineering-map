@@ -1,0 +1,17 @@
+id: sdformat
+type: format
+name: SDFormat
+extensions:
+  - .sdf
+  - .world
+kind: robotics
+steward: Open Robotics
+steward_vendor: open-robotics
+open_spec: true
+website: http://sdformat.org/
+summary: Gazebo world and robot description; richer than URDF (closed loops, worlds).
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: http://sdformat.org/
+    label: official page

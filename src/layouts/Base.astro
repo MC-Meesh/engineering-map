@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+import { stats } from '../lib/data';
+interface Props { title: string; description?: string; section?: string; bare?: boolean }
+const { title, description, section, bare = false } = Astro.props;
+const fullTitle = title === 'The engineering map' ? title : `${title} | The engineering map`;
+const desc = description ?? `A sourced, navigable graph of engineering software: ${stats.toolsAll} tools, ${stats.vendors} vendors, ${stats.formats} formats.`;
+const nav = [
+  ['map', '/', 'Map'],
+  ['ownership', '/vendors/tree/', 'Ownership'],
+  ['formats', '/formats/', 'Formats'],
+  ['tools', '/tools/', 'Tools'],
+  ['vendors', '/vendors/', 'Vendors'],
+  ['categories', '/categories/', 'Categories'],
+  ['workflow', '/workflow/', 'Workflow'],
+  ['acquisitions', '/acquisitions/', 'Acquisitions'],
+  ['about', '/about/', 'Method'],
+];
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:image" content={new URL('/og.png', Astro.site)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The engineering map: a network of engineering tools, kernels, vendors and file formats drawn on a drafting sheet." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#000000" />
+    <script is:inline>
+      // A theme picked with the header switch wins over the system setting (stored per browser).
+      // Dark by default, as on mchaseallen.com; a choice made with the switch is kept.
+      let t = null; try { t = localStorage.getItem('theme'); } catch (e) {}
+      document.documentElement.dataset.theme = t === 'light' ? 'light' : 'dark';
+    </script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body class={bare ? 'bare' : ''}>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="The engineering map, home">
+        <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 17 L11 5 L18 15 Z" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="4" cy="17" r="2.6" fill="currentColor"/><circle cx="11" cy="5" r="2.6" fill="var(--sheet)" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="15" r="2.6" fill="var(--red)"/></svg>
+        <span>The engineering map</span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Sections">
+        {nav.map(([id, href, label]) => <a href={href} aria-current={section === id ? 'page' : undefined}>{label}</a>)}
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch between light and dark" title="Light or dark">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.75a6.25 6.25 0 0 1 0 12.5z" fill="currentColor"/></svg>
+      </button>
+      <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    {!bare && (
+      <footer class="site-footer">
+        <p>Data as of {stats.as_of}. Every node lists its sources; see <a href="/about/">method and sources</a>. Built by <a href="https://www.mchaseallen.com">Chase Allen</a> and <a href="https://github.com/MC-Meesh/engineering-map/graphs/contributors">contributors</a>. <a href="https://github.com/MC-Meesh/engineering-map">Source and data on GitHub</a>: code MIT, data CC BY-SA 4.0.</p>
+      </footer>
+    )}
+    <script>
+      const header = document.querySelector('.site-header')!;
+      const menu = header.querySelector<HTMLButtonElement>('.menu-toggle')!;
+      menu.addEventListener('click', () => menu.setAttribute('aria-expanded', String(header.classList.toggle('open'))));
+      header.querySelector('.theme-toggle')!.addEventListener('click', () => {
+        const root = document.documentElement;
+        const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        root.dataset.theme = dark ? 'light' : 'dark';
+        try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+        // Canvas and WebGL views read the colours once; they redraw on this event.
+        window.dispatchEvent(new CustomEvent('themechange'));
+      });
+    </script>
+  </body>
+</html>

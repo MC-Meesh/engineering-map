@@ -1,0 +1,41 @@
+id: diana
+type: tool
+name: DIANA
+category: cae-fea
+vendor: dianafea
+open_source: false
+status: active
+first_release: 1972
+stages:
+  - analysis
+formats:
+  reads:
+    - step
+    - iges
+    - dwg
+    - dxf
+    - ifc
+    - nastran-bdf
+website: https://dianafea.com/
+summary: FEA specialized in concrete, masonry and geotechnics.
+plain: >-
+  Simulates how concrete, masonry and soil behave under load, for checking structures and ground
+  engineering work.
+workflow: >-
+  An engineer brings in the design as IFC, DWG, DXF, STEP, IGES or a Nastran mesh of small cells,
+  simulates how the concrete, masonry or soil behaves under load here, and reports the safety
+  assessment to the structural or geotechnical design team.
+native_files:
+  - ext: .dat
+    what: 'DIANA mesh data file (model export from DianaIE)'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://dianafea.com/
+    label: official page
+  - url: https://manuals.dianafea.com/d111/en/1569861-1569914-import-files.html
+    label: 'DIANA 11.1 manual: import files (STEP, IGES, AutoCAD, IFC)'
+  - url: https://manuals.dianafea.com/d111/en/1569861-1569892-export-models.html
+    label: 'DIANA 11.1 manual: export models (.dat mesh data file)'
+  - url: https://manuals.dianafea.com/d111/en/1569861-1570879-conversion-from-nastran-to-diana.html
+    label: 'DIANA 11.1 manual: conversion from Nastran to DIANA'

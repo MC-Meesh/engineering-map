@@ -1,0 +1,14 @@
+id: hbk
+type: vendor
+name: HBK (Hottinger Bruel and Kjaer)
+kind: company
+hq: DK
+founded: 2019
+status: active
+website: https://www.hbkworld.com/
+summary: Test and measurement; nCode durability software.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.hbkworld.com/
+    label: official page

@@ -1,0 +1,37 @@
+id: simpack
+type: tool
+name: Simpack
+category: cae-fea
+vendor: dassault
+origin: simpack-ag
+open_source: false
+status: active
+first_release: 1993
+stages:
+  - analysis
+formats:
+  reads:
+    - fmu
+  writes:
+    - fmu
+competes_with:
+  - adams
+  - recurdyn
+website: https://www.3ds.com/products/simulia/simpack
+summary: Multibody simulation strong in rail, wind turbines and drivetrains.
+plain: >-
+  Simulates how connected moving parts behave, especially in trains, wind turbines and drivetrains.
+workflow: >-
+  An engineer builds a multibody model of a train, wind turbine or drivetrain, simulates its motion
+  here, exchanges FMUs (packaged models) with control models, and passes loads to strength and
+  fatigue tools such as fe-safe.
+notes: >-
+  1993 is the founding year of INTEC GmbH (later SIMPACK), a DLR spin-off, not a documented first
+  release.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/products/simulia/simpack
+    label: official page
+  - url: https://itea4.org/organisation/5081-simpack-ag.html
+    label: 'ITEA profile: SIMPACK (former INTEC) founded 1993'

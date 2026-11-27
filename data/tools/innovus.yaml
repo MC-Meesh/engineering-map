@@ -1,0 +1,36 @@
+id: innovus
+type: tool
+name: Cadence Innovus
+category: eda
+vendor: cadence
+open_source: false
+status: active
+first_release: 2015
+stages:
+  - design
+formats:
+  reads:
+    - lef-def
+    - verilog
+  writes:
+    - lef-def
+    - gdsii
+competes_with:
+  - fusion-compiler
+  - openroad
+website: >-
+  https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/innovus-implementation-system.html
+summary: Digital place-and-route for advanced-node SoCs.
+plain: >-
+  Cadence software that places a chip's logic blocks and routes the wires between them, for advanced
+  chip designs.
+workflow: >-
+  A chip team hands over the list of logic gates from Genus as Verilog (text that describes the
+  chip's circuits), plus LEF/DEF files describing the building blocks; Innovus places them, draws
+  the wires, and writes a GDSII layout for final checks and the chip factory.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/innovus-implementation-system.html
+    label: official page

@@ -1,0 +1,17 @@
+id: kitware
+type: vendor
+name: Kitware
+kind: company
+hq: US
+founded: 1998
+status: active
+website: https://www.kitware.com/
+wikipedia: https://en.wikipedia.org/wiki/Kitware
+summary: Open-source scientific software company behind VTK, ParaView and CMake.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.kitware.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Kitware
+    label: Wikipedia

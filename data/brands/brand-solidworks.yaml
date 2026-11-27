@@ -1,0 +1,26 @@
+id: brand-solidworks
+type: brand
+name: SOLIDWORKS
+vendor: dassault
+website: https://www.solidworks.com/
+products:
+  - solidworks
+  - solidworks-simulation
+  - solidworks-flow
+  - solidworks-pdm
+summary: >-
+  Dassault's mainstream design brand: SOLIDWORKS CAD and the simulation, flow and data management
+  products sold with it.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.solidworks.com/
+    label: official brand site
+  - url: https://www.solidworks.com/product/solidworks-simulation
+    label: SOLIDWORKS Simulation
+  - url: https://www.solidworks.com/product/solidworks-flow-simulation
+    label: SOLIDWORKS Flow Simulation
+  - url: https://www.solidworks.com/product/solidworks-pdm
+    label: SOLIDWORKS PDM
+  - url: https://www.3ds.com/products/solidworks
+    label: Dassault SOLIDWORKS brand page

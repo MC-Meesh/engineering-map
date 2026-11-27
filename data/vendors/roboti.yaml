@@ -1,0 +1,15 @@
+id: roboti
+type: vendor
+name: Roboti LLC
+kind: company
+hq: US
+founded: 2015
+parent: google-deepmind
+status: merged
+website: https://mujoco.org/
+summary: Emo Todorov's company that sold MuJoCo licenses.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://mujoco.org/
+    label: official page

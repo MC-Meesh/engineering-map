@@ -1,0 +1,51 @@
+id: openfoam-org
+type: tool
+name: OpenFOAM (openfoam.org)
+category: cfd
+vendor: openfoam-foundation
+open_source: true
+license: GPL-3.0
+status: active
+first_release: 2004
+stages:
+  - analysis
+formats:
+  reads:
+    - openfoam-case
+    - stl
+    - fluent-cas
+    - gmsh-msh
+  writes:
+    - openfoam-case
+    - vtk-legacy
+    - ensight-gold
+competes_with:
+  - openfoam-com
+open_source_alternative_to:
+  - fluent
+  - star-ccm
+  - flow-3d
+  - cfx
+website: https://openfoam.org/
+wikipedia: https://en.wikipedia.org/wiki/OpenFOAM
+summary: The Foundation line of OpenFOAM; the dominant open-source CFD toolbox.
+plain: >-
+  Free software for simulating how air, water and other fluids flow, with each job set up as a
+  folder of text files; this is the OpenFOAM Foundation's version, the most used free tool of its
+  kind.
+workflow: >-
+  A user brings in STL surfaces or a mesh (the flow space split into small cells) from Gmsh, Fluent,
+  ANSA or Pointwise, runs the flow case here, and writes VTK or EnSight files for ParaView; SimScale
+  builds on it.
+confidence: medium
+as_of: '2026-11-21'
+notes: The FLOW-3D and CFX comparisons name OpenFOAM without the distribution; recorded on the Foundation line.
+sources:
+  - url: https://openfoam.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/OpenFOAM
+    label: Wikipedia
+  - url: https://agris.fao.org/search/en/records/65df84cc63b8185d9cad1c42
+    label: Fishway study comparing OpenFOAM and FLOW-3D
+  - url: https://arxiv.org/abs/2305.03840
+    label: Tidal turbine study comparing OpenFOAM and Ansys CFX

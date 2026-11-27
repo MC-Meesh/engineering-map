@@ -1,0 +1,20 @@
+id: fluent-cas
+type: format
+name: Fluent case/data
+extensions:
+  - .cas
+  - .dat
+  - .cas.h5
+  - .dat.h5
+  - .msh
+kind: solver-input
+steward: Ansys
+steward_vendor: ansys
+open_spec: false
+website: https://www.ansys.com/products/fluids/ansys-fluent
+summary: Fluent case and data files; the mesh variant is widely exported by meshers.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ansys.com/products/fluids/ansys-fluent
+    label: official page

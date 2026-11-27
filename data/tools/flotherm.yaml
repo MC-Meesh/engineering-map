@@ -1,0 +1,51 @@
+id: flotherm
+type: tool
+name: Simcenter Flotherm
+category: cfd
+vendor: siemens
+origin: flomerics
+open_source: false
+status: active
+first_release: 1989
+stages:
+  - analysis
+built_on:
+  - parasolid
+formats:
+  reads:
+    - nx-prt
+    - parasolid-xt
+    - jt
+  writes:
+    - fmu
+competes_with:
+  - icepak
+  - sixsigma-dc
+website: https://www.siemens.com/en-us/products/simcenter/fluids-thermal-simulation/flotherm/
+summary: Electronics cooling CFD from board to rack.
+plain: >-
+  Simulates how electronics heat up and how air carries the heat away, from a single circuit board
+  up to a whole rack.
+workflow: >-
+  An electronics engineer brings in the board, box or rack shape from NX, Parasolid or JT files,
+  simulates how heat and air move here, and sends the cooling design back to the designers, or
+  exports an FMU (a packaged model another simulator can run) for system simulation.
+notes: >-
+  Flomerics was founded in 1988 and development started on 1988-10-03; Flotherm launched in
+  September 1989. Siemens dates the product birthday to 1988. Parasolid 3D modeling covers the MCAD
+  Bridge geometry import and editing (since release 2304), not the solver.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/simcenter/fluids-thermal-simulation/flotherm/
+    label: official page
+  - url: https://www.microwavejournal.com/articles/5854-flomerics-reaches-20-year-mark
+    label: 'Microwave Journal: Flomerics 20 years (Flotherm launched September 1989)'
+  - url: https://blogs.sw.siemens.com/simcenter/?p=48839
+    label: 'Siemens blog: what''s new in Flotherm 2304 (MCAD Bridge import of NX, Parasolid, JT)'
+  - url: https://www.siemens.com/en-gb/products/simcenter/fluids-thermal-simulation/flotherm/
+    label: 'Siemens Simcenter Flotherm product page (BCI-ROM export as FMU)'
+  - url: https://blogs.sw.siemens.com/simcenter/whats-new-simcenter-flotherm-2504/
+    label: 'Siemens blog: what''s new in Flotherm 2504 (Pack models to FloXML, FMU)'
+  - url: https://blogs.sw.siemens.com/simcenter/whats-new-simcenter-flotherm-2304-simcenter-flotherm-xt-2304
+    label: 'Siemens blog: Flotherm 2304 MCAD Bridge gets Parasolid 3D modeling'

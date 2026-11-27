@@ -1,0 +1,14 @@
+id: zwsoft
+type: vendor
+name: ZWSOFT
+kind: company
+hq: CN
+founded: 1998
+status: active
+website: https://www.zwsoft.com/
+summary: Chinese CAD vendor; ZWCAD and ZW3D, with its own Overdrive kernel.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.zwsoft.com/
+    label: official page

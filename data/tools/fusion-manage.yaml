@@ -1,0 +1,54 @@
+id: fusion-manage
+type: tool
+name: Fusion Manage
+category: plm-pdm
+vendor: autodesk
+open_source: false
+status: active
+first_release: 2012
+stages:
+  - lifecycle
+formats:
+  reads:
+    - rhino-3dm
+    - catia-v5
+    - dwg
+    - dxf
+    - ifc
+    - iges
+    - inventor-ipt
+    - jt
+    - acis-sat
+    - solidworks-native
+    - step
+    - stl
+integrates_with:
+  - fusion
+  - inventor
+website: https://www.autodesk.com/products/fusion-manage/overview
+summary: >-
+  Autodesk cloud PLM, the renamed Fusion Lifecycle (launched as Autodesk PLM 360 in 2012); Upchain
+  is offered alongside it.
+plain: >-
+  Autodesk's online software for managing a product's records and processes, such as design changes,
+  formerly called Fusion Lifecycle.
+workflow: >-
+  Teams working in Fusion and Inventor send parts lists, change requests and project data to Fusion
+  Manage online, where change and release processes run before data goes to manufacturing and
+  suppliers.
+files_note: 'Has no file type of its own: a cloud PLM keeping items in workspaces; files are uploaded as item attachments, versioned by check-in, and shown in an embedded viewer for many 2D and 3D CAD types.'
+notes: >-
+  Lineage: Autodesk PLM 360 (Feb 2012) became Fusion Lifecycle, then Fusion 360 Manage, then Fusion
+  Manage. Upchain (acquired by Autodesk in 2021) is a separate data management product bundled with
+  some Fusion Manage offers, not the origin. A Datastay link could not be confirmed.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.digitalengineering247.com/article/autodesk-plm-360-goes-live/plm
+    label: 'Digital Engineering: Autodesk PLM 360 goes live 2012-02-29'
+  - url: https://www.autodesk.com/products/fusion-manage/overview
+    label: official page
+  - url: https://help.autodesk.com/cloudhelp/ENU/PLM-360-User/files/UG-ATTTAB-ATTACHMENTS.htm
+    label: 'Fusion Manage help: Attachments tab (viewable file types)'
+  - url: https://help.autodesk.com/cloudhelp/ENU/Fusion-Manage/files/MNG-CO-UPLOADATTACHMENTS.htm
+    label: 'Fusion Manage help: upload attachments'

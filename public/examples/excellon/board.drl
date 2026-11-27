@@ -1,0 +1,13 @@
+M48
+; Example for the engineering map (CC0)
+METRIC,TZ
+T1C1.600
+%
+G90
+G05
+T1
+X3.000Y3.000
+X27.000Y3.000
+X27.000Y17.000
+X3.000Y17.000
+M30

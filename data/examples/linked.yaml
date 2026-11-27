@@ -1,0 +1,134 @@
+# Linked examples: samples we point to but do not copy (proprietary natives, unclear or
+# copyleft terms, archives with executables, or too large). Hand-maintained.
+# Policy: docs/decisions/0005-format-examples.md. Checked 2026-11-21.
+examples:
+  - format: catia-v5
+    title: NIST PMI test models (CATIA V5 natives)
+    url: https://www.nist.gov/ctl/smart-connected-systems-division/smart-connected-manufacturing-systems-group/mbe-pmi-0
+    contains: CATPart test parts with semantic PMI from NIST's combined and fully toleranced test cases, in the FTC/CTC download (about 60 MB).
+    origin: third-party
+    license: US government work, usable without restriction; NIST asks for acknowledgement
+    attribution: NIST MBE PMI Validation and Conformance Testing project
+    note: Linked because the archive is far over our size budget.
+    as_of: '2026-11-21'
+  - format: creo-prt
+    title: NIST PMI test models (Creo natives)
+    url: https://www.nist.gov/ctl/smart-connected-systems-division/smart-connected-manufacturing-systems-group/mbe-pmi-0
+    contains: Creo native parts for the same NIST test cases; the smaller hole test set (about 6 MB) also has Creo models.
+    origin: third-party
+    license: US government work, usable without restriction; NIST asks for acknowledgement
+    attribution: NIST MBE PMI Validation and Conformance Testing project
+    as_of: '2026-11-21'
+  - format: nx-prt
+    title: NIST PMI test models (NX natives)
+    url: https://www.nist.gov/ctl/smart-connected-systems-division/smart-connected-manufacturing-systems-group/mbe-pmi-0
+    contains: Siemens NX parts with PMI for the NIST test cases.
+    origin: third-party
+    license: US government work, usable without restriction; NIST asks for acknowledgement
+    attribution: NIST MBE PMI Validation and Conformance Testing project
+    note: The newer STC set targets a recent NX release, so older versions may not open it.
+    as_of: '2026-11-21'
+  - format: solidworks-native
+    title: NIST PMI test models (SOLIDWORKS natives)
+    url: https://www.nist.gov/ctl/smart-connected-systems-division/smart-connected-manufacturing-systems-group/mbe-pmi-0
+    contains: SLDPRT test parts with model-based definition annotations, for SOLIDWORKS 2018 or newer.
+    origin: third-party
+    license: US government work, usable without restriction; NIST asks for acknowledgement
+    attribution: NIST MBE PMI Validation and Conformance Testing project
+    as_of: '2026-11-21'
+  - format: inventor-ipt
+    title: NIST PMI test models (Inventor natives)
+    url: https://www.nist.gov/ctl/smart-connected-systems-division/smart-connected-manufacturing-systems-group/mbe-pmi-0
+    contains: Autodesk Inventor .ipt test parts with PMI in the NIST FTC/CTC download.
+    origin: third-party
+    license: US government work, usable without restriction; NIST asks for acknowledgement
+    attribution: NIST MBE PMI Validation and Conformance Testing project
+    as_of: '2026-11-21'
+  - format: dwg
+    title: Autodesk AutoCAD sample files
+    url: https://www.autodesk.com/autocad-samples
+    contains: Autodesk's own DWG sample drawings (architectural, mechanical and others) for AutoCAD 2010 and later.
+    origin: vendor-sample
+    license: Autodesk terms of use; not for redistribution
+    attribution: Autodesk, Inc.
+    note: The page blocks automated checks; confirmed from Autodesk's domain in search results only.
+    as_of: '2026-11-21'
+  - format: abaqus-odb
+    title: ODBPlotter example output databases (Mendeley Data)
+    url: https://data.mendeley.com/datasets/g9m574ybt8/2
+    contains: Three Abaqus output databases of increasing mesh size, made to benchmark an ODB plotting tool.
+    origin: third-party
+    license: MIT, as declared on the dataset record
+    attribution: Clark Hensley, Logan Betts, Chuyen Nguyen and Matthew Priddy (DOI 10.17632/g9m574ybt8.2)
+    note: Linked because the record does not state file sizes or the Abaqus release.
+    as_of: '2026-11-21'
+  - format: edif
+    title: SpyDrNet example netlists (4-bit adder and others)
+    url: https://github.com/byuccl/spydrnet/tree/master/example_netlists/EDIF_netlists
+    contains: Zipped EDIF netlists, starting with a small 4-bit adder.
+    origin: third-party
+    license: BSD-3-Clause
+    attribution: BYU Configurable Computing Lab (byuccl/spydrnet)
+    note: Linked because the files ship as zip archives and several were produced by vendor synthesis tools.
+    as_of: '2026-11-21'
+  - format: ensight-gold
+    title: PyVista vtk-data EnSight.zip
+    url: https://github.com/pyvista/vtk-data/tree/master/Data
+    contains: An EnSight Gold case with mesh and element fields (velocity, pressure, turbulence) from a small OpenFOAM run.
+    origin: third-party
+    license: Apache-2.0 (repository license)
+    attribution: PyVista developers (pyvista/vtk-data)
+    note: Linked because it is an archive with no per-file license.
+    as_of: '2026-11-21'
+  - format: fmu
+    title: Modelica Reference FMUs (BouncingBall and others)
+    url: https://github.com/modelica/Reference-FMUs/releases
+    contains: FMI 1.0, 2.0 and 3.0 builds of small reference models such as BouncingBall, Dahlquist and VanDerPol.
+    origin: third-party
+    license: BSD-2-Clause
+    attribution: Modelica Association Project FMI
+    note: Linked because FMUs contain native binaries, which we do not serve.
+    as_of: '2026-11-21'
+  - format: ssp
+    title: Ecos quarter-truck.ssp
+    url: https://github.com/Ecos-platform/ecos/tree/master/data/ssp/1.0/quarter_truck
+    contains: An SSP 1.0 package whose SystemStructure.ssd wires chassis, wheel and ground FMUs.
+    origin: third-party
+    license: MIT
+    attribution: NTNU Aalesund (Ecos-platform/ecos); FMUs from the Open Simulation Platform demo cases
+    note: Linked because the bundled FMUs carry native binaries.
+    as_of: '2026-11-21'
+  - format: odbpp
+    title: Ansys example data, Powerboard_SiC_MOSFET.tgz
+    url: https://github.com/ansys/example-data/tree/main/pyaedt/edb
+    contains: A compressed ODB++ job of a SiC MOSFET power board (matrix, steps, copper, component and EDA layers).
+    origin: third-party
+    license: MIT
+    attribution: ANSYS, Inc. (ansys/example-data)
+    note: Siemens publishes no public ODB++ sample; linked because it is a packed archive.
+    as_of: '2026-11-21'
+  - format: ipc-2581
+    title: IPC-2581 Rev C test cases
+    url: https://www.ipc2581.com/ipc-2581-revc-test-cases/
+    contains: Full Rev C board exports published by the IPC-2581 Consortium, starting with a network card from Cadence Allegro.
+    origin: vendor-sample
+    license: No license stated by the consortium; not for redistribution
+    attribution: IPC-2581 Consortium
+    as_of: '2026-11-21'
+  - format: openfoam-case
+    title: OpenFOAM lid-driven cavity tutorial
+    url: https://github.com/OpenFOAM/OpenFOAM-dev/tree/master/tutorials/incompressibleFluid/cavity
+    contains: The classic cavity case directory with its 0, constant and system folders.
+    origin: third-party
+    license: GPL-3.0-or-later
+    attribution: The OpenFOAM Foundation
+    note: Linked because GPL files stay out of our CC0 and permissive set.
+    as_of: '2026-11-21'
+  - format: step-nc
+    title: STEP Tools AP-238 sample toolpaths
+    url: https://steptools.com/stds/stepnc/ap238_samples/index.html
+    contains: AP-238 toolpath files grouped by 2D machining, multi-axis, surfacing and projection.
+    origin: vendor-sample
+    license: Copyright STEP Tools, Inc.; not for redistribution
+    attribution: STEP Tools, Inc.
+    as_of: '2026-11-21'

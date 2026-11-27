@@ -1,0 +1,12 @@
+id: google-deepmind--roboti--2021
+type: acquisition
+acquirer: google-deepmind
+target: roboti
+completed: '2021'
+status: completed
+summary: MuJoCo was made free and then open source.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://deepmind.google/
+    label: source

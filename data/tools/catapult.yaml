@@ -1,0 +1,27 @@
+id: catapult
+type: tool
+name: Catapult High-Level Synthesis
+category: eda
+vendor: siemens
+open_source: false
+status: active
+stages:
+  - design
+  - test
+website: https://www.siemens.com/en-us/products/ic/catapult-high-level-synthesis/
+summary: >-
+  High-level synthesis from C++ or SystemC to RTL for ASIC and FPGA targets, with a matching
+  verification platform for the C-level models.
+plain: >-
+  Turns chip designs written as C++ or SystemC programs into the hardware description code (RTL)
+  that chip and FPGA (reprogrammable chip) tools build from, and checks the result behaves the same
+  as the program.
+workflow: >-
+  A designer writes the hardware algorithm in C++ or SystemC, Catapult turns it into RTL
+  (lower-level hardware code) and checks it matches the C model, and the RTL goes on to logic
+  synthesis, which builds the gates for a custom chip or an FPGA.
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/ic/catapult-high-level-synthesis/
+    label: official page (Catapult HLS and verification)
+as_of: '2026-11-22'

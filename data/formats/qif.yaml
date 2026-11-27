@@ -1,0 +1,17 @@
+id: qif
+type: format
+name: QIF
+extensions:
+  - .qif
+kind: cam
+standard: ISO 23952
+steward: Digital Metrology Standards Consortium
+open_spec: true
+first_published: 2014
+website: https://qifstandards.org/
+summary: Quality information framework for metrology plans and results tied to the model.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://qifstandards.org/
+    label: official page

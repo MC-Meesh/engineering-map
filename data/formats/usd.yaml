@@ -1,0 +1,22 @@
+id: usd
+type: format
+name: OpenUSD
+extensions:
+  - .usd
+  - .usda
+  - .usdc
+  - .usdz
+kind: scene
+steward: Alliance for OpenUSD (originated at Pixar)
+open_spec: true
+first_published: 2016
+website: https://openusd.org/
+wikipedia: https://en.wikipedia.org/wiki/Universal_Scene_Description
+summary: Composable scene description; the backbone of Omniverse and industrial digital twin pipelines.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://openusd.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Universal_Scene_Description
+    label: Wikipedia

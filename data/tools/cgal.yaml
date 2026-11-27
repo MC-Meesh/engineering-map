@@ -1,0 +1,47 @@
+id: cgal
+type: tool
+name: CGAL
+category: geometry-kernel
+vendor: cgal-project
+open_source: true
+license: GPL-3.0-or-later / LGPL-3.0-or-later (commercial via GeometryFactory)
+status: active
+first_release: 1998
+stages:
+  - design
+  - analysis
+formats:
+  reads:
+    - stl
+    - ply
+    - obj
+  writes:
+    - stl
+    - ply
+    - obj
+website: https://www.cgal.org/
+wikipedia: https://en.wikipedia.org/wiki/CGAL
+summary: >-
+  Robust computational geometry (exact predicates, Nef polyhedra, meshing); OpenSCAD's original
+  boolean engine.
+plain: >-
+  A free programming library of reliable geometry math that other software builds in, for example to
+  combine solid shapes or build meshes (surfaces made of small triangles). OpenSCAD originally used
+  it to combine solids.
+workflow: >-
+  Developers call CGAL from their own programs, such as OpenSCAD's original solid combiner, to
+  combine shapes or build triangle meshes, reading and writing STL, PLY and OBJ files.
+notes: >-
+  Kernel and support libraries are LGPL, most algorithm packages GPL (since 4.0). Project began in
+  1996 as an EU Esprit consortium; CGAL 1.0 shipped April 1998.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cgal.org/license.html
+    label: CGAL license page
+  - url: https://www.cgal.org/1998/04/01/cgal-10
+    label: CGAL 1.0 release announcement, 1998-04-01
+  - url: https://www.cgal.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/CGAL
+    label: Wikipedia

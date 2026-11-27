@@ -1,0 +1,16 @@
+id: xdmf
+type: format
+name: XDMF
+extensions:
+  - .xdmf
+  - .xmf
+kind: results
+steward: XDMF project
+open_spec: true
+website: https://www.xdmf.org/
+summary: XML descriptor pointing to heavy data in HDF5; common for parallel FEM output.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.xdmf.org/
+    label: official page

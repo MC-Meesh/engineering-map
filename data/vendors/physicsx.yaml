@@ -1,0 +1,14 @@
+id: physicsx
+type: vendor
+name: PhysicsX
+kind: company
+hq: GB
+founded: 2019
+status: active
+website: https://www.physicsx.ai/
+summary: London startup building AI models and tooling for physics-heavy engineering.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.physicsx.ai/
+    label: official page

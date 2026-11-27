@@ -1,0 +1,15 @@
+id: vero
+type: vendor
+name: Vero Software
+kind: company
+hq: GB
+founded: 1980
+parent: hexagon
+status: merged
+website: https://hexagon.com/products/product-groups/computer-aided-manufacturing-cad-cam-software
+summary: CAM brands Edgecam, WorkNC, Radan.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://hexagon.com/products/product-groups/computer-aided-manufacturing-cad-cam-software
+    label: official page

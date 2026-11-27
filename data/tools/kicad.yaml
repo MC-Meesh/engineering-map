@@ -1,0 +1,69 @@
+id: kicad
+type: tool
+name: KiCad
+category: eda
+vendor: kicad-project
+open_source: true
+license: GPL-3.0
+status: active
+first_release: 1992
+stages:
+  - design
+  - manufacturing
+built_on:
+  - occt
+  - ngspice
+formats:
+  reads:
+    - kicad-pcb
+  writes:
+    - kicad-pcb
+    - gerber
+    - excellon
+    - ipc-2581
+    - odbpp
+    - step
+    - spice
+open_source_alternative_to:
+  - altium-designer
+  - orcad
+  - eagle
+website: https://www.kicad.org/
+wikipedia: https://en.wikipedia.org/wiki/KiCad
+summary: Leading open-source schematic and PCB suite, used for professional multilayer boards.
+plain: >-
+  Free software for designing electronic circuit boards, from the circuit diagram to the files a
+  factory needs to make the board.
+workflow: >-
+  An engineer draws the schematic, can simulate it with ngspice, lays out the board here, then sends
+  Gerber, drill, ODB++ or IPC-2581 files to the board maker and STEP models to mechanical 3D design
+  tools.
+native_files:
+  - ext: .kicad_pro
+    what: Project file with settings shared by schematic and board
+  - ext: .kicad_sch
+    what: Schematic file
+  - ext: .kicad_pcb
+    what: Board layout file
+    format: kicad-pcb
+notes: >-
+  ODB++ export arrived in KiCad 9 (2025) and IPC-2581 in KiCad 8 Open CASCADE is used to load and
+  save 3D model formats such as STEP, not for board geometry, and kicad-cli can export a board as an
+  OCCT-native BREP file. Schematic simulation runs through the ngspice library.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://kicad.org/blog/2025/02/Version-9.0.0-Released
+    label: 'KiCad 9.0.0 release notes 2025-02-20: ODB++ export'
+  - url: https://www.kicad.org/blog/2024/02/Version-8.0.0-Released/
+    label: 'KiCad 8.0.0 release notes 2024-02: IPC-2581 export'
+  - url: https://www.kicad.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/KiCad
+    label: Wikipedia
+  - url: https://docs.kicad.org/9.0/en/kicad/kicad.html
+    label: native file format (KiCad documentation)
+  - url: https://dev-docs.kicad.org/en/build/getting-started/
+    label: 'KiCad dev docs: OCC for STEP, ngspice for simulation'
+  - url: https://docs.kicad.org/9.0/en/cli/cli.html
+    label: 'KiCad 9.0 CLI docs: PCB BREP (OCCT) export'

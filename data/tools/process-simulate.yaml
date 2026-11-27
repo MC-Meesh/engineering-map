@@ -1,0 +1,32 @@
+id: process-simulate
+type: tool
+name: Tecnomatix Process Simulate
+category: robotics-controls
+vendor: siemens
+open_source: false
+status: active
+first_release: 2005
+stages:
+  - manufacturing
+formats:
+  reads:
+    - jt
+integrates_with:
+  - teamcenter
+competes_with:
+  - delmia
+  - robodk
+website: https://www.siemens.com/en-us/products/tecnomatix/process-simulate-software/
+summary: Robotic and human workcell simulation and offline programming.
+plain: >-
+  Simulates robots and people working in a factory cell, and creates robot programs on the computer
+  instead of on the shop floor.
+workflow: >-
+  A manufacturing engineer brings in product and equipment models as JT, often from Teamcenter,
+  simulates the robots and workers in the cell here, and sends the robot programs to the shop floor.
+notes: first_release 2005 has no source.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/tecnomatix/process-simulate-software/
+    label: official page

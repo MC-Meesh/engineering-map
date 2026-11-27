@@ -1,0 +1,40 @@
+id: cst-studio
+type: tool
+name: CST Studio Suite
+category: multiphysics
+vendor: dassault
+origin: cst
+open_source: false
+status: active
+first_release: 1998
+stages:
+  - analysis
+competes_with:
+  - hfss
+  - feko
+built_on:
+  - acis
+website: https://www.3ds.com/products/simulia/cst-studio-suite
+summary: 3D electromagnetic simulation across time and frequency domains.
+plain: >-
+  Simulates electromagnetic fields in 3D, such as how radio waves and signals behave around and
+  inside a design.
+workflow: >-
+  An engineer brings in the geometry of an antenna, connector or device, simulates its
+  electromagnetic fields here, and passes the performance results back to the designers or on to
+  circuit and system tools.
+notes: >-
+  first_release is the lineage start: CST Microwave Studio, the first product, dates from 1998 per
+  secondary sources (Physics World); the official page says the products were combined into CST
+  Studio Suite in 2006.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-completes-cst-acquisition
+    label: 'Dassault release 2016-10-03: completes CST acquisition'
+  - url: https://www.3ds.com/products/simulia/cst-studio-suite
+    label: official page
+  - url: https://www.3ds.com/products/simulia/cst-studio-suite/electromagnetic-design-environment
+    label: 'CST Studio Suite design environment page (ACIS-based modeling)'
+  - url: https://blog.spatial.com/hubfs/_CASESTUDIES/CST_2016_CS.pdf
+    label: 'Spatial case study: ACIS licensed to CST since 1994'

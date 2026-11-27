@@ -1,0 +1,44 @@
+id: teamcenter
+type: tool
+name: Teamcenter
+category: plm-pdm
+vendor: siemens
+origin: ugs
+open_source: false
+status: active
+first_release: 1996
+stages:
+  - lifecycle
+formats:
+  reads:
+    - jt
+    - step
+  writes:
+    - jt
+    - step
+integrates_with:
+  - nx
+  - solid-edge
+competes_with:
+  - windchill
+  - enovia
+website: https://www.siemens.com/en-us/products/teamcenter/
+wikipedia: https://en.wikipedia.org/wiki/Teamcenter
+summary: Enterprise PLM; system of record for many automotive and aerospace programs.
+plain: >-
+  Siemens' enterprise software for keeping the official record of a product's designs, parts and
+  changes; many car and aircraft programs rely on it.
+workflow: >-
+  Designers in Designcenter and Solid Edge check parts and assemblies into Teamcenter, which keeps
+  the official record and JT files; manufacturing tools such as Process Simulate and suppliers work
+  from released data.
+files_note: 'Keeps objects and their properties in a central database; the files themselves move through its File Management System (FMS) and are kept in storage volumes on file servers.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/teamcenter/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Teamcenter
+    label: Wikipedia
+  - url: https://blogs.sw.siemens.com/teamcenter/store-and-forward-with-file-management-system-fms/
+    label: 'Siemens Teamcenter blog: Store and Forward with File Management System (FMS)'

@@ -1,0 +1,61 @@
+id: comsol-multiphysics
+type: tool
+name: COMSOL Multiphysics
+category: multiphysics
+vendor: comsol
+open_source: false
+status: active
+first_release: 1998
+stages:
+  - analysis
+  - optimization
+built_on:
+  - parasolid
+  - d-cubed
+formats:
+  reads:
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+    - stl
+    - nastran-bdf
+  writes:
+    - stl
+competes_with:
+  - ansys-mechanical
+  - elmer
+website: https://www.comsol.com/comsol-multiphysics
+wikipedia: https://en.wikipedia.org/wiki/COMSOL_Multiphysics
+summary: >-
+  Equation-based FEM where any physics can be coupled; strong in academia, MEMS, electrochemistry
+  and acoustics.
+plain: >-
+  Simulation software that can combine any physical effects in one model, such as heat, electricity,
+  structures, sound and chemistry. Popular in universities and for tiny devices, batteries and
+  acoustics.
+workflow: >-
+  A researcher imports 3D designs (CAD) as STEP, Parasolid or SAT, or a ready Nastran mesh of small
+  cells, couples the physics in one .mph model, solves and studies it here, and exports results or
+  STL shapes back to the design team.
+native_files:
+  - ext: .mph
+    what: COMSOL model file
+notes: >-
+  COMSOL has its own geometry kernel; with the CAD Import Module installed, imported CAD is
+  converted to Parasolid geometry by a Parasolid engine included with the module.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.comsol.com/comsol-multiphysics
+    label: official page
+  - url: https://en.wikipedia.org/wiki/COMSOL_Multiphysics
+    label: Wikipedia
+  - url: https://doc.comsol.com/6.4/doc/com.comsol.help.comsol/comsol_ref_environment.18.15.html
+    label: native file format (vendor documentation)
+  - url: https://resources.sw.siemens.com/en-US/case-study-comsol/
+    label: 'Siemens case study: COMSOL chooses Parasolid and D-Cubed'
+  - url: https://www.comsol.com/cad-import-module
+    label: 'COMSOL CAD Import Module: imported CAD converted to Parasolid'
+  - url: https://doc.comsol.com/6.4/doc/com.comsol.help.cad/cad_introduction.2.03.html
+    label: 'COMSOL 6.4 documentation: COMSOL uses its own kernel'

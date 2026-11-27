@@ -1,0 +1,17 @@
+id: mcneel
+type: vendor
+name: Robert McNeel & Associates
+kind: company
+hq: US
+founded: 1980
+status: active
+website: https://www.rhino3d.com/
+wikipedia: https://en.wikipedia.org/wiki/Robert_McNeel_%26_Associates
+summary: Rhino and Grasshopper; publishes the openNURBS toolkit.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.rhino3d.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Robert_McNeel_%26_Associates
+    label: Wikipedia

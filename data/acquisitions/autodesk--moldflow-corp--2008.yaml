@@ -1,0 +1,14 @@
+id: autodesk--moldflow-corp--2008
+type: acquisition
+acquirer: autodesk
+target: moldflow-corp
+completed: '2008-06-25'
+status: completed
+value: $22 per share, about $297M less Moldflow's cash
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.autodesk.com/products/moldflow/overview
+    label: source
+  - url: https://www.sec.gov/Archives/edgar/data/769397/000119312508140379/dex993.htm
+    label: 'Autodesk press release 2008-06-25 (8-K Ex. 99.3): acquisition completed, $22 per share'

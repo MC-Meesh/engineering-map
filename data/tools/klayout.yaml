@@ -1,0 +1,49 @@
+id: klayout
+type: tool
+name: KLayout
+category: eda
+vendor: klayout-project
+open_source: true
+license: GPL-3.0
+status: active
+first_release: 2006
+stages:
+  - design
+  - test
+formats:
+  reads:
+    - gdsii
+    - oasis
+    - lef-def
+  writes:
+    - gdsii
+    - oasis
+open_source_alternative_to:
+  - calibre
+  - virtuoso
+website: https://www.klayout.de/
+summary: Fast GDS and OASIS viewer and editor with scripted DRC and LVS.
+plain: >-
+  Free software for viewing and editing chip layouts quickly, with scripted checks against
+  manufacturing rules.
+workflow: >-
+  A chip designer opens GDSII, OASIS or LEF/DEF layouts from layout and place-and-route tools here,
+  inspects and edits them, runs scripted rule checks, and saves GDS or OASIS for the next step or
+  the chip factory.
+native_files:
+  - ext: .gds
+    what: Layout saved as GDS2
+    format: gdsii
+  - ext: .lyp
+    what: Layer properties file (XML)
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.klayout.de/
+    label: official page
+  - url: https://www.klayout.de/doc/manual/save.html
+    label: 'native file format (KLayout manual: saving layouts)'
+  - url: https://www.klayout.de/doc/programming/database_api.html
+    label: layout file example (KLayout API documentation)
+  - url: https://www.klayout.de/lyp_format.html
+    label: layer properties file format (KLayout documentation)

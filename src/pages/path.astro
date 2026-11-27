@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="How are these related?" section="map" description="Pick any two tools, kernels, companies or formats and see how they connect, step by step in plain sentences.">
+  <article class="page">
+    <header class="page-head">
+      <h1>How are these related?</h1>
+      <p class="lede">Pick any two products, kernels, companies or file formats. The page finds the shortest meaningful connections between them, preferring ownership, brands, platforms and what things are built on over chains of competitors, and says each step in a plain sentence.</p>
+    </header>
+    <form id="pf" class="pf" autocomplete="off">
+      <label>First <input id="pa" name="a" list="pf-names" placeholder="CATIA" required /></label>
+      <label>Second <input id="pb" name="b" list="pf-names" placeholder="ENOVIA" required /></label>
+      <button class="btn" type="submit">Show how</button>
+      <datalist id="pf-names"></datalist>
+    </form>
+    <p class="footnote">Try <a href="/path/?a=catia&b=enovia">CATIA and ENOVIA</a>, <a href="/path/?a=solidworks&b=parasolid">SOLIDWORKS and Parasolid</a>, <a href="/path/?a=fluent&b=ansys-workbench">Fluent and Ansys Workbench</a> or <a href="/path/?a=onshape&b=ptc">Onshape and PTC</a>.</p>
+    <div id="pf-out" aria-live="polite"></div>
+  </article>
+</Base>
+<style>
+  .pf { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: end; margin: 1rem 0 0.4rem; }
+  .pf label { display: grid; gap: 0.2rem; font-size: 0.85rem; color: var(--ink-2); flex: 1 1 14rem; min-width: 0; }
+  .pf input { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--ink); padding: 0.45rem 0.55rem; min-width: 0; }
+  #pf-out :global(.path) { border: 1px solid var(--ink); padding: 0.8rem 1rem; margin: 1rem 0; }
+  #pf-out :global(.path h2) { margin: 0 0 0.4rem; font-size: 1rem; }
+  #pf-out :global(.path ol) { margin: 0.3rem 0 0; padding-left: 1.2rem; }
+  #pf-out :global(.path li) { margin: 0.3rem 0; }
+  #pf-out :global(.pf-h) { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-2); margin: 1.2rem 0 0.3rem; }
+  #pf-out :global(.clar) { border-left: 2px solid var(--ink); padding-left: 0.6rem; }
+  #pf-out :global(.kinds) { color: var(--ink-2); font-size: 0.85rem; }
+</style>
+<script>
+  import { buildGraph, findPaths, kindPhrase, edgeSentence } from '../lib/relate';
+  import type { RNode, REdge } from '../lib/relate';
+
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+  const out = document.getElementById('pf-out')!;
+  const ia = document.getElementById('pa') as HTMLInputElement, ib = document.getElementById('pb') as HTMLInputElement;
+  (async () => {
+  const data = await (await fetch('/data/graph.json')).json();
+  const short = (s?: string) => s?.replace(/ Digital Industries Software$/, '');
+  const vname = new Map<string, string>(data.nodes.filter((n: any) => n.t === 'vendor').map((n: any) => [n.id, n.l]));
+  const clar = new Map<string, string[]>(data.nodes.filter((n: any) => n.cl).map((n: any) => [n.id, n.cl]));
+  const nodes: RNode[] = data.nodes.filter((n: any) => n.t !== 'stage').map((n: any) => ({ id: n.id, name: n.l, type: n.t, category: n.c, vendor: n.v, aka: n.a, summary: n.sm, owner: short(vname.get(n.u ?? n.v ?? '')) }));
+  const edges: REdge[] = data.edges.map((e: any[]) => { const ov = e[2] === 'competes-with' ? data.overlap?.[`${e[0]}|${e[1]}`] : undefined; return { s: e[0], t: e[1], kind: e[2], date: e[3], status: e[4], ...(ov ? { same: ov[0], since: ov[1] } : {}) }; });
+  const brands = Object.entries(data.brands ?? {}).map(([id, b]: [string, any]) => ({ id, name: b[0], products: b[2] }));
+  const g = buildGraph(nodes.map((n) => ({ ...n, name: n.aka?.length && !n.name.includes(n.aka[0]) ? `${n.name} (formerly ${n.aka[0]})` : n.name })), edges, brands);
+  const byName = new Map<string, string>();
+  for (const n of g.nodes.values()) byName.set(n.name.toLowerCase(), n.id);
+  for (const n of nodes) { byName.set(n.name.toLowerCase(), n.id); for (const x of n.aka ?? []) if (!byName.has(x.toLowerCase())) byName.set(x.toLowerCase(), n.id); }
+  // Who owns each end today, with the deals in between, and the brand it is sold under.
+  function context(id: string): string[] {
+    const n = g.nodes.get(id)!;
+    const out: string[] = [];
+    let v = n.type === 'vendor' ? id : n.vendor;
+    while (v && data.owner?.[v]) {
+      const p = data.owner[v][0];
+      const deal = edges.find((e) => e.kind === 'acquired-by' && e.s === v && e.t === p);
+      out.push(deal ? edgeSentence(deal, g.nodes) : `${vname.get(v) ?? v} is part of ${vname.get(p) ?? p}.`);
+      v = p;
+    }
+    const b = brands.find((x) => x.products.includes(id));
+    const bl = b?.name.toLowerCase(), nl = n.name.toLowerCase();
+    const bOwner = b ? short(vname.get((data.brands[b.id] ?? [])[1])) : undefined;
+    if (b && bl !== nl) out.push(nl.startsWith(bl + ' ') ? `${b.name} is a ${bOwner ?? ''} brand.`.replace('a  brand', 'a brand') : `${n.name} is sold under the ${b.name} brand${bOwner ? ` (${bOwner})` : ''}.`);
+    return out;
+  }
+  document.getElementById('pf-names')!.innerHTML = nodes.sort((x, y) => x.name.localeCompare(y.name)).map((n) => `<option value="${esc(n.name)}"></option>`).join('');
+  const resolve = (v: string) => (g.nodes.has(v) ? v : byName.get(v.trim().toLowerCase()));
+  // Near matches for a name or id that is not in the list.
+  const suggest = (v: string) => {
+    const q = v.trim().toLowerCase().replace(/[-_]/g, ' ');
+    if (!q) return [];
+    return nodes.filter((n) => n.name.toLowerCase().includes(q) || n.id.replace(/-/g, ' ').includes(q) || (n.aka ?? []).some((x) => x.toLowerCase().includes(q))).slice(0, 5);
+  };
+  const href = (id: string) => { const n = g.nodes.get(id); if (!n || n.type === 'brand') return ''; return n.type === 'vendor' ? `/vendors/${id}/` : n.type === 'format' ? `/formats/${id}/` : `/tools/${id}/`; };
+  const link = (id: string) => { const n = g.nodes.get(id)!; const h = href(id); return h ? `<a href="${h}">${esc(n.name)}</a>` : esc(n.name); };
+  const KIND_WORD: Record<string, string> = { 'made-by': 'maker', brand: 'brand', 'built-on': 'built on', 'runs-on': 'platform', 'plugin-of': 'plugin', 'integrates-with': 'works with', 'competes-with': 'competitors or overlaps', 'alternative-to': 'alternative', 'acquired-by': 'acquisition', 'subsidiary-of': 'parent company', 'originated-at': 'origin', reads: 'file format', writes: 'file format', 'stewarded-by': 'format owner' };
+
+  function show(a: string, b: string) {
+    const A = resolve(a), B = resolve(b);
+    if (!A || !B) {
+      const miss = (!A ? [a] : []).concat(!B ? [b] : []);
+      out.innerHTML = miss.map((m) => { const sg = suggest(m); return `<p>No match for <b>${esc(m)}</b>.${sg.length ? ` Did you mean ${sg.map((n) => `<button type="button" class="linkish" data-pick="${n.id}" data-for="${m === a && !A ? 'a' : 'b'}">${esc(n.name)}</button>`).join(', ')}?` : ' Start typing a name and pick it from the list.'}</p>`; }).join('');
+      return;
+    }
+    ia.value = g.nodes.get(A)!.name; ib.value = g.nodes.get(B)!.name;
+    const na = g.nodes.get(A)!, nb = g.nodes.get(B)!;
+    // One line per end: what it is, its kernel, its platform.
+    const describe = (id: string) => {
+      const n = g.nodes.get(id)!;
+      const parts = [`${link(id)}${n.aka?.length && !n.name.includes(n.aka[0]) ? ` (formerly ${esc(n.aka[0])})` : ''} is ${esc(kindPhrase(n))}`];
+      const mk = (n.type === 'tool' || n.type === 'kernel') && n.vendor ? short(vname.get(n.vendor)) : '';
+      if (mk) parts[0] += `, made by ${esc(mk)}`;
+      if (n.type === 'vendor' && n.summary) parts[0] += ` (${esc(n.summary.replace(/\.$/, ''))})`;
+      const on = edges.filter((e) => e.s === id && e.kind === 'built-on').map((e) => g.nodes.get(e.t)!).filter(Boolean);
+      const by = (k: RNode) => `${link(k.id)}${k.owner && k.owner !== n.owner ? ` (owned by ${esc(k.owner)})` : ''}`;
+      const geo = on.filter((k) => k.category === 'geometry-kernel' && !(/constraint solver/i.test(k.summary ?? '') && !/kernel/i.test(k.summary ?? ''))), rest = on.filter((k) => !geo.includes(k));
+      if (geo.length) parts.push(`its geometry kernel (the engine that builds its shapes) is ${geo.map(by).join(' and ')}`);
+      if (rest.length) parts.push(`it is ${geo.length ? 'also ' : ''}built on ${rest.map(by).join(' and ')}`);
+      const pl = edges.filter((e) => e.s === id && e.kind === 'runs-on').map((e) => e.t);
+      if (pl.length) parts.push(`it can run on the ${pl.map(link).join(' and ')}`);
+      const hosts = edges.filter((e) => e.t === id && e.kind === 'runs-on').map((e) => e.s);
+      if (hosts.length) parts.push(`applications that run on it include ${hosts.slice(0, 5).map(link).join(', ')}`);
+      return parts.join('; ') + '.' + (clar.get(id) ?? []).map((c) => `</p><p class="clar"><b>Often confused:</b> ${esc(c)}`).join('');
+    };
+    const ctx = [...new Set([...context(A), ...context(B)])];
+    const intro = `<h2 class="pf-h">In short</h2><p>${describe(A)}</p><p>${describe(B)}</p>${ctx.length ? `<p class="footnote">Ownership and brands: ${ctx.map(esc).join(' ')}</p>` : ''}<h2 class="pf-h">Step by step</h2>`;
+    if (A === B) { out.innerHTML = intro; return; }
+    const paths = findPaths(g, A, B, 3);
+    if (!paths.length) { out.innerHTML = intro + `<p>No recorded connection between them yet.</p>`; return; }
+    out.innerHTML = intro + paths.map((p, i) => `<section class="path"><h2>${i === 0 ? 'Closest connection' : `Another way, ${i + 1}`}</h2><p class="kinds">${p.steps.length} step${p.steps.length > 1 ? 's' : ''} through ${[...new Set(p.steps.map((s) => KIND_WORD[s.edge.kind] ?? s.edge.kind))].join(', ')}</p><ol>${p.steps.map((s) => `<li>${esc(s.sentence)}</li>`).join('')}</ol><p class="footnote">Through ${p.nodes.map(link).join(', ')}</p></section>`).join('') + `<p class="footnote">Each sentence restates one sourced link; open any page for its sources.</p>`;
+  }
+  out.addEventListener('click', (ev) => {
+    const t = (ev.target as HTMLElement).closest<HTMLElement>('[data-pick]');
+    if (!t) return;
+    const n = g.nodes.get(t.dataset.pick!)!;
+    (t.dataset.for === 'a' ? ia : ib).value = n.name;
+    const A = resolve(ia.value), B = resolve(ib.value);
+    if (A && B) history.replaceState(null, '', `/path/?a=${A}&b=${B}`);
+    show(ia.value, ib.value);
+  });
+  const q = new URLSearchParams(location.search);
+  if (q.get('a')) { const A = resolve(q.get('a')!); if (A) ia.value = g.nodes.get(A)!.name; }
+  if (q.get('a') && q.get('b')) show(q.get('a')!, q.get('b')!);
+  document.getElementById('pf')!.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const A = resolve(ia.value), B = resolve(ib.value);
+    if (A && B) history.replaceState(null, '', `/path/?a=${A}&b=${B}`);
+    show(ia.value, ib.value);
+  });
+  })();
+</script>

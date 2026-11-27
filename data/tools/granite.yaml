@@ -1,0 +1,48 @@
+id: granite
+type: tool
+name: Granite
+category: geometry-kernel
+vendor: ptc
+open_source: false
+status: active
+first_release: 2001
+stages:
+  - design
+website: https://support.ptc.com/products/granite/gplugs
+summary: >-
+  PTC's kernel behind Creo (formerly Pro/ENGINEER); licensed to third parties as the Creo Granite
+  Interoperability Kernel, once branded Granite One.
+plain: >-
+  PTC's geometry engine, the hidden layer inside Creo that does the math for creating and editing
+  solid shapes; other companies can license it.
+workflow: >-
+  Granite runs inside Creo, doing the solid modeling math as engineers design; other companies
+  license it so their programs can read and work with Creo geometry.
+native_files:
+  - ext: .g
+    what: Granite neutral file
+  - ext: .g.zip
+    what: Granite zip file
+notes: >-
+  Introduced as Granite One alongside Pro/ENGINEER 2001 (CGW, May 2001) and offered for third-party
+  licensing, with Moldflow as an early licensee. Now sold as the Creo GRANITE Interoperability
+  Kernel. PTC describes Creo GRANITE as a 3D modeling and interoperability kernel that reads native
+  Creo part and assembly files without a Creo license and has built-in IGES, STEP, VDA-FS, Parasolid
+  and ACIS SAT translators; its topic sheet names Geomagic and carat robotic as licensees.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.cgw.com/Publications/CGW/2001/Volume-24-Issue-5-May-2001-/PTC-Intros-Pro-E-2001-Granite-One.aspx
+    label: CGW May 2001, PTC introduces Pro/E 2001 and Granite One
+  - url: >-
+      https://www.cgw.com/Publications/CGW/2001/Volume-24-Issue-9-September-2001-/Interoperability-The-Key-to-Collaboration.aspx
+    label: CGW Sept 2001, Granite One licensing
+  - url: https://support.ptc.com/products/granite/gplugs
+    label: PTC support, Creo GRANITE Interoperability Kernel
+  - url: https://www.ptc.com/en/products/creo
+    label: PTC Creo page
+  - url: https://support.ptc.com/images/cs/articles/2020/06/1593411762dEcH/PTC_Creo_Granite_Interoperability_Kernel._Final.pdf
+    label: 'PTC Creo Granite topic sheet: kernel, translators, licensees, .g files'
+  - url: https://support.ptc.com/help/creo/ced_modeling/r20.8.0.0/en/ced_modeling/OSDM_Main/Files_OtherCADSystems.html
+    label: 'Creo Elements/Direct 20.8 help: Granite .g and .g.zip import and export'

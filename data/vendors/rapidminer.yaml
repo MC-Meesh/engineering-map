@@ -1,0 +1,18 @@
+id: rapidminer
+type: vendor
+name: RapidMiner
+kind: company
+parent: altair
+status: merged
+website: https://www.siemens.com/en-us/products/rapidminer/
+summary: >-
+  Data analytics and machine learning software company bought by Altair in 2022; Siemens now uses
+  Rapidminer as the name of its analytics line.
+notes: Headquarters and founding year not given in the cited releases.
+confidence: high
+sources:
+  - url: https://news.siemens.com/en-us/altair-announces-completion-of-acquisition-of-rapidminer/
+    label: 'Altair release 2022-09-16: completes RapidMiner acquisition (now hosted by Siemens)'
+  - url: https://www.siemens.com/en-us/products/rapidminer/
+    label: Siemens Rapidminer page
+as_of: '2026-11-22'

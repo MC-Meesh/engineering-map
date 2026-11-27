@@ -1,0 +1,17 @@
+id: materialise
+type: vendor
+name: Materialise
+kind: company
+hq: BE
+founded: 1990
+status: active
+website: https://www.materialise.com/
+wikipedia: https://en.wikipedia.org/wiki/Materialise_NV
+summary: Additive manufacturing software (Magics) and medical 3D printing.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.materialise.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Materialise_NV
+    label: Wikipedia

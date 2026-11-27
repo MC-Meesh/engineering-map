@@ -1,0 +1,27 @@
+id: hypre
+type: tool
+name: hypre
+category: solver-library
+vendor: llnl
+open_source: true
+license: Apache-2.0 OR MIT
+status: active
+first_release: 1998
+stages:
+  - analysis
+website: https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods
+summary: Scalable algebraic multigrid preconditioners (BoomerAMG).
+plain: >-
+  A free library of fast methods for solving the very large systems of equations inside big
+  simulations.
+workflow: >-
+  Simulation codes such as MFEM call hypre to solve their large equation systems quickly; the
+  answers go straight back into the code that called it.
+files_note: 'A C programming library of parallel linear solvers and preconditioners; programs pass matrices in memory, and print/read routines dump matrices and vectors to files, mainly for debugging.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods
+    label: official page
+  - url: https://hypre.readthedocs.io/en/latest/api-int-ij.html
+    label: 'hypre docs: IJ system interface'

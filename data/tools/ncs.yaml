@@ -1,0 +1,35 @@
+id: ncs
+type: tool
+name: Neural Concept platform
+category: ml-engineering
+vendor: neural-concept
+open_source: false
+status: active
+first_release: 2018
+stages:
+  - design
+  - optimization
+formats:
+  reads:
+    - stl
+    - vtk-xml
+competes_with:
+  - physicsx-platform
+  - simai
+  - physicsai
+  - monolith-platform
+website: https://www.neuralconcept.com/
+summary: >-
+  Geometric deep learning on 3D designs to predict simulation fields and drive optimization in the
+  design loop.
+plain: >-
+  Uses AI trained on 3D designs to predict simulation results quickly, so engineers can try more
+  designs while they work.
+workflow: >-
+  Engineers train models here on earlier 3D designs and simulation results as STL or VTK files, then
+  get instant predictions for new shapes while they design and optimize.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.neuralconcept.com/
+    label: official page

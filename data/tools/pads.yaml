@@ -1,0 +1,37 @@
+id: pads
+type: tool
+name: PADS
+category: eda
+vendor: siemens
+open_source: false
+status: active
+first_release: 1986
+stages:
+  - design
+formats:
+  writes:
+    - gerber
+    - odbpp
+competes_with:
+  - altium-designer
+  - orcad
+website: https://www.siemens.com/en-us/products/pcb/pads/
+summary: Mainstream PCB design.
+plain: >-
+  Siemens software for drawing circuit diagrams and laying out everyday printed circuit boards;
+  Siemens now steers new designs to its Xpedition software.
+workflow: >-
+  A designer draws and lays out a mainstream board here, and sends Gerber or ODB++ files to the
+  board maker; Siemens now points new designs to Xpedition.
+notes: >-
+  Family: PADS Standard, Standard Plus, Professional and Professional Premium; Siemens now
+  recommends Xpedition Standard for new designs. Developed by PADS Software (1986 is its founding
+  year), bought by Innoveda in 2000; Mentor got PADS with Innoveda in 2002 (Mentor 10-K FY2002). No
+  vendor ids exist for these companies, so origin is unset.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/pcb/pads/
+    label: official page (PADS family)
+  - url: https://www.sec.gov/Archives/edgar/data/0000701811/000103221003000400/d10k.htm
+    label: Mentor Graphics 10-K FY2002 (Innoveda brought PADS)

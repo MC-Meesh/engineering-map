@@ -1,0 +1,34 @@
+id: openmodelica
+type: tool
+name: OpenModelica
+category: systems-mbse
+vendor: osmc
+open_source: true
+license: OSMC-PL / GPL-3.0
+status: active
+first_release: 1998
+stages:
+  - analysis
+formats:
+  reads:
+    - modelica
+    - fmu
+  writes:
+    - modelica
+    - fmu
+open_source_alternative_to:
+  - dymola
+website: https://openmodelica.org/
+wikipedia: https://en.wikipedia.org/wiki/OpenModelica
+summary: Open Modelica compiler and environment.
+plain: Free software for building and simulating system models written in the Modelica language.
+workflow: >-
+  An engineer writes or loads Modelica models here, simulates the system, and exchanges Modelica
+  files or FMUs (packaged, ready-to-run models) with other system and control tools.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://openmodelica.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/OpenModelica
+    label: Wikipedia

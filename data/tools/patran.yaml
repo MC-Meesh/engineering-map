@@ -1,0 +1,46 @@
+id: patran
+type: tool
+name: Patran
+category: cae-fea
+vendor: msc
+open_source: false
+status: active
+first_release: 1978
+stages:
+  - analysis
+formats:
+  reads:
+    - nastran-bdf
+    - nastran-op2
+    - abaqus-inp
+  writes:
+    - nastran-bdf
+    - abaqus-inp
+competes_with:
+  - femap
+  - hypermesh
+website: https://www.cadence.com/en_US/home/tools/msc-software/patran.html
+wikipedia: https://en.wikipedia.org/wiki/Patran
+summary: Long-lived FEA pre/post-processor, especially in aerospace stress groups.
+plain: >-
+  Long-used software for setting up structural simulation models and viewing their results,
+  especially by aerospace stress engineers.
+workflow: >-
+  A stress engineer builds the model here, writes a Nastran BDF or Abaqus .inp input file for the
+  calculation program, and loads the Nastran OP2 results back to check the structure.
+notes: >-
+  Developed by PDA Engineering (Santa Ana), bought by MSC in Sept 1994; MSC passed to Cadence with
+  Hexagon's Design and Engineering business in Feb 2026. 1978 is the first-use date on PDA's PATRAN
+  trademark (filed 1979), used as a proxy for first release.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cadence.com/en_US/home/tools/msc-software/patran.html
+    label: Cadence MSC Patran page
+  - url: >-
+      https://www.digitalengineering247.com/article/cadence-finalizes-purchase-of-hexagons-design-and-engineering-business
+    label: Digital Engineering, Cadence closes Hexagon D&E deal 2026-02-24
+  - url: https://trademarks.justia.com/732/25/patran-73225233.html
+    label: USPTO PATRAN mark via Justia (first use 1978-04-10)
+  - url: https://en.wikipedia.org/wiki/Patran
+    label: Wikipedia

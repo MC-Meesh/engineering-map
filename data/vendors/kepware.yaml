@@ -1,0 +1,23 @@
+id: kepware
+type: vendor
+name: Kepware
+kind: company
+hq: US
+founded: 1995
+parent: velotic
+status: merged
+website: https://www.velotic.com/products/kepware
+summary: >-
+  KEPServerEX industrial connectivity, based in Portland, Maine; owned by PTC from 2016 until its
+  2026 sale to TPG, now a Velotic product line.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.tpg.com/news-and-insights/velotic-launches-to-shape-future-of-industrial-manufacturing-software
+    label: 'TPG release 2026-03-17: Velotic launch'
+  - url: >-
+      https://investor.ptc.com/resources/news/news-details/2015/PTC-to-Acquire-Kepware-Will-Extend-Internet-of-Things-Offering-with-Access-to-Industrial-Automation-Data/default.aspx
+    label: PTC press release 2015-12-23 (founded 1995, Portland ME)
+  - url: https://www.velotic.com/products/kepware
+    label: Velotic Kepware page

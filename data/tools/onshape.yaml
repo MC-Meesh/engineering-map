@@ -1,0 +1,69 @@
+id: onshape
+type: tool
+name: Onshape
+category: cad
+vendor: ptc
+origin: onshape-inc
+open_source: false
+status: active
+first_release: 2015
+stages:
+  - design
+  - lifecycle
+built_on:
+  - parasolid
+  - d-cubed
+formats:
+  reads:
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+    - solidworks-native
+    - catia-v5
+    - inventor-ipt
+  writes:
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+    - stl
+integrates_with:
+  - arena-plm
+competes_with:
+  - solidworks
+  - fusion
+runs_on:
+  - ptc-atlas
+website: https://www.onshape.com/
+wikipedia: https://en.wikipedia.org/wiki/Onshape
+summary: Browser-native CAD with built-in version control and data management, from SOLIDWORKS founders.
+plain: >-
+  3D design software that runs in a web browser, with built-in history of every change and shared
+  data, so a team works on the same model.
+workflow: >-
+  A team designs together in the browser, importing STEP, Parasolid or SOLIDWORKS files, and exports
+  STEP or STL files to manufacturing and printing; parts lists can sync to OpenBOM.
+files_note: 'Does not use files: work lives in cloud Documents made up of tabs, and every change is saved automatically.'
+notes: >-
+  Runs on Amazon EC2 compute, and Onshape Government is hosted on AWS GovCloud (U.S.). The
+  Onshape-Arena Connection to Arena PLM became available on 2022-09-13.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/plm-components/parasolid/
+    label: verification source
+  - url: https://www.onshape.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Onshape
+    label: Wikipedia
+  - url: https://cad.onshape.com/help/Content/Home/getting_started_with_onshape.htm
+    label: documents instead of files (vendor help)
+  - url: https://www.siemens.com/en-us/products/plm-components/d-cubed/
+    label: 'Siemens D-Cubed page: Onshape among CAD licensees'
+  - url: https://www.onshape.com/en/blog/aws-powered-cloud-native-cad-robust-technical-stack
+    label: 'Onshape blog: runs on Amazon EC2; Onshape Government on AWS GovCloud'
+  - url: https://www.ptc.com/en/news/2021/two-more-saas-products-ship-on-ptc-atlas-platform
+    label: 'PTC release 2021-04-21: Onshape on PTC Atlas'
+  - url: https://www.ptc.com/en/news/2022/ptc-introduces-onshape-arena-connection
+    label: 'PTC release 2022-09-13: Onshape-Arena Connection'

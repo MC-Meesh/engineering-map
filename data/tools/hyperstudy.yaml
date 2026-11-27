@@ -1,0 +1,40 @@
+id: hyperstudy
+type: tool
+name: Simcenter Hyperstudy
+category: optimization
+vendor: altair
+open_source: false
+status: active
+first_release: 1999
+stages:
+  - optimization
+competes_with:
+  - modefrontier
+  - heeds
+website: https://www.siemens.com/en-us/products/simcenter/engineering-data-science-ai/hyperstudy/
+summary: DOE, fitting and optimization for any solver (formerly Altair HyperStudy).
+plain: >-
+  Runs an existing simulation over and over with different inputs, such as thicknesses or materials,
+  to find the best design or to tune a model until it matches test data. It works with any
+  simulation program.
+workflow: >-
+  An analyst points HyperStudy at a finished simulation model from any program, picks which inputs
+  may change, lets it rerun that model many times, and uses the results to choose a design or to
+  tune the model until it matches measured test data.
+native_files:
+  - ext: .hstudy
+    what: 'HyperStudy study file'
+  - ext: .hstx
+    what: 'Single-file archive packaging a study and its resource files'
+  - ext: .hstxc
+    what: 'Custom archive with chosen packaging options'
+notes: first_release 1999 not confirmed by a primary source
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://www.siemens.com/en-us/products/simcenter/engineering-data-science-ai/hyperstudy/
+    label: official page
+  - url: https://help.altair.com/hwdesktop/hst/topics/file_management/study_archive_export_t.htm
+    label: 'Altair HyperStudy help: export study archives'

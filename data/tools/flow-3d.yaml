@@ -1,0 +1,28 @@
+id: flow-3d
+type: tool
+name: FLOW-3D
+category: cfd
+vendor: flow-science
+open_source: false
+status: active
+first_release: 1985
+stages:
+  - analysis
+  - manufacturing
+formats:
+  reads:
+    - stl
+website: https://www.flow3d.com/
+summary: Free-surface CFD for casting, hydraulics and coating.
+plain: >-
+  Simulates liquids with a free surface, such as molten metal filling a casting mold, water in
+  hydraulic works, or coatings.
+workflow: >-
+  An engineer brings in the mold, channel or part shape as STL, simulates the free-surface flow
+  here, such as metal filling a casting, and passes the results to casting, hydraulic or coating
+  design.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.flow3d.com/
+    label: official page

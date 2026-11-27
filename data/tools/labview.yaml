@@ -1,0 +1,28 @@
+id: labview
+type: tool
+name: LabVIEW
+category: robotics-controls
+vendor: ni
+open_source: false
+status: active
+first_release: 1986
+stages:
+  - test
+competes_with:
+  - matlab
+website: https://www.ni.com/en/shop/labview.html
+wikipedia: https://en.wikipedia.org/wiki/LabVIEW
+summary: Graphical programming for test, measurement and data acquisition.
+plain: >-
+  Software where you build programs by wiring blocks together in a diagram, mainly for running
+  tests, taking measurements and collecting data from instruments.
+workflow: >-
+  A test engineer wires a program together here to control instruments and collect measurements from
+  the real product, and the recorded data goes on to analysis and to comparison with simulations.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ni.com/en/shop/labview.html
+    label: official page
+  - url: https://en.wikipedia.org/wiki/LabVIEW
+    label: Wikipedia

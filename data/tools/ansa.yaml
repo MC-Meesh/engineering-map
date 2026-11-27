@@ -1,0 +1,52 @@
+id: ansa
+type: tool
+name: ANSA
+category: meshing
+vendor: cadence
+origin: beta-cae
+open_source: false
+status: active
+stages:
+  - analysis
+formats:
+  reads:
+    - nastran-bdf
+    - abaqus-inp
+    - lsdyna-k
+    - ansys-cdb
+    - step
+    - iges
+    - catia-v5
+    - jt
+    - parasolid-xt
+  writes:
+    - nastran-bdf
+    - abaqus-inp
+    - lsdyna-k
+    - ansys-cdb
+    - fluent-cas
+    - openfoam-case
+    - cgns
+competes_with:
+  - hypermesh
+website: https://www.cadence.com/en_US/home/tools/engineering-simulation/ansa-preprocessor.html
+summary: Heavy-duty pre-processor for full-vehicle FE and CFD models.
+plain: >-
+  Prepares large, detailed simulation models, for example of an entire vehicle, by turning design
+  geometry into the meshes (grids of small elements) that strength, crash and airflow calculation
+  programs need.
+workflow: >-
+  An analyst imports a whole vehicle's design as CATIA, STEP, JT or Parasolid files, meshes it here,
+  and writes ready-to-run input files for Nastran, Abaqus, LS-DYNA, Ansys, Fluent or OpenFOAM; the
+  solved results come back to META for review.
+notes: >-
+  1990 first release of ANSA not confirmed; sources disagree on BETA CAE's founding (1990 vs later
+  dates for the Greek entity).
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2024/cadence-completes-acquisition-of-beta-cae.html
+    label: 'Cadence release 2024-06-03: completes acquisition of BETA CAE'
+  - url: https://www.cadence.com/en_US/home/tools/engineering-simulation/ansa-preprocessor.html
+    label: official page

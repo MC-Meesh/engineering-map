@@ -1,0 +1,68 @@
+id: hfss
+type: tool
+name: Ansys HFSS
+category: multiphysics
+vendor: ansys
+origin: ansoft
+open_source: false
+status: active
+first_release: 1990
+stages:
+  - analysis
+formats:
+  reads:
+    - acis-sat
+    - dxf
+    - dwg
+    - inventor-ipt
+    - catia-v5
+    - creo-prt
+    - gltf
+    - iges
+    - jt
+    - nastran-bdf
+    - nx-prt
+    - parasolid-xt
+    - solidworks-native
+    - step
+    - stl
+    - gdsii
+  writes:
+    - acis-sat
+    - dxf
+    - gdsii
+    - iges
+    - obj
+    - parasolid-xt
+    - step
+    - stl
+    - gltf
+competes_with:
+  - cst-studio
+  - feko
+website: https://ansys.synopsys.com/products/electronics/ansys-hfss
+wikipedia: https://en.wikipedia.org/wiki/HFSS
+summary: High-frequency 3D electromagnetic solver for antennas, RF and signal integrity.
+plain: >-
+  Simulates radio waves and high-frequency signals in 3D, for designing antennas, radio parts and
+  fast electrical connections.
+workflow: >-
+  An engineer brings in the antenna, connector or board shape as STEP, Parasolid, CATIA files or a
+  GDSII chip layout, simulates the fields here, and sends performance figures to circuit and board
+  designers, exporting the shape as STEP, GDSII or STL when needed.
+native_files:
+  - ext: .aedt
+    what: 'Ansys Electronics Desktop project file'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://ansys.synopsys.com/products/electronics/ansys-hfss
+    label: official page
+  - url: https://en.wikipedia.org/wiki/HFSS
+    label: Wikipedia
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/Electronics/v252/en/Subsystems/HFSS/Content/Variables/Importing3DModelFiles.htm
+    label: 'Ansys HFSS help 2025 R2: importing 3D model files'
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/Electronics/v252/en/Subsystems/HFSS/Content/Variables/Exporting3DModelFiles.htm
+    label: 'Ansys HFSS help 2025 R2: exporting 3D model files'
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/Electronics/v252/en/Subsystems/HFSS/Content/Variables/OpeningProjects.htm
+    label: 'Ansys HFSS help 2025 R2: opening projects (.aedt)'

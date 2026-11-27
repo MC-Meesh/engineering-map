@@ -1,0 +1,29 @@
+id: hspice
+type: tool
+name: Synopsys HSPICE
+category: eda
+vendor: synopsys
+open_source: false
+status: active
+first_release: 1981
+stages:
+  - analysis
+formats:
+  reads:
+    - spice
+competes_with:
+  - spectre
+website: https://www.synopsys.com/implementation-and-signoff/ams-simulation/primesim-hspice.html
+summary: The long-time golden reference SPICE simulator.
+plain: >-
+  Synopsys software that simulates how an electronic circuit behaves, long used as the reference for
+  accurate results.
+workflow: >-
+  A circuit designer exports a SPICE netlist (a text list of the circuit's parts and how they
+  connect) from the schematic or from the finished chip layout, simulates it here for
+  reference-quality results, and sends the waveforms back to the circuit designers.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.synopsys.com/implementation-and-signoff/ams-simulation/primesim-hspice.html
+    label: official page

@@ -1,0 +1,15 @@
+id: simpleware-ltd
+type: vendor
+name: Simpleware
+kind: company
+hq: GB
+founded: 2000
+parent: synopsys
+status: merged
+website: https://www.synopsys.com/simpleware.html
+summary: Image-based 3D model and mesh generation.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.synopsys.com/simpleware.html
+    label: official page

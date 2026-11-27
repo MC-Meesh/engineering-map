@@ -1,0 +1,12 @@
+id: ansys--lstc--2019
+type: acquisition
+acquirer: ansys
+target: lstc
+completed: '2019'
+status: completed
+value: about $775M
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/LS-DYNA
+    label: source

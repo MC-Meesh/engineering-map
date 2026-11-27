@@ -1,0 +1,20 @@
+id: amf
+type: format
+name: AMF
+extensions:
+  - .amf
+kind: tessellated
+standard: ISO/ASTM 52915
+steward: ISO/ASTM
+open_spec: true
+first_published: 2011
+website: https://www.iso.org/standard/74640.html
+wikipedia: https://en.wikipedia.org/wiki/Additive_manufacturing_file_format
+summary: XML additive format with curved triangles and materials; standardized but little adopted.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.iso.org/standard/74640.html
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Additive_manufacturing_file_format
+    label: Wikipedia

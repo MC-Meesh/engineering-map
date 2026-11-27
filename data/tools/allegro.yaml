@@ -1,0 +1,43 @@
+id: allegro
+type: tool
+name: Cadence Allegro
+category: eda
+vendor: cadence
+open_source: false
+status: active
+first_release: 1985
+stages:
+  - design
+  - manufacturing
+formats:
+  writes:
+    - gerber
+    - excellon
+    - odbpp
+    - ipc-2581
+    - step
+competes_with:
+  - xpedition
+  - altium-designer
+website: https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-x-design-platform.html
+summary: High-end PCB and package layout (Allegro X).
+plain: >-
+  Software for laying out printed circuit boards and chip packages: the physical arrangement of
+  components and copper connections in high-end electronics.
+workflow: >-
+  A board designer takes the circuit diagram from a schematic tool, places parts and routes the
+  copper here in a .brd board file, then sends Gerber, Excellon drill, ODB++ or IPC-2581
+  manufacturing files to the board maker and STEP models to mechanical 3D design tools.
+native_files:
+  - ext: .brd
+    what: Physical board design
+  - ext: .psm
+    what: Component footprint
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-x-design-platform.html
+    label: official page
+  - url: https://resources.pcb.cadence.com/blog/2024-orcad-pcb-file-extensions
+    label: 'native file format (Cadence PCB resources: file extensions)'

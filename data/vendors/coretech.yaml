@@ -1,0 +1,14 @@
+id: coretech
+type: vendor
+name: CoreTech System
+kind: company
+hq: TW
+founded: 1995
+status: active
+website: https://www.moldex3d.com/
+summary: Moldex3D injection molding simulation.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.moldex3d.com/
+    label: official page

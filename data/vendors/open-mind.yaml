@@ -1,0 +1,14 @@
+id: open-mind
+type: vendor
+name: OPEN MIND Technologies
+kind: company
+hq: DE
+founded: 1994
+status: active
+website: https://www.openmind-tech.com/
+summary: hyperMILL CAM for 5-axis milling.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.openmind-tech.com/
+    label: official page

@@ -1,0 +1,14 @@
+id: shapr3d
+type: vendor
+name: Shapr3D
+kind: company
+hq: HU
+founded: 2015
+status: active
+website: https://www.shapr3d.com/
+summary: Tablet-first direct-modeling CAD built on Parasolid.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.shapr3d.com/
+    label: official page

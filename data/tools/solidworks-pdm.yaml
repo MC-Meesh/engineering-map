@@ -1,0 +1,26 @@
+id: solidworks-pdm
+type: tool
+name: SOLIDWORKS PDM
+category: plm-pdm
+vendor: dassault
+open_source: false
+status: active
+first_release: 2006
+stages:
+  - lifecycle
+integrates_with:
+  - solidworks
+website: https://www.solidworks.com/product/solidworks-pdm
+summary: Vault-style PDM for SOLIDWORKS files.
+plain: Keeps SOLIDWORKS files organized, tracking their versions and who changed them.
+workflow: >-
+  Designers check SOLIDWORKS files in and out of the PDM vault as they work, which keeps versions
+  and history, and released files go on to manufacturing and suppliers.
+files_note: 'Has no file type of its own: a SQL Server vault database holds metadata and pointers to files, while the archive server keeps the actual files in a hexadecimal folder structure.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.solidworks.com/product/solidworks-pdm
+    label: official page
+  - url: https://3dswym.3dexperience.3ds.com/wiki/solidworks-news-info/solidpractices-backup-and-restore-procedures_n86u0WvoQBezYGIlYUrR_w
+    label: 'SOLIDWORKS SolidPractices: PDM backup and restore'

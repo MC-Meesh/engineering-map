@@ -1,0 +1,14 @@
+id: yosyshq
+type: vendor
+name: YosysHQ
+kind: company
+hq: AT
+founded: 2012
+status: active
+website: https://www.yosyshq.com/
+summary: Maintains Yosys open synthesis.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.yosyshq.com/
+    label: official page

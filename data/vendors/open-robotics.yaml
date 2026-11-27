@@ -1,0 +1,17 @@
+id: open-robotics
+type: vendor
+name: Open Robotics
+kind: project
+hq: US
+founded: 2012
+status: active
+website: https://www.openrobotics.org/
+wikipedia: https://en.wikipedia.org/wiki/Open_Robotics
+summary: Non-profit steward of ROS and Gazebo.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.openrobotics.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Open_Robotics
+    label: Wikipedia

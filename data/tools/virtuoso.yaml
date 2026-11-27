@@ -1,0 +1,37 @@
+id: virtuoso
+type: tool
+name: Cadence Virtuoso
+category: eda
+vendor: cadence
+open_source: false
+status: active
+first_release: 1991
+stages:
+  - design
+formats:
+  reads:
+    - gdsii
+    - oasis
+    - lef-def
+  writes:
+    - gdsii
+    - oasis
+    - lef-def
+    - spice
+competes_with:
+  - custom-compiler
+website: >-
+  https://www.cadence.com/en_US/home/tools/custom-ic-analog-rf-design/layout-design/virtuoso-layout-suite.html
+summary: The dominant environment for custom analog, RF and mixed-signal IC design and layout.
+plain: >-
+  The dominant Cadence environment for designing analog, radio and mixed analog and digital chips:
+  engineers draw the circuit and then the exact shapes of every layer on the silicon.
+workflow: >-
+  A custom chip designer draws the circuit, simulates it with Spectre, draws the layout here, and
+  writes it as GDSII or OASIS files for physical checks in Calibre before the chip is made.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.cadence.com/en_US/home/tools/custom-ic-analog-rf-design/layout-design/virtuoso-layout-suite.html
+    label: official page

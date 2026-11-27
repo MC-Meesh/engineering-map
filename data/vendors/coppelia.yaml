@@ -1,0 +1,14 @@
+id: coppelia
+type: vendor
+name: Coppelia Robotics
+kind: company
+hq: CH
+founded: 2013
+status: active
+website: https://www.coppeliarobotics.com/
+summary: CoppeliaSim (formerly V-REP) robot simulator.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.coppeliarobotics.com/
+    label: official page

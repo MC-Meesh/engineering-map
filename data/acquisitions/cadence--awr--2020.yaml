@@ -1,0 +1,12 @@
+id: cadence--awr--2020
+type: acquisition
+acquirer: cadence
+target: awr
+completed: '2020'
+status: completed
+summary: Acquired from National Instruments.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cadence.com/en_US/home/company/newsroom.html
+    label: source

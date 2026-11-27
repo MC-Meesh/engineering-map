@@ -1,0 +1,19 @@
+id: ptc--kepware--2016
+type: acquisition
+acquirer: ptc
+target: kepware
+announced: '2015-12-23'
+completed: '2016-01-12'
+status: divested
+value: about $100M
+summary: Plus up to $18M earnout. Divested to TPG in 2026.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://investor.ptc.com/resources/news/news-details/2015/PTC-to-Acquire-Kepware-Will-Extend-Internet-of-Things-Offering-with-Access-to-Industrial-Automation-Data/default.aspx
+    label: PTC press release 2015-12-23
+  - url: https://www.businesswire.com/news/home/20160112005486/en/
+    label: 'PTC press release 2016-01-12: acquisition completed'
+  - url: https://www.sec.gov/Archives/edgar/data/857005/000119312526107315/ptc-ex99_1.htm
+    label: 'PTC 8-K exhibit 2026-03-16: divested to TPG'

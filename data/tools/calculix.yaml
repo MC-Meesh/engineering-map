@@ -1,0 +1,35 @@
+id: calculix
+type: tool
+name: CalculiX
+category: cae-fea
+vendor: ccx-author
+open_source: true
+license: GPL-2.0
+status: active
+first_release: 1998
+stages:
+  - analysis
+formats:
+  reads:
+    - abaqus-inp
+  writes:
+    - abaqus-inp
+open_source_alternative_to:
+  - abaqus
+  - ansys-mechanical
+website: http://www.calculix.de/
+wikipedia: https://en.wikipedia.org/wiki/Calculix
+summary: Open-source FEA with an Abaqus-like input deck; used by FreeCAD FEM and SimScale.
+plain: >-
+  Free software that calculates how parts deform and where stress builds up under load; its input
+  files resemble Abaqus ones, and FreeCAD and SimScale use it.
+workflow: >-
+  A model set up in FreeCAD's FEM workbench or SimScale arrives as an Abaqus-style input file;
+  CalculiX solves the structural problem, and the results are viewed back in that front end.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: http://www.calculix.de/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Calculix
+    label: Wikipedia

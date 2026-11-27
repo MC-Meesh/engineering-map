@@ -1,0 +1,71 @@
+id: feko
+type: tool
+name: Simcenter Feko
+category: multiphysics
+vendor: altair
+origin: emss
+open_source: false
+status: active
+first_release: 1996
+stages:
+  - analysis
+built_on:
+  - parasolid
+formats:
+  reads:
+    - step
+    - iges
+    - acis-sat
+    - parasolid-xt
+    - catia-v5
+    - dxf
+    - creo-prt
+    - nx-prt
+    - nastran-bdf
+    - stl
+    - ansys-cdb
+    - abaqus-inp
+  writes:
+    - step
+    - iges
+    - acis-sat
+    - parasolid-xt
+    - catia-v5
+competes_with:
+  - hfss
+  - cst-studio
+website: https://www.siemens.com/en-us/products/simcenter/electromagnetics-simulation/feko/
+summary: >-
+  High-frequency EM solver built around the method of moments, for antenna placement and scattering
+  (formerly Altair Feko).
+plain: >-
+  Simulates radio waves at high frequencies, for example where best to place an antenna on a
+  structure or how an object scatters waves.
+workflow: >-
+  An engineer brings in the shape of an antenna or the vehicle or aircraft it sits on as STEP, IGES,
+  CATIA or Parasolid files, or a ready Nastran or Abaqus mesh of small cells, simulates the radio
+  waves here, and reports the best antenna positions to the designers.
+native_files:
+  - ext: .cfx
+    what: 'CADFEKO model file'
+  - ext: .fek
+    what: 'Feko model (mesh) file'
+notes: >-
+  Development began in 1991 as Ulrich Jakobus's thesis at the University of Stuttgart; the first
+  EMSS version was released at the end of 1996. Wikipedia gives 1997, the commercialization year.
+  CADFEKO, the Feko modeller, is based on the Parasolid kernel.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/simcenter-feko-history-part-1/
+    label: 'Siemens Simcenter blog: Feko history part 1 (first EMSS version end 1996)'
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://www.siemens.com/en-us/products/simcenter/electromagnetics-simulation/feko/
+    label: official page
+  - url: https://2025.help.altair.com/2025/feko/topics/feko/user_guide/cadfeko/import_geometry_formats_versions_feko_r-cadfeko.htm
+    label: 'Altair Feko help: geometry (CAD) formats for import'
+  - url: https://help.altair.com/2025/feko/topics/feko/user_guide/chapter_heads/export_geometry_feko_c-cadfeko.htm
+    label: 'Altair Feko help: CAD formats for export'
+  - url: https://help.altair.com/feko/topics/feko/user_guide/cadfeko/import_mesh_formats_feko_r-cadfeko.htm
+    label: 'Altair Feko help: mesh formats for import (also names .cfx model files)'

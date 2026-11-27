@@ -1,0 +1,25 @@
+id: altium
+type: vendor
+name: Altium
+kind: company
+hq: US
+founded: 1985
+parent: renesas
+status: active
+website: https://www.altium.com/
+wikipedia: https://en.wikipedia.org/wiki/Altium
+summary: Altium Designer and the Altium 365 cloud; acquired by Renesas in 2024.
+notes: >-
+  Founded 1985 in Tasmania as Protel; renamed Altium in 2001; headquartered in San Diego. Renesas
+  completed the acquisition on 2024-07-31 US time (2024-08-01 JST).
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.renesas.com/en/about/newsroom/renesas-completes-acquisition-altium
+    label: Renesas press release 2024-07-31 (Altium acquisition completed)
+  - url: https://www.altium.com/company/newsroom/press-releases/renesas-completes-acquisition-altium
+    label: Altium press release (completion)
+  - url: https://www.altium.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Altium
+    label: Wikipedia

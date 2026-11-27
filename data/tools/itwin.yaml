@@ -1,0 +1,28 @@
+id: itwin
+type: tool
+name: Bentley iTwin
+category: digital-twin
+vendor: bentley
+open_source: false
+status: active
+first_release: 2018
+stages:
+  - lifecycle
+formats:
+  reads:
+    - ifc
+    - dwg
+website: https://www.bentley.com/software/itwin-platform/
+summary: Infrastructure digital twin platform, with an open-source core (iTwin.js).
+plain: >-
+  Bentley's platform for building digital copies of infrastructure; part of its core is free
+  open-source code.
+workflow: >-
+  Project teams bring in infrastructure models as IFC or DWG from design tools such as MicroStation,
+  iTwin combines them into a digital copy, and owners and operators use it through the life of the
+  asset.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.bentley.com/software/itwin-platform/
+    label: official page

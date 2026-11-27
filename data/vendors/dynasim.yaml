@@ -1,0 +1,20 @@
+id: dynasim
+type: vendor
+name: Dynasim AB
+kind: company
+hq: SE
+founded: 1992
+parent: dassault
+status: merged
+wikipedia: https://en.wikipedia.org/wiki/Dymola
+summary: Dymola Modelica environment.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-presents-catia-systems
+    label: 'Dassault release 2006-06-27: Dynasim acquisition announced'
+  - url: >-
+      https://www.ots.at/presseaussendung/OTE_20020214_OTE0001/dynasim-offers-preview-of-dymola-50-software-its-new-dynamic-laboratory-with-unique-features-for-multi-engineering-modeling-and-simulation
+    label: Dynasim release 2002 (Lund, founded 1992)
+  - url: https://en.wikipedia.org/wiki/Dymola
+    label: Wikipedia

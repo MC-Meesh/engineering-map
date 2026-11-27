@@ -1,0 +1,17 @@
+id: keysight--esi--2024
+type: acquisition
+acquirer: keysight
+target: esi
+completed: 2024-01
+status: completed
+value: about EUR 913M
+summary: >-
+  Keysight took a 50.6 percent controlling block on 2023-11-03 and bought out the rest through a EUR
+  155 per share tender; ESI was delisted 2024-01-26. Announcement month and headline value not
+  rechecked.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.keysight.com/us/en/about/newsroom/news-releases/2023/1103-pr23-005-keysight-completes-the-acquisition-of-a-controllin.html
+    label: source

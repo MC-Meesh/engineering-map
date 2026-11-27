@@ -1,0 +1,35 @@
+id: fusion-compiler
+type: tool
+name: Synopsys Fusion Compiler
+category: eda
+vendor: synopsys
+open_source: false
+status: active
+first_release: 2018
+stages:
+  - design
+formats:
+  reads:
+    - lef-def
+    - verilog
+  writes:
+    - lef-def
+    - gdsii
+competes_with:
+  - innovus
+  - openroad
+website: https://www.synopsys.com/implementation-and-signoff/physical-implementation/fusion-compiler.html
+summary: Unified RTL-to-GDSII synthesis and place-and-route.
+plain: >-
+  Synopsys software that turns a chip design written as code into a finished physical layout in one
+  tool.
+workflow: >-
+  A chip team hands over the design as Verilog code (text that describes the chip's circuits) plus
+  LEF/DEF files describing the building blocks; Fusion Compiler turns it into logic gates, places
+  and wires them, and writes a GDSII layout for final checks and the chip factory.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.synopsys.com/implementation-and-signoff/physical-implementation/fusion-compiler.html
+    label: official page

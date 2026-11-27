@@ -1,0 +1,26 @@
+---
+// Sources for one record. Confidence stays in the data and the build checks, but is shown only
+// when a record is low: a plain note that it is not yet confirmed (decision 0011).
+// `file` and `id` add the edit and report links (CONTRIBUTING.md).
+import type { Source } from '../lib/data';
+import { editUrl, reportUrl } from '../lib/site';
+interface Props { sources: Source[]; confidence: string; as_of: string; notes?: string; file?: string; id?: string; name?: string }
+const { sources, confidence, as_of, notes, file, id, name } = Astro.props;
+---
+<section aria-labelledby="sources-h">
+  <h2 id="sources-h">Sources</h2>
+  <p class="muted">As of {as_of}.</p>
+  {confidence === 'low' && <p class="unconfirmed">Not yet confirmed against a primary source.</p>}
+  {notes && <p class="footnote">Note: {notes}</p>}
+  <ul class="sources">
+    {sources.map((s) => <li><span class="muted">{s.label ?? 'source'}:</span> <a href={s.url} rel="noopener">{s.url}</a></li>)}
+  </ul>
+  {file && id && (
+    <p class="contribute">
+      Something wrong or out of date? <a href={editUrl(file)} rel="noopener">Edit this record</a> or <a href={reportUrl(id, name ?? id)} rel="noopener">report a problem</a>.
+    </p>
+  )}
+</section>
+<style>
+  .contribute { margin-top: 1rem; }
+</style>

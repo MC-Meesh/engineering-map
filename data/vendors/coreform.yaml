@@ -1,0 +1,14 @@
+id: coreform
+type: vendor
+name: Coreform
+kind: company
+hq: US
+founded: 2014
+status: active
+website: https://coreform.com/
+summary: Commercializes Cubit meshing and develops spline-based (IGA) simulation.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://coreform.com/
+    label: official page

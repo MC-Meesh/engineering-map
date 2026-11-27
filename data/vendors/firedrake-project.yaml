@@ -1,0 +1,14 @@
+id: firedrake-project
+type: vendor
+name: Firedrake project
+kind: project
+hq: GB
+founded: 2013
+status: active
+website: https://www.firedrakeproject.org/
+summary: Imperial College led automated finite element system.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.firedrakeproject.org/
+    label: official page

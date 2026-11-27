@@ -1,0 +1,14 @@
+id: cocreate
+type: vendor
+name: CoCreate Software GmbH
+kind: company
+parent: ptc
+status: merged
+summary: Direct-modeling CAD company; its product line became Creo Elements/Direct after PTC bought it in 2007.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/857005/000119312508244400/d10k.htm
+    label: 'PTC FY2008 10-K: CoCreate acquired 2007-11-30'
+  - url: https://www.ptc.com/en/blogs/cad/a-quick-history-of-ptc-creo
+    label: 'PTC blog: CoCreate (2007), now Creo Elements/Direct'

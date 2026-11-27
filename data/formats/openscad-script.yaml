@@ -1,0 +1,18 @@
+id: openscad-script
+type: format
+name: OpenSCAD script
+extensions:
+  - .scad
+kind: native-cad
+steward: OpenSCAD project
+steward_vendor: openscad-project
+open_spec: true
+website: https://openscad.org/documentation.html
+summary: A text program that builds a solid from primitives (cubes, cylinders) combined with union, difference and transforms.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://openscad.org/documentation.html
+    label: OpenSCAD documentation
+  - url: https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/The_OpenSCAD_Language
+    label: OpenSCAD User Manual, the language

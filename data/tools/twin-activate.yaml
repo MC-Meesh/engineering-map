@@ -1,0 +1,34 @@
+id: twin-activate
+type: tool
+name: Simcenter Twin Activate
+category: systems-mbse
+vendor: altair
+open_source: false
+status: active
+stages:
+  - analysis
+formats:
+  reads:
+    - modelica
+    - fmu
+  writes:
+    - fmu
+website: https://www.siemens.com/en-us/products/simcenter/systems-simulation/twin-activate/
+summary: >-
+  Block-diagram system and control simulation with native Modelica and FMI import and export, used
+  to build and deploy system digital twins (formerly Altair Twin Activate).
+plain: >-
+  Simulates machines and their control systems by connecting blocks in a diagram, including models
+  in the Modelica and FMI exchange standards, to build digital twins (working digital copies) of
+  systems.
+workflow: >-
+  An engineer connects block diagrams, Modelica models and imported FMUs (packaged models), for
+  example from RomAI, simulates the system and controls here, and exports FMUs to deploy the system
+  digital twin.
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/simcenter/systems-simulation/twin-activate/
+    label: official page (block diagrams, Modelica, FMI)
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+as_of: '2026-11-22'

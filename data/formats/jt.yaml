@@ -1,0 +1,21 @@
+id: jt
+type: format
+name: JT
+extensions:
+  - .jt
+kind: tessellated
+standard: ISO 14306
+steward: ISO (originated at Siemens)
+steward_vendor: siemens
+open_spec: true
+first_published: 2012
+website: https://www.iso.org/standard/77802.html
+wikipedia: https://en.wikipedia.org/wiki/JT_(visualization_format)
+summary: Lightweight visualization format with optional exact B-rep; the automotive PLM workhorse.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.iso.org/standard/77802.html
+    label: official page
+  - url: https://en.wikipedia.org/wiki/JT_(visualization_format)
+    label: Wikipedia

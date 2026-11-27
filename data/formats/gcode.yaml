@@ -1,0 +1,21 @@
+id: gcode
+type: format
+name: G-code
+extensions:
+  - .nc
+  - .gcode
+  - .tap
+kind: cam
+standard: ISO 6983 / RS-274
+steward: ISO (with many machine dialects)
+open_spec: true
+first_published: 1960
+website: https://en.wikipedia.org/wiki/G-code
+summary: >-
+  Low-level machine motion program; every CAM post-processor ends here, in a controller-specific
+  dialect.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/G-code
+    label: official page

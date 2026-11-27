@@ -1,0 +1,20 @@
+id: siemens--excellicon--2025
+type: acquisition
+acquirer: siemens
+target: excellicon
+announced: '2025-05-19'
+completed: '2025'
+status: completed
+summary: >-
+  Timing constraint tools for IC design, now sold as Siemens EDA's Gencellicon portfolio. Announced
+  2025-05-19 with closing expected within weeks; no dated closing notice found. Terms not disclosed.
+notes: >-
+  Closing confirmed indirectly: excellicon.com now redirects to the Siemens Gencellicon product
+  page, which cites the Excellicon acquisition. Exact closing date not published.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://news.siemens.com/en-us/siemens-to-acquire-excellicon/
+    label: Siemens press release 2025-05-19
+  - url: https://www.siemens.com/en-us/products/ic/ic-design/gencellicon/
+    label: Siemens Gencellicon product page (Excellicon tools)

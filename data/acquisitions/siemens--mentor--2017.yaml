@@ -1,0 +1,22 @@
+id: siemens--mentor--2017
+type: acquisition
+acquirer: siemens
+target: mentor
+announced: '2016-11-14'
+completed: '2017-03-30'
+status: completed
+value: about $4.5B enterprise value ($37.25 per share in cash)
+summary: Now Siemens EDA.
+notes: >-
+  The merger took effect on 2017-03-30 (Mentor 8-K); the 8-K gives about $4.34B of aggregate equity
+  consideration.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/701811/000119312517104047/d354436d8k.htm
+    label: 'Mentor Graphics 8-K 2017-03-30: merger completed'
+  - url: https://press.siemens.com/global/en/pressrelease/siemens-closes-mentor-graphics-acquisition
+    label: 'Siemens release 2017-03-30: closes Mentor Graphics acquisition'
+  - url: >-
+      https://www.ropesgray.com/en/newsroom/news/2017/03/Ropes-Gray-Guides-Mentor-Graphics-in-Completion-of-Acquisition-by-Siemens
+    label: 'Ropes & Gray 2017-03: announced 2016-11-14, $37.25 per share'

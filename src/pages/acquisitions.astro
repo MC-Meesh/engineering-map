@@ -1,0 +1,188 @@
+---
+import Base from '../layouts/Base.astro';
+import { acquisitions, vendors, vendorById, tools, yearOf } from '../lib/data';
+
+const deals = acquisitions.filter((a) => a.status !== 'terminated');
+const name = (id: string) => vendorById.get(id)?.name ?? id;
+
+// Who controls the tools today
+const groups = vendors.filter((v) => !v.parent && v.kind === 'company' && v.controlledTools > 0).sort((a, b) => b.controlledTools - a.controlledTools);
+const topGroups = groups.slice(0, 12);
+const totalTools = tools.length;
+const top5 = groups.slice(0, 5);
+const top5Share = top5.reduce((s, g) => s + g.controlledTools, 0);
+const commercialTools = tools.filter((t) => !t.open_source).length;
+
+// Years
+const y0 = Math.min(...deals.map((d) => yearOf(d.completed)));
+const y1 = 2026;
+const years = Array.from({ length: y1 - y0 + 1 }, (_, i) => y0 + i);
+const W = 1080, L = 265, R = 24;
+const x = (y: number) => L + ((y - y0 + 0.5) / (y1 - y0 + 1)) * (W - L - R);
+const colW = ((W - L - R) / (y1 - y0 + 1)) * 0.62;
+
+// Deals per year
+const perYear = years.map((y) => ({ y, done: deals.filter((d) => yearOf(d.completed) === y && d.status !== 'pending').length, pending: deals.filter((d) => yearOf(d.completed) === y && d.status === 'pending').length }));
+const maxY = Math.max(...perYear.map((p) => p.done + p.pending));
+const H1 = 170, T1 = 14, B1 = 26;
+const yScale = (n: number) => ((H1 - T1 - B1) * n) / maxY;
+const ticks = [0, Math.ceil(maxY / 2), maxY];
+
+// Swimlanes: acquirers with 2 or more deals, the rest in one lane
+const counts = new Map<string, number>();
+for (const d of deals) counts.set(d.acquirer, (counts.get(d.acquirer) || 0) + 1);
+const lanes = [...counts.entries()].filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1]).map(([id]) => id);
+const laneOf = (id: string) => (lanes.includes(id) ? lanes.indexOf(id) : lanes.length);
+const laneCount = lanes.length + 1;
+const LH = 30, T2 = 10;
+const H2 = T2 + laneCount * LH + 26;
+const dots = deals.map((d) => ({ d, lane: laneOf(d.acquirer), yr: yearOf(d.completed) }));
+// Offset dots that share a lane and year
+const slot = new Map<string, number>();
+const placed = dots.map((p) => {
+  const k = `${p.lane}|${p.yr}`;
+  const i = slot.get(k) || 0;
+  slot.set(k, i + 1);
+  return { ...p, i };
+});
+const bigDeal = (v?: string) => !!v && /\b(\d+(\.\d+)?)B\b/.test(v) && Number(v.match(/(\d+(\.\d+)?)B/)![1]) >= 3;
+
+const H3 = topGroups.length * 26 + 8;
+const maxG = Math.max(...topGroups.map((g) => g.controlledTools));
+---
+<Base title="Acquisitions" section="acquisitions" description="How engineering software consolidated: every recorded acquisition with dates, values and sources.">
+  <div class="page wide">
+    <header class="page-head">
+      <h1>Consolidation, deal by deal</h1>
+      <p class="lede">{deals.length} acquisitions recorded, {y0} to {y1}. Today five groups ({top5.map((g, i) => <>{i > 0 && (i === top5.length - 1 ? ' and ' : ', ')}<a href={`/vendors/${g.id}/`}>{g.name}</a></>)}) own {top5Share} of the {commercialTools} commercial tools on the map.</p>
+    </header>
+
+    <section>
+      <h2>Who owns the tools today</h2>
+      <p class="muted">Tools on the map per top-level owner, counting everything sold under subsidiary brands.</p>
+      <div class="chart-wrap">
+        <svg viewBox={`0 0 ${W} ${H3}`} class="chart" role="img" aria-label="Tools per owning group">
+          {topGroups.map((g, i) => {
+            const yy = i * 26 + 4;
+            const w = Math.max(8, (g.controlledTools / maxG) * (W - L - 80));
+            return (
+              <g data-tip={`${g.name}|${g.controlledTools} tools on the map|${g.subsidiaries.length} absorbed companies recorded`}>
+                <rect x="0" y={yy - 2} width={W} height="26" fill="transparent" />
+                <text x={L - 10} y={yy + 15} text-anchor="end" class="lab">{g.name}</text>
+                <path d={`M${L} ${yy + 4} h${w - 4} a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h${-(w - 4)} z`} class="bar" />
+                <text x={L + w + 6} y={yy + 15} class="val">{g.controlledTools}</text>
+              </g>
+            );
+          })}
+        </svg>
+      </div>
+    </section>
+
+    <section>
+      <h2>Deals per year</h2>
+      <div class="chart-wrap">
+        <svg viewBox={`0 0 ${W} ${H1}`} class="chart" role="img" aria-label="Number of acquisitions per year">
+          {ticks.map((t) => <g><line x1={L} x2={W - R} y1={H1 - B1 - yScale(t)} y2={H1 - B1 - yScale(t)} class={t === 0 ? 'base' : 'grid'} /><text x={L - 8} y={H1 - B1 - yScale(t) + 4} text-anchor="end" class="tick">{t}</text></g>)}
+          {perYear.map((p) => {
+            const hd = yScale(p.done);
+            const hp = yScale(p.pending);
+            const top = H1 - B1 - hd - hp;
+            return (
+              <g data-tip={`${p.y}|${p.done} completed${p.pending ? `, ${p.pending} pending` : ''}`}>
+                <rect x={x(p.y) - colW / 2 - 2} y={T1} width={colW + 4} height={H1 - B1 - T1} fill="transparent" />
+                {p.done > 0 && <path d={`M${x(p.y) - colW / 2} ${H1 - B1} v${-(hd - 4)} a4 4 0 0 1 4 -4 h${colW - 8} a4 4 0 0 1 4 4 v${hd - 4} z`} class="col" />}
+                {p.pending > 0 && <rect x={x(p.y) - colW / 2 + 0.75} y={top + 0.75} width={colW - 1.5} height={hp - 2.5} rx="3" class="col-pending" />}
+              </g>
+            );
+          })}
+          {years.filter((y) => y % 5 === 0 || (y === y1 && y1 % 5 >= 3)).map((y) => <text x={x(y)} y={H1 - 8} text-anchor="middle" class="tick">{y}</text>)}
+        </svg>
+      </div>
+      <p class="footnote legend-line"><span class="lg solid"></span>completed <span class="lg hollow"></span>announced, not yet closed. Dated by completion.</p>
+    </section>
+
+    <section>
+      <h2>Who bought whom</h2>
+      <p class="muted">One dot per deal, on the buyer's row. Deals of three billion or more are labeled.</p>
+      <div class="chart-wrap">
+        <svg viewBox={`0 0 ${W} ${H2}`} class="chart" role="img" aria-label="Acquisitions by buyer over time">
+          {[...lanes, '__other'].map((id, i) => (
+            <g>
+              <line x1={L} x2={W - R} y1={T2 + i * LH + LH / 2} y2={T2 + i * LH + LH / 2} class="grid" />
+              <text x={L - 10} y={T2 + i * LH + LH / 2 + 4} text-anchor="end" class="lab">{id === '__other' ? 'Single-deal buyers' : name(id)}</text>
+            </g>
+          ))}
+          {years.filter((y) => y % 5 === 0).map((y) => <line x1={x(y)} x2={x(y)} y1={T2} y2={T2 + laneCount * LH} class="grid v" />)}
+          {placed.map(({ d, lane, yr, i }) => {
+            const cx = x(yr) + (i % 2 === 0 ? 1 : -1) * Math.ceil(i / 2) * 10;
+            const cy = T2 + lane * LH + LH / 2;
+            return (
+              <g data-tip={`${name(d.target)}, acquired by ${name(d.acquirer)}|${d.completed}${d.status !== 'completed' ? ` (${d.status})` : ''}${d.value ? `|${d.value}` : ''}`} tabindex="0" aria-label={`${name(d.acquirer)} acquired ${name(d.target)}, ${d.completed}`}>
+                <circle cx={cx} cy={cy} r="9" fill="transparent" />
+                <circle cx={cx} cy={cy} r="4.5" class={d.status === 'pending' ? 'dot pending' : d.status === 'divested' ? 'dot divested' : 'dot'} />
+                {bigDeal(d.value) && <text x={cx} y={cy - 9} text-anchor="middle" class="dl">{name(d.target)}</text>}
+              </g>
+            );
+          })}
+          {years.filter((y) => y % 5 === 0 || (y === y1 && y1 % 5 >= 3)).map((y) => <text x={x(y)} y={H2 - 8} text-anchor="middle" class="tick">{y}</text>)}
+        </svg>
+      </div>
+      <p class="footnote legend-line"><span class="lg dotk"></span>completed <span class="lg dotk div"></span>later divested <span class="lg dotk pend"></span>pending</p>
+    </section>
+
+    <section>
+      <h2>Every deal</h2>
+      <label class="sr-only" for="q">Filter deals</label>
+      <input id="q" class="filter-input" type="search" placeholder="Filter: Siemens, 2016, pending" data-filter="#deals" />
+      <p class="footnote" id="q-count" aria-live="polite"></p>
+      <div class="table-wrap">
+        <table class="data" id="deals">
+          <thead><tr><th scope="col">Completed</th><th scope="col">Buyer</th><th scope="col">Target</th><th scope="col">Status</th><th scope="col">Reported value</th><th scope="col">Source</th></tr></thead>
+          <tbody>
+            {[...deals].reverse().map((d) => (
+              <tr>
+                <td class="num">{d.completed}</td>
+                <td><a href={`/vendors/${d.acquirer}/`}>{name(d.acquirer)}</a></td>
+                <td><a href={`/vendors/${d.target}/`}>{name(d.target)}</a>{d.summary && <div class="muted">{d.summary}</div>}</td>
+                <td>{d.status}</td>
+                <td>{d.value ?? ''}</td>
+                <td><a href={d.sources[0].url} rel="noopener">{new URL(d.sources[0].url).hostname.replace(/^www\./, '')}</a>{d.confidence === 'low' && <div class="muted">not yet confirmed</div>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</Base>
+<script>
+  import '../scripts/tips.ts';
+  import '../scripts/table-filter.ts';
+</script>
+<style>
+  .page.wide { max-width: 1180px; }
+  .chart-wrap { overflow-x: auto; border-top: 1px solid var(--ink); padding-top: 0.75rem; }
+  .chart { width: 100%; min-width: 720px; height: auto; font-family: var(--font); display: block; }
+  .chart .lab { font-size: 11px; fill: var(--ink); }
+  .chart .val, .chart .tick { font-size: 11px; fill: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .chart .dl { font-size: 10.5px; fill: var(--ink); }
+  .chart .bar { fill: var(--d-design); }
+  .chart .col { fill: var(--d-design); }
+  .chart .col-pending { fill: var(--sheet); stroke: var(--d-design); stroke-width: 1.5; }
+  .chart .grid { stroke: var(--rule-2); stroke-width: 1; }
+  .chart .grid.v { stroke-dasharray: 2 3; }
+  .chart .base { stroke: var(--rule); stroke-width: 1; }
+  .chart .dot { fill: var(--d-design); stroke: var(--sheet); stroke-width: 2; }
+  .chart .dot.divested { fill: var(--ink-3); }
+  .chart .dot.pending { fill: var(--sheet); stroke: var(--d-design); stroke-width: 1.5; }
+  .chart g:hover .bar, .chart g:hover .col, .chart g:hover .dot, .chart g:focus .dot { fill: var(--red); }
+  .chart g:focus { outline: none; }
+  .legend-line { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+  .lg { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-left: 0.6rem; }
+  .lg:first-child { margin-left: 0; }
+  .lg.solid { background: var(--d-design); }
+  .lg.hollow { border: 1.5px solid var(--d-design); }
+  .lg.dotk { border-radius: 50%; background: var(--d-design); width: 10px; height: 10px; }
+  .lg.dotk.div { background: var(--ink-3); }
+  .lg.dotk.pend { background: transparent; border: 1.5px solid var(--d-design); }
+</style>

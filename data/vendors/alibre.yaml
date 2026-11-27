@@ -1,0 +1,14 @@
+id: alibre
+type: vendor
+name: Alibre
+kind: company
+hq: US
+founded: 1997
+status: active
+website: https://www.alibre.com/
+summary: Low-cost parametric CAD.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.alibre.com/
+    label: official page

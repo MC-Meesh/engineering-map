@@ -1,0 +1,49 @@
+id: mpcci
+type: tool
+name: MpCCI
+category: multiphysics
+vendor: fraunhofer-scai
+open_source: false
+status: active
+first_release: 1996
+stages:
+  - analysis
+formats:
+  reads:
+    - fluent-cas
+    - ensight-gold
+    - cgns
+    - vtk-legacy
+    - vtk-xml
+    - nastran-bdf
+  writes:
+    - abaqus-inp
+    - nastran-bdf
+    - lsdyna-k
+integrates_with:
+  - abaqus
+  - fluent
+  - star-ccm
+competes_with:
+  - precice
+website: https://www.mpcci.de/
+summary: Vendor-neutral co-simulation interface for coupling commercial codes.
+plain: >-
+  Connects different commercial simulation programs so they can run together on one problem, for
+  example flow and structure.
+workflow: >-
+  An analyst sets up a flow model in Fluent or STAR-CCM+ and a structural model in Abaqus, MpCCI
+  exchanges data between them as they run, and the coupled results are turned into plots and
+  pictures for review.
+native_files:
+  - ext: .csp
+    what: 'MpCCI GUI project file'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.mpcci.de/
+    label: official page
+  - url: https://www.mpcci.de/en/mpcci-software/fsimapper.html
+    label: 'MpCCI FSIMapper page: file interfaces (source and target formats)'
+  - url: https://www.mpcci.de/en/mpcci-software/mpcci-couplingenvironment.html
+    label: 'MpCCI CouplingEnvironment page: coupling server, release notes (.csp project)'

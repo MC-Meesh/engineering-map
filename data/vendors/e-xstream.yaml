@@ -1,0 +1,20 @@
+id: e-xstream
+type: vendor
+name: e-Xstream engineering
+kind: company
+hq: LU
+founded: 2003
+parent: msc
+status: merged
+summary: Digimat multiscale material modeling.
+notes: >-
+  MSC acquired e-Xstream in September 2012; founded 2003 as a UCL (Belgium) spin-off, per the
+  acquisition release. HQ country LU not confirmed from a fetched source: the company started in
+  Louvain-la-Neuve, Belgium and Luxembourg directories list a Hautcharage office. Generic Wikipedia
+  website removed.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.prnewswire.com/news-releases/msc-software-acquires-ucl-spin-off-e-xstream-171747101.html
+    label: MSC Software press release 2012-09-28 (PR Newswire)

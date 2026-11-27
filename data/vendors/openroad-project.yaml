@@ -1,0 +1,14 @@
+id: openroad-project
+type: vendor
+name: The OpenROAD Project
+kind: project
+hq: US
+founded: 2018
+status: active
+website: https://theopenroadproject.org/
+summary: DARPA-seeded open RTL-to-GDS flow.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://theopenroadproject.org/
+    label: official page

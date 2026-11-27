@@ -1,0 +1,14 @@
+id: su2-foundation
+type: vendor
+name: SU2 Foundation
+kind: project
+hq: US
+founded: 2019
+status: active
+website: https://su2foundation.org/
+summary: Non-profit stewarding the SU2 suite, originally from Stanford.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://su2foundation.org/
+    label: official page

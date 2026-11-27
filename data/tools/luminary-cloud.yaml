@@ -1,0 +1,57 @@
+id: luminary-cloud
+type: tool
+name: Luminary Cloud
+category: cfd
+vendor: luminary
+open_source: false
+status: active
+first_release: 2024
+stages:
+  - analysis
+  - optimization
+formats:
+  reads:
+    - step
+    - parasolid-xt
+    - iges
+    - stl
+    - acis-sat
+    - catia-v5
+    - solidworks-native
+    - creo-prt
+    - nx-prt
+    - inventor-ipt
+    - rhino-3dm
+    - obj
+    - fluent-cas
+    - openfoam-case
+    - cgns
+  writes:
+    - vtk-xml
+competes_with:
+  - fluent
+  - star-ccm
+website: https://www.luminarycloud.com/
+summary: GPU-native cloud CFD paired with physics AI surrogates.
+plain: >-
+  Cloud software that simulates fluid flow on graphics processors, paired with AI models that learn
+  from simulations to give quick predictions.
+workflow: >-
+  An engineer uploads a design as STEP, Parasolid or other 3D design files, or a ready mesh of small
+  cells from Fluent, OpenFOAM or CGNS, runs flow simulations in the cloud, downloads VTU results for
+  viewing, and uses the runs to train AI models for quick predictions.
+files_note: 'Browser-based cloud platform: CAD or volume meshes are uploaded into projects in the web app, and results are downloaded from the Results tab as VTU files in a .tar.gz, plus CSV monitor data.'
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://siliconangle.com/2024/03/13/luminary-cloud-emerges-stealth-cloud-cae-platform-meant-dust-desktop-competitors/
+    label: verification source
+  - url: https://www.luminarycloud.com/
+    label: official page
+  - url: https://docs.luminary.ai/en/articles/9274255-upload-cad
+    label: 'Luminary docs: upload CAD (supported formats)'
+  - url: https://docs.luminary.ai/en/articles/9275233-upload-a-mesh
+    label: 'Luminary docs: upload a mesh (ANSYS MSH, OpenFOAM, CGNS)'
+  - url: https://docs.luminary.ai/en/articles/9376987-exporting-results
+    label: 'Luminary docs: exporting results (VTU, CSV)'

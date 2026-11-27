@@ -1,0 +1,36 @@
+id: neuraloperator
+type: tool
+name: NeuralOperator
+category: ml-engineering
+vendor: neuraloperator-team
+open_source: true
+license: MIT
+status: active
+first_release: 2020
+stages:
+  - analysis
+website: https://neuraloperator.github.io/
+summary: Reference implementation of Fourier neural operators and related architectures.
+plain: >-
+  A free library of AI models (such as Fourier neural operators) that learn to imitate physics
+  simulations, so a trained model can stand in for running the full simulation again.
+workflow: >-
+  A researcher collects simulation results, trains a neural operator here to learn the physics, and
+  uses it as a fast stand-in for running the full simulation program again.
+files_note: 'A Python (PyTorch) programming library for neural operators that programs call; save_checkpoint writes a state_dict .pt file plus a metadata file, and the Trainer saves training state to a folder.'
+notes: >-
+  Public code dates from October 2020; the first tagged library release (0.3.0) came in December
+  2023.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://github.com/neuraloperator/neuraloperator/blob/main/LICENSE
+    label: NeuralOperator LICENSE (MIT)
+  - url: https://github.com/neuraloperator/neuraloperator
+    label: GitHub repo (created 2020-10)
+  - url: https://neuraloperator.github.io/
+    label: official page
+  - url: https://neuraloperator.github.io/dev/modules/generated/neuralop.training.Trainer.html
+    label: 'NeuralOperator API: Trainer'
+  - url: https://github.com/neuraloperator/neuraloperator/blob/main/neuralop/models/base_model.py
+    label: 'NeuralOperator source: save_checkpoint'

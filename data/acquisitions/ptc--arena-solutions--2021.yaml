@@ -1,0 +1,14 @@
+id: ptc--arena-solutions--2021
+type: acquisition
+acquirer: ptc
+target: arena-solutions
+completed: '2021-01-19'
+status: completed
+value: about $715M
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ptc.com/en/news
+    label: source
+  - url: https://www.ptc.com/en/news/2021/ptc-completes-acquisition-arena-solutions
+    label: 'PTC release 2021-01-19: acquisition completed'

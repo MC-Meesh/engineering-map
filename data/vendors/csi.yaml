@@ -1,0 +1,14 @@
+id: csi
+type: vendor
+name: Computers and Structures Inc
+kind: company
+hq: US
+founded: 1975
+status: active
+website: https://www.csiamerica.com/
+summary: SAP2000 and ETABS structural analysis.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.csiamerica.com/
+    label: official page

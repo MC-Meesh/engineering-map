@@ -1,0 +1,16 @@
+id: ansys--cfx-co--2003
+type: acquisition
+acquirer: ansys
+target: cfx-co
+announced: '2003-02-04'
+completed: '2003-02-26'
+status: completed
+value: about $21M cash
+notes: Paid to AEA Technology PLC, the parent of CFX.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://sec.gov/Archives/edgar/data/1013462/000093066103000410/dex991.htm
+    label: 'ANSYS press release 2003-02-04 (8-K): about $21M cash to AEA Technology PLC'
+  - url: https://sec.gov/Archives/edgar/data/1013462/000102140803004058/dex991.htm
+    label: 'ANSYS press release 2003-02-26 (8-K): acquisition completed'

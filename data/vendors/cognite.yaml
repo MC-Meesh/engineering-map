@@ -1,0 +1,14 @@
+id: cognite
+type: vendor
+name: Cognite
+kind: company
+hq: 'NO'
+founded: 2016
+status: active
+website: https://www.cognite.com/
+summary: Industrial DataOps; Cognite Data Fusion.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cognite.com/
+    label: official page

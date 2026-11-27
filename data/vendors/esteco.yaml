@@ -1,0 +1,14 @@
+id: esteco
+type: vendor
+name: ESTECO
+kind: company
+hq: IT
+founded: 1999
+status: active
+website: https://www.esteco.com/
+summary: modeFRONTIER design optimization and VOLTA SPDM.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.esteco.com/
+    label: official page

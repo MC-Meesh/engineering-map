@@ -1,0 +1,31 @@
+id: minerva
+type: tool
+name: Ansys Minerva
+category: sdm
+vendor: ansys
+open_source: false
+status: active
+first_release: 2018
+stages:
+  - lifecycle
+  - analysis
+competes_with:
+  - teamcenter-simulation
+website: https://www.ansys.com/products/platform/ansys-minerva
+summary: Simulation process and data management.
+plain: >-
+  Keeps track of simulation work, the models, results and the steps used to produce them, so teams
+  can find and reuse them.
+workflow: >-
+  Analysts check simulation models, results and process steps into Minerva as they work, so later
+  projects can find, reuse and trust them.
+files_note: 'Has no file type of its own: built on Aras, it keeps simulation data in a server database; Workbench projects are saved to and pulled from it over a connection, and HPC job results flow back in.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ansys.com/products/platform/ansys-minerva
+    label: official page
+  - url: https://ansys.synopsys.com/products/connect/ansys-minerva
+    label: 'Ansys Minerva product page'
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb2_help/wb2_help_create_min_connection.html
+    label: 'Ansys Workbench help: connecting to a Minerva site'

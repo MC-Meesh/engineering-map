@@ -1,0 +1,55 @@
+id: acis
+type: tool
+name: 3D ACIS Modeler
+category: geometry-kernel
+vendor: spatial
+open_source: false
+status: active
+first_release: 1989
+stages:
+  - design
+formats:
+  reads:
+    - acis-sat
+  writes:
+    - acis-sat
+competes_with:
+  - parasolid
+  - cgm
+  - occt
+  - c3d
+website: https://www.spatial.com/solutions/3d-modeling/3d-acis-modeler
+wikipedia: https://en.wikipedia.org/wiki/ACIS
+summary: >-
+  B-rep kernel from Spatial; the ancestor of Autodesk ShapeManager and still used in BricsCAD,
+  Alibre Design and others.
+plain: >-
+  A geometry engine that other design programs build on: it does the math for describing and editing
+  solid 3D shapes. Users never see it directly; programs such as BricsCAD and Alibre Design use it
+  inside.
+workflow: >-
+  Programmers build ACIS into design programs such as BricsCAD and Alibre Design; those programs
+  call it to create and edit solids and exchange the shapes as SAT files with other ACIS-based
+  tools.
+notes: >-
+  Spatial says ACIS is in over 350 applications with more than three million seats. Spatial case
+  studies name ABB Robotics RobotStudio, JSOL JMAG (since the early 2000s), Renishaw QuantAM (with
+  CGM Polyhedra and 3D InterOp), Coreform Cubit and Coreform Flex, and IMSI/Design TurboCAD as ACIS
+  users.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.spatial.com/solutions/3d-modeling/3d-acis-modeler
+    label: 'Spatial ACIS page: over 350 applications, three million seats'
+  - url: https://en.wikipedia.org/wiki/ACIS
+    label: Wikipedia
+  - url: https://www.spatial.com/case-studies/abb-robotics
+    label: 'Spatial case study: ABB RobotStudio on ACIS'
+  - url: https://www.spatial.com/case-studies/jmag
+    label: 'Spatial case study: JMAG on ACIS'
+  - url: https://www.spatial.com/case-studies/renishaw
+    label: 'Spatial case study: Renishaw QuantAM on ACIS'
+  - url: https://www.spatial.com/case-studies/coreform
+    label: 'Spatial case study: Coreform Cubit and Flex on ACIS'
+  - url: https://www.spatial.com/case-studies
+    label: 'Spatial case study index: IMSI/Design TurboCAD on ACIS'

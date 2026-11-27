@@ -1,0 +1,18 @@
+id: dassault--spatial--2000
+type: acquisition
+acquirer: dassault
+target: spatial
+completed: '2000-11-14'
+status: completed
+value: $25M cash
+summary: >-
+  Bought Spatial Technology's 3D component business (ACIS kernel), which became Spatial Corp; the
+  rest of Spatial was renamed PlanetCAD.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.3ds.com/newsroom/press-releases/dassault-systemes-completes-acquisition-spatial-component-business
+    label: Dassault Systemes press release 2000-11-14
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-acquire-spatials-acisr-business
+    label: Dassault Systemes press release 2000 (deal announced)

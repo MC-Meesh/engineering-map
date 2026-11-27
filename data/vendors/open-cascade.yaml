@@ -1,0 +1,18 @@
+id: open-cascade
+type: vendor
+name: Open Cascade SAS
+kind: company
+hq: FR
+founded: 2000
+parent: capgemini
+status: active
+website: https://www.opencascade.com/
+wikipedia: https://en.wikipedia.org/wiki/Open_Cascade_Technology
+summary: Maintains Open CASCADE Technology, the main open-source B-rep kernel; part of Capgemini.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.opencascade.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Open_Cascade_Technology
+    label: Wikipedia

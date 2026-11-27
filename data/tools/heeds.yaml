@@ -1,0 +1,38 @@
+id: heeds
+type: tool
+name: Simcenter HEEDS
+category: optimization
+vendor: siemens
+origin: red-cedar
+open_source: false
+status: active
+first_release: 2005
+stages:
+  - optimization
+competes_with:
+  - modefrontier
+  - isight
+website: https://www.siemens.com/en-us/products/simcenter/integration-solutions/heeds/
+summary: Design space exploration with its SHERPA hybrid search.
+plain: >-
+  Runs a design through simulations many times, changing it each time, to search automatically for
+  the best version.
+workflow: >-
+  An analyst links HEEDS to the team's 3D design and simulation programs; it changes the design
+  inputs, reruns those simulations many times with its SHERPA search, and returns a short list of
+  the best designs to the engineering team.
+notes: >-
+  Red Cedar was bought by CD-adapco in 2013, which Siemens acquired in 2016. First release year is
+  uncertain: secondary sources give 2004, the record says 2005. Siemens launched HEEDS AI Simulation
+  Predictor (accuracy-aware AI prediction from earlier studies) on 2023-11-28; it is not listed as
+  its own product today, so it has no record.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/simcenter/integration-solutions/heeds/
+    label: Siemens Simcenter HEEDS page (SHERPA)
+  - url: >-
+      https://www.prnewswire.co.uk/news-releases/cd-adapco-acquires-red-cedar-technology-incorporated-214696451.html
+    label: 'CD-adapco release 2013-07-09: acquires Red Cedar Technology'
+  - url: https://news.siemens.com/en-us/heeds-ai-simulation-predictor-simcenter-rom/
+    label: 'Siemens release 2023-11-28: HEEDS AI Simulation Predictor'

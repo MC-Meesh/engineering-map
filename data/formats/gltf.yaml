@@ -1,0 +1,21 @@
+id: gltf
+type: format
+name: glTF
+extensions:
+  - .gltf
+  - .glb
+kind: scene
+standard: ISO/IEC 12113
+steward: Khronos Group
+open_spec: true
+first_published: 2015
+website: https://www.khronos.org/gltf/
+wikipedia: https://en.wikipedia.org/wiki/GlTF
+summary: Runtime 3D delivery format for web and real-time viewers.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.khronos.org/gltf/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/GlTF
+    label: Wikipedia

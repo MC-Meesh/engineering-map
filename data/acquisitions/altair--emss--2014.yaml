@@ -1,0 +1,19 @@
+id: altair--emss--2014
+type: acquisition
+acquirer: altair
+target: emss
+completed: 2014-06
+status: completed
+announced: '2013-12-10'
+notes: >-
+  Altair took 100% of EM Software and Systems S.A. (Pty) Ltd, FEKO developer, plus its US, German
+  and Chinese distributor offices. Agreement in principle announced 2013-12-10; closing announced
+  2014-06-24.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://microwavejournal.com/articles/22514-altair-and-em-software-systems-close-acquisition-deal
+    label: Microwave Journal 2014-06-24 (Altair and EMSS close deal)
+  - url: https://altair.com/feko
+    label: source

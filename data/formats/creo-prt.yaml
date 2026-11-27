@@ -1,0 +1,17 @@
+id: creo-prt
+type: format
+name: Creo part
+extensions:
+  - .prt
+  - .asm
+kind: native-cad
+steward: PTC
+steward_vendor: ptc
+open_spec: false
+website: https://www.ptc.com/en/products/creo
+summary: Proprietary Creo (Pro/ENGINEER) part and assembly files.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ptc.com/en/products/creo
+    label: official page

@@ -1,0 +1,13 @@
+id: safe-technology
+type: vendor
+name: Safe Technology Limited
+kind: company
+hq: GB
+parent: dassault
+status: merged
+summary: Sheffield developer of the fe-safe durability software; part of Dassault since 2013.
+confidence: high
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-acquires-safe-technology-limited
+    label: Dassault release 2013-09-04 (Sheffield, fe-safe)
+as_of: '2026-11-22'

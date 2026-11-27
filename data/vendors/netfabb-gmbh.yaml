@@ -1,0 +1,15 @@
+id: netfabb-gmbh
+type: vendor
+name: netfabb GmbH
+kind: company
+hq: DE
+founded: 2009
+parent: autodesk
+status: merged
+website: https://www.autodesk.com/products/netfabb/overview
+summary: Additive build preparation.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.autodesk.com/products/netfabb/overview
+    label: official page

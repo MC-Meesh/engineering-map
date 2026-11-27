@@ -1,0 +1,23 @@
+id: cadence--msc--2026
+type: acquisition
+acquirer: cadence
+target: msc
+announced: '2025-09-04'
+completed: '2026-02-23'
+status: completed
+value: about EUR 2.7B
+summary: >-
+  Hexagon design and engineering business (former MSC Software plus Romax and other add-ons)
+  including MSC Nastran, Adams and Marc. Paid about 70 percent cash and 30 percent Cadence stock;
+  the Q1 2026 10-Q puts consideration at $2.9B net of cash acquired.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/0000813672/000081367226000047/cdns-20260331.htm
+    label: Cadence 10-Q Q1 2026
+  - url: >-
+      https://hexagon.com/sv/company/newsroom/press-releases/2025/hexagon-agrees-sale-of-design--engineering-business-to-cadence-for-27bn-eur
+    label: Hexagon press release 2025-09-04
+  - url: >-
+      https://www.digitalengineering247.com/article/cadence-finalizes-purchase-of-hexagons-design-and-engineering-business/cadence-design-systems
+    label: 'Digital Engineering 2026-02-24: deal closed'

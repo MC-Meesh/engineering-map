@@ -1,0 +1,75 @@
+id: abaqus
+type: tool
+name: Abaqus
+category: cae-fea
+vendor: dassault
+origin: abaqus-inc
+open_source: false
+status: active
+first_release: 1978
+stages:
+  - analysis
+formats:
+  reads:
+    - abaqus-inp
+    - step
+    - abaqus-odb
+    - acis-sat
+    - iges
+    - parasolid-xt
+    - catia-v5
+    - solidworks-native
+    - nastran-bdf
+    - ansys-cdb
+  writes:
+    - abaqus-inp
+    - abaqus-odb
+    - step
+    - acis-sat
+    - iges
+    - nastran-bdf
+competes_with:
+  - ansys-mechanical
+  - ls-dyna
+  - marc
+built_on:
+  - acis
+integrates_with:
+  - 3dexperience
+website: https://www.3ds.com/products/simulia/abaqus
+wikipedia: https://en.wikipedia.org/wiki/Abaqus
+summary: Nonlinear implicit and explicit FEA, widely used for contact, rubber and damage problems.
+plain: >-
+  Simulates how parts bend, stretch, crack or squash under load, including hard cases like parts
+  pressing against each other or rubber deforming, so engineers can check a design will hold up
+  before building it.
+workflow: >-
+  An analyst brings in geometry as STEP, Parasolid or CATIA files, or a ready mesh (the shape split
+  into small cells) as an .inp file, runs the nonlinear simulation here, and reads the ODB results
+  back in Abaqus/CAE or sends them on to fatigue tools such as fe-safe.
+clarifies:
+  - text: >-
+      Abaqus itself, the desktop product, does not run on 3DEXPERIENCE: it connects to the platform
+      through the All Physics Analyst role (a licensed bundle of platform apps), as do CST Studio Suite,
+      PowerFLOW, Simpack, Wave6 and XFlow. Separately, Dassault sells simulation roles that live on the
+      platform, such as Structural Performance Engineer, which use the same Abaqus solver technology.
+    url: https://cloud.academy.3ds.com/explorer/r2026x/role_SXK.html
+notes: >-
+  Format lists are Abaqus/CAE import and export. Parasolid, CATIA V5, SOLIDWORKS and ANSYS .cdb are
+  import only; .inp is written when a job is submitted.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://nafems.org/blog/posts/analysis-origins-abaqus
+    label: verification source
+  - url: https://www.3ds.com/products/simulia/abaqus
+    label: official page
+  - url: >-
+      https://docs.software.vt.edu/abaqusv2025/English/SIMACAECAERefMap/simacae-c-impconceptswhatkind.htm
+    label: 'Abaqus/CAE 2025 docs: import and export formats'
+  - url: https://en.wikipedia.org/wiki/Abaqus
+    label: Wikipedia
+  - url: https://blog.3ds.com/brands/simulia/lets-learn-together-structural-performance-engineer-role
+    label: 'SIMULIA blog: Structural Performance Engineer delivers Abaqus technology on the platform'
+  - url: https://ceae-server.colorado.edu/v2016/books/usi/pt02ch10s01s07.html
+    label: 'Abaqus/CAE 2016 User Guide (mirror): Abaqus/CAE uses ACIS to store geometric entities; same text in the 2017 manual, the latest public statement'

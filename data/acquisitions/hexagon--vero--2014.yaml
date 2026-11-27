@@ -1,0 +1,12 @@
+id: hexagon--vero--2014
+type: acquisition
+acquirer: hexagon
+target: vero
+completed: '2014'
+status: completed
+summary: CAM brands Edgecam, WorkNC, Radan, VISI.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://news.cision.com/hexagon/r/hexagon-acquires-vero-software,c9619016
+    label: source

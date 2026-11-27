@@ -1,0 +1,67 @@
+id: creo
+type: tool
+name: Creo
+category: cad
+vendor: ptc
+open_source: false
+status: active
+first_release: 1988
+stages:
+  - design
+  - analysis
+  - manufacturing
+built_on:
+  - granite
+formats:
+  reads:
+    - creo-prt
+    - step
+    - iges
+    - jt
+    - parasolid-xt
+    - acis-sat
+  writes:
+    - creo-prt
+    - step
+    - iges
+    - stl
+    - jt
+competes_with:
+  - catia
+  - nx
+aka:
+  - Pro/ENGINEER
+website: https://www.ptc.com/en/products/creo
+wikipedia: https://en.wikipedia.org/wiki/PTC_Creo
+summary: Successor to Pro/ENGINEER, the first commercial parametric feature-based CAD.
+plain: >-
+  PTC's 3D design software for mechanical parts. Its predecessor, Pro/ENGINEER, was the first
+  commercial design tool where changing one dimension updates the whole model.
+workflow: >-
+  An engineer models parts and assemblies here, saves them to Windchill, and exports STEP, JT or
+  IGES files to simulation, suppliers and viewers, or STL files to 3D printing.
+native_files:
+  - ext: .prt
+    what: Creo part
+    format: creo-prt
+  - ext: .asm
+    what: Creo assembly
+  - ext: .drw
+    what: Creo drawing
+notes: >-
+  PTC dates the Pro/ENGINEER launch to 1988 and introduced the Creo name in 2010. Creo connects to
+  Windchill as a registered server and then saves to and opens from a Windchill workspace, but it
+  also works without Windchill, so the two integrate rather than one running on the other.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ptc.com/en/products/creo
+    label: official page
+  - url: https://en.wikipedia.org/wiki/PTC_Creo
+    label: Wikipedia
+  - url: https://support.ptc.com/help/creo/creo_pma/r12/usascii/fundamentals/fundamentals/About_File_Types.html
+    label: 'native file format (vendor help: file types)'
+  - url: https://www.ptc.com/en/blogs/cad/a-quick-history-of-ptc-creo
+    label: 'PTC blog: Pro/ENGINEER launched 1988, Creo introduced 2010'
+  - url: https://support.ptc.com/help/creo/creo_pma/r7.0/usascii/fundamentals/collaboration/About_Collaboration_Scenarios__Pro_ENGINEER_and_.html
+    label: 'Creo 7.0 help: collaboration with and without Windchill'

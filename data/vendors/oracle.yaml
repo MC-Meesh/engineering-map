@@ -1,0 +1,17 @@
+id: oracle
+type: vendor
+name: Oracle
+kind: company
+hq: US
+founded: 1977
+status: active
+website: https://www.oracle.com/
+wikipedia: https://en.wikipedia.org/wiki/Oracle_Corporation
+summary: Agile PLM, from its 2007 Agile Software acquisition.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.oracle.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Oracle_Corporation
+    label: Wikipedia

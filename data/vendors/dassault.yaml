@@ -1,0 +1,22 @@
+id: dassault
+type: vendor
+name: Dassault Systèmes
+kind: company
+hq: FR
+founded: 1981
+status: active
+website: https://www.3ds.com/
+wikipedia: https://en.wikipedia.org/wiki/Dassault_Syst%C3%A8mes
+summary: >-
+  CATIA, SOLIDWORKS, SIMULIA, DELMIA, ENOVIA and the 3DEXPERIENCE platform; owns the CGM and ACIS
+  kernels. Its other brands (MEDIDATA, BIOVIA, GEOVIA, CENTRIC PLM and more) sit outside this map.
+notes: Founded 1981; Dassault describes itself as having twelve brands.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/about/company/history
+    label: Dassault company history (founded 1981, brand creations)
+  - url: https://www.3ds.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Dassault_Syst%C3%A8mes
+    label: Wikipedia

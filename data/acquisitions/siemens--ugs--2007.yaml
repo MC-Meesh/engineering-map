@@ -1,0 +1,20 @@
+id: siemens--ugs--2007
+type: acquisition
+acquirer: siemens
+target: ugs
+announced: '2007-01-25'
+completed: 2007-05
+status: completed
+value: about $3.5B including assumed debt
+summary: Formed Siemens PLM Software, now Siemens Digital Industries Software.
+notes: >-
+  EC approval came on 2007-04-27; sources differ on the closing day (4 or 7 May), so month
+  precision.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/0001321033/000129993307000536/exhibit1.htm
+    label: 'UGS 8-K exhibit 2007-01-25: Siemens to acquire UGS'
+  - url: >-
+      https://www.americanmachinist.com/archive/uncategorized/article/21897519/siemens-completes-acquisition-of-ugs
+    label: 'American Machinist 2007-05-18: Siemens completes UGS acquisition'

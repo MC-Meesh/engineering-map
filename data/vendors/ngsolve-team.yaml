@@ -1,0 +1,14 @@
+id: ngsolve-team
+type: vendor
+name: NGSolve team (TU Wien)
+kind: project
+hq: AT
+founded: 1994
+status: active
+website: https://ngsolve.org/
+summary: Netgen mesher and NGSolve FEM library.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://ngsolve.org/
+    label: official page

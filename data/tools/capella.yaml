@@ -1,0 +1,50 @@
+id: capella
+type: tool
+name: Capella
+category: systems-mbse
+vendor: eclipse-foundation
+open_source: true
+license: EPL-2.0
+status: active
+first_release: 2014
+stages:
+  - requirements
+formats:
+  reads:
+    - reqif
+open_source_alternative_to:
+  - cameo
+  - rhapsody
+website: https://mbse-capella.org/
+wikipedia: https://en.wikipedia.org/wiki/Capella_(engineering)
+summary: Open MBSE workbench implementing the Arcadia method, originally developed at Thales.
+plain: >-
+  Free software for planning a complex system as a model of its functions, parts and how they
+  interact, following a method called Arcadia that was developed at Thales.
+workflow: >-
+  Systems engineers bring in customer requirements as ReqIF, model the system's functions and parts
+  here step by step with the Arcadia method in .capella model and .aird diagram files, and hand the
+  architecture to the teams that design and test each part.
+native_files:
+  - ext: .capella
+    what: 'Capella semantic model (components, functions, capabilities)'
+  - ext: .aird
+    what: 'Capella diagram representation file (shown elements, layout)'
+notes: >-
+  Created at Thales and open sourced under Eclipse PolarSys in 2014; some sources date the first
+  public release to 2015. No Thales vendor id exists for origin.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://github.com/eclipse-capella/capella
+    label: Capella GitHub repo (EPL-2.0)
+  - url: https://mbse-capella.org/
+    label: official page (Arcadia method)
+  - url: https://www.eclipse.org/community/eclipse_newsletter/2014/april/article1.php
+    label: Eclipse newsletter 2014-04 (Thales to open source Capella)
+  - url: https://en.wikipedia.org/wiki/Capella_(engineering)
+    label: Wikipedia
+  - url: https://github.com/eclipse-capella/capella-requirements-vp
+    label: 'Eclipse Capella Requirements Viewpoint add-on: ReqIF import'
+  - url: https://forum.mbse-capella.org/t/unable-to-understand-aird-and-melodymodeller-files/4650
+    label: 'Official Capella forum: what .aird and .capella files contain'

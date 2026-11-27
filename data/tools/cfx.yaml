@@ -1,0 +1,58 @@
+id: cfx
+type: tool
+name: Ansys CFX
+category: cfd
+vendor: ansys
+origin: cfx-co
+open_source: false
+status: active
+stages:
+  - analysis
+formats:
+  reads:
+    - fluent-cas
+    - cgns
+    - ansys-cdb
+    - nastran-bdf
+  writes:
+    - cgns
+competes_with:
+  - fluent
+  - fidelity-cfd
+website: https://ansys.synopsys.com/products/fluids/ansys-cfx
+summary: Coupled-solver CFD favored for turbomachinery.
+plain: >-
+  Simulates how fluids flow, most often in machines that spin, such as pumps, fans, compressors and
+  turbines.
+workflow: >-
+  An analyst brings in a mesh (the flow passages split into small cells) of a pump, fan or turbine
+  as a Fluent, CGNS or Ansys .cdb file, sets up the case in CFX-Pre, solves it here, and studies the
+  .res results or exports CGNS for the machine designers.
+native_files:
+  - ext: .cfx
+    what: CFX-Pre case file (physics, regions and mesh)
+  - ext: .def
+    what: CFX-Solver input file
+  - ext: .res
+    what: CFX-Solver results file
+notes: >-
+  Descends from the UKAEA Harwell FLOW3D code (late 1980s) later combined with ASC TASCflow; Ansys
+  completed the purchase of CFX from AEA Technology on 2003-02-26 for about $21M. Exact first
+  release year unconfirmed. Product page shows a 2026 R1 release.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://ansys.synopsys.com/products/fluids/ansys-cfx
+    label: Ansys CFX product page
+  - url: https://sec.gov/Archives/edgar/data/1013462/000102140803004058/dex991.htm
+    label: Ansys press release (8-K), CFX acquisition completed 2003-02-26
+  - url: https://sec.gov/Archives/edgar/data/1013462/000093066103000410/dex991.htm
+    label: Ansys press release (8-K), CFX agreement 2003-02-04
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/corp/v261/en/cfx_pre/i1339604.html
+    label: 'native file format (Ansys CFX-Pre help: file types)'
+  - url: https://ansyshelp.ansys.com/public/views/secured/corp/v252/en/cfx_solv/i1299415.html
+    label: results file format (Ansys CFX-Solver help)
+  - url: https://ansyshelp.ansys.com/public/views/secured/corp/v252/en/cfx_pre/BABCCFBE.html
+    label: 'CFX-Pre help 2025 R2: supported mesh file types'
+  - url: https://ansyshelp.ansys.com/public/views/secured/corp/v252/en/cfx_solv/i1305880.html
+    label: 'CFX-Solver help: cfx5export file export utility (CGNS, EnSight, FieldView, Patran)'

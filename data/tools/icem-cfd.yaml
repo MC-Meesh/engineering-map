@@ -1,0 +1,37 @@
+id: icem-cfd
+type: tool
+name: Ansys ICEM CFD
+category: meshing
+vendor: ansys
+open_source: false
+status: active
+stages:
+  - analysis
+formats:
+  writes:
+    - cgns
+    - fluent-cas
+competes_with:
+  - pointwise
+website: https://ansyshelp.ansys.com/public/Views/Secured/corp/v261/en/icm_user/iuser_intro.html
+summary: Legacy blocking-based hexahedral mesher, still used for structured CFD grids.
+plain: >-
+  An older tool for building neat grids of brick-shaped cells around a shape, still used to prepare
+  fluid flow simulations.
+workflow: >-
+  An analyst builds a neat grid of brick-shaped cells block by block around the shape here, then
+  writes it as a CGNS or Fluent file so a flow simulation program such as Fluent can compute the air
+  or liquid flow on it.
+notes: >-
+  ICEM CFD Engineering (Berkeley) was acquired by Ansys in Aug 2000. Still documented and shipped in
+  2026 R1 with no deprecation notice in the 2026 R1 release advisories; the old product page is
+  gone, so url is the user guide. First release year unconfirmed.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/corp/v261/en/icm_user/iuser_intro.html
+    label: Ansys ICEM CFD 2026 R1 user guide
+  - url: https://sec.gov/Archives/edgar/data/1013462/000093066103000410/dex991.htm
+    label: Ansys press release 2003 (ICEM CFD acquired Aug 2000)
+  - url: https://capedge.com/filing/s3-content/0001013462-00-000014/3
+    label: Ansys press release 2000-08-30 (SEC exhibit copy)

@@ -1,0 +1,17 @@
+id: openfoam-case
+type: format
+name: OpenFOAM case
+extensions:
+  - polyMesh/
+  - system/
+  - constant/
+kind: solver-input
+steward: OpenFOAM Foundation and OpenCFD
+open_spec: true
+website: https://www.openfoam.com/documentation/user-guide
+summary: A directory of dictionaries plus polyMesh; the input and output structure of OpenFOAM.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.openfoam.com/documentation/user-guide
+    label: official page

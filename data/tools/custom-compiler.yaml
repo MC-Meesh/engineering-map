@@ -1,0 +1,33 @@
+id: custom-compiler
+type: tool
+name: Synopsys Custom Compiler
+category: eda
+vendor: synopsys
+open_source: false
+status: active
+first_release: 2015
+stages:
+  - design
+formats:
+  reads:
+    - gdsii
+    - oasis
+  writes:
+    - gdsii
+    - oasis
+competes_with:
+  - virtuoso
+website: https://www.synopsys.com/implementation-and-signoff/custom-design-platform/custom-compiler.html
+summary: Custom and analog layout environment.
+plain: >-
+  Synopsys software where engineers draw by hand the detailed shapes of a chip's custom and analog
+  circuits, the parts that handle smoothly varying signals rather than only ones and zeros.
+workflow: >-
+  A layout engineer takes a custom or analog circuit from schematic design, draws its layout here,
+  and streams GDSII or OASIS files to physical verification such as IC Validator.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.synopsys.com/implementation-and-signoff/custom-design-platform/custom-compiler.html
+    label: official page

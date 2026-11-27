@@ -1,0 +1,28 @@
+id: plant-simulation
+type: tool
+name: Tecnomatix Plant Simulation
+category: digital-twin
+vendor: siemens
+open_source: false
+status: active
+first_release: 1990
+stages:
+  - manufacturing
+  - lifecycle
+formats:
+  reads:
+    - jt
+website: https://www.siemens.com/en-us/products/tecnomatix/plant-simulation-software/
+summary: Discrete-event simulation of factories and logistics.
+plain: >-
+  Simulates how a factory or logistics operation runs over time, so changes can be tested on the
+  computer before making them.
+workflow: >-
+  A planner models the factory or logistics flow here, with equipment and product shapes brought in
+  as JT, tests changes over simulated time, and hands the chosen layout and rules to the plant.
+notes: first_release 1990 has no source; the product descends from SIMPLE++ (secondary sources).
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/tecnomatix/plant-simulation-software/
+    label: official page

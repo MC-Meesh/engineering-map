@@ -1,0 +1,138 @@
+---
+import Base from '../../layouts/Base.astro';
+import OwnershipNode from '../../components/OwnershipNode.astro';
+import { groups, independents, dealCount } from '../../lib/ownership';
+import { stats } from '../../lib/data';
+const inGroups = groups.reduce((s, g) => s + g.total, 0);
+---
+<Base title="Ownership tree" section="ownership" description={`Who owns whom in engineering software: ${groups.length} groups, their acquired subsidiaries and products, from ${dealCount} dated acquisition records.`}>
+  <div class="page">
+    <header class="page-head">
+      <p class="crumbs"><a href="/vendors/">Vendors</a> / Ownership tree</p>
+      <h1>Ownership tree</h1>
+      <p class="lede">{groups.length} groups own {inGroups} of the {stats.toolsAll} tools in the map. Each branch is a company it acquired or holds, dated by the deal's completion, with the products sold under that name and where each was first developed.</p>
+      <p>Built from the vendors' parent links and {dealCount} acquisition records (see <a href="/acquisitions/">acquisitions</a>). A product keeps the vendor that sells it under its own brand, so Simcenter Hypermesh sits under Altair, and Altair under Siemens.</p>
+      <p class="tree-cta"><a class="btn" href="/">See it as circles on the map</a><a class="btn-2" href="/acquisitions/">Deals by year</a></p>
+    </header>
+
+    <nav class="families" aria-label="Groups by size">
+      <ol>
+        {groups.filter((g) => g.total > 0).map((g) => (
+          <li><a href={`#v-${g.vendor.id}`} data-jump={g.vendor.id}><span class="fam-name">{g.vendor.name}</span><span class="fam-bar" style={`--w:${(g.total / groups[0].total) * 100}%`} aria-hidden="true"></span><span class="num muted">{g.total}</span></a></li>
+        ))}
+      </ol>
+    </nav>
+
+    <div class="tree-tools" role="group" aria-label="Tree controls">
+      <label class="sr-only" for="tree-q">Find a vendor or product</label>
+      <input id="tree-q" class="filter-input" type="search" placeholder="Find: Altair, Fluent, Onshape" autocomplete="off" />
+      <button type="button" class="btn-2" data-all="open">Expand all</button>
+      <button type="button" class="btn-2" data-all="close">Collapse all</button>
+      <p class="footnote" id="tree-count" aria-live="polite"></p>
+    </div>
+
+    <h2>Groups <span class="muted num">{groups.length}</span></h2>
+    <ul class="otree" id="otree">
+      {groups.map((g) => <OwnershipNode node={g} open />)}
+    </ul>
+
+    <h2>Independent <span class="muted num">{independents.length}</span></h2>
+    <p class="footnote">Vendors with no parent and no subsidiaries in the data.</p>
+    <ul class="otree flat">
+      {independents.map((g) => <OwnershipNode node={g} />)}
+    </ul>
+  </div>
+</Base>
+
+<script>
+  const tree = document.querySelectorAll<HTMLLIElement>('.otree li.on');
+  const q = document.querySelector<HTMLInputElement>('#tree-q')!;
+  const count = document.querySelector('#tree-count')!;
+  const openPath = (li: Element | null) => {
+    for (let el = li; el; el = el.parentElement?.closest('li.on') ?? null) el.querySelector(':scope > details')?.setAttribute('open', '');
+  };
+  function jump(id: string) {
+    const li = document.getElementById(`v-${id}`);
+    if (!li) return;
+    openPath(li);
+    li.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    li.classList.add('flash');
+    setTimeout(() => li.classList.remove('flash'), 1600);
+  }
+  document.querySelectorAll<HTMLButtonElement>('[data-all]').forEach((b) =>
+    b.addEventListener('click', () => {
+      const open = b.dataset.all === 'open';
+      document.querySelectorAll('.otree details').forEach((d) => (open ? d.setAttribute('open', '') : d.removeAttribute('open')));
+    }),
+  );
+  document.addEventListener('click', (e) => {
+    const a = (e.target as HTMLElement).closest<HTMLAnchorElement>('a[data-jump]');
+    if (!a) return;
+    e.preventDefault();
+    history.replaceState(null, '', `#v-${a.dataset.jump}`);
+    jump(a.dataset.jump!);
+  });
+  q.addEventListener('input', () => {
+    const term = q.value.trim().toLowerCase();
+    let hits = 0;
+    tree.forEach((li) => li.classList.remove('hit', 'dim'));
+    if (!term) { count.textContent = ''; return; }
+    tree.forEach((li) => {
+      const own = (li.dataset.name ?? '').includes(term);
+      if (own) { hits++; li.classList.add('hit'); openPath(li); }
+    });
+    // Dim branches with no match inside them.
+    tree.forEach((li) => { if (!li.classList.contains('hit') && !li.querySelector('li.hit')) li.classList.add('dim'); });
+    count.textContent = hits ? `${hits} vendor${hits === 1 ? '' : 's'} match.` : 'No match.';
+  });
+  const m = location.hash.match(/^#v-(.+)$/);
+  if (m) jump(decodeURIComponent(m[1]));
+</script>
+
+<style is:global>
+  .tree-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; }
+  .tree-tools .filter-input { margin: 0; }
+  .tree-tools .footnote { flex-basis: 100%; margin: 0; min-height: 1.2em; }
+  .tree-cta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .families { margin: 0 0 2.5rem; max-width: 920px; }
+  .families ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 0 2rem; border-top: 1px solid var(--ink); }
+  .families a { display: grid; grid-template-columns: minmax(0, 1fr) 5rem 2.2rem; align-items: center; gap: 0.75rem; padding: 0.45rem 0; border-bottom: 1px solid var(--rule-2); text-decoration: none; font-size: var(--fs-0); transition: color 0.2s; }
+  .families a:hover .fam-name { text-decoration: underline; }
+  .fam-name { min-width: 0; }
+  .fam-bar { height: 6px; background: linear-gradient(90deg, var(--ink) var(--w), var(--rule-2) var(--w)); }
+  .families .num { text-align: right; }
+  .otree, .on-kids { list-style: none; margin: 0; padding: 0; }
+  li.on { scroll-margin-top: calc(var(--header-h) + 12px); }
+  .otree { border-top: 1px solid var(--ink); max-width: 920px; }
+  .otree > li.on { border-bottom: 1px solid var(--rule); }
+  .on-kids { margin: 0.25rem 0 0.25rem 0.55rem; padding-left: 0.9rem; border-left: 1px solid var(--rule); }
+  .on-kids > li.on { position: relative; }
+  .on-kids > li.on::before { content: ''; position: absolute; left: -0.9rem; top: 1.05rem; width: 0.7rem; border-top: 1px solid var(--rule); }
+  li.on details > summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.15rem 0.75rem; padding: 0.45rem 0; cursor: pointer; list-style: none; }
+  li.on details > summary::-webkit-details-marker { display: none; }
+  li.on details > summary::before { content: '+'; font-family: var(--mono); color: var(--ink-3); width: 0.9rem; flex: none; }
+  li.on details[open] > summary::before { content: '\2212'; }
+  .on-name { font-weight: 600; display: inline-flex; align-items: baseline; }
+  .on-kids .on-name { font-weight: 400; }
+  .on-deal { font-size: var(--fs-0); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .on-deal.pending { color: var(--ink); border: 1px solid var(--ink); padding: 0 0.35rem; }
+  .on-map { font-size: 0.72rem; color: var(--ink-2); }
+  .on-flag { font-size: var(--fs-0); color: var(--ink-3); }
+  .on-count { margin-left: auto; font-size: var(--fs-0); }
+  .on-body { padding: 0 0 0.5rem 1.65rem; }
+  .on-row { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 0 1rem; font-size: var(--fs-0); margin: 0.1rem 0 0.4rem; }
+  .on-label { color: var(--ink-2); }
+  .on-label.on-brand { color: var(--ink); font-weight: 600; }
+  .on-tools { list-style: none; margin: 0; padding: 0; columns: 2 14rem; column-gap: 1.5rem; }
+  .on-tools li { break-inside: avoid; padding: 0.08rem 0; }
+  .otree li.dim > details > summary { opacity: 0.45; }
+  .otree li.hit > details > summary .on-name a { background: var(--ink); color: var(--paper); padding: 0 0.3rem; }
+  .otree li.flash > details > summary { background: var(--red-wash); }
+  .otree.flat > li.on details > summary { padding: 0.3rem 0; }
+  @media (max-width: 640px) {
+    .on-row { grid-template-columns: 1fr; }
+    .on-body { padding-left: 0.9rem; }
+    .on-kids { margin-left: 0.2rem; padding-left: 0.6rem; }
+    .on-kids > li.on::before { left: -0.6rem; width: 0.45rem; }
+  }
+</style>

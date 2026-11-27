@@ -1,0 +1,67 @@
+id: gmsh
+type: tool
+name: Gmsh
+category: meshing
+vendor: gmsh-team
+open_source: true
+license: GPL-2.0-or-later
+status: active
+first_release: 1996
+stages:
+  - analysis
+built_on:
+  - occt
+formats:
+  reads:
+    - gmsh-msh
+    - step
+    - iges
+    - stl
+    - med
+    - cgns
+  writes:
+    - gmsh-msh
+    - stl
+    - vtk-legacy
+    - med
+    - cgns
+open_source_alternative_to:
+  - hypermesh
+  - ansa
+  - coreform-cubit
+competes_with:
+  - tetgen
+  - mmg
+website: https://gmsh.info/
+wikipedia: https://en.wikipedia.org/wiki/Gmsh
+summary: >-
+  Scriptable open-source mesher with an OCCT geometry engine and Python API; the default for open
+  FEM codes.
+plain: >-
+  Free software that breaks a 3D shape into a mesh of small cells for simulation; it can be driven
+  by scripts or Python and is the usual choice for open-source simulation codes.
+workflow: >-
+  A user imports STEP, IGES or STL geometry or writes a .geo script, meshes it here, and writes MSH,
+  MED or CGNS meshes for free simulation programs such as Elmer, FEniCS, OpenFOAM or code_aster.
+native_files:
+  - ext: .geo
+    what: Script in Gmsh's own scripting language
+  - ext: .msh
+    what: Gmsh mesh file (ASCII or binary)
+    format: gmsh-msh
+confidence: medium
+as_of: '2026-11-22'
+notes: Alternative to Coreform Cubit per the PyLith meshing guide, which compares Cubit and Gmsh feature by feature. Competition with MMG and TetGen is as benchmark peers among open-source tetrahedral meshers.
+sources:
+  - url: https://gmsh.info/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Gmsh
+    label: Wikipedia
+  - url: https://arxiv.org/abs/2008.08508
+    label: HXT paper benchmarking Gmsh and TetGen
+  - url: https://arxiv.org/html/2409.05525
+    label: Tetrahedral meshing benchmark against TetGen, Gmsh, MMG3D and fTetWild
+  - url: https://pylith.readthedocs.io/en/latest/user/meshing/overview.html
+    label: PyLith manual comparing Cubit and Gmsh for meshing
+  - url: https://gmsh.info/doc/texinfo/gmsh.html
+    label: native file format (Gmsh reference manual)

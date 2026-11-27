@@ -1,0 +1,11 @@
+id: ansys--granta--2019
+type: acquisition
+acquirer: ansys
+target: granta
+completed: '2019'
+status: completed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ansys.com/products/materials
+    label: source

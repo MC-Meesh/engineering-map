@@ -1,0 +1,33 @@
+id: maplesim
+type: tool
+name: MapleSim
+category: systems-mbse
+vendor: maplesoft
+open_source: false
+status: active
+first_release: 2008
+stages:
+  - analysis
+formats:
+  reads:
+    - modelica
+    - fmu
+  writes:
+    - modelica
+    - fmu
+competes_with:
+  - dymola
+website: https://www.maplesoft.com/products/maplesim/
+summary: Modelica-based physical modeling with symbolic model reduction.
+plain: >-
+  Software for modeling machines such as motors and drives from connected building blocks, written
+  in the open Modelica modeling language, with math that shrinks the model so it runs faster.
+workflow: >-
+  An engineer builds a system model from Modelica blocks here, or brings in Modelica files and FMUs
+  (packaged models other simulators can run), simplifies it, and exports FMUs or Modelica models to
+  control design and other system tools.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.maplesoft.com/products/maplesim/
+    label: official page

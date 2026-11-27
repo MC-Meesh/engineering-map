@@ -1,0 +1,15 @@
+id: delcam
+type: vendor
+name: Delcam
+kind: company
+hq: GB
+founded: 1977
+parent: autodesk
+status: merged
+website: https://en.wikipedia.org/wiki/Delcam
+summary: PowerMill, PowerShape and FeatureCAM.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/Delcam
+    label: official page

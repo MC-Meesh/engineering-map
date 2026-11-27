@@ -1,0 +1,32 @@
+id: system-modeler
+type: tool
+name: Wolfram System Modeler
+category: systems-mbse
+vendor: wolfram
+open_source: false
+status: active
+first_release: 2012
+stages:
+  - analysis
+formats:
+  reads:
+    - modelica
+    - fmu
+  writes:
+    - modelica
+    - fmu
+competes_with:
+  - dymola
+website: https://www.wolfram.com/system-modeler/
+summary: Modelica modeling tied to the Wolfram Language.
+plain: >-
+  Software for building and simulating models of whole systems, such as machines and circuits, in
+  Modelica (an open language for describing systems), with analysis in the Wolfram Language.
+workflow: >-
+  An engineer builds a Modelica system model here, simulates it, analyzes the results in the Wolfram
+  Language, and exchanges FMUs (packaged models) or Modelica files with other system tools.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.wolfram.com/system-modeler/
+    label: official page

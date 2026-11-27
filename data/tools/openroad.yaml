@@ -1,0 +1,36 @@
+id: openroad
+type: tool
+name: OpenROAD
+category: eda
+vendor: openroad-project
+open_source: true
+license: BSD-3-Clause
+status: active
+first_release: 2019
+stages:
+  - design
+built_on:
+  - yosys
+formats:
+  reads:
+    - lef-def
+    - verilog
+  writes:
+    - lef-def
+open_source_alternative_to:
+  - innovus
+  - fusion-compiler
+website: https://theopenroadproject.org/
+summary: Open autonomous RTL-to-GDS flow, used for open PDK tapeouts.
+plain: >-
+  Free software that turns a chip design written as code into a finished layout automatically, used
+  for chips made with open manufacturing kits.
+workflow: >-
+  Yosys turns a chip design written as code into logic gates, which come in as Verilog (code
+  describing the chip's circuits) with LEF/DEF files for an open manufacturing kit; OpenROAD places
+  and wires the gates and writes a DEF layout for final checks.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://theopenroadproject.org/
+    label: official page

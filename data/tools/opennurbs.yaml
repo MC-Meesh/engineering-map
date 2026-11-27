@@ -1,0 +1,36 @@
+id: opennurbs
+type: tool
+name: openNURBS
+category: geometry-kernel
+vendor: mcneel
+open_source: true
+license: openNURBS license (permissive)
+status: active
+first_release: 1999
+stages:
+  - design
+formats:
+  reads:
+    - rhino-3dm
+  writes:
+    - rhino-3dm
+website: https://www.rhino3d.com/opennurbs/
+summary: Free toolkit for reading and writing 3DM files and evaluating NURBS; not a full modeling kernel.
+plain: >-
+  A free toolkit for reading and writing Rhino's 3DM files and working with smooth curves and
+  surfaces (NURBS); it is not a full modeling engine.
+workflow: >-
+  Developers build openNURBS into their programs so they can read and write Rhino 3DM files and
+  evaluate the curves and surfaces inside them.
+notes: >-
+  A C++ source toolkit for reading and writing 3DM files, offered so other CAD, CAM and CAE
+  developers can exchange geometry with Rhino; McNeel says it is not a full geometry library.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.rhino3d.com/opennurbs/
+    label: official page
+  - url: https://www.rhino3d.com/features/developer/opennurbs
+    label: 'openNURBS page: C++ libraries to read and write 3DM'
+  - url: https://developer.rhino3d.com/guides/opennurbs/what-is-opennurbs/
+    label: 'McNeel developer guide: openNURBS is not a full geometry library'

@@ -1,0 +1,54 @@
+id: occt
+type: tool
+name: Open CASCADE Technology
+category: geometry-kernel
+vendor: open-cascade
+open_source: true
+license: LGPL-2.1-only WITH OCCT-exception-1.0
+status: active
+first_release: 1999
+stages:
+  - design
+formats:
+  reads:
+    - step
+    - iges
+    - obj
+    - gltf
+  writes:
+    - step
+    - iges
+    - stl
+    - obj
+    - gltf
+open_source_alternative_to:
+  - parasolid
+  - acis
+website: https://dev.opencascade.org/
+wikipedia: https://en.wikipedia.org/wiki/Open_Cascade_Technology
+summary: >-
+  The main open-source B-rep kernel, with STEP and IGES translators; under FreeCAD, CadQuery, Gmsh
+  and SALOME.
+plain: >-
+  The main free geometry engine for solid 3D shapes, with readers and writers for STEP and IGES
+  files; FreeCAD, CadQuery, Gmsh and SALOME build on it.
+workflow: >-
+  Programs such as FreeCAD, CadQuery, Gmsh and SALOME build on OCCT; it models the solids they
+  create and reads and writes the STEP and IGES files they exchange with other CAD (3D design)
+  tools.
+notes: >-
+  Matra Datavision opened its CAS.CADE libraries as Open CASCADE in December 1999; early releases
+  used its own public license before the move to LGPL 2.1 plus exception.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://occt3d.com/open-cascade-technology/index.html
+    label: 'Open Cascade OCCT page: LGPL 2.1 with OCCT exception'
+  - url: https://github.com/Open-Cascade-SAS/OCCT
+    label: OCCT GitHub repo
+  - url: https://www.linuxtoday.com/developer/linuxpr-open-cascade-a-new-step-forward-for-freedom
+    label: Matra Datavision open-source announcement, 1999-12-07
+  - url: https://dev.opencascade.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Open_Cascade_Technology
+    label: Wikipedia

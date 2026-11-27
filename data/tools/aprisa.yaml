@@ -1,0 +1,25 @@
+id: aprisa
+type: tool
+name: Aprisa
+category: eda
+vendor: siemens
+open_source: false
+status: active
+stages:
+  - design
+website: https://www.siemens.com/en-us/products/ic/ic-design/aprisa/
+summary: >-
+  Siemens EDA digital implementation: synthesis, placement and routing from RTL to GDS for block and
+  top-level designs.
+plain: >-
+  Turns a chip design written as code into the physical layout of the chip, placing its logic blocks
+  and routing the wires between them.
+workflow: >-
+  A chip team brings in the design written as hardware code (RTL); Aprisa turns it into logic gates,
+  places them and routes the wires into a physical layout, which goes on to final timing and layout
+  checks, such as Calibre, before the chip is made.
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/ic/ic-design/aprisa/
+    label: official page (Aprisa digital implementation)
+as_of: '2026-11-22'

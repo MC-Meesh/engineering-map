@@ -1,0 +1,25 @@
+id: mentor
+type: vendor
+name: Mentor Graphics
+kind: company
+hq: US
+founded: 1981
+parent: siemens
+status: merged
+website: https://www.siemens.com/en-us/products/ic/
+wikipedia: https://en.wikipedia.org/wiki/Mentor_Graphics
+summary: EDA vendor (Calibre, Xpedition, PADS); now Siemens EDA.
+notes: >-
+  Headquartered in Wilsonville, Oregon. The business is now marketed as Siemens EDA (renamed in
+  January 2021 per Wikipedia).
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/701811/000119312517104047/d354436d8k.htm
+    label: 'Mentor Graphics 8-K 2017-03-30: merger completed'
+  - url: https://press.siemens.com/global/en/pressrelease/siemens-closes-mentor-graphics-acquisition
+    label: Siemens release 2017-03-30
+  - url: https://www.siemens.com/en-us/products/ic/
+    label: Siemens EDA IC page
+  - url: https://en.wikipedia.org/wiki/Mentor_Graphics
+    label: Wikipedia

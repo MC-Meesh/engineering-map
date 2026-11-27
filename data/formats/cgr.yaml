@@ -1,0 +1,23 @@
+id: cgr
+type: format
+name: CATIA CGR
+extensions:
+  - .cgr
+kind: tessellated
+steward: Dassault Systemes
+steward_vendor: dassault
+open_spec: false
+website: https://www.spatial.com/products/3d-interop
+summary: >-
+  CATIA's visualization file: a triangle mesh of the shape only, with no assembly structure, no
+  exact B-rep and no PMI.
+notes: >-
+  Part of the CATIA V5 file family, next to .CATPart and .CATProduct. A .cgr file is good for
+  looking at a shape (for example in a large digital mock-up), not for editing it or machining from
+  it, because the exact surfaces are gone. Spatial's 3D InterOp reads it with its CATIA V5 reader
+  and writes it with its CATIA V5 writer, as visualization data.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.spatial.com/products/3d-interop
+    label: Spatial 3D InterOp, CGR (mesh only; no product structure, exact B-rep or PMI)

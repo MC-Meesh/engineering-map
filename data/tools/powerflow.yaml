@@ -1,0 +1,40 @@
+id: powerflow
+type: tool
+name: PowerFLOW
+category: cfd
+vendor: dassault
+origin: exa
+open_source: false
+status: active
+first_release: 1994
+stages:
+  - analysis
+formats:
+  reads:
+    - stl
+competes_with:
+  - ultrafluidx
+  - xflow
+website: https://www.3ds.com/products/simulia/powerflow
+summary: Lattice Boltzmann CFD long used for vehicle aerodynamics and aeroacoustics.
+plain: >-
+  Simulates air flowing around vehicles and the noise it makes, using the lattice Boltzmann method,
+  which models the air as particles moving on a grid.
+workflow: >-
+  An engineer brings in the vehicle surface as STL, simulates airflow and noise here with the
+  lattice Boltzmann method, and passes the results back to the vehicle designers.
+notes: >-
+  1994 is the year Exa first generated commercial revenue (S-1), not a documented PowerFLOW release
+  date.
+geometry_basis:
+  kind: mesh
+  text: >-
+    Imports CAD geometry, works from a prepared surface mesh model and builds its fluid grid automatically; no geometry kernel is named.
+  url: https://www.3ds.com/products/simulia/powerflow
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/products/simulia/powerflow
+    label: official page
+  - url: https://www.sec.gov/Archives/edgar/data/890264/000119312511208397/ds1.htm
+    label: Exa S-1 2011 (first commercial revenue 1994)

@@ -1,0 +1,33 @@
+id: codebeamer
+type: tool
+name: codebeamer
+category: systems-mbse
+vendor: ptc
+origin: intland
+open_source: false
+status: active
+first_release: 2003
+stages:
+  - requirements
+  - test
+formats:
+  reads:
+    - reqif
+  writes:
+    - reqif
+competes_with:
+  - polarion
+  - doors
+website: https://www.ptc.com/en/products/codebeamer
+summary: ALM and requirements for regulated product development.
+plain: >-
+  Software for tracking a product's requirements, tests and changes in one place, used by companies
+  that must prove their development process to regulators.
+workflow: >-
+  Teams capture requirements here, often exchanged as ReqIF with customers or other requirements
+  tools, link them to tests and changes, and produce the traceability evidence regulators ask for.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ptc.com/en/products/codebeamer
+    label: official page

@@ -1,0 +1,16 @@
+id: abaqus-odb
+type: format
+name: Abaqus ODB
+extensions:
+  - .odb
+kind: results
+steward: Dassault Systemes
+steward_vendor: dassault
+open_spec: false
+website: https://www.3ds.com/products/simulia/abaqus
+summary: Abaqus output database; read through the Abaqus API or licensed translators.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.3ds.com/products/simulia/abaqus
+    label: official page

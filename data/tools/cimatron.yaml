@@ -1,0 +1,31 @@
+id: cimatron
+type: tool
+name: Cimatron
+category: cam
+vendor: cambrio
+open_source: false
+status: active
+first_release: 1982
+stages:
+  - design
+  - manufacturing
+formats:
+  reads:
+    - step
+    - iges
+  writes:
+    - gcode
+website: https://www.cimatron.com/
+summary: CAD/CAM for mold and die makers, now under Sandvik.
+plain: >-
+  Design and machining software for companies that make molds and dies, from shaping the tool to
+  programming the machines that cut it.
+workflow: >-
+  A mold or die maker brings in the part as STEP or IGES, designs the mold tool here, programs the
+  machining, and writes G-code, the step-by-step instructions for the CNC (computer-controlled)
+  machines that cut the tool.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cimatron.com/
+    label: official page

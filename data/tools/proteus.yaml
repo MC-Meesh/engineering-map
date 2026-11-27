@@ -1,0 +1,27 @@
+id: proteus
+type: tool
+name: Proteus
+category: eda
+vendor: labcenter
+open_source: false
+status: active
+first_release: 1988
+stages:
+  - design
+  - analysis
+formats:
+  writes:
+    - gerber
+website: https://www.labcenter.com/
+summary: Schematic, microcontroller co-simulation and PCB layout.
+plain: >-
+  Software for drawing circuit diagrams, simulating microcontroller circuits together with their
+  code, and laying out circuit boards.
+workflow: >-
+  A designer draws a microcontroller circuit, simulates it together with its code, lays out the
+  board here, and sends Gerber files to the board maker.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.labcenter.com/
+    label: official page

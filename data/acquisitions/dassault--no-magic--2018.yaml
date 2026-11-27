@@ -1,0 +1,16 @@
+id: dassault--no-magic--2018
+type: acquisition
+acquirer: dassault
+target: no-magic
+announced: '2017-10-25'
+completed: 2018-06
+status: completed
+notes: >-
+  The completion release is datelined 2018-06-20 (investor copy stamped 2018-06-19), so month
+  precision.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.3ds.com/newsroom/press-releases/no-magic-acquisition-completed-dassault-systemes-strengthens-foothold-systems-engineering-facilitate-new-connected-experiences
+    label: 'Dassault release 2018-06-20: No Magic acquisition completed'

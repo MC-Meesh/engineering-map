@@ -1,0 +1,17 @@
+id: med
+type: format
+name: MED
+extensions:
+  - .med
+  - .rmed
+kind: mesh
+steward: EDF and CEA (SALOME)
+steward_vendor: salome-platform
+open_spec: true
+website: https://www.salome-platform.org/
+summary: SALOME and code_aster mesh and field format on HDF5.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.salome-platform.org/
+    label: official page

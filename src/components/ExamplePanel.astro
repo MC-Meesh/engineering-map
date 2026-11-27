@@ -1,0 +1,180 @@
+---
+// The example panel beside a format page's description: the example file itself, rendered on
+// the page. Geometry files open in the 3D viewer, other hosted files in the format inspector
+// ("Inside the file"), and formats we can only link get their structure explainer. The viewer
+// and the inspector are imported only when the panel scrolls into view, so no other page pays
+// for them. Policy: docs/decisions/0005 and 0006.
+import { examplesFor, previewable, inspectable, fmtBytes, explainerFor } from '../lib/data';
+import '../styles/inspector.css';
+interface Props { format: string; name: string; id?: string; prefer?: string; exclude?: string }
+const { format, name, id = 'example', prefer, exclude } = Astro.props;
+// A page can ask for the sample that fits it best first (a 3D printer tool gets printer G-code).
+const hostedAll0 = examplesFor(format).filter((e) => e.file && (previewable(e.file) || inspectable(e.file)));
+// ...and can leave out samples that would mislead there (printer G-code on a milling tool).
+const kept = exclude ? hostedAll0.filter((e) => !new RegExp(exclude, 'i').test(e.contains + e.file)) : hostedAll0;
+const hostedAll = kept.length ? kept : hostedAll0;
+const hosted = prefer ? [...hostedAll].sort((a, b) => Number(new RegExp(prefer, 'i').test(b.contains + b.file)) - Number(new RegExp(prefer, 'i').test(a.contains + a.file))) : hostedAll;
+const linked = examplesFor(format).filter((e) => !e.file);
+const ex = explainerFor(format);
+const fileName = (p: string) => p.split('/').pop();
+const first = hosted[0];
+const views = (file?: string) => [previewable(file) && 'model', inspectable(file) && 'inside'].filter(Boolean) as string[];
+---
+<section id={id} class="xp" aria-label={`Example ${name} file`} data-format={format}>
+  {first ? (
+    <>
+      <div class="xp-bar">
+        {hosted.length > 1 ? (
+          <label class="xp-file"><span class="sr-only">Example file</span>
+            <select>{hosted.map((e, i) => <option value={i}>{fileName(e.file!)} ({fmtBytes(e.size!)})</option>)}</select>
+          </label>
+        ) : (
+          <p class="xp-file"><span class="xp-name">{fileName(first.file!)}</span> <span class="muted num">{fmtBytes(first.size!)}</span></p>
+        )}
+        <div class="xp-tabs" role="tablist" aria-label="How to show the file">
+          <button type="button" role="tab" data-view="model" aria-selected="false">{hosted.some((e) => /\.(gds|gbr)$/i.test(e.file!)) ? "Picture" : "3D model"}</button>
+          <button type="button" role="tab" data-view="inside" aria-selected="false">Inside the file</button>
+        </div>
+      </div>
+      <div class="xp-stage">
+        <div class="xp-model" hidden></div>
+        <div class="xp-inside insp-host" hidden></div>
+        <p class="xp-wait muted">Loading the example...</p>
+      </div>
+      <ul class="xp-files" hidden>
+        {hosted.map((e) => (
+          <li data-file={`/${e.file}`} data-views={views(e.file).join(' ')} data-what={e.contains} data-license={e.license}></li>
+        ))}
+      </ul>
+      <p class="xp-meta"><span class="xp-what">{first.contains}</span> <span class="muted xp-license">{first.license}.</span></p>
+      <p class="xp-links"><a class="xp-dl" href={`/${first.file}`} download>Download</a><a href={`/formats/${format}/inside/`}>Open full width</a><a href={`/formats/${format}/#examples`}>License and checksum</a></p>
+    </>
+  ) : ex ? (
+    <div class="xp-explainer">
+      <p class="xp-kicker">How {(/^[A-Z]{2}/.test(name) ? (/^[AEFHILMNORSX]/.test(name) ? 'an' : 'a') : /^[AEIOU]/i.test(name) ? 'an' : 'a')} {name} file is organized</p>
+      <p>{ex.summary}</p>
+      <dl>{ex.layout.map((l) => <><dt>{l.part}</dt><dd>{l.what}</dd></>)}</dl>
+      <p class="xp-links"><a href={`/formats/${format}/inside/`}>Sources and full page</a>{linked.length > 0 && <a href={`/formats/${format}/#examples`}>Samples published by others</a>}</p>
+    </div>
+  ) : (
+    <div class="xp-explainer">
+      <p class="xp-kicker">No example to show</p>
+      {linked.length > 0 ? (
+        <>
+          <p>We may not rehost a {name} file, but these are published by others:</p>
+          <ul>{linked.map((e) => <li><a href={e.url}>{e.title ?? e.url}</a></li>)}</ul>
+        </>
+      ) : (
+        <p>Nothing we found can be shared legally. See <a href="/formats/examples/">every example</a>.</p>
+      )}
+    </div>
+  )}
+</section>
+
+<script>
+  // A page can hold more than one panel (a tool page shows its own format's explainer and the
+  // closest open format); each runs on its own.
+  for (const panel of document.querySelectorAll<HTMLElement>('.xp')) {
+  const files = [...panel.querySelectorAll<HTMLElement>('.xp-files li')];
+  if (files.length) {
+    const format = panel.dataset.format!;
+    const tabs = [...panel.querySelectorAll<HTMLButtonElement>('.xp-tabs [data-view]')];
+    const model = panel.querySelector<HTMLElement>('.xp-model')!;
+    const inside = panel.querySelector<HTMLElement>('.xp-inside')!;
+    const wait = panel.querySelector<HTMLElement>('.xp-wait')!;
+    const select = panel.querySelector<HTMLSelectElement>('.xp-file select');
+    let file = 0;
+    let view = '';
+    const loaded = { model: '', inside: '' };
+    async function show(i: number, want?: string) {
+      file = i;
+      const f = files[i];
+      const can = (f.dataset.views ?? '').split(' ').filter(Boolean);
+      view = want && can.includes(want) ? want : can[0];
+      tabs.forEach((t) => {
+        t.hidden = !can.includes(t.dataset.view!) || can.length < 2;
+        t.setAttribute('aria-selected', String(t.dataset.view === view));
+      });
+      panel!.querySelector('.xp-tabs')!.toggleAttribute('hidden', can.length < 2);
+      panel!.querySelector('.xp-what')!.textContent = f.dataset.what ?? '';
+      panel!.querySelector('.xp-license')!.textContent = `${f.dataset.license}.`;
+      panel!.querySelector<HTMLAnchorElement>('.xp-dl')!.href = f.dataset.file!;
+      model.hidden = view !== 'model';
+      inside.hidden = view !== 'inside';
+      panel!.dataset.view = view;
+      const url = f.dataset.file!;
+      if (loaded[view as 'model' | 'inside'] === url) { wait.hidden = true; return; }
+      loaded[view as 'model' | 'inside'] = url;
+      wait.hidden = false;
+      wait.textContent = view === 'model' ? 'Loading the 3D viewer...' : 'Reading the file...';
+      if (view === 'model') {
+        model.replaceChildren();
+        const { showModel } = await import('../scripts/viewer');
+        await showModel(model, url);
+      } else {
+        const { inspect } = await import('../scripts/inspect/index');
+        await inspect(inside, format, url);
+        // Fold the structure list so the panel fits beside the text; one click opens it.
+        const outline = inside.querySelector<HTMLDetailsElement>('.insp-outline-wrap');
+        if (outline && window.innerWidth > 960) outline.open = false;
+      }
+      wait.hidden = true;
+    }
+    tabs.forEach((t) => t.addEventListener('click', () => show(file, t.dataset.view)));
+    select?.addEventListener('change', () => show(Number(select.value)));
+    // Other parts of the page can ask the panel for a file (the example list below).
+    document.addEventListener('click', (e) => {
+      const b = (e.target as HTMLElement).closest<HTMLElement>('[data-show-file]');
+      if (!b) return;
+      const i = files.findIndex((f) => f.dataset.file === b.dataset.showFile);
+      if (i < 0 || b.dataset.done) return;
+      if (select) select.value = String(i);
+      show(i, b.dataset.showView);
+      panel.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    });
+    // Load when the panel is about to be seen.
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((x) => x.isIntersecting)) { io.disconnect(); show(0); }
+    }, { rootMargin: '200px' });
+    io.observe(panel);
+  }
+  }
+</script>
+
+<style>
+  .xp { border: 1px solid var(--rule); background: var(--paper); display: flex; flex-direction: column; min-width: 0; scroll-margin-top: calc(var(--header-h) + 16px); }
+  .xp-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--rule); }
+  .xp-file { margin: 0; font-size: var(--fs-0); min-width: 0; }
+  .xp-name { font-weight: 600; }
+  .xp-file select { font: inherit; font-size: var(--fs-0); padding: 0.35rem 0.4rem; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); max-width: 100%; }
+  .xp-tabs { display: flex; border: 1px solid var(--rule); }
+  .xp-tabs[hidden] { display: none; }
+  .xp-tabs button { font: inherit; font-size: 0.75rem; padding: 0.35rem 0.75rem; border: 0; background: transparent; color: var(--ink-2); cursor: pointer; transition: color 0.2s, background 0.25s; }
+  .xp-tabs button + button { border-left: 1px solid var(--rule); }
+  .xp-tabs button[hidden] { display: none; }
+  .xp-tabs button:hover { color: var(--ink); }
+  .xp-tabs button[aria-selected='true'] { background: var(--ink); color: var(--paper); }
+  .xp-stage { position: relative; min-height: 320px; }
+  .xp-model { position: relative; aspect-ratio: 4 / 3.2; max-height: 70vh; width: 100%; font-size: var(--fs-0); color: var(--ink-2); }
+  .xp-inside { padding: 0.75rem; }
+  /* In the panel, long text lines end in an ellipsis instead of scrolling sideways; pointing at
+     a line shows it whole in the note box (full-width page: /formats/<id>/inside/). */
+  .xp-inside :global(.insp-spacer) { min-width: 0; }
+  .xp-inside :global(.insp-rows) { right: 0; }
+  .xp-inside :global(.insp-rows .r .tx) { overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 1; }
+  .xp[data-view='model'] .xp-stage { min-height: 0; }
+  .xp-wait { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; font-size: var(--fs-0); max-width: none; pointer-events: none; }
+  .xp-wait[hidden] { display: none; }
+  .xp-meta { margin: 0; padding: 0.65rem 0.75rem 0; font-size: var(--fs-0); border-top: 1px solid var(--rule); max-width: none; }
+  .xp-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; margin: 0; padding: 0.5rem 0.75rem 0.75rem; font-size: var(--fs-0); max-width: none; }
+  .xp-explainer { padding: 1rem 1.1rem 0.25rem; font-size: var(--fs-0); }
+  .xp-explainer p { color: var(--ink-2); }
+  .xp-kicker { color: var(--ink) !important; font-weight: 600; font-size: var(--fs-1); }
+  .xp-kicker::before { content: '/ '; }
+  .xp-explainer dl { display: grid; grid-template-columns: minmax(7rem, max-content) 1fr; margin: 0 0 1rem; border-top: 1px solid var(--rule); }
+  .xp-explainer dt, .xp-explainer dd { margin: 0; padding: 0.45rem 0.75rem 0.45rem 0; border-bottom: 1px solid var(--rule-2); }
+  .xp-explainer dt { font-weight: 600; }
+  .xp-explainer .xp-links { padding: 0 0 0.9rem; }
+  .xp-explainer ul { padding-left: 1.1rem; }
+  @media (max-width: 640px) { .xp-inside { padding: 0.5rem; } .xp-model { aspect-ratio: 1 / 1; } }
+</style>

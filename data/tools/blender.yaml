@@ -1,0 +1,57 @@
+id: blender
+type: tool
+name: Blender
+category: visualization
+vendor: blender-foundation
+open_source: true
+license: GPL-2.0-or-later
+status: active
+first_release: 1994
+stages:
+  - design
+built_on:
+  - manifold
+formats:
+  reads:
+    - obj
+    - stl
+    - ply
+    - gltf
+    - usd
+  writes:
+    - obj
+    - stl
+    - ply
+    - gltf
+    - usd
+website: https://www.blender.org/
+wikipedia: https://en.wikipedia.org/wiki/Blender_(software)
+summary: Open 3D suite used for rendering engineering results and design visualization.
+plain: >-
+  Free 3D software for modeling and making realistic images and animations; engineers use it to
+  present designs and to turn simulation results into pictures.
+workflow: >-
+  An engineer imports a design or simulation result as OBJ, STL, glTF or USD, sets up lighting and
+  materials here, and renders images and animations for presentations, or exports the scene to other
+  3D tools.
+native_files:
+  - ext: .blend
+    what: Blender project file
+notes: >-
+  Manifold is used only for the Manifold boolean solver added in Blender 4.5 LTS (July 2025),
+  alongside the older Exact and Float solvers; Blender has no single geometry kernel. first_release
+  1994 (in-house NeoGeo era) not confirmed from a primary source.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://raw.githubusercontent.com/blender/blender/main/source/blender/geometry/intern/mesh_boolean_manifold.cc
+    label: 'Blender source: Manifold boolean (GPL-2.0-or-later header)'
+  - url: https://80.lv/articles/blender-4-5-lts-launches-today-changes-improvements-new-features
+    label: 80.lv 2025-07-15 (Blender 4.5 Manifold solver)
+  - url: https://www.blender.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Blender_(software)
+    label: Wikipedia
+  - url: https://projects.blender.org/blender/blender-manual/raw/branch/main/manual/files/blend/open_save.rst
+    label: native file format (Blender manual source)

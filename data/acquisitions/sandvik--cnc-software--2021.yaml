@@ -1,0 +1,11 @@
+id: sandvik--cnc-software--2021
+type: acquisition
+acquirer: sandvik
+target: cnc-software
+completed: '2021'
+status: completed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.home.sandvik/en/news-and-media/
+    label: source

@@ -1,0 +1,28 @@
+id: sixsigma-dc
+type: tool
+name: Cadence Reality DC (6SigmaDCX)
+category: cfd
+vendor: cadence
+origin: future-facilities
+open_source: false
+status: active
+first_release: 2004
+stages:
+  - analysis
+  - lifecycle
+competes_with:
+  - flotherm
+website: https://www.cadence.com/
+summary: Data center thermal simulation and digital twin.
+plain: >-
+  Simulates airflow and temperatures in data centers, to plan their cooling and keep a digital copy
+  of the room.
+workflow: >-
+  A data center team models the room, racks and cooling here, simulates airflow and temperatures,
+  and keeps the model updated as a digital copy to plan changes in operation.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cadence.com/
+    label: official page
+notes: Product page moved; link points at the site root pending review.

@@ -1,0 +1,17 @@
+id: google-deepmind
+type: vendor
+name: Google DeepMind
+kind: company
+hq: GB
+founded: 2010
+status: active
+website: https://deepmind.google/
+wikipedia: https://en.wikipedia.org/wiki/Google_DeepMind
+summary: Acquired and open-sourced the MuJoCo physics engine.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://deepmind.google/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Google_DeepMind
+    label: Wikipedia

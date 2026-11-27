@@ -1,0 +1,46 @@
+id: amesim
+type: tool
+name: Simcenter Amesim
+category: systems-mbse
+vendor: siemens
+origin: imagine
+open_source: false
+status: active
+first_release: 1995
+stages:
+  - analysis
+formats:
+  reads:
+    - fmu
+  writes:
+    - fmu
+competes_with:
+  - gt-suite
+  - dymola
+website: https://www.siemens.com/en-us/products/simcenter/systems-simulation/amesim/
+summary: 1D multi-domain system simulation for fluid power, thermal and powertrain.
+plain: >-
+  Simulates a whole machine as a network of connected parts, such as hydraulics, heat flow and
+  drivetrains, to see how the system behaves together without modeling every part's exact shape.
+workflow: >-
+  An engineer builds a network model of hydraulics, heat and drivetrain parts here in an .ame file,
+  runs the system simulation, and swaps FMU files (packaged models another simulator can run) with
+  control tools such as Simulink or other system simulators.
+native_files:
+  - ext: .ame
+    what: Simcenter Amesim model file
+notes: >-
+  Originally developed by Imagine S.A. (France, founded 1986 by Michel Lebrun); first commercial
+  release 1995. LMS International acquired Imagine in 2007, and Siemens acquired LMS in January 2013
+  (announced November 2012).
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/simcenter-amesim-celebrating-25-years-of-innovation/
+    label: Siemens Simcenter blog (Imagine founded 1986, first release 1995)
+  - url: https://www.airframer.com/news/release/lms-international-to-acquire-imagine
+    label: LMS release 2007 (to acquire Imagine)
+  - url: https://www.siemens.com/en-us/products/simcenter/systems-simulation/amesim/
+    label: official page
+  - url: https://community.sw.siemens.com/articles/en_US/Knowledge/Accessing-Simcenter-Amesim-Models-in-Simcenter-Testlab
+    label: native file format (Siemens knowledge base)

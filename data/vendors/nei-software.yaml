@@ -1,0 +1,15 @@
+id: nei-software
+type: vendor
+name: NEi Software
+kind: company
+hq: US
+founded: 1990
+parent: autodesk
+status: merged
+website: https://www.autodesk.com/products/nastran/overview
+summary: NEi Nastran.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.autodesk.com/products/nastran/overview
+    label: official page

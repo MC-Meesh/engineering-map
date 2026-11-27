@@ -1,0 +1,30 @@
+id: netgen
+type: tool
+name: Netgen
+category: meshing
+vendor: ngsolve-team
+open_source: true
+license: LGPL-2.1
+status: active
+first_release: 1994
+stages:
+  - analysis
+built_on:
+  - occt
+formats:
+  reads:
+    - step
+    - stl
+website: https://ngsolve.org/
+summary: Automatic tetrahedral mesher, also used inside SALOME and FreeCAD.
+plain: >-
+  Free software that automatically fills a 3D shape with small four-sided cells (tetrahedra) for
+  simulation; also used inside SALOME and FreeCAD.
+workflow: >-
+  A user brings in STEP or STL geometry, Netgen fills it with tetrahedra, and this mesh (the shape
+  split into small cells) goes to simulation programs, often through SALOME, FreeCAD or NGSolve.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://ngsolve.org/
+    label: official page

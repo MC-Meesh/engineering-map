@@ -1,0 +1,12 @@
+id: cadence--future-facilities--2022
+type: acquisition
+acquirer: cadence
+target: future-facilities
+completed: '2022'
+status: completed
+summary: Data center thermal digital twins.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cadence.com/en_US/home/company/newsroom.html
+    label: source

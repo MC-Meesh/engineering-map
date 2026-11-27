@@ -1,0 +1,41 @@
+name: Correction
+description: Something on a record is wrong or out of date.
+labels: [data, correction]
+body:
+  - type: input
+    id: record
+    attributes:
+      label: Record
+      description: The id from the page URL, for example `abaqus` in /tools/abaqus/.
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong
+      description: Quote the field or sentence that is wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: What it should say
+    validations:
+      required: false
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Links that support the correction. Primary sources (vendor docs, press releases, filings) are best.
+    validations:
+      required: true
+  - type: dropdown
+    id: affiliation
+    attributes:
+      label: Do you work for the vendor of this product?
+      options:
+        - "No"
+        - "Yes"
+        - Prefer not to say
+    validations:
+      required: true

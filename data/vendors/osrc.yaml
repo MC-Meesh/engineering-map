@@ -1,0 +1,15 @@
+id: osrc
+type: vendor
+name: Open Source Robotics Corporation
+kind: company
+hq: US
+founded: 2016
+parent: intrinsic
+status: merged
+website: https://www.openrobotics.org/
+summary: For-profit arm of Open Robotics; acquired by Intrinsic.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.openrobotics.org/
+    label: official page

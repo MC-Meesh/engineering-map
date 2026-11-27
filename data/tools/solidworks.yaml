@@ -1,0 +1,78 @@
+id: solidworks
+type: tool
+name: SOLIDWORKS
+category: cad
+vendor: dassault
+origin: solidworks-corp
+open_source: false
+status: active
+first_release: 1995
+stages:
+  - design
+built_on:
+  - parasolid
+  - d-cubed
+formats:
+  reads:
+    - solidworks-native
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+    - 3mf
+    - dxf
+    - catia-v5
+    - nx-prt
+    - creo-prt
+    - inventor-ipt
+    - jt
+    - dwg
+    - ifc
+  writes:
+    - solidworks-native
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+    - stl
+    - 3mf
+    - dxf
+    - 3dxml
+competes_with:
+  - inventor
+  - solid-edge
+  - onshape
+  - fusion
+website: https://www.solidworks.com/
+wikipedia: https://en.wikipedia.org/wiki/SolidWorks
+summary: The default mid-range parametric CAD for mechanical design, with a large add-in ecosystem.
+plain: >-
+  The default mid-range 3D design software for mechanical parts and assemblies, where dimensions
+  drive the model; many add-ins extend it.
+workflow: >-
+  An engineer models parts here, with add-ins such as CAMWorks or SolidCAM for machining and
+  SOLIDWORKS Simulation, keeps files in SOLIDWORKS PDM, and exports STEP or Parasolid to suppliers,
+  or STL and 3MF to printing.
+clarifies:
+  - text: >-
+      SOLIDWORKS reaches 3DEXPERIENCE in two ways, and both are the same Windows desktop program, not
+      browser CAD. Route 1: an existing desktop seat adds the Design with SOLIDWORKS add-in (Dassault
+      calls this Cloud Services). Route 2: SOLIDWORKS is bought as a 3DEXPERIENCE SOLIDWORKS offer, which
+      installs, licenses and updates it from the platform and stores its data there. The browser-based
+      design app is a different product, xDesign.
+    url: https://www.3ds.com/support/getting-started/solidworks-frequently-asked-questions
+notes: >-
+  Third-party native files (CATIA V5, NX, Creo, Inventor, JT, Solid Edge) open through 3D
+  Interconnect; the CATIA V5 translator needs SOLIDWORKS Design Premium or Ultimate. STL import not
+  checked.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.solidworks.com/
+    label: official page
+  - url: https://help.solidworks.com/2026/English/SolidWorks/Sldworks/c_sw_3d_interconnect.htm
+    label: 'SOLIDWORKS 2026 help: 3D Interconnect formats'
+  - url: https://en.wikipedia.org/wiki/SolidWorks
+    label: Wikipedia
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-introduces-new-3dexperience-works-offers-bring-value-creative-process
+    label: 'Dassault press release 2020-02-10: 3DEXPERIENCE SOLIDWORKS offers, same desktop application'

@@ -1,0 +1,40 @@
+id: hsm
+type: tool
+name: Inventor CAM (HSM)
+category: cam
+vendor: autodesk
+open_source: false
+status: active
+first_release: 2014
+stages:
+  - manufacturing
+formats:
+  writes:
+    - gcode
+plugin_of: inventor
+website: https://www.autodesk.com/products/inventor-cam/overview
+summary: >-
+  CAM inside Inventor using the HSM toolpath engine that Autodesk acquired in 2012 and shares with
+  Fusion.
+plain: >-
+  Turns parts designed in Autodesk Inventor into cutting instructions for CNC (computer-controlled)
+  machines, right inside Inventor, using the same cutting path engine as Autodesk Fusion.
+workflow: >-
+  A machinist opens a part designed in Inventor, plans the cutting paths here with the HSM engine
+  shared with Fusion, and writes G-code (the machine's line-by-line instructions) that the CNC
+  machine runs to cut the part.
+notes: >-
+  Autodesk bought the HSMWorks assets in Oct 2012; Inventor HSM was announced July 2013 and went on
+  sale 2014-04-07 (later renamed Inventor CAM). The SOLIDWORKS edition HSMWorks was removed from new
+  Fusion subscriptions on 2025-03-25 and retires 2028-03-25.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://adsknews.autodesk.com/en/?p=569
+    label: Autodesk news, Inventor HSM commercially available 2014-04-07
+  - url: https://adsknews.autodesk.com/en/?p=707
+    label: Autodesk news, HSMWorks 2014 (notes 2012 acquisition)
+  - url: https://www.autodesk.com/products/fusion-360/blog/hsmworks-to-fusion-transition-guide/
+    label: Autodesk HSMWorks to Fusion transition guide
+  - url: https://www.autodesk.com/products/inventor-cam/overview
+    label: Autodesk Inventor CAM page

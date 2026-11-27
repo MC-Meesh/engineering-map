@@ -1,0 +1,34 @@
+id: fieldview
+type: tool
+name: FieldView
+category: visualization
+vendor: tecplot
+origin: intelligent-light
+open_source: false
+status: active
+first_release: 1991
+stages:
+  - analysis
+formats:
+  reads:
+    - cgns
+    - openfoam-case
+competes_with:
+  - tecplot-360
+  - ensight
+website: https://tecplot.com/product/fieldview/
+summary: CFD post-processor for large and transient datasets.
+plain: >-
+  Turns large fluid flow simulation results, including ones that change over time, into pictures and
+  measurements.
+workflow: >-
+  A flow simulation program such as OpenFOAM writes its results as an OpenFOAM case or CGNS; an
+  analyst loads them here to make pictures and measurements and reports what the flow is doing.
+notes: Intelligent Light sold FieldView in 2019 to Vela Software (owner of Tecplot)
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://tecplot.com/2019/07/07/intelligent-light-spins-off-fieldview-to-vela-software/
+    label: verification source
+  - url: https://tecplot.com/product/fieldview/
+    label: official page

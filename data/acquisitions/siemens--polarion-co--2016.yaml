@@ -1,0 +1,16 @@
+id: siemens--polarion-co--2016
+type: acquisition
+acquirer: siemens
+target: polarion-co
+announced: '2015-11-25'
+completed: 2016-01
+status: completed
+notes: >-
+  Announced 2015-11-25 with closing expected in Q1 2016; closed in January 2016. Terms not
+  disclosed.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.globenewswire.com/news-release/2015/11/25/1328364/0/en/Siemens-to-Acquire-Polarion-Software-Expanding-Support-for-Growing-ALM-Market.html
+    label: 'Polarion release 2015-11-25: Siemens to acquire'

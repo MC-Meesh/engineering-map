@@ -1,0 +1,43 @@
+id: 3dxml
+type: format
+name: 3D XML
+extensions:
+  - .3dxml
+kind: tessellated
+steward: Dassault Systemes
+steward_vendor: dassault
+open_spec: false
+first_published: 2004
+website: https://www.spatial.com/glossary/what-is-a-3d-xml-file-format-used-for
+summary: >-
+  Dassault's proprietary 3D format for viewing and sharing. A .3dxml file is a ZIP of XML and binary
+  files: the assembly tree, triangle meshes (often at several levels of detail), drawn-on
+  annotations, views, colours and document info; some authoring files also carry exact geometry.
+notes: >-
+  Dassault introduced 3D XML on 13 October 2004 with CATIA V5R14, built on Lattice Technology's XVL
+  compression, and published the specifications and a free 3D XML Player on 15 June 2005. A .3dxml
+  file is a ZIP archive: a product structure file (the assembly tree) plus files with the 3D
+  shapes; rename it to .zip to look inside. It mostly carries display data: triangle meshes,
+  possibly at several levels of detail, the product structure, graphical PMI (annotations drawn
+  as pictures), views, colours and transparency, and document information such as units, version
+  and author. The schema is at version 4.x: Spatial's 3D InterOp reads 4.0 to 4.3 and does not
+  import the exact B-rep stored in authoring-mode files, so use XCGM when exact geometry is
+  needed. Marked as not open here: the 2004 announcement called it an open format, but Spatial,
+  Dassault's own subsidiary, calls it a proprietary Dassault format and warns against treating it
+  as a neutral standard like STEP. The 3DEXPERIENCE platform imports and exports it, and it is the
+  default format for sharing in SOLIDWORKS Cloud Services.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-unveils-3d-xml-product-lifecycle-management
+    label: Dassault Systemes press release, 13 October 2004 (introduced with V5R14, based on Lattice XVL)
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-delivers-3d-xml-specifications-and-player
+    label: Dassault Systemes press release, 15 June 2005 (specifications and free player)
+  - url: https://www.spatial.com/glossary/what-is-a-3d-xml-file-format-used-for
+    label: Spatial glossary (ZIP container, contents, proprietary and not a neutral standard)
+  - url: https://www.spatial.com/products/3d-interop
+    label: Spatial 3D InterOp (reads 3D XML 4.0 to 4.3; authoring-mode B-rep not imported; XCGM for B-rep)
+  - url: https://www.3ds.com/support/documentation/resource-library/3dxml-import-export-3dexperience-r2024x
+    label: Dassault Systemes, 3DXML import and export on 3DEXPERIENCE R2024x
+  - url: https://www.3ds.com/support/getting-started/solidworks-frequently-asked-questions
+    label: SOLIDWORKS FAQ, Share and Markup (3DXML is the default format)

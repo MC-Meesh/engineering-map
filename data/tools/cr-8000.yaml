@@ -1,0 +1,31 @@
+id: cr-8000
+type: tool
+name: Zuken CR-8000
+category: eda
+vendor: zuken
+open_source: false
+status: active
+first_release: 2011
+stages:
+  - design
+formats:
+  writes:
+    - gerber
+    - odbpp
+    - ipc-2581
+competes_with:
+  - allegro
+  - xpedition
+website: https://www.zuken.com/en/product/cr-8000/
+summary: Chip-package-board co-design platform.
+plain: >-
+  Zuken software for designing a chip, its package and the circuit board around it together, so they
+  fit and work as one.
+workflow: >-
+  Designers plan the chip, package and board together here, then lay out the board and send Gerber,
+  ODB++ or IPC-2581 files to the board maker.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.zuken.com/en/product/cr-8000/
+    label: official page

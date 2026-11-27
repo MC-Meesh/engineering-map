@@ -1,0 +1,40 @@
+id: hyperlynx
+type: tool
+name: HyperLynx
+category: eda
+vendor: siemens
+open_source: false
+status: active
+first_release: 1988
+stages:
+  - analysis
+formats:
+  reads:
+    - odbpp
+    - ipc-2581
+competes_with:
+  - sigrity
+  - siwave
+website: https://www.siemens.com/en-us/products/pcb/hyperlynx/
+summary: Board-level signal integrity, power integrity and DRC.
+plain: >-
+  Checks whether signals and power on a circuit board will behave correctly, and checks the board
+  against design rules, before it is made.
+workflow: >-
+  A board designer exports the finished board layout from the board design tool as ODB++ or
+  IPC-2581, checks here that signals and power behave and that spacing rules are met, and fixes the
+  problems in the layout before the files go to the board maker.
+notes: >-
+  HyperLynx was an independent company founded in 1988 in Redmond by Steve Kaufer and Kellee
+  Crisafulli (first tool LineSim for DOS); first_release is that founding year. It passed to PADS
+  Software (1997) and Innoveda (2000), and to Mentor with Innoveda in 2002; the first two steps are
+  from secondary sources. No vendor ids exist for these companies, so origin is unset.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://blogs.sw.siemens.com/electronic-systems-design/2013/01/31/hyperlynx9/
+    label: 'Siemens blog 2013-01-31: HyperLynx founded 1988'
+  - url: https://www.siemens.com/en-us/products/pcb/hyperlynx/
+    label: official page
+  - url: https://blogs.sw.siemens.com/electronic-systems-design/2018/01/10/more-free-time-did-i-tell-you-about-the-universal-board-viewer-feature/
+    label: 'Siemens blog: HyperLynx DRC Free/Gold read any PCB CAD format incl. ODB++ and IPC-2581'

@@ -1,0 +1,14 @@
+id: librepcb-project
+type: vendor
+name: LibrePCB project
+kind: project
+hq: CH
+founded: 2013
+status: active
+website: https://librepcb.org/
+summary: Open-source EDA with a focus on library management.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://librepcb.org/
+    label: official page

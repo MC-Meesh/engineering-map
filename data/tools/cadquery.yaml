@@ -1,0 +1,34 @@
+id: cadquery
+type: tool
+name: CadQuery
+category: cad
+vendor: cadquery-project
+open_source: true
+license: Apache-2.0
+status: active
+first_release: 2014
+stages:
+  - design
+built_on:
+  - occt
+formats:
+  reads:
+    - step
+  writes:
+    - step
+    - stl
+    - gltf
+website: https://github.com/CadQuery/cadquery
+summary: Python library for parametric B-rep models on OCCT; code-as-CAD.
+plain: >-
+  A Python library for describing 3D parts in code instead of drawing them; changing a number in the
+  script regenerates the part.
+workflow: >-
+  A programmer writes a Python script that describes the part, runs it to build the solid on the
+  OCCT geometry engine, and exports STEP files for 3D design (CAD) or machining software and STL or
+  glTF files for 3D printing and viewing.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://github.com/CadQuery/cadquery
+    label: official page

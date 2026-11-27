@@ -1,0 +1,15 @@
+id: seequent
+type: vendor
+name: Seequent
+kind: company
+hq: NZ
+founded: 2004
+parent: bentley
+status: merged
+website: https://www.seequent.com/
+summary: Geoscience modeling (Leapfrog).
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.seequent.com/
+    label: official page

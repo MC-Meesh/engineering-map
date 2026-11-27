@@ -1,0 +1,38 @@
+---
+import Base from '../../layouts/Base.astro';
+import { vendors, vendorById, stats } from '../../lib/data';
+const kindLabel: Record<string, string> = { company: 'company', project: 'open project', institution: 'institution' };
+const independent = vendors.filter((v) => !v.parent).length;
+---
+<Base title="Vendors" section="vendors" description={`${stats.vendors} companies, projects and institutions behind engineering software, with ownership chains.`}>
+  <div class="page">
+    <header class="page-head">
+      <h1>Vendors</h1>
+      <p class="lede">{stats.vendors} companies, open-source projects and institutions. {stats.vendors - independent} of them are now owned by another entry in this list; the ownership column follows each chain to the top. The <a href="/vendors/tree/">ownership tree</a> shows the same chains as collapsible branches, with deal dates and products.</p>
+    </header>
+    <label class="sr-only" for="q">Filter vendors</label>
+    <input id="q" class="filter-input" type="search" placeholder="Filter: Siemens, open project, DE" data-filter="#vendors-table" />
+    <p class="footnote" id="q-count" aria-live="polite"></p>
+    <div class="table-wrap">
+      <table class="data" id="vendors-table">
+        <thead><tr><th scope="col">Vendor</th><th scope="col">Kind</th><th scope="col">HQ</th><th scope="col" class="n">Founded</th><th scope="col">Owned by</th><th scope="col" class="n">Tools</th><th scope="col" class="n">Group tools</th></tr></thead>
+        <tbody>
+          {vendors.map((v) => (
+            <tr>
+              <td><a href={`/vendors/${v.id}/`}>{v.name}</a></td>
+              <td>{kindLabel[v.kind]}</td>
+              <td class="mono">{v.hq ?? ''}</td>
+              <td class="n">{v.founded ?? ''}</td>
+              <td>{v.ownerChain.length ? v.ownerChain.map((c) => vendorById.get(c)?.name).join(', then ') : <span class="muted">independent</span>}</td>
+              <td class="n">{v.portfolio.length || ''}</td>
+              <td class="n">{!v.parent && v.controlledTools !== v.portfolio.length ? v.controlledTools : ''}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Base>
+<script>
+  import '../../scripts/table-filter.ts';
+</script>

@@ -1,0 +1,28 @@
+id: solidworks-flow
+type: tool
+name: SOLIDWORKS Flow Simulation
+category: cfd
+vendor: dassault
+open_source: false
+status: active
+first_release: 2001
+stages:
+  - analysis
+plugin_of: solidworks
+website: https://www.solidworks.com/product/solidworks-flow-simulation
+summary: Designer CFD inside SOLIDWORKS.
+plain: Simulates fluid flow and heat inside SOLIDWORKS, aimed at designers rather than specialists.
+workflow: >-
+  A designer runs flow and heat simulation inside SOLIDWORKS on the model already there, and changes
+  the design in the same session based on the results.
+geometry_basis:
+  kind: host
+  host: solidworks
+  text: >-
+    Runs inside SOLIDWORKS and works directly on the SOLIDWORKS model.
+  url: https://www.solidworks.com/product/solidworks-flow-simulation
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.solidworks.com/product/solidworks-flow-simulation
+    label: official page

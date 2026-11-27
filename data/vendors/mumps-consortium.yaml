@@ -1,0 +1,14 @@
+id: mumps-consortium
+type: vendor
+name: MUMPS consortium
+kind: project
+hq: FR
+founded: 1996
+status: active
+website: https://mumps-solver.org/
+summary: Parallel sparse direct solver.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://mumps-solver.org/
+    label: official page

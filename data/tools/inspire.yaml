@@ -1,0 +1,48 @@
+id: inspire
+type: tool
+name: Simcenter Inspire
+category: cad
+vendor: altair
+open_source: false
+status: active
+first_release: 2009
+stages:
+  - design
+  - optimization
+built_on:
+  - parasolid
+  - d-cubed
+formats:
+  reads:
+    - step
+    - iges
+    - parasolid-xt
+    - stl
+  writes:
+    - step
+    - iges
+    - parasolid-xt
+    - stl
+website: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/inspire/
+summary: >-
+  Simulation-driven design with topology optimization, formerly Altair Inspire and before that
+  solidThinking Inspire.
+plain: >-
+  Design software where simulation helps choose the shape: you set the loads and it shows where
+  material is needed, so parts can be made lighter.
+workflow: >-
+  A designer brings in a part as STEP or Parasolid, sets the loads it must carry, lets Inspire show
+  where material is needed and where it can be removed, rebuilds the lighter shape, and exports STEP
+  for other 3D design tools or STL for 3D printing.
+notes: first_release 2009 rests on secondary reports of the solidThinking 8.0 era launch
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://resources.sw.siemens.com/da-DK/case-study-altair/
+    label: 'Siemens case study: Inspire on Parasolid and D-Cubed 2D DCM'
+  - url: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/inspire/
+    label: official page
+  - url: https://resources.sw.siemens.com/en-US/case-study-altair/
+    label: 'Siemens Altair case study: Parasolid modeler and D-Cubed 2D DCM in Inspire'

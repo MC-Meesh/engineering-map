@@ -1,0 +1,21 @@
+id: brand-hpcworks
+type: brand
+name: HPCWorks
+vendor: siemens
+website: https://www.siemens.com/en-us/products/hpcworks/
+products:
+  - pbs-pro
+  - hpcworks-grid-engine
+summary: >-
+  Siemens' HPC brand created from Altair's HPC products: the PBS Professional and Grid Engine
+  workload managers and related tools.
+notes: The products are still sold through Altair, so the brand circle sits inside Altair.
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/hpcworks/
+    label: official brand page
+  - url: https://www.siemens.com/en-us/products/hpcworks/workload-management/
+    label: HPCWorks workload management (PBS Professional, Grid Engine)
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+as_of: '2026-11-22'

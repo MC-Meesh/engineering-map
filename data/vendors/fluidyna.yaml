@@ -1,0 +1,17 @@
+id: fluidyna
+type: vendor
+name: FluiDyna
+kind: company
+hq: DE
+founded: 2006
+parent: altair
+status: merged
+summary: GPU lattice Boltzmann and SPH solvers.
+notes: >-
+  Founding year 2006 not confirmed by a primary source; the Altair release says only
+  "Germany-based".
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://news.siemens.com/en-gb/altair-acquires-fluidyna/
+    label: Altair release 2018-05-09 (now hosted by Siemens)

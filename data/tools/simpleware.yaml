@@ -1,0 +1,29 @@
+id: simpleware
+type: tool
+name: Synopsys Simpleware
+category: meshing
+vendor: synopsys
+origin: simpleware-ltd
+open_source: false
+status: active
+first_release: 2000
+stages:
+  - analysis
+formats:
+  writes:
+    - stl
+    - abaqus-inp
+    - ansys-cdb
+website: https://www.synopsys.com/simpleware.html
+summary: Builds models and meshes from CT and MRI scans.
+plain: >-
+  Turns medical CT and MRI scans into 3D models and simulation meshes (grids of small elements) that
+  can be 3D printed, used in 3D design (CAD) software or simulated.
+workflow: >-
+  A user loads CT or MRI scans, segments the parts here, and exports STL for 3D printing and CAD, or
+  Abaqus and Ansys meshes for simulation.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.synopsys.com/simpleware.html
+    label: official page

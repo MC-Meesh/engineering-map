@@ -1,0 +1,39 @@
+id: agile-plm
+type: tool
+name: Oracle Agile PLM
+category: plm-pdm
+vendor: oracle
+open_source: false
+status: legacy
+stages:
+  - lifecycle
+website: https://www.oracle.com/scm/product-lifecycle-management/
+summary: >-
+  Long-running enterprise PLM from Agile Software; Oracle now steers customers to its Fusion Cloud
+  PLM.
+plain: >-
+  Business software where manufacturers keep the official record of their products, such as parts
+  and design changes. It has run for many years; Oracle now points customers to its newer cloud
+  product.
+workflow: >-
+  Engineering releases parts, documents and design changes into Agile, which keeps the product
+  record that manufacturing, suppliers and quality teams work from; Oracle now points customers on
+  to Fusion Cloud PLM.
+files_note: 'Has no file type of its own: records live in the Agile PLM database behind the application server, and attached files sit in a File Manager vault, a file system that can be spread across sites.'
+notes: >-
+  Agile Software (founded 1995) was acquired by Oracle on 2007-07-16. 9.3.6 is the final release
+  (9.3.7 dropped from the roadmap in Oct 2023) and Premier Support runs to 2027-12-31 per a
+  third-party (competitor) summary; Oracle's own lifecycle notes are behind My Oracle Support login.
+  First product release year unconfirmed (1995 was the company founding).
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/0001341439/000095013408012257/f41477e10vk.htm
+    label: Oracle FY2008 10-K (Agile acquired 2007-07-16)
+  - url: >-
+      https://www.traceone.com/oracle-agile-plm-when-does-support-end-and-what-are-the-options-trace-one
+    label: Trace One, Agile PLM support timeline (Aug 2026)
+  - url: https://www.oracle.com/scm/product-lifecycle-management/
+    label: Oracle PLM page
+  - url: https://docs.oracle.com/cd/E83928_04/otn/pdf/install/html_agabp/output/architecture.htm
+    label: 'Oracle Agile PLM docs: architecture (File Manager, file vault)'

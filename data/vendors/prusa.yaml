@@ -1,0 +1,17 @@
+id: prusa
+type: vendor
+name: Prusa Research
+kind: company
+hq: CZ
+founded: 2012
+status: active
+website: https://www.prusa3d.com/
+wikipedia: https://en.wikipedia.org/wiki/Prusa_Research
+summary: 3D printer maker; PrusaSlicer.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.prusa3d.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Prusa_Research
+    label: Wikipedia

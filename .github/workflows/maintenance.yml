@@ -1,0 +1,48 @@
+name: Weekly maintenance report
+
+# Checks every source URL and lists records not re-checked in a year, in one issue that is
+# updated each week (label: maintenance). Not part of CI: it depends on third-party sites.
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Check source links
+        run: npm run check-links
+      - name: List stale records
+        run: npm run stale
+      - name: Update the maintenance issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            echo "Updated $(date -u +%F) by the weekly maintenance workflow."
+            echo
+            cat link-report.md
+            echo
+            cat stale-report.md
+          } > body.md
+          # GitHub issue bodies are capped at 65536 characters.
+          head -c 60000 body.md > issue.md
+          gh label create maintenance --color 888888 --description "Weekly link and staleness report" --force
+          num=$(gh issue list --label maintenance --state open --json number --jq '.[0].number')
+          if [ -n "$num" ]; then
+            gh issue edit "$num" --body-file issue.md
+          else
+            gh issue create --title "Maintenance report" --label maintenance --body-file issue.md
+          fi

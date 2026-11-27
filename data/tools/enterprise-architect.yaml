@@ -1,0 +1,35 @@
+id: enterprise-architect
+type: tool
+name: Enterprise Architect
+category: systems-mbse
+vendor: sparx
+open_source: false
+status: active
+first_release: 2000
+stages:
+  - requirements
+formats:
+  reads:
+    - sysml
+    - reqif
+  writes:
+    - sysml
+    - reqif
+competes_with:
+  - cameo
+website: https://sparxsystems.com/products/ea/
+wikipedia: https://en.wikipedia.org/wiki/Enterprise_Architect_(software)
+summary: Low-cost, broad UML, SysML and enterprise modeling tool.
+plain: >-
+  Low-cost software for drawing models of software, systems and organizations using standard
+  modeling languages such as UML and SysML.
+workflow: >-
+  Analysts model software, systems or the organization here in UML or SysML, exchange requirements
+  as ReqIF with requirements tools, and hand the models to development and engineering teams.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://sparxsystems.com/products/ea/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Enterprise_Architect_(software)
+    label: Wikipedia

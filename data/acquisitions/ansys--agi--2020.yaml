@@ -1,0 +1,14 @@
+id: ansys--agi--2020
+type: acquisition
+acquirer: ansys
+target: agi
+completed: '2020-12-01'
+status: completed
+value: about $700M
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1013462/000101346221000009/anss-20201231.htm
+    label: Ansys 10-K FY2020 (acquisition dated 2020-12-01)
+  - url: https://www.sec.gov/Archives/edgar/data/1013462/000119312520276233/d38877d8k.htm
+    label: Ansys 8-K 2020-10 ($700M purchase price)

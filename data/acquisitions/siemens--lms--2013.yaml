@@ -1,0 +1,20 @@
+id: siemens--lms--2013
+type: acquisition
+acquirer: siemens
+target: lms
+completed: 2013-01
+status: completed
+announced: '2012-11-08'
+value: about EUR 702M (preliminary purchase price)
+summary: Test and 1D simulation; became part of Simcenter.
+notes: >-
+  Siemens reports the closing only as the beginning of January 2013; the exact day was not published
+  in a press release.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/0001135644/000119312513198242/d522326d6k.htm
+    label: Siemens 6-K 2013-05 (acquired beginning of January 2013)
+  - url: >-
+      https://www.digitalengineering247.com/article/siemens-acquires-lms-expands-to-testing-and-mechatronics/engineering-resources
+    label: Digital Engineering 2012-11 (announcement)

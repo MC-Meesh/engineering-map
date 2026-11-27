@@ -1,0 +1,15 @@
+id: simsolid-corp
+type: vendor
+name: SimSolid Corp
+kind: company
+hq: CA
+founded: 2015
+parent: altair
+status: merged
+summary: Meshless structural analysis.
+notes: Founding year 2015 and headquarters not confirmed by a primary source.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://news.siemens.com/en-us/altair-acquires-simsolid/
+    label: Altair release 2018-10-17 (now hosted by Siemens)

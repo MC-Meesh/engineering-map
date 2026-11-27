@@ -1,0 +1,14 @@
+id: osmc
+type: vendor
+name: Open Source Modelica Consortium
+kind: project
+hq: SE
+founded: 2007
+status: active
+website: https://openmodelica.org/
+summary: Develops OpenModelica.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://openmodelica.org/
+    label: official page

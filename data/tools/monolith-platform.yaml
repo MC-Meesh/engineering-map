@@ -1,0 +1,37 @@
+id: monolith-platform
+type: tool
+name: Monolith
+category: ml-engineering
+vendor: monolith
+open_source: false
+status: active
+first_release: 2016
+stages:
+  - test
+  - analysis
+competes_with:
+  - ncs
+website: https://www.monolithai.com/
+summary: No-code ML on test and simulation data to cut physical test programs.
+plain: >-
+  Lets engineers train machine learning models on their test and simulation data without writing
+  code, so they need fewer physical tests.
+workflow: >-
+  Engineers upload test and simulation data, train models here without code, and use the predictions
+  to decide which physical tests can be skipped.
+files_note: 'Web platform: raw files are uploaded into team folders via a File Manager, pulled into notebooks by loader steps, and tabular results can be downloaded as gzipped CSV.'
+notes: Monolith AI was acquired by CoreWeave in November 2025.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1769628/000176962825000062/crwv-20250930.htm
+    label: CoreWeave 10-Q Q3 2025 (acquired Monolith AI in November 2025)
+  - url: >-
+      https://coreweave.com/news/coreweave-to-acquire-monolith-expanding-ai-cloud-platform-into-industrial-innovation
+    label: CoreWeave press release 2025-10-06
+  - url: https://www.monolithai.com/
+    label: official page (now part of CoreWeave)
+  - url: https://docs.coreweave.com/monolith-ai/1814202754/File+Manager.md
+    label: 'Monolith docs: File Manager'
+  - url: https://docs.coreweave.com/monolith-ai/1814202532/Export+data+to+CSV.md
+    label: 'Monolith docs: export data to CSV'

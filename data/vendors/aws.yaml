@@ -1,0 +1,17 @@
+id: aws
+type: vendor
+name: Amazon Web Services
+kind: company
+hq: US
+founded: 2006
+status: active
+website: https://aws.amazon.com/
+wikipedia: https://en.wikipedia.org/wiki/Amazon_Web_Services
+summary: Cloud provider; IoT TwinMaker and HPC for simulation.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://aws.amazon.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Amazon_Web_Services
+    label: Wikipedia

@@ -1,0 +1,31 @@
+id: bricsys
+type: vendor
+name: Bricsys
+kind: company
+hq: BE
+founded: 2002
+parent: octave
+status: active
+website: https://bricscad.octave.com/
+wikipedia: https://en.wikipedia.org/wiki/BricsCAD
+summary: >-
+  Ghent developer of BricsCAD, a DWG-native CAD platform. Bought by Hexagon in 2018, moved to Octave
+  in the 2026 spin-off; the Bricsys brand is being retired for Octave BricsCAD while Bricsys NV
+  remains the legal entity.
+notes: >-
+  In October 2011 Menhirs NV, parent of Bricsys, acquired the source code and IP of LEDAS's LGS 2D,
+  LGS 3D, Driving Dimensions and RhinoWorks.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://investors.hexagon.com/en/share-information/octave-separation
+    label: 'Hexagon investors: Octave separation (Bricsys to Octave, distributed 2026-05-28)'
+  - url: https://www.bricsys.com/news/bricsys-becomes-octave
+    label: 'Bricsys news: Bricsys becomes Octave'
+  - url: >-
+      https://hexagon.com/company/newsroom/press-releases/2018/hexagon-construction-solutions-bricsys-acquisition
+    label: Hexagon press release 2018-10-23
+  - url: https://bricscad.octave.com/
+    label: official page
+  - url: https://ledas.com/news/160-menhirs-nv-acquires-intellectual-property-rights-from-ledas/
+    label: 'LEDAS press release 2011-10-05: Menhirs acquires LGS IP'

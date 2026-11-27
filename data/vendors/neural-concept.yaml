@@ -1,0 +1,14 @@
+id: neural-concept
+type: vendor
+name: Neural Concept
+kind: company
+hq: CH
+founded: 2018
+status: active
+website: https://www.neuralconcept.com/
+summary: EPFL spin-off; deep-learning surrogates on 3D geometry for engineering design.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.neuralconcept.com/
+    label: official page

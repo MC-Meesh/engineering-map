@@ -1,0 +1,12 @@
+id: ansys--ansoft--2008
+type: acquisition
+acquirer: ansys
+target: ansoft
+completed: '2008'
+status: completed
+value: about $832M
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/Ansoft_Corporation
+    label: source

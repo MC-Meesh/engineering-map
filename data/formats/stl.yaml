@@ -1,0 +1,16 @@
+id: stl
+type: format
+name: STL
+extensions:
+  - .stl
+kind: tessellated
+steward: 3D Systems (de facto)
+open_spec: true
+first_published: 1987
+website: https://en.wikipedia.org/wiki/STL_(file_format)
+summary: Bare triangle soup with no units or color; still the default hand-off to 3D printing.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/STL_(file_format)
+    label: official page

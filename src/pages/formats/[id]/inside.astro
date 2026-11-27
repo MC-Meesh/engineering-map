@@ -1,0 +1,91 @@
+---
+// "Inside the file": for each format with a hosted example, an annotated view of the bytes or
+// text; for formats we can only link, a structure explainer from public documentation.
+// Policy and sources: docs/decisions/0006-format-inspector.md.
+import Base from '../../../layouts/Base.astro';
+import { formats, examplesFor, explainerFor, inspectable, previewable, fmtBytes } from '../../../lib/data';
+import '../../../styles/inspector.css';
+import type { Format } from '../../../lib/data';
+
+export function getStaticPaths() {
+  return formats
+    .filter((f) => examplesFor(f.id).some((e) => inspectable(e.file)) || explainerFor(f.id))
+    .map((f) => ({ params: { id: f.id }, props: { f } }));
+}
+const { f } = Astro.props as { f: Format };
+const files = examplesFor(f.id).filter((e) => inspectable(e.file));
+const linked = examplesFor(f.id).filter((e) => !e.file);
+const ex = explainerFor(f.id);
+const name = (p: string) => p.split('/').pop();
+---
+<Base title={`Inside the file: ${f.name}`} section="formats" description={`How a ${f.name} file is organized${files.length ? ', annotated byte by byte or line by line on a real example' : ''}.`}>
+  <div class="page inside-page">
+    <header class="page-head">
+      <p class="crumbs"><a href="/formats/">Formats</a> / <a href={`/formats/${f.id}/`}>{f.name}</a> / Inside the file</p>
+      <h1>Inside the file: {f.name}</h1>
+      {files.length > 0 ? (
+        <p class="lede">The example file below, read in your browser by a parser written for this site from the published {f.open_spec ? 'specification' : 'documentation'}. Point at any line or byte to see what it is; pick an entry in the structure list to jump to it.</p>
+      ) : (
+        <p class="lede">We have no example we may redistribute, so this page explains how the format is organized, from public documentation.</p>
+      )}
+    </header>
+
+    {files.length > 0 && (
+      <section class="inside" aria-label="Annotated example">
+        <div class="inside-files" role="tablist" aria-label="Example files">
+          {files.map((e, i) => (
+            <button type="button" role="tab" aria-selected={i === 0 ? 'true' : 'false'} data-file={`/${e.file}`} data-format={f.id}>
+              <span class="mono">{name(e.file!)}</span> <span class="muted num">{fmtBytes(e.size!)}</span>
+            </button>
+          ))}
+        </div>
+        <p class="inside-meta">
+          {files.map((e, i) => (
+            <span data-meta={i} hidden={i !== 0}>{e.contains} {e.license}. <a href={`/${e.file}`} download>Download</a>{previewable(e.file) && <> or <a href={`/formats/${f.id}/#example`}>see it in 3D</a></>}.</span>
+          ))}
+        </p>
+        <div id="inspector" class="inspector insp-host"><p class="muted">Loading the inspector...</p></div>
+      </section>
+    )}
+
+    {ex && (
+      <section class="explainer">
+        <h2>How {(/^[A-Z]{2}/.test(f.name) ? (/^[AEFHILMNORSX]/.test(f.name) ? 'an' : 'a') : /^[AEIOU]/i.test(f.name) ? 'an' : 'a')} {f.name} file is organized</h2>
+        <p>{ex.summary}</p>
+        <dl class="spec layout">
+          {ex.layout.map((l) => <><dt>{l.part}</dt><dd>{l.what}</dd></>)}
+        </dl>
+        <h3>Sources</h3>
+        <ul class="sources">{ex.sources.map((s) => <li><a href={s.url}>{s.label ?? s.url}</a></li>)}</ul>
+        {linked.length > 0 && <p class="footnote">Samples published by others are linked on the <a href={`/formats/${f.id}/#examples`}>format page</a>.</p>}
+      </section>
+    )}
+    <p class="footnote">Parsers here are our own, written from published specifications and public documentation; nothing is decompiled or taken from vendor SDKs. See <a href="/about/#inspector">the method notes</a>.</p>
+  </div>
+</Base>
+
+<script>
+  const tabs = [...document.querySelectorAll<HTMLButtonElement>('.inside-files [data-file]')];
+  const root = document.querySelector<HTMLElement>('#inspector');
+  async function open(i: number) {
+    if (!root) return;
+    tabs.forEach((t, k) => t.setAttribute('aria-selected', String(k === i)));
+    document.querySelectorAll<HTMLElement>('[data-meta]').forEach((m) => (m.hidden = m.dataset.meta !== String(i)));
+    const { inspect } = await import('../../../scripts/inspect/index');
+    await inspect(root, tabs[i].dataset.format!, tabs[i].dataset.file!);
+  }
+  tabs.forEach((t, i) => t.addEventListener('click', () => open(i)));
+  if (tabs.length) open(0);
+</script>
+
+<style is:global>
+  .inside-page { max-width: 72rem; }
+  .inside-page > .footnote { margin-top: 2rem; }
+  .inside-files { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.5rem; }
+  .inside-files button { font: inherit; font-size: var(--fs-0); padding: 0.35rem 0.7rem; border: 1px solid var(--rule); background: transparent; color: var(--ink); cursor: pointer; }
+  .inside-files button[aria-selected='true'] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+  .inside-meta { font-size: var(--fs-0); color: var(--ink-2); max-width: none; }
+  .explainer .layout { max-width: 900px; }
+  .explainer h2 { margin-top: 1rem; }
+
+</style>

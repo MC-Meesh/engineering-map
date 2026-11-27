@@ -1,0 +1,24 @@
+id: siemens--defacto--2026
+type: acquisition
+acquirer: siemens
+target: defacto
+completed: '2026-07-21'
+status: pending
+announced: '2026-07-21'
+summary: >-
+  RTL-level SoC design assembly tools (SoC Compiler); Defacto is a Grenoble company founded in 2003.
+  Agreement announced 2026-07-21 with no expected close date or terms given; no closing notice found
+  as of 2026-11-21.
+notes: >-
+  Pending status is inferred from the absence of any closing notice from Siemens or Defacto
+  (defactotech.com shows no Siemens branding beyond a banner linking the release, as of 2026-11-22).
+  The completed field holds the announcement date only because the schema and site need a date for
+  pending deals; the deal has not closed.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://news.siemens.com/en-us/siemens-to-acquire-defacto-technologies/
+    label: Siemens press release 2026-07-21
+  - url: >-
+      https://blogs.sw.siemens.com/digital-design-creation-platform/2026/07/21/siemens-acquires-defacto-technologies-transforming-soc-design-with-powerful-re-use-and-assembly-automation-technology/
+    label: Siemens EDA blog 2026-07-21

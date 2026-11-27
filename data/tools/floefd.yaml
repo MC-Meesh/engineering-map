@@ -1,0 +1,35 @@
+id: floefd
+type: tool
+name: Simcenter FLOEFD
+category: cfd
+vendor: siemens
+origin: nika
+open_source: false
+status: active
+first_release: 1999
+stages:
+  - design
+  - analysis
+integrates_with:
+  - nx
+  - creo
+  - catia
+  - solid-edge
+website: https://www.siemens.com/en-us/products/simcenter/fluids-thermal-simulation/floefd/
+summary: CAD-embedded CFD for design engineers.
+plain: >-
+  Simulates air and liquid flow and heat inside the 3D design program a designer already uses (NX,
+  Creo, CATIA or Solid Edge), so they can check cooling or flow without learning a separate tool.
+workflow: >-
+  A design engineer runs flow and heat simulation inside NX, Creo, CATIA or Solid Edge on the model
+  already there, and changes the design in the same CAD session based on the results.
+notes: >-
+  Originally developed by NIKA GmbH (EFD.Lab and FloWorks), which Flomerics bought in 2006;
+  Flomerics went to Mentor in 2008.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/simcenter/fluids-thermal-simulation/floefd/
+    label: official page
+  - url: https://www.plantengineering.com/flomerics-to-acquire-nika-gmbh
+    label: 'Plant Engineering 2006-07-01: Flomerics to acquire NIKA'

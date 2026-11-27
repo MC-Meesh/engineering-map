@@ -1,0 +1,35 @@
+id: ncode
+type: tool
+name: nCode DesignLife
+category: cae-fea
+vendor: hbk
+open_source: false
+status: active
+stages:
+  - analysis
+  - test
+competes_with:
+  - fe-safe
+website: https://www.hbkworld.com/en/products/software/durability/designlife-cae-fatigue-analysis
+summary: CAE durability and fatigue paired with test data processing.
+plain: >-
+  Predicts how long parts last under repeated loading, using simulation results together with
+  measured test data.
+workflow: >-
+  An analyst brings stress results from a simulation together with measured loads from testing,
+  predicts fatigue life here, and reports which parts need changes to the designers.
+notes: >-
+  HBK (nCode brand) CAE fatigue tool; v7 was the base for Ansys nCode DesignLife (Ansys 14.0, about
+  2011) and v8 shipped in 2012; current line is nCode 2026.0. Also resold via Ansys and the Siemens
+  (ex-Altair) partner alliance. First release year unconfirmed; 1990 reflected nCode company-era
+  tools.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.hbkworld.com/en/products/software/durability/designlife-cae-fatigue-analysis
+    label: HBK DesignLife product page
+  - url: >-
+      https://www.hbkworld.com/en/about/news/2022/ansys-ncode-designlife-now-available-in-ansys-14-0-workbench
+    label: HBK news, Ansys nCode DesignLife based on v7
+  - url: https://www.siemens.com/en-us/products/siemens-industry-software-designlife-by-hbk/
+    label: Siemens APA listing, DesignLife by HBK

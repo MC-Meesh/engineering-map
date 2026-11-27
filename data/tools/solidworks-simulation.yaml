@@ -1,0 +1,38 @@
+id: solidworks-simulation
+type: tool
+name: SOLIDWORKS Simulation
+category: cae-fea
+vendor: dassault
+origin: srac
+open_source: false
+status: active
+first_release: 1995
+stages:
+  - analysis
+plugin_of: solidworks
+website: https://www.solidworks.com/product/solidworks-simulation
+summary: Designer-level FEA inside SOLIDWORKS, from the COSMOS lineage.
+plain: >-
+  Checks stresses and deformation of parts inside SOLIDWORKS, aimed at designers rather than
+  specialists.
+workflow: >-
+  A designer checks stresses inside SOLIDWORKS on the model already there, and changes the design in
+  the same session; harder cases go on to specialist analysts.
+notes: >-
+  Began as COSMOSWorks from SRAC, which Dassault agreed to buy in 2001. first_release 1995 not
+  confirmed by a primary source.
+geometry_basis:
+  kind: host
+  host: solidworks
+  text: >-
+    Fully integrated with SOLIDWORKS: it analyzes SOLIDWORKS parts and assemblies, so it works on SOLIDWORKS's own geometry.
+  url: https://help.solidworks.com/2024/english/SolidWorks/cworks/c_SOLIDWORKS_Simulation_Fundamentals.htm
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.solidworks.com/product/solidworks-simulation
+    label: official page
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-signs-agreement-acquire-srac
+    label: 'Dassault release 2001-03-30: agreement to acquire SRAC (COSMOS)'
+  - url: https://help.solidworks.com/2024/english/SolidWorks/cworks/c_SOLIDWORKS_Simulation_Fundamentals.htm
+    label: 'Geometry basis source'

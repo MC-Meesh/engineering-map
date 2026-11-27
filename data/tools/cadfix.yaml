@@ -1,0 +1,39 @@
+id: cadfix
+type: tool
+name: CADfix
+category: interop
+vendor: iti
+open_source: false
+status: active
+first_release: 1990
+stages:
+  - design
+  - analysis
+formats:
+  reads:
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+    - catia-v5
+  writes:
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+website: https://www.iti-global.com/cadfix
+summary: Geometry repair, translation and defeaturing to make CAD usable for meshing.
+plain: >-
+  Repairs, simplifies and converts 3D design files so they can be used for simulation, for example
+  by fixing broken surfaces and removing tiny details before the shape is split into the small cells
+  (a mesh) a simulation runs on.
+workflow: >-
+  An analyst brings in messy design (CAD) files as STEP, IGES, Parasolid, SAT or CATIA, repairs and
+  simplifies them here, and passes clean STEP, IGES, Parasolid or SAT geometry to a meshing tool
+  before the simulation runs.
+notes: ITI is now a Wipro company; first-release year unconfirmed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.iti-global.com/cadfix
+    label: official page

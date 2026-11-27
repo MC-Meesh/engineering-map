@@ -1,0 +1,31 @@
+id: fidelity-cfd
+type: tool
+name: Cadence Fidelity CFD
+category: cfd
+vendor: cadence
+origin: numeca
+open_source: false
+status: active
+first_release: 2022
+stages:
+  - analysis
+  - optimization
+competes_with:
+  - fluent
+  - star-ccm
+  - cfx
+website: https://www.cadence.com/en_US/home/tools/system-analysis/computational-fluid-dynamics.html
+summary: Cadence CFD platform combining the NUMECA solvers (turbomachinery, marine) with Pointwise meshing.
+plain: >-
+  Cadence software for simulating how air and water flow, strong on machines such as turbines, pumps
+  and fans and on ships. It bundles the NUMECA flow calculators with Pointwise, which builds the
+  grid of small cells the flow is computed on.
+workflow: >-
+  An analyst builds the grid of cells around a turbine blade or hull with Pointwise, runs the flow
+  simulation here, and gives the predicted efficiency and pressure results to the designers so they
+  can compare and improve the shape.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cadence.com/en_US/home/tools/system-analysis/computational-fluid-dynamics.html
+    label: official page

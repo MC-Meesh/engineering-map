@@ -1,0 +1,22 @@
+id: tpg
+type: vendor
+name: TPG
+kind: company
+hq: US
+founded: 1992
+status: active
+website: https://www.tpg.com/
+wikipedia: https://en.wikipedia.org/wiki/TPG_Inc.
+summary: >-
+  Private equity firm; bought Kepware and ThingWorx from PTC and Proficy from GE Vernova in 2026,
+  combining them as Velotic.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.tpg.com/news-and-insights/velotic-launches-to-shape-future-of-industrial-manufacturing-software
+    label: 'TPG release 2026-03-17: Velotic launch'
+  - url: https://www.tpg.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/TPG_Inc.
+    label: Wikipedia

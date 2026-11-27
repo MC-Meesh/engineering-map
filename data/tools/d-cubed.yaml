@@ -1,0 +1,41 @@
+id: d-cubed
+type: tool
+name: D-Cubed components
+category: geometry-kernel
+vendor: siemens
+open_source: false
+status: active
+first_release: 1989
+stages:
+  - design
+website: https://www.siemens.com/en-us/products/plm-components/d-cubed/
+summary: >-
+  Geometric constraint solvers (2D DCM, 3D DCM) used for sketches and assembly mates across much of
+  the CAD industry.
+plain: >-
+  Building blocks that keep sketch dimensions and the fit between assembled parts consistent. Much
+  of the CAD industry uses them inside; users never see them directly.
+workflow: >-
+  3D design (CAD) programs such as SOLIDWORKS, Designcenter (formerly NX) and Solid Edge build these components in; whenever
+  a user sketches with dimensions or mates parts in an assembly, they work out where everything
+  goes.
+files_note: 'Software components (constraint solvers, motion, collision, hidden line) that vendors build into CAD, CAM and CAE apps and call from their code; they work on the host program''s own model data.'
+notes: >-
+  Developed by D-Cubed Ltd (Cambridge, UK), founded in 1989 with the 2D DCM as its one product;
+  first_release is that year, approximate. The company later went to UGS (2004, not verified here).
+  Siemens names D-Cubed licensees by application area, as companies rather than products or
+  components: for CAD, Autodesk, DataSolid, Fujitsu, IronCAD, ISD, Onshape, PTC, Shapr3D and ZWCAD;
+  for CAE, Altair, ANSYS, Autodesk, AVL, Comsol, ESI, MSC.Software and Remcom; for CAM, Autodesk,
+  Euklid CAD/CAM and Vero Software; for AEC, Autodesk, Bentley Systems, Nemetschek Vectorworks and
+  Vertex Systems. So no Autodesk or PTC product is tied to D-Cubed by name. ISD integrated D-Cubed
+  AEM (motion simulation) into HiCAD, and Design Simulation Technologies licensed the 3D DCM as the
+  200th D-Cubed license.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/plm-components/d-cubed/
+    label: 'Siemens D-Cubed page: licensee lists by application area; ISD HiCAD case study'
+  - url: https://blogs.sw.siemens.com/news/major-milestones-for-the-d-cubed-components/
+    label: 'Siemens blog: D-Cubed milestones (founded 1989)'
+  - url: https://blogs.sw.siemens.com/plm-components/What-is-D-Cubed/
+    label: 'Siemens blog: Bentley, Vero, Altair, Onshape and Solid Edge use D-Cubed SDKs'

@@ -1,0 +1,20 @@
+id: brand-designcenter
+type: brand
+name: Designcenter
+vendor: siemens
+website: https://www.siemens.com/en-us/products/designcenter/
+products:
+  - nx
+  - solid-edge
+summary: >-
+  Siemens' CAD brand since 2025: Designcenter (formerly NX) and Designcenter Solid Edge, plus the
+  Designcenter X SaaS tiers.
+notes: 'NX CAM stays outside the brand: it keeps the NX name.'
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/designcenter/
+    label: official brand page (Designcenter, Designcenter Solid Edge)
+  - url: >-
+      https://blogs.sw.siemens.com/designcenter/designcenter-a-new-name-for-the-future-of-engineering/
+    label: 'Siemens blog: Designcenter NX is now Designcenter'
+as_of: '2026-11-22'

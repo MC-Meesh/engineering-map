@@ -1,0 +1,16 @@
+id: aster
+type: vendor
+name: ASTER Technologies
+kind: company
+hq: FR
+founded: 1993
+parent: siemens
+status: merged
+summary: >-
+  Cesson-Sevigne company behind TestWay, design-for-test planning software for boards; bought by
+  Siemens in January 2026 for Xpedition and Valor.
+confidence: high
+sources:
+  - url: https://news.siemens.com/en-gb/siemens-acquires-aster-technologies/
+    label: 'Siemens release 2026-01-13: acquires ASTER'
+as_of: '2026-11-22'

@@ -1,0 +1,44 @@
+id: thingworx
+type: tool
+name: ThingWorx
+category: digital-twin
+vendor: velotic
+origin: ptc
+open_source: false
+status: active
+first_release: 2009
+stages:
+  - lifecycle
+competes_with:
+  - insights-hub
+website: https://www.velotic.com/products/thingworx
+summary: >-
+  Industrial IoT application platform; PTC sold it to TPG in March 2026 and it now belongs to
+  Velotic with Kepware and Proficy.
+plain: A platform for building applications that connect to and use data from industrial machines.
+workflow: >-
+  Edge devices and Kepware connections send machine data to ThingWorx; developers build applications
+  on it that operators use to monitor and act on the equipment.
+files_note: 'Works through connections rather than files: data arrives from edge devices, Kepware industrial connections and the ThingWorx REST API.'
+notes: >-
+  Windchill Navigate (formerly ThingWorx Navigate), PTC's role-based apps over Windchill data, runs
+  on ThingWorx Foundation. The Vuforia Experience Service, which Vuforia Studio and Vuforia View
+  need, is an add-on to ThingWorx.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.tpg.com/news-and-insights/velotic-launches-to-shape-future-of-industrial-manufacturing-software
+    label: 'TPG release 2026-03-17: Velotic launch (Proficy, Kepware, ThingWorx)'
+  - url: https://www.velotic.com/products/thingworx
+    label: Velotic ThingWorx product page
+  - url: https://www.sec.gov/Archives/edgar/data/857005/000119312526107315/ptc-ex99_1.htm
+    label: 'PTC 8-K exhibit 2026-03-16: divestiture completed'
+  - url: https://abiresearch.com/press/ptc-beats-ge-abb-and-siemens-top-spot-abi-researchs-smart-manufacturing-platform-competitive-assessment
+    label: ABI Research smart manufacturing platform assessment (ThingWorx and MindSphere ranked)
+  - url: https://support.ptc.com/help/thingworx/platform/r9/en/ThingWorx/Help/ModelandDataBestPractices/ingesting_data_into_the_platform.html
+    label: 'data access (ThingWorx help: ingesting data)'
+  - url: https://support.ptc.com/help/thingworx/navigate/r9.7/en/ThingWorx_Navigate/landingpage/NavLandingPage.html
+    label: 'Windchill Navigate 9.7 help: runs on ThingWorx Foundation'
+  - url: https://support.ptc.com/help/vuforia/es_install/en/ES_Install_Help_Center/ThingServerInstall_Welcome_HC.html
+    label: 'Vuforia help: the Experience Service augments ThingWorx'

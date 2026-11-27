@@ -1,0 +1,14 @@
+id: tech-soft-3d
+type: vendor
+name: Tech Soft 3D
+kind: company
+hq: US
+founded: 1996
+status: active
+website: https://www.techsoft3d.com/
+summary: Engineering SDKs (HOOPS Exchange, HOOPS Visualize, Ceetron) embedded in many CAD and CAE products.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.techsoft3d.com/
+    label: official page

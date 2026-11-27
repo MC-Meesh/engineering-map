@@ -1,0 +1,39 @@
+id: isaac-sim
+type: tool
+name: NVIDIA Isaac Sim
+category: robotics-controls
+vendor: nvidia
+open_source: false
+status: active
+first_release: 2019
+stages:
+  - analysis
+  - test
+built_on:
+  - omniverse
+formats:
+  reads:
+    - usd
+    - urdf
+    - mjcf
+  writes:
+    - usd
+integrates_with:
+  - ros2
+competes_with:
+  - gazebo
+  - mujoco
+website: https://developer.nvidia.com/isaac/sim
+summary: Photorealistic GPU robot simulation and synthetic data on Omniverse.
+plain: >-
+  NVIDIA software that simulates robots in realistic virtual scenes using graphics processors, and
+  generates computer-made training data so robot AI can learn before it runs on a real robot.
+workflow: >-
+  A robotics developer imports robots as URDF or MJCF and scenes as OpenUSD, simulates them here,
+  connected to ROS 2, and uses the synthetic data to train robot AI before running it on real
+  robots.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://developer.nvidia.com/isaac/sim
+    label: official page

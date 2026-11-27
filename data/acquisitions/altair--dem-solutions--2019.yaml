@@ -1,0 +1,20 @@
+id: altair--dem-solutions--2019
+type: acquisition
+acquirer: altair
+target: dem-solutions
+completed: 2019-11
+status: completed
+announced: '2019-11-07'
+notes: >-
+  Altair signed the stock purchase agreement and closed at the same time in November 2019, paid with
+  cash and a credit facility draw. DEM Solutions (EDEM) was based in Edinburgh.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://news.siemens.com/en-us/altair-acquires-dem-solutions-expanding-solver-portfolio-into-discrete-element-method-analysis/
+    label: Altair press release 2019-11-07 (now hosted by Siemens)
+  - url: https://www.sec.gov/Archives/edgar/data/1701732/000156459019041825/altr-10q_20190930.htm
+    label: Altair 10-Q Q3 2019 (signed and closed November 2019)
+  - url: https://altair.com/edem
+    label: source

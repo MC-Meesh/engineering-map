@@ -1,0 +1,16 @@
+id: openscad-project
+type: vendor
+name: OpenSCAD project
+kind: project
+founded: 2010
+status: active
+website: https://openscad.org/
+wikipedia: https://en.wikipedia.org/wiki/OpenSCAD
+summary: Script-based solid CAD community.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://openscad.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/OpenSCAD
+    label: Wikipedia

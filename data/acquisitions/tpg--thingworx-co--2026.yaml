@@ -1,0 +1,21 @@
+id: tpg--thingworx-co--2026
+type: acquisition
+acquirer: tpg
+target: thingworx-co
+announced: '2025-11-05'
+completed: '2026-03-16'
+status: completed
+value: same deal as Kepware
+summary: >-
+  Sold with Kepware; PTC keeps a long-term agreement so Windchill and other PTC products can keep
+  using ThingWorx.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/857005/000119312526107315/ptc-ex99_1.htm
+    label: 'PTC 8-K exhibit 2026-03-16: divestiture completed'
+  - url: https://www.ptc.com/en/news/2026/ptc-completes-divestiture-of-kepware-and-thingworx-businesses
+    label: PTC press release 2026-03-16 (long-term agreement)
+  - url: >-
+      https://www.tpg.com/news-and-insights/tpg-to-acquire-ptcs-industrial-connectivity-and-iot-businesses
+    label: TPG press release 2025-11-05

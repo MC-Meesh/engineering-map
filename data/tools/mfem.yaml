@@ -1,0 +1,45 @@
+id: mfem
+type: tool
+name: MFEM
+category: solver-library
+vendor: llnl
+open_source: true
+license: BSD-3-Clause
+status: active
+first_release: 2010
+stages:
+  - analysis
+built_on:
+  - hypre
+formats:
+  reads:
+    - gmsh-msh
+    - vtk-legacy
+    - vtk-xml
+  writes:
+    - vtk-legacy
+    - vtk-xml
+    - exodus
+    - hdf5
+website: https://mfem.org/
+summary: Lightweight high-order finite element library with GPU support.
+plain: >-
+  A free programming library for writing simulation software that splits a shape into many small
+  pieces (the finite element method) for accurate results; it can run on graphics cards for speed.
+workflow: >-
+  A programmer builds a simulation code on MFEM, using hypre to solve its equations, reads a Gmsh or
+  VTK mesh (the grid of small pieces), and writes results as VTK, Exodus II or HDF5 files that
+  visualization tools open.
+native_files:
+  - ext: .mesh
+    what: 'MFEM mesh file in its own text format, including NURBS and parallel variants'
+files_note: 'A C++ finite element library that programs call; its Mesh class also reads CUBIT Genesis and Netgen meshes and can save VTKHDF output.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://mfem.org/
+    label: official page
+  - url: https://mfem.org/mesh-formats/
+    label: 'MFEM: Mesh formats'
+  - url: https://docs.mfem.org/html/classmfem_1_1Mesh.html
+    label: 'MFEM API: Mesh class'

@@ -1,0 +1,75 @@
+---
+// Example files for one format: hosted downloads (with checksum and license) and links to
+// vendor samples we may not rehost. Policy: docs/decisions/0005-format-examples.md.
+import { examplesFor, previewable, inspectable, fmtBytes, explainerFor } from '../lib/data';
+interface Props { format: string; name: string }
+const { format, name } = Astro.props;
+const list = examplesFor(format);
+const hosted = list.filter((e) => e.file);
+const linked = list.filter((e) => !e.file);
+const fileName = (p: string) => p.split('/').pop();
+const originLabel = { generated: 'Made for this site', 'third-party': 'Third-party file, redistributed under its license', 'vendor-sample': 'Vendor sample, linked' };
+---
+<section id="examples" class="examples">
+  <h2>Example files <span class="muted num">{list.length}</span></h2>
+  {list.length === 0 && <p class="muted">No example file for {name} yet: nothing we found can be shared legally. See <a href="/formats/examples/">all examples</a>.</p>}
+  {explainerFor(format) && <p><a href={`/formats/${format}/inside/`}>How {(/^[A-Z]{2}/.test(name) ? (/^[AEFHILMNORSX]/.test(name) ? 'an' : 'a') : /^[AEIOU]/i.test(name) ? 'an' : 'a')} {name} file is organized</a>, from public documentation (also in the panel above).</p>}
+  {hosted.length > 0 && (
+    <ul class="ex-list">
+      {hosted.map((e) => (
+        <li class="ex">
+          <div class="ex-head">
+            <a class="ex-name mono" href={`/${e.file}`} download>{fileName(e.file!)}</a>
+            <span class="muted num">{fmtBytes(e.size!)}</span>
+            {previewable(e.file) && <button type="button" class="ex-preview" data-show-file={`/${e.file}`} data-show-view="model">Show in 3D</button>}
+            {inspectable(e.file) && <button type="button" class="ex-preview" data-show-file={`/${e.file}`} data-show-view="inside">Look inside</button>}
+          </div>
+          <p class="ex-what">{e.contains}</p>
+          <dl class="ex-meta">
+            <dt>Origin</dt><dd>{originLabel[e.origin]}{e.generated_by && <span class="muted">, {e.generated_by}</span>}</dd>
+            <dt>License</dt><dd>{e.license}. {e.attribution}</dd>
+            {e.source_url && <><dt>Source</dt><dd><a href={e.source_url}>{e.source_url}</a></dd></>}
+            {e.note && <><dt>Note</dt><dd>{e.note}</dd></>}
+            <dt>SHA-256</dt><dd class="mono sha" title={e.sha256}>{e.sha256}</dd>
+          </dl>
+        </li>
+      ))}
+    </ul>
+  )}
+  {linked.length > 0 && (
+    <>
+      <h3>Elsewhere</h3>
+      <ul class="ex-list">
+        {linked.map((e) => (
+          <li class="ex">
+            <div class="ex-head"><a class="ex-name" href={e.url}>{e.title ?? e.url}</a></div>
+            <p class="ex-what">{e.contains}</p>
+            <dl class="ex-meta">
+              <dt>Terms</dt><dd>{e.license}. {e.attribution}</dd>
+              {e.note && <><dt>Note</dt><dd>{e.note}</dd></>}
+            </dl>
+          </li>
+        ))}
+      </ul>
+      <p class="footnote">Linked rather than copied, because of their terms, their size or what they contain.</p>
+    </>
+  )}
+</section>
+
+
+
+<style>
+  .examples { margin-top: 2.5rem; }
+  .ex-list { list-style: none; padding: 0; margin: 0 0 1rem; border-top: 1px solid var(--ink); }
+  .ex { padding: 0.9rem 0 1rem; border-bottom: 1px solid var(--rule); }
+  .ex-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4rem 1rem; }
+  .ex-name { font-weight: 700; }
+  .ex-preview { font: inherit; font-size: 0.75rem; padding: 0.25rem 0.6rem; border: 1px solid var(--rule); background: transparent; color: var(--ink-2); cursor: pointer; transition: color 0.2s, border-color 0.2s; }
+  .ex-preview:first-of-type { margin-left: auto; }
+  .ex-preview:hover { border-color: var(--ink); color: var(--ink); }
+  .ex-what { margin: 0.35rem 0 0.5rem; }
+  .ex-meta { display: grid; grid-template-columns: max-content 1fr; gap: 0.15rem 1rem; margin: 0; font-size: var(--fs-0); }
+  .ex-meta dt { color: var(--ink-2); }
+  .ex-meta dd { margin: 0; overflow-wrap: anywhere; }
+  .sha { font-size: 0.72rem; color: var(--ink-2); }
+</style>

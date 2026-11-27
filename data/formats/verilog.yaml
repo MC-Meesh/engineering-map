@@ -1,0 +1,21 @@
+id: verilog
+type: format
+name: Verilog / SystemVerilog
+extensions:
+  - .v
+  - .sv
+kind: ic
+standard: IEEE 1800
+steward: IEEE
+open_spec: true
+first_published: 1984
+website: https://standards.ieee.org/ieee/1800/7743/
+wikipedia: https://en.wikipedia.org/wiki/SystemVerilog
+summary: Hardware description and verification language; the RTL input to synthesis and simulation.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://standards.ieee.org/ieee/1800/7743/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/SystemVerilog
+    label: Wikipedia

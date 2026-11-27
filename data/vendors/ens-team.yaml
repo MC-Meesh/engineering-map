@@ -1,0 +1,13 @@
+id: ens-team
+type: vendor
+name: Manifold authors
+kind: project
+founded: 2019
+status: active
+website: https://github.com/elalish/manifold
+summary: Open mesh-boolean library.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://github.com/elalish/manifold
+    label: official page

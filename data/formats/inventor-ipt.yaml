@@ -1,0 +1,17 @@
+id: inventor-ipt
+type: format
+name: Inventor native
+extensions:
+  - .ipt
+  - .iam
+kind: native-cad
+steward: Autodesk
+steward_vendor: autodesk
+open_spec: false
+website: https://www.autodesk.com/products/inventor/overview
+summary: Proprietary Inventor part and assembly files.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.autodesk.com/products/inventor/overview
+    label: official page

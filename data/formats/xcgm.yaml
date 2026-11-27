@@ -1,0 +1,25 @@
+id: xcgm
+type: format
+name: XCGM
+extensions:
+  - .xcgm
+kind: brep-exchange
+steward: Dassault Systemes
+steward_vendor: dassault
+open_spec: false
+website: https://www.spatial.com/glossary/what-is-a-3d-xml-file-format-used-for
+summary: >-
+  Dassault's exchange file for exact geometry: the CGM kernel's B-rep plus visualization data and
+  assemblies, for moving models between applications built on CGM.
+notes: >-
+  The companion to 3D XML. Spatial describes XCGM as extending 3D XML with exact geometry: where
+  3D XML carries triangle meshes for viewing and communication, XCGM carries the exact B-rep as
+  well, with assemblies, for exchange with CGM-based applications. Spatial's 3D InterOp reads and
+  writes XCGM versions R2012 to 2025 1.0, and recommends it over 3D XML when B-rep is needed.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.spatial.com/glossary/what-is-a-3d-xml-file-format-used-for
+    label: Spatial glossary, 3D XML and XCGM compared
+  - url: https://www.spatial.com/products/3d-interop
+    label: Spatial 3D InterOp (XCGM read and write, R2012 to 2025 1.0)

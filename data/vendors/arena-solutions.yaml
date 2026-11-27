@@ -1,0 +1,15 @@
+id: arena-solutions
+type: vendor
+name: Arena Solutions
+kind: company
+hq: US
+founded: 2000
+parent: ptc
+status: merged
+website: https://www.arenasolutions.com/
+summary: Cloud PLM for electronics companies.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.arenasolutions.com/
+    label: official page

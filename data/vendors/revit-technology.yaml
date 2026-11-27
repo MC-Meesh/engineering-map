@@ -1,0 +1,12 @@
+id: revit-technology
+type: vendor
+name: Revit Technology Corporation
+kind: company
+parent: autodesk
+status: merged
+summary: Original developer of Revit; acquired by Autodesk in April 2002.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/769397/000119312503002078/d10k.htm
+    label: 'Autodesk FY2003 10-K: Revit Technology Corporation acquired April 2002'

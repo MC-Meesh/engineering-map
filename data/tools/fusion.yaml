@@ -1,0 +1,68 @@
+id: fusion
+type: tool
+name: Autodesk Fusion
+category: cad
+vendor: autodesk
+open_source: false
+status: active
+first_release: 2013
+stages:
+  - design
+  - analysis
+  - manufacturing
+built_on:
+  - shapemanager
+formats:
+  reads:
+    - step
+    - iges
+    - acis-sat
+    - stl
+    - 3mf
+    - obj
+    - dxf
+    - parasolid-xt
+  writes:
+    - step
+    - iges
+    - acis-sat
+    - stl
+    - 3mf
+    - dxf
+    - gcode
+competes_with:
+  - solidworks
+  - onshape
+website: https://www.autodesk.com/products/fusion-360/overview
+wikipedia: https://en.wikipedia.org/wiki/Fusion_360
+summary: Cloud-connected CAD, CAM, simulation and PCB design in one product, formerly Fusion 360.
+plain: >-
+  Autodesk software that combines 3D part design, programs for CNC (computer-controlled) cutting
+  machines, strength checks and circuit board design in one product connected to the internet;
+  formerly called Fusion 360.
+workflow: >-
+  A designer opens STEP, IGES or Parasolid files or models the part here, checks it, and either
+  writes G-code (cutting instructions) for a CNC machine or exports STL or 3MF files for a 3D
+  printer and STEP files for partners' 3D design software.
+native_files:
+  - ext: .f3d
+    what: Fusion design archive
+  - ext: .f3z
+    what: Fusion archive of a design with its external references
+notes: >-
+  Fusion exports SMT, the neutral file type of Autodesk Shape Manager (ASM). Fusion design data is
+  stored in the cloud as the Manufacturing Data Model, which an Autodesk Platform Services API can
+  read and write without the Fusion desktop. Autodesk runs Fusion's generative design on AWS.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.autodesk.com/products/fusion-360/overview
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Fusion_360
+    label: Wikipedia
+  - url: https://help.autodesk.com/cloudhelp/ENU/Fusion-Designs/files/ASM-EXPORT-DESIGN.htm
+    label: native file format (Autodesk Fusion help)
+  - url: https://aps.autodesk.com/en/docs/mfgdataapi/v3/developers_guide/overview/
+    label: 'APS Manufacturing Data Model API overview: Fusion data in the cloud'
+  - url: https://aws.amazon.com/solutions/case-studies/autodesk-fusion-delivers-generative-design-case-study
+    label: 'AWS case study: Fusion generative design runs on AWS'

@@ -1,0 +1,18 @@
+id: ipc-2581
+type: format
+name: IPC-2581
+extensions:
+  - .xml
+  - .cvg
+kind: ecad
+standard: IPC-2581C
+steward: IPC
+open_spec: true
+first_published: 2004
+website: https://www.ipc2581.com/
+summary: Open XML standard for complete PCB fabrication and assembly data.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ipc2581.com/
+    label: official page

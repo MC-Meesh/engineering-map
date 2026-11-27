@@ -1,0 +1,271 @@
+# Structure explainers for formats with no hosted example: how the file is organized, from
+# public documentation only (docs/decisions/0006-format-inspector.md). Checked by the build.
+explainers:
+  - format: jt
+    summary: >-
+      JT (ISO 14306) is a binary container for lightweight 3D visualization data with optional
+      exact geometry. The format is an ISO standard, so its layout is public (the standard is
+      sold by ISO).
+    layout:
+      - part: File header
+        what: An 80-character version string (such as "Version 10.0 JT"), a byte order flag, a reserved field and the offset of the table of contents.
+      - part: Table of contents
+        what: One entry per data segment, each with the segment's GUID, offset, length and attributes.
+      - part: Logical scene graph segment
+        what: The product structure as a graph of nodes (partitions, instances, groups) with attributes such as transforms and materials.
+      - part: Shape segments
+        what: Tessellated geometry at several levels of detail, compressed with JT's own codecs, loaded only when a viewer needs them.
+      - part: B-rep and PMI segments
+        what: Optional exact geometry (JT B-rep or an embedded XT B-rep) and product manufacturing information.
+      - part: Property and metadata segments
+        what: Properties attached to scene graph nodes, such as part numbers.
+    sources:
+      - url: https://en.wikipedia.org/wiki/JT_(visualization_format)
+        label: Wikipedia
+  - format: dwg
+    summary: >-
+      DWG is AutoCAD's native binary drawing format. Autodesk does not publish it; the Open Design
+      Alliance publishes a free description reconstructed by clean-room work, which is what open
+      readers such as LibreDWG follow.
+    layout:
+      - part: Version string
+        what: The first six bytes name the release, such as AC1032 for the AutoCAD 2018 format family.
+      - part: File header
+        what: Pointers to the sections and, in newer versions, a section map and page map; newer files are split into pages that may be compressed.
+      - part: Header variables
+        what: Drawing settings, the same variables DXF writes in its HEADER section.
+      - part: Classes
+        what: Definitions of the custom object classes used in the drawing.
+      - part: Objects
+        what: Entities and non-graphical objects as bit-packed records, each with a handle.
+      - part: Object map
+        what: An index from handles to object positions, so a reader can find any object.
+    sources:
+      - url: https://www.opendesign.com/files/guestdownloads/OpenDesign_Specification_for_.dwg_files.pdf
+        label: Open Design Alliance, Open Design Specification for .dwg files
+      - url: https://en.wikipedia.org/wiki/Open_Design_Alliance
+        label: Wikipedia, Open Design Alliance
+  - format: catia-v5
+    summary: >-
+      CATIA V5 parts (.CATPart) and assemblies (.CATProduct) are proprietary binary files with no
+      public specification. What is public is how to get data out of them.
+    layout:
+      - part: Native file
+        what: The feature tree (sketches, pads, pockets and their parameters) and the exact B-rep computed from it, on Dassault's CGM kernel. Not documented.
+      - part: Public routes
+        what: Export to STEP AP242, IGES or 3D XML from CATIA, or read with licensed translation SDKs.
+      - part: 3D XML
+        what: Dassault's proprietary XML-based format for lightweight 3D (mostly triangle meshes and the assembly tree), which CATIA can write.
+    sources:
+      - url: https://en.wikipedia.org/wiki/CATIA
+        label: Wikipedia
+      - url: https://www.3ds.com/products/catia
+        label: Dassault Systemes, CATIA
+  - format: creo-prt
+    summary: >-
+      Creo (formerly Pro/ENGINEER) part files are proprietary. Their first line is readable text,
+      which is the only part of the layout that is easy to see without PTC's tools.
+    layout:
+      - part: Text header
+        what: A first line beginning "#UGC:2 PART" identifies a Pro/ENGINEER or Creo part, followed by the release that wrote it.
+      - part: Model data
+        what: The feature history and the exact geometry, on PTC's Granite kernel. Not documented.
+      - part: Public routes
+        what: STEP AP242 export, the Creo Toolkit API (licensed) or Granite-based translators.
+    sources:
+      - url: https://en.wikipedia.org/wiki/PTC_Creo
+        label: Wikipedia
+      - url: https://www.ptc.com/en/products/creo
+        label: PTC, Creo
+  - format: nx-prt
+    summary: >-
+      Siemens Designcenter (formerly NX) part files are proprietary. Designcenter models on the Parasolid kernel, and the public
+      routes out go through Parasolid or JT.
+    layout:
+      - part: Native file
+        what: The feature history, assembly structure and Parasolid geometry. Not documented.
+      - part: Public routes
+        what: Export to Parasolid XT (documented by Siemens), JT (ISO 14306) or STEP; the NX Open API reads the file inside NX.
+    sources:
+      - url: https://en.wikipedia.org/wiki/Siemens_NX
+        label: Wikipedia
+      - url: https://plm.sw.siemens.com/en-US/plm-components/parasolid/
+        label: Siemens, Parasolid
+  - format: solidworks-native
+    summary: >-
+      SOLIDWORKS parts (.sldprt) and assemblies (.sldasm) are proprietary. Older versions were
+      known to use a Microsoft compound document as the outer container; the contents are not
+      documented.
+    layout:
+      - part: Container
+        what: A set of named streams holding the feature tree, the Parasolid geometry, a preview image and document properties.
+      - part: Public routes
+        what: The SOLIDWORKS API and Document Manager API (licensed), or STEP and Parasolid export.
+    sources:
+      - url: https://en.wikipedia.org/wiki/SolidWorks
+        label: Wikipedia
+      - url: https://help.solidworks.com/
+        label: SOLIDWORKS help (API documentation)
+  - format: inventor-ipt
+    summary: >-
+      Autodesk Inventor parts (.ipt) are proprietary binary files. They are Microsoft compound
+      documents (structured storage) whose streams are not documented.
+    layout:
+      - part: Structured storage
+        what: A FAT-like container of named storages and streams, the same layout Microsoft documents as the Compound File Binary format.
+      - part: Streams
+        what: Feature data, ShapeManager geometry, a thumbnail and summary properties. Only the summary properties follow a public layout.
+      - part: Public routes
+        what: The Inventor API or Inventor Apprentice (Autodesk, free with Inventor), or STEP export.
+    sources:
+      - url: https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-cfb/
+        label: Microsoft, Compound File Binary format
+      - url: https://en.wikipedia.org/wiki/Autodesk_Inventor
+        label: Wikipedia
+  - format: abaqus-odb
+    summary: >-
+      Abaqus output databases (.odb) are a proprietary binary format, but Dassault documents the
+      object model through the Abaqus Scripting Interface, which is how other tools read them.
+    layout:
+      - part: Root assembly and parts
+        what: The model mesh as part instances with nodes, elements and sets.
+      - part: Steps
+        what: Analysis steps, each a sequence of frames (increments or modes).
+      - part: Frames and field outputs
+        what: In each frame, field outputs such as displacement U or stress S, with values per node or integration point.
+      - part: History regions
+        what: Time histories for chosen points, such as reaction forces.
+    sources:
+      - url: https://help.3ds.com/
+        label: Dassault Systemes, Abaqus Scripting Reference (odbAccess)
+      - url: https://en.wikipedia.org/wiki/Abaqus
+        label: Wikipedia
+  - format: edif
+    summary: >-
+      EDIF (Electronic Design Interchange Format, EIA-548 and IEC 61690) is a text format of
+      nested parenthesized expressions, like Lisp.
+    layout:
+      - part: Header
+        what: "(edif name (edifVersion 2 0 0) (edifLevel 0) (keywordMap ...) (status ...))."
+      - part: Libraries
+        what: Libraries of cells; each cell has views (netlist, schematic) with an interface (ports) and contents (instances and nets).
+      - part: Design
+        what: "(design name (cellRef ...)) names the top cell."
+    sources:
+      - url: https://en.wikipedia.org/wiki/EDIF
+        label: Wikipedia
+  - format: ensight-gold
+    summary: >-
+      EnSight Gold is a published set of files: a text case file that indexes geometry and
+      variable files, which can be ASCII or C binary.
+    layout:
+      - part: Case file
+        what: Text sections FORMAT (type ensight gold), GEOMETRY (model file name), VARIABLE (scalars and vectors per node or element) and TIME (steps and values).
+      - part: Geometry file
+        what: Parts, each with node coordinates written as all x, then all y, then all z, and element blocks by type (tetra4, hexa8 and so on).
+      - part: Variable files
+        what: Values per part and element type, in the same order as the geometry.
+    sources:
+      - url: https://www.ansys.com/products/fluids/ansys-ensight
+        label: Ansys EnSight (the format guide ships with EnSight)
+      - url: https://vtk.org/doc/nightly/html/classvtkEnSightGoldReader.html
+        label: VTK EnSight Gold reader
+  - format: fmu
+    summary: >-
+      An FMU (Functional Mock-up Interface, Modelica Association) is a ZIP archive with a fixed
+      layout. We link FMUs rather than host them because they contain compiled code.
+    layout:
+      - part: modelDescription.xml
+        what: Model name, FMI version, variables with causality and units, and the model structure.
+      - part: binaries/
+        what: Compiled shared libraries per platform (such as binaries/x86_64-linux/model.so).
+      - part: sources/
+        what: Optional C sources.
+      - part: resources/
+        what: Data the model loads at run time.
+      - part: documentation/
+        what: Optional documentation.
+    sources:
+      - url: https://fmi-standard.org/docs/3.0/
+        label: FMI 3.0 standard
+  - format: ssp
+    summary: >-
+      SSP (System Structure and Parameterization, Modelica Association) is a ZIP archive that
+      describes a system of connected components, usually FMUs.
+    layout:
+      - part: SystemStructure.ssd
+        what: "The system as XML: components, their connectors, connections and parameter bindings."
+      - part: resources/
+        what: The component FMUs and parameter files (.ssv) referenced from the .ssd.
+    sources:
+      - url: https://ssp-standard.org/
+        label: SSP standard
+  - format: odbpp
+    summary: >-
+      ODB++ (Siemens) is a directory tree of text files, usually delivered as a .tgz archive. Its
+      specification is published by Siemens.
+    layout:
+      - part: matrix/matrix
+        what: "The layer stack: each layer's name, type (signal, solder mask, drill) and order."
+      - part: steps/
+        what: Steps (such as the single board and the panel); each has a profile and layers.
+      - part: steps/<step>/layers/<layer>/features
+        what: Graphic features on that layer (pads, lines, arcs, surfaces) with symbol references.
+      - part: misc/info
+        what: Job name, creation date, source application.
+    sources:
+      - url: https://odbplusplus.com/design/
+        label: ODB++ (Siemens) resources and specification
+      - url: https://en.wikipedia.org/wiki/ODB%2B%2B
+        label: Wikipedia
+  - format: ipc-2581
+    summary: >-
+      IPC-2581 is one XML file that carries a whole printed circuit board build package, defined
+      by the IPC-2581 standard and its schema.
+    layout:
+      - part: Content
+        what: What the file contains and the function modes (such as fabrication or assembly).
+      - part: LogisticHeader and HistoryRecord
+        what: Roles, people, enterprises and revision history.
+      - part: Bom
+        what: Bill of materials.
+      - part: Ecad
+        what: Layer stackup, layer features, components, nets and drills.
+      - part: Avl
+        what: Approved vendor list.
+    sources:
+      - url: https://www.ipc2581.com/
+        label: IPC-2581 Consortium
+  - format: openfoam-case
+    summary: >-
+      An OpenFOAM case is a directory of text dictionaries, documented in the OpenFOAM user guide.
+    layout:
+      - part: 0/
+        what: Initial and boundary conditions, one file per field (U, p and so on).
+      - part: constant/polyMesh/
+        what: The mesh as points, faces, owner, neighbour and boundary files (cells are implied by faces).
+      - part: constant/
+        what: Physical properties such as transportProperties or physicalProperties.
+      - part: system/
+        what: controlDict (time and output control), fvSchemes (discretization) and fvSolution (solvers).
+      - part: Time directories
+        what: Results written at each output time, in the same layout as 0/.
+    sources:
+      - url: https://doc.cfd.direct/openfoam/user-guide-v12/case-file-structure
+        label: OpenFOAM user guide, case file structure
+  - format: step-nc
+    summary: >-
+      STEP-NC (ISO 14649, and STEP AP238) describes machining as features and operations instead
+      of tool paths. Files use the same Part 21 encoding as STEP.
+    layout:
+      - part: Header
+        what: The usual Part 21 header; the schema names the STEP-NC model.
+      - part: Project and workplan
+        what: A project with a main workplan that orders the machining workingsteps.
+      - part: Workingsteps
+        what: Each pairs a manufacturing feature (hole, pocket, planar face) with an operation (drilling, milling), its tool and technology.
+      - part: Workpiece and geometry
+        what: The part and stock geometry the features refer to.
+    sources:
+      - url: https://en.wikipedia.org/wiki/STEP-NC
+        label: Wikipedia

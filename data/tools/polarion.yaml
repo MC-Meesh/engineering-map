@@ -1,0 +1,38 @@
+id: polarion
+type: tool
+name: Polarion ALM
+category: systems-mbse
+vendor: siemens
+origin: polarion-co
+open_source: false
+status: active
+first_release: 2004
+stages:
+  - requirements
+  - test
+formats:
+  reads:
+    - reqif
+  writes:
+    - reqif
+competes_with:
+  - doors
+  - codebeamer
+  - jama-connect
+website: https://www.siemens.com/en-us/products/polarion/
+summary: Browser-based requirements, test and application lifecycle management.
+plain: >-
+  Browser-based software for tracking requirements, tests and the whole development process of a
+  product.
+workflow: >-
+  Teams manage requirements, tests and work items here in the browser, exchange requirements with
+  other tools as ReqIF (a standard requirements exchange file), and track each item through to
+  verification.
+files_note: Keeps requirements, tests and plans as versioned items in a Subversion repository on its server, not as files you save; it exchanges requirements with other tools as ReqIF.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/polarion/
+    label: official page
+  - url: https://polarion.plm.automation.siemens.com/hubfs/Docs/Guides_and_Manuals/Polarion_Enterprise_Setup_Guide-2.pdf
+    label: storage in a Subversion repository (Polarion Enterprise Setup Guide)

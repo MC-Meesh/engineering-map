@@ -1,0 +1,26 @@
+id: kineo
+type: tool
+name: Kineo
+category: robotics-controls
+vendor: siemens
+open_source: false
+status: active
+stages:
+  - design
+  - manufacturing
+website: https://www.siemens.com/en-us/products/plm-components/kineo/
+summary: >-
+  Siemens PLM Components for automatic motion planning, collision detection, flexible cable
+  simulation and nesting, embedded in robot simulation and digital mockup tools.
+plain: >-
+  Siemens software components that other programs build in to plan collision-free motion, detect
+  collisions, simulate flexible cables and pack parts efficiently.
+workflow: >-
+  Developers build these components into robot simulation and digital mockup tools; when a planner
+  asks for a path, a collision check or a cable shape there, Kineo computes it.
+files_note: 'A set of software components (KineoWorks, Collision Detector, Flexible Cables) that other programs build in and call; the host app passes in its meshes or point clouds.'
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/plm-components/kineo/
+    label: official page (KineoWorks, KCD, Flexible Cables, Nesting)
+as_of: '2026-11-22'

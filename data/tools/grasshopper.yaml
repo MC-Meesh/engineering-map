@@ -1,0 +1,40 @@
+id: grasshopper
+type: tool
+name: Grasshopper
+category: cad
+vendor: mcneel
+open_source: false
+status: active
+first_release: 2007
+stages:
+  - design
+  - optimization
+formats:
+  reads:
+    - dwg
+plugin_of: rhino
+website: https://www.grasshopper3d.com/
+wikipedia: https://en.wikipedia.org/wiki/Grasshopper_3D
+summary: Visual programming for parametric and computational design inside Rhino.
+plain: >-
+  Lets designers build shapes inside Rhino by connecting blocks in a visual diagram instead of
+  modeling by hand, so changing an input reshapes the design.
+workflow: >-
+  A designer connects blocks in a visual diagram inside Rhino to generate the shape, adjusts inputs
+  to explore options, and bakes the result into Rhino geometry for export or fabrication.
+native_files:
+  - ext: .gh
+    what: 'Grasshopper definition, binary'
+  - ext: .ghx
+    what: 'Grasshopper definition, XML text'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.grasshopper3d.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Grasshopper_3D
+    label: Wikipedia
+  - url: https://wiki.mcneel.com/labs/grasshopper_fileformat
+    label: 'McNeel wiki: Grasshopper .gh and .ghx file formats'
+  - url: https://developer.rhino3d.com/guides/rhinocommon/code-driven-file-io/
+    label: 'Rhino developer guide: file IO in Grasshopper (Rhino 8 Import File component, DWG example)'

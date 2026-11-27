@@ -1,0 +1,54 @@
+id: moldflow
+type: tool
+name: Autodesk Moldflow
+category: multiphysics
+vendor: autodesk
+origin: moldflow-corp
+open_source: false
+status: active
+first_release: 1978
+stages:
+  - analysis
+  - manufacturing
+formats:
+  reads:
+    - nastran-bdf
+    - stl
+    - inventor-ipt
+    - catia-v5
+    - nx-prt
+    - creo-prt
+    - parasolid-xt
+    - solidworks-native
+    - rhino-3dm
+    - acis-sat
+    - step
+    - iges
+    - jt
+  writes:
+    - iges
+    - acis-sat
+    - step
+competes_with:
+  - moldex3d
+website: https://www.autodesk.com/products/moldflow/overview
+summary: Plastic injection molding simulation (fill, pack, warp).
+plain: >-
+  Simulates plastic injection molding (pressing molten plastic into a metal mold): how the plastic
+  fills and packs the mold and how the finished part warps as it cools.
+workflow: >-
+  An engineer brings in the plastic part as STEP, Inventor, CATIA or NX files from 3D design
+  programs, simulates filling, packing and warping here, passes results to part designers and mold
+  makers, and exports geometry as STEP, IGES or SAT.
+native_files:
+  - ext: .sdy
+    what: 'Moldflow study file'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.autodesk.com/products/moldflow/overview
+    label: official page
+  - url: https://help.autodesk.com/cloudhelp/2026/ENU/MoldflowInsight-CLC-NewUser/files/Import-and-Export/GUID-D63BA077-3570-42B4-8464-A8C1E91D66FE.html
+    label: 'Autodesk Moldflow Insight 2026 help: supported model import formats'
+  - url: https://help.autodesk.com/cloudhelp/2019/ENU/MoldflowInsight-NewUser/files/GUID-D9EA2E54-25F8-47CC-B9AD-46D20831C070.htm
+    label: 'Autodesk Moldflow Insight 2019 help: exporting models and files'

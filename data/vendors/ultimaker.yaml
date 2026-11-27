@@ -1,0 +1,17 @@
+id: ultimaker
+type: vendor
+name: UltiMaker
+kind: company
+hq: NL
+founded: 2011
+status: active
+website: https://ultimaker.com/
+wikipedia: https://en.wikipedia.org/wiki/Ultimaker
+summary: 3D printer maker; Cura slicer.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://ultimaker.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Ultimaker
+    label: Wikipedia

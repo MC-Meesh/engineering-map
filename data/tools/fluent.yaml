@@ -1,0 +1,56 @@
+id: fluent
+type: tool
+name: Ansys Fluent
+category: cfd
+vendor: ansys
+origin: fluent-inc
+open_source: false
+status: active
+first_release: 1983
+stages:
+  - analysis
+formats:
+  reads:
+    - fluent-cas
+    - cgns
+  writes:
+    - fluent-cas
+    - cgns
+    - ensight-gold
+    - tecplot-plt
+competes_with:
+  - star-ccm
+  - openfoam-com
+  - converge
+runs_on:
+  - ansys-workbench
+website: https://ansys.synopsys.com/products/fluids/ansys-fluent
+summary: General-purpose finite-volume CFD code with a very large industrial user base.
+plain: >-
+  Simulates how air, water and other fluids flow by splitting the space around or inside a
+  design into many small cells and solving the flow in each (finite volume); Ansys's general
+  purpose fluid simulator, one of the most widely used in industry.
+workflow: >-
+  An analyst brings in a mesh (the flow region split into small cells) from a meshing tool such as
+  ANSA, Pointwise or ICEM CFD, runs the flow simulation here, and writes results to EnSight, Tecplot
+  or CGNS to be turned into plots and pictures.
+native_files:
+  - ext: .cas.h5
+    what: Case file, the default format
+    format: fluent-cas
+  - ext: .dat.h5
+    what: Data (solution) file, the default format
+  - ext: .cas
+    what: Legacy case file
+    format: fluent-cas
+  - ext: .dat
+    what: Legacy data file
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://ansys.synopsys.com/products/fluids/ansys-fluent
+    label: official page
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/corp/v261/en/flu_ug/flu_ug_CaseDataFiles.html
+    label: 'native file format (Ansys Fluent help: case and data files)'
+  - url: https://ansys.synopsys.com/products/ansys-workbench
+    label: Ansys products are accessible through the Workbench environment (Ansys product page)

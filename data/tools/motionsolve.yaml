@@ -1,0 +1,36 @@
+id: motionsolve
+type: tool
+name: Simcenter Motionsolve
+category: cae-fea
+vendor: altair
+open_source: false
+status: active
+first_release: 2006
+stages:
+  - analysis
+competes_with:
+  - adams
+website: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/motionsolve/
+summary: Multibody dynamics solver, sold as Altair MotionSolve until Siemens renamed it in 2026.
+plain: >-
+  Simulates how the connected moving parts of machines and vehicles move and what forces they feel.
+workflow: >-
+  An engineer builds a model of linked moving parts from the design, simulates the motion here, and
+  passes the loads to structural and fatigue analysis.
+native_files:
+  - ext: .xml
+    what: 'MotionSolve XML model and simulation input file'
+  - ext: .mrf
+    what: 'MotionSolve results file'
+notes: first_release 2006 not confirmed by a primary source
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/motionsolve/
+    label: official page
+  - url: https://help.altair.com/hwsolvers/ms/topics/solvers/ms/input_and_output_file_formats.htm
+    label: 'MotionSolve help: input and output file formats'
+  - url: https://help.altair.com/hwsolvers/ms/topics/solvers/ms/running_motionsolve2.htm
+    label: 'MotionSolve help: run MotionSolve (XML, ADM/ACF input)'

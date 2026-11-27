@@ -1,0 +1,50 @@
+id: dymola
+type: tool
+name: Dymola
+category: systems-mbse
+vendor: dassault
+origin: dynasim
+open_source: false
+status: active
+stages:
+  - analysis
+formats:
+  reads:
+    - modelica
+    - fmu
+  writes:
+    - modelica
+    - fmu
+competes_with:
+  - openmodelica
+  - simulink
+  - amesim
+website: https://www.3ds.com/products/catia/dymola
+wikipedia: https://en.wikipedia.org/wiki/Dymola
+summary: Commercial Modelica environment for multi-domain system simulation.
+plain: >-
+  Software for building and simulating models of whole systems that mix mechanical, electrical,
+  thermal and other parts, written in the Modelica modeling language.
+workflow: >-
+  An engineer builds a system model from Modelica libraries here, simulates it, and exports FMU
+  files (packaged models another simulator can run) to control tools such as Simulink, or shares the
+  .mo model source with other Modelica users.
+native_files:
+  - ext: .mo
+    what: Modelica model file
+    format: modelica
+notes: >-
+  1978 is the year of Hilding Elmqvist's thesis design of the Dymola language, not a product
+  release. The commercial product came from Dynasim AB, founded in Lund in 1992.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/products/catia/dymola
+    label: official page
+  - url: >-
+      https://www.ots.at/presseaussendung/OTE_20020214_OTE0001/dynasim-offers-preview-of-dymola-50-software-its-new-dynamic-laboratory-with-unique-features-for-multi-engineering-modeling-and-simulation
+    label: Dynasim release 2002 (company founded 1992)
+  - url: https://en.wikipedia.org/wiki/Dymola
+    label: Wikipedia
+  - url: https://www.3ds.com/fileadmin/PRODUCTS/CATIA/DYMOLA/PDF/Getting_started_with_Dymola.pdf
+    label: native file format (Dymola getting started manual)

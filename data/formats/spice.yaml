@@ -1,0 +1,18 @@
+id: spice
+type: format
+name: SPICE netlist
+extensions:
+  - .cir
+  - .sp
+  - .net
+kind: ecad
+steward: de facto (UC Berkeley origin)
+open_spec: true
+first_published: 1973
+website: https://en.wikipedia.org/wiki/SPICE
+summary: Text circuit description read by every analog simulator, each with its own dialect.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/SPICE
+    label: official page

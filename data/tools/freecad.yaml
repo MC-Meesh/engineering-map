@@ -1,0 +1,66 @@
+id: freecad
+type: tool
+name: FreeCAD
+category: cad
+vendor: freecad-project
+open_source: true
+license: LGPL-2.1
+status: active
+first_release: 2002
+stages:
+  - design
+  - analysis
+  - manufacturing
+built_on:
+  - occt
+formats:
+  reads:
+    - step
+    - iges
+    - stl
+    - obj
+    - dxf
+    - ifc
+  writes:
+    - step
+    - iges
+    - stl
+    - obj
+    - dxf
+    - ifc
+open_source_alternative_to:
+  - solidworks
+  - inventor
+  - fusion
+website: https://www.freecad.org/
+wikipedia: https://en.wikipedia.org/wiki/FreeCAD
+summary: The leading open-source parametric CAD, with FEM, CAM and BIM workbenches; 1.0 shipped in 2024.
+plain: >-
+  Free 3D design software where dimensions drive the model, with workbenches for simulation,
+  machining and building design. Version 1.0 came out in 2024.
+workflow: >-
+  A designer models parts here, can check them with the FEM workbench and plan machining with the
+  CAM workbench, and exports STEP, STL, DXF or IFC files to manufacturing, printing and building
+  tools.
+native_files:
+  - ext: .FCStd
+    what: FreeCAD document (a zip archive)
+notes: >-
+  The FreeCAD README calls OpenCASCADE the most important component of FreeCAD. The Sketcher uses
+  planegcs, FreeCAD's own in-tree 2D constraint solver (LGPL), and the built-in Assembly workbench
+  added in FreeCAD 1.0 is based on the Ondsel Solver.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.freecad.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/FreeCAD
+    label: Wikipedia
+  - url: https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/File_Format_FCStd.md
+    label: native file format (project documentation)
+  - url: https://raw.githubusercontent.com/FreeCAD/FreeCAD/main/README.md
+    label: 'FreeCAD README: OpenCASCADE geometry kernel'
+  - url: https://www.freecad.org/features.php
+    label: 'FreeCAD features: 1.0 Assembly workbench based on the Ondsel Solver'
+  - url: https://raw.githubusercontent.com/FreeCAD/FreeCAD/main/src/Mod/Sketcher/App/planegcs/GCS.h
+    label: 'FreeCAD source: planegcs sketch constraint solver header'

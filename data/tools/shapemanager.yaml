@@ -1,0 +1,42 @@
+id: shapemanager
+type: tool
+name: ShapeManager
+category: geometry-kernel
+vendor: autodesk
+open_source: false
+status: active
+first_release: 2001
+stages:
+  - design
+built_on:
+  - acis
+website: https://en.wikipedia.org/wiki/ShapeManager
+wikipedia: https://en.wikipedia.org/wiki/ShapeManager
+summary: >-
+  Autodesk's in-house kernel, forked from ACIS 7.0 in 2001; under Inventor, Fusion and AutoCAD
+  solids.
+plain: >-
+  Autodesk's own geometry engine: the hidden math that creates and edits solid 3D shapes inside
+  Inventor, Fusion and AutoCAD. It began as a copy of ACIS in 2001.
+workflow: >-
+  ShapeManager runs inside Inventor, Fusion and AutoCAD, doing the solid modeling math when users
+  create or edit 3D shapes in those programs.
+native_files:
+  - ext: .smt
+    what: ShapeManager (ASM) save file, text
+  - ext: .smb
+    what: ShapeManager (ASM) save file, binary
+notes: >-
+  Autodesk's FY2003 10-K says ShapeManager is derived from ACIS and is incorporated into Inventor
+  Series, AutoCAD based products and 3ds max. It also says Autodesk held a perpetual right to
+  incorporate and distribute ACIS in its products under its development agreement with Spatial,
+  which Spatial was trying to end in 2002.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://en.wikipedia.org/wiki/ShapeManager
+    label: verification source
+  - url: https://www.sec.gov/Archives/edgar/data/769397/000119312503002078/d10k.htm
+    label: 'Autodesk FY2003 10-K: ShapeManager derived from ACIS; perpetual ACIS right; products using it'
+  - url: https://help.autodesk.com/cloudhelp/2014/ENU/MoldflowAdvisor/files/GUID-F03C8C2D-2BDE-415B-882C-F2EAC23572BE.htm
+    label: 'Moldflow Advisor help: ASM save files .smt (text) and .smb (binary)'

@@ -1,0 +1,38 @@
+id: allplan
+type: tool
+name: Allplan
+category: cad
+vendor: nemetschek
+open_source: false
+status: active
+first_release: 1984
+stages:
+  - design
+built_on:
+  - parasolid
+formats:
+  reads:
+    - ifc
+    - dwg
+    - dxf
+  writes:
+    - ifc
+    - dwg
+    - dxf
+competes_with:
+  - revit
+website: https://www.allplan.com/
+summary: BIM for architecture and civil engineering, popular in Europe.
+plain: >-
+  Software for designing buildings and civil works as detailed 3D models that carry information
+  about every element (known as BIM), popular in Europe.
+workflow: >-
+  An architect or civil engineer models a building or civil work here, exchanging IFC, DWG and DXF
+  files with structural, building services and drafting tools used by the rest of the project team.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.allplan.com/
+    label: official page
+  - url: https://www.siemens.com/en-us/products/plm-components/parasolid/
+    label: 'Siemens Parasolid page: Nemetschek Allplan among AEC licensees'

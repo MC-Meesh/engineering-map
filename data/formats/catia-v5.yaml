@@ -1,0 +1,30 @@
+id: catia-v5
+type: format
+name: CATIA V5 native
+extensions:
+  - .CATPart
+  - .CATProduct
+  - .cgr
+  - .CATDrawing
+kind: native-cad
+steward: Dassault Systemes
+steward_vendor: dassault
+open_spec: false
+website: https://www.3ds.com/products/catia
+summary: >-
+  Proprietary CATIA V5 files: parts (.CATPart), assemblies (.CATProduct), drawings (.CATDrawing)
+  and .cgr meshes; readable by most translators.
+notes: >-
+  Versions run from V5 R8 to V5-6 R2026: Spatial's 3D InterOp reads parts and assemblies from V5 R8
+  to V5-6 R2026 and writes .CATPart, .CATProduct and .cgr from V5 R15 on. A .CATDrawing holds 2D
+  drawing sheets, which translators read as visualization data. A .cgr file is a mesh only, with
+  no exact geometry; it has its own record, CATIA CGR. CATIA V5 is still sold and still saves these
+  files; its successor on 3DEXPERIENCE keeps work as objects in the platform database instead, and
+  exports CATPart, CATProduct, cgr, CATDrawing, XCGM or 3D XML files when data has to leave.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/products/catia
+    label: official page
+  - url: https://www.spatial.com/products/3d-interop
+    label: Spatial 3D InterOp, CATIA V5 and CATIA V5 Drawing (file family; V5 R8 to V5-6 R2026)

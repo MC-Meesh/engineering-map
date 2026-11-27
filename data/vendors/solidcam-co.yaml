@@ -1,0 +1,14 @@
+id: solidcam-co
+type: vendor
+name: SolidCAM Ltd
+kind: company
+hq: IL
+founded: 1984
+status: active
+website: https://www.solidcam.com/
+summary: CAM integrated in SOLIDWORKS and Inventor; iMachining.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.solidcam.com/
+    label: official page

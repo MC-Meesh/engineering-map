@@ -1,0 +1,14 @@
+id: dianafea
+type: vendor
+name: DIANA FEA
+kind: company
+hq: NL
+founded: 2003
+status: active
+website: https://dianafea.com/
+summary: DIANA finite element software for civil and geotechnical engineering.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://dianafea.com/
+    label: official page

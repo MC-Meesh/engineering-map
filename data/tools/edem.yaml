@@ -1,0 +1,60 @@
+id: edem
+type: tool
+name: Simcenter EDEM
+category: multiphysics
+vendor: altair
+origin: dem-solutions
+open_source: false
+status: active
+first_release: 2006
+stages:
+  - analysis
+formats:
+  reads:
+    - rhino-3dm
+    - catia-v5
+    - inventor-ipt
+    - iges
+    - jt
+    - obj
+    - acis-sat
+    - solidworks-native
+    - stl
+    - step
+    - parasolid-xt
+    - nx-prt
+    - creo-prt
+    - hdf5
+  writes:
+    - hdf5
+competes_with:
+  - rocky
+website: https://www.siemens.com/en-us/products/simcenter/fluids-thermal-simulation/edem/
+summary: Discrete element simulation of bulk materials such as soil, grain and powders.
+plain: >-
+  Simulates how loose materials such as soil, grain and powders move and pile up, by tracking large
+  numbers of individual particles.
+workflow: >-
+  An engineer brings in the geometry of a machine such as a hopper or mixer as STEP, STL or files
+  from 3D design programs, simulates how soil, grain or powder moves through it here, and passes
+  forces and flow results to the equipment designers.
+native_files:
+  - ext: .dem
+    what: 'EDEM simulation data file'
+  - ext: .dfg
+    what: 'EDEM configuration file (Simulator and Analyst settings)'
+  - ext: .h5
+    what: 'Simulation data stored in HDF5 in a per-simulation folder'
+    format: hdf5
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: >-
+      https://news.siemens.com/en-us/altair-acquires-dem-solutions-expanding-solver-portfolio-into-discrete-element-method-analysis/
+    label: 'Altair release: acquires DEM Solutions'
+  - url: https://www.siemens.com/en-us/products/simcenter/fluids-thermal-simulation/edem/
+    label: official page
+  - url: https://help.altair.com/EDEM/topics/appendix/understanding_edem_file_types_c.htm
+    label: 'Altair EDEM help: EDEM file types (core files and supported geometry types)'

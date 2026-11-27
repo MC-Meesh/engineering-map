@@ -1,0 +1,28 @@
+id: siemens
+type: vendor
+name: Siemens Digital Industries Software
+kind: company
+parent: siemens-ag
+hq: US
+founded: 2007
+status: active
+website: https://www.siemens.com/en-us/
+wikipedia: https://en.wikipedia.org/wiki/Siemens_Digital_Industries_Software
+summary: >-
+  Siemens software arm: Designcenter (formerly NX), Teamcenter, Simcenter, Siemens EDA (ex Mentor)
+  and, since 2025, Altair and Dotmatics.
+notes: >-
+  founded 2007 refers to Siemens buying UGS (closed May 2007); the business traces back further
+  through UGS. sw.siemens.com now redirects to the Siemens corporate site. Dotmatics (life sciences
+  R&D software) closed on 2025-07-01 at $5.1B; it is outside this map.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://news.siemens.com/en-us/siemens-altair-engineering-closing/
+    label: 'Siemens release 2025-03-26: Altair closing'
+  - url: https://jobs.sw.siemens.com/about-us/
+    label: 'Siemens DISW careers: HQ Plano, Texas'
+  - url: https://news.siemens.com/en-us/dotmatics-closing/
+    label: 'Siemens release 2025-07-01: Dotmatics closing'
+  - url: https://en.wikipedia.org/wiki/Siemens_Digital_Industries_Software
+    label: Wikipedia

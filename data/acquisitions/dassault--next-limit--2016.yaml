@@ -1,0 +1,15 @@
+id: dassault--next-limit--2016
+type: acquisition
+acquirer: dassault
+target: next-limit
+completed: '2016-12-07'
+status: completed
+notes: >-
+  Announced on 2016-12-09, after closing; terms not disclosed. Only the XFlow unit (Next Limit
+  Dynamics) was sold.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.3ds.com/newsroom/press-releases/dassault-systemes-enriches-computational-fluid-dynamics-simulation-3dexperience-platform
+    label: 'Dassault release 2016-12-09: completed 2016-12-07'

@@ -1,0 +1,17 @@
+id: nemetschek
+type: vendor
+name: Nemetschek Group
+kind: company
+hq: DE
+founded: 1963
+status: active
+website: https://www.nemetschek.com/
+wikipedia: https://en.wikipedia.org/wiki/Nemetschek
+summary: AEC software holding; Allplan, Vectorworks, Graphisoft, Bluebeam.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.nemetschek.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Nemetschek
+    label: Wikipedia

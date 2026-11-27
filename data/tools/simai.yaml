@@ -1,0 +1,33 @@
+id: simai
+type: tool
+name: Ansys SimAI
+category: ml-engineering
+vendor: ansys
+open_source: false
+status: active
+first_release: 2024
+stages:
+  - design
+  - analysis
+formats:
+  reads:
+    - vtk-xml
+competes_with:
+  - ncs
+  - physicsai
+website: https://www.ansys.com/products/simai
+summary: Cloud service that trains surrogate models from past simulation results.
+plain: A cloud service that learns from past simulation results to predict new ones quickly.
+workflow: >-
+  An engineer uploads earlier simulation results as VTK files to the cloud, trains a model on them
+  here, and uses its quick predictions to compare new designs before running a full simulation.
+files_note: 'Cloud platform: solver results must be converted to neutral VTK files before upload; each case is a .vtp surface file plus optional JSON boundary conditions. Outputs can be downloaded.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ansys.com/products/simai
+    label: official page
+  - url: https://simai-pro.docs.ansys.com/version/stable/getting_started/file_spec.html
+    label: 'SimAI Pro docs: verify input files'
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/SimAI/v000/en/SimAI_ug/SimAI_ug/C_UG_SAI_ansys_simai_worflow.html
+    label: 'Ansys SimAI user guide: workflow'

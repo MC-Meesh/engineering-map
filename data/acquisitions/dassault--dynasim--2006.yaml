@@ -1,0 +1,13 @@
+id: dassault--dynasim--2006
+type: acquisition
+acquirer: dassault
+target: dynasim
+announced: '2006-06-27'
+completed: '2006'
+status: completed
+notes: The 2006-06-27 release announces the acquisition; no price or closing date given.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-presents-catia-systems
+    label: 'Dassault release 2006-06-27: CATIA Systems, Dynasim acquisition'

@@ -1,0 +1,41 @@
+id: rocky
+type: tool
+name: Ansys Rocky
+category: multiphysics
+vendor: ansys
+open_source: false
+status: active
+stages:
+  - analysis
+formats:
+  reads:
+    - stl
+competes_with:
+  - edem
+website: https://ansys.synopsys.com/products/fluids/ansys-rocky
+summary: GPU discrete element simulation of particle flow.
+plain: >-
+  Simulates how huge numbers of grains and particles flow and collide inside equipment such as
+  conveyors and mills, running fast on graphics cards.
+workflow: >-
+  An engineer brings in the equipment shape, such as a conveyor or mill, as STL, simulates the
+  particles flowing and colliding here, and passes wear and load results back to the equipment
+  designers.
+native_files:
+  - ext: .rocky
+    what: 'Ansys Rocky project file'
+notes: >-
+  Developed by ESSS (Brazil) through its Rocky subsidiary; Ansys resold it from 2021 and acquired it
+  on 2023-01-03. First release year unconfirmed.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://ansys.synopsys.com/news-center/press-releases/1-3-23-ansys-acquires-leading-particle-dynamics-simulation-software-rocky
+    label: Ansys press release, Rocky acquisition 2023-01-03
+  - url: https://ansys.synopsys.com/products/fluids/ansys-rocky
+    label: Ansys Rocky product page
+  - url: https://rocky.docs.pyansys.com/version/stable/user_guide/index.html
+    label: 'PyRocky docs (Ansys): user guide, SaveProject to .rocky'
+  - url: https://rocky.docs.pyansys.com/version/stable/examples/basic_examples/particle_wall_interaction.html
+    label: 'PyRocky docs (Ansys): example importing an STL wall'

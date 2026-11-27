@@ -1,0 +1,28 @@
+id: catia-v4
+type: format
+name: CATIA V4 native
+extensions:
+  - .model
+  - .exp
+  - .session
+kind: native-cad
+steward: Dassault Systemes
+steward_vendor: dassault
+open_spec: false
+first_published: 1994
+website: https://www.3ds.com/about/company/history
+summary: >-
+  Native files of CATIA V4, the generation before V5: parts in .model files, plus .exp and .session
+  files. Proprietary, and they carry no PMI.
+notes: >-
+  Dassault dates the CATIA V4 architecture to 1994, the generation built for the full 3D digital
+  mock-up of a product. Its files are separate from the V5 family (.CATPart, .CATProduct).
+  Spatial's 3D InterOp reads and writes V4 files from CATIA 4.1.9 to 4.2.4, and notes that the
+  format has no PMI (no tolerances or annotations travel with the model).
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/about/company/history
+    label: Dassault Systemes history (CATIA V4 architecture, 1994)
+  - url: https://www.spatial.com/products/3d-interop
+    label: Spatial 3D InterOp, CATIA V4 (.model, .exp, .session; 4.1.9 to 4.2.4; no PMI)

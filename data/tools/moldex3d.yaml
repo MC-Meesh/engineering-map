@@ -1,0 +1,42 @@
+id: moldex3d
+type: tool
+name: Moldex3D
+category: multiphysics
+vendor: coretech
+open_source: false
+status: active
+first_release: 1995
+stages:
+  - analysis
+  - manufacturing
+formats:
+  reads:
+    - rhino-3dm
+    - creo-prt
+    - catia-v5
+    - solidworks-native
+    - parasolid-xt
+    - step
+    - iges
+    - stl
+    - jt
+competes_with:
+  - moldflow
+website: https://www.moldex3d.com/
+summary: True 3D injection molding simulation.
+plain: >-
+  Simulates plastic injection molding (pressing molten plastic into a metal mold) fully in 3D,
+  showing how the plastic flows and fills the mold.
+workflow: >-
+  An engineer brings in the plastic part and mold design as files from 3D design programs, such as
+  STEP, Parasolid, CATIA or SOLIDWORKS, simulates the molding here, and passes the filling results
+  to the part and mold designers before the mold is cut.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.moldex3d.com/
+    label: official page
+  - url: https://www.moldex3d.com/products/software/moldex3d/cad-and-mesh/
+    label: 'Moldex3D product page: CAD and mesh, CAD import'
+  - url: https://www.moldex3d.com/products/software/moldex3d/
+    label: 'Moldex3D product page: overview, CAD import footnote'

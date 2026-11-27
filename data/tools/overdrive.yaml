@@ -1,0 +1,21 @@
+id: overdrive
+type: tool
+name: Overdrive
+category: geometry-kernel
+vendor: zwsoft
+open_source: false
+status: active
+stages:
+  - design
+website: https://www.zwsoft.com/product/overdrive
+summary: ZWSOFT's own 3D geometric modeling kernel, from VX Corporation; under ZW3D and ZWSOFT's simulation and meshing tools.
+plain: >-
+  ZWSOFT's own engine for building and editing solid 3D shapes; the hidden layer under ZW3D.
+notes: >-
+  Originated at VX Corporation, which ZWSOFT acquired in 2010. ZWSOFT says it is applied to ZW3D,
+  ZWSim-EM, ZWSim Structural and ZWMeshWork.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.zwsoft.com/product/overdrive
+    label: 'ZWSOFT Overdrive page: own kernel from VX Corporation, used in ZW3D and ZWSim'

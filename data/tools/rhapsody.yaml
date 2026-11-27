@@ -1,0 +1,35 @@
+id: rhapsody
+type: tool
+name: IBM Engineering Rhapsody
+category: systems-mbse
+vendor: ibm
+open_source: false
+status: active
+first_release: 1996
+stages:
+  - requirements
+  - design
+formats:
+  reads:
+    - sysml
+  writes:
+    - sysml
+competes_with:
+  - cameo
+website: https://www.ibm.com/products/engineering-rhapsody
+wikipedia: https://en.wikipedia.org/wiki/Rhapsody_(modeling)
+summary: SysML and UML modeling with code generation for embedded systems.
+plain: >-
+  IBM software for drawing models of a system and its software in the SysML and UML modeling
+  languages, then turning those models into program code for embedded devices (computers built into
+  products).
+workflow: >-
+  Engineers model the system and its software in SysML or UML here, generate code for the embedded
+  devices from the model, and pass the code to the software build and test teams.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ibm.com/products/engineering-rhapsody
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Rhapsody_(modeling)
+    label: Wikipedia

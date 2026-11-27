@@ -1,0 +1,16 @@
+id: future-facilities
+type: vendor
+name: Future Facilities
+kind: company
+hq: GB
+founded: 2004
+parent: cadence
+status: merged
+website: https://www.cadence.com/
+summary: 6SigmaDC data center thermal digital twins.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cadence.com/
+    label: official page
+notes: Product page moved; link points at the site root pending review.

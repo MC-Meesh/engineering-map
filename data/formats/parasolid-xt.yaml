@@ -1,0 +1,21 @@
+id: parasolid-xt
+type: format
+name: Parasolid transmit
+extensions:
+  - .x_t
+  - .x_b
+kind: brep-exchange
+steward: Siemens
+steward_vendor: siemens
+open_spec: false
+first_published: 1988
+website: https://www.siemens.com/en-us/products/plm-components/parasolid/
+wikipedia: https://en.wikipedia.org/wiki/Parasolid
+summary: Native file of the Parasolid kernel; lossless exchange between the many products built on it.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/plm-components/parasolid/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Parasolid
+    label: Wikipedia

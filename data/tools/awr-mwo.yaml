@@ -1,0 +1,34 @@
+id: awr-mwo
+type: tool
+name: AWR Microwave Office
+category: eda
+vendor: cadence
+origin: awr
+open_source: false
+status: active
+first_release: 1998
+stages:
+  - design
+  - analysis
+competes_with:
+  - keysight-ads
+website: >-
+  https://www.cadence.com/en_US/home/tools/system-analysis/rf-microwave-design/awr-microwave-office.html
+summary: RF and microwave circuit design.
+plain: >-
+  Software for designing and simulating radio frequency and microwave circuits, the high-frequency
+  electronics that send and receive wireless signals.
+workflow: >-
+  An RF engineer designs and simulates a microwave circuit here, then hands the result on to layout,
+  to electromagnetic simulation and to the team that builds and measures the circuit.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2020/cadence-completes-acquisition-of-awr-corporation-from-national-i.html
+    label: 'Cadence release 2020-01: completes acquisition of AWR from NI'
+  - url: https://www.microwavejournal.com/articles/6593-company-profile-awr
+    label: 'Microwave Journal: AWR company profile (founded 1994, Microwave Office about 1998)'
+  - url: >-
+      https://www.cadence.com/en_US/home/tools/system-analysis/rf-microwave-design/awr-microwave-office.html
+    label: official page

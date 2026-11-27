@@ -1,0 +1,39 @@
+id: powermill
+type: tool
+name: PowerMill
+category: cam
+vendor: autodesk
+origin: delcam
+open_source: false
+status: active
+first_release: 1995
+stages:
+  - manufacturing
+formats:
+  reads:
+    - step
+    - iges
+    - stl
+  writes:
+    - gcode
+competes_with:
+  - hypermill
+website: https://www.autodesk.com/products/powermill/overview
+summary: High-speed and 5-axis milling CAM for molds and complex parts.
+plain: >-
+  Writes the cutting instructions for CNC (computer-controlled) milling machines, especially fast
+  cutting and 5-axis machines that tilt the tool to reach every side, for molds and complex parts.
+workflow: >-
+  A CNC programmer brings in the mold or part as STEP, IGES or STL, plans the cutting paths here,
+  and writes them out as G-code, the line-by-line commands the milling machine follows to cut the
+  part.
+native_files:
+  - ext: .pmlprjz
+    what: Archived PowerMill project (a live project is a folder)
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.autodesk.com/products/powermill/overview
+    label: official page
+  - url: https://help.autodesk.com/cloudhelp/2019/ENU/PWRM-ReferenceHelp/files/GUID-F89470B2-603B-41F9-BD6F-544BA8839CA5.htm
+    label: 'native file format (Autodesk PowerMill help: archived projects)'

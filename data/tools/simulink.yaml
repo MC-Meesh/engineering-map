@@ -1,0 +1,48 @@
+id: simulink
+type: tool
+name: Simulink
+category: systems-mbse
+vendor: mathworks
+open_source: false
+status: active
+first_release: 1990
+stages:
+  - design
+  - analysis
+  - test
+built_on:
+  - matlab
+formats:
+  reads:
+    - fmu
+  writes:
+    - fmu
+competes_with:
+  - dymola
+  - amesim
+website: https://www.mathworks.com/products/simulink.html
+wikipedia: https://en.wikipedia.org/wiki/Simulink
+summary: >-
+  Block-diagram model-based design with code generation; standard in automotive and aerospace
+  controls.
+plain: >-
+  Lets engineers design control systems by connecting blocks in a diagram, simulate them and
+  generate code from them; standard in car and aircraft controls.
+workflow: >-
+  A controls engineer builds the control design as a block diagram, simulates it with plant models
+  or FMUs (packaged models) from Amesim or Dymola, and generates code, often with TargetLink, for
+  the embedded controller.
+native_files:
+  - ext: .slx
+    what: Simulink model or library, the default format
+  - ext: .mdl
+    what: Simulink model in the older MDL format
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.mathworks.com/products/simulink.html
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Simulink
+    label: Wikipedia
+  - url: https://mathworks.com/help/simulink/ug/save-models.html
+    label: 'native file format (MathWorks documentation: saving models)'

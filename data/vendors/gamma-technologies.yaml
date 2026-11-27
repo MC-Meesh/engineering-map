@@ -1,0 +1,14 @@
+id: gamma-technologies
+type: vendor
+name: Gamma Technologies
+kind: company
+hq: US
+founded: 1994
+status: active
+website: https://www.gtisoft.com/
+summary: GT-SUITE system simulation for powertrain, thermal and vehicle systems.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.gtisoft.com/
+    label: official page

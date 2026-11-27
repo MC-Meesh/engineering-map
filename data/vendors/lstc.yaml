@@ -1,0 +1,15 @@
+id: lstc
+type: vendor
+name: Livermore Software Technology Corp
+kind: company
+hq: US
+founded: 1987
+parent: ansys
+status: merged
+website: https://en.wikipedia.org/wiki/LS-DYNA
+summary: LS-DYNA explicit dynamics.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/LS-DYNA
+    label: official page

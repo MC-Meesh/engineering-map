@@ -1,0 +1,31 @@
+id: azure-digital-twins
+type: tool
+name: Azure Digital Twins
+category: digital-twin
+vendor: microsoft
+open_source: false
+status: active
+first_release: 2020
+stages:
+  - lifecycle
+competes_with:
+  - iot-twinmaker
+website: https://azure.microsoft.com/en-us/products/digital-twins
+summary: Graph-based twin modeling service using the DTDL language.
+plain: >-
+  A Microsoft cloud service for building a live digital model of a real place or system by
+  describing its parts and how they connect, using a modeling language called DTDL.
+workflow: >-
+  Developers describe a building or system in DTDL here, live data arrives from IoT Hub and other
+  connectors, and apps read the twin through the query API while event routes send changes on to
+  other services.
+files_note: 'Works through APIs rather than files: data arrives from IoT Hub, REST APIs and connectors, is read back with the query API, and is sent on through event routes.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://azure.microsoft.com/en-us/products/digital-twins
+    label: official page
+  - url: https://essay.utwente.nl/fileshare/file/105116/ruizendaal_BA_eemcs.pdf
+    label: University of Twente comparison of AWS IoT TwinMaker and Azure Digital Twins
+  - url: https://learn.microsoft.com/en-us/azure/digital-twins/overview
+    label: 'data access (Microsoft documentation: overview)'

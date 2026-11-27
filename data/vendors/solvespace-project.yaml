@@ -1,0 +1,13 @@
+id: solvespace-project
+type: vendor
+name: SolveSpace project
+kind: project
+founded: 2008
+status: active
+website: https://solvespace.com/
+summary: Small parametric CAD with its own constraint solver.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://solvespace.com/
+    label: official page

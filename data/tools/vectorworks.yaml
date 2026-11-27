@@ -1,0 +1,56 @@
+id: vectorworks
+type: tool
+name: Vectorworks
+category: cad
+vendor: nemetschek
+open_source: false
+status: active
+first_release: 1985
+stages:
+  - design
+built_on:
+  - parasolid
+  - d-cubed
+formats:
+  reads:
+    - ifc
+    - dwg
+    - dxf
+    - step
+  writes:
+    - ifc
+    - dwg
+    - dxf
+    - step
+competes_with:
+  - revit
+  - archicad
+website: https://www.vectorworks.net/
+wikipedia: https://en.wikipedia.org/wiki/Vectorworks
+summary: CAD and BIM for architecture, landscape and entertainment design.
+plain: >-
+  Design and drawing software for buildings, landscapes and stage or event design, in 2D drawings
+  and in 3D building models that carry information about every element (BIM).
+workflow: >-
+  A designer creates the architecture, landscape or stage design here, and exchanges IFC, DWG, DXF
+  or STEP files with consultants, BIM tools and fabricators.
+native_files:
+  - ext: .vwx
+    what: Vectorworks design file
+notes: on Parasolid since Vectorworks 2009
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://blogs.sw.siemens.com/plm-components/how-parasolid-helps-vectorworks-designers-make-limitless-designs
+    label: verification source
+  - url: https://www.vectorworks.net/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Vectorworks
+    label: Wikipedia
+  - url: https://app-help.vectorworks.net/2016/eng/VW2016_Guide/Start/Saving_a_File.htm
+    label: 'native file format (Vectorworks help: saving a file)'
+  - url: https://resources.sw.siemens.com/en-US/case-study-vectorworks
+    label: 'Siemens Vectorworks case study: Parasolid as its geometry kernel'
+  - url: https://www.siemens.com/en-us/products/plm-components/d-cubed/
+    label: 'Siemens D-Cubed page: Nemetschek Vectorworks among AEC licensees (component not named)'

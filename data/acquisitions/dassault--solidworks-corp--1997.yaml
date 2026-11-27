@@ -1,0 +1,17 @@
+id: dassault--solidworks-corp--1997
+type: acquisition
+acquirer: dassault
+target: solidworks-corp
+announced: '1997-06-24'
+completed: '1997-07-25'
+status: completed
+value: about $310M in stock (4.85M Dassault Systemes shares)
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.3ds.com/newsroom/press-releases/dassault-systemes-signs-definitive-agreement-acquire-solidworks
+    label: 'Dassault release 1997-06-24: definitive agreement'
+  - url: >-
+      https://www.3ds.com/newsroom/press-releases/dassault-systemes-sa-reports-44-increase-total-revenue-third-quarter
+    label: 'Dassault Q3 1997 release: completed 1997-07-25'

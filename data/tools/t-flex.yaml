@@ -1,0 +1,37 @@
+id: t-flex
+type: tool
+name: T-FLEX CAD
+category: cad
+vendor: top-systems
+open_source: false
+status: active
+first_release: 1992
+stages:
+  - design
+built_on:
+  - parasolid
+formats:
+  reads:
+    - step
+    - iges
+    - parasolid-xt
+  writes:
+    - step
+    - iges
+    - parasolid-xt
+website: https://www.tflex.com/
+wikipedia: https://en.wikipedia.org/wiki/T-FLEX_CAD
+summary: Parametric CAD built on Parasolid.
+plain: 3D design software where dimensions drive the model, built on the Parasolid geometry engine.
+workflow: >-
+  An engineer models parts with driving dimensions here on Parasolid, and exports STEP, IGES or
+  Parasolid files to manufacturing and other CAD tools.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.siemens.com/en-us/products/plm-components/parasolid/
+    label: verification source
+  - url: https://www.tflex.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/T-FLEX_CAD
+    label: Wikipedia

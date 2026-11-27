@@ -1,0 +1,29 @@
+id: altair
+type: vendor
+name: Altair Engineering
+kind: company
+hq: US
+founded: 1985
+parent: siemens
+status: merged
+website: https://www.siemens.com/en-us/company/about/businesses/digital-industries/altair/
+wikipedia: https://en.wikipedia.org/wiki/Altair_Engineering
+summary: >-
+  Structural simulation, meshing and optimization pioneer, acquired by Siemens in 2025; its
+  HyperWorks products are now Simcenter-branded, HPC tools HPCWorks and analytics Rapidminer.
+notes: >-
+  Founded 1985 in Troy, Michigan by James Scapa, George Christ and Mark Kistner. Siemens completed
+  the acquisition on 2025-03-26 (about $10B enterprise value). Since June 2026 only Altair One and
+  Altair Units keep the Altair name; altair.com redirects to Siemens. Status merged follows the
+  Mentor and CD-adapco records; products keep vendor altair (TODO, decided 2026-11-22).
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://news.siemens.com/en-us/siemens-altair-engineering-closing/
+    label: Siemens press release 2025-03-26 (Altair acquisition completed)
+  - url: https://www.siemens.com/en-us/company/about/businesses/digital-industries/altair/
+    label: Siemens Altair page (HyperWorks into Simcenter; HPCWorks, Rapidminer)
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://en.wikipedia.org/wiki/Altair_Engineering
+    label: Wikipedia

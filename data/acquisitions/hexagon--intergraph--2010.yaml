@@ -1,0 +1,27 @@
+id: hexagon--intergraph--2010
+type: acquisition
+acquirer: hexagon
+target: intergraph
+completed: '2010-10-28'
+status: divested
+value: about $2.1B
+summary: >-
+  Closed 2010-10-28 for 2,125 MUSD cash. The Intergraph-derived divisions (Asset Lifecycle
+  Intelligence; Safety, Infrastructure and Geospatial) went to Octave in the 2026 spin-off (record
+  date 2026-05-22; Octave became a public company on 2026-05-28, per its investor FAQ).
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://rss.globenewswire.com/news-release/2010/10/25/186809/0/en/Approvals-for-Hexagon-s-acquisition-of-Intergraph-obtained.html
+    label: Hexagon press release 2010-10-25 (GlobeNewswire)
+  - url: https://schnitgercorp.com/2010/10/29/done-deal-intergraph-is-now-a-hexagon-company/
+    label: Schnitger Corp 2010-10-29 (closing confirmed)
+  - url: >-
+      https://www.financialcontent.com/article/gnwcq-2026-5-28-octave-intelligence-plc-listed-on-nasdaq-new-york
+    label: Octave press release 2026-05-28 (distribution completed 2026-05-22)
+  - url: >-
+      https://hexagon.com/company/newsroom/press-releases/2025/octave-unveiledhexagon-reveals-name-for-potential-2026-company-spin-off
+    label: Hexagon press release 2025-06-17 (Octave scope)
+  - url: https://investors.hexagon.com/en/share-information/octave-separation
+    label: 'Hexagon IR: Octave separation'

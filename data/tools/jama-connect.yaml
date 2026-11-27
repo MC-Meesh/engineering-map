@@ -1,0 +1,32 @@
+id: jama-connect
+type: tool
+name: Jama Connect
+category: systems-mbse
+vendor: jama
+open_source: false
+status: active
+first_release: 2010
+stages:
+  - requirements
+  - test
+formats:
+  reads:
+    - reqif
+  writes:
+    - reqif
+competes_with:
+  - doors
+  - polarion
+website: https://www.jamasoftware.com/platform/jama-connect/
+summary: Requirements management with live traceability.
+plain: >-
+  Software for writing and tracking product requirements and showing at any time how they link to
+  designs and tests.
+workflow: >-
+  Product teams write requirements here, exchange them as ReqIF with customers and other tools, and
+  link each one to designs and tests, so reviewers can see at any time what is covered.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.jamasoftware.com/platform/jama-connect/
+    label: official page

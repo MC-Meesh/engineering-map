@@ -1,0 +1,15 @@
+id: cesium
+type: vendor
+name: Cesium
+kind: company
+hq: US
+founded: 2019
+parent: bentley
+status: merged
+website: https://cesium.com/
+summary: 3D geospatial platform and CesiumJS; created 3D Tiles; acquired by Bentley in 2024.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://cesium.com/
+    label: official page

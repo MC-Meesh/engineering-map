@@ -1,0 +1,32 @@
+id: moose
+type: tool
+name: MOOSE
+category: solver-library
+vendor: inl
+open_source: true
+license: LGPL-2.1
+status: active
+first_release: 2008
+stages:
+  - analysis
+built_on:
+  - petsc
+formats:
+  reads:
+    - exodus
+  writes:
+    - exodus
+website: https://mooseframework.inl.gov/
+summary: Multiphysics object-oriented framework from INL, built for nuclear but general.
+plain: >-
+  A free framework from Idaho National Laboratory for building simulation codes that combine several
+  physical effects; made for nuclear work but usable for others.
+workflow: >-
+  Developers build a multiphysics app on MOOSE and PETSc, read an Exodus II mesh (the shape split
+  into small cells), often from Coreform Cubit, run the coupled simulation, and write Exodus II
+  results for ParaView or VisIt.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://mooseframework.inl.gov/
+    label: official page

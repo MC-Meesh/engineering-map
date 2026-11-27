@@ -1,0 +1,19 @@
+id: simpack-ag
+type: vendor
+name: SIMPACK AG
+kind: company
+hq: DE
+founded: 1993
+parent: dassault
+status: merged
+summary: Simpack multibody simulation.
+notes: >-
+  Founded 1993 as a spin-off of the German Aerospace Center (DLR), formerly INTEC GmbH; based near
+  Munich. Acquired by Dassault Systemes on 2014-07-10.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-acquires-simpack
+    label: Dassault Systemes press release 2014-07-11
+  - url: https://itea4.org/organisation/5081-simpack-ag.html
+    label: 'ITEA profile: SIMPACK (founded 1993, DLR spin-off)'

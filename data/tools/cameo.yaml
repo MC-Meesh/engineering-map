@@ -1,0 +1,49 @@
+id: cameo
+type: tool
+name: CATIA Magic Cyber Systems Engineer (Cameo Systems Modeler)
+category: systems-mbse
+vendor: dassault
+origin: no-magic
+open_source: false
+status: active
+first_release: 2011
+stages:
+  - requirements
+formats:
+  reads:
+    - sysml
+    - reqif
+  writes:
+    - sysml
+    - reqif
+competes_with:
+  - rhapsody
+  - enterprise-architect
+  - capella
+  - genesys
+website: https://www.3ds.com/products/catia/catia-magic
+summary: >-
+  Widely used SysML modeling tool from the MagicDraw lineage, sold as Cameo Systems Modeler until
+  Dassault rebranded it under CATIA Magic.
+plain: >-
+  Software for describing a complex system, such as an aircraft or a car, as one connected model of
+  requirements, parts and behavior in the SysML modeling language, instead of scattered documents.
+workflow: >-
+  Systems engineers take requirements, often as ReqIF from a requirements tool, model the system's
+  structure and behavior here in SysML, and hand the model to analysis tools such as ModelCenter and
+  to design teams.
+native_files:
+  - ext: .mdzip
+    what: Project file (zipped)
+  - ext: .mdxml
+    what: Project file (XML)
+notes: >-
+  The rename and No Magic origin are confirmed by the CATIA Magic page; first_release 2011 is not
+  stated there and is unconfirmed. MagicDraw, the base product, dates from the late 1990s.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/products/catia/catia-magic
+    label: CATIA Magic page (formerly Cameo Systems Modeler, No Magic)
+  - url: https://docs.nomagic.com/spaces/SYSMLP2024xR1/pages/170488915/Opening+SysML+projects
+    label: 'native file format (No Magic documentation: opening SysML projects)'

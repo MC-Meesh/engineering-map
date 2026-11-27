@@ -1,0 +1,20 @@
+id: 3mf
+type: format
+name: 3MF
+extensions:
+  - .3mf
+kind: tessellated
+standard: ISO/IEC 25422
+steward: 3MF Consortium
+open_spec: true
+first_published: 2015
+website: https://3mf.io/
+wikipedia: https://en.wikipedia.org/wiki/3D_Manufacturing_Format
+summary: Modern additive format with units, materials, color and build data; the intended STL successor.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://3mf.io/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/3D_Manufacturing_Format
+    label: Wikipedia

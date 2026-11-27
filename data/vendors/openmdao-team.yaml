@@ -1,0 +1,14 @@
+id: openmdao-team
+type: vendor
+name: OpenMDAO team (NASA Glenn)
+kind: project
+hq: US
+founded: 2008
+status: active
+website: https://openmdao.org/
+summary: NASA Glenn team behind OpenMDAO.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://openmdao.org/
+    label: official page

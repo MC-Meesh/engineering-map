@@ -1,0 +1,37 @@
+id: digimat
+type: tool
+name: Digimat
+category: multiphysics
+vendor: msc
+origin: e-xstream
+open_source: false
+status: active
+first_release: 2003
+stages:
+  - analysis
+integrates_with:
+  - abaqus
+  - ansys-mechanical
+  - ls-dyna
+website: https://www.cadence.com/en_US/home/tools/msc-software/digimat.html
+summary: Multiscale material modeling for composites and reinforced plastics.
+plain: >-
+  Predicts how composite and reinforced plastic materials behave by modeling what happens inside
+  them at small scales.
+workflow: >-
+  A materials engineer describes a composite or filled plastic, Digimat predicts how it behaves, and
+  that material model is used inside structural simulation programs such as Abaqus, Ansys Mechanical
+  and LS-DYNA.
+notes: >-
+  2003 is the founding year of e-Xstream engineering (Louvain spin-off); the first Digimat release
+  year is not confirmed.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-completes-acquisition-of-hexagons-design-and-engineering.html
+    label: 'Cadence release 2026-02: completes acquisition of Hexagon D&E (MSC Software)'
+  - url: https://www.digitalengineering247.com/article/msc-software-acquires-exstream
+    label: 'Digital Engineering: MSC Software acquires e-Xstream (2012)'
+  - url: https://www.cadence.com/en_US/home/tools/msc-software/digimat.html
+    label: official page

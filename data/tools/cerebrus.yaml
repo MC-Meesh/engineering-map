@@ -1,0 +1,30 @@
+id: cerebrus
+type: tool
+name: Cadence Cerebrus
+category: ml-engineering
+vendor: cadence
+open_source: false
+status: active
+first_release: 2021
+stages:
+  - design
+  - optimization
+integrates_with:
+  - innovus
+competes_with:
+  - dso-ai
+website: >-
+  https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/cerebrus-intelligent-chip-explorer.html
+summary: ML-driven optimization of digital implementation flows.
+plain: >-
+  Uses machine learning to tune the settings of the tools that turn a chip design into a physical
+  layout, searching for a better result automatically.
+workflow: >-
+  A chip team runs the Innovus implementation flow while Cerebrus tunes its settings automatically
+  over many runs, and the best physical layout goes on to signoff checks.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/cerebrus-intelligent-chip-explorer.html
+    label: official page

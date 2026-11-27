@@ -1,0 +1,28 @@
+id: creo-plus
+type: tool
+name: Creo+
+category: cad
+vendor: ptc
+open_source: false
+status: active
+first_release: 2023
+stages:
+  - design
+runs_on:
+  - ptc-atlas
+website: https://www.ptc.com/en/products/creo/creo-plus
+summary: SaaS edition of Creo; the same core desktop CAD with cloud collaboration and licence tools on PTC Atlas.
+plain: >-
+  Creo sold as an online subscription: the same desktop design software, plus live teamwork and
+  licence tools that run in PTC's cloud.
+notes: >-
+  Launched 2023-05-16. Built on the same core technology as Creo, so no data translation is needed;
+  PTC Control Center, its licence and admin app, is powered by Atlas. Creo+ is still a desktop CAD
+  client, so runs_on describes the cloud service layer.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ptc.com/en/products/creo/creo-plus
+    label: 'PTC Creo+ page: Creo+ runs on Atlas'
+  - url: https://www.ptc.com/en/news/2023/ptc-brings-creo-to-cloud-with-introduction-of-creo-plus
+    label: 'PTC release 2023-05-16: Creo+ launched, same core as Creo, Control Center on Atlas'

@@ -1,0 +1,39 @@
+id: brand-siemens-eda
+type: brand
+name: Siemens EDA
+vendor: siemens
+website: https://www.siemens.com/en-us/products/ic/
+products:
+  - calibre
+  - questa
+  - tessent
+  - catapult
+  - solido
+  - aprisa
+  - gencellicon
+  - xpedition
+  - pads
+  - hyperlynx
+  - valor-npi
+  - capital
+summary: >-
+  The name the former Mentor Graphics business trades under: IC design and verification (Calibre,
+  Questa One, Tessent) and PCB and E/E systems (Xpedition, PADS, HyperLynx, Valor, Capital).
+notes: >-
+  The mentor vendor record keeps the company; this brand groups the products Siemens now sells under
+  the Siemens EDA name.
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/ic/
+    label: Siemens EDA IC page
+  - url: https://www.siemens.com/en-us/products/ic/questa-one/
+    label: Questa One
+  - url: https://www.siemens.com/en-us/products/pcb/pads/
+    label: PADS
+  - url: https://www.siemens.com/en-us/products/pcb/xpedition/
+    label: Xpedition
+  - url: https://www.siemens.com/en-us/products/pcb/hyperlynx/
+    label: HyperLynx
+  - url: https://www.siemens.com/en-us/products/ic/calibre-design/
+    label: Calibre
+as_of: '2026-11-22'

@@ -1,0 +1,18 @@
+id: esi
+type: vendor
+name: ESI Group
+kind: company
+hq: FR
+founded: 1973
+parent: keysight
+status: active
+website: https://www.esi-group.com/
+wikipedia: https://en.wikipedia.org/wiki/ESI_Group
+summary: Virtual prototyping (PAM-CRASH lineage) and OpenFOAM services; acquired by Keysight.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.esi-group.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/ESI_Group
+    label: Wikipedia

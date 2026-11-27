@@ -1,0 +1,13 @@
+id: dassault--safe-technology--2013
+type: acquisition
+acquirer: dassault
+target: safe-technology
+completed: '2013-08-07'
+status: completed
+summary: Added fe-safe fatigue analysis to SIMULIA.
+notes: Announced on 2013-09-04, after closing; amount not disclosed.
+confidence: high
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-acquires-safe-technology-limited
+    label: 'Dassault release 2013-09-04: completed 2013-08-07'
+as_of: '2026-11-22'

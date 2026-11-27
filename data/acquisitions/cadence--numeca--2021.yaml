@@ -1,0 +1,12 @@
+id: cadence--numeca--2021
+type: acquisition
+acquirer: cadence
+target: numeca
+completed: '2021'
+status: completed
+summary: Basis of the Cadence Fidelity CFD line.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cadence.com/en_US/home/company/newsroom.html
+    label: source

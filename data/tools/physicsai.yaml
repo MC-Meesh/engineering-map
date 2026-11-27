@@ -1,0 +1,47 @@
+id: physicsai
+type: tool
+name: Simcenter PhysicsAI
+category: ml-engineering
+vendor: altair
+open_source: false
+status: active
+first_release: 2023
+stages:
+  - design
+  - analysis
+formats:
+  reads:
+    - abaqus-odb
+    - nastran-op2
+competes_with:
+  - ncs
+  - simai
+website: https://www.siemens.com/en-us/products/simcenter/engineering-data-science-ai/physicsai/
+summary: >-
+  Geometric deep learning on prior CAE results, run inside Simcenter Hypermesh, Simlab and Inspire
+  (formerly Altair physicsAI).
+plain: >-
+  Uses AI trained on earlier simulation results to predict new ones quickly, inside Hypermesh,
+  Simlab and Inspire.
+workflow: >-
+  An engineer trains a model inside Hypermesh, Simlab or Inspire on earlier Abaqus ODB or Nastran
+  OP2 results, then gets quick predictions for new designs in the same tool before running a full
+  simulation.
+files_note: 'Runs inside Simcenter HyperMesh, SimLab and Inspire rather than a cloud upload; trains on existing solver result files read through HyperView (e.g. .h3d, .odb, .op2, .d3plot).'
+notes: first shipped in HyperWorks 2022.3, released in May 2023
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://www.siemens.com/en-us/products/simcenter/engineering-data-science-ai/physicsai/
+    label: official page
+  - url: >-
+      https://community.altair.com/discussion/33984/hyperworks-2023-comes-with-exciting-new-updates-for-physicsai
+    label: 'Altair community: first release in HyperWorks 2022.3'
+  - url: https://www.siemens.com/lv-lv/products/simcenter/engineering-data-science-ai/physicsai/
+    label: 'Siemens: Simcenter PhysicsAI product page'
+  - url: https://help.altair.com/hwdesktop/cfd/topics/reference/extensions/physicsai_faq_import_prepare_data_r.htm
+    label: 'PhysicsAI help (Altair-branded): import and prepare data'
+  - url: https://blogs.sw.siemens.com/simcenter/use-existing-structural-and-fluid-data-to-train-simcenter-physicsai/
+    label: 'Siemens Simcenter blog: training PhysicsAI on existing data'

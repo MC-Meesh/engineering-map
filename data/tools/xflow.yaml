@@ -1,0 +1,31 @@
+id: xflow
+type: tool
+name: XFlow
+category: cfd
+vendor: dassault
+origin: next-limit
+open_source: false
+status: active
+first_release: 2009
+stages:
+  - analysis
+competes_with:
+  - powerflow
+website: https://www.3ds.com/products/simulia/xflow
+summary: Particle-based lattice Boltzmann CFD for moving parts and free surfaces.
+plain: >-
+  Simulates liquids and gases around moving parts and open liquid surfaces that splash and slosh,
+  using a particle-based method instead of a fixed grid.
+workflow: >-
+  An engineer brings in the geometry with its moving parts, simulates the flow and free surfaces
+  here with a particle-based method, and passes the results back to the designers.
+geometry_basis:
+  kind: mesh
+  text: >-
+    Builds its particle lattice automatically from the input geometry, avoiding classic meshing; no geometry kernel is named.
+  url: https://www.3ds.com/products/simulia/xflow
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/products/simulia/xflow
+    label: official page

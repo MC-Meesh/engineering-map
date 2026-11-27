@@ -1,0 +1,17 @@
+id: rescale
+type: vendor
+name: Rescale
+kind: company
+hq: US
+founded: 2011
+status: active
+website: https://rescale.com/
+wikipedia: https://en.wikipedia.org/wiki/Rescale
+summary: Cloud HPC platform for running commercial and open solvers.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://rescale.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Rescale
+    label: Wikipedia

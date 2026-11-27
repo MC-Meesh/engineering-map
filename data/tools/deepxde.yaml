@@ -1,0 +1,32 @@
+id: deepxde
+type: tool
+name: DeepXDE
+category: ml-engineering
+vendor: lu-group
+open_source: true
+license: LGPL-2.1
+status: active
+first_release: 2019
+stages:
+  - analysis
+website: https://github.com/lululxvi/deepxde
+summary: Library for physics-informed neural networks and DeepONet.
+plain: >-
+  A Python library for training neural networks that obey known physical equations, so they can
+  solve physics problems.
+workflow: >-
+  A researcher writes the governing physics equations and any measured data in Python, trains a
+  network here to solve them, and uses the trained model as a fast stand-in for a conventional
+  simulation program.
+files_note: 'A Python programming library for physics-informed neural networks that programs call; Model.save writes weights using the backend''s own save method (for example torch.save) or pickle.'
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://github.com/lululxvi/deepxde/blob/master/LICENSE
+    label: DeepXDE LICENSE (LGPL-2.1)
+  - url: https://github.com/lululxvi/deepxde
+    label: official page
+  - url: https://deepxde.readthedocs.io/en/latest/
+    label: 'DeepXDE docs: home'
+  - url: https://deepxde.readthedocs.io/en/latest/modules/deepxde.html
+    label: 'DeepXDE API: Model.save and restore'

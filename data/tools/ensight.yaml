@@ -1,0 +1,44 @@
+id: ensight
+type: tool
+name: Ansys EnSight
+category: visualization
+vendor: ansys
+open_source: false
+status: active
+first_release: 1994
+stages:
+  - analysis
+formats:
+  reads:
+    - ensight-gold
+    - cgns
+  writes:
+    - ensight-gold
+competes_with:
+  - tecplot-360
+  - fieldview
+website: https://www.ansys.com/products/fluids/ansys-ensight
+summary: Post-processing for large transient CFD and FEA results.
+plain: >-
+  Turns large simulation results, such as flow or structural results that change over time, into
+  pictures, animations and measurements.
+workflow: >-
+  Solvers such as Fluent, STAR-CCM+ or OpenFOAM write EnSight Gold or CGNS results; an analyst loads
+  them here, makes pictures, animations and measurements, and shares them with the design team.
+native_files:
+  - ext: .ens
+    what: 'EnSight session file: saved state with a screenshot'
+  - ext: .ctx
+    what: 'EnSight context file: saved state to reuse on similar data'
+  - ext: .case
+    what: EnSight Gold case file indexing geometry and variables
+    format: ensight-gold
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ansys.com/products/fluids/ansys-ensight
+    label: official page
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/ensight_ht/ch28s01.html
+    label: 'native file format (Ansys EnSight help: session and context files)'
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/ensight_um/UM-C9xmlidEnSightGoldCaseFileFormat.html
+    label: EnSight Gold case file format (Ansys EnSight user manual)

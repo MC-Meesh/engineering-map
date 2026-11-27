@@ -1,0 +1,37 @@
+id: etabs
+type: tool
+name: ETABS
+category: cae-fea
+vendor: csi
+open_source: false
+status: active
+first_release: 1975
+stages:
+  - analysis
+formats:
+  reads:
+    - ifc
+competes_with:
+  - staad-pro
+website: https://www.csiamerica.com/products/etabs
+summary: Building structural analysis and design.
+plain: >-
+  Software for checking that a building's frame (columns, beams, floors and walls) can safely carry
+  its weight, people, wind and earthquakes, and for sizing those parts.
+workflow: >-
+  A structural engineer brings in the building from the architect's 3D building model as an IFC
+  file, checks and sizes the columns, beams and walls here, and sends the sizes and results back to
+  the architects and the rest of the project team.
+notes: >-
+  1975 rests on the ETABS trademark record (Reg. 1449465), which claims first use on 1975-04-30 and
+  first use in commerce on 1975-05-30, the same year CSI was founded. No CSI release history page
+  confirms it.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.csiamerica.com/products/etabs
+    label: CSI ETABS product page
+  - url: https://trademarks.justia.com/736/36/etabs-73636531.html
+    label: USPTO ETABS mark via Justia (first use 1975-04-30)
+  - url: https://www.csiamerica.com/about
+    label: CSI about page (founded 1975)

@@ -1,0 +1,30 @@
+id: volta
+type: tool
+name: ESTECO VOLTA
+category: sdm
+vendor: esteco
+open_source: false
+status: active
+first_release: 2014
+stages:
+  - lifecycle
+  - optimization
+competes_with:
+  - minerva
+website: https://www.esteco.com/volta
+summary: Web-based simulation process and data management.
+plain: >-
+  Web-based software that keeps simulation data and the process steps that produced it on one shared
+  server, so a team can run, track and reuse its simulations.
+workflow: >-
+  3D design, simulation and PLM tools connect to VOLTA through its APIs; engineers run simulation
+  processes from a web browser, and the models, steps and results are stored on its server for the
+  whole team.
+files_note: 'Has no file format of its own: an on-premise or cloud server platform holding simulation data as the source of truth, used through a web interface and linked to PLM and CAD/CAE tools via APIs.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.esteco.com/volta
+    label: official page
+  - url: https://engineering.esteco.com/volta/
+    label: 'ESTECO VOLTA product page'

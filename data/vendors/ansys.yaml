@@ -1,0 +1,22 @@
+id: ansys
+type: vendor
+name: Ansys
+kind: company
+hq: US
+founded: 1970
+parent: synopsys
+status: active
+website: https://ansys.synopsys.com/
+wikipedia: https://en.wikipedia.org/wiki/Ansys
+summary: Broad multiphysics simulation portfolio built largely through acquisition; now part of Synopsys.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://news.synopsys.com/2025-07-17-Synopsys-Completes-Acquisition-of-Ansys
+    label: 'Synopsys release 2025-07-17: acquisition completed'
+  - url: https://ansys.synopsys.com/
+    label: official page (Ansys, part of Synopsys)
+  - url: https://investors.ansys.com/company-information/why-invest
+    label: 'Ansys investor page: founded 1970'
+  - url: https://en.wikipedia.org/wiki/Ansys
+    label: Wikipedia

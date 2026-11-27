@@ -1,0 +1,20 @@
+id: agi
+type: vendor
+name: Analytical Graphics (AGI)
+kind: company
+hq: US
+founded: 1989
+parent: ansys
+status: merged
+summary: STK mission and orbit simulation.
+notes: >-
+  Ownership by Ansys confirmed from SEC filings. Founding year 1989 and Exton, PA base appear only
+  in secondary sources (Wikipedia, business directories), not in a fetched primary source. Generic
+  Wikipedia website removed.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1013462/000101346221000009/anss-20201231.htm
+    label: Ansys 10-K FY2020 (AGI acquired 2020-12-01)
+  - url: https://www.sec.gov/Archives/edgar/data/1013462/000119312520276233/d38877d8k.htm
+    label: Ansys 8-K 2020-10 (AGI deal terms)

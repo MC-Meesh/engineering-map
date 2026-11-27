@@ -1,0 +1,44 @@
+id: plasticity
+type: tool
+name: Plasticity
+category: cad
+vendor: plasticity-co
+open_source: false
+status: active
+first_release: 2022
+stages:
+  - design
+built_on:
+  - parasolid
+formats:
+  reads:
+    - step
+    - iges
+    - parasolid-xt
+  writes:
+    - step
+    - iges
+    - parasolid-xt
+    - stl
+    - obj
+website: https://www.plasticity.xyz/
+summary: NURBS modeler for concept artists that brings Parasolid to a hotkey-driven workflow.
+plain: >-
+  3D modeling software for concept artists that builds precise smooth surfaces (NURBS) on the
+  Parasolid geometry engine, with a fast, keyboard-driven way of working.
+workflow: >-
+  A concept artist shapes NURBS surfaces quickly here, then exports STEP, Parasolid or IGES to
+  engineering CAD (3D design) tools, or STL and OBJ files for rendering and 3D printing.
+native_files:
+  - ext: .plasticity
+    what: Plasticity document
+notes: >-
+  early releases used the C3D kernel before the move to Parasolid; no primary source found for the
+  switch date Plasticity also uses the xNURBS surfacing technology.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.plasticity.xyz/
+    label: 'Plasticity site: Parasolid and xNURBS'
+  - url: https://doc.plasticity.xyz/plasticity-essentials/import-export
+    label: 'native file format (Plasticity manual: import and export)'

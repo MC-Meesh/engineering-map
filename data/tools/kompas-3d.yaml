@@ -1,0 +1,41 @@
+id: kompas-3d
+type: tool
+name: KOMPAS-3D
+category: cad
+vendor: ascon
+open_source: false
+status: active
+first_release: 1989
+stages:
+  - design
+built_on:
+  - c3d
+formats:
+  reads:
+    - step
+    - iges
+  writes:
+    - step
+    - iges
+    - stl
+website: https://kompas.ru/
+summary: Russian mechanical CAD built on the C3D kernel.
+plain: Russian 3D design software for mechanical parts, built on the C3D geometry engine.
+workflow: >-
+  A designer models parts and assemblies here on the C3D engine, makes drawings, and exports STEP or
+  IGES files to manufacturing and other CAD tools, or STL files for 3D printing.
+notes: >-
+  C3D Labs, an ASCON subsidiary (per ASCON's KOMPAS-3D page), says KOMPAS-3D has been built on C3D Modeler (the geometry
+  kernel), C3D Solver (constraints) and C3D Converter since its first version; the C3D kernel was
+  spun out of KOMPAS-3D as a separate product in 2012.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://en.wikipedia.org/wiki/C3D_Toolkit
+    label: verification source
+  - url: https://kompas.ru/
+    label: official page
+  - url: https://c3dlabs.com/customers/ascon
+    label: 'C3D Labs ASCON page: KOMPAS-3D on C3D Modeler, Solver and Converter'
+  - url: https://kompas.ru/kompas-3d/about/
+    label: 'KOMPAS-3D about page: based on the C3D kernel'

@@ -1,0 +1,64 @@
+id: simcenter-3d
+type: tool
+name: Simcenter 3D
+category: cae-fea
+vendor: siemens
+open_source: false
+status: active
+first_release: 2016
+stages:
+  - analysis
+built_on:
+  - nx
+  - parasolid
+formats:
+  reads:
+    - nastran-bdf
+    - abaqus-inp
+    - ansys-cdb
+    - lsdyna-k
+    - step
+    - jt
+    - parasolid-xt
+  writes:
+    - nastran-bdf
+    - abaqus-inp
+    - ansys-cdb
+    - lsdyna-k
+integrates_with:
+  - simcenter-nastran
+competes_with:
+  - ansys-mechanical
+  - hypermesh
+website: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/simcenter-3d/
+summary: >-
+  Pre and post-processing on the NX platform for Nastran and third-party solvers, plus acoustics and
+  motion.
+plain: >-
+  Siemens software, built on NX, for preparing simulation models and viewing their results; it sends
+  the model to Simcenter Nastran or other calculation programs and also covers noise and motion
+  studies.
+workflow: >-
+  An analyst opens geometry from Designcenter, JT, STEP or Parasolid, splits it into a mesh of small
+  elements and sets up the model here, solves with Simcenter Nastran or writes input files for
+  Abaqus, Ansys or LS-DYNA, and reviews results here.
+native_files:
+  - ext: .fem
+    what: 'FEM file: mesh, properties and materials'
+  - ext: .sim
+    what: 'Simulation file: loads, constraints and solutions'
+notes: >-
+  Introduced with the Simcenter portfolio on 2016-06-14 and shipped with NX 11 in August 2016; it
+  succeeded NX CAE and took in LMS Virtual.Lab and LMS Samtech technology.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.digitalengineering247.com/article/siemens-plm-introduces-simcenter
+    label: 'Digital Engineering 2016-06-14: Siemens introduces Simcenter'
+  - url: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/simcenter-3d/
+    label: official page
+  - url: >-
+      https://www.cimdata.com/de/industry-summary-articles/item/6338-siemens-introduces-simcenter-to-transform-performance-engineering-with-predictive-analytics
+    label: CIMdata copy of the Siemens release 2016-06-14
+  - url: https://docs.sw.siemens.com/documentation/external/PL20190701133928562/en-US/sc3d_2019_1_tutorials/content/default/1.0/sc3d_2019_1_tutorials/en_US/tutorials_prepost/tutorials_prepost/structural_analysis_using_simcenter_3d_laminate_composites.html
+    label: 'native file format (vendor documentation: tutorial)'

@@ -1,0 +1,11 @@
+id: nemetschek--graphisoft--2007
+type: acquisition
+acquirer: nemetschek
+target: graphisoft
+completed: '2007'
+status: completed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/Graphisoft
+    label: source

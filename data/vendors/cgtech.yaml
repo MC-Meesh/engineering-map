@@ -1,0 +1,14 @@
+id: cgtech
+type: vendor
+name: CGTech
+kind: company
+hq: US
+founded: 1988
+status: active
+website: https://cgtech.com/
+summary: VERICUT, the standard for NC program simulation and verification.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://cgtech.com/
+    label: official page

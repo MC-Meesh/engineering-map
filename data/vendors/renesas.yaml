@@ -1,0 +1,17 @@
+id: renesas
+type: vendor
+name: Renesas Electronics
+kind: company
+hq: JP
+founded: 2002
+status: active
+website: https://www.renesas.com/
+wikipedia: https://en.wikipedia.org/wiki/Renesas_Electronics
+summary: Semiconductor maker that bought Altium to own a PCB design platform.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.renesas.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Renesas_Electronics
+    label: Wikipedia

@@ -1,0 +1,22 @@
+id: msc
+type: vendor
+name: MSC Software
+kind: company
+hq: US
+founded: 1963
+parent: cadence
+status: active
+website: https://www.cadence.com/
+wikipedia: https://en.wikipedia.org/wiki/MSC_Software
+summary: >-
+  Original commercial Nastran vendor; Adams, Marc, Patran. Owned by Hexagon from 2017, then by
+  Cadence from February 2026.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/0000813672/000081367226000047/cdns-20260331.htm
+    label: Cadence 10-Q Q1 2026 (Hexagon D&E acquired 2026-02-23)
+  - url: https://www.cadence.com/en_US/home/tools/msc-software/msc-nastran.html
+    label: Cadence MSC Software product page
+  - url: https://en.wikipedia.org/wiki/MSC_Software
+    label: Wikipedia

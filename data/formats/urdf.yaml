@@ -1,0 +1,17 @@
+id: urdf
+type: format
+name: URDF
+extensions:
+  - .urdf
+  - .xacro
+kind: robotics
+steward: ROS community
+steward_vendor: open-robotics
+open_spec: true
+website: https://github.com/ros/urdfdom
+summary: XML robot description of links, joints and geometry used across ROS.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://github.com/ros/urdfdom
+    label: official page

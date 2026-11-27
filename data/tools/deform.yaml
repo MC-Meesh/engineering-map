@@ -1,0 +1,26 @@
+id: deform
+type: tool
+name: DEFORM
+category: cae-fea
+vendor: sftc
+open_source: false
+status: active
+first_release: 1991
+stages:
+  - analysis
+  - manufacturing
+competes_with:
+  - simufact
+website: https://www.deform.com/
+summary: Metal forming and heat treatment simulation.
+plain: >-
+  Simulates how metal changes shape when it is forged or formed, and what happens to it during heat
+  treatment.
+workflow: >-
+  An engineer brings in the shape of the billet and dies, simulates the forging or heat treatment
+  here, and feeds the results back to die design and process planning before parts are made.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.deform.com/
+    label: official page

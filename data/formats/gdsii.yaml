@@ -1,0 +1,16 @@
+id: gdsii
+type: format
+name: GDSII
+extensions:
+  - .gds
+kind: ic
+steward: de facto (Calma origin)
+open_spec: true
+first_published: 1978
+website: https://en.wikipedia.org/wiki/GDSII
+summary: Binary IC layout stream format; the traditional tapeout hand-off to the fab.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/GDSII
+    label: official page

@@ -1,0 +1,28 @@
+id: flomaster
+type: tool
+name: Simcenter Flomaster
+category: systems-mbse
+vendor: siemens
+open_source: false
+status: active
+stages:
+  - design
+  - analysis
+website: https://plm.sw.siemens.com/en-US/simcenter/systems-simulation/flomaster/
+summary: >-
+  1D thermo-fluid system simulation for designing, commissioning and operating piping and flow
+  networks.
+plain: >-
+  Simulates whole piping systems, such as the fuel, cooling or water pipes in a plant, ship or
+  aircraft, as a network of pipes, pumps and valves, to size them, start them up safely and run
+  them.
+workflow: >-
+  An engineer draws the pipe network from the system layout as connected pipes, pumps and valves,
+  simulates pressures and flows here to size the parts, and the results guide the build, the
+  start-up checks and later the day-to-day running of the real system.
+notes: Its Flowmaster lineage is not checked against a primary source.
+confidence: medium
+sources:
+  - url: https://www.siemens.com/en-us/products/simcenter/systems-simulation/
+    label: Simcenter systems simulation page (Simcenter Flomaster)
+as_of: '2026-11-22'

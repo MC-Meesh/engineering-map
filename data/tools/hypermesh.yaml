@@ -1,0 +1,63 @@
+id: hypermesh
+type: tool
+name: Simcenter Hypermesh
+category: meshing
+vendor: altair
+open_source: false
+status: active
+first_release: 1990
+stages:
+  - analysis
+formats:
+  reads:
+    - nastran-bdf
+    - abaqus-inp
+    - lsdyna-k
+    - ansys-cdb
+    - step
+    - iges
+    - catia-v5
+    - parasolid-xt
+  writes:
+    - nastran-bdf
+    - abaqus-inp
+    - lsdyna-k
+    - ansys-cdb
+competes_with:
+  - ansa
+  - femap
+aka:
+  - Altair HyperMesh
+  - HyperMesh
+website: https://www.siemens.com/en-us/products/simcenter/simulation-modeling-visualization/hypermesh/
+summary: >-
+  Long-established FE pre and post-processor (formerly Altair HyperMesh), heavily used in
+  automotive.
+plain: >-
+  Prepares detailed simulation models, by splitting part shapes into a mesh (a grid of many small
+  pieces) that strength and crash programs can calculate on, and then shows the results. Heavily
+  used in the car industry.
+workflow: >-
+  An analyst imports the part shapes as STEP, CATIA or Parasolid files, meshes them here, and writes
+  input files for Nastran, Abaqus, LS-DYNA or Ansys, which run the calculation; the results then
+  come back here for review.
+native_files:
+  - ext: .hm
+    what: HyperMesh model file
+notes: >-
+  HyperMesh has its own native geometry kernel (AFC) and offers a Use Parasolid option in some
+  topology tools.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://www.siemens.com/en-us/products/simcenter/simulation-modeling-visualization/hypermesh/
+    label: official page
+  - url: >-
+      https://www.industryweek.com/innovation/product-development/article/21933075/altair-computing-inctroy-mich
+    label: 'IndustryWeek: HyperMesh introduced 1990'
+  - url: https://help.altair.com/hwdesktop/hlwc/topics/file_management/file_save_unity_t.htm
+    label: 'native file format (vendor help: saving files)'
+  - url: https://help.altair.com/hwdesktop/hwx/topics/pre_processing/geometry/use_parasolid_r.htm
+    label: 'Altair HyperMesh help: native AFC kernel and the Use Parasolid option'

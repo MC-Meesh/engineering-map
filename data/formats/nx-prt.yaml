@@ -1,0 +1,18 @@
+id: nx-prt
+type: format
+name: NX part (Designcenter)
+extensions:
+  - .prt
+kind: native-cad
+steward: Siemens
+steward_vendor: siemens
+open_spec: false
+website: https://www.siemens.com/en-us/products/cad-cam-software/
+summary: Proprietary part file of Siemens Designcenter (formerly NX), with Parasolid geometry inside.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-gb/technology/nx-cad/
+    label: Siemens NX CAD page (renamed Designcenter)
+  - url: https://www.siemens.com/en-us/products/cad-cam-software/
+    label: official page

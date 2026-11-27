@@ -1,0 +1,11 @@
+id: autodesk--blue-ridge--2011
+type: acquisition
+acquirer: autodesk
+target: blue-ridge
+completed: '2011'
+status: completed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.autodesk.com/products/cfd/overview
+    label: source

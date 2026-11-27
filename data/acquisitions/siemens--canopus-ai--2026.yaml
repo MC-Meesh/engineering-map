@@ -1,0 +1,16 @@
+id: siemens--canopus-ai--2026
+type: acquisition
+acquirer: siemens
+target: canopus-ai
+completed: '2026-01-12'
+status: completed
+summary: >-
+  AI-based computational metrology and inspection for wafer and mask manufacturing; added to Siemens
+  EDA. Siemens announced it on 2026-02-04, after the deal had closed. Terms not disclosed.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://news.siemens.com/en-us/siemens-acquires-canopus-ai/
+    label: 'Siemens release 2026-02-04: Canopus AI acquired'
+  - url: https://blogs.sw.siemens.com/calibre/2026/02/04/siemens-acquires-canopusai/
+    label: Siemens Calibre blog 2026-02-04

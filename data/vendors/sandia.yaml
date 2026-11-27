@@ -1,0 +1,17 @@
+id: sandia
+type: vendor
+name: Sandia National Laboratories
+kind: institution
+hq: US
+founded: 1949
+status: active
+website: https://www.sandia.gov/
+wikipedia: https://en.wikipedia.org/wiki/Sandia_National_Laboratories
+summary: US lab behind Trilinos, Dakota, Xyce, Cubit and the Exodus format.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.sandia.gov/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Sandia_National_Laboratories
+    label: Wikipedia

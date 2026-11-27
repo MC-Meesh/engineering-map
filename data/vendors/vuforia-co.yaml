@@ -1,0 +1,20 @@
+id: vuforia-co
+type: vendor
+name: Vuforia
+kind: company
+parent: ptc
+status: merged
+summary: Augmented reality business PTC bought from Qualcomm in November 2015.
+notes: >-
+  The Vuforia products are split across PTC platforms: Vuforia Studio and Vuforia View rely on the
+  Experience Service, an add-on to ThingWorx, while Vuforia Expert Capture shipped on PTC Atlas in
+  April 2021. No Vuforia product record yet (the PTC product page refused automated fetches).
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/0000857005/000085700516000071/ptc9-30x1610xk.htm
+    label: 'PTC FY2016 10-K: Vuforia business acquired from Qualcomm, November 2015'
+  - url: https://support.ptc.com/help/vuforia/es_install/en/ES_Install_Help_Center/ThingServerInstall_Welcome_HC.html
+    label: 'Vuforia help: Experience Service augments ThingWorx for Studio and View'
+  - url: https://www.ptc.com/en/news/2021/two-more-saas-products-ship-on-ptc-atlas-platform
+    label: 'PTC release 2021-04-21: Vuforia Expert Capture on Atlas'

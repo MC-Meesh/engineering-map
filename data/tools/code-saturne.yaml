@@ -1,0 +1,42 @@
+id: code-saturne
+type: tool
+name: code_saturne
+category: cfd
+vendor: edf
+open_source: true
+license: GPL-2.0-or-later
+status: active
+first_release: 1997
+stages:
+  - analysis
+formats:
+  reads:
+    - med
+    - cgns
+  writes:
+    - med
+    - cgns
+    - ensight-gold
+integrates_with:
+  - salome
+open_source_alternative_to:
+  - fluent
+website: https://www.code-saturne.org/
+summary: EDF's finite-volume CFD, open-sourced in 2007.
+plain: Free software from the French utility EDF that simulates how air and liquids flow.
+workflow: >-
+  An analyst prepares a MED or CGNS mesh (the flow region split into small cells), often in SALOME,
+  runs the flow simulation here, and views the results in SALOME or exports EnSight Gold files that
+  ParaView turns into plots and pictures.
+notes: >-
+  1997 is when development started at EDF R&D. First open-source (GPL) release was a 1.3 beta in
+  March 2007.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://github.com/code-saturne/code_saturne/blob/master/README.md
+    label: 'code_saturne README: GPL v2 or later, development since 1997'
+  - url: https://github.com/code-saturne/code_saturne/blob/master/COPYING
+    label: COPYING (GPL v2 text)
+  - url: https://www.code-saturne.org/
+    label: official page

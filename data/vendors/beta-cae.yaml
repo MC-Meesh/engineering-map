@@ -1,0 +1,15 @@
+id: beta-cae
+type: vendor
+name: BETA CAE Systems
+kind: company
+hq: CH
+founded: 1990
+parent: cadence
+status: merged
+website: https://www.beta-cae.com/
+summary: ANSA pre-processor and META post-processor.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.beta-cae.com/
+    label: official page

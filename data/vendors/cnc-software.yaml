@@ -1,0 +1,18 @@
+id: cnc-software
+type: vendor
+name: CNC Software
+kind: company
+hq: US
+founded: 1983
+parent: sandvik
+status: active
+website: https://www.mastercam.com/
+wikipedia: https://en.wikipedia.org/wiki/Mastercam
+summary: Mastercam developer; acquired by Sandvik in 2021.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.mastercam.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Mastercam
+    label: Wikipedia

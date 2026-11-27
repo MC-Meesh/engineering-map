@@ -1,0 +1,39 @@
+id: simcenter-rom
+type: tool
+name: Simcenter Reduced Order Modeling
+category: ml-engineering
+vendor: siemens
+open_source: false
+status: active
+first_release: 2023
+stages:
+  - analysis
+formats:
+  writes:
+    - fmu
+website: https://plm.sw.siemens.com/en-US/simcenter/integration-solutions/reduced-order-modeling/
+summary: >-
+  Trains and validates AI and machine learning models on high-fidelity simulation or test data so a
+  prediction takes a fraction of a second.
+plain: >-
+  Trains AI models on detailed simulation or test data so they can predict a result in a fraction of
+  a second.
+workflow: >-
+  An engineer trains AI models here on detailed simulation or test results, then exports them as
+  FMUs (packaged models other simulators can run) that system simulation tools run in place of the
+  slow full simulation.
+files_note: 'Builds reduced order models from simulation and test data and exports them as FMI units, ONNX or Simcenter Amesim submodels; can import Simcenter 3D thermal matrices.'
+notes: >-
+  Launched on 2023-11-28 together with HEEDS AI Simulation Predictor, which the current Simcenter AI
+  page no longer lists separately.
+confidence: high
+sources:
+  - url: https://news.siemens.com/en-us/heeds-ai-simulation-predictor-simcenter-rom/
+    label: 'Siemens release 2023-11-28: HEEDS AI Simulation Predictor and Simcenter ROM'
+  - url: https://www.siemens.com/en-us/products/simcenter/engineering-data-science-ai/
+    label: Simcenter engineering data science and AI page
+  - url: https://www.siemens.com/fr-fr/products/simcenter/integration-solutions/reduced-order-modeling/
+    label: 'Siemens: Simcenter Reduced Order Modeling product page'
+  - url: https://blogs.sw.siemens.com/simcenter/reduced-order-modeling-2504/
+    label: 'Siemens Simcenter blog: ROM 2504 release'
+as_of: '2026-11-22'

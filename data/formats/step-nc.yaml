@@ -1,0 +1,18 @@
+id: step-nc
+type: format
+name: STEP-NC
+extensions:
+  - .stp
+  - .p21
+kind: cam
+standard: ISO 14649 / ISO 10303-238
+steward: ISO
+open_spec: true
+first_published: 2003
+website: https://en.wikipedia.org/wiki/STEP-NC
+summary: Feature-based machining program that keeps design intent; standardized but rarely deployed.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/STEP-NC
+    label: official page

@@ -1,0 +1,29 @@
+id: gibbscam
+type: tool
+name: GibbsCAM
+category: cam
+vendor: cambrio
+open_source: false
+status: active
+first_release: 1984
+stages:
+  - manufacturing
+formats:
+  reads:
+    - step
+  writes:
+    - gcode
+website: https://www.gibbscam.com/
+summary: Production milling and turning CAM, now under Sandvik.
+plain: >-
+  Turns 3D part designs into cutting instructions for CNC (computer-controlled) milling machines and
+  lathes, aimed at production shops making parts in quantity; now part of Sandvik.
+workflow: >-
+  A machinist opens the part as a STEP file, plans the milling and turning cuts here, and writes
+  G-code (the machine's line-by-line instructions) that the shop's CNC machines run to cut the real
+  part.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.gibbscam.com/
+    label: official page

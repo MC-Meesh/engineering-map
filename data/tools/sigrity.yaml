@@ -1,0 +1,26 @@
+id: sigrity
+type: tool
+name: Cadence Sigrity
+category: eda
+vendor: cadence
+open_source: false
+status: active
+first_release: 2012
+stages:
+  - analysis
+competes_with:
+  - siwave
+  - hyperlynx
+website: https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/si-pi-analysis.html
+summary: Signal and power integrity analysis for boards and packages.
+plain: >-
+  Checks that electrical signals and power on circuit boards and chip packages arrive clean, without
+  the noise and voltage drops that make electronics fail.
+workflow: >-
+  A board or package designer takes the layout from the board or package layout tool, checks signal
+  and power quality here, and sends fixes back to the layout before it is made.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/si-pi-analysis.html
+    label: official page

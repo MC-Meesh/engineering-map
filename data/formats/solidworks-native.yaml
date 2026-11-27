@@ -1,0 +1,18 @@
+id: solidworks-native
+type: format
+name: SOLIDWORKS native
+extensions:
+  - .sldprt
+  - .sldasm
+  - .slddrw
+kind: native-cad
+steward: Dassault Systemes
+steward_vendor: dassault
+open_spec: false
+website: https://www.solidworks.com/
+summary: Proprietary SOLIDWORKS part, assembly and drawing files.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.solidworks.com/
+    label: official page

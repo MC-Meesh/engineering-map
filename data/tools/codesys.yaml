@@ -1,0 +1,36 @@
+id: codesys
+type: tool
+name: CODESYS
+category: robotics-controls
+vendor: codesys-group
+open_source: false
+status: active
+first_release: 1994
+stages:
+  - design
+  - manufacturing
+competes_with:
+  - tia-portal
+website: https://www.codesys.com/
+wikipedia: https://en.wikipedia.org/wiki/CODESYS
+summary: Hardware-neutral IEC 61131-3 PLC programming used by many controller makers.
+plain: >-
+  Software for programming the industrial controllers (PLCs) that run machines and factory
+  equipment, using standard IEC 61131-3 languages; many controller makers support it.
+workflow: >-
+  A controls engineer takes the machine's control logic, writes it here in IEC 61131-3 languages,
+  and downloads the program to PLCs from the many controller makers that support CODESYS.
+native_files:
+  - ext: .project
+    what: 'CODESYS project file for the development system version in use'
+  - ext: .library
+    what: 'CODESYS library file (a project saved as a library)'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.codesys.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/CODESYS
+    label: Wikipedia
+  - url: https://content.helpme-codesys.com/en/CODESYS%20Development%20System/_cds_cmd_save_project_as.html
+    label: 'CODESYS online help: Save Project As command'

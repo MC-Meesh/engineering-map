@@ -1,0 +1,14 @@
+id: tecplot
+type: vendor
+name: Tecplot
+kind: company
+hq: US
+founded: 1981
+status: active
+website: https://tecplot.com/
+summary: Tecplot 360 post-processing for CFD and simulation data.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://tecplot.com/
+    label: official page

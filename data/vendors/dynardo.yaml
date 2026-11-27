@@ -1,0 +1,15 @@
+id: dynardo
+type: vendor
+name: Dynardo
+kind: company
+hq: DE
+founded: 2001
+parent: ansys
+status: merged
+website: https://www.ansys.com/products/connect/ansys-optislang
+summary: optiSLang robust design optimization.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ansys.com/products/connect/ansys-optislang
+    label: official page

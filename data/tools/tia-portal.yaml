@@ -1,0 +1,31 @@
+id: tia-portal
+type: tool
+name: TIA Portal
+category: robotics-controls
+vendor: siemens
+open_source: false
+status: active
+first_release: 2010
+stages:
+  - design
+  - manufacturing
+competes_with:
+  - codesys
+website: https://www.siemens.com/tia-portal
+summary: Engineering framework for Siemens SIMATIC PLCs, HMIs and drives.
+plain: >-
+  Siemens software for programming SIMATIC PLCs (the small industrial computers that run machines),
+  their operator touch screens and the motor drives.
+workflow: >-
+  An automation engineer programs SIMATIC controllers, operator screens and drives here, then
+  downloads the programs to the machine's hardware and tests them on site.
+native_files:
+  - ext: .zap20
+    what: 'TIA Portal V20 project archive (full project, compressed or not)'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/tia-portal
+    label: official page
+  - url: https://docs.tia.siemens.cloud/r/de-de/v20/projekte-bearbeiten/projekte-archivieren-und-dearchivieren/arbeiten-mit-projektarchiven
+    label: 'Siemens TIA Portal V20 docs: working with project archives'

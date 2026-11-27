@@ -1,0 +1,30 @@
+id: ic-validator
+type: tool
+name: Synopsys IC Validator
+category: eda
+vendor: synopsys
+open_source: false
+status: active
+first_release: 2008
+stages:
+  - test
+formats:
+  reads:
+    - gdsii
+    - oasis
+competes_with:
+  - calibre
+website: https://www.synopsys.com/implementation-and-signoff/physical-verification.html
+summary: Physical verification (DRC, LVS).
+plain: >-
+  Synopsys software that checks a chip layout against the manufacturer's rules and against the
+  intended circuit before the chip is made.
+workflow: >-
+  A finished chip layout arrives as GDSII or OASIS from implementation tools such as Fusion
+  Compiler; IC Validator checks it against the factory rules and the circuit, and clean layouts go
+  to manufacturing.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.synopsys.com/implementation-and-signoff/physical-verification.html
+    label: official page

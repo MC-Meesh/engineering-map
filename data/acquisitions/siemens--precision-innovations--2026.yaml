@@ -1,0 +1,21 @@
+id: siemens--precision-innovations--2026
+type: acquisition
+acquirer: siemens
+target: precision-innovations
+completed: '2026'
+status: completed
+announced: '2026-07-20'
+summary: >-
+  AI chip planning tools built on OpenROAD (San Diego company founded 2019). Agreement announced
+  2026-07-20 with close expected in calendar Q3 2026; by 2026-09-04 the company's site said it had
+  been acquired by Siemens. Exact closing date not published; terms not disclosed.
+notes: >-
+  Closing is confirmed only by the target's own website (live and in a 2026-09-04 archive snapshot);
+  no Siemens closing notice found.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://precisioninno.com/
+    label: 'Precision Innovations site: joins Siemens (archived 2026-09-04)'
+  - url: https://news.siemens.com/en-us/siemens-to-acquire-precision-innovations/
+    label: Siemens press release 2026-07-20

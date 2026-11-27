@@ -1,0 +1,63 @@
+id: spaceclaim
+type: tool
+name: Ansys SpaceClaim
+category: cad
+vendor: ansys
+origin: spaceclaim-corp
+open_source: false
+status: active
+first_release: 2007
+stages:
+  - design
+  - analysis
+built_on:
+  - parasolid
+formats:
+  reads:
+    - step
+    - iges
+    - acis-sat
+    - parasolid-xt
+    - stl
+    - obj
+  writes:
+    - step
+    - iges
+    - acis-sat
+    - parasolid-xt
+    - stl
+    - obj
+website: https://ansys.synopsys.com/products/3d-design/ansys-spaceclaim
+wikipedia: https://en.wikipedia.org/wiki/SpaceClaim
+summary: >-
+  Direct modeler used mostly to clean up and defeature geometry for simulation; now superseded by
+  Discovery.
+plain: >-
+  3D design software for pushing and pulling shapes directly, used mostly to clean up and simplify
+  geometry before simulation; Discovery has replaced it.
+workflow: >-
+  An analyst opens geometry from STEP, IGES, Parasolid or SAT, cleans and simplifies it here, and
+  passes it on to be split into small cells (meshing) for Ansys simulation; new work has moved to
+  Discovery.
+native_files:
+  - ext: .scdoc
+    what: SpaceClaim document
+  - ext: .scdocx
+    what: SpaceClaim document, newer format
+notes: >-
+  ACIS-based through 2024 R2 and Parasolid from 2025 R1; in maintenance mode since 2023 R2 and
+  dropped from the unified installer in favor of Discovery
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://ansyshelp.ansys.com/public/views/secured/corp/v251/en/disco_unified_releasenotes/disco_changes.html
+    label: 'Ansys 2025 R1 Discovery release notes: kernel and installer change'
+  - url: https://simutechgroup.com/ansys-discovery-and-the-transition-from-spaceclaim/
+    label: 'SimuTech (Ansys partner): maintenance mode since 2023 R2'
+  - url: https://ansys.synopsys.com/products/3d-design/ansys-spaceclaim
+    label: official page
+  - url: https://en.wikipedia.org/wiki/SpaceClaim
+    label: Wikipedia
+  - url: https://ansyshelp.ansys.com/public//////Views/Secured/corp/v242/en/ref_cad/cadSpaceClaim.html
+    label: 'native file format (vendor help: CAD integration)'

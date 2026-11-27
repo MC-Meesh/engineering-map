@@ -1,0 +1,35 @@
+id: yosys
+type: tool
+name: Yosys
+category: eda
+vendor: yosyshq
+open_source: true
+license: ISC
+status: active
+first_release: 2012
+stages:
+  - design
+formats:
+  reads:
+    - verilog
+  writes:
+    - verilog
+    - edif
+open_source_alternative_to:
+  - design-compiler
+  - genus
+website: https://yosyshq.net/yosys/
+summary: Open Verilog synthesis for ASIC and FPGA flows.
+plain: >-
+  Free software that turns a chip design written in Verilog (code describing the circuits) into a
+  list of basic logic gates, for custom chips and for FPGAs (chips that can be rewired after they
+  are made).
+workflow: >-
+  A designer hands over the design in Verilog; Yosys turns it into gates and writes the gate list
+  (netlist) as Verilog or EDIF, which goes on to OpenROAD for chip layout or to FPGA tools such as
+  Vivado.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://yosyshq.net/yosys/
+    label: official page

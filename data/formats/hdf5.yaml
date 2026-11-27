@@ -1,0 +1,20 @@
+id: hdf5
+type: format
+name: HDF5
+extensions:
+  - .h5
+  - .hdf5
+kind: results
+steward: The HDF Group
+open_spec: true
+first_published: 1998
+website: https://www.hdfgroup.org/solutions/hdf5/
+wikipedia: https://en.wikipedia.org/wiki/Hierarchical_Data_Format
+summary: General self-describing container under CGNS, Exodus, MED and many solver outputs.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.hdfgroup.org/solutions/hdf5/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Hierarchical_Data_Format
+    label: Wikipedia

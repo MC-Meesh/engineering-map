@@ -1,0 +1,47 @@
+id: spatial-interop
+type: tool
+name: 3D InterOp
+category: interop
+vendor: spatial
+open_source: false
+status: active
+first_release: 2000
+stages:
+  - design
+  - analysis
+formats:
+  reads:
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+    - jt
+    - catia-v5
+    - solidworks-native
+    - nx-prt
+    - creo-prt
+    - inventor-ipt
+  writes:
+    - catia-v5
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+    - jt
+competes_with:
+  - hoops-exchange
+website: https://www.spatial.com/solutions/cad-translation/3d-interop
+summary: Spatial's CAD translation SDK, paired with ACIS and CGM.
+plain: >-
+  A software component that other programs build in to convert between the file types of different
+  3D design (CAD) programs.
+workflow: >-
+  Developers build 3D InterOp into their programs; when a user opens a CATIA, SOLIDWORKS, NX, Creo
+  or STEP file there, it translates the geometry for the host program's ACIS or CGM model.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.spatial.com/solutions/cad-translation/3d-interop
+    label: official page
+  - url: https://www.spatial.com/products/3d-interop
+    label: '3D InterOp formats: writes CATIA V5 .CATPart, .CATProduct and .cgr from V5 R15'

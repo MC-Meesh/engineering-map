@@ -1,0 +1,16 @@
+id: ply
+type: format
+name: PLY
+extensions:
+  - .ply
+kind: tessellated
+steward: Stanford (de facto)
+open_spec: true
+first_published: 1994
+website: https://en.wikipedia.org/wiki/PLY_(file_format)
+summary: Polygon and point cloud format with arbitrary per-vertex properties; common for scans.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/PLY_(file_format)
+    label: official page

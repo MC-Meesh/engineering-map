@@ -1,0 +1,16 @@
+id: emerson--aspentech--2025
+type: acquisition
+acquirer: emerson
+target: aspentech
+completed: '2025-03-12'
+status: completed
+value: $265 per share for the minority stake
+summary: >-
+  Emerson already held a majority stake since 2022 and bought out the remaining public shares via
+  tender offer and merger. AspenTech makes process simulation software (Aspen Plus and HYSYS).
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.emerson.com/en-us/news/2025/emerson-completes-acquisition-of-remaining-outstanding-shares-of-aspentech
+    label: Emerson press release 2025-03-12

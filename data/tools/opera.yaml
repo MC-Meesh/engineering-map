@@ -1,0 +1,29 @@
+id: opera
+type: tool
+name: Opera
+category: multiphysics
+vendor: dassault
+open_source: false
+status: active
+stages:
+  - analysis
+website: https://www.3ds.com/products/simulia/opera
+summary: >-
+  SIMULIA finite element suite for low-frequency electromagnetics in 2D and 3D: magnets,
+  superconducting coils, motors, generators and transformers.
+plain: >-
+  Simulates magnetic fields in 2D and 3D for magnets, superconducting coils, motors, generators and
+  transformers.
+workflow: >-
+  An engineer brings in the design of a magnet, coil, motor or transformer, simulates the magnetic
+  fields here, and passes the field and performance results back to the designers.
+notes: >-
+  Began in the late 1970s at the Rutherford Appleton Laboratory for particle-beam magnets; Dassault
+  announced the acquisition on 2018-11-20 (seller and terms not given in the post).
+confidence: high
+sources:
+  - url: https://www.3ds.com/products/simulia/opera
+    label: official page
+  - url: https://blog.3ds.com/brands/simulia/dassault-systemes-acquires-opera-simulation-software/
+    label: 'Dassault blog 2018-11-20: acquires Opera'
+as_of: '2026-11-22'

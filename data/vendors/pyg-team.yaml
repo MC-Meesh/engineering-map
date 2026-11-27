@@ -1,0 +1,13 @@
+id: pyg-team
+type: vendor
+name: PyG team
+kind: project
+founded: 2019
+status: active
+website: https://pytorch-geometric.readthedocs.io/en/latest/
+summary: Graph neural network library for PyTorch.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://pytorch-geometric.readthedocs.io/en/latest/
+    label: official page

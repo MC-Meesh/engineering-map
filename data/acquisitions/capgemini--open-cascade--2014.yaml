@@ -1,0 +1,15 @@
+id: capgemini--open-cascade--2014
+type: acquisition
+acquirer: capgemini
+target: open-cascade
+completed: '2014-05-07'
+status: completed
+summary: >-
+  Came with Capgemini's purchase of Euriware from AREVA; Open Cascade was a Euriware subsidiary.
+  Year 2014 confirmed.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.capgemini.com/gb-en/news/press-releases/areva-and-capgemini-strengthen-their-partnership/
+    label: source

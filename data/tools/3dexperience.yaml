@@ -1,0 +1,64 @@
+id: 3dexperience
+type: tool
+name: 3DEXPERIENCE platform
+category: plm-pdm
+vendor: dassault
+open_source: false
+status: active
+first_release: 2012
+stages:
+  - lifecycle
+  - design
+integrates_with:
+  - solidworks
+formats:
+  reads:
+    - 3dxml
+    - catia-v5
+  writes:
+    - 3dxml
+    - catia-v5
+    - cgr
+    - xcgm
+website: https://www.3ds.com/products/3dexperience
+summary: >-
+  Dassault's platform for product data, collaboration and apps, on premise or on cloud; the
+  continuation of V6 (2008) under the 3DEXPERIENCE name (2012), sold as roles.
+plain: >-
+  An online and in-house platform from Dassault that holds a company's product data and lets teams
+  work together, with Dassault's design, manufacturing and simulation apps running on top of it.
+workflow: >-
+  Teams sign in to one shared platform where CATIA, SOLIDWORKS and other Dassault apps save their
+  designs; the data then flows to ENOVIA, DELMIA and SIMULIA apps running on the same platform for
+  change control, manufacturing and simulation.
+files_note: 'Has no file type of its own: object data is stored in a database called a collaborative space, and files saved from apps such as SOLIDWORKS are uploaded to a File Collaboration Server.'
+confidence: high
+as_of: '2026-11-22'
+clarifies:
+  - text: >-
+      3DEXPERIENCE is not cloud-only: it has been sold on premise and on public or private cloud
+      since V6R2014; a few features, such as cloud HPC in the All Physics Analyst role, are cloud only.
+    url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-announces-general-availability-release-2014x-3dexperience-platforms-premise-and-cloud-portfolio
+  - text: >-
+      3DEXPERIENCE is not a new code line: Dassault describes R2014x as having the V6 architecture as
+      its foundation.
+    url: https://www.3ds.com/about/company/history
+notes: >-
+  The platform's PLM applications have their own record, ENOVIA.
+sources:
+  - url: https://www.3ds.com/products/3dexperience
+    label: official page
+  - url: https://3dswym.3dexperience.3ds.com/wiki/solidworks-news-info/2-data-model-and-identifiers-in-the-3dexperience-platform_Dfdtyv5OROudyt7drdMNqA
+    label: 'Dassault 3DSwym wiki: data model and identifiers in the 3DEXPERIENCE platform'
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-unveils-plm-20-v6-platform
+    label: 'Dassault press release 2008-01-24: V6 and PLM 2.0 announced'
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-opens-new-horizons-3dexperience
+    label: 'Dassault press release 2012-02-09: 3DEXPERIENCE strategy'
+  - url: https://www.3ds.com/3dexperience-platform/roles
+    label: 'Roles page: platform solutions are packaged as roles'
+  - url: https://www.3ds.com/support/documentation/resource-library/3dxml-import-export-3dexperience-r2024x
+    label: '3DXML import and export on 3DEXPERIENCE (R2024x best practices)'
+  - url: https://www.spatial.com/products/3d-interop
+    label: 'Spatial 3D InterOp: 3DEXPERIENCE exports read as CATPart, CATProduct, cgr, CATDrawing, XCGM or 3D XML'
+  - url: https://cloud.academy.3ds.com/explorer/r2026x/role_UE5.html
+    label: 'Collaborative Designer for CATIA V5 role: V5 users save data to the platform (Education R2026x catalog)'

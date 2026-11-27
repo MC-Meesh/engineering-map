@@ -1,0 +1,36 @@
+id: optislang
+type: tool
+name: Ansys optiSLang
+category: optimization
+vendor: ansys
+origin: dynardo
+open_source: false
+status: active
+first_release: 2002
+stages:
+  - optimization
+competes_with:
+  - modefrontier
+  - heeds
+website: https://www.ansys.com/products/connect/ansys-optislang
+summary: Robust design optimization and metamodel-based sensitivity analysis.
+plain: >-
+  Finds which design inputs matter most and searches for designs that still perform well when
+  real-world values vary.
+workflow: >-
+  An engineer connects optiSLang to simulation models, runs them many times to see which inputs
+  matter and which designs are robust, and passes the chosen designs back to the team.
+native_files:
+  - ext: .opf
+    what: 'optiSLang project file holding workflow, settings and data'
+  - ext: .opd
+    what: 'optiSLang project working directory'
+  - ext: .omdb
+    what: 'optiSLang monitoring database'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ansys.com/products/connect/ansys-optislang
+    label: official page
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/opti_ug/opti_ug_list_file_extensions.html
+    label: 'Ansys optiSLang user guide: file extensions'

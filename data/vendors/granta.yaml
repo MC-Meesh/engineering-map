@@ -1,0 +1,15 @@
+id: granta
+type: vendor
+name: Granta Design
+kind: company
+hq: GB
+founded: 1994
+parent: ansys
+status: merged
+website: https://www.ansys.com/products/materials
+summary: Materials information (Granta MI, CES).
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ansys.com/products/materials
+    label: official page

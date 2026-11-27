@@ -1,0 +1,72 @@
+id: solid-edge
+type: tool
+name: Designcenter Solid Edge
+category: cad
+vendor: siemens
+origin: intergraph
+open_source: false
+status: active
+first_release: 1995
+stages:
+  - design
+built_on:
+  - parasolid
+  - d-cubed
+formats:
+  reads:
+    - step
+    - iges
+    - parasolid-xt
+    - jt
+    - dxf
+  writes:
+    - step
+    - iges
+    - parasolid-xt
+    - jt
+    - stl
+    - 3mf
+    - dxf
+competes_with:
+  - solidworks
+  - inventor
+aka:
+  - Solid Edge
+website: https://www.siemens.com/en-us/products/designcenter/solid-edge/
+wikipedia: https://en.wikipedia.org/wiki/Solid_Edge
+summary: Siemens mid-range CAD with synchronous technology, first released by Intergraph.
+plain: >-
+  Siemens' mid-range 3D design software, which lets you edit models both through dimensions and by
+  moving faces directly.
+workflow: >-
+  An engineer models parts and assemblies here, manages them in Teamcenter, and exports STEP, JT or
+  Parasolid files to suppliers and simulation, or STL and 3MF for 3D printing.
+native_files:
+  - ext: .par
+    what: Solid Edge part document
+  - ext: .asm
+    what: Solid Edge assembly document
+  - ext: .psm
+    what: Solid Edge sheet metal document
+  - ext: .dft
+    what: Solid Edge draft (drawing) document
+notes: >-
+  Launched by Intergraph on ACIS; moved to Parasolid in 1998 under UGS. Now marketed as Designcenter
+  Solid Edge (still commonly Solid Edge); the SaaS tier is Designcenter X Solid Edge. Siemens also
+  licenses the full Solid Edge and Simcenter Femap applications to developers as OEM toolkits (Solid
+  Edge OEM, Simcenter Femap OEM).
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://en.wikipedia.org/wiki/Solid_Edge
+    label: verification source
+  - url: https://www.siemens.com/en-us/products/designcenter/solid-edge/
+    label: official page (Designcenter Solid Edge)
+  - url: https://blogs.sw.siemens.com/solidedge/right-click-new-solid-edge-files-in-windows-explorer/
+    label: native file format (Siemens Solid Edge blog)
+  - url: https://blogs.sw.siemens.com/solidedge/the-hidden-cost-of-swapping-cad-kernels/
+    label: 'Siemens Solid Edge blog: Solid Edge uses the Parasolid kernel'
+  - url: https://blogs.sw.siemens.com/wp-content/uploads/sites/10/2023/05/CIMdata_Whitepaper_Siemens_PLM_Components.pdf
+    label: 'CIMdata paper (Siemens): Solid Edge based on Parasolid; Solid Edge OEM and Femap OEM'
+  - url: https://blogs.sw.siemens.com/plm-components/What-is-D-Cubed/
+    label: 'Siemens blog: Solid Edge among applications using D-Cubed SDKs'

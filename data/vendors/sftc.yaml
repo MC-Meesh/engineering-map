@@ -1,0 +1,14 @@
+id: sftc
+type: vendor
+name: Scientific Forming Technologies
+kind: company
+hq: US
+founded: 1991
+status: active
+website: https://www.deform.com/
+summary: DEFORM metal forming simulation.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.deform.com/
+    label: official page

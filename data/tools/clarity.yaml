@@ -1,0 +1,33 @@
+id: clarity
+type: tool
+name: Cadence Clarity 3D Solver
+category: eda
+vendor: cadence
+open_source: false
+status: active
+first_release: 2019
+stages:
+  - analysis
+formats:
+  reads:
+    - acis-sat
+    - iges
+    - step
+competes_with:
+  - hfss
+website: https://www.cadence.com/en_US/home/tools/system-analysis/em-solver/clarity.html
+summary: Massively parallel 3D EM extraction for interconnects.
+plain: >-
+  Calculates how electrical signals behave in the 3D wiring that connects chips, splitting big
+  problems across many processors.
+workflow: >-
+  A signal integrity engineer brings in the 3D shape of a chip package, connector or board wiring as
+  STEP, IGES or SAT, calculates its electrical behavior here, and passes the resulting models to
+  circuit and system tools that check signals arrive cleanly.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.cadence.com/en_US/home/tools/system-analysis/em-solver/clarity.html
+    label: official page
+  - url: https://www.ema-eda.com/wp-content/uploads/2024/04/clarity-3d-solver-datasheet.pdf
+    label: 'Cadence Clarity 3D Solver datasheet (copy hosted by reseller EMA): ACIS, IGES, STEP import'

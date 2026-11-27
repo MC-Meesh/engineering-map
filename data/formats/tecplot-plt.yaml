@@ -1,0 +1,18 @@
+id: tecplot-plt
+type: format
+name: Tecplot PLT
+extensions:
+  - .plt
+  - .szplt
+  - .dat
+kind: results
+steward: Tecplot
+steward_vendor: tecplot
+open_spec: false
+website: https://tecplot.com/
+summary: Tecplot binary and SZL results; widely written by research CFD codes.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://tecplot.com/
+    label: official page

@@ -1,0 +1,17 @@
+id: wolfram
+type: vendor
+name: Wolfram Research
+kind: company
+hq: US
+founded: 1987
+status: active
+website: https://www.wolfram.com/
+wikipedia: https://en.wikipedia.org/wiki/Wolfram_Research
+summary: Mathematica and the Modelica-based System Modeler.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.wolfram.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Wolfram_Research
+    label: Wikipedia

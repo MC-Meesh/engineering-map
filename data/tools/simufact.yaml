@@ -1,0 +1,23 @@
+id: simufact
+type: tool
+name: Simufact
+category: cae-fea
+vendor: msc
+open_source: false
+status: active
+first_release: 1995
+stages:
+  - analysis
+  - manufacturing
+website: https://www.cadence.com/en_US/home/tools/msc-software/simufact-forming.html
+summary: Manufacturing process simulation for forming, welding and additive.
+plain: Simulates manufacturing processes such as metal forming, welding and 3D printing.
+workflow: >-
+  A manufacturing engineer brings in part and tool designs, simulates forming, welding or 3D
+  printing here, and passes the results back to process planning and tool design.
+notes: url is the Simufact Forming page; the Simufact family also covers welding and additive
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cadence.com/en_US/home/tools/msc-software/simufact-forming.html
+    label: official page

@@ -1,0 +1,15 @@
+id: noesis
+type: vendor
+name: Noesis Solutions
+kind: company
+hq: BE
+founded: 2003
+parent: cybernet-systems
+status: merged
+website: https://www.noesissolutions.com/
+summary: Optimus process integration and optimization.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.noesissolutions.com/
+    label: official page

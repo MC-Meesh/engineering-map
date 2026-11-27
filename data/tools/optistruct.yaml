@@ -1,0 +1,45 @@
+id: optistruct
+type: tool
+name: Simcenter Optistruct
+category: cae-fea
+vendor: altair
+open_source: false
+status: active
+first_release: 1994
+stages:
+  - analysis
+  - optimization
+formats:
+  reads:
+    - nastran-bdf
+  writes:
+    - nastran-bdf
+    - nastran-op2
+competes_with:
+  - msc-nastran
+  - simcenter-nastran
+  - tosca
+website: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/optistruct/
+summary: >-
+  Structural FEA and optimization solver (formerly Altair OptiStruct), an early industrial vehicle
+  for topology optimization.
+plain: >-
+  Calculates how structures respond to loads and can work out where material is needed to make a
+  part light but strong.
+workflow: >-
+  An analyst brings in a Nastran input file (BDF) from a pre-processor such as HyperMesh, solves or
+  optimizes the structure here, and writes OP2 result files that HyperView or other viewing tools
+  show as stress pictures.
+notes: >-
+  Altair dates the official launch to 1994; some Altair material gives 1993 for the first commercial
+  version
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: >-
+      https://altair.com/blog/articles/QA-with-Altairs-CMO-Jeff-Brennan-Celebrating-20-Years-of-OptiStruct
+    label: 'Altair blog: OptiStruct officially launched 1994'
+  - url: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/optistruct/
+    label: official page

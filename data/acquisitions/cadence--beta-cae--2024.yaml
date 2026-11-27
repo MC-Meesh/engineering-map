@@ -1,0 +1,17 @@
+id: cadence--beta-cae--2024
+type: acquisition
+acquirer: cadence
+target: beta-cae
+announced: '2024-03-07'
+completed: '2024-06-03'
+status: completed
+value: about $1.24B
+summary: >-
+  Brings ANSA and META into Cadence system analysis. Paid roughly 60 percent cash and 40 percent
+  stock.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2024/cadence-completes-acquisition-of-beta-cae.html
+    label: source

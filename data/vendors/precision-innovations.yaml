@@ -1,0 +1,21 @@
+id: precision-innovations
+type: vendor
+name: Precision Innovations
+kind: company
+hq: US
+founded: 2019
+status: active
+website: https://precisioninno.com/
+summary: San Diego EDA company behind most OpenROAD engineering; Siemens agreed to buy it in July 2026.
+notes: >-
+  Siemens announced the deal on 2026-07-20; by 2026-09-04 the company site said it had been acquired
+  by Siemens. No Siemens closing notice found as of 2026-11-21.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://news.siemens.com/en-us/siemens-to-acquire-precision-innovations/
+    label: Siemens press release 2026-07-20
+  - url: https://today.ucsd.edu/story/open-source-semiconductor-chip-design-tool-celebrates-success
+    label: 'UC San Diego: PII did most OpenROAD engineering since 2019'
+  - url: https://precisioninno.com/
+    label: company site

@@ -1,0 +1,36 @@
+id: visit
+type: tool
+name: VisIt
+category: visualization
+vendor: llnl
+open_source: true
+license: BSD-3-Clause
+status: active
+first_release: 2000
+stages:
+  - analysis
+formats:
+  reads:
+    - exodus
+    - cgns
+    - vtk-xml
+    - xdmf
+open_source_alternative_to:
+  - tecplot-360
+  - ensight
+website: https://visit-dav.github.io/visit-website/
+wikipedia: https://en.wikipedia.org/wiki/VisIt
+summary: Parallel scientific visualization from LLNL.
+plain: >-
+  Free software from Lawrence Livermore National Laboratory for visualizing very large scientific
+  results using many processors.
+workflow: >-
+  Large simulation codes write results as Exodus II, CGNS, VTK or XDMF; scientists load them here on
+  many processors and make pictures and plots for analysis.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://visit-dav.github.io/visit-website/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/VisIt
+    label: Wikipedia

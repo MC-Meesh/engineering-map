@@ -1,0 +1,14 @@
+id: intrinsic
+type: vendor
+name: Intrinsic (Alphabet)
+kind: company
+hq: US
+founded: 2021
+status: active
+website: https://www.intrinsic.ai/
+summary: Alphabet robotics software company; acquired Open Robotics commercial arm in 2022.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.intrinsic.ai/
+    label: official page

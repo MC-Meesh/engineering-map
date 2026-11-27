@@ -1,0 +1,32 @@
+id: esprit
+type: tool
+name: ESPRIT CAM
+category: cam
+vendor: dp-technology
+open_source: false
+status: active
+first_release: 1985
+stages:
+  - manufacturing
+formats:
+  reads:
+    - step
+    - parasolid-xt
+  writes:
+    - gcode
+competes_with:
+  - mastercam
+website: https://www.esprit-cam.com/
+summary: CAM for turning, mill-turn and wire EDM with machine-specific posts.
+plain: >-
+  Turns 3D part designs into step-by-step cutting instructions for CNC (computer-controlled) lathes,
+  combined lathe and milling machines, and wire cutters, written to suit each exact machine model.
+workflow: >-
+  A machine programmer opens the part as a STEP or Parasolid file, plans the turning, milling or
+  wire cutting here, and writes a G-code file (the machine's line-by-line instructions) tailored to
+  the shop's specific machine, which then cuts the real part.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.esprit-cam.com/
+    label: official page

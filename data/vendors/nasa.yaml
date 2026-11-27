@@ -1,0 +1,17 @@
+id: nasa
+type: vendor
+name: NASA
+kind: institution
+hq: US
+founded: 1958
+status: active
+website: https://www.nasa.gov/
+wikipedia: https://en.wikipedia.org/wiki/NASA
+summary: Origin of Nastran (1968); develops FUN3D and OpenMDAO.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.nasa.gov/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/NASA
+    label: Wikipedia

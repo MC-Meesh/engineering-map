@@ -1,0 +1,46 @@
+id: lumerical
+type: tool
+name: Ansys Lumerical
+category: multiphysics
+vendor: ansys
+origin: lumerical-inc
+open_source: false
+status: active
+first_release: 2003
+stages:
+  - analysis
+formats:
+  reads:
+    - step
+    - acis-sat
+    - parasolid-xt
+    - solidworks-native
+    - catia-v5
+    - inventor-ipt
+    - gdsii
+  writes:
+    - gdsii
+website: https://ansys.synopsys.com/
+summary: Photonics simulation (FDTD, mode solvers) for integrated optics.
+plain: >-
+  Simulates how light travels through tiny optical structures, for designing optical components on
+  chips.
+workflow: >-
+  A photonics designer brings in the device shape as STEP, CATIA or SOLIDWORKS files or a GDSII chip
+  layout, simulates how light moves through it here, and passes the tuned design on as GDSII to chip
+  layout and then to the team that tests made parts.
+native_files:
+  - ext: .fsp
+    what: 'Lumerical FDTD simulation project file, can hold results'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://ansys.synopsys.com/
+    label: official page
+  - url: https://optics.ansys.com/hc/en-us/articles/360034398374-CAD-Import-Simulation-object
+    label: 'Ansys Optics KB: CAD import, supported formats'
+  - url: https://optics.ansys.com/hc/en-us/articles/360034901933-Importing-and-exporting-GDSII-files
+    label: 'Ansys Optics KB: importing and exporting GDSII files'
+  - url: https://optics.ansys.com/hc/en-us/articles/360034410814-save-Script-command
+    label: 'Ansys Optics KB: save script command (.fsp project)'
+notes: Product page moved; link points at the site root pending review.

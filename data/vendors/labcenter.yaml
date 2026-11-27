@@ -1,0 +1,14 @@
+id: labcenter
+type: vendor
+name: Labcenter Electronics
+kind: company
+hq: GB
+founded: 1988
+status: active
+website: https://www.labcenter.com/
+summary: Proteus schematic, simulation and PCB.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.labcenter.com/
+    label: official page

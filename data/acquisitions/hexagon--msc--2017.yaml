@@ -1,0 +1,20 @@
+id: hexagon--msc--2017
+type: acquisition
+acquirer: hexagon
+target: msc
+completed: '2017-04-26'
+status: divested
+value: about $834M
+summary: >-
+  MSC joined Hexagon Manufacturing Intelligence; price 834 MUSD cash and debt free. Hexagon sold it
+  (as its Design and Engineering business) to Cadence, closing 2026-02-23.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://web.archive.org/web/20251016200906/https://hexagon.com/company/newsroom/press-releases/2017/hexagons-acquisition-msc-software
+    label: Hexagon press release 2017-04-26 (archived copy)
+  - url: https://www.sec.gov/Archives/edgar/data/0000813672/000081367226000047/cdns-20260331.htm
+    label: Cadence 10-Q Q1 2026 (Hexagon D&E acquired 2026-02-23)
+  - url: https://hexagon.com/company/newsroom/press-releases/2017/hexagons-acquisition-msc-software
+    label: Hexagon press release 2026-02-23

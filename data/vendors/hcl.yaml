@@ -1,0 +1,17 @@
+id: hcl
+type: vendor
+name: HCLTech
+kind: company
+hq: IN
+founded: 1976
+status: active
+website: https://www.hcltech.com/
+wikipedia: https://en.wikipedia.org/wiki/HCLTech
+summary: IT services firm; CAMWorks via its Geometric acquisition.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.hcltech.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/HCLTech
+    label: Wikipedia

@@ -1,0 +1,15 @@
+id: cambrio
+type: vendor
+name: CAMBRIO
+kind: company
+hq: US
+founded: 2021
+parent: sandvik
+status: active
+website: https://www.cambrio.com/
+summary: Formed from the 3D Systems CAM divestiture (GibbsCAM, Cimatron); now Sandvik.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cambrio.com/
+    label: official page

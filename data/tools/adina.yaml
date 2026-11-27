@@ -1,0 +1,32 @@
+id: adina
+type: tool
+name: ADINA
+category: cae-fea
+vendor: bentley
+origin: adina-rd
+open_source: false
+status: active
+first_release: 1975
+stages:
+  - analysis
+website: https://www.bentley.com/en/products/adina/
+wikipedia: https://en.wikipedia.org/wiki/ADINA
+summary: Nonlinear structural and fluid-structure FEA from MIT roots.
+plain: >-
+  Software with roots at MIT that simulates how structures bend and deform under heavy loads, and
+  how a structure and the fluid around it push on each other, to check that a design will hold up.
+workflow: >-
+  An analyst brings in a structure already split into small elements (a mesh), adds the surrounding
+  fluid when needed, runs the heavy-load or fluid-structure simulation here, and gives the stresses
+  and deformations to the design team to confirm or change the design.
+notes: 1975 first release (K.J. Bathe, MIT) not confirmed from a primary source today.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://investors.bentley.com/news-releases/news-release-details/bentley-systems-announces-acquisition-adina-extend-nonlinear
+    label: 'Bentley release 2022-04-07: acquisition of ADINA'
+  - url: https://www.bentley.com/en/products/adina/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/ADINA
+    label: Wikipedia

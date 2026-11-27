@@ -1,0 +1,63 @@
+id: bricscad
+type: tool
+name: BricsCAD
+category: cad
+vendor: bricsys
+open_source: false
+status: active
+first_release: 2002
+stages:
+  - design
+built_on:
+  - acis
+formats:
+  reads:
+    - dwg
+    - dxf
+    - step
+    - iges
+    - acis-sat
+    - ifc
+  writes:
+    - dwg
+    - dxf
+    - step
+    - iges
+    - acis-sat
+    - stl
+    - ifc
+competes_with:
+  - autocad
+website: https://bricscad.octave.com/
+wikipedia: https://en.wikipedia.org/wiki/BricsCAD
+summary: DWG-native CAD that adds 3D direct modeling, BIM and sheet metal.
+plain: >-
+  Drawing and 3D design software that works directly with AutoCAD's DWG files and adds solid
+  modeling, building design and sheet metal tools.
+workflow: >-
+  A designer works on DWG drawings shared with AutoCAD users, adds 3D solids, building models (BIM)
+  or sheet metal here, and exports STEP, IFC or STL files to manufacturing, building design and 3D
+  printing tools.
+native_files:
+  - ext: .dwg
+    what: BricsCAD drawing, saved natively as DWG
+    format: dwg
+notes: >-
+  Marketed as Octave BricsCAD since the 2026 Hexagon spin-off of Octave; editions keep the BricsCAD
+  name. Constraint solving uses the LGS 2D and 3D solvers, whose IP the Bricsys parent bought from
+  LEDAS in 2011 and which were embedded in BricsCAD V12 (2012); no later source restates this.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://bricscad.octave.com/blog/what-is-an-acis-solid-and-why-should-you-care
+    label: 'Octave BricsCAD blog: BricsCAD uses ACIS'
+  - url: https://bricscad.octave.com/
+    label: Octave BricsCAD official page
+  - url: https://www.bricsys.com/news/bricsys-becomes-octave
+    label: 'Bricsys news: Bricsys becomes Octave (2026)'
+  - url: https://en.wikipedia.org/wiki/BricsCAD
+    label: Wikipedia
+  - url: https://help.bricsys.com/en-us/document/bricscad/getting-started-with-bricscad/bricscad-and-autocad-feature-comparison
+    label: 'native file format (Bricsys help: feature comparison)'
+  - url: https://ledas.com/news/168-bricsys-releases-new-lgs-2d-and-3d-constraint-solvers/
+    label: 'LEDAS news 2012-06-28: LGS solvers embedded in BricsCAD V12'

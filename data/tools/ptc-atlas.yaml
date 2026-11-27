@@ -1,0 +1,26 @@
+id: ptc-atlas
+type: tool
+name: PTC Atlas
+category: plm-pdm
+vendor: ptc
+origin: onshape-inc
+open_source: false
+status: active
+stages:
+  - lifecycle
+website: https://www.ptc.com/en/news/2021/two-more-saas-products-ship-on-ptc-atlas-platform
+summary: PTC's SaaS platform, grown from the one the Onshape team built; Onshape, Creo+ and Vuforia Expert Capture run on it.
+plain: >-
+  The cloud foundation PTC builds its online products on; Onshape, Creo+ and Vuforia Expert Capture
+  run on it.
+notes: >-
+  Announced at LiveWorx 2020. By April 2021 it hosted Onshape, Vuforia Expert Capture and the Creo
+  Generative Design Extension; PTC says the Onshape team built the SaaS platform that PTC grew into
+  Atlas. No product page of its own was found, so website points at the 2021 release.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ptc.com/en/news/2021/two-more-saas-products-ship-on-ptc-atlas-platform
+    label: 'PTC release 2021-04-21: Atlas announced 2020, hosts Onshape, Vuforia Expert Capture, Creo GDX'
+  - url: https://www.ptc.com/en/products/creo/creo-plus
+    label: 'PTC Creo+ page: Creo+ runs on Atlas'

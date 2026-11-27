@@ -1,0 +1,47 @@
+id: pyfr
+type: tool
+name: PyFR
+category: cfd
+vendor: imperial
+open_source: true
+license: BSD-3-Clause
+status: active
+first_release: 2013
+stages:
+  - analysis
+formats:
+  reads:
+    - gmsh-msh
+    - hdf5
+  writes:
+    - vtk-xml
+    - hdf5
+open_source_alternative_to:
+  - fluent
+website: https://www.pyfr.org/
+summary: High-order flux reconstruction CFD on GPUs, written in Python with generated kernels.
+plain: >-
+  Free software for highly accurate fluid flow simulation on graphics processors, written in Python.
+workflow: >-
+  A researcher brings in a Gmsh mesh (a grid of the flow region), runs the high-order flow
+  simulation on GPUs here, and exports the results as VTK files that visualization tools open.
+native_files:
+  - ext: .pyfrm
+    what: 'PyFR mesh file'
+    format: hdf5
+  - ext: .pyfrs
+    what: 'PyFR solution file'
+    format: hdf5
+  - ext: .ini
+    what: 'PyFR configuration file'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.pyfr.org/
+    label: official page
+  - url: https://pyfr.readthedocs.io/en/latest/user_guide.html
+    label: 'PyFR user guide: import, export to .vtu/.pvtu, file types'
+  - url: https://pyfr.readthedocs.io/en/latest/meshing.html
+    label: 'PyFR docs: meshing (Gmsh .msh 2.2 and 4.1)'
+  - url: https://pyfr.readthedocs.io/en/latest/file_format.html
+    label: 'PyFR docs: file format (mesh and solution based on HDF5)'

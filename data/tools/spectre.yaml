@@ -1,0 +1,29 @@
+id: spectre
+type: tool
+name: Cadence Spectre
+category: eda
+vendor: cadence
+open_source: false
+status: active
+first_release: 1989
+stages:
+  - analysis
+formats:
+  reads:
+    - spice
+competes_with:
+  - hspice
+website: https://www.cadence.com/en_US/home/tools/custom-ic-analog-rf-design/circuit-simulation.html
+summary: SPICE-class analog and RF circuit simulator integrated with Virtuoso.
+plain: >-
+  Cadence software that simulates how analog and radio frequency circuits behave, used together with
+  Virtuoso.
+workflow: >-
+  A circuit designer draws an analog or RF circuit in Virtuoso, which sends it to Spectre as a SPICE
+  netlist (a list of parts and connections); the simulation results return to Virtuoso to guide the
+  design and layout.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cadence.com/en_US/home/tools/custom-ic-analog-rf-design/circuit-simulation.html
+    label: official page

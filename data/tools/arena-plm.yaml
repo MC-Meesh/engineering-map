@@ -1,0 +1,40 @@
+id: arena-plm
+type: tool
+name: Arena PLM
+category: plm-pdm
+vendor: ptc
+origin: arena-solutions
+open_source: false
+status: active
+first_release: 2000
+stages:
+  - lifecycle
+competes_with:
+  - fusion-manage
+  - openbom
+website: https://www.arenasolutions.com/
+summary: Cloud PLM and quality for electronics and medical device companies.
+plain: >-
+  Online software where electronics and medical device companies keep their product records and
+  quality records in one shared place.
+workflow: >-
+  Electronics and medical device teams put parts lists, design files and quality records into Arena
+  online, where engineering, suppliers and manufacturing all work from the same released record.
+files_note: 'Has no file type of its own: a cloud-native, multi-tenant service holds parts, BOMs, documents and change history, used in the browser and moved through its developer platform and integrations.'
+notes: >-
+  PTC completed the Arena Solutions acquisition in January 2021 (announced 2020-12-14, about $715M
+  cash). first_release 2000 matches the company founding year and is not separately confirmed. Arena
+  has an AWS GovCloud edition, connected to Onshape Government on 2025-12-16.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ptc.com/news/2021/ptc-completes-acquisition-arena-solutions
+    label: PTC press release 2021-01 (acquisition completed)
+  - url: https://www.arenasolutions.com/company/
+    label: Arena company page (Arena, a PTC Business)
+  - url: https://www.arenasolutions.com/
+    label: official page
+  - url: https://www.arenasolutions.com/products/plm/
+    label: 'Arena product page: PLM'
+  - url: https://www.ptc.com/en/news/2025/ptc-announces-onshape-arena-government-connection
+    label: 'PTC release 2025-12-16: Arena on AWS GovCloud connected to Onshape Government'

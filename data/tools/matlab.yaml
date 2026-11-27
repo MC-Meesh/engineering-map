@@ -1,0 +1,44 @@
+id: matlab
+type: tool
+name: MATLAB
+category: systems-mbse
+vendor: mathworks
+open_source: false
+status: active
+first_release: 1984
+stages:
+  - analysis
+  - test
+formats:
+  reads:
+    - hdf5
+    - stl
+  writes:
+    - hdf5
+    - stl
+website: https://www.mathworks.com/products/matlab.html
+wikipedia: https://en.wikipedia.org/wiki/MATLAB
+summary: Numerical computing environment; the shared language of controls, signals and test data.
+plain: >-
+  A programming environment for numbers and data, widely used by engineers for controls, signal
+  processing and analyzing test data.
+workflow: >-
+  Engineers bring in test data, measurements and simulation outputs, analyze them or design control
+  and signal algorithms here, and pass the algorithms on to Simulink models or the results to
+  reports.
+native_files:
+  - ext: .mat
+    what: 'MAT-file of saved workspace variables (version 7.3 is HDF5 based)'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.mathworks.com/products/matlab.html
+    label: official page
+  - url: https://en.wikipedia.org/wiki/MATLAB
+    label: Wikipedia
+  - url: https://www.mathworks.com/help/matlab/import_export/supported-file-formats-for-import-and-export.html
+    label: 'MathWorks: supported file formats for import and export (STL, MAT, HDF5)'
+  - url: https://www.mathworks.com/help/matlab/hdf5-files.html
+    label: 'MathWorks: HDF5 files (read and write)'
+  - url: https://mathworks.com/help/matlab/import_export/mat-file-versions.html
+    label: 'MathWorks: MAT-file versions (v7.3 HDF5 based)'

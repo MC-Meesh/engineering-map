@@ -1,0 +1,20 @@
+id: dwg
+type: format
+name: DWG
+extensions:
+  - .dwg
+kind: native-cad
+steward: Autodesk (reverse-engineered by Open Design Alliance)
+steward_vendor: autodesk
+open_spec: false
+first_published: 1982
+website: https://www.autodesk.com/products/dwg
+wikipedia: https://en.wikipedia.org/wiki/.dwg
+summary: AutoCAD native drawing format; the de facto 2D CAD format worldwide.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.autodesk.com/products/dwg
+    label: official page
+  - url: https://en.wikipedia.org/wiki/.dwg
+    label: Wikipedia

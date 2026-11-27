@@ -1,0 +1,16 @@
+---
+import { toolById, vendorById, formatById } from '../lib/data';
+interface Props { id: string; sub?: string }
+const { id, sub } = Astro.props;
+const t = toolById.get(id);
+const v = vendorById.get(id);
+const f = formatById.get(id);
+let href = '#';
+let name = id;
+let swClass = 'sw';
+let dom: string | undefined;
+if (t) { href = `/tools/${id}/`; name = t.name; dom = t.domain; if (t.nodeType === 'kernel') swClass += ' kernel'; }
+else if (v) { href = `/vendors/${id}/`; name = v.name; swClass += ' vendor'; }
+else if (f) { href = `/formats/${id}/`; name = f.name; swClass += ' format'; }
+---
+<span><span class={swClass} data-d={dom} aria-hidden="true"></span><a href={href}>{name}</a>{(t as any)?.aka?.length && !t!.name.includes((t as any).aka[0]) && <span class="sub">formerly {(t as any).aka[0]}</span>}{t?.open_source && <span class="sub">open source</span>}{t?.status === 'discontinued' && <span class="sub">discontinued</span>}{sub && <span class="sub">{sub}</span>}</span>

@@ -1,0 +1,36 @@
+id: ngspice
+type: tool
+name: ngspice
+category: eda
+vendor: ngspice-project
+open_source: true
+license: BSD-3-Clause
+status: active
+first_release: 1999
+stages:
+  - analysis
+formats:
+  reads:
+    - spice
+integrates_with:
+  - kicad
+open_source_alternative_to:
+  - hspice
+  - spectre
+website: https://ngspice.sourceforge.io/
+wikipedia: https://en.wikipedia.org/wiki/Ngspice
+summary: Open mixed-signal SPICE, embedded in KiCad.
+plain: >-
+  Free software that simulates how analog and digital electronic circuits behave; it is built into
+  KiCad.
+workflow: >-
+  A designer draws a circuit in KiCad, which sends it to ngspice as a SPICE netlist (a text list of
+  parts and how they connect); the simulated voltages and currents come back to the schematic before
+  the board is laid out.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://ngspice.sourceforge.io/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Ngspice
+    label: Wikipedia

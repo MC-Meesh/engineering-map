@@ -1,0 +1,13 @@
+id: pyvista-project
+type: vendor
+name: PyVista project
+kind: project
+founded: 2017
+status: active
+website: https://pyvista.org/
+summary: Pythonic VTK wrapper community.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://pyvista.org/
+    label: official page

@@ -1,0 +1,14 @@
+id: top-systems
+type: vendor
+name: Top Systems
+kind: company
+hq: RU
+founded: 1992
+status: active
+website: https://www.tflex.com/
+summary: T-FLEX CAD on Parasolid.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.tflex.com/
+    label: official page

@@ -1,0 +1,20 @@
+id: lef-def
+type: format
+name: LEF/DEF
+extensions:
+  - .lef
+  - .def
+kind: ic
+steward: Si2 (originated at Cadence)
+open_spec: true
+first_published: 1996
+website: https://www.si2.org/
+wikipedia: https://en.wikipedia.org/wiki/Design_Exchange_Format
+summary: Library and physical design exchange between place-and-route and other tools.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.si2.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Design_Exchange_Format
+    label: Wikipedia

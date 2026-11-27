@@ -1,0 +1,29 @@
+id: worknc
+type: tool
+name: WORKNC
+category: cam
+vendor: vero
+open_source: false
+status: active
+first_release: 1988
+stages:
+  - manufacturing
+formats:
+  reads:
+    - stl
+  writes:
+    - gcode
+website: https://hexagon.com/products/product-groups/computer-aided-manufacturing-cad-cam-software/worknc
+summary: Automatic surface machining CAM for molds.
+plain: >-
+  Automatically plans the cutting paths for CNC (computer-controlled) milling machines that carve
+  the curved surfaces of molds.
+workflow: >-
+  A CNC programmer brings in the mold surface as STL, lets WORKNC work out the cutting paths
+  automatically, and writes G-code, the line-by-line machine instructions, for the milling machine.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://hexagon.com/products/product-groups/computer-aided-manufacturing-cad-cam-software/worknc
+    label: official page

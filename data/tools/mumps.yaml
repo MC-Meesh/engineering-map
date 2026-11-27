@@ -1,0 +1,27 @@
+id: mumps
+type: tool
+name: MUMPS
+category: solver-library
+vendor: mumps-consortium
+open_source: true
+license: CeCILL-C
+status: active
+first_release: 1996
+stages:
+  - analysis
+website: https://mumps-solver.org/
+summary: Parallel sparse direct solver used by code_aster, Elmer and many others.
+plain: >-
+  A free library that solves the very large systems of equations inside simulations; code_aster,
+  Elmer and many others use it.
+workflow: >-
+  Solvers such as code_aster and Elmer call MUMPS to solve their large equation systems; the answers
+  go straight back into the simulation that called it.
+files_note: 'A parallel sparse direct solver library with Fortran and C interfaces; programs pass matrices in memory; it can dump the input matrix as Matrix Market or binary and save/restore its state to files.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://mumps-solver.org/
+    label: official page
+  - url: https://mumps-solver.org/doc/userguide_5.9.2.pdf
+    label: 'MUMPS 5.9.2 user guide'

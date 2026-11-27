@@ -1,0 +1,14 @@
+id: convergent-science
+type: vendor
+name: Convergent Science
+kind: company
+hq: US
+founded: 1997
+status: active
+website: https://convergecfd.com/
+summary: CONVERGE CFD with autonomous meshing, strong in internal combustion and reacting flow.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://convergecfd.com/
+    label: official page

@@ -1,0 +1,17 @@
+id: simscale
+type: vendor
+name: SimScale
+kind: company
+hq: DE
+founded: 2012
+status: active
+website: https://www.simscale.com/
+wikipedia: https://en.wikipedia.org/wiki/SimScale
+summary: Browser-based simulation platform running CFD, FEA and thermal in the cloud.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.simscale.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/SimScale
+    label: Wikipedia

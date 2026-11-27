@@ -1,0 +1,16 @@
+id: freecad-project
+type: vendor
+name: FreeCAD project
+kind: project
+founded: 2002
+status: active
+website: https://www.freecad.org/
+wikipedia: https://en.wikipedia.org/wiki/FreeCAD
+summary: Community developing FreeCAD.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.freecad.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/FreeCAD
+    label: Wikipedia

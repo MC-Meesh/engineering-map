@@ -1,0 +1,28 @@
+id: tempus
+type: tool
+name: Cadence Tempus
+category: eda
+vendor: cadence
+open_source: false
+status: active
+first_release: 2013
+stages:
+  - analysis
+competes_with:
+  - primetime
+website: >-
+  https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/silicon-signoff/tempus-timing-signoff-solution.html
+summary: Static timing signoff.
+plain: >-
+  Cadence software that checks every signal in a chip design arrives on time at the chip's intended
+  speed, the final timing check before the design goes to manufacturing.
+workflow: >-
+  After placement and wiring of the chip layout, the design comes here for timing checks; fixes go
+  back to the layout tools, and a clean result clears the design for tapeout (release to the chip
+  factory).
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/silicon-signoff/tempus-timing-signoff-solution.html
+    label: official page

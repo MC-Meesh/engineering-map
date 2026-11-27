@@ -1,0 +1,17 @@
+id: dassault--srac--2001
+type: acquisition
+acquirer: dassault
+target: srac
+announced: '2001-03-30'
+completed: '2001'
+status: completed
+value: about $22M in stock
+summary: Brought the COSMOS FEA line that became SOLIDWORKS Simulation.
+notes: >-
+  The release announces the agreement; SRAC was to become a wholly owned subsidiary. No completion
+  notice opened, so the year is the announcement year.
+confidence: medium
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-signs-agreement-acquire-srac
+    label: Dassault release 2001-03-30
+as_of: '2026-11-22'

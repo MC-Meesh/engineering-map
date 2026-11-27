@@ -1,0 +1,14 @@
+id: iti
+type: vendor
+name: International TechneGroup (ITI)
+kind: company
+hq: US
+founded: 1983
+status: active
+website: https://www.iti-global.com/
+summary: CAD interoperability and model-repair tools (CADfix).
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.iti-global.com/
+    label: official page

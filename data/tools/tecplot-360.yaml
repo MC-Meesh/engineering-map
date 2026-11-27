@@ -1,0 +1,47 @@
+id: tecplot-360
+type: tool
+name: Tecplot 360
+category: visualization
+vendor: tecplot
+open_source: false
+status: active
+first_release: 1988
+stages:
+  - analysis
+formats:
+  reads:
+    - tecplot-plt
+    - cgns
+    - fluent-cas
+    - openfoam-case
+  writes:
+    - tecplot-plt
+competes_with:
+  - ensight
+  - fieldview
+website: https://tecplot.com/products/tecplot-360/
+summary: Plotting and post-processing long favored by aerospace CFD.
+plain: >-
+  Turns simulation results into plots and pictures; long favored for aerospace fluid flow
+  simulations.
+workflow: >-
+  A flow simulation program writes results as Tecplot PLT, CGNS, a Fluent case or an OpenFOAM case;
+  an analyst loads them here, makes plots and pictures, and shares them with the aerospace design
+  team.
+native_files:
+  - ext: .lay
+    what: 'Layout file: frames and style, linked to data files'
+  - ext: .lpk
+    what: 'Layout package: a layout and its data in one file'
+  - ext: .plt
+    what: Tecplot binary data file
+    format: tecplot-plt
+  - ext: .szplt
+    what: Tecplot subzone data file for large data sets
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://tecplot.com/products/tecplot-360/
+    label: official page
+  - url: https://tecplot.azureedge.net/products/360/2025r1/help/users_manual/output.html
+    label: 'native file format (Tecplot 360 user''s manual: output)'

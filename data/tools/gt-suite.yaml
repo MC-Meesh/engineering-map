@@ -1,0 +1,30 @@
+id: gt-suite
+type: tool
+name: GT-SUITE
+category: systems-mbse
+vendor: gamma-technologies
+open_source: false
+status: active
+first_release: 1994
+stages:
+  - analysis
+formats:
+  reads:
+    - fmu
+  writes:
+    - fmu
+competes_with:
+  - amesim
+website: https://www.gtisoft.com/gt-suite/
+summary: System simulation for engines, vehicle thermal management and batteries.
+plain: >-
+  Simulates engines, vehicle heating and cooling, and batteries as whole systems of connected parts.
+workflow: >-
+  An engineer builds a model of an engine, cooling circuit or battery from connected parts here,
+  simulates it, and swaps FMU files (packaged models other simulators can run) with the control
+  engineers and other system simulation tools.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.gtisoft.com/gt-suite/
+    label: official page

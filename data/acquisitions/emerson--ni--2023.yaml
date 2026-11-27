@@ -1,0 +1,13 @@
+id: emerson--ni--2023
+type: acquisition
+acquirer: emerson
+target: ni
+completed: '2023-10-11'
+status: completed
+value: about $8.2B
+summary: Equity value; NI became the Emerson Test and Measurement segment.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.emerson.com/en-us/news/2023/emerson-completes-ni-acquisition
+    label: source

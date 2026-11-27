@@ -1,0 +1,22 @@
+id: synopsys-osg
+type: vendor
+name: Synopsys Optical Solutions Group
+kind: company
+hq: US
+parent: keysight
+status: merged
+website: https://www.keysight.com/
+summary: >-
+  Optical and photonic design tools (CODE V, LightTools, LucidShape, ImSym, RSoft); sold to Keysight
+  in 2025 as a remedy for the Synopsys-Ansys deal.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://s22.q4cdn.com/444849635/files/doc_news/Keysight-Completes-Acquisition-of-Synopsys-Optical-Solutions-Group-and-Ansys-PowerArtist-2025.pdf
+    label: 'Keysight release 2025-10-17: acquisition completed'
+  - url: >-
+      https://news.synopsys.com/2024-09-19-Synopsys-Enters-Definitive-Agreement-with-Keysight-Technologies-For-Sale-of-Optical-Solutions-Group
+    label: 'Synopsys release 2024-09-19: sale agreement'
+  - url: https://www.keysight.com/
+    label: official page

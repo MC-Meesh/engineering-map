@@ -1,0 +1,11 @@
+id: bentley--adina-rd--2022
+type: acquisition
+acquirer: bentley
+target: adina-rd
+completed: '2022'
+status: completed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.bentley.com/news/
+    label: source

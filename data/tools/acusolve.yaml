@@ -1,0 +1,54 @@
+id: acusolve
+type: tool
+name: Simcenter Acusolve
+category: cfd
+vendor: altair
+open_source: false
+status: active
+stages:
+  - analysis
+formats:
+  reads:
+    - fluent-cas
+    - parasolid-xt
+    - creo-prt
+    - stl
+  writes:
+    - cgns
+    - ensight-gold
+website: https://help.altair.com/hwcfdsolvers/acusolve/topics/chapter_heads/whats_new_r.htm
+summary: Stabilized finite element CFD solver, often used for thermal and fluid-structure work.
+plain: >-
+  Simulates how air and liquids flow and how heat moves with them, and can show how a flowing fluid
+  and a flexible structure push on each other.
+workflow: >-
+  An analyst brings in a Fluent case or Parasolid, Creo or STL geometry, sets up the flow in an
+  AcuSolve .inp input file and solves it here, then writes CGNS or EnSight Gold result files that
+  post-processing tools turn into plots and pictures for the designers.
+native_files:
+  - ext: .inp
+    what: 'AcuSolve input file with all commands for AcuPrep'
+notes: >-
+  Developed by ACUSIM Software (founded 1994, Mountain View); Altair acquired ACUSIM in January 2011
+  after reselling AcuSolve from 2009. Official 2026 name is Simcenter Acusolve (lowercase s). No
+  dedicated siemens.com product page exists as of Nov 2026, so the url is the 2026 release notes.
+  First release year unconfirmed.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: Siemens Simcenter blog, Altair rebranding guide 2026-06-16
+  - url: https://www.digitalengineering247.com/article/altair-snatched-up-acusim-to-fill-cfd-void
+    label: Digital Engineering, Altair buys ACUSIM 2011-01-12
+  - url: https://help.altair.com/hwcfdsolvers/acusolve/topics/chapter_heads/whats_new_r.htm
+    label: AcuSolve 2026 release notes
+  - url: https://www.siemens.com/en-us/products/simcenter/fluids-thermal-simulation/
+    label: Siemens Simcenter fluids and thermal portfolio
+  - url: https://help.altair.com/hwcfdsolvers/acusolve/topics/acusolve/post_processing_programs_acutrans.htm
+    label: 'AcuSolve help: AcuTrans translation formats (CGNS, EnSight Gold)'
+  - url: https://help.altair.com/hwcfdsolvers/acusolve/topics/acusolve/prep_programs_acuimport.htm
+    label: 'AcuSolve help: AcuImport (Fluent .cas, I-deas, StarCD)'
+  - url: https://help.altair.com/hwcfdsolvers/acusolve/topics/tutorials/acu/appendix_a_acu_export_sol_input_files_r.htm
+    label: 'AcuSolve tutorial: solution input files (.inp, MESH.DIR)'
+  - url: https://2021.help.altair.com/2021.2/hwsolvers/acusolve/topics/acusolve/training_manual/geometry_import_r.htm
+    label: 'AcuSolve 2021.2 training manual: geometry import (Parasolid, Pro/E, STL)'

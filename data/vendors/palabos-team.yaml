@@ -1,0 +1,14 @@
+id: palabos-team
+type: vendor
+name: Palabos team (University of Geneva)
+kind: project
+hq: CH
+founded: 2010
+status: active
+website: https://palabos.unige.ch/
+summary: Lattice Boltzmann library team.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://palabos.unige.ch/
+    label: official page

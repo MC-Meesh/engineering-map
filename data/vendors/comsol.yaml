@@ -1,0 +1,17 @@
+id: comsol
+type: vendor
+name: COMSOL
+kind: company
+hq: SE
+founded: 1986
+status: active
+website: https://www.comsol.com/
+wikipedia: https://en.wikipedia.org/wiki/COMSOL_Multiphysics
+summary: Independent multiphysics vendor; one equation-based environment for coupled physics.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.comsol.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/COMSOL_Multiphysics
+    label: Wikipedia

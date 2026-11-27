@@ -1,0 +1,11 @@
+id: sandvik--cambrio--2022
+type: acquisition
+acquirer: sandvik
+target: cambrio
+completed: '2022'
+status: completed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.home.sandvik/en/news-and-media/
+    label: source

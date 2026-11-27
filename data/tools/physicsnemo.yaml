@@ -1,0 +1,41 @@
+id: physicsnemo
+type: tool
+name: NVIDIA PhysicsNeMo
+category: ml-engineering
+vendor: nvidia
+open_source: true
+license: Apache-2.0
+status: active
+first_release: 2021
+stages:
+  - analysis
+formats:
+  reads:
+    - stl
+    - ply
+    - obj
+    - vtk-xml
+integrates_with:
+  - omniverse
+website: https://developer.nvidia.com/physicsnemo
+summary: Open framework (formerly Modulus) for physics-ML models such as neural operators, GNNs and PINNs.
+plain: >-
+  A free NVIDIA framework, formerly called Modulus, for building AI models that learn physics from
+  simulation data or from the equations, so they can predict results faster than a full simulation.
+workflow: >-
+  A developer trains physics AI models here on shapes as STL, OBJ or PLY files and simulation
+  results as VTK files, then uses them as fast predictors, for example inside Omniverse digital
+  twins.
+native_files:
+  - ext: .pmsh
+    what: 'PhysicsNeMo-Mesh native mesh file'
+files_note: 'An open-source Python (PyTorch) framework that programs call; its mesh module converts to and from PyVista meshes (STL, VTK, PLY, OBJ) and has its own .pmsh format.'
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://github.com/NVIDIA/physicsnemo
+    label: verification source
+  - url: https://developer.nvidia.com/physicsnemo
+    label: official page
+  - url: https://nvidia.github.io/physicsnemo/blog/2026/04/07/physicsnemo-mesh/
+    label: 'PhysicsNeMo blog: PhysicsNeMo-Mesh'

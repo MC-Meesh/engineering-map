@@ -1,0 +1,29 @@
+id: sundials
+type: tool
+name: SUNDIALS
+category: solver-library
+vendor: llnl
+open_source: true
+license: BSD-3-Clause
+status: active
+first_release: 2002
+stages:
+  - analysis
+website: https://computing.llnl.gov/projects/sundials
+summary: Time integrators and nonlinear solvers (CVODE, IDA, KINSOL).
+plain: >-
+  A free library of methods for stepping equations forward in time and solving nonlinear equations,
+  used inside simulation codes.
+workflow: >-
+  Simulation codes call SUNDIALS to step their equations forward in time and solve nonlinear
+  systems; the answers go straight back into the code that called it.
+files_note: 'A library of time integrators and nonlinear solvers used from C, C++, Fortran and Python programs; data stays in the caller''s vectors in memory and it defines no file format.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://computing.llnl.gov/projects/sundials
+    label: official page
+  - url: https://sundials.readthedocs.io/en/latest/arkode/Introduction_link.html
+    label: 'SUNDIALS docs: ARKODE introduction'
+  - url: https://sundials.readthedocs.io/en/latest/
+    label: 'SUNDIALS docs: overview'

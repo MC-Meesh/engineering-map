@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+src/generated/
+public/data/
+public/vendor/
+link-report.md
+stale-report.md
+.cache/

@@ -1,0 +1,16 @@
+id: mjcf
+type: format
+name: MJCF
+extensions:
+  - .xml
+kind: robotics
+steward: Google DeepMind
+steward_vendor: google-deepmind
+open_spec: true
+website: https://mujoco.readthedocs.io/en/stable/XMLreference.html
+summary: MuJoCo XML model format.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://mujoco.readthedocs.io/en/stable/XMLreference.html
+    label: official page

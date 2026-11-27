@@ -1,0 +1,53 @@
+id: sap2000
+type: tool
+name: SAP2000
+category: cae-fea
+vendor: csi
+open_source: false
+status: active
+first_release: 1996
+stages:
+  - analysis
+formats:
+  reads:
+    - ifc
+    - iges
+  writes:
+    - ifc
+    - dxf
+competes_with:
+  - staad-pro
+website: https://www.csiamerica.com/products/sap2000
+summary: General structural analysis for bridges and civil structures.
+plain: >-
+  Software that calculates the forces and movements in bridges and other civil structures, so
+  engineers can check they are strong enough.
+workflow: >-
+  A civil engineer brings in the structure as IFC or IGES from the design model, analyzes the bridge
+  or structure here, and sends IFC or DXF back to the design team for the detailed drawings.
+native_files:
+  - ext: .sdb
+    what: 'SAP2000 model database file, binary'
+  - ext: .s2k
+    what: 'SAP2000 text file with model tables'
+notes: >-
+  CSI's own Getting Started manual says SAP2000 was first released in 1996 as the first fully
+  Windows-integrated SAP; it descends from the 1970s Berkeley SAP codes. CSI was founded in 1975.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.csiamerica.com/products/sap2000
+    label: CSI SAP2000 product page
+  - url: >-
+      https://www.manishkumar.org/_media/resources/softwares/sap2000/sap2000_version17_getting_started_.pdf
+    label: CSI SAP2000 v17 Getting Started manual (third-party copy, 2014)
+  - url: https://docs.csiamerica.com/help-files/sap/Menus/File/Import/Import_IFC_File.htm
+    label: 'SAP2000 help: import IFC file'
+  - url: https://docs.csiamerica.com/help-files/sap/Menus/File/Export/Export_IFC_File.htm
+    label: 'SAP2000 help: export IFC file'
+  - url: https://docs.csiamerica.com/help-files/sap/Menus/File/Import/Import_IGES_File.htm
+    label: 'SAP2000 help: import IGES file'
+  - url: https://docs.csiamerica.com/help-files/sap/Menus/File/Export/Export_SAP2000_s2k_Text_File.htm
+    label: 'SAP2000 help: export .s2k text file, .sdb database'
+  - url: https://web.wiki.csiamerica.com/wiki/spaces/sap2000/pages/1802433/Export+SAP2000+to+DXF
+    label: 'CSI knowledge base: export SAP2000 to DXF'

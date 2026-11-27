@@ -1,0 +1,39 @@
+id: trilinos
+type: tool
+name: Trilinos
+category: solver-library
+vendor: sandia
+open_source: true
+license: BSD-3-Clause
+status: active
+first_release: 2003
+stages:
+  - analysis
+formats:
+  reads:
+    - exodus
+  writes:
+    - exodus
+competes_with:
+  - petsc
+website: https://trilinos.github.io/
+wikipedia: https://en.wikipedia.org/wiki/Trilinos
+summary: Sandia collection of solver, discretization and performance-portability packages.
+plain: >-
+  A Sandia collection of free libraries for solving equations and building simulations that run well
+  on many kinds of computers.
+workflow: >-
+  Simulation codes such as deal.II call Trilinos packages to solve their equations on many kinds of
+  computers; the answers go back into the code that called it.
+files_note: 'A collection of C++ libraries (packages, with Fortran and Python access) that programs call; its SEACAS package includes the Exodus library for reading and writing mesh and result files.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://trilinos.github.io/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Trilinos
+    label: Wikipedia
+  - url: https://trilinos.github.io/about.html
+    label: 'Trilinos: About'
+  - url: https://github.com/trilinos/Trilinos/tree/master/packages/seacas
+    label: 'Trilinos source: SEACAS package'

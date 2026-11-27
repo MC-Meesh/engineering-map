@@ -1,0 +1,31 @@
+id: hyperview
+type: tool
+name: Simcenter Hyperview
+category: visualization
+vendor: altair
+open_source: false
+status: active
+first_release: 2000
+stages:
+  - analysis
+formats:
+  reads:
+    - nastran-op2
+competes_with:
+  - meta-post
+website: https://www.siemens.com/en-us/products/simcenter/simulation-modeling-visualization/hyperview/
+summary: FEA and multibody results post-processing (formerly Altair HyperView).
+plain: >-
+  Shows the results of strength simulations and of simulations of linked moving parts as colored
+  pictures, animations and plots, so engineers can see where a part bends or how a mechanism moves.
+workflow: >-
+  A strength or motion simulation program such as Nastran writes results, for example as an OP2
+  file; an analyst loads them here to make plots and animations for the design review.
+notes: first_release 2000 not confirmed by a primary source
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://www.siemens.com/en-us/products/simcenter/simulation-modeling-visualization/hyperview/
+    label: official page

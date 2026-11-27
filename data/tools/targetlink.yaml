@@ -1,0 +1,30 @@
+id: targetlink
+type: tool
+name: dSPACE TargetLink
+category: robotics-controls
+vendor: dspace
+open_source: false
+status: active
+first_release: 1999
+stages:
+  - design
+formats:
+  writes:
+    - fmu
+plugin_of: simulink
+website: https://www.dspace.com/en/pub/home/products/sw/pcgs/targetli.cfm
+summary: Production C code generation from Simulink models.
+plain: >-
+  Turns control designs drawn in Simulink into the C program code that runs on the small computers
+  built into products (embedded controllers).
+workflow: >-
+  A controls engineer takes a control model from Simulink, generates production C code here for the
+  controller's software build, and can export an FMU (a packaged model another simulator can run)
+  for testing in system simulation.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.dspace.com/en/pub/home/products/sw/pcgs/targetli.cfm
+    label: official page
+  - url: https://www.dspace.com/en/inc/home/products/systems/targetimp/tl_tool_chain_integr/targetlink_fmi_support.cfm
+    label: 'dSPACE: TargetLink FMI support (FMU export, FMI 2.0 co-simulation)'

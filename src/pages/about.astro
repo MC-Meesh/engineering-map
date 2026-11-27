@@ -1,0 +1,101 @@
+---
+import Base from '../layouts/Base.astro';
+import { stats, nodes, acquisitions } from '../lib/data';
+const all = [...nodes.filter((n) => n.sources), ...acquisitions];
+const byHost = new Map<string, Set<string>>();
+for (const n of all) for (const s of n.sources) {
+  const h = new URL(s.url).hostname.replace(/^www\./, '');
+  if (!byHost.has(h)) byHost.set(h, new Set());
+  byHost.get(h)!.add(s.url);
+}
+const hosts = [...byHost.entries()].sort((a, b) => b[1].size - a[1].size);
+const lows = nodes.filter((n) => n.confidence === 'low');
+const edgeRows = Object.entries(stats.edgesByKind as Record<string, number>).sort((a, b) => b[1] - a[1]);
+const edgeLabel: Record<string, string> = {
+  'made-by': 'made by (current brand owner)', 'originated-at': 'originally developed at', 'built-on': 'built on (kernel, solver, library)', reads: 'reads format', writes: 'writes format', 'plugin-of': 'plugin of', 'integrates-with': 'integrates with', 'competes-with': 'competes with (shown as overlaps when one company owns both; the year is computed from the acquisition records)', 'alternative-to': 'open-source alternative to', 'acquired-by': 'acquired by', 'subsidiary-of': 'subsidiary of (no recorded deal)', 'stewarded-by': 'format stewarded by', 'used-in-stage': 'used in workflow stage',
+};
+---
+<Base title="Method and sources" section="about" description="How the engineering map is built: data model, sourcing and known gaps.">
+  <article class="page">
+    <header class="page-head">
+      <h1>Method and sources</h1>
+      <p class="lede">The engineering software industry is large, old and heavily consolidated, and most of its structure is invisible from any single vendor's website. This map makes that structure navigable: which product runs on which kernel, who owns it now, what it can exchange with, and where the open alternatives are.</p>
+    </header>
+
+    <div class="figures">
+      <div><b>{stats.toolsAll}</b><span>tools</span></div>
+      <div><b>{stats.kernels}</b><span>geometry kernels</span></div>
+      <div><b>{stats.vendors}</b><span>vendors and projects</span></div>
+      <div><b>{stats.formats}</b><span>formats</span></div>
+      <div><b>{stats.acquisitions}</b><span>acquisitions</span></div>
+      <div><b>{stats.sources}</b><span>distinct source URLs</span></div>
+    </div>
+
+    <h2>What is on the map</h2>
+    <p>Four kinds of node. <b>Tools</b> are products and open-source codes that engineers run: CAD, CAE, CFD, EDA, CAM, PLM, MBSE, robotics, visualization, optimization and ML surrogates. <b>Geometry kernels</b> are tools too, singled out because so much of the industry is built on so few of them. <b>Vendors</b> are the companies, projects and institutions that make tools, including companies that no longer exist independently, so that ownership can be followed through each acquisition. <b>Formats</b> are the files and standards that move work between tools. Seven <b>workflow stages</b>, from requirements to lifecycle, tag where each tool is used.</p>
+    <p>Inclusion is deliberate rather than exhaustive: a tool is in v1 if it is widely used, historically important, a meaningful open-source option, or a node that explains how others connect (a kernel, a coupling library, a translator). Breadth is capped by accuracy; a smaller map with checked edges is worth more than a large one with guessed ones.</p>
+
+    <h2>Relationships</h2>
+    <div class="table-wrap" style="max-width:640px">
+      <table class="data">
+        <thead><tr><th scope="col">Edge</th><th scope="col" class="n">Count</th></tr></thead>
+        <tbody>{edgeRows.map(([k, n]) => <tr><td>{edgeLabel[k] ?? k}</td><td class="n">{n}</td></tr>)}</tbody>
+      </table>
+    </div>
+    <p>Edges are derived from fields on the node files, never drawn by hand. Ownership is two-layered: a tool is <i>made by</i> the company that sells it (Fluent is made by Ansys), and that brand's ownership chain is followed upward (Ansys is part of Synopsys). Format support lists major documented formats only, so a missing reads or writes edge is absence of a record, not evidence of absence.</p>
+
+    <h2>Sourcing</h2>
+    <p>Every node, brand and acquisition carries its source URLs and an as-of date, shown on its page. Records that are plausible but not yet confirmed against a primary source say so next to the claim.</p>
+    <p>Primary sources are preferred: vendor product pages and press releases, investor filings for acquisitions, standards bodies for formats. Wikipedia is cited as a secondary pointer where an article exists. Summaries are written for this map and are deliberately short; nothing is copied from the sources.</p>
+    <p>Acquisitions are dated by completion. Values are the headline figures as reported at the time and are not adjusted; some are equity value and some enterprise value, as the note on each deal says.</p>
+
+    <h2>How the data is kept</h2>
+    <p>One YAML file per node under <span class="mono">data/tools</span>, <span class="mono">data/vendors</span>, <span class="mono">data/formats</span>, <span class="mono">data/brands</span> and <span class="mono">data/acquisitions</span>, validated against a JSON Schema on every build. The build step also checks that every reference resolves (no edge may point at a node that does not exist), rejects duplicate ids, then computes the layouts once (nested circles for the ownership and everything views, ForceAtlas2 for the relationship lenses) so the browser only has to draw. A correction is a one-line change to one file, reviewed like code.</p>
+
+    <p>In November 2026 a verification pass re-checked every record that states a 2025 or 2026 fact, every record then marked low, and a sample across categories against primary sources: 131 records, 65 corrected, and 15 claims that no source supported were removed rather than kept.</p>
+
+    <h2>Example files</h2>
+    <p>Format pages offer example files where that is legal. Most are drawn for this site: one L-bracket, modeled with open-source tools (CadQuery on Open CASCADE, Gmsh, meshio) and written out in each format, released as public domain (CC0). Third-party files are hosted only under licenses that allow it, with attribution. Proprietary native formats are only linked to their owners' sample pages, never copied. Each hosted file lists how it was made, its license and a SHA-256 checksum, and the build refuses a file whose checksum or size does not match. STEP and IGES previews run Open CASCADE in the browser through occt-import-js (LGPL-2.1), loaded only when asked for. <a href="/formats/examples/">All examples</a>.</p>
+
+    <h2 id="inspector">Inside the file</h2>
+    <p>Each hosted example can be opened in a format inspector that shows its text with highlighting, or its bytes as hex, with a structure list and a note for whatever is under the pointer. The parsers are written for this site from published specifications and public documentation (ISO 10303-21, IGES 5.3, the HDF5 file format specification, the PKWARE ZIP note, glTF 2.0 and others), with constants for Rhino files taken from the openNURBS source McNeel publishes under a permissive license. Nothing is decompiled, no vendor SDK is used and no license check is bypassed. Formats we can only link get a page that explains their layout from public documentation instead. The rules are in decision 0006 in the repository.</p>
+
+    <h2>Ownership tree and lenses</h2>
+    <p>The <a href="/vendors/tree/">ownership tree</a> nests each vendor under its current parent, dated by the completed deal, and lists the products sold under each name with where they were first developed. A product keeps the company that sells it, so a renamed product such as Simcenter Hypermesh stays under Altair, and Altair sits under Siemens; where a vendor markets a named product family (SIMULIA, Simcenter, SOLIDWORKS), the family sits between the company and its products. The map opens on the same hierarchy drawn as nested circles: each owner family is a circle, the companies it bought or holds are circles inside it, and the products are the dots. The Everything view groups every tool by domain and category the same way. The other relationship lenses (file formats, built on, competition, integrations) choose which edges are drawn and switch to a force layout computed from those edges alone.</p>
+
+    <h2>Known gaps</h2>
+    <ul>
+      <li>Format support is the thinnest layer. It records the formats a tool is known for, not its full import and export list.</li>
+      <li>Coverage leans toward Western commercial software. Chinese and Russian ecosystems (ZWSOFT, ASCON) appear only through their best-known products.</li>
+      <li>Competition edges are curated by hand and favor direct head-to-head rivals over broad overlap.</li>
+      {lows.length > 0 && <li>{lows.length} records are not yet confirmed against a primary source; they are listed below.</li>}
+    </ul>
+    {lows.length > 0 && (
+      <details>
+        <summary>Not yet confirmed ({lows.length})</summary>
+        <ul class="sources">{lows.map((n) => <li><a href={n.nodeType === 'vendor' ? `/vendors/${n.id}/` : n.nodeType === 'format' ? `/formats/${n.id}/` : `/tools/${n.id}/`}>{n.name}</a>{n.notes && <span class="muted">: {n.notes}</span>}</li>)}</ul>
+      </details>
+    )}
+
+    <h2>Sources by site</h2>
+    <p class="muted">{stats.sources} distinct URLs across {hosts.length} sites.</p>
+    {hosts.map(([h, urls]) => (
+      <details>
+        <summary><span class="mono">{h}</span> <span class="muted num">{urls.size}</span></summary>
+        <ul class="sources">{[...urls].sort().map((u) => <li><a href={u} rel="noopener">{u}</a></li>)}</ul>
+      </details>
+    ))}
+
+    <h2>Contributing</h2>
+    <p>The map is open source. Every record is a small YAML file on <a href="https://github.com/MC-Meesh/engineering-map">GitHub</a>, and each tool, vendor and format page links to its file and to a form for reporting a problem. Changes go through review before they reach the site; the data rules are in <a href="https://github.com/MC-Meesh/engineering-map/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>. The code is MIT and the data is CC BY-SA 4.0.</p>
+
+    <h2>Colophon</h2>
+    <p>Static site built with Astro; the map is drawn with sigma.js on a graphology graph. Everything is set in IBM Plex Mono, in the same black-and-white visual language as <a href="https://www.mchaseallen.com">mchaseallen.com</a>; colour is kept for data (the seven domains and the relationship inks). Made by <a href="https://www.mchaseallen.com">Chase Allen</a>.</p>
+  </article>
+</Base>
+<style>
+  details { border-bottom: 1px solid var(--rule-2); padding: 0.4rem 0; max-width: var(--measure); }
+  summary { cursor: pointer; }
+  article ul:not(.sources) { max-width: var(--measure); padding-left: 1.2rem; }
+  article li { margin-bottom: 0.4rem; }
+</style>

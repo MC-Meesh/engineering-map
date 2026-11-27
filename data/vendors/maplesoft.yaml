@@ -1,0 +1,17 @@
+id: maplesoft
+type: vendor
+name: Maplesoft
+kind: company
+hq: CA
+founded: 1988
+status: active
+website: https://www.maplesoft.com/
+wikipedia: https://en.wikipedia.org/wiki/Maplesoft
+summary: Maple and MapleSim, a Modelica-based system modeling tool.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.maplesoft.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Maplesoft
+    label: Wikipedia

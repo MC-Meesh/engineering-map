@@ -1,0 +1,14 @@
+id: cfx-co
+type: vendor
+name: CFX (AEA Technology)
+kind: company
+parent: ansys
+status: merged
+summary: Computational fluid dynamics software and services supplier owned by AEA Technology PLC until ANSYS bought it in 2003.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://sec.gov/Archives/edgar/data/1013462/000093066103000410/dex991.htm
+    label: 'ANSYS press release 2003-02-04 (8-K): agreement to buy CFX from its parent AEA Technology PLC'
+  - url: https://sec.gov/Archives/edgar/data/1013462/000102140803004058/dex991.htm
+    label: 'ANSYS press release 2003-02-26 (8-K): CFX acquisition completed'

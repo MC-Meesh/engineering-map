@@ -1,0 +1,27 @@
+id: wave6
+type: tool
+name: Wave6
+category: multiphysics
+vendor: dassault
+open_source: false
+status: active
+stages:
+  - analysis
+website: https://www.3ds.com/products/simulia/wave6
+summary: >-
+  SIMULIA vibro-acoustic and aero-vibro-acoustic simulation that mixes statistical energy analysis
+  with finite and boundary elements, for example to predict interior wind noise.
+plain: >-
+  Predicts noise and vibration, for example wind noise inside a car, by combining several sound and
+  vibration methods.
+workflow: >-
+  An engineer brings in the vehicle structure and flow loads from simulation, predicts noise and
+  vibration here, such as interior wind noise, and reports the results to the noise and vibration
+  team.
+confidence: high
+sources:
+  - url: https://www.3ds.com/products/simulia/wave6
+    label: official page
+  - url: https://www.3ds.com/products/simulia/vibro-acoustics-simulation
+    label: SIMULIA vibro-acoustics page
+as_of: '2026-11-22'

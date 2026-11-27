@@ -1,0 +1,20 @@
+id: engineous
+type: vendor
+name: Engineous Software
+kind: company
+hq: US
+founded: 1995
+parent: dassault
+status: merged
+website: https://www.3ds.com/products/simulia/isight
+summary: Isight process integration.
+notes: >-
+  Founded by Siu Tong; products iSIGHT and FIPER. The founding year 1995 is unconfirmed (secondary
+  sources give 1994 or 1996).
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-acquire-engineous-software
+    label: Dassault release 2008-06-17 (founder Siu Tong)
+  - url: https://www.3ds.com/products/simulia/isight
+    label: official page

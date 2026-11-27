@@ -1,0 +1,24 @@
+id: magnet
+type: tool
+name: Simcenter MAGNET
+category: multiphysics
+vendor: siemens
+open_source: false
+status: active
+stages:
+  - analysis
+website: https://plm.sw.siemens.com/en-US/simcenter/electromagnetics-simulation/magnet/
+summary: >-
+  Low-frequency electromagnetic field simulation for parts with permanent magnets or coils, such as
+  motors, actuators and sensors.
+plain: >-
+  Simulates magnetic fields in parts with magnets or coils, such as motors, actuators and sensors.
+workflow: >-
+  An engineer brings in the geometry of a motor, actuator or sensor, simulates the magnetic fields
+  here, and passes performance results back to the designers.
+notes: Its origin at Infolytica is not checked against a primary source.
+confidence: medium
+sources:
+  - url: https://www.siemens.com/en-us/products/simcenter/electromagnetics-simulation/
+    label: Simcenter electromagnetics page (Simcenter MAGNET)
+as_of: '2026-11-22'

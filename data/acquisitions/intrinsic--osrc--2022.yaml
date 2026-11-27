@@ -1,0 +1,11 @@
+id: intrinsic--osrc--2022
+type: acquisition
+acquirer: intrinsic
+target: osrc
+completed: '2022'
+status: completed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.openrobotics.org/
+    label: source

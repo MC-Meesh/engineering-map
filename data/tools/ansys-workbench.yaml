@@ -1,0 +1,24 @@
+id: ansys-workbench
+type: tool
+name: Ansys Workbench
+category: sdm
+vendor: ansys
+open_source: false
+status: active
+stages:
+  - analysis
+website: https://ansys.synopsys.com/products/ansys-workbench
+summary: Ansys's integration and workflow platform that connects Ansys simulation products in one project.
+plain: >-
+  The shared workspace Ansys simulation programs open in: it links geometry, meshing and the
+  solvers (such as Mechanical and Fluent) in one project, so results flow from one step to the
+  next.
+workflow: >-
+  An engineer brings CAD geometry into a Workbench project, meshes it, runs Mechanical or Fluent
+  inside the same project, and links the steps so a design change flows through to new results.
+confidence: medium
+as_of: '2026-11-22'
+notes: Included with all physics-based Ansys software bundles, per the product page.
+sources:
+  - url: https://ansys.synopsys.com/products/ansys-workbench
+    label: official page (integration and workflow platform that connects Ansys products)

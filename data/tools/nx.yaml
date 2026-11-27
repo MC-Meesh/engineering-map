@@ -1,0 +1,72 @@
+id: nx
+type: tool
+name: Designcenter
+category: cad
+vendor: siemens
+origin: ugs
+open_source: false
+status: active
+first_release: 1975
+stages:
+  - design
+  - analysis
+built_on:
+  - parasolid
+  - d-cubed
+formats:
+  reads:
+    - nx-prt
+    - step
+    - iges
+    - parasolid-xt
+    - jt
+  writes:
+    - nx-prt
+    - step
+    - iges
+    - parasolid-xt
+    - jt
+    - stl
+competes_with:
+  - catia
+  - creo
+aka:
+  - NX
+  - Designcenter NX
+  - Unigraphics
+website: https://www.siemens.com/en-us/products/designcenter/cad-software/
+wikipedia: https://en.wikipedia.org/wiki/Siemens_NX
+summary: >-
+  High-end CAD descended from Unigraphics, formerly NX (renamed Designcenter in June 2026);
+  synchronous and parametric modeling on Parasolid.
+plain: >-
+  Siemens' high-end 3D design software, descended from Unigraphics and formerly called NX; it lets
+  you edit models both through dimensions and by moving faces directly.
+workflow: >-
+  An engineer models parts and assemblies here, manages them in Teamcenter, and shares JT, STEP or
+  Parasolid files with simulation in Simcenter 3D, suppliers and viewers; NX CAM programs the
+  machining.
+native_files:
+  - ext: .prt
+    what: NX part file
+    format: nx-prt
+notes: >-
+  First sold in 1975 as Unigraphics; EDS merged Unigraphics and I-DEAS into NX in 2002. Sold as
+  Designcenter NX from January 2025 and as Designcenter from June 2026. The CAM side keeps the NX
+  name (NX for manufacturing, record nx-cam).
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-gb/technology/nx-cad/
+    label: Siemens NX CAD page (1975 Unigraphics, 2002 NX, renamed 2026)
+  - url: >-
+      https://blogs.sw.siemens.com/designcenter/designcenter-a-new-name-for-the-future-of-engineering/
+    label: 'Siemens blog: Designcenter NX is now Designcenter'
+  - url: https://www.siemens.com/en-us/products/designcenter/cad-software/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Siemens_NX
+    label: Wikipedia
+  - url: https://docs.sw.siemens.com/documentation/external/PL20191127135844554/en-US/nx_api_sc/nx/1926/nx_api_sc/en_US/nxopen_net/a06957.html
+    label: native file format (Siemens NX Open reference)
+  - url: https://blogs.sw.siemens.com/wp-content/uploads/sites/10/2023/05/CIMdata_Whitepaper_Siemens_PLM_Components.pdf
+    label: 'CIMdata paper (Siemens): Siemens uses Parasolid in NX'

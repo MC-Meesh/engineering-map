@@ -1,0 +1,17 @@
+id: analog-devices
+type: vendor
+name: Analog Devices
+kind: company
+hq: US
+founded: 1965
+status: active
+website: https://www.analog.com/
+wikipedia: https://en.wikipedia.org/wiki/Analog_Devices
+summary: Semiconductor maker; distributes LTspice for free.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.analog.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Analog_Devices
+    label: Wikipedia

@@ -1,0 +1,75 @@
+---
+// One vendor in the ownership tree, with its products and, recursively, its subsidiaries.
+import type { TreeNode } from '../lib/ownership';
+import { vendorName, brandOfTool } from '../lib/data';
+interface Props { node: TreeNode; open?: boolean }
+const { node, open = false } = Astro.props;
+const v = node.vendor;
+const ym = (d?: string) => (d ? String(d).slice(0, 7) : '');
+const via = node.via;
+const dealText = via?.deal
+  ? via.pending ? `pending${via.deal.announced ? `, announced ${ym(via.deal.announced)}` : ''}` : `acquired ${ym(via.deal.date)}`
+  : via ? 'subsidiary' : '';
+// Products marketed under a brand are listed under that brand's name first.
+const branded = new Map<string, { name: string; products: typeof node.products }>();
+for (const p of node.products) {
+  const b = brandOfTool.get(p.tool.id);
+  if (!b) continue;
+  if (!branded.has(b.id)) branded.set(b.id, { name: b.name, products: [] });
+  branded.get(b.id)!.products.push(p);
+}
+const rest = node.products.filter((p) => !brandOfTool.has(p.tool.id));
+const self = rest.filter((p) => !p.originAt);
+const brought = rest.filter((p) => p.originAt);
+---
+<li class="on" id={`v-${v.id}`} data-name={`${v.name} ${node.products.map((p) => p.tool.name).join(' ')}`.toLowerCase()}>
+  <details open={open || undefined}>
+    <summary>
+      <span class="on-name"><span class="sw vendor" aria-hidden="true"></span><a href={`/vendors/${v.id}/`}>{v.name}</a></span>
+      {dealText && <span class={`on-deal${via?.pending ? ' pending' : ''}`}>{dealText}</span>}
+      {v.status === 'merged' && <span class="on-flag">merged into its parent</span>}
+      <a class="on-map" href={`/#n=${v.id}`}>on the map</a>
+      <span class="on-count num muted" title="Tools here and below">{node.total || ''}</span>
+    </summary>
+    <div class="on-body">
+      {via?.deal?.value && (
+        <div class="on-row"><span class="on-label">Deal value</span><span>{via.deal.value}</span></div>
+      )}
+      {[...branded.values()].map((b) => (
+        <div class="on-row">
+          <span class="on-label on-brand">{b.name} <span class="muted">brand</span></span>
+          <ul class="on-tools">{b.products.map((p) => <li><span class="sw" data-d={p.tool.domain} aria-hidden="true"></span><a href={`/tools/${p.tool.id}/`}>{p.tool.name}</a>{p.originAt && <> <span class="muted">from <a href={`#v-${p.originAt}`} data-jump={p.originAt}>{vendorName(p.originAt)}</a></span></>}</li>)}</ul>
+        </div>
+      ))}
+      {self.length > 0 && (
+        <div class="on-row">
+          <span class="on-label">Developed here</span>
+          <ul class="on-tools">{self.map((p) => <li><span class="sw" data-d={p.tool.domain} aria-hidden="true"></span><a href={`/tools/${p.tool.id}/`}>{p.tool.name}</a></li>)}</ul>
+        </div>
+      )}
+      {brought.length > 0 && (
+        <div class="on-row">
+          <span class="on-label">Sold here, first developed elsewhere</span>
+          <ul class="on-tools">{brought.map((p) => <li><span class="sw" data-d={p.tool.domain} aria-hidden="true"></span><a href={`/tools/${p.tool.id}/`}>{p.tool.name}</a> <span class="muted">from <a href={`#v-${p.originAt}`} data-jump={p.originAt}>{vendorName(p.originAt)}</a></span></li>)}</ul>
+        </div>
+      )}
+      {node.originated.length > 0 && (
+        <div class="on-row">
+          <span class="on-label">Original developer of</span>
+          <ul class="on-tools">{node.originated.map((t) => <li><span class="sw" data-d={t.domain} aria-hidden="true"></span><a href={`/tools/${t.id}/`}>{t.name}</a> <span class="muted">now under <a href={`#v-${t.vendor}`} data-jump={t.vendor}>{vendorName(t.vendor)}</a></span></li>)}</ul>
+        </div>
+      )}
+      {node.history.length > 0 && (
+        <div class="on-row">
+          <span class="on-label">Earlier owners</span>
+          <ul class="on-tools">{node.history.map((d) => <li><a href={`#v-${d.acquirer}`} data-jump={d.acquirer}>{vendorName(d.acquirer)}</a> <span class="muted num">{ym(d.date)} to {d.until ? ym(d.until) : 'divested'}</span></li>)}</ul>
+        </div>
+      )}
+      {node.children.length > 0 && (
+        <ul class="on-kids">
+          {node.children.map((c) => <Astro.self node={c} />)}
+        </ul>
+      )}
+    </div>
+  </details>
+</li>

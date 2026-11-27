@@ -1,0 +1,17 @@
+id: amd
+type: vendor
+name: AMD
+kind: company
+hq: US
+founded: 1969
+status: active
+website: https://www.amd.com/
+wikipedia: https://en.wikipedia.org/wiki/AMD
+summary: Owns Xilinx and the Vivado FPGA toolchain.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.amd.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/AMD
+    label: Wikipedia

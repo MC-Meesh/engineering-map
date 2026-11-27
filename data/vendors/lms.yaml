@@ -1,0 +1,19 @@
+id: lms
+type: vendor
+name: LMS International
+kind: company
+hq: BE
+founded: 1980
+parent: siemens
+status: merged
+summary: Test and mechatronic simulation (Test.Lab, Amesim).
+notes: >-
+  Leuven, Belgium spin-off of KU Leuven, acquired by Siemens in January 2013. Founding year 1980 not
+  confirmed by a primary source; some sources say 1979 (as Leuven Measurement Systems).
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/0001135644/000119312513198242/d522326d6k.htm
+    label: Siemens 6-K 2013-05 (LMS International NV, Belgium acquired)
+  - url: https://itea4.org/organisation/4158-lms-international.html
+    label: 'ITEA profile: LMS International, Leuven'

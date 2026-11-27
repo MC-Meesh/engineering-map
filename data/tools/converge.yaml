@@ -1,0 +1,30 @@
+id: converge
+type: tool
+name: CONVERGE
+category: cfd
+vendor: convergent-science
+open_source: false
+status: active
+first_release: 2008
+stages:
+  - analysis
+formats:
+  reads:
+    - stl
+competes_with:
+  - fluent
+  - star-ccm
+website: https://convergecfd.com/
+summary: CFD with automatic runtime meshing, built for engines and moving geometry.
+plain: >-
+  Simulates fluid flow in engines and other machines with moving parts, building its own grid
+  automatically as the parts move.
+workflow: >-
+  An engineer brings in the engine or machine surface as STL, CONVERGE builds its grid automatically
+  while the parts move, and the flow and combustion results are turned into plots and pictures for
+  the designers.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://convergecfd.com/
+    label: official page

@@ -1,0 +1,38 @@
+id: pbs-pro
+type: tool
+name: HPCWorks PBS Professional
+category: sdm
+vendor: altair
+open_source: false
+status: active
+first_release: 1991
+stages:
+  - analysis
+competes_with:
+  - slurm
+website: https://www.siemens.com/en-us/products/hpcworks/pbs-professional/
+summary: HPC workload manager (formerly Altair PBS Professional), with an open-source sibling (OpenPBS).
+plain: >-
+  Software that shares a high-performance computer cluster among users by queuing and scheduling
+  their jobs; an open-source sibling, OpenPBS, also exists.
+workflow: >-
+  Engineers submit simulation jobs to the cluster; PBS Professional queues and schedules them across
+  the machines, and results land back in the users' folders.
+files_note: 'Has no file format of its own: it runs jobs from batch scripts submitted with qsub; jobs handle their own files, the server keeps state in a data service and writes daily accounting logs to PBS_HOME.'
+notes: >-
+  PBS was built for NASA Ames from 1991, so first_release is the NASA PBS date, not the commercial
+  PBS Pro. Altair bought the PBS technology (PBS Pro and OpenPBS) from Veridian on 2003-03-10, so
+  Altair is not the original developer. The open-source OpenPBS project is still live.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://www.siemens.com/en-us/products/hpcworks/pbs-professional/
+    label: official page
+  - url: https://spinoff.nasa.gov/node/11397
+    label: 'NASA Spinoff: PBS first built 1991'
+  - url: https://github.com/openpbs/openpbs
+    label: OpenPBS repository
+  - url: https://2021.help.altair.com/2021.1.2/PBS%20Professional/PBSAdminGuide2021.1.2.pdf
+    label: 'PBS Professional Admin Guide 2021.1.2: data service, accounting log'

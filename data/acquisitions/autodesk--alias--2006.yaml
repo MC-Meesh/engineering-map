@@ -1,0 +1,17 @@
+id: autodesk--alias--2006
+type: acquisition
+acquirer: autodesk
+target: alias
+completed: '2006-01-10'
+status: completed
+value: about $196.8M total consideration
+notes: >-
+  The announced cash price was about $182M; the 8-K gives total consideration of about $196.8M
+  ($159.9M at closing plus $36.4M in escrow).
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://en.wikipedia.org/wiki/Alias_Systems_Corporation
+    label: source
+  - url: https://www.sec.gov/Archives/edgar/data/0000769397/000119312506007237/d8k.htm
+    label: 'Autodesk 8-K: Alias acquisition completed 2006-01-10, total consideration about $196.8M'

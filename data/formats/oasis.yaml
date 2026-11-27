@@ -1,0 +1,17 @@
+id: oasis
+type: format
+name: OASIS
+extensions:
+  - .oas
+kind: ic
+standard: SEMI P39
+steward: SEMI
+open_spec: true
+first_published: 2004
+website: https://en.wikipedia.org/wiki/Open_Artwork_System_Interchange_Standard
+summary: Compact successor to GDSII for very large layouts.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/Open_Artwork_System_Interchange_Standard
+    label: official page

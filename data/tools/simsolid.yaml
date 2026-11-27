@@ -1,0 +1,34 @@
+id: simsolid
+type: tool
+name: Simcenter Simsolid
+category: cae-fea
+vendor: altair
+origin: simsolid-corp
+open_source: false
+status: active
+first_release: 2015
+stages:
+  - design
+  - analysis
+formats:
+  reads:
+    - step
+    - parasolid-xt
+website: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/simsolid/
+summary: Meshless structural analysis that runs directly on CAD assemblies (formerly Altair SimSolid).
+plain: >-
+  Calculates stress and bending directly on 3D design models of whole assemblies, skipping the usual
+  step of dividing them into a mesh of small elements, so results come quickly.
+workflow: >-
+  A designer or analyst loads a 3D design assembly as STEP or Parasolid, runs structural analysis
+  here without building a mesh, and passes quick results back to the design team.
+notes: first_release 2015 not confirmed by a primary source
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://news.siemens.com/en-us/altair-acquires-simsolid/
+    label: 'Altair release 2018-10-17: acquires SimSolid'
+  - url: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/simsolid/
+    label: official page

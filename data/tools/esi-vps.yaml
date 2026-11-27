@@ -1,0 +1,31 @@
+id: esi-vps
+type: tool
+name: ESI Virtual Performance Solution (PAM-CRASH)
+category: cae-fea
+vendor: esi
+open_source: false
+status: active
+first_release: 1986
+stages:
+  - analysis
+competes_with:
+  - ls-dyna
+  - radioss
+website: >-
+  https://www.keysight.com/us/en/products/design-engineering-software/computer-aided-engineering-software/structural-mechanics.html
+summary: Crash, safety and NVH solver; descendant of PAM-CRASH.
+plain: >-
+  Simulates car crashes, how safe the people inside are, and how much a vehicle rattles and hums,
+  all on a computer instead of crashing real cars. It grew out of PAM-CRASH, one of the first crash
+  simulation programs.
+workflow: >-
+  A safety engineer takes a computer model of the whole car, already split into small pieces by a
+  model preparation tool, runs virtual crash tests and noise checks here, and sends the results to
+  the car's design and safety teams to change the body before real crash tests.
+notes: ESI pages now redirect to Keysight which lists it as Structural Mechanics (VPS)
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.keysight.com/us/en/products/design-engineering-software/computer-aided-engineering-software/structural-mechanics.html
+    label: official page

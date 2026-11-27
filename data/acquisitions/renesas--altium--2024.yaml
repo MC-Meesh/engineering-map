@@ -1,0 +1,14 @@
+id: renesas--altium--2024
+type: acquisition
+acquirer: renesas
+target: altium
+announced: '2024-02-15'
+completed: '2024-08-01'
+status: completed
+value: about AUD 9.1B
+summary: All-cash scheme of arrangement at AUD 68.50 per share funded by bank loans.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.renesas.com/en/about/newsroom/renesas-completes-acquisition-altium
+    label: source

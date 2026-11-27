@@ -1,0 +1,25 @@
+id: odbpp
+type: format
+name: ODB++
+extensions:
+  - .tgz
+kind: ecad
+steward: Siemens
+steward_vendor: siemens
+open_spec: true
+first_published: 1995
+website: https://odbplusplus.com/
+wikipedia: https://en.wikipedia.org/wiki/ODB%2B%2B
+summary: Single-package PCB manufacturing database (layers, netlist, components, stackup).
+notes: >-
+  Proprietary but published: the specification (v8.1) is downloadable from odbplusplus.com after
+  free registration. Created by Valor in 1995; Valor later went to Mentor, now Siemens EDA.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://odbplusplus.com/design/
+    label: ODB++ Design page (specification v8.1, created 1995)
+  - url: https://odbplusplus.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/ODB%2B%2B
+    label: Wikipedia

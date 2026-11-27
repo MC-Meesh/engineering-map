@@ -1,0 +1,13 @@
+id: fenics-project
+type: vendor
+name: FEniCS project
+kind: project
+founded: 2003
+status: active
+website: https://fenicsproject.org/
+summary: Community behind FEniCS and DOLFINx.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://fenicsproject.org/
+    label: official page

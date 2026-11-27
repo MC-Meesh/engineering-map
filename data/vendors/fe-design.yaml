@@ -1,0 +1,18 @@
+id: fe-design
+type: vendor
+name: FE-DESIGN
+kind: company
+hq: DE
+founded: 1993
+parent: dassault
+status: merged
+website: https://www.3ds.com/products/simulia/tosca
+summary: Tosca topology and shape optimization.
+notes: Based in Karlsruhe; founder and CEO Dr. Juergen Sauter. Founding year 1993 is unverified.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-acquires-fe-design
+    label: Dassault release 2013-04-25 (Karlsruhe, founder Juergen Sauter)
+  - url: https://www.3ds.com/products/simulia/tosca
+    label: official page

@@ -1,0 +1,44 @@
+id: fe-safe
+type: tool
+name: fe-safe
+category: cae-fea
+vendor: dassault
+origin: safe-technology
+open_source: false
+status: active
+first_release: 1994
+stages:
+  - analysis
+  - test
+integrates_with:
+  - abaqus
+  - ansys-mechanical
+  - msc-nastran
+  - simcenter-nastran
+  - tosca
+  - simpack
+  - isight
+website: https://www.3ds.com/products/simulia/fe-safe
+summary: Fatigue and durability analysis on FEA stress results.
+plain: >-
+  Predicts how long a part will last under repeated loading before it cracks from fatigue, using
+  stress results from a simulation.
+workflow: >-
+  An analyst runs a stress simulation in Abaqus, Ansys Mechanical or Nastran, loads the stress
+  results here with the load history, and gets fatigue lives that go back to the designers or into
+  Tosca or Isight studies.
+notes: >-
+  Developed by Safe Technology (Sheffield), which Dassault bought in 2013. first_release 1994 is
+  unconfirmed: the product page says only "since the early 1990s".
+geometry_basis:
+  kind: mesh
+  text: >-
+    Works on finite element models and results from FEA programs such as Abaqus, ANSYS and Nastran, not on CAD geometry, so it needs no geometry kernel.
+  url: https://www.3ds.com/products/simulia/fe-safe
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/products/simulia/fe-safe
+    label: 'official page (interfaces: Abaqus, ANSYS, MSC and NX Nastran; Isight, Tosca, Simpack)'
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-acquires-safe-technology-limited
+    label: 'Dassault release 2013-09-04: acquired Safe Technology'

@@ -1,0 +1,31 @@
+id: genesys
+type: tool
+name: GENESYS
+category: systems-mbse
+vendor: zuken
+origin: vitech
+open_source: false
+status: active
+first_release: 2016
+stages:
+  - requirements
+formats:
+  reads:
+    - sysml
+  writes:
+    - sysml
+competes_with:
+  - cameo
+website: https://www.zuken.com/us/product/mbse-with-genesys/
+summary: MBSE tool from Vitech, successor to CORE.
+plain: >-
+  Vitech software for describing a complex system as a model of its requirements, functions and
+  parts; it succeeds Vitech's earlier CORE tool.
+workflow: >-
+  Systems engineers model requirements, functions and parts here in SysML, and hand the architecture
+  to engineering teams and to verification planning.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.zuken.com/us/product/mbse-with-genesys/
+    label: verification source

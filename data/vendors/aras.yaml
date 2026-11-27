@@ -1,0 +1,14 @@
+id: aras
+type: vendor
+name: Aras
+kind: company
+hq: US
+founded: 2000
+status: active
+website: https://aras.com/
+summary: Aras Innovator, a low-code PLM platform.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://aras.com/
+    label: official page

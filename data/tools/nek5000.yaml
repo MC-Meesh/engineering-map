@@ -1,0 +1,44 @@
+id: nek5000
+type: tool
+name: Nek5000 / NekRS
+category: cfd
+vendor: anl
+open_source: true
+license: BSD-3-Clause
+status: active
+first_release: 1986
+stages:
+  - analysis
+formats:
+  reads:
+    - gmsh-msh
+    - exodus
+website: https://nek5000.mcs.anl.gov/
+summary: Spectral element CFD for turbulence research; NekRS is its GPU successor.
+plain: >-
+  Research software for very detailed simulations of turbulent flow; its successor NekRS runs on
+  graphics processors.
+workflow: >-
+  A researcher brings in a mesh (a grid of the flow region) from Gmsh or as an Exodus II file, runs
+  detailed turbulence simulations here, or on GPUs with NekRS, and studies the flow results in
+  visualization tools.
+native_files:
+  - ext: .re2
+    what: 'Mesh and boundary condition file'
+  - ext: .par
+    what: 'Runtime parameter file'
+  - ext: .usr
+    what: 'User-defined Fortran routines'
+  - ext: .f00001
+    what: 'Field file for restart and output (numbered .f#####)'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://nek5000.mcs.anl.gov/
+    label: official page
+  - url: https://nek5000.github.io/NekDoc/problem_setup/case_files.html
+    label: 'NekDoc: case files'
+  - url: https://nek5000.github.io/NekDoc/tools/gmsh2nek.html
+    label: 'NekDoc: gmsh2nek (Gmsh .msh to .re2)'
+  - url: https://nek5000.github.io/NekDoc/tools/exo2nek.html
+    label: 'NekDoc: exo2nek (Exodus .exo to .re2)'

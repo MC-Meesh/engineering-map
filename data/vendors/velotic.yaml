@@ -1,0 +1,23 @@
+id: velotic
+type: vendor
+name: Velotic
+kind: company
+hq: US
+founded: 2026
+parent: tpg
+status: active
+website: https://www.velotic.com/
+summary: TPG-owned industrial software company formed in 2026 around ThingWorx, Kepware and Proficy.
+notes: >-
+  Launched 2026-03-17 when TPG closed its purchases of GE Vernova's Proficy business and PTC's
+  Kepware and ThingWorx businesses. Boston HQ at 268 Summer Street announced September 2026. CEO
+  Brian Shepherd; Jim Heppelmann is executive chairman.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.tpg.com/news-and-insights/velotic-launches-to-shape-future-of-industrial-manufacturing-software
+    label: TPG / Velotic launch release 2026-03-17
+  - url: >-
+      https://finance.yahoo.com/technology/articles/velotic-expands-global-presence-headquarters-130000177.html
+    label: Velotic release 2026-09-14 (Boston HQ, Business Wire)

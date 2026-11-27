@@ -1,0 +1,35 @@
+id: elmer
+type: tool
+name: Elmer FEM
+category: multiphysics
+vendor: csc
+open_source: true
+license: GPL-2.0
+status: active
+first_release: 1995
+stages:
+  - analysis
+formats:
+  reads:
+    - gmsh-msh
+  writes:
+    - vtk-xml
+open_source_alternative_to:
+  - comsol-multiphysics
+website: https://www.elmerfem.org/
+wikipedia: https://en.wikipedia.org/wiki/Elmer_FEM_solver
+summary: Open multiphysics FEM covering heat, fluids, structures and electromagnetics.
+plain: >-
+  Free simulation software that can combine heat, fluid flow, structures and electromagnetics in one
+  model.
+workflow: >-
+  An analyst splits the geometry into a mesh of small cells, often in Gmsh, loads the MSH file here,
+  solves the coupled heat, flow, structure or field problem, and writes VTK files for viewing in
+  ParaView.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.elmerfem.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Elmer_FEM_solver
+    label: Wikipedia

@@ -1,0 +1,13 @@
+id: klayout-project
+type: vendor
+name: KLayout project
+kind: project
+founded: 2006
+status: active
+website: https://www.klayout.de/
+summary: Layout viewer and editor for GDS and OASIS.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.klayout.de/
+    label: official page

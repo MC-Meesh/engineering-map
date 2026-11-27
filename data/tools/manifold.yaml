@@ -1,0 +1,34 @@
+id: manifold
+type: tool
+name: Manifold
+category: geometry-kernel
+vendor: ens-team
+open_source: true
+license: Apache-2.0
+status: active
+first_release: 2019
+stages:
+  - design
+formats:
+  reads:
+    - obj
+    - gltf
+  writes:
+    - obj
+    - gltf
+website: https://github.com/elalish/manifold
+summary: >-
+  Fast, guaranteed-manifold mesh booleans; the default OpenSCAD backend in development builds and a
+  boolean solver in Blender since 4.5.
+plain: >-
+  A fast software library that joins, cuts and subtracts 3D shapes made of triangles without leaving
+  holes or broken surfaces; it works inside OpenSCAD and Blender.
+workflow: >-
+  Programs such as OpenSCAD and Blender call Manifold to add and subtract shapes made of triangles
+  when a user combines solids; the result goes back to that program for export or printing.
+files_note: 'A C++ mesh boolean library with Python, JS/WASM and other bindings; built-in OBJ I/O is mainly for tests, the JS package has a glTF reader/writer, and other formats come via Assimp.'
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://github.com/elalish/manifold
+    label: verification source

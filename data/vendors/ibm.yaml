@@ -1,0 +1,18 @@
+id: ibm
+type: vendor
+name: IBM
+kind: company
+hq: US
+founded: 1911
+status: active
+website: https://www.ibm.com/
+wikipedia: https://en.wikipedia.org/wiki/IBM
+summary: Requirements and systems engineering tools (DOORS, Rhapsody) via the former Telelogic.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ibm.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/IBM
+    label: Wikipedia
+notes: Product page moved; link points at the site root pending review.

@@ -1,0 +1,44 @@
+id: flightstream
+type: tool
+name: Simcenter Flightstream
+category: cfd
+vendor: altair
+open_source: false
+status: active
+stages:
+  - design
+  - analysis
+formats:
+  reads:
+    - parasolid-xt
+    - iges
+    - abaqus-inp
+  writes:
+    - stl
+    - obj
+    - ply
+    - nastran-bdf
+website: https://www.siemens.com/en-us/products/simcenter/fluids-thermal-simulation/flightstream/
+summary: >-
+  Vorticity-based panel method for fast aerodynamic and hydrodynamic loads on surface meshes, aimed
+  at aircraft, rotors and marine propellers (formerly Altair FlightStream).
+plain: >-
+  Quickly estimates air and water forces on aircraft, rotors and marine propellers using a fast
+  method that works on the surface shape only.
+workflow: >-
+  An engineer brings in the aircraft, rotor or propeller surface as Parasolid or IGES, estimates the
+  air or water forces here in minutes, and exports the loads as a Nastran file for strength checks,
+  or the surface as STL or OBJ for more detailed flow tools.
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/simcenter/fluids-thermal-simulation/flightstream/
+    label: official page (panel method)
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://darcorp.com/flightstream-aerodynamics-software
+    label: 'DARcorp FlightStream product page: Parasolid/IGES import, STL/OBJ/PLY/TRI export'
+  - url: https://www.darcorp.com/wp-content/uploads/2021/03/FlightStream_Release_notes_2020_2.pdf
+    label: 'FlightStream 2020.2 release notes: IGES import options, Nastran PLOAD BDF export'
+  - url: https://www.darcorp.com/wp-content/uploads/2018/10/FlightStream_11.2_Release_Notes.pdf
+    label: 'FlightStream 11.2 release notes: Abaqus .inp and Plot3D import'
+as_of: '2026-11-22'

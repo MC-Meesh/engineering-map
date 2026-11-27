@@ -1,0 +1,37 @@
+id: recurdyn
+type: tool
+name: RecurDyn
+category: cae-fea
+vendor: functionbay
+open_source: false
+status: active
+first_release: 2002
+stages:
+  - analysis
+formats:
+  reads:
+    - parasolid-xt
+    - step
+    - acis-sat
+    - iges
+    - catia-v5
+    - stl
+competes_with:
+  - adams
+  - simpack
+website: https://functionbay.com/
+summary: Multibody dynamics with flexible bodies and particle coupling.
+plain: >-
+  Simulates how connected moving parts behave, including parts that flex and parts that interact
+  with particles.
+workflow: >-
+  An engineer brings in the parts as Parasolid, STEP, CATIA or other 3D design files, links them,
+  adds flexible bodies or particles, simulates the motion here, and passes loads and motion results
+  to structural analysis and the designers.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://functionbay.com/
+    label: official page
+  - url: https://support.functionbay.com/en/page/single/16
+    label: 'FunctionBay RecurDyn Professional: CAD import formats'

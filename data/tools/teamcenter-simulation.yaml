@@ -1,0 +1,38 @@
+id: teamcenter-simulation
+type: tool
+name: Teamcenter Simulation
+category: sdm
+vendor: siemens
+open_source: false
+status: active
+first_release: 2008
+stages:
+  - lifecycle
+  - analysis
+runs_on:
+  - teamcenter
+integrates_with:
+  - simcenter-3d
+competes_with:
+  - minerva
+website: >-
+  https://www.siemens.com/en-us/products/teamcenter/solutions/simulation-process-data-management-spdm/
+summary: Simulation data and process management inside Teamcenter.
+plain: >-
+  Keeps track of simulation data and processes inside Teamcenter, so they stay linked to the product
+  they belong to.
+workflow: >-
+  Analysts working in Simcenter 3D save simulation models, results and processes into Teamcenter,
+  where they stay linked to the product design they belong to.
+files_note: 'Has no file type of its own: CAE files and folder trees are stored in the Teamcenter database under CAE objects, downloaded to edit and synced back, with solver decks kept as CAE BOMs.'
+notes: first_release 2008 has no source.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.siemens.com/en-us/products/teamcenter/solutions/simulation-process-data-management-spdm/
+    label: official page (Teamcenter simulation data management)
+  - url: https://www.siemens.com/en-us/products/simcenter/offerings/
+    label: Simcenter offerings page (Teamcenter Simulation, SPDM)
+  - url: https://blogs.sw.siemens.com/teamcenter/?p=8505
+    label: 'Siemens Teamcenter blog: Teamcenter Simulation in 13.2'

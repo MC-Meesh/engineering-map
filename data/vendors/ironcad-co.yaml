@@ -1,0 +1,14 @@
+id: ironcad-co
+type: vendor
+name: IronCAD
+kind: company
+hq: US
+founded: 1998
+status: active
+website: https://www.ironcad.com/
+summary: IronCAD, a dual-kernel (ACIS and Parasolid) design tool.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ironcad.com/
+    label: official page

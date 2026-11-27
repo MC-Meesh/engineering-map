@@ -1,0 +1,29 @@
+id: solidworks-xdesign
+type: tool
+name: SOLIDWORKS xDesign
+category: cad
+vendor: dassault
+open_source: false
+status: active
+stages:
+  - design
+runs_on:
+  - 3dexperience
+website: https://cloud.academy.3ds.com/explorer/r2026x/pack_UXW.html
+summary: Browser-based parametric 3D design on the 3DEXPERIENCE platform (3D Creator role), a different application from desktop SOLIDWORKS.
+plain: >-
+  3D design software that runs in a web browser on Dassault's 3DEXPERIENCE platform, sold as the 3D
+  Creator role, with related browser apps for subdivision modeling (xShape), sheet metal and molds.
+  A separate program from desktop SOLIDWORKS.
+workflow: >-
+  A designer signs in to the platform and models parts in the browser; the designs are saved as
+  platform objects, not files, next to data from desktop SOLIDWORKS and CATIA.
+files_note: 'Keeps its work as objects on the 3DEXPERIENCE platform, not as files of its own.'
+confidence: medium
+as_of: '2026-11-22'
+notes: >-
+  Role and app names come from the 3DEXPERIENCE for Education R2026x role catalog; the exact app
+  to role mapping in commercial packages may differ.
+sources:
+  - url: https://cloud.academy.3ds.com/explorer/r2026x/pack_UXW.html
+    label: 'Pack UXW (Education R2026x catalog): 3D Creator and 3D Sculptor browser-based roles, xDesign and xShape apps'

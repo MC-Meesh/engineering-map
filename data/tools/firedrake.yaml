@@ -1,0 +1,50 @@
+id: firedrake
+type: tool
+name: Firedrake
+category: solver-library
+vendor: firedrake-project
+open_source: true
+license: LGPL-3.0
+status: active
+first_release: 2013
+stages:
+  - analysis
+  - optimization
+built_on:
+  - petsc
+formats:
+  reads:
+    - gmsh-msh
+    - exodus
+    - cgns
+    - hdf5
+  writes:
+    - vtk-xml
+    - hdf5
+competes_with:
+  - fenics
+website: https://www.firedrakeproject.org/
+summary: Automated finite element system sharing UFL with FEniCS, with adjoint support.
+plain: >-
+  A free system that generates simulation code from equations written in Python, and can also work
+  out how results change when design inputs change.
+workflow: >-
+  A researcher reads a mesh (the shape split into small cells) made in Gmsh, or an Exodus, CGNS or
+  HDF5 file, writes the equations in Python, and Firedrake runs the solution on PETSc; results go
+  out as VTK for ParaView, or as sensitivities that drive design optimization.
+native_files:
+  - ext: .h5
+    what: 'Checkpoint file holding meshes and functions'
+    format: hdf5
+files_note: 'A Python library that scripts call to solve PDEs; Mesh() loads mesh files, VTKFile writes .pvd output for ParaView, and CheckpointFile saves and reloads state as HDF5.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.firedrakeproject.org/
+    label: official page
+  - url: https://www.firedrakeproject.org/firedrake.html
+    label: 'Firedrake API: firedrake.mesh.Mesh'
+  - url: https://www.firedrakeproject.org/visualisation.html
+    label: 'Firedrake docs: Visualisation'
+  - url: https://www.firedrakeproject.org/checkpointing.html
+    label: 'Firedrake docs: Checkpointing'

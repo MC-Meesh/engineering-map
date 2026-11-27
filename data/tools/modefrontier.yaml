@@ -1,0 +1,30 @@
+id: modefrontier
+type: tool
+name: modeFRONTIER
+category: optimization
+vendor: esteco
+open_source: false
+status: active
+first_release: 1999
+stages:
+  - optimization
+competes_with:
+  - heeds
+  - isight
+  - optislang
+  - hyperstudy
+  - optimus
+website: https://www.esteco.com/modefrontier
+summary: Process integration and multi-objective optimization across CAE tools.
+plain: >-
+  Links several simulation tools into an automated process and searches for designs that balance
+  several goals at once.
+workflow: >-
+  An engineer links 3D design (CAD) and simulation tools into an automated process, modeFRONTIER
+  runs it many times to balance several goals, and the trade-off designs go back to the engineering
+  team.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.esteco.com/modefrontier
+    label: official page

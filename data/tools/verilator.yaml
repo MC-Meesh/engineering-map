@@ -1,0 +1,34 @@
+id: verilator
+type: tool
+name: Verilator
+category: eda
+vendor: verilator-project
+open_source: true
+license: LGPL-3.0
+status: active
+first_release: 1994
+stages:
+  - test
+formats:
+  reads:
+    - verilog
+open_source_alternative_to:
+  - vcs
+  - xcelium
+website: https://www.veripool.org/verilator/
+wikipedia: https://en.wikipedia.org/wiki/Verilator
+summary: Compiles Verilog to C++ for very fast cycle-based simulation.
+plain: >-
+  Free software that converts chip designs written in Verilog (code describing a chip's circuits)
+  into C++ so they can be simulated very fast.
+workflow: >-
+  A designer hands over the chip design in Verilog, Verilator turns it into fast C++, and the
+  compiled model runs tests whose bugs go back to the designers before the design is turned into
+  gates.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.veripool.org/verilator/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Verilator
+    label: Wikipedia

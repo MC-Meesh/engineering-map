@@ -1,0 +1,14 @@
+id: robodk-co
+type: vendor
+name: RoboDK
+kind: company
+hq: CA
+founded: 2015
+status: active
+website: https://robodk.com/
+summary: Offline programming and simulation for industrial robots.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://robodk.com/
+    label: official page

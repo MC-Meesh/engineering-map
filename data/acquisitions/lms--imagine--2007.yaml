@@ -1,0 +1,18 @@
+id: lms--imagine--2007
+type: acquisition
+acquirer: lms
+target: imagine
+announced: 2007-01
+completed: '2007'
+status: completed
+summary: Brought AMESim to LMS, and with LMS to Siemens in 2013.
+notes: >-
+  The January 2007 release announces exclusive negotiations for 100% of the shares, followed by a
+  public offer for the listed shares; no completion date opened, so year precision.
+confidence: medium
+sources:
+  - url: https://www.airframer.com/news/release/lms-international-to-acquire-imagine
+    label: 'LMS release 2007-01: to acquire Imagine'
+  - url: https://blogs.sw.siemens.com/simcenter/simcenter-amesim-celebrating-25-years-of-innovation/
+    label: 'Siemens Simcenter blog: Amesim history'
+as_of: '2026-11-22'

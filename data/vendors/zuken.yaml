@@ -1,0 +1,17 @@
+id: zuken
+type: vendor
+name: Zuken
+kind: company
+hq: JP
+founded: 1976
+status: active
+website: https://www.zuken.com/
+wikipedia: https://en.wikipedia.org/wiki/Zuken
+summary: PCB and wire harness design (CR-8000, E3.series); owns Vitech for MBSE.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.zuken.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Zuken
+    label: Wikipedia

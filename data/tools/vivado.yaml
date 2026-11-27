@@ -1,0 +1,30 @@
+id: vivado
+type: tool
+name: AMD Vivado
+category: eda
+vendor: amd
+open_source: false
+status: active
+first_release: 2012
+stages:
+  - design
+  - manufacturing
+formats:
+  reads:
+    - verilog
+    - edif
+  writes:
+    - edif
+website: https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html
+summary: Synthesis, implementation and bitstream generation for AMD (Xilinx) FPGAs.
+plain: >-
+  AMD software that turns a chip design into the configuration file (bitstream) loaded onto AMD
+  (Xilinx) FPGAs, chips whose circuits can be rewired after they are made.
+workflow: >-
+  An FPGA designer brings in Verilog (code describing the circuits) or EDIF from synthesis tools
+  such as Yosys, implements it here, and writes the bitstream that is loaded onto the AMD FPGA.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html
+    label: official page

@@ -1,0 +1,16 @@
+id: gmsh-msh
+type: format
+name: Gmsh MSH
+extensions:
+  - .msh
+kind: mesh
+steward: Gmsh developers
+steward_vendor: gmsh-team
+open_spec: true
+website: https://gmsh.info/doc/texinfo/gmsh.html#MSH-file-format
+summary: Gmsh mesh format; a common interchange format for open FEM codes.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://gmsh.info/doc/texinfo/gmsh.html#MSH-file-format
+    label: official page

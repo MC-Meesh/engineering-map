@@ -1,0 +1,35 @@
+id: autodesk-nastran
+type: tool
+name: Autodesk Nastran
+category: cae-fea
+vendor: autodesk
+origin: nei-software
+open_source: false
+status: active
+first_release: 1990
+stages:
+  - analysis
+formats:
+  reads:
+    - nastran-bdf
+  writes:
+    - nastran-bdf
+website: https://www.autodesk.com/products/nastran/overview
+summary: The former NEi Nastran, also embedded in Inventor Nastran.
+plain: >-
+  A program that calculates how parts and structures respond to loads, for example how much a
+  bracket bends. It began as NEi Nastran and now mainly ships inside Autodesk Inventor as Inventor
+  Nastran.
+workflow: >-
+  An engineer sets up a model inside Inventor or from a Nastran bulk data file, runs the structural
+  solution here, and reviews the results back in the design environment.
+notes: >-
+  1990 is the reported first commercial PC release of NEi Nastran (Noran Engineering); not confirmed
+  from a primary source. The solver now ships mainly as Inventor Nastran.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://adsknews.autodesk.com/en/?p=1037
+    label: 'Autodesk news 2014-08-12: Autodesk Nastran offerings, NEi acquired May 2014'
+  - url: https://www.autodesk.com/products/nastran/overview
+    label: official page

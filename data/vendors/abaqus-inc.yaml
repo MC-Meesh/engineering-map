@@ -1,0 +1,24 @@
+id: abaqus-inc
+type: vendor
+name: ABAQUS Inc (HKS)
+kind: company
+hq: US
+founded: 1978
+parent: dassault
+status: merged
+wikipedia: https://en.wikipedia.org/wiki/Abaqus
+summary: Abaqus nonlinear FEA; basis of SIMULIA.
+notes: >-
+  Launched on 1 February 1978 in Rhode Island as Hibbitt, Karlsson and Sorensen (HKS); renamed
+  ABAQUS, Inc. in November 2002. Dassault Systemes completed the acquisition on 2005-10-04 ($413M
+  cash) and launched the SIMULIA brand around it.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.3ds.com/newsroom/press-releases/dassault-systemes-completes-acquisition-abaqus-inc-and-introduces-simulia-brand
+    label: Dassault press release 2005-10-04 (acquisition completed, SIMULIA)
+  - url: https://www.nafems.org/blog/posts/analysis-origins-abaqus/
+    label: 'NAFEMS: Analysis origins (HKS launched 1978-02-01, renamed 2002)'
+  - url: https://en.wikipedia.org/wiki/Abaqus
+    label: Wikipedia

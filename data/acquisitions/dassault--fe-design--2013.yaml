@@ -1,0 +1,12 @@
+id: dassault--fe-design--2013
+type: acquisition
+acquirer: dassault
+target: fe-design
+completed: '2013-04-23'
+status: completed
+notes: Announced on 2013-04-25, after closing; amount not disclosed.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-acquires-fe-design
+    label: 'Dassault release 2013-04-25: completed 2013-04-23'

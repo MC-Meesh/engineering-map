@@ -1,0 +1,41 @@
+id: fun3d
+type: tool
+name: FUN3D
+category: cfd
+vendor: nasa
+open_source: false
+status: active
+first_release: 1989
+stages:
+  - analysis
+  - optimization
+formats:
+  reads:
+    - cgns
+  writes:
+    - tecplot-plt
+    - cgns
+    - vtk-legacy
+website: https://fun3d.larc.nasa.gov/
+summary: NASA Langley unstructured CFD with adjoint design; distributed to US users.
+plain: >-
+  NASA Langley software for simulating airflow around aircraft and other shapes, also used to
+  improve a shape automatically; shared with users in the US.
+workflow: >-
+  An analyst brings in a mesh (the air around an aircraft or other shape split into small cells) as
+  CGNS, simulates the airflow here, optionally lets it reshape the design, and writes Tecplot, VTK
+  or CGNS results that aerodynamicists plot to compare designs.
+native_files:
+  - ext: .flow
+    what: 'Binary restart file read by the solver to restart runs'
+  - ext: .nml
+    what: 'fun3d.nml main input file in Fortran namelist format'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://fun3d.larc.nasa.gov/
+    label: official page
+  - url: https://ntrs.nasa.gov/api/citations/20250002308/downloads/NASA-TM-20250002308.pdf
+    label: 'FUN3D Manual 14.2: supported grid formats, CGNS translator, export_to options, Tecplot .plt/.szplt'
+  - url: https://fun3d.larc.nasa.gov/chapter-1.html
+    label: 'FUN3D website: overview and release notes (Tecplot, VTK output)'

@@ -1,0 +1,40 @@
+id: netfabb
+type: tool
+name: Netfabb
+category: cam
+vendor: autodesk
+origin: netfabb-gmbh
+open_source: false
+status: active
+first_release: 2009
+stages:
+  - manufacturing
+  - analysis
+formats:
+  reads:
+    - stl
+    - 3mf
+  writes:
+    - stl
+    - 3mf
+competes_with:
+  - magics
+website: https://www.autodesk.com/products/netfabb/overview
+summary: Build preparation and process simulation for additive manufacturing.
+plain: Prepares parts for industrial 3D printing and simulates the printing process.
+workflow: >-
+  A build engineer brings in parts as STL or 3MF, prepares the build and simulates the printing
+  process here, then sends the prepared files to the industrial 3D printer.
+notes: >-
+  First release year 2009 not confirmed; netfabb was a unit of FIT AG (Lupburg) before Autodesk.
+  Netfabb Ultimate was retired with the 2026 release.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://adsknews.autodesk.com/en/?p=3918
+    label: 'Autodesk release 2015-09: to acquire netfabb (Lupburg, Germany)'
+  - url: >-
+      https://3dprintingindustry.com/news/autodesk-updates-netfabb-with-enhanced-workflow-tools-and-new-3mf-support-in-2026-release-238996/
+    label: '3D Printing Industry: Netfabb 2026 release'
+  - url: https://www.autodesk.com/products/netfabb/overview
+    label: official page

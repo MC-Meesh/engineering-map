@@ -1,0 +1,18 @@
+id: lsdyna-k
+type: format
+name: LS-DYNA keyword
+extensions:
+  - .k
+  - .key
+  - .dyn
+kind: solver-input
+steward: Ansys (LSTC)
+steward_vendor: ansys
+open_spec: true
+website: https://lsdyna.ansys.com/manuals/
+summary: Keyword deck for LS-DYNA; the crash and impact lingua franca.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://lsdyna.ansys.com/manuals/
+    label: official page

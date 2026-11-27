@@ -1,0 +1,19 @@
+id: imagine
+type: vendor
+name: Imagine S.A.
+kind: company
+hq: FR
+founded: 1986
+parent: lms
+status: merged
+summary: >-
+  French developer of the AMESim 1D multi-domain system simulation software; bought by LMS
+  International in 2007.
+notes: Founded in 1986 by Michel Lebrun.
+confidence: high
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/simcenter-amesim-celebrating-25-years-of-innovation/
+    label: Siemens Simcenter blog (Imagine founded 1986)
+  - url: https://www.airframer.com/news/release/lms-international-to-acquire-imagine
+    label: 'LMS release 2007-01: to acquire Imagine'
+as_of: '2026-11-22'

@@ -1,0 +1,43 @@
+id: petsc
+type: tool
+name: PETSc
+category: solver-library
+vendor: anl
+open_source: true
+license: BSD-2-Clause
+status: active
+first_release: 1995
+stages:
+  - analysis
+formats:
+  reads:
+    - gmsh-msh
+  writes:
+    - hdf5
+    - exodus
+    - cgns
+    - vtk-legacy
+    - vtk-xml
+website: https://petsc.org/
+wikipedia: https://en.wikipedia.org/wiki/Portable,_Extensible_Toolkit_for_Scientific_Computation
+summary: Parallel linear and nonlinear solvers and time steppers; the base layer of many research codes.
+plain: >-
+  A free library for solving the large equation systems in simulations across many processors; many
+  research codes build on it.
+workflow: >-
+  Research codes such as MOOSE, FEniCS, Firedrake and deal.II call PETSc to solve their large
+  equation systems across many processors; the answers go back into those codes.
+files_note: 'A C programming library (with Fortran and Python bindings) for parallel solvers; programs move data through viewer objects that write PETSc binary, HDF5, ExodusII, CGNS or VTK files.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://petsc.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Portable,_Extensible_Toolkit_for_Scientific_Computation
+    label: Wikipedia
+  - url: https://petsc.org/release/manualpages/Viewer/PetscViewerType/
+    label: 'PETSc docs: PetscViewerType'
+  - url: https://petsc.org/release/manualpages/DMPlex/DMPlexCreateGmshFromFile/
+    label: 'PETSc docs: DMPlexCreateGmshFromFile'
+  - url: https://gitlab.com/petsc/petsc/-/raw/main/src/sys/classes/viewer/impls/vtk/vtkv.c
+    label: 'PETSc source: VTK viewer extensions'

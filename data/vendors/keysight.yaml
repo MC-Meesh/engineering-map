@@ -1,0 +1,17 @@
+id: keysight
+type: vendor
+name: Keysight Technologies
+kind: company
+hq: US
+founded: 2014
+status: active
+website: https://www.keysight.com/
+wikipedia: https://en.wikipedia.org/wiki/Keysight
+summary: Test and measurement company with RF EDA (ADS) and, via ESI, virtual prototyping.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.keysight.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Keysight
+    label: Wikipedia

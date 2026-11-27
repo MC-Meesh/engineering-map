@@ -1,0 +1,47 @@
+id: openscad
+type: tool
+name: OpenSCAD
+category: cad
+vendor: openscad-project
+open_source: true
+license: GPL-2.0
+status: active
+first_release: 2010
+stages:
+  - design
+built_on:
+  - cgal
+  - manifold
+formats:
+  reads:
+    - openscad-script
+    - dxf
+  writes:
+    - openscad-script
+    - stl
+    - 3mf
+    - obj
+    - dxf
+    - amf
+website: https://openscad.org/
+wikipedia: https://en.wikipedia.org/wiki/OpenSCAD
+summary: Script-only solid modeling by CSG; popular for parametric printable parts.
+plain: >-
+  Free software where you describe 3D parts in a script by adding and subtracting basic shapes;
+  popular for adjustable 3D printed parts.
+workflow: >-
+  A maker writes a script that adds and subtracts shapes, renders it here, and exports STL or 3MF to
+  a slicer such as Cura or PrusaSlicer, or DXF to 2D drawing tools.
+native_files:
+  - ext: .scad
+    what: OpenSCAD model script
+    format: openscad-script
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://openscad.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/OpenSCAD
+    label: Wikipedia
+  - url: https://files.openscad.org/documentation/manual/Using_OpenSCAD_in_a_command_line_environment.html
+    label: 'native file format (OpenSCAD manual: command line)'

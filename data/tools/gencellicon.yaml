@@ -1,0 +1,27 @@
+id: gencellicon
+type: tool
+name: Gencellicon
+category: eda
+vendor: siemens
+origin: excellicon
+open_source: false
+status: active
+stages:
+  - design
+  - test
+website: https://www.siemens.com/en-us/products/ic/ic-design/gencellicon/
+summary: >-
+  Timing constraint tools from the Excellicon acquisition: build, certify and manage SDC
+  constraints, analyze clocks and plan early floorplans.
+plain: >-
+  Tools for writing and checking the timing rules a chip design must meet, analyzing its clocks and
+  planning an early layout.
+workflow: >-
+  A chip team writes the timing rules (SDC files saying how fast each signal must arrive) and an
+  early floor plan of where blocks sit on the chip here, then hands them to the tools that build and
+  wire the layout and to the final timing checks, which must meet them.
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/ic/ic-design/gencellicon/
+    label: official page (Gencellicon, with Excellicon)
+as_of: '2026-11-22'

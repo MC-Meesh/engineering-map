@@ -1,0 +1,17 @@
+id: cgns
+type: format
+name: CGNS
+extensions:
+  - .cgns
+kind: results
+standard: AIAA R-101A
+steward: CGNS Steering Committee
+open_spec: true
+first_published: 1994
+website: https://cgns.github.io/
+summary: Standard for CFD meshes, boundary conditions and solutions, stored on HDF5.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://cgns.github.io/
+    label: official page

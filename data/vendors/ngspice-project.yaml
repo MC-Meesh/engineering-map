@@ -1,0 +1,13 @@
+id: ngspice-project
+type: vendor
+name: ngspice project
+kind: project
+founded: 1999
+status: active
+website: https://ngspice.sourceforge.io/
+summary: Open-source mixed-signal SPICE simulator community.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://ngspice.sourceforge.io/
+    label: official page

@@ -1,0 +1,49 @@
+id: delmia
+type: tool
+name: 3DEXPERIENCE DELMIA
+category: robotics-controls
+vendor: dassault
+open_source: false
+status: active
+first_release: 2000
+stages:
+  - manufacturing
+  - lifecycle
+integrates_with:
+  - catia
+competes_with:
+  - process-simulate
+runs_on:
+  - 3dexperience
+website: https://www.3ds.com/products/delmia
+wikipedia: https://en.wikipedia.org/wiki/DELMIA
+summary: >-
+  DELMIA's manufacturing engineering applications on 3DEXPERIENCE: process planning, robot and
+  machining programming and factory simulation.
+plain: >-
+  Dassault applications for planning how a product will be made: the steps on the factory floor,
+  programming robots and machines, and simulating the factory.
+workflow: >-
+  Manufacturing engineers take the product designed in CATIA on 3DEXPERIENCE, plan the factory
+  steps, program robots and machines and simulate the plant here, then release the plans to the shop
+  floor.
+files_note: 'On 3DEXPERIENCE, DELMIA data lives in the platform repository, not loose files. Data leaves or enters as 3DXML export files or zip exchange packages.'
+notes: >-
+  DELMIA is a Dassault brand (created 2000) that also covers operations software such as DELMIA
+  Apriso, Quintiq, Ortems and DELMIAWorks; this record is the manufacturing engineering part, so it
+  is no longer classed as CAM. The brand is brand-delmia.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/products/delmia
+    label: DELMIA brand page (a Dassault Systemes brand)
+  - url: https://www.3ds.com/about/company/history
+    label: Dassault company history (DELMIA brand created 2000)
+  - url: https://en.wikipedia.org/wiki/DELMIA
+    label: Wikipedia
+  - url: https://www.3ds.com/support/documentation/resource-library/3dxml-import-export-3dexperience-r2024x
+    label: 'Dassault Systemes: 3DXML import/export on 3DEXPERIENCE R2024x'
+  - url: https://3dswym.3dexperience.3ds.com/wiki/catia-user-community/data-exchange-between-catia-v5-and-3dexperience_FB7NO1rhSjqWYcbBueD14A
+    label: '3DS community wiki: data exchange between CATIA V5 and 3DEXPERIENCE'
+  - url: https://www.3ds.com/products/delmia
+    label: powered by the 3DEXPERIENCE platform (Dassault product page)

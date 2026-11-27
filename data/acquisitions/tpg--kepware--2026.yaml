@@ -1,0 +1,25 @@
+id: tpg--kepware--2026
+type: acquisition
+acquirer: tpg
+target: kepware
+announced: '2025-11-05'
+completed: '2026-03-16'
+status: completed
+value: up to about $725M including ThingWorx ($600M cash plus up to $125M earnout)
+summary: >-
+  PTC sold Kepware and ThingWorx together to a TPG Capital entity so it could focus on CAD and PLM.
+  Agreed price was $600M cash plus up to $125M contingent on a future TPG sale; PTC received $523M
+  cash at closing after adjustments.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/857005/000119312526107315/ptc-ex99_1.htm
+    label: 'PTC 8-K exhibit 2026-03-16: divestiture completed'
+  - url: https://www.ptc.com/en/news/2026/ptc-completes-divestiture-of-kepware-and-thingworx-businesses
+    label: PTC press release 2026-03-16
+  - url: >-
+      https://www.tpg.com/news-and-insights/tpg-to-acquire-ptcs-industrial-connectivity-and-iot-businesses
+    label: TPG press release 2025-11-05
+  - url: >-
+      https://www.tpg.com/news-and-insights/velotic-launches-to-shape-future-of-industrial-manufacturing-software
+    label: 'TPG release 2026-03-17: Velotic launch'

@@ -1,0 +1,17 @@
+id: edf
+type: vendor
+name: EDF
+kind: institution
+hq: FR
+founded: 1946
+status: active
+website: https://www.edf.fr/
+wikipedia: https://en.wikipedia.org/wiki/%C3%89lectricit%C3%A9_de_France
+summary: French utility that develops code_aster, code_saturne and co-develops SALOME.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.edf.fr/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/%C3%89lectricit%C3%A9_de_France
+    label: Wikipedia

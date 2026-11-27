@@ -1,0 +1,30 @@
+id: aras-innovator
+type: tool
+name: Aras Innovator
+category: plm-pdm
+vendor: aras
+open_source: false
+status: active
+first_release: 2000
+stages:
+  - lifecycle
+competes_with:
+  - teamcenter
+  - windchill
+website: https://aras.com/en/platform
+summary: Model-based, low-code PLM platform with an open core.
+plain: >-
+  Business software where manufacturers keep the official record of their products, parts and
+  changes; companies can adapt it to their own processes with little programming.
+workflow: >-
+  Engineering teams check designs, parts and change requests into Aras, which keeps the official
+  product record; companies adapt its processes, and manufacturing and quality teams work from the
+  released data.
+files_note: 'Has no file type of its own: the Aras Innovator database holds the records that manage files, and the physical files sit in a separate vault, a directory tree on a file server.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://aras.com/en/platform
+    label: official page
+  - url: https://docs.aras.com/backing-up-vault-storage-37
+    label: 'Aras Innovator docs (release 37): Backing Up Vault Storage'

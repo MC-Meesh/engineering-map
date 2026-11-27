@@ -1,0 +1,22 @@
+id: vtk-xml
+type: format
+name: VTK XML
+extensions:
+  - .vtu
+  - .vtp
+  - .vti
+  - .vtm
+  - .pvd
+kind: results
+steward: Kitware
+steward_vendor: kitware
+open_spec: true
+website: https://docs.vtk.org/en/latest/vtk_file_formats/index.html
+summary: >-
+  XML dataset family (unstructured, polydata, image, multiblock), the default for open-source
+  post-processing.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://docs.vtk.org/en/latest/vtk_file_formats/index.html
+    label: official page

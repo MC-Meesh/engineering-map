@@ -1,0 +1,17 @@
+id: vtk-legacy
+type: format
+name: VTK legacy
+extensions:
+  - .vtk
+kind: mesh
+steward: Kitware
+steward_vendor: kitware
+open_spec: true
+first_published: 1993
+website: https://docs.vtk.org/en/latest/vtk_file_formats/index.html
+summary: The original VTK text or binary dataset format.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://docs.vtk.org/en/latest/vtk_file_formats/index.html
+    label: official page

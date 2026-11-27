@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import { tools, categoryById, vendorById, stats } from '../../lib/data';
+const rows = tools.map((t) => ({
+  t,
+  cat: categoryById.get(t.category)!.name,
+  owner: vendorById.get(t.ultimateOwner)?.name ?? '',
+  vendor: vendorById.get(t.vendor)?.name ?? '',
+  io: new Set([...(t.formats?.reads ?? []), ...(t.formats?.writes ?? [])]).size,
+}));
+---
+<Base title="All tools" section="tools" description={`Every one of the ${stats.toolsAll} tools on the engineering map, as a filterable table.`}>
+  <div class="page">
+    <header class="page-head">
+      <h1>All tools</h1>
+      <p class="lede">{stats.toolsAll} tools, {stats.kernels} of them geometry kernels. This table holds the same nodes as the map; filter it by any word in the row.</p>
+    </header>
+    <label class="sr-only" for="q">Filter tools</label>
+    <input id="q" class="filter-input" type="search" placeholder="Filter: open source, CFD, Siemens, 1995" data-filter="#tools-table" />
+    <p class="footnote" id="q-count" aria-live="polite"></p>
+    <div class="table-wrap">
+      <table class="data" id="tools-table">
+        <thead><tr><th scope="col">Tool</th><th scope="col">Category</th><th scope="col">Vendor</th><th scope="col">Owner today</th><th scope="col">License</th><th scope="col" class="n">First release</th><th scope="col" class="n">Formats</th></tr></thead>
+        <tbody>
+          {rows.map(({ t, cat, owner, vendor, io }) => (
+            <tr>
+              <td><span class={`sw ${t.nodeType === 'kernel' ? 'kernel' : ''}`} data-d={t.domain} aria-hidden="true"></span><a href={`/tools/${t.id}/`}>{t.name}</a>{t.status === 'discontinued' && <span class="muted"> (discontinued)</span>}</td>
+              <td><a href={`/categories/${t.category}/`}>{cat}</a></td>
+              <td><a href={`/vendors/${t.vendor}/`}>{vendor}</a></td>
+              <td>{owner !== vendor ? owner : ''}</td>
+              <td>{t.open_source ? <span>open source <span class="mono muted">{t.license}</span></span> : 'commercial'}</td>
+              <td class="n">{t.first_release ?? ''}</td>
+              <td class="n">{io || ''}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Base>
+<script>
+  import '../../scripts/table-filter.ts';
+</script>

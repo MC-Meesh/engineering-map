@@ -1,0 +1,17 @@
+id: mentor--flomerics--2008
+type: acquisition
+acquirer: mentor
+target: flomerics
+completed: '2008-07-09'
+status: completed
+summary: >-
+  UK public takeover. Mentor gained over 50% of Flomerics on 2008-07-09 and consolidated it from
+  then; it held 93.9% by 2008-07-31 and announced final completion (squeeze-out) on 2008-10-09.
+  Became Mentor's Mechanical Analysis Division.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/701811/000119312508190247/d10q.htm
+    label: Mentor Graphics 10-Q (quarter ended 2008-07-31), note 7
+  - url: https://www.digitalengineering247.com/article/mentor-graphics-acquires-flomerics-group-plc
+    label: Digital Engineering 2008 (final completion in October)

@@ -1,0 +1,37 @@
+id: solvespace
+type: tool
+name: SolveSpace
+category: cad
+vendor: solvespace-project
+open_source: true
+license: GPL-3.0
+status: active
+first_release: 2008
+stages:
+  - design
+formats:
+  reads:
+    - dxf
+  writes:
+    - step
+    - dxf
+    - stl
+website: https://solvespace.com/
+wikipedia: https://en.wikipedia.org/wiki/SolveSpace
+summary: Tiny parametric CAD with its own NURBS kernel and constraint solver.
+plain: A tiny, free 3D design program where dimensions and constraints drive the model.
+workflow: >-
+  A maker sketches with constraints and builds simple parts here, then exports STEP to other design
+  and machining tools, STL for 3D printing, or DXF for 2D work.
+notes: >-
+  Uses its own geometric constraint solver, tightly coupled to the program and also offered as an
+  embeddable library under GPLv3.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://solvespace.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/SolveSpace
+    label: Wikipedia
+  - url: https://solvespace.com/library.pl
+    label: 'SolveSpace library page: own constraint solver'

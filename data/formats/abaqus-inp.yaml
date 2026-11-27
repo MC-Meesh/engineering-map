@@ -1,0 +1,16 @@
+id: abaqus-inp
+type: format
+name: Abaqus input
+extensions:
+  - .inp
+kind: solver-input
+steward: Dassault Systemes
+steward_vendor: dassault
+open_spec: true
+website: https://www.3ds.com/products/simulia/abaqus
+summary: Keyword-based text deck for Abaqus; also read by CalculiX with a near-compatible dialect.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.3ds.com/products/simulia/abaqus
+    label: official page

@@ -1,0 +1,21 @@
+id: sysml
+type: format
+name: SysML
+extensions:
+  - .sysml
+  - .xmi
+kind: systems
+standard: OMG SysML v1.7 and v2
+steward: Object Management Group
+open_spec: true
+first_published: 2007
+website: https://www.omg.org/spec/SysML/
+wikipedia: https://en.wikipedia.org/wiki/Systems_modeling_language
+summary: Modeling language for systems engineering; v2 adds a textual syntax and a standard API.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.omg.org/spec/SysML/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Systems_modeling_language
+    label: Wikipedia

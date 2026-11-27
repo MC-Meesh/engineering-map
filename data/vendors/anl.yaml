@@ -1,0 +1,17 @@
+id: anl
+type: vendor
+name: Argonne National Laboratory
+kind: institution
+hq: US
+founded: 1946
+status: active
+website: https://www.anl.gov/
+wikipedia: https://en.wikipedia.org/wiki/Argonne_National_Laboratory
+summary: US lab behind PETSc and Nek5000.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.anl.gov/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Argonne_National_Laboratory
+    label: Wikipedia

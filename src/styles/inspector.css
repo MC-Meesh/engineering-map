@@ -1,0 +1,68 @@
+/* Format inspector ("Inside the file"): shared by /formats/<id>/inside/ and the example panel
+   on format pages. Inside the panel it stacks by container width, not viewport width. */
+.insp { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 1rem; align-items: start; --tint-0: color-mix(in srgb, var(--d-design) 22%, transparent); --tint-1: color-mix(in srgb, var(--d-simulation) 22%, transparent); --tint-2: color-mix(in srgb, var(--d-electronics) 22%, transparent); --tint-3: color-mix(in srgb, var(--d-manufacturing) 26%, transparent); }
+.insp-side { position: sticky; top: calc(var(--header-h) + 12px); display: grid; gap: 0.75rem; max-height: calc(100dvh - var(--header-h) - 24px); grid-template-rows: auto minmax(0, 1fr) auto; min-width: 0; }
+.insp-summary { font-size: var(--fs-0); margin: 0; color: var(--ink-2); }
+.insp-outline-wrap { border: 1px solid var(--rule); background: var(--sheet); min-height: 0; overflow: auto; }
+.insp-outline-wrap > summary { font-weight: 600; font-size: var(--fs-0); padding: 0.4rem 0.6rem; cursor: pointer; border-bottom: 1px solid var(--rule); position: sticky; top: 0; background: var(--sheet); }
+.insp-outline { list-style: none; margin: 0; padding: 0.2rem 0; font-size: var(--fs-0); }
+.insp-outline button { display: flex; justify-content: space-between; gap: 0.5rem; width: 100%; font: inherit; text-align: left; background: none; border: 0; color: var(--ink); padding: 0.18rem 0.6rem 0.18rem calc(0.6rem + var(--d) * 0.9rem); cursor: pointer; }
+.insp-outline button:hover, .insp-outline button.sel { background: var(--red-wash); }
+.insp-outline button.sel { box-shadow: inset 2px 0 0 var(--red); }
+.insp-outline button > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.insp-outline button > span:last-child { flex: none; font-size: 11px; }
+.insp-note { border: 1px solid var(--rule); border-left: 3px solid var(--red); background: var(--sheet); padding: 0.5rem 0.7rem; font-size: var(--fs-0); min-height: 6rem; max-height: 14rem; overflow: auto; }
+.insp-note p { margin: 0 0 0.35rem; }
+.insp-note-title { font-weight: 700; }
+.insp-note-value { overflow-wrap: anywhere; color: var(--ink-2); font-size: 11.5px; }
+.insp-main { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.75rem; }
+.insp-main > * { min-width: 0; }
+.insp-view { height: min(72vh, 820px); overflow: auto; border: 1px solid var(--rule); background: var(--sheet); font-family: var(--mono); font-size: 12px; position: relative; }
+.insp-spacer { position: relative; min-width: max-content; }
+.insp-rows { position: absolute; left: 0; top: 0; min-width: 100%; }
+.insp-rows .r { height: 18px; line-height: 18px; white-space: pre; display: flex; }
+.insp-rows .r.hi { background: var(--red-wash); }
+.insp-rows .r.flash { outline: 1px solid var(--red); outline-offset: -1px; }
+.insp-rows .ln { flex: none; width: 4.5em; padding-right: 0.6em; text-align: right; color: var(--ink-3); border-right: 3px solid var(--k, transparent); margin-right: 0.6em; user-select: none; position: sticky; left: 0; background: var(--sheet); }
+.insp-rows .hx .ln { width: 5.5em; border-right: 1px solid var(--rule); }
+.insp-rows .hex .b { padding: 0 0.28em; }
+.insp-rows .asc { margin-left: 1em; padding-left: 0.6em; border-left: 1px solid var(--rule); }
+.insp-rows .asc .b { padding: 0; }
+.insp-rows .b.k0 { background: var(--tint-0); } .insp-rows .b.k1 { background: var(--tint-1); } .insp-rows .b.k2 { background: var(--tint-2); } .insp-rows .b.k3 { background: var(--tint-3); }
+.insp-rows .b.hi { background: var(--red); color: var(--sheet); }
+.insp-rows .b:hover { outline: 1px solid var(--ink); }
+.insp-rows .k { color: var(--red); font-weight: 700; }
+.insp-rows .e { color: var(--e-b); }
+.insp-rows .s { color: var(--d-systems); }
+.insp-rows .n { color: var(--e-c); }
+.insp-rows .c { color: var(--ink-3); font-style: italic; }
+.insp-rows .a { color: var(--d-intelligence); }
+.insp-rows .p { color: var(--ink-2); }
+.insp-rows .f0 { background: var(--tint-0); } .insp-rows .f1 { background: var(--tint-2); }
+.insp-rows .ref { text-decoration: underline; text-decoration-color: var(--ink-3); cursor: pointer; }
+.insp-rows .ref:hover { color: var(--red); }
+.insp-rows .t-more { color: var(--ink-3); }
+.insp-aside { border: 1px solid var(--rule); background: var(--sheet); padding: 0.6rem 0.8rem; font-size: var(--fs-0); }
+.insp-aside-title { font-weight: 700; margin: 0.3rem 0; }
+.insp-pre { max-height: 22rem; overflow: auto; font-size: 11.5px; margin: 0; white-space: pre; }
+.insp-entry { display: grid; gap: 0.25rem; color: var(--ink-2); }
+.insp-entry select { font: inherit; padding: 0.3rem; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); max-width: 100%; }
+@container insp (max-width: 760px) {
+  .insp { grid-template-columns: 1fr; }
+  .insp-side { position: static; max-height: none; grid-template-rows: auto; }
+  .insp-outline-wrap { max-height: 40vh; }
+  .insp-view { height: 62vh; font-size: 11px; }
+  .insp-rows .ln { width: 3.6em; }
+  .insp-rows .hx .ln { width: 4.6em; }
+}
+
+/* Narrow containers: contents first, then the note, then the structure list. */
+.insp-host { container: insp / inline-size; }
+@container insp (max-width: 760px) {
+  .insp-side { display: contents; }
+  .insp-summary { order: 0; }
+  .insp-main { order: 1; }
+  .insp-note { order: 2; min-height: 4.5rem; max-height: 9rem; }
+  .insp-outline-wrap { order: 3; max-height: 14rem; }
+  .insp-view { height: min(56vh, 560px); }
+}

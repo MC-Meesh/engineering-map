@@ -1,0 +1,13 @@
+id: eigen-project
+type: vendor
+name: Eigen project
+kind: project
+founded: 2006
+status: active
+website: https://eigen.tuxfamily.org/
+summary: C++ linear algebra template library.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://eigen.tuxfamily.org/
+    label: official page

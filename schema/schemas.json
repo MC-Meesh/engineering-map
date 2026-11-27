@@ -1,0 +1,661 @@
+{
+  "$comment": "JSON Schemas for every node file under data/. Validated by scripts/build-graph.mjs with Ajv.",
+  "definitions": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$"
+    },
+    "ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/id"
+      },
+      "uniqueItems": true
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$"
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "url"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "url": {
+            "type": "string",
+            "pattern": "^https?://"
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "required": [
+        "confidence",
+        "as_of",
+        "sources"
+      ],
+      "properties": {
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
+        "as_of": {
+          "$ref": "#/definitions/date"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 320
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "tool": {
+    "type": "object",
+    "allOf": [
+      {
+        "$ref": "#/definitions/provenance"
+      }
+    ],
+    "required": [
+      "id",
+      "type",
+      "summary",
+      "name",
+      "category",
+      "vendor",
+      "open_source",
+      "status",
+      "stages",
+      "website"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/id"
+      },
+      "type": {
+        "const": "tool"
+      },
+      "name": {
+        "type": "string"
+      },
+      "category": {
+        "$ref": "#/definitions/id"
+      },
+      "vendor": {
+        "$ref": "#/definitions/id"
+      },
+      "origin": {
+        "$ref": "#/definitions/id"
+      },
+      "open_source": {
+        "type": "boolean"
+      },
+      "license": {
+        "type": "string"
+      },
+      "status": {
+        "enum": [
+          "active",
+          "discontinued",
+          "legacy"
+        ]
+      },
+      "first_release": {
+        "type": "integer",
+        "minimum": 1955,
+        "maximum": 2026
+      },
+      "stages": {
+        "$ref": "#/definitions/ids",
+        "minItems": 1
+      },
+      "built_on": {
+        "$ref": "#/definitions/ids"
+      },
+      "formats": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "reads": {
+            "$ref": "#/definitions/ids"
+          },
+          "writes": {
+            "$ref": "#/definitions/ids"
+          }
+        }
+      },
+      "plugin_of": {
+        "$ref": "#/definitions/id"
+      },
+      "integrates_with": {
+        "$ref": "#/definitions/ids"
+      },
+      "competes_with": {
+        "$ref": "#/definitions/ids"
+      },
+      "open_source_alternative_to": {
+        "$ref": "#/definitions/ids"
+      },
+      "website": {
+        "type": "string",
+        "pattern": "^https?://"
+      },
+      "wikipedia": {
+        "type": "string",
+        "pattern": "^https://en\\.wikipedia\\.org/"
+      },
+      "summary": {},
+      "notes": {},
+      "confidence": {},
+      "as_of": {},
+      "sources": {},
+      "plain": {
+        "type": "string",
+        "minLength": 20,
+        "maxLength": 260,
+        "$comment": "What it does, for a newcomer: plain words, no facts beyond the record and its sources."
+      },
+      "native_files": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": [
+            "ext",
+            "what"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "ext": {
+              "type": "string",
+              "pattern": "^\\.[A-Za-z0-9_.]+$"
+            },
+            "what": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 80
+            },
+            "format": {
+              "$ref": "#/definitions/id"
+            }
+          }
+        },
+        "$comment": "The files the tool saves its own work in, from its own documentation (cited in sources)."
+      },
+      "files_note": {
+        "type": "string",
+        "maxLength": 200,
+        "$comment": "For tools that work without files (APIs, connectors): how data gets in and out, sourced."
+      },
+      "workflow": {
+        "type": "string",
+        "minLength": 30,
+        "maxLength": 300,
+        "$comment": "Where this tool's work comes from and where it goes next, in plain words, from the record's own facts."
+      },
+      "runs_on": {
+        "$ref": "#/definitions/ids",
+        "$comment": "Platforms this tool runs on (software other applications run on and share data through), from the vendor's own pages."
+      },
+      "clarifies": {
+        "type": "array",
+        "$comment": "Common misunderstandings corrected, each with a primary source.",
+        "items": {
+          "type": "object",
+          "required": [
+            "text",
+            "url"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "aka": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "$comment": "Earlier or common names, from the sources, so search and sentences can use them."
+      },
+      "geometry_basis": {
+        "type": "object",
+        "$comment": "For tools with no geometry kernel recorded: how they handle geometry, from a primary source.",
+        "required": [
+          "kind",
+          "text",
+          "url"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "own-code",
+              "mesh",
+              "host"
+            ]
+          },
+          "host": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "vendor": {
+    "type": "object",
+    "allOf": [
+      {
+        "$ref": "#/definitions/provenance"
+      }
+    ],
+    "required": [
+      "id",
+      "type",
+      "summary",
+      "name",
+      "kind",
+      "status"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/id"
+      },
+      "type": {
+        "const": "vendor"
+      },
+      "name": {
+        "type": "string"
+      },
+      "kind": {
+        "enum": [
+          "company",
+          "project",
+          "institution"
+        ]
+      },
+      "hq": {
+        "type": "string",
+        "pattern": "^[A-Z]{2}$"
+      },
+      "founded": {
+        "type": "integer",
+        "minimum": 1800,
+        "maximum": 2026
+      },
+      "parent": {
+        "$ref": "#/definitions/id"
+      },
+      "status": {
+        "enum": [
+          "active",
+          "merged"
+        ]
+      },
+      "website": {
+        "type": "string",
+        "pattern": "^https?://"
+      },
+      "wikipedia": {
+        "type": "string",
+        "pattern": "^https://en\\.wikipedia\\.org/"
+      },
+      "summary": {},
+      "notes": {},
+      "confidence": {},
+      "as_of": {},
+      "sources": {}
+    }
+  },
+  "format": {
+    "type": "object",
+    "allOf": [
+      {
+        "$ref": "#/definitions/provenance"
+      }
+    ],
+    "required": [
+      "id",
+      "type",
+      "summary",
+      "name",
+      "kind",
+      "steward",
+      "open_spec"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/id"
+      },
+      "type": {
+        "const": "format"
+      },
+      "name": {
+        "type": "string"
+      },
+      "extensions": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "kind": {
+        "enum": [
+          "brep-exchange",
+          "native-cad",
+          "tessellated",
+          "mesh",
+          "solver-input",
+          "results",
+          "systems",
+          "bim",
+          "ecad",
+          "ic",
+          "cam",
+          "robotics",
+          "scene"
+        ]
+      },
+      "standard": {
+        "type": "string"
+      },
+      "steward": {
+        "type": "string"
+      },
+      "steward_vendor": {
+        "$ref": "#/definitions/id"
+      },
+      "open_spec": {
+        "type": "boolean"
+      },
+      "first_published": {
+        "type": "integer"
+      },
+      "website": {
+        "type": "string",
+        "pattern": "^https?://"
+      },
+      "wikipedia": {
+        "type": "string",
+        "pattern": "^https://en\\.wikipedia\\.org/"
+      },
+      "summary": {},
+      "notes": {},
+      "confidence": {},
+      "as_of": {},
+      "sources": {}
+    }
+  },
+  "acquisition": {
+    "type": "object",
+    "allOf": [
+      {
+        "$ref": "#/definitions/provenance"
+      }
+    ],
+    "required": [
+      "id",
+      "type",
+      "acquirer",
+      "target",
+      "completed",
+      "status"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "type": {
+        "const": "acquisition"
+      },
+      "acquirer": {
+        "$ref": "#/definitions/id"
+      },
+      "target": {
+        "$ref": "#/definitions/id"
+      },
+      "announced": {
+        "$ref": "#/definitions/date"
+      },
+      "completed": {
+        "$ref": "#/definitions/date"
+      },
+      "status": {
+        "enum": [
+          "completed",
+          "pending",
+          "terminated",
+          "divested"
+        ]
+      },
+      "value": {
+        "type": "string"
+      },
+      "summary": {},
+      "notes": {},
+      "confidence": {},
+      "as_of": {},
+      "sources": {}
+    }
+  },
+  "example": {
+    "$comment": "One example file for a format, hosted under public/examples/ or linked. Policy: docs/decisions/0005-format-examples.md.",
+    "type": "object",
+    "required": [
+      "format",
+      "contains",
+      "origin",
+      "license",
+      "attribution",
+      "as_of"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "format": {
+        "$ref": "#/definitions/id"
+      },
+      "title": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "file": {
+        "type": "string",
+        "pattern": "^examples/[a-z0-9-]+/[A-Za-z0-9._-]+$"
+      },
+      "url": {
+        "type": "string",
+        "pattern": "^https?://"
+      },
+      "source_url": {
+        "type": "string",
+        "pattern": "^https?://"
+      },
+      "contains": {
+        "type": "string",
+        "minLength": 10,
+        "maxLength": 400
+      },
+      "origin": {
+        "enum": [
+          "generated",
+          "third-party",
+          "vendor-sample"
+        ]
+      },
+      "license": {
+        "type": "string",
+        "minLength": 2
+      },
+      "attribution": {
+        "type": "string",
+        "minLength": 2
+      },
+      "generated_by": {
+        "type": "string"
+      },
+      "note": {
+        "type": "string",
+        "maxLength": 400
+      },
+      "size": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "sha256": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      "as_of": {
+        "$ref": "#/definitions/date"
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "required": [
+            "file"
+          ]
+        },
+        "then": {
+          "required": [
+            "size",
+            "sha256"
+          ]
+        },
+        "else": {
+          "required": [
+            "url"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "origin": {
+              "const": "generated"
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "file",
+            "generated_by"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "origin": {
+              "const": "third-party"
+            }
+          },
+          "required": [
+            "file"
+          ]
+        },
+        "then": {
+          "required": [
+            "source_url"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "origin": {
+              "const": "vendor-sample"
+            }
+          }
+        },
+        "then": {
+          "not": {
+            "required": [
+              "file"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "brand": {
+    "type": "object",
+    "allOf": [
+      {
+        "$ref": "#/definitions/provenance"
+      }
+    ],
+    "$comment": "A marketed product family (brand) between a vendor and its products. A grouping, not a tool: no edges of its own (decision 0010).",
+    "required": [
+      "id",
+      "type",
+      "name",
+      "vendor",
+      "products",
+      "summary",
+      "website"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "$ref": "#/definitions/id"
+      },
+      "type": {
+        "const": "brand"
+      },
+      "name": {
+        "type": "string"
+      },
+      "vendor": {
+        "$ref": "#/definitions/id"
+      },
+      "website": {
+        "type": "string",
+        "pattern": "^https?://"
+      },
+      "products": {
+        "$ref": "#/definitions/ids",
+        "minItems": 2
+      },
+      "summary": {},
+      "notes": {},
+      "confidence": {},
+      "as_of": {},
+      "sources": {}
+    }
+  }
+}

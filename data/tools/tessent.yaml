@@ -1,0 +1,25 @@
+id: tessent
+type: tool
+name: Tessent
+category: eda
+vendor: siemens
+open_source: false
+status: active
+stages:
+  - design
+  - test
+website: https://www.siemens.com/en-us/products/ic/tessent/
+summary: >-
+  Siemens EDA design-for-test and silicon lifecycle line: test, debug, safety and security
+  structures in the chip and analytics on data from the field.
+plain: >-
+  Siemens software that adds test, debug, safety and security features to chips and analyzes data
+  from chips in the field.
+workflow: >-
+  Chip designers add test, debug and safety structures here during design; after manufacturing the
+  same structures test each chip, and data from chips in the field comes back for analysis.
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/ic/tessent/
+    label: official page (Tessent Silicon Lifecycle Solutions)
+as_of: '2026-11-22'

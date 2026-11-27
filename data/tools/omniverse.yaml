@@ -1,0 +1,33 @@
+id: omniverse
+type: tool
+name: NVIDIA Omniverse
+category: digital-twin
+vendor: nvidia
+open_source: false
+status: active
+first_release: 2020
+stages:
+  - design
+  - lifecycle
+formats:
+  reads:
+    - usd
+    - gltf
+  writes:
+    - usd
+website: https://www.nvidia.com/en-us/omniverse/
+wikipedia: https://en.wikipedia.org/wiki/Nvidia_Omniverse
+summary: OpenUSD-based platform and SDKs for industrial digital twins and simulation.
+plain: >-
+  NVIDIA's platform for building realistic 3D digital copies of industrial sites and running
+  simulations in them, based on the OpenUSD scene format.
+workflow: >-
+  Teams bring in 3D models as OpenUSD or glTF from design tools, assemble a digital copy of a
+  factory or site here, run simulations in it, and apps such as Isaac Sim build on it.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.nvidia.com/en-us/omniverse/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Nvidia_Omniverse
+    label: Wikipedia

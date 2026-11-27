@@ -1,0 +1,14 @@
+id: mathsoft
+type: vendor
+name: Mathsoft
+kind: company
+parent: ptc
+status: merged
+summary: Maker of Mathcad; acquired by PTC in 2006.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/857005/000119312508244400/d10k.htm
+    label: 'PTC FY2008 10-K: Mathsoft acquired 2006-04-28'
+  - url: https://www.ptc.com/en/blogs/cad/a-quick-history-of-ptc-creo
+    label: 'PTC blog: Mathsoft (2006), now Mathcad Prime'

@@ -1,0 +1,51 @@
+---
+import Base from '../../layouts/Base.astro';
+import { formats, examples, fmtBytes, previewable, inspectable } from '../../lib/data';
+const kindOrder = ['brep-exchange', 'native-cad', 'tessellated', 'scene', 'mesh', 'solver-input', 'results', 'systems', 'bim', 'ecad', 'ic', 'cam', 'robotics'];
+const kindLabel: Record<string, string> = {
+  'brep-exchange': 'Exact geometry exchange', 'native-cad': 'Native CAD', tessellated: 'Tessellated geometry', mesh: 'Mesh', 'solver-input': 'Solver input decks', results: 'Simulation results', systems: 'Systems and requirements', bim: 'Building information', ecad: 'Electronics manufacturing', ic: 'Integrated circuit design', cam: 'Machining and metrology', robotics: 'Robot description', scene: 'Scene and visualization',
+};
+const hosted = examples.filter((e) => e.file);
+const total = [...new Map(hosted.map((e) => [e.file, e.size!])).values()].reduce((a, b) => a + b, 0);
+const covered = new Set(examples.map((e) => e.format));
+const groups = kindOrder.map((k) => ({ k, items: formats.filter((f) => f.kind === k).sort((a, b) => a.name.localeCompare(b.name)) })).filter((g) => g.items.length);
+const fileName = (p: string) => p.split('/').pop();
+---
+<Base title="Formats: examples" section="formats" description={`Example files for ${covered.size} engineering file formats: downloads we made or may redistribute, and links to vendor samples.`}>
+  <div class="page">
+    <header class="page-head">
+      <p class="crumbs"><a href="/formats/">Formats</a> / Examples</p>
+      <h1>Formats: examples</h1>
+      <p class="lede">{covered.size} of {formats.length} formats have an example: {hosted.length} files to download ({fmtBytes(total)} in all) and {examples.length - hosted.length} links to samples published by their owners.</p>
+      <p>Most downloads are one part, an L-bracket drawn for this site, written out in each format by open-source tools, so the same object can be compared across formats; those files are public domain (CC0). Native part files of commercial CAD systems are only linked, never copied; a file in a proprietary format is hosted only when its author published it under a permissive license. Every hosted file lists its license, how it was made and a SHA-256 checksum. The rules are in the <a href="/about/">method notes</a>.</p>
+    </header>
+    {groups.map((g) => (
+      <section>
+        <h2>{kindLabel[g.k]}</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th scope="col">Format</th><th scope="col">Example</th><th scope="col">License or terms</th><th scope="col" class="n">Size</th></tr></thead>
+            <tbody>
+              {g.items.map((f) => {
+                const ex = examples.filter((e) => e.format === f.id);
+                if (!ex.length) return (
+                  <tr><td><span class="sw format" aria-hidden="true"></span><a href={`/formats/${f.id}/`}>{f.name}</a></td><td class="muted">none we can share yet</td><td></td><td></td></tr>
+                );
+                return ex.map((e, i) => (
+                  <tr>
+                    <td>{i === 0 && <><span class="sw format" aria-hidden="true"></span><a href={`/formats/${f.id}/#examples`}>{f.name}</a></>}</td>
+                    <td>{e.file
+                      ? <><a class="mono" href={`/${e.file}`} download>{fileName(e.file)}</a>{inspectable(e.file) && <> <a class="muted" href={`/formats/${f.id}/inside/`}>inside the file</a></>}{previewable(e.file) && <span class="muted">, 3D preview on the format page</span>}</>
+                      : <a href={e.url}>{e.title ?? 'vendor sample'}</a>}</td>
+                    <td>{e.file ? e.license : <span class="muted">linked: {e.license}</span>}</td>
+                    <td class="n">{e.size ? fmtBytes(e.size) : ''}</td>
+                  </tr>
+                ));
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>

@@ -1,0 +1,11 @@
+id: autodesk--netfabb-gmbh--2015
+type: acquisition
+acquirer: autodesk
+target: netfabb-gmbh
+completed: '2015'
+status: completed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.autodesk.com/products/netfabb/overview
+    label: source

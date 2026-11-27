@@ -1,0 +1,18 @@
+id: brand-tecnomatix
+type: brand
+name: Tecnomatix
+vendor: siemens
+website: https://www.siemens.com/en-us/products/tecnomatix/
+products:
+  - plant-simulation
+  - process-simulate
+summary: 'Siemens'' digital manufacturing brand: plant and process simulation.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/tecnomatix/
+    label: official brand page
+  - url: https://www.siemens.com/en-us/products/tecnomatix/plant-simulation-software/
+    label: Plant Simulation under Tecnomatix
+  - url: https://www.siemens.com/en-us/products/tecnomatix/process-simulate-software/
+    label: Process Simulate under Tecnomatix

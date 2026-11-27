@@ -1,0 +1,37 @@
+id: mmg
+type: tool
+name: Mmg
+category: meshing
+vendor: mmg-project
+open_source: true
+license: LGPL-3.0
+status: active
+first_release: 2004
+stages:
+  - analysis
+formats:
+  reads:
+    - gmsh-msh
+    - vtk-legacy
+    - vtk-xml
+  writes:
+    - gmsh-msh
+    - vtk-legacy
+    - vtk-xml
+website: https://www.mmgtools.org/
+summary: Anisotropic remeshing and mesh adaptation library.
+plain: >-
+  A free library that improves existing meshes (the grids of small cells a simulation computes on),
+  for example making cells smaller where the result needs more detail.
+workflow: >-
+  A mesh comes in as a Gmsh or VTK file from a meshing tool or a simulation run; Mmg refines it
+  where more detail is needed and writes the adapted mesh back as Gmsh or VTK for the simulation
+  program's next run.
+files_note: 'A C remeshing library plus command-line tools; its main format is Medit .mesh with .sol solution files, and it can also save TetGen-style meshes.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.mmgtools.org/
+    label: official page
+  - url: https://github.com/MmgTools/mmg/blob/develop/src/mmg3d/libmmg3d.h
+    label: 'Mmg source: libmmg3d.h load/save API'

@@ -1,0 +1,15 @@
+id: ptc--thingworx-co--2013
+type: acquisition
+acquirer: ptc
+target: thingworx-co
+completed: '2013-12-30'
+status: divested
+value: about $112M
+summary: Plus up to $18M earnout. Divested to TPG in 2026.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/857005/000085700513000046/pressrel.htm
+    label: PTC press release 2013-12-30
+  - url: https://www.sec.gov/Archives/edgar/data/857005/000119312526107315/ptc-ex99_1.htm
+    label: 'PTC 8-K exhibit 2026-03-16: divested to TPG'

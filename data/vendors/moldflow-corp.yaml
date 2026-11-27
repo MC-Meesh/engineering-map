@@ -1,0 +1,15 @@
+id: moldflow-corp
+type: vendor
+name: Moldflow Corporation
+kind: company
+hq: US
+founded: 1978
+parent: autodesk
+status: merged
+website: https://www.autodesk.com/products/moldflow/overview
+summary: Plastic injection molding simulation.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.autodesk.com/products/moldflow/overview
+    label: official page

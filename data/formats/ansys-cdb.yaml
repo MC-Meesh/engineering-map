@@ -1,0 +1,16 @@
+id: ansys-cdb
+type: format
+name: Ansys CDB
+extensions:
+  - .cdb
+kind: solver-input
+steward: Ansys
+steward_vendor: ansys
+open_spec: true
+website: https://www.ansys.com/products/structures/ansys-mechanical
+summary: Mechanical APDL archive of a model as commands.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ansys.com/products/structures/ansys-mechanical
+    label: official page

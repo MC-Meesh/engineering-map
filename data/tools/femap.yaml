@@ -1,0 +1,55 @@
+id: femap
+type: tool
+name: Simcenter Femap
+category: cae-fea
+vendor: siemens
+open_source: false
+status: active
+first_release: 1985
+stages:
+  - analysis
+built_on:
+  - parasolid
+formats:
+  reads:
+    - nastran-bdf
+    - nastran-op2
+    - abaqus-inp
+    - ansys-cdb
+    - lsdyna-k
+    - step
+    - parasolid-xt
+  writes:
+    - nastran-bdf
+    - abaqus-inp
+    - ansys-cdb
+    - lsdyna-k
+competes_with:
+  - patran
+  - hypermesh
+website: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/femap/
+wikipedia: https://en.wikipedia.org/wiki/Femap
+summary: Windows FEA pre/post-processor, solver-neutral but most often paired with Nastran.
+plain: >-
+  Windows software for preparing a strength simulation (splitting the part into small pieces and
+  adding loads and supports) and viewing the results. It can feed several calculation programs but
+  is most often paired with Nastran.
+workflow: >-
+  An analyst imports geometry as STEP or Parasolid, meshes it and writes a Nastran deck, runs
+  Nastran, then loads the OP2 results back here; it can also write Abaqus, Ansys and LS-DYNA inputs.
+native_files:
+  - ext: .modfem
+    what: Femap model file
+notes: Renamed Simcenter Femap with version 2019.1.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.plm.automation.siemens.com/media/global/en/Siemens%20SW%20Simcenter%20Femap%20version%202019-1%20FS_tcm27-63976.pdf
+    label: Siemens Femap 2019.1 fact sheet (now Simcenter Femap)
+  - url: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/femap/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Femap
+    label: Wikipedia
+  - url: https://blogs.sw.siemens.com/simcenter/10-hidden-femap-features/
+    label: native file format (Siemens Simcenter blog)

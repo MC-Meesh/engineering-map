@@ -1,0 +1,14 @@
+id: modelon
+type: vendor
+name: Modelon
+kind: company
+hq: SE
+founded: 2004
+status: active
+website: https://modelon.com/
+summary: Modelica-based system simulation (Modelon Impact) and libraries.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://modelon.com/
+    label: official page

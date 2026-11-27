@@ -1,0 +1,46 @@
+id: zw3d
+type: tool
+name: ZW3D
+category: cad
+vendor: zwsoft
+open_source: false
+status: active
+first_release: 2010
+stages:
+  - design
+  - manufacturing
+built_on:
+  - overdrive
+formats:
+  reads:
+    - step
+    - iges
+    - parasolid-xt
+  writes:
+    - step
+    - iges
+    - parasolid-xt
+    - stl
+competes_with:
+  - solidworks
+website: https://www.zwsoft.com/zw3d
+summary: Integrated CAD and CAM on ZWSOFT's own Overdrive kernel, inherited from VX Corporation.
+plain: >-
+  3D design software from ZWSOFT that also programs CNC (computer-controlled) machining in the same
+  file, built on its own Overdrive geometry engine.
+workflow: >-
+  An engineer designs parts and drawings here and programs the CNC machining in the same .Z3 file,
+  exporting STEP, IGES or Parasolid to other CAD tools and STL for 3D printing.
+native_files:
+  - ext: .Z3
+    what: ZW3D file holding parts, drawings and CAM plans
+notes: successor to VX CAD/CAM after ZWSOFT bought VX Corp in 2010
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.zwsoft.com/product/overdrive
+    label: 'ZWSOFT Overdrive page: kernel applied to ZW3D'
+  - url: https://www.zwsoft.com/zw3d
+    label: official page
+  - url: https://www.zwsoft.com/blog/3d-file-formats
+    label: native file format (ZWSOFT blog)

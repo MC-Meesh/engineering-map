@@ -1,0 +1,35 @@
+id: doors
+type: tool
+name: IBM DOORS
+category: systems-mbse
+vendor: ibm
+open_source: false
+status: active
+first_release: 1991
+stages:
+  - requirements
+formats:
+  reads:
+    - reqif
+  writes:
+    - reqif
+competes_with:
+  - polarion
+  - codebeamer
+  - jama-connect
+website: https://www.ibm.com/products/requirements-management
+wikipedia: https://en.wikipedia.org/wiki/DOORS
+summary: The long-time standard for requirements management in aerospace and defense.
+plain: >-
+  IBM software for writing down and tracking the requirements a product must meet; long the standard
+  in aerospace and defense.
+workflow: >-
+  Engineers write and link requirements here, exchange them as ReqIF with suppliers and other tools,
+  and hand them on to system modeling, design and test teams who must show each one is met.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ibm.com/products/requirements-management
+    label: official page
+  - url: https://en.wikipedia.org/wiki/DOORS
+    label: Wikipedia

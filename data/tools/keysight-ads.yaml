@@ -1,0 +1,29 @@
+id: keysight-ads
+type: tool
+name: Keysight ADS
+category: eda
+vendor: keysight
+open_source: false
+status: active
+first_release: 1985
+stages:
+  - design
+  - analysis
+competes_with:
+  - awr-mwo
+website: >-
+  https://www.keysight.com/us/en/products/software/pathwave-design-software/pathwave-advanced-design-system.html
+summary: Advanced Design System for RF, microwave and high-speed digital.
+plain: >-
+  Keysight's Advanced Design System: software for designing and simulating circuits that handle
+  radio and microwave signals or very fast digital signals, so their behavior can be checked before
+  hardware is built.
+workflow: >-
+  An RF or high-speed engineer designs and simulates the circuit here, and hands the design on to
+  board or chip layout and to the lab that measures the built hardware.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.keysight.com/us/en/products/software/pathwave-design-software/pathwave-advanced-design-system.html
+    label: official page

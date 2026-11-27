@@ -1,0 +1,43 @@
+id: dakota
+type: tool
+name: Dakota
+category: optimization
+vendor: sandia
+open_source: true
+license: LGPL-2.1
+status: active
+first_release: 1994
+stages:
+  - optimization
+formats:
+  writes:
+    - hdf5
+open_source_alternative_to:
+  - modefrontier
+  - isight
+website: https://dakota.sandia.gov/
+summary: Sandia toolkit for optimization and uncertainty quantification around any simulation.
+plain: >-
+  Free software from Sandia that runs another simulation many times to find the best design or to
+  measure how uncertain the results are.
+workflow: >-
+  An analyst describes the study in a .in text file and points Dakota at an existing simulation;
+  Dakota runs it many times with changed inputs, and the results, also saved as HDF5, are used to
+  pick a design or state how uncertain the answer is.
+native_files:
+  - ext: .in
+    what: 'Dakota input file, plain text, describing the study'
+files_note: 'Run from a text input file. For each evaluation Dakota writes a parameters file, calls a user driver script, then reads a results file back. Final results can also go to an HDF5 file.'
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://dakota.sandia.gov/about-dakota/
+    label: 'Dakota about page: initiated 1994, GNU LGPL'
+  - url: https://github.com/snl-dakota/dakota/blob/devel/LICENSE
+    label: Dakota LICENSE (LGPL 2.1)
+  - url: https://dakota.sandia.gov/
+    label: official page
+  - url: https://snl-dakota.github.io/docs/6.23.0/users/_sources/usingdakota/introduction/couplingtosimulations.rst.txt
+    label: 'Dakota docs: coupling Dakota to a simulation'
+  - url: https://snl-dakota.github.io/docs/6.23.0/users/usingdakota/reference/environment-results_output-hdf5.html
+    label: 'Dakota reference: results_output hdf5'

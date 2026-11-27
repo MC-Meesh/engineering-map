@@ -1,0 +1,27 @@
+id: solido
+type: tool
+name: Solido
+category: eda
+vendor: siemens
+open_source: false
+status: active
+stages:
+  - analysis
+  - test
+website: https://www.siemens.com/en-us/products/ic/solido/
+summary: >-
+  Siemens EDA custom IC line: variation-aware design and verification, SPICE and fast SPICE
+  simulation, library characterization and IP validation, with AI-assisted sampling.
+plain: >-
+  Siemens software for custom chip design that simulates circuits many times over to check they
+  still work despite small manufacturing differences, and measures how the chip's standard building
+  blocks behave.
+workflow: >-
+  A custom chip designer runs circuit simulations across manufacturing variation here, characterizes
+  the building blocks, and passes the verified designs and libraries on to the rest of the chip
+  flow.
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/ic/solido/
+    label: official page (Solido Intelligent Custom IC Design)
+as_of: '2026-11-22'

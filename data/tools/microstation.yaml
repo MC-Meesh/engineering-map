@@ -1,0 +1,53 @@
+id: microstation
+type: tool
+name: MicroStation
+category: cad
+vendor: bentley
+open_source: false
+status: active
+first_release: 1985
+stages:
+  - design
+  - lifecycle
+built_on:
+  - parasolid
+  - d-cubed
+formats:
+  reads:
+    - dwg
+    - dxf
+    - ifc
+    - step
+  writes:
+    - dwg
+    - dxf
+    - ifc
+    - step
+website: https://www.bentley.com/software/microstation/
+wikipedia: https://en.wikipedia.org/wiki/MicroStation
+summary: Bentley's CAD platform for infrastructure, using its own DGN format.
+plain: >-
+  Bentley's design and drafting software for infrastructure projects, which saves its work in its
+  own DGN format.
+workflow: >-
+  An infrastructure designer works in DGN files here, exchanges DWG, DXF, IFC and STEP files with
+  others on the project, and its IFC or DWG output can feed a Bentley iTwin digital copy.
+native_files:
+  - ext: .dgn
+    what: MicroStation V8 DGN design file
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.digitalengineering247.com/article/bentley-licenses-d-cubed-2d-dcm-3d-dcm-and-cdm-components
+    label: verification source
+  - url: https://www.bentley.com/software/microstation/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/MicroStation
+    label: Wikipedia
+  - url: https://docs.bentley.com/LiveContent/web/MicroStation%20Help-v25/en/GUID-4AA2FCE5-EEC1-F132-571F-E55B3A4FB1FD.html
+    label: native file format (Bentley MicroStation help)
+  - url: https://www.siemens.com/en-us/products/plm-components/parasolid/
+    label: 'Siemens Parasolid page: Bentley Systems among CAD and AEC licensees'
+  - url: https://www.siemens.com/en-us/products/plm-components/d-cubed/
+    label: 'Siemens D-Cubed page: Bentley Systems among AEC licensees'

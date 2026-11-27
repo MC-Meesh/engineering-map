@@ -1,0 +1,20 @@
+id: siemens--altair--2025
+type: acquisition
+acquirer: siemens
+target: altair
+announced: '2024-10-30'
+completed: '2025-03-26'
+status: completed
+value: about $10.6B equity value (Siemens cites about $10B enterprise value)
+summary: >-
+  Adds HyperWorks, OptiStruct and data analytics to the Xcelerator portfolio. Paid $113 per share in
+  cash.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://news.siemens.com/en-us/siemens-altair-engineering-closing/
+    label: 'Siemens release 2025-03-26: acquisition completed'
+  - url: https://www.sec.gov/Archives/edgar/data/1701732/000119312524247631/d859065dex991.htm
+    label: 'Altair 8-K exhibit 2024-10-30: $113 per share, about $10.6B equity'
+  - url: https://news.siemens.com/en-us/siemens-altair/
+    label: 'Siemens release 2024-10-30: agreement'

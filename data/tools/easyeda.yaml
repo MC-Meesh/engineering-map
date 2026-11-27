@@ -1,0 +1,28 @@
+id: easyeda
+type: tool
+name: EasyEDA
+category: eda
+vendor: jlc
+open_source: false
+status: active
+first_release: 2014
+stages:
+  - design
+formats:
+  writes:
+    - gerber
+competes_with:
+  - kicad
+website: https://easyeda.com/
+summary: Browser PCB tool coupled to JLCPCB fabrication and parts.
+plain: >-
+  Circuit board design in a web browser, linked to the JLCPCB service so a board can be ordered with
+  its parts.
+workflow: >-
+  A maker draws the circuit and board in the browser, then sends the Gerber files, with the parts
+  list, to JLCPCB to have the board made and assembled.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://easyeda.com/
+    label: official page

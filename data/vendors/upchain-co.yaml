@@ -1,0 +1,16 @@
+id: upchain-co
+type: vendor
+name: Upchain
+kind: company
+hq: CA
+founded: 2012
+parent: autodesk
+status: merged
+website: https://www.autodesk.com/
+summary: Cloud PLM.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.autodesk.com/
+    label: official page
+notes: Product page moved; link points at the site root pending review.

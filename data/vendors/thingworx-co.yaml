@@ -1,0 +1,23 @@
+id: thingworx-co
+type: vendor
+name: ThingWorx
+kind: company
+hq: US
+founded: 2009
+parent: velotic
+status: merged
+website: https://www.velotic.com/products/thingworx
+summary: >-
+  Industrial IoT application platform; owned by PTC from 2013 until its 2026 sale to TPG, now a
+  Velotic product line.
+notes: Founding year 2009 not confirmed in a fetched primary source.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/857005/000085700513000046/pressrel.htm
+    label: PTC press release 2013-12-30 (ThingWorx acquired)
+  - url: >-
+      https://www.tpg.com/news-and-insights/velotic-launches-to-shape-future-of-industrial-manufacturing-software
+    label: 'TPG release 2026-03-17: Velotic launch'
+  - url: https://www.velotic.com/products/thingworx
+    label: Velotic ThingWorx page

@@ -1,0 +1,40 @@
+id: enovia
+type: tool
+name: ENOVIA
+category: plm-pdm
+vendor: dassault
+open_source: false
+status: active
+first_release: 1998
+stages:
+  - lifecycle
+runs_on:
+  - 3dexperience
+integrates_with:
+  - catia
+  - solidworks
+competes_with:
+  - teamcenter
+  - windchill
+website: https://www.3ds.com/products/enovia
+summary: Dassault's PLM applications for product data, change and configuration management, delivered on the 3DEXPERIENCE platform.
+plain: >-
+  Dassault's software for keeping a company's product data in order, including design changes and
+  product versions, on the 3DEXPERIENCE platform.
+workflow: >-
+  Designers save CATIA and SOLIDWORKS data to the 3DEXPERIENCE platform, where ENOVIA manages its
+  versions, changes and product configurations, and released data goes on to manufacturing and the
+  rest of the company.
+files_note: 'Has no file type of its own: it works on the 3DEXPERIENCE database (a collaborative space) of objects, while files saved from apps such as SOLIDWORKS go to a File Collaboration Server.'
+confidence: medium
+as_of: '2026-11-22'
+notes: Split from the former "3DEXPERIENCE (ENOVIA)" record (decision 0010). The vendor page says ENOVIA is powered by the 3DEXPERIENCE platform.
+sources:
+  - url: https://www.3ds.com/products/enovia
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Dassault_Syst%C3%A8mes
+    label: Wikipedia, Dassault Systemes (ENOVIA introduced in the late 1990s)
+  - url: https://3dswym.3dexperience.3ds.com/wiki/solidworks-news-info/2-data-model-and-identifiers-in-the-3dexperience-platform_Dfdtyv5OROudyt7drdMNqA
+    label: 'Dassault 3DSwym wiki: data model and identifiers in the 3DEXPERIENCE platform'
+  - url: https://www.3ds.com/about/company/history
+    label: "Dassault history: IBM's Product Manager software became ENOVIA in 1998"

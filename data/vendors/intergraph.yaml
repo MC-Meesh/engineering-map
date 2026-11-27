@@ -1,0 +1,22 @@
+id: intergraph
+type: vendor
+name: Intergraph
+kind: company
+hq: US
+founded: 1969
+parent: octave
+status: merged
+website: https://octave.com/
+summary: >-
+  Plant design (Smart 3D, now sold as Octave Forte 3D) and geospatial software; its successor
+  Hexagon divisions went to Octave in the 2026 spin-off.
+notes: Founding year 1969 comes from Wikipedia only and was not confirmed in a primary source.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://investors.hexagon.com/en/share-information/octave-separation
+    label: 'Hexagon investors: Octave separation (ALI and SIG divisions)'
+  - url: https://octave.com/
+    label: Octave official page (Forte 3D, formerly Intergraph Smart 3D)
+  - url: https://en.wikipedia.org/wiki/Intergraph
+    label: Wikipedia

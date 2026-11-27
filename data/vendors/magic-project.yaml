@@ -1,0 +1,13 @@
+id: magic-project
+type: vendor
+name: Magic VLSI authors
+kind: project
+founded: 1980
+status: active
+website: http://opencircuitdesign.com/magic/
+summary: Long-lived open VLSI layout editor.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: http://opencircuitdesign.com/magic/
+    label: official page

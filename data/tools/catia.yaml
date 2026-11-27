@@ -1,0 +1,89 @@
+id: catia
+type: tool
+name: CATIA
+category: cad
+vendor: dassault
+open_source: false
+status: active
+first_release: 1981
+stages:
+  - design
+  - manufacturing
+built_on:
+  - cgm
+formats:
+  reads:
+    - catia-v5
+    - step
+    - iges
+  writes:
+    - catia-v5
+    - step
+    - iges
+    - stl
+    - 3mf
+    - 3dxml
+competes_with:
+  - nx
+  - creo
+runs_on:
+  - 3dexperience
+website: https://www.3ds.com/products/catia
+wikipedia: https://en.wikipedia.org/wiki/CATIA
+summary: >-
+  High-end CAD for aerospace and automotive surfacing and large assemblies; now delivered on
+  3DEXPERIENCE.
+plain: >-
+  High-end 3D design software used by aircraft and car makers for complex surfaces and very large
+  assemblies of parts. CATIA V5 is still sold as desktop software; its successor, 3DEXPERIENCE CATIA,
+  runs on Dassault's 3DEXPERIENCE platform.
+workflow: >-
+  Designers create surfaces and large assemblies here, sharing them through 3DEXPERIENCE, then pass
+  CATIA V5 or STEP files to simulation, tooling and suppliers, or STL and 3MF files to 3D printing.
+native_files:
+  - ext: .CATPart
+    what: CATIA V5 part
+    format: catia-v5
+  - ext: .CATProduct
+    what: CATIA V5 product (assembly)
+    format: catia-v5
+clarifies:
+  - text: >-
+      CATIA is a design application, not a geometry kernel. The kernel inside it is CGM. Dassault's
+      Spatial subsidiary also offers CGM to other software makers, but no outside product on this
+      map is recorded as built on it yet.
+    url: https://www.spatial.com/glossary/geometric-modeling-kernel
+  - text: >-
+      CATIA V5 did not end when V6 and 3DEXPERIENCE arrived: Dassault still sells CATIA V5 (its
+      releases are named V5-6, for example V5-6R2026) next to 3DEXPERIENCE CATIA, and offers the
+      platform version as the next step.
+    url: https://www.3ds.com/products/catia/catia-v5
+  - text: >-
+      3DEXPERIENCE CATIA does not save V5-style files. It keeps work as objects in the platform's
+      database (a collaborative space). V5 data comes in through the Collaborative Designer for CATIA
+      V5 role (a role is a licensed bundle of platform apps). Data leaves as exported CATPart,
+      CATProduct, cgr (mesh only), CATDrawing, XCGM (exact geometry for CGM-based programs) or 3D XML
+      files.
+    url: https://3dswym.3dexperience.3ds.com/wiki/solidworks-news-info/2-data-model-and-identifiers-in-the-3dexperience-platform_Dfdtyv5OROudyt7drdMNqA
+notes: >-
+  1977 is the start of the in-house CATI project at Avions Marcel Dassault; Dassault dates the CATIA
+  release to 1981, with first sales through IBM in 1982.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/about/company/history
+    label: Dassault company history (CATIA released 1981)
+  - url: https://en.wikipedia.org/wiki/CATIA
+    label: Wikipedia
+  - url: https://www.3ds.com/products/simulia/abaqus/cad-associative-interface
+    label: CATIA V5 file types (.CATPart, .CATProduct) as named on Dassault's Abaqus CAD interface page
+  - url: https://www.3ds.com/products/catia
+    label: 3DEXPERIENCE CATIA (Dassault product page)
+  - url: https://www.spatial.com/glossary/geometric-modeling-kernel
+    label: Spatial glossary (CGM served as the modeling kernel for CATIA V5 and V6)
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-launches-industrys-best-multi-version-compatibility-new-v5-release
+    label: 'Dassault press release 2012-04-18: V5 renamed V5-6R2012; V5 edits V6 models'
+  - url: https://cloud.academy.3ds.com/explorer/r2026x/role_UE5.html
+    label: 'Collaborative Designer for CATIA V5 role (Education R2026x catalog)'
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-delivers-3d-xml-specifications-and-player
+    label: 'Dassault press release 2005-06-15: 3D XML used across CATIA, DELMIA, ENOVIA, SMARTEAM and SolidWorks'

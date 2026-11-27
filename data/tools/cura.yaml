@@ -1,0 +1,45 @@
+id: cura
+type: tool
+name: UltiMaker Cura
+category: cam
+vendor: ultimaker
+open_source: true
+license: LGPL-3.0
+status: active
+first_release: 2012
+stages:
+  - manufacturing
+formats:
+  reads:
+    - stl
+    - 3mf
+    - obj
+  writes:
+    - 3mf
+    - gcode
+competes_with:
+  - prusaslicer
+website: https://ultimaker.com/software/ultimaker-cura/
+wikipedia: https://en.wikipedia.org/wiki/Cura_(software)
+summary: Widely used open-source slicer for FDM printers.
+plain: >-
+  Free software that prepares 3D models for desktop 3D printers, slicing a model into the thin
+  layers and paths the printer follows.
+workflow: >-
+  A maker exports a model from 3D design software as STL, 3MF or OBJ, slices it into layers here,
+  and sends the G-code (the printer's line-by-line instructions) or 3MF file to the desktop 3D
+  printer.
+notes: >-
+  Created by David Braam, later hired by Ultimaker. Versions 12.07 to 15.04 are the legacy line; the
+  current Ultimaker/Cura codebase (repo from 2014) became Cura 2.x.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://github.com/Ultimaker/Cura/blob/main/LICENSE
+    label: Cura LICENSE (LGPL-3.0)
+  - url: https://github.com/daid/LegacyCura
+    label: Legacy Cura repo, first tags 12.07 and 12.08 (2012)
+  - url: https://ultimaker.com/software/ultimaker-cura/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Cura_(software)
+    label: Wikipedia

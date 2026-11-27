@@ -1,0 +1,33 @@
+id: iot-twinmaker
+type: tool
+name: AWS IoT TwinMaker
+category: digital-twin
+vendor: aws
+open_source: false
+status: active
+first_release: 2021
+stages:
+  - lifecycle
+website: https://aws.amazon.com/iot-twinmaker/
+summary: Service to compose twins from IoT and enterprise data with 3D scenes.
+plain: >-
+  An Amazon Web Services cloud service for building digital copies of real equipment and sites by
+  combining sensor data, business data and 3D scenes.
+workflow: >-
+  Developers link the twin's equipment entities to data in SiteWise, Kinesis Video and other stores
+  through connectors, add 3D scenes, and build dashboards that operators use to watch the site.
+files_note: 'Works through connectors rather than files: connectors link a twin''s entities to SiteWise, Kinesis Video and other data stores, queried through one interface.'
+notes: >-
+  Announced in preview at re:Invent 2021 (Nov 30) and GA in April 2022. Not on AWS's Oct 2025 list
+  of services moving to maintenance or sunset, and the pricing page still courts new customers.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://aws.amazon.com/about-aws/whats-new/2022/04/aws-iot-twinmaker-now-generally-available
+    label: AWS What's New, TwinMaker GA April 2022
+  - url: https://aws.amazon.com/about-aws/whats-new/2025/10/aws-service-availability/
+    label: AWS service availability update Oct 2025
+  - url: https://aws.amazon.com/iot-twinmaker/
+    label: AWS IoT TwinMaker page
+  - url: https://docs.aws.amazon.com/iot-twinmaker/latest/guide/what-is-twinmaker.html
+    label: 'data access (AWS documentation: what is IoT TwinMaker)'

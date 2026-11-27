@@ -1,0 +1,37 @@
+id: hypermill
+type: tool
+name: hyperMILL
+category: cam
+vendor: open-mind
+open_source: false
+status: active
+first_release: 1994
+stages:
+  - manufacturing
+formats:
+  reads:
+    - step
+    - iges
+  writes:
+    - gcode
+integrates_with:
+  - solidworks
+  - inventor
+competes_with:
+  - powermill
+  - mastercam
+website: https://www.openmind-tech.com/en/cam/hypermill/
+summary: 5-axis milling CAM, also embedded in SOLIDWORKS and Inventor.
+plain: >-
+  Writes cutting programs for CNC (computer-controlled) milling machines, including 5-axis machines
+  whose cutter can tilt to reach a part from many angles; it also runs inside SOLIDWORKS and
+  Inventor.
+workflow: >-
+  A machine programmer opens the part as STEP or IGES, or works on it inside SOLIDWORKS or Inventor,
+  plans the cutting paths here, and writes G-code (the machine's line-by-line instructions) that the
+  milling machine runs.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.openmind-tech.com/en/cam/hypermill/
+    label: official page

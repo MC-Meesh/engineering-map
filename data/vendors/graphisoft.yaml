@@ -1,0 +1,18 @@
+id: graphisoft
+type: vendor
+name: Graphisoft
+kind: company
+hq: HU
+founded: 1982
+parent: nemetschek
+status: active
+website: https://graphisoft.com/
+wikipedia: https://en.wikipedia.org/wiki/Graphisoft
+summary: Archicad maker; early BIM pioneer.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://graphisoft.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Graphisoft
+    label: Wikipedia

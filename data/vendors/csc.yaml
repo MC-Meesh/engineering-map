@@ -1,0 +1,17 @@
+id: csc
+type: vendor
+name: CSC IT Center for Science
+kind: institution
+hq: FI
+founded: 1971
+status: active
+website: https://www.csc.fi/
+wikipedia: https://en.wikipedia.org/wiki/CSC_%E2%80%93_IT_Center_for_Science
+summary: Finnish research computing center that develops Elmer.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.csc.fi/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/CSC_%E2%80%93_IT_Center_for_Science
+    label: Wikipedia

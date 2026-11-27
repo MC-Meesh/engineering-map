@@ -1,0 +1,18 @@
+id: exodus
+type: format
+name: Exodus II
+extensions:
+  - .exo
+  - .e
+kind: results
+steward: Sandia National Laboratories
+steward_vendor: sandia
+open_spec: true
+first_published: 1992
+website: https://sandialabs.github.io/seacas-docs/
+summary: Finite element mesh and results format on NetCDF/HDF5; used by MOOSE, Cubit and Sierra.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://sandialabs.github.io/seacas-docs/
+    label: official page

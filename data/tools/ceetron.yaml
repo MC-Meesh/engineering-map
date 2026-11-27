@@ -1,0 +1,58 @@
+id: ceetron
+type: tool
+name: Ceetron SDKs (HOOPS Envision)
+category: visualization
+vendor: tech-soft-3d
+open_source: false
+status: active
+stages:
+  - analysis
+formats:
+  reads:
+    - abaqus-inp
+    - abaqus-odb
+    - ansys-cdb
+    - cgns
+    - ensight-gold
+    - fluent-cas
+    - lsdyna-k
+    - nastran-bdf
+    - nastran-op2
+    - openfoam-case
+    - stl
+    - tecplot-plt
+    - vtk-legacy
+    - vtk-xml
+website: https://www.techsoft3d.com/developers/products/hoops-envision/
+summary: CAE visualization and results-access components embedded in simulation products.
+plain: >-
+  Software components that other simulation programs build in to display and read their results; end
+  users see them only through those programs.
+workflow: >-
+  Developers build these components into simulation products, which use them to open results written
+  by calculation programs, such as Abaqus ODB, Nastran OP2, LS-DYNA, Fluent, CGNS or VTK files,
+  display them, and save VTFx files that colleagues open in a viewer.
+native_files:
+  - ext: .vtfx
+    what: 'Envision VTFx file for sharing CAE models and results with viewers'
+files_note: 'A CAE visualization SDK with C++, C# and Python APIs; programs read solver files through its Import CAE component and data provider plugins, and can export VTFx.'
+notes: >-
+  Tech Soft 3D acquired Ceetron AS (a SINTEF spin-off) in Oct 2020. The SDKs were rebranded into the
+  HOOPS line (Access, Mesh, Solve, Envision); Envision 4.1 (2025-10-01) is the first release notes
+  under the HOOPS name. Original product release year unconfirmed.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.techsoft3d.com/developers/products/hoops-envision/
+    label: Tech Soft 3D HOOPS Envision page
+  - url: https://docs.techsoft3d.com/hoops/envision-web/release-notes/4-1.html
+    label: HOOPS Envision 4.1 release notes 2025-10-01
+  - url: >-
+      https://www.techsoft3d.com/resources/blog/what-happened-to-ceetron-products-how-hoops-toolkits-continue-ceetron-s-innovation
+    label: Tech Soft 3D blog on Ceetron products 2026-07-31
+  - url: https://www.newswire.com/news/tech-soft-3d-completes-acquisition-of-ceetron-as-21235513
+    label: Tech Soft 3D press release, Ceetron acquisition 2020-10-15
+  - url: https://docs.techsoft3d.com/hoops/envision-desktop/start/file-formats.html
+    label: 'HOOPS Envision Desktop docs: File formats'
+  - url: https://docs.techsoft3d.com/hoops/envision-desktop/index.html
+    label: 'HOOPS Envision Desktop docs: Overview'

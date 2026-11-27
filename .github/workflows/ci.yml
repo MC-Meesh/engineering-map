@@ -1,0 +1,35 @@
+name: CI
+
+# Every pull request: validate the data, build the site, and run the browser check.
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Validate data
+        run: npm run data
+      - name: Build site
+        run: npx astro build
+      - name: Browser check (map lenses and focus)
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+        run: |
+          npx astro preview --host 127.0.0.1 --port 3480 &
+          npx --yes wait-on@8.0.1 -t 60000 http://127.0.0.1:3480/
+          npm run e2e -- http://127.0.0.1:3480

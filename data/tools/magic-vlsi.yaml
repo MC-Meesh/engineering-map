@@ -1,0 +1,38 @@
+id: magic-vlsi
+type: tool
+name: Magic
+category: eda
+vendor: magic-project
+open_source: true
+license: BSD-style
+status: active
+first_release: 1980
+stages:
+  - design
+formats:
+  reads:
+    - gdsii
+    - lef-def
+  writes:
+    - gdsii
+    - lef-def
+    - spice
+open_source_alternative_to:
+  - virtuoso
+website: http://opencircuitdesign.com/magic/
+wikipedia: https://en.wikipedia.org/wiki/Magic_(software)
+summary: Berkeley-era VLSI layout editor with DRC and extraction, revived by open PDKs.
+plain: >-
+  An old Berkeley program for drawing chip layouts and checking them, which has found new use with
+  open chip manufacturing kits.
+workflow: >-
+  A designer draws or edits a chip layout here, often with an open manufacturing kit, checks the
+  spacing rules, extracts a SPICE netlist (a list of the circuit's parts and wires) to simulate, and
+  writes GDSII or LEF/DEF files for other open tools and the chip factory.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: http://opencircuitdesign.com/magic/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Magic_(software)
+    label: Wikipedia

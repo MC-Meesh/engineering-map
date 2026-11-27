@@ -1,0 +1,44 @@
+id: sketchup
+type: tool
+name: SketchUp
+category: cad
+vendor: trimble
+open_source: false
+status: active
+first_release: 2000
+stages:
+  - design
+formats:
+  reads:
+    - dwg
+    - dxf
+    - ifc
+    - stl
+  writes:
+    - dwg
+    - dxf
+    - ifc
+    - stl
+    - obj
+website: https://www.sketchup.com/
+wikipedia: https://en.wikipedia.org/wiki/SketchUp
+summary: Approachable surface modeler for architecture and concept work.
+plain: >-
+  Easy-to-learn 3D modeling for architecture and early concept work, built from surfaces you push
+  and pull.
+workflow: >-
+  An architect or designer builds a quick concept model here, then shares DWG, DXF or IFC files with
+  building model (BIM) and drafting tools for detailed design, or STL and OBJ for printing and
+  rendering.
+native_files:
+  - ext: .skp
+    what: SketchUp model file
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.sketchup.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/SketchUp
+    label: Wikipedia
+  - url: https://help.sketchup.com/en/sketchup/saving-model
+    label: 'native file format (SketchUp help: saving a model)'

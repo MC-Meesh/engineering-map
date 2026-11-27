@@ -1,0 +1,20 @@
+id: keysight--synopsys-osg--2025
+type: acquisition
+acquirer: keysight
+target: synopsys-osg
+announced: '2024-09-19'
+completed: '2025-10-17'
+status: completed
+summary: >-
+  Divestiture required for regulatory approval of Synopsys-Ansys. Covers CODE V, LightTools,
+  LucidShape, ImSym and RSoft photonic tools; Keysight closed it together with the Ansys PowerArtist
+  RTL power tool. Terms not disclosed. Completion date from the Keysight release of 2025-10-17.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://s22.q4cdn.com/444849635/files/doc_news/Keysight-Completes-Acquisition-of-Synopsys-Optical-Solutions-Group-and-Ansys-PowerArtist-2025.pdf
+    label: 'Keysight release 2025-10-17: acquisition completed'
+  - url: >-
+      https://news.synopsys.com/2024-09-19-Synopsys-Enters-Definitive-Agreement-with-Keysight-Technologies-For-Sale-of-Optical-Solutions-Group
+    label: 'Synopsys release 2024-09-19: agreement, terms not disclosed'

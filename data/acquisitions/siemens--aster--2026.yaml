@@ -1,0 +1,13 @@
+id: siemens--aster--2026
+type: acquisition
+acquirer: siemens
+target: aster
+completed: 2026-01
+status: completed
+summary: TestWay board test and DFT software, being folded into Xpedition and Valor.
+notes: The release of 2026-01-13 says Siemens has acquired the company; no separate closing day or terms.
+confidence: high
+sources:
+  - url: https://news.siemens.com/en-gb/siemens-acquires-aster-technologies/
+    label: 'Siemens release 2026-01-13: acquires ASTER'
+as_of: '2026-11-22'

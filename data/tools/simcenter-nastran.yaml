@@ -1,0 +1,32 @@
+id: simcenter-nastran
+type: tool
+name: Simcenter Nastran
+category: cae-fea
+vendor: siemens
+open_source: false
+status: active
+first_release: 2003
+stages:
+  - analysis
+formats:
+  reads:
+    - nastran-bdf
+  writes:
+    - nastran-bdf
+    - nastran-op2
+competes_with:
+  - msc-nastran
+  - optistruct
+website: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/nastran/
+summary: Siemens Nastran (formerly NX Nastran), a code branch that split from MSC Nastran in 2003.
+plain: >-
+  Siemens' version of Nastran, a long-standing program that calculates how structures bend and
+  vibrate under loads; it split from MSC Nastran in 2003.
+workflow: >-
+  An analyst sets up the model in Simcenter 3D or Femap, which writes a Nastran input file (BDF); it
+  is solved here, and the OP2 results file goes back to the same program for review.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.siemens.com/en-us/products/simcenter/mechanical-simulation/nastran/
+    label: official page

@@ -1,0 +1,29 @@
+id: dso-ai
+type: tool
+name: Synopsys DSO.ai
+category: ml-engineering
+vendor: synopsys
+open_source: false
+status: active
+first_release: 2020
+stages:
+  - design
+  - optimization
+integrates_with:
+  - fusion-compiler
+competes_with:
+  - cerebrus
+website: https://www.synopsys.com/ai/ai-powered-eda/dso-ai.html
+summary: Reinforcement learning that searches chip implementation settings for power, performance and area.
+plain: >-
+  Uses machine learning to try many settings in chip design tools automatically and find ones that
+  give better speed, lower power and smaller size.
+workflow: >-
+  A chip team runs the Fusion Compiler flow while DSO.ai searches its settings over many runs, and
+  the layout with the best power, performance and area goes on to signoff.
+files_note: 'Has no file type of its own: it drives Synopsys Fusion Compiler and IC Compiler II runs, using reinforcement learning to search the space of design-flow options.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.synopsys.com/ai/ai-powered-eda/dso-ai.html
+    label: official page

@@ -1,0 +1,14 @@
+id: functionbay
+type: vendor
+name: FunctionBay
+kind: company
+hq: KR
+founded: 1997
+status: active
+website: https://functionbay.com/
+summary: RecurDyn multibody dynamics.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://functionbay.com/
+    label: official page

@@ -1,0 +1,21 @@
+id: ifc
+type: format
+name: IFC
+extensions:
+  - .ifc
+  - .ifcxml
+kind: bim
+standard: ISO 16739-1
+steward: buildingSMART International
+open_spec: true
+first_published: 1996
+website: https://technical.buildingsmart.org/standards/ifc/
+wikipedia: https://en.wikipedia.org/wiki/Industry_Foundation_Classes
+summary: Open schema for building and infrastructure models (openBIM).
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://technical.buildingsmart.org/standards/ifc/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Industry_Foundation_Classes
+    label: Wikipedia

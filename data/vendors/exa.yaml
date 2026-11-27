@@ -1,0 +1,21 @@
+id: exa
+type: vendor
+name: Exa Corporation
+kind: company
+hq: US
+founded: 1991
+parent: dassault
+status: merged
+wikipedia: https://en.wikipedia.org/wiki/Exa_Corporation
+summary: PowerFLOW lattice Boltzmann CFD.
+notes: Headquartered in Burlington, Massachusetts; founded 1991 (FY2017 10-K).
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/890264/000156459017005008/exa-10k_20170131.htm
+    label: Exa 10-K FY2017 (founded 1991, Burlington MA)
+  - url: >-
+      https://www.3ds.com/newsroom/press-releases/dassault-systemes-successfully-completes-tender-offer-exa-corporation
+    label: 'Dassault release 2017-11-17: tender offer completed'
+  - url: https://en.wikipedia.org/wiki/Exa_Corporation
+    label: Wikipedia

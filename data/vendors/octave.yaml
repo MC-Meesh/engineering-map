@@ -1,0 +1,24 @@
+id: octave
+type: vendor
+name: Octave
+kind: company
+hq: US
+founded: 2026
+status: active
+website: https://octave.com/
+summary: >-
+  Enterprise software company (Octave Intelligence plc) spun off from Hexagon in May 2026; holds the
+  Intergraph-derived asset lifecycle and geospatial divisions, ETQ and Bricsys.
+notes: >-
+  Spin-off record date 2026-05-22; public company and Nasdaq New York listing from 2026-05-28
+  (Octave investor FAQ). Irish-incorporated, principal offices in Madison, Alabama; also listed in
+  Stockholm.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://investors.hexagon.com/en/share-information/octave-separation
+    label: 'Hexagon investors: Octave separation'
+  - url: https://itbrief.news/story/octave-begins-trading-on-nasdaq-after-hexagon-spin-off
+    label: 'IT Brief 2026-05-28: Octave begins trading on Nasdaq'
+  - url: https://octave.com/
+    label: official page

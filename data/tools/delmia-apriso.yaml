@@ -1,0 +1,38 @@
+id: delmia-apriso
+type: tool
+name: DELMIA Apriso
+category: digital-twin
+vendor: dassault
+open_source: false
+status: active
+stages:
+  - manufacturing
+  - lifecycle
+integrates_with:
+  - 3dexperience
+website: https://www.3ds.com/products/delmia/apriso
+summary: >-
+  Manufacturing operations management from DELMIA: MES functions such as production tracking and
+  work instructions, extended to quality, materials and maintenance across plants.
+plain: >-
+  Software that runs day-to-day manufacturing: tracking production, giving workers instructions and
+  managing quality, materials and maintenance across plants.
+workflow: >-
+  Released product and process data from engineering, on 3DEXPERIENCE for example, reaches the
+  plants; Apriso tracks production, guides workers and records quality, materials and maintenance as
+  parts are made.
+files_note: 'Apriso MES keeps its data in a relational database (SQL Server is a supported provider). Data moves via Business Integrator, web services and Excel mass data tools.'
+notes: >-
+  The taxonomy has no manufacturing operations category; digital-twin (live plant systems) is the
+  closest. integrates_with 3dexperience is not from the cited page.
+confidence: medium
+sources:
+  - url: https://www.3ds.com/products/delmia/apriso
+    label: official page (MOM, includes MES)
+  - url: https://www.3ds.com/products/delmia
+    label: DELMIA brand page
+  - url: https://3dswym.3dexperience.3ds.com/wiki/delmia-manufacturing-operations-management/delmia-apriso-2020-supports-for-sql-2019_XGlW5hSHSVWTQcVP2sVwzA
+    label: '3DS community wiki: DELMIA Apriso 2020 SQL Server database provider'
+  - url: https://www.3ds.com/support/documentation/delmia-apriso-2025-documentation
+    label: 'Dassault Systemes: DELMIA Apriso 2025 documentation index'
+as_of: '2026-11-22'

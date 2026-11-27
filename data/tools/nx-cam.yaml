@@ -1,0 +1,31 @@
+id: nx-cam
+type: tool
+name: NX for manufacturing (NX CAM)
+category: cam
+vendor: siemens
+open_source: false
+status: active
+stages:
+  - manufacturing
+runs_on:
+  - nx
+website: https://www.siemens.com/en-us/products/nx-manufacturing/
+summary: >-
+  Siemens part manufacturing software for CNC programming, robot machining, additive and inspection;
+  it kept the NX name when the CAD side became Designcenter. The SaaS tier is NX X Manufacturing.
+plain: >-
+  Siemens software that writes the instructions for CNC (computer-controlled) machine tools,
+  machining robots, industrial 3D printers and inspection, for parts designed in Designcenter.
+workflow: >-
+  A programmer opens the part designed in Designcenter, programs CNC machining, robot machining, 3D
+  printing or inspection here, and sends the programs to the shop floor.
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/nx-manufacturing/
+    label: official page (NX for manufacturing)
+  - url: >-
+      https://blogs.sw.siemens.com/designcenter/designcenter-a-new-name-for-the-future-of-engineering/
+    label: 'Siemens blog: Designcenter rename, NX CAM keeps its name'
+  - url: https://www.siemens.com/en-us/products/nx-manufacturing/cad-cam-nc-programming/
+    label: 'Siemens NX CAM page: programs parts with the CAD tools in NX'
+as_of: '2026-11-22'

@@ -1,0 +1,27 @@
+id: edgecam
+type: tool
+name: Edgecam
+category: cam
+vendor: vero
+open_source: false
+status: active
+first_release: 1988
+stages:
+  - manufacturing
+formats:
+  writes:
+    - gcode
+website: https://nexus.hexagon.com/home/product/edgecam/
+summary: Hexagon production machining CAM.
+plain: >-
+  Hexagon software that turns part designs into cutting instructions for CNC (computer-controlled)
+  milling machines and lathes in production machining.
+workflow: >-
+  A CNC programmer brings in the part design, plans the production machining here, and writes
+  G-code, the line-by-line instructions the shop's milling machines and lathes follow to cut the
+  part.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://nexus.hexagon.com/home/product/edgecam/
+    label: official page

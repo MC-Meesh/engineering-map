@@ -1,0 +1,40 @@
+id: opencourant
+type: tool
+name: OpenCourant
+category: cae-fea
+vendor: opencourant-project
+open_source: true
+license: AGPL-3.0
+status: active
+first_release: 2026
+stages:
+  - analysis
+built_on:
+  - openradioss
+formats:
+  reads:
+    - lsdyna-k
+open_source_alternative_to:
+  - radioss
+  - ls-dyna
+website: https://opencourant.org/
+summary: >-
+  Community fork of OpenRadioss for crash, impact and other highly nonlinear explicit dynamics,
+  carrying the full code history under AGPL-3.0.
+plain: >-
+  Free software that simulates crashes, impacts and other violent events; a community continuation
+  of OpenRadioss that keeps its full history.
+workflow: >-
+  An analyst brings in a crash or impact model as an LS-DYNA keyword file (a common text format for
+  crash models), runs it here on the community fork of OpenRadioss, and reviews the results as plots
+  and animations.
+notes: >-
+  Started after Siemens discontinued OpenRadioss on 2026-10-01; first builds 2026-10-05. Not
+  affiliated with Siemens or Altair. LS-DYNA input support is inherited from OpenRadioss.
+confidence: high
+sources:
+  - url: https://opencourant.org/
+    label: OpenCourant site (fork of OpenRadioss, AGPL v3)
+  - url: https://github.com/OpenCourant/OpenCourant
+    label: OpenCourant GitHub repo (AGPL-3.0)
+as_of: '2026-11-22'

@@ -1,0 +1,17 @@
+id: canopus-ai
+type: vendor
+name: Canopus AI
+kind: company
+hq: FR
+founded: 2021
+parent: siemens
+status: merged
+website: https://www.canopus-ai.com/
+summary: Grenoble startup doing AI-based wafer and mask metrology; now part of Siemens EDA.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://news.siemens.com/en-us/siemens-acquires-canopus-ai/
+    label: 'Siemens press release: acquires Canopus AI'
+  - url: https://www.canopus-ai.com/
+    label: company site

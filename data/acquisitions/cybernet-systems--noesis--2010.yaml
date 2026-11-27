@@ -1,0 +1,18 @@
+id: cybernet-systems--noesis--2010
+type: acquisition
+acquirer: cybernet-systems
+target: noesis
+completed: 2010-07
+status: completed
+summary: >-
+  Japan's Cybernet Systems bought Noesis Solutions (Optimus), a former LMS International subsidiary,
+  in July 2010.
+notes: Exact closing day not published; Cybernet's own filing gives July 2010.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S000DP1Y.pdf
+    label: 'Cybernet Systems annual securities report (EDINET), history: July 2010'
+  - url: >-
+      https://www.noesissolutions.com/about-noesis-solutions/news-events/cybernet-system-acquires-noesis-solutions
+    label: Noesis Solutions news 2010-07-03

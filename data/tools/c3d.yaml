@@ -1,0 +1,48 @@
+id: c3d
+type: tool
+name: C3D Toolkit
+category: geometry-kernel
+vendor: c3d-labs
+open_source: false
+status: active
+first_release: 2012
+stages:
+  - design
+formats:
+  reads:
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+    - stl
+  writes:
+    - step
+    - iges
+    - parasolid-xt
+    - acis-sat
+    - stl
+competes_with:
+  - parasolid
+  - acis
+website: https://c3dlabs.com/en/products/c3d-toolkit/
+wikipedia: https://en.wikipedia.org/wiki/C3D_Toolkit
+summary: >-
+  Kernel, constraint solver and translators spun out of ASCON; under KOMPAS-3D and several Chinese
+  and Russian CAD systems.
+plain: >-
+  Geometry building blocks that other design programs use inside: they handle the math of solid 3D
+  shapes, keep sketch dimensions consistent and convert files. KOMPAS-3D and several other CAD
+  systems use them.
+workflow: >-
+  CAD developers build C3D into programs such as KOMPAS-3D, which call it for solid modeling, sketch
+  constraints and translating STEP, IGES, Parasolid and SAT files.
+notes: >-
+  C3D Toolkit bundles a geometry kernel, a constraint solver, a visualization engine, a
+  mesh-to-B-rep converter and a data converter.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://c3dlabs.com/en/products/c3d-toolkit/
+    label: 'C3D Toolkit page: five components'
+  - url: https://en.wikipedia.org/wiki/C3D_Toolkit
+    label: Wikipedia

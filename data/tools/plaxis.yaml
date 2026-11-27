@@ -1,0 +1,36 @@
+id: plaxis
+type: tool
+name: PLAXIS
+category: cae-fea
+vendor: bentley
+open_source: false
+status: active
+first_release: 1987
+stages:
+  - analysis
+formats:
+  reads:
+    - dxf
+    - step
+  writes:
+    - dxf
+    - step
+    - vtk-xml
+website: https://www.bentley.com/software/plaxis-2d/
+summary: Geotechnical FEA for soil, tunnels and foundations.
+plain: >-
+  Simulates soil and how it interacts with tunnels, foundations and other structures in the ground.
+workflow: >-
+  A geotechnical engineer brings in drawings or geometry as DXF or STEP, models the soil and the
+  tunnel or foundation here, simulates how they interact, and passes results as VTK files or reports
+  to the structural and civil design team.
+native_files:
+  - ext: .p2dz
+    what: 'PLAXIS 2D project packaged for ProjectWise'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.bentley.com/software/plaxis-2d/
+    label: official page
+  - url: https://www.seequent.com/help-support/supported-data-types-formats/plaxis/
+    label: 'Seequent (Bentley): PLAXIS supported data types and formats'

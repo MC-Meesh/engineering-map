@@ -1,0 +1,14 @@
+id: cd-adapco--red-cedar--2013
+type: acquisition
+acquirer: cd-adapco
+target: red-cedar
+completed: 2013-07
+status: completed
+summary: HEEDS design exploration; reached Siemens when it bought CD-adapco in 2016.
+notes: The release of 2013-07-09 announces the acquisition; month precision.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.prnewswire.co.uk/news-releases/cd-adapco-acquires-red-cedar-technology-incorporated-214696451.html
+    label: 'CD-adapco release 2013-07-09: acquires Red Cedar Technology'

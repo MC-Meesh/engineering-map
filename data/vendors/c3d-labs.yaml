@@ -1,0 +1,20 @@
+id: c3d-labs
+type: vendor
+name: C3D Labs
+kind: company
+hq: RU
+founded: 2012
+parent: ascon
+status: active
+website: https://c3dlabs.com/
+wikipedia: https://en.wikipedia.org/wiki/C3D_Toolkit
+summary: Licenses the C3D modeling kernel and toolkit.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://c3dlabs.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/C3D_Toolkit
+    label: Wikipedia
+  - url: https://kompas.ru/kompas-3d/about/
+    label: 'ASCON KOMPAS-3D about page: C3D Labs is an ASCON subsidiary (дочерняя компания АСКОН)'

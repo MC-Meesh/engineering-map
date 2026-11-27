@@ -1,0 +1,30 @@
+id: hpcworks-grid-engine
+type: tool
+name: HPCWorks Grid Engine
+category: sdm
+vendor: altair
+open_source: false
+status: active
+stages:
+  - analysis
+website: https://www.siemens.com/en-us/products/hpcworks/grid-engine/
+summary: >-
+  Distributed workload manager for compute clusters with shared-resource reporting (formerly Altair
+  Grid Engine), sold beside PBS Professional under HPCWorks.
+plain: >-
+  Software that shares a computer cluster among many users by queuing their jobs, and reports who
+  used which shared resources.
+workflow: >-
+  Engineers submit simulation and other compute jobs; Grid Engine queues them, runs them on the
+  shared cluster, and reports who used which resources.
+files_note: 'Has no file format of its own: it runs job scripts submitted with qsub; jobs handle their own files, the master spools cluster state and logs finished jobs to an accounting file read by qacct.'
+notes: vendor altair follows the other renamed Altair products. Lineage before Altair not checked.
+confidence: medium
+sources:
+  - url: https://www.siemens.com/en-us/products/hpcworks/workload-management/
+    label: HPCWorks workload management page
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+  - url: https://help.altair.com/AltairGridEngine/IntroductionGE.pdf
+    label: 'Altair Grid Engine Introductory Guide: spooling and accounting'
+as_of: '2026-11-22'

@@ -1,0 +1,14 @@
+id: tri
+type: vendor
+name: Toyota Research Institute
+kind: institution
+hq: US
+founded: 2015
+status: active
+website: https://www.tri.global/
+summary: Leads development of Drake.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.tri.global/
+    label: official page

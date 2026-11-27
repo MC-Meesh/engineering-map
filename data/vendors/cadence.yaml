@@ -1,0 +1,21 @@
+id: cadence
+type: vendor
+name: Cadence Design Systems
+kind: company
+hq: US
+founded: 1988
+status: active
+website: https://www.cadence.com/
+wikipedia: https://en.wikipedia.org/wiki/Cadence_Design_Systems
+summary: >-
+  EDA leader that built a CFD and system analysis line through acquisitions (NUMECA, Pointwise, BETA
+  CAE, then MSC in 2026).
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/0000813672/000081367226000047/cdns-20260331.htm
+    label: Cadence 10-Q Q1 2026 (Hexagon D&E acquisition)
+  - url: https://www.cadence.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Cadence_Design_Systems
+    label: Wikipedia

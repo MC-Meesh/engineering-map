@@ -1,0 +1,48 @@
+id: brand-simulia
+type: brand
+name: SIMULIA
+vendor: dassault
+website: https://www.3ds.com/products/simulia
+products:
+  - abaqus
+  - cst-studio
+  - powerflow
+  - xflow
+  - isight
+  - fe-safe
+  - tosca
+  - simpack
+  - opera
+  - wave6
+summary: >-
+  Dassault's simulation brand: structural, electromagnetic, fluid, multibody, durability and
+  optimization products.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/products/simulia
+    label: official brand page
+  - url: https://www.3ds.com/products/simulia/abaqus
+    label: Abaqus
+  - url: https://www.3ds.com/products/simulia/cst-studio-suite
+    label: CST Studio Suite
+  - url: https://www.3ds.com/products/simulia/powerflow
+    label: PowerFLOW
+  - url: https://www.3ds.com/products/simulia/xflow
+    label: XFlow
+  - url: https://www.3ds.com/products/simulia/isight
+    label: Isight
+  - url: https://www.3ds.com/products/simulia/fe-safe
+    label: fe-safe
+  - url: https://www.3ds.com/products/simulia/tosca
+    label: Tosca
+  - url: https://www.3ds.com/products/simulia/simpack
+    label: Simpack
+  - url: https://www.3ds.com/about/company/acquisitions
+    label: Dassault acquisitions page (SIMULIA lineage)
+  - url: https://www.3ds.com/products/simulia/electromagnetic-simulation
+    label: SIMULIA electromagnetics family (Opera)
+  - url: https://www.3ds.com/products/simulia/vibro-acoustics-simulation
+    label: SIMULIA vibro-acoustics family (Wave6)
+  - url: https://www.3ds.com/products/simulia/automation-optimization
+    label: SIMULIA automation and optimization family

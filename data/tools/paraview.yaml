@@ -1,0 +1,51 @@
+id: paraview
+type: tool
+name: ParaView
+category: visualization
+vendor: kitware
+open_source: true
+license: BSD-3-Clause
+status: active
+first_release: 2002
+stages:
+  - analysis
+built_on:
+  - vtk
+formats:
+  reads:
+    - vtk-xml
+    - vtk-legacy
+    - exodus
+    - cgns
+    - ensight-gold
+    - openfoam-case
+    - xdmf
+    - stl
+  writes:
+    - vtk-xml
+    - stl
+    - gltf
+open_source_alternative_to:
+  - tecplot-360
+  - ensight
+website: https://www.paraview.org/
+wikipedia: https://en.wikipedia.org/wiki/ParaView
+summary: The default open-source post-processor, scaling from a laptop to supercomputers.
+plain: >-
+  Free software for turning simulation results into pictures, plots and animations, working on
+  anything from a laptop to a supercomputer.
+workflow: >-
+  A simulation program writes results as VTK, Exodus II, CGNS, EnSight Gold or an OpenFOAM case; an
+  analyst loads them here, makes plots, pictures and animations, and exports images, STL or glTF.
+native_files:
+  - ext: .pvsm
+    what: ParaView state file (XML)
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.paraview.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/ParaView
+    label: Wikipedia
+  - url: https://docs.paraview.org/en/latest/UsersGuide/savingResults.html
+    label: native file format (project documentation)

@@ -1,0 +1,23 @@
+id: synopsys--ansys--2025
+type: acquisition
+acquirer: synopsys
+target: ansys
+announced: '2024-01-16'
+completed: '2025-07-17'
+status: completed
+value: about $35B enterprise value
+summary: >-
+  Largest deal in the history of engineering software; regulators required divestitures to Keysight
+  (optical solutions group and PowerArtist). Value is the enterprise value given in the 2024-01-16
+  agreement release.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://news.synopsys.com/2025-07-17-Synopsys-Completes-Acquisition-of-Ansys
+    label: 'Synopsys release 2025-07-17: acquisition completed'
+  - url: >-
+      https://news.synopsys.com/2024-01-16-Synopsys-to-Acquire-Ansys,-Creating-a-Leader-in-Silicon-to-Systems-Design-Solutions
+    label: 'Synopsys release 2024-01-16: agreement, about $35B enterprise value'
+  - url: >-
+      https://s22.q4cdn.com/444849635/files/doc_news/Keysight-Completes-Acquisition-of-Synopsys-Optical-Solutions-Group-and-Ansys-PowerArtist-2025.pdf
+    label: 'Keysight release 2025-10-17: divested units'

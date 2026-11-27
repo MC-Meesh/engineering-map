@@ -1,0 +1,13 @@
+id: plasticity-co
+type: vendor
+name: Plasticity
+kind: company
+founded: 2022
+status: active
+website: https://www.plasticity.xyz/
+summary: Artist-oriented NURBS modeler built on Parasolid.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.plasticity.xyz/
+    label: official page

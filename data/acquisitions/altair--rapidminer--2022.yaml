@@ -1,0 +1,17 @@
+id: altair--rapidminer--2022
+type: acquisition
+acquirer: altair
+target: rapidminer
+announced: '2022-09-13'
+completed: '2022-09-16'
+status: completed
+summary: Added RapidMiner data science and machine learning to Altair's analytics portfolio.
+notes: Terms not disclosed.
+confidence: high
+sources:
+  - url: https://news.siemens.com/en-us/altair-announces-completion-of-acquisition-of-rapidminer/
+    label: 'Altair release 2022-09-16: completed (now hosted by Siemens)'
+  - url: >-
+      https://altair.com/newsroom/news-releases/altair-to-acquire-rapidminer-continuing-expansion-of-broad-data-analytics-portfolio
+    label: 'Altair release 2022-09-13: to acquire RapidMiner'
+as_of: '2026-11-22'

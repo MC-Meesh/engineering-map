@@ -1,0 +1,16 @@
+id: rhino-3dm
+type: format
+name: Rhino 3DM
+extensions:
+  - .3dm
+kind: native-cad
+steward: Robert McNeel and Associates
+steward_vendor: mcneel
+open_spec: true
+website: https://www.rhino3d.com/opennurbs/
+summary: Rhino native NURBS format, openly readable through the openNURBS toolkit.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.rhino3d.com/opennurbs/
+    label: official page

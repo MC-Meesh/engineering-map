@@ -1,0 +1,15 @@
+id: polarion-co
+type: vendor
+name: Polarion Software
+kind: company
+hq: CZ
+founded: 2004
+parent: siemens
+status: merged
+website: https://polarion.plm.automation.siemens.com/
+summary: Polarion ALM.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://polarion.plm.automation.siemens.com/
+    label: official page

@@ -1,0 +1,36 @@
+id: pyvista
+type: tool
+name: PyVista
+category: visualization
+vendor: pyvista-project
+open_source: true
+license: MIT
+status: active
+first_release: 2019
+stages:
+  - analysis
+built_on:
+  - vtk
+formats:
+  reads:
+    - vtk-xml
+    - stl
+    - obj
+    - ply
+  writes:
+    - vtk-xml
+    - stl
+    - ply
+website: https://pyvista.org/
+summary: Pythonic mesh analysis and plotting on VTK; common in ML-for-simulation pipelines.
+plain: >-
+  A Python library, built on VTK, for loading, analyzing and plotting 3D shapes made of small cells
+  (meshes) and the simulation results on them.
+workflow: >-
+  A Python user loads meshes and results as VTK, STL, OBJ or PLY, analyzes and plots them here, and
+  writes them back out, often as part of a machine learning pipeline.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://pyvista.org/
+    label: official page

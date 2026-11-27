@@ -1,0 +1,37 @@
+id: tekla
+type: tool
+name: Tekla Structures
+category: cad
+vendor: trimble
+open_source: false
+status: active
+first_release: 1993
+stages:
+  - design
+  - manufacturing
+formats:
+  reads:
+    - ifc
+    - dwg
+    - dxf
+  writes:
+    - ifc
+    - dwg
+    - dxf
+website: https://www.tekla.com/products/tekla-structures
+wikipedia: https://en.wikipedia.org/wiki/Tekla_Structures
+summary: Structural BIM for steel and concrete detailing through fabrication.
+plain: >-
+  Software for modeling steel and concrete structures in 3D in full detail, so the model is ready
+  for the shops that fabricate the parts.
+workflow: >-
+  A structural detailer brings in the building as IFC, DWG or DXF from the design team, details the
+  steel and concrete here, and sends IFC models and DWG or DXF drawings on to fabricators and the
+  rest of the project.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.tekla.com/products/tekla-structures
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Tekla_Structures
+    label: Wikipedia

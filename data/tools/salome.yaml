@@ -1,0 +1,55 @@
+id: salome
+type: tool
+name: SALOME
+category: meshing
+vendor: salome-platform
+open_source: true
+license: LGPL-2.1
+status: active
+first_release: 2001
+stages:
+  - analysis
+built_on:
+  - occt
+  - netgen
+formats:
+  reads:
+    - step
+    - iges
+    - stl
+    - med
+  writes:
+    - step
+    - iges
+    - stl
+    - med
+integrates_with:
+  - code-aster
+  - code-saturne
+website: https://www.salome-platform.org/
+wikipedia: https://en.wikipedia.org/wiki/Salome_(software)
+summary: Open platform for geometry, meshing, solver coupling and post-processing.
+plain: >-
+  A free platform that prepares simulations in one place: it builds the shape, divides it into a
+  mesh (a grid of small cells), connects calculation programs such as code_aster and shows the
+  results.
+workflow: >-
+  An analyst brings in STEP, IGES or STL geometry, cleans it and meshes it here, runs code_aster or
+  code_saturne on the MED mesh, and views the results back in SALOME.
+native_files:
+  - ext: .hdf
+    what: Saved SALOME study
+  - ext: .med
+    what: MED mesh file, the mesh module's main format
+    format: med
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.salome-platform.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Salome_(software)
+    label: Wikipedia
+  - url: https://docs.salome-platform.org/9/gui/GUI/study_management_chapter.html
+    label: 'native file format (SALOME documentation: study management)'
+  - url: https://docs.salome-platform.org/latest/gui/SMESH/importing_exporting_meshes.html
+    label: 'mesh file format (SALOME documentation: importing and exporting meshes)'

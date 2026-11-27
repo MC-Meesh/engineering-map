@@ -1,0 +1,53 @@
+id: autocad
+type: tool
+name: AutoCAD
+category: cad
+vendor: autodesk
+open_source: false
+status: active
+first_release: 1982
+stages:
+  - design
+built_on:
+  - shapemanager
+formats:
+  reads:
+    - dwg
+    - dxf
+    - acis-sat
+    - iges
+  writes:
+    - dwg
+    - dxf
+    - acis-sat
+    - stl
+competes_with:
+  - bricscad
+  - zwcad
+website: https://www.autodesk.com/products/autocad/overview
+wikipedia: https://en.wikipedia.org/wiki/AutoCAD
+summary: The canonical 2D drafting and 3D CAD program, and the source of DWG.
+plain: >-
+  The classic program for making technical drawings on a computer, in 2D and 3D. Its DWG file is a
+  common way drawings are exchanged.
+workflow: >-
+  A drafter creates or edits 2D and 3D drawings here, often from DWG files sent by others, and
+  passes DWG or DXF files on to fabricators, machining (CAM) software and other design (CAD)
+  programs.
+native_files:
+  - ext: .dwg
+    what: AutoCAD drawing file
+    format: dwg
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://investors.autodesk.com/node/8081
+    label: 'Autodesk release 2001-11: ShapeManager kernel from ACIS 7.0'
+  - url: https://www.autodesk.com/products/autocad/overview
+    label: official page
+  - url: https://en.wikipedia.org/wiki/AutoCAD
+    label: Wikipedia
+  - url: https://help.autodesk.com/cloudhelp/2027/ENU/AutoCAD-Customization/files/GUID-D029509F-A2A0-4A7E-BDD5-FE95E7235C5C.htm
+    label: native file format (Autodesk AutoCAD help)
+  - url: https://www.sec.gov/Archives/edgar/data/769397/000119312503002078/d10k.htm
+    label: 'Autodesk FY2003 10-K: ShapeManager incorporated into AutoCAD based products'

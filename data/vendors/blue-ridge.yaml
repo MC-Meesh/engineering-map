@@ -1,0 +1,15 @@
+id: blue-ridge
+type: vendor
+name: Blue Ridge Numerics
+kind: company
+hq: US
+founded: 1993
+parent: autodesk
+status: merged
+website: https://www.autodesk.com/products/cfd/overview
+summary: CFdesign, now Autodesk CFD.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.autodesk.com/products/cfd/overview
+    label: official page

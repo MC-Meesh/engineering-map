@@ -1,0 +1,11 @@
+id: dassault--simpack-ag--2014
+type: acquisition
+acquirer: dassault
+target: simpack-ag
+completed: '2014-07-10'
+status: completed
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-acquires-simpack
+    label: Dassault Systemes press release 2014-07-11

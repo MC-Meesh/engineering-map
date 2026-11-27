@@ -1,0 +1,17 @@
+id: trimble
+type: vendor
+name: Trimble
+kind: company
+hq: US
+founded: 1978
+status: active
+website: https://www.trimble.com/
+wikipedia: https://en.wikipedia.org/wiki/Trimble_Inc.
+summary: Positioning and construction technology; SketchUp and Tekla.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.trimble.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Trimble_Inc.
+    label: Wikipedia

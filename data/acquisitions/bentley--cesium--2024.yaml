@@ -1,0 +1,12 @@
+id: bentley--cesium--2024
+type: acquisition
+acquirer: bentley
+target: cesium
+completed: '2024-09-06'
+status: completed
+summary: 3D geospatial platform and the open 3D Tiles ecosystem combined with iTwin. Terms not disclosed.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.bentley.com/news/bentley-systems-acquires-3d-geospatial-company-cesium/
+    label: source

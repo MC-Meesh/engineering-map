@@ -1,0 +1,22 @@
+id: dxf
+type: format
+name: DXF
+extensions:
+  - .dxf
+kind: brep-exchange
+steward: Autodesk
+steward_vendor: autodesk
+open_spec: true
+first_published: 1982
+website: https://help.autodesk.com/view/OARX/2024/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3
+wikipedia: https://en.wikipedia.org/wiki/AutoCAD_DXF
+summary: >-
+  Documented exchange companion to DWG; the lingua franca for 2D profiles, laser and waterjet
+  cutting.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://help.autodesk.com/view/OARX/2024/ENU/?guid=GUID-235B22E0-A567-4CF6-92D3-38A2306D73F3
+    label: official page
+  - url: https://en.wikipedia.org/wiki/AutoCAD_DXF
+    label: Wikipedia

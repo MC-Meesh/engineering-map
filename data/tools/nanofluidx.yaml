@@ -1,0 +1,48 @@
+id: nanofluidx
+type: tool
+name: Simcenter Nanofluid
+category: cfd
+vendor: altair
+origin: fluidyna
+open_source: false
+status: active
+stages:
+  - analysis
+formats:
+  reads:
+    - stl
+  writes:
+    - vtk-xml
+    - ensight-gold
+website: https://help.altair.com/hwcfdsolvers/nfx/topics/chapter_heads/whats_new_r.htm
+summary: GPU smoothed-particle hydrodynamics for oiling and sloshing in gearboxes and e-motors.
+plain: >-
+  Simulates how oil splashes and liquids slosh in gearboxes and electric motors, by tracking
+  particles on graphics processors.
+workflow: >-
+  An engineer brings in the gearbox or e-motor shape as STL, simulates oil splashing on GPUs here,
+  and writes VTK or EnSight result files that viewing tools turn into oil coverage pictures for the
+  drivetrain designers.
+native_files:
+  - ext: .cfg
+    what: 'Configuration file with all parameters to start a simulation'
+  - ext: .prtl
+    what: 'Particle file with particle positions and phase numbers'
+notes: >-
+  Developed by FluiDyna (Germany); Altair invested in 2015 and acquired FluiDyna in May 2018.
+  Official 2026 name is Simcenter Nanofluid. No siemens.com product page exists as of Nov 2026 (not
+  in the Simcenter fluids portfolio), so url is the 2026 release notes. First release year
+  unconfirmed.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: Siemens Simcenter blog, Altair rebranding guide 2026-06-16
+  - url: https://news.siemens.com/en-gb/altair-acquires-fluidyna/
+    label: Altair press release, FluiDyna acquisition 2018-05-09 (Siemens-hosted)
+  - url: https://help.altair.com/hwcfdsolvers/nfx/topics/chapter_heads/whats_new_r.htm
+    label: nanoFluidX 2026 release notes
+  - url: https://help.altair.com/hwcfdsolvers/nfx/topics/command_ref/command_reference_c.htm
+    label: 'nanoFluidX help: command reference (.cfg, .prtl, STL extractors)'
+  - url: https://help.altair.com/hwcfdsolvers/nfx/topics/get_started/nfx_companion_r.htm
+    label: 'nanoFluidX help: nFX Companion (VTK and EnSight Gold output)'

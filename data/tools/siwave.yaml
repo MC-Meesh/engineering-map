@@ -1,0 +1,44 @@
+id: siwave
+type: tool
+name: Ansys SIwave
+category: eda
+vendor: ansys
+open_source: false
+status: active
+first_release: 2000
+stages:
+  - analysis
+formats:
+  reads:
+    - odbpp
+    - ipc-2581
+    - gdsii
+    - gerber
+competes_with:
+  - sigrity
+  - hyperlynx
+website: https://www.ansys.com/products/electronics/ansys-siwave
+summary: PCB and package signal and power integrity.
+plain: >-
+  Checks that electrical signals and power on circuit boards and chip packages arrive clean, without
+  the noise and voltage drops that make electronics fail.
+workflow: >-
+  A board or package designer loads the layout as ODB++, IPC-2581, Gerber or GDSII files, checks
+  signal and power quality here, and sends fixes back to the layout designer before the board or
+  package is made.
+native_files:
+  - ext: .siw
+    what: 'SIwave project file'
+  - ext: .siwz
+    what: 'zip-compressed archive of project, results and referenced files'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ansys.com/products/electronics/ansys-siwave
+    label: official page
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/Electronics/v252/en/Subsystems/SIwave/Content/ScrImportODB.htm
+    label: 'Ansys SIwave help: ImportOdb (Import > ODB++ into new project)'
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/Electronics/v252/en/Subsystems/SIwave/Content/TNRunningAnsTranslatorfromtheCommandLine.htm
+    label: 'Ansys SIwave help: AnsTranslator inputs (AutoCAD, GDSII, IPC2581, ODB++, Gerber), output EDB'
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/Electronics/v261/en/Subsystems/SIwave/Content/ArchivingandRestoringProjects.htm
+    label: 'Ansys SIwave help: Archiving and Restoring Projects (.siw, .siwz)'

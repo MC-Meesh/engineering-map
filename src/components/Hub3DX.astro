@@ -1,0 +1,106 @@
+---
+// The 3DEXPERIENCE hub: how the platform came about, how its data works, how it is licensed,
+// what runs on it and how data gets in and out. Every statement restates a verified claim and
+// links its source.
+import { formatById, toolById } from '../lib/data';
+const H = 'https://www.3ds.com/about/company/history';
+const PR = 'https://www.3ds.com/newsroom/press-releases/';
+const SWYM_DM = 'https://3dswym.3dexperience.3ds.com/wiki/solidworks-news-info/2-data-model-and-identifiers-in-the-3dexperience-platform_Dfdtyv5OROudyt7drdMNqA';
+const SWYM_LC = 'https://3dswym.3dexperience.3ds.com/wiki/solidworks-news-info/revision-and-lifecycle_kZ9zb0cgSgWGGzUmxXZDyQ';
+const SWYM_CS = 'https://3dswym.3dexperience.3ds.com/wiki/catia-user-community/create-a-place-to-store-your-3d-data-using-collaborative-spaces_4ewo1T8BSpW9Njr3WyIcQA';
+const SWYM_X = 'https://3dswym.3dexperience.3ds.com/wiki/catia-user-community/data-exchange-between-catia-v5-and-3dexperience_FB7NO1rhSjqWYcbBueD14A';
+const FAQ = 'https://www.3ds.com/support/getting-started/solidworks-frequently-asked-questions';
+const ROLE = (c: string) => `https://cloud.academy.3ds.com/explorer/r2026x/role_${c}.html`;
+const timeline: [string, string, string][] = [
+  ['1994', 'CATIA V4 architecture: the generation that introduced full 3D digital mock-up.', H],
+  ['1999', 'CATIA V5 architecture, for Windows NT and UNIX. V5 keeps work in files (.CATPart, .CATProduct and others).', H],
+  ['2008-01-24', 'Dassault announces the V6 platform and "PLM 2.0": one server and one database for all applications, with MatrixOne (ENOVIA) technology at its foundation.', `${PR}dassault-systemes-unveils-plm-20-v6-platform`],
+  ['2008-05-29', 'First V6 release, V6R2009: CATIA, DELMIA and SIMULIA V6 as online applications on the ENOVIA platform.', `${PR}dassault-systemes-introduces-v6-market`],
+  ['2012-02-09', 'Dassault announces the 3DEXPERIENCE platform strategy, an evolution of V6 with search, social and 3D experience capabilities.', `${PR}dassault-systemes-opens-new-horizons-3dexperience`],
+  ['2012-04-18', 'CATIA V5 carries on: its release line is renamed V5-6R2012 to signal V5 and V6 compatibility, and V5 can edit key features of V6 models.', `${PR}dassault-systemes-launches-industrys-best-multi-version-compatibility-new-v5-release`],
+  ['2012-06-20', '"V6 Release 2013 of its 3DEXPERIENCE platform": for a while releases carried both names.', `${PR}dassault-systemes-announces-v6-release-2013-its-3dexperience-platform`],
+  ['2013-07-25', 'V6R2014 brings the Compass interface and cloud offers, on premise or on public or private cloud. It is the last release with the V6R prefix.', `${PR}dassault-systemes-announces-groundbreaking-user-experience-its-3dexperience-platform-and-new-cloud-portfolio`],
+  ['2014-02-06', 'Release 2014x starts the yearly R20NNx names (available 2014-02-24); Dassault says it has the V6 architecture as its foundation.', `${PR}dassault-systemes-announces-general-availability-release-2014x-3dexperience-platforms-premise-and-cloud-portfolio`],
+  ['2015', 'R2015x introduces roles: groupings of applications for a job.', H],
+  ['2019-02-11', '3DEXPERIENCE WORKS: platform applications packaged for SOLIDWORKS customers and smaller companies.', `${PR}dassault-systemes-introduces-3dexperienceworks-0`],
+  ['2020-02-10', '3DEXPERIENCE SOLIDWORKS offers: the same desktop SOLIDWORKS, installed, licensed and updated from the platform.', `${PR}dassault-systemes-introduces-new-3dexperience-works-offers-bring-value-creative-process`],
+  ['2025-02', 'Each yearly release gets numbered FD updates; the public cloud moved to R2025x FD01 on 15 and 16 February 2025.', 'https://www.3ds.com/support/news/3dexperience-r2025x-fd01-program-directory-now-available'],
+  ['2026', 'R2026x is the current release, with FD02 and FD03 updates.', 'https://www.3ds.com/products/latest-release'],
+];
+const fmt = (id: string, label: string) => (formatById.get(id) ? `<a href="/formats/${id}/">${label}</a>` : label);
+const tool = (id: string, label: string) => (toolById.get(id) ? `<a href="/tools/${id}/">${label}</a>` : label);
+const src = (u: string) => `<a class="src" href="${u}" rel="noopener">source</a>`;
+---
+<section class="hub" aria-labelledby="hub-h">
+  <h2 id="hub-h">3DEXPERIENCE, explained</h2>
+  <p class="lede-s">3DEXPERIENCE is where Dassault's applications keep their data. It continues the V6 platform of 2008 under a new name. Work there is stored as objects in a database, not as files, and access is sold as roles.</p>
+
+  <h3>How the data works</h3>
+  <ul class="facts">
+    <li set:html={`<b>Objects, not files.</b> You create objects and store them in a database usually called a <b>collaborative space</b>; file system ideas such as folders and file names do not apply. ${src(SWYM_DM)}`} />
+    <li set:html={`<b>What an object is.</b> The common content types are the <b>Physical Product</b> (the part or assembly item), its <b>3D Shape</b> (the geometry) and the <b>Drawing</b>. A SOLIDWORKS part saved to the platform becomes one CAD Family, one Physical Product per configuration and one 3D Shape per Physical Product. ${src(SWYM_DM)}`} />
+    <li set:html={`<b>Name and Title.</b> Each object has a unique Name that never changes and a Title you can change at any time. For SOLIDWORKS data the Windows file name also cannot change after the first save. ${src(SWYM_DM)}`} />
+    <li set:html={`<b>Maturity is not revision.</b> Maturity states track where an object is in its life: Private, In Work, Frozen (a design freeze before review), Released and Obsolete. Your role in the space decides who may promote. Revisions are a separate count (primary and optionally secondary, letters or numbers), usually made only from Released. ${src(SWYM_LC)}`} />
+    <li set:html={`<b>Spaces and access.</b> A collaborative space is Private, Protected or Public, and members are Reader, Contributor, Author, Leader or Owner. In a Protected space, Released and Obsolete content is visible to everyone. Every tenant has a default Common Space. ${src(SWYM_CS)}`} />
+    <li set:html={`<b>Bookmarks instead of folders.</b> Bookmarks give a flexible, folder-like structure for organising designs. ${src(FAQ)}`} />
+    <li set:html={`<b>Files from desktop CAD.</b> When files from a connected program such as SOLIDWORKS are saved, they are uploaded to a <b>File Collaboration Server</b>, and database objects are created that represent and link to them. ${src(SWYM_DM)}`} />
+  </ul>
+
+  <h3>Getting data in and out</h3>
+  <ul class="facts">
+    <li set:html={`<b>In from CATIA V5</b>: through the Collaborative Designer for CATIA V5 role, from inside V5. ${src(ROLE('UE5'))}`} />
+    <li set:html={`<b>Out as files</b>: the platform has no file format of its own, so data leaves as exported ${fmt('catia-v5', 'CATPart, CATProduct')}, ${fmt('cgr', 'cgr')}, CATDrawing, ${fmt('xcgm', 'XCGM')} or ${fmt('3dxml', '3D XML')} files (that is the list Spatial's 3D InterOp reads; STEP and other exports also exist). ${src('https://www.spatial.com/products/3d-interop')}`} />
+    <li set:html={`<b>3D XML on the platform</b>: Import 3DXML creates platform content and Export 3DXML writes an export file; incremental export and import support supplier working contexts, digital mock-up and repository-to-repository exchange. ${src('https://www.3ds.com/support/documentation/resource-library/3dxml-import-export-3dexperience-r2024x')}`} />
+    <li set:html={`<b>To a supplier</b>: an export package, a zip outside the platform's control, with each item marked For Edit, Read-only or Exclude; the supplier's changes can be imported back. ${src(SWYM_X)}`} />
+  </ul>
+
+  <h3>SOLIDWORKS and the platform</h3>
+  <ul class="facts">
+    <li set:html={`Both routes are the same Windows desktop SOLIDWORKS, not browser CAD: an existing seat adds the <b>Design with SOLIDWORKS</b> add-in (Collaborative Designer for SOLIDWORKS, which Dassault calls Cloud Services), or SOLIDWORKS is bought as a <b>3DEXPERIENCE SOLIDWORKS</b> offer, which installs, licenses and updates it from the platform and stores its data there. Standalone desktop SOLIDWORKS is still sold. ${src(FAQ)} ${src(`${PR}dassault-systemes-introduces-new-3dexperience-works-offers-bring-value-creative-process`)}`} />
+    <li set:html={`New SOLIDWORKS subscriptions bought after July 2023 include Cloud Services. ${src(FAQ)}`} />
+    <li set:html={`The browser-based design apps (${tool('solidworks-xdesign', 'xDesign')}, xShape) are a different application from desktop SOLIDWORKS. ${src('https://cloud.academy.3ds.com/explorer/r2026x/pack_UXW.html')}`} />
+  </ul>
+
+  <h3>Often confused</h3>
+  <ul class="facts">
+    <li set:html={`<b>Does Abaqus run on 3DEXPERIENCE?</b> ${tool('abaqus', 'Abaqus')} itself, the desktop product, does not: it connects to the platform through the All Physics Analyst role, as do CST Studio Suite, PowerFLOW, Simpack, Wave6 and XFlow. Separately, Dassault sells simulation roles that live on the platform, such as Structural Performance Engineer, which use the same Abaqus solver technology. ${src(ROLE('SXK'))} ${src('https://blog.3ds.com/brands/simulia/lets-learn-together-structural-performance-engineer-role')}`} />
+    <li set:html={`<b>CATIA V5 is still sold</b> next to 3DEXPERIENCE CATIA, as desktop software with files. ${src('https://www.3ds.com/products/catia/catia-v5')}`} />
+    <li set:html={`<b>On premise or cloud</b>: the platform is sold both ways; a few features, such as cloud HPC, are cloud only. ${src(`${PR}dassault-systemes-announces-general-availability-release-2014x-3dexperience-platforms-premise-and-cloud-portfolio`)}`} />
+    <li set:html={`<b>NETVIBES and 3DEXCITE</b>: as of November 2026 their product pages redirect to pages titled 3DEXPERIENCE Enterprise Data Science and 3DEXPERIENCE Sense Experience (an observed redirect; no announcement found). ${src('https://www.3ds.com/products/3dexperience/enterprise-data-science')}`} />
+  </ul>
+  <h3>Roles: what you buy</h3>
+  <p set:html={`Platform software is packaged and sold as <b>roles</b>; a role gives a user a set of apps. ${src('https://www.3ds.com/3dexperience-platform/roles')} Examples, from Dassault's R2026x role catalog for education:`} />
+  <ul class="facts">
+    <li set:html={`<b>3DSwymer</b>: the base collaboration apps, including 3DDashboard, 3DDrive, 3DPlay, 3DSearch, 3DSwym and 3DWhiteboard. ${src(ROLE('IFW'))}`} />
+    <li set:html={`<b>Collaborative Industry Innovator</b>: data management apps such as 3DSpace, Bookmark Editor, Collaborative Lifecycle, Change Execution and Product Explorer. ${src(ROLE('CSV'))}`} />
+    <li set:html={`<b>Collaborative Designer for CATIA V5</b>: one app, Design with CATIA V5, which lets V5 users save to the platform and use its lifecycle tools from inside V5. ${src(ROLE('UE5'))}`} />
+    <li set:html={`<b>Collaborative Designer for SOLIDWORKS</b>: the Design with SOLIDWORKS add-in for a desktop seat. ${src(FAQ)}`} />
+    <li set:html={`<b>All Physics Analyst</b>: connects the standalone SIMULIA products to the platform (cloud HPC is cloud only). ${src(ROLE('SXK'))}`} />
+    <li set:html={`<b>3D Creator</b> and <b>3D Sculptor</b>: browser-based design with ${tool('solidworks-xdesign', 'SOLIDWORKS xDesign')} and xShape. ${src('https://cloud.academy.3ds.com/explorer/r2026x/pack_UXW.html')}`} />
+  </ul>
+
+  <h3>Applications and brands on it</h3>
+  <ul class="facts">
+    <li set:html={`${tool('catia', 'CATIA')} (design), ${tool('enovia', 'ENOVIA')} (data management), ${tool('delmia', 'DELMIA')} (manufacturing) and the 3DEXPERIENCE SIMULIA roles (structures, fluids and acoustics, electromagnetics, multibody) run on the platform. ${src('https://www.3ds.com/products/simulia/3dexperience-simulia')}`} />
+    <li set:html={`GEOVIA (mining and geology; the brand was created in 2012, largely from the Gemcom acquisition) is "powered by the 3DEXPERIENCE platform". ${src('https://www.3ds.com/products/geovia')}`} />
+    <li set:html={`Brand history: SOLIDWORKS acquired 1997; ENOVIA 1998 (from IBM's Product Manager software); DELMIA 2000; SIMULIA 2005 (from Abaqus); 3DVIA 2007; GEOVIA and NETVIBES 2012; 3DEXCITE (from Realtime Technology) and BIOVIA (from Accelrys) 2014; MEDIDATA 2019; OUTSCALE 2022. ${src(H)}`} />
+  </ul>
+
+  <h3>From V4 to 3DEXPERIENCE</h3>
+  <ol class="tl">
+    {timeline.map(([d, t, u]) => <li><span class="num d">{d}</span><span>{t} <a class="src" href={u} rel="noopener">source</a></span></li>)}
+  </ol>
+
+</section>
+<style>
+  .hub { margin: 2rem 0; }
+  .hub h3 { margin-top: 1.4rem; }
+  .lede-s { font-size: 1.05em; }
+  .tl { list-style: none; padding: 0; margin: 0.4rem 0; border-left: 1px solid var(--ink); }
+  .tl li { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 0.6rem; padding: 0.3rem 0 0.3rem 0.75rem; }
+  .tl .d { color: var(--ink-2); }
+  .facts { padding-left: 1.1rem; }
+  .facts li { margin: 0.4rem 0; overflow-wrap: anywhere; }
+  .hub :global(.src) { font-size: 0.8em; color: var(--ink-2); }
+  @media (max-width: 640px) { .tl li { grid-template-columns: minmax(0, 1fr); gap: 0; } }
+</style>

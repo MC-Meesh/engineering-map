@@ -1,0 +1,24 @@
+id: redhawk
+type: tool
+name: Ansys RedHawk-SC
+category: eda
+vendor: ansys
+open_source: false
+status: active
+first_release: 2005
+stages:
+  - analysis
+website: https://www.ansys.com/products/semiconductors/ansys-redhawk-sc
+summary: Power integrity and electromigration signoff for SoCs.
+plain: >-
+  Checks that power reaches every part of a chip reliably and that its wires will not wear out from
+  the current they carry.
+workflow: >-
+  Once the chip layout is finished, with every part placed and every wire drawn, it comes here for
+  power checks; RedHawk-SC finds weak spots in power delivery and wiring, and fixes go back to the
+  layout team before the chip is made.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ansys.com/products/semiconductors/ansys-redhawk-sc
+    label: official page

@@ -1,0 +1,42 @@
+id: prusaslicer
+type: tool
+name: PrusaSlicer
+category: cam
+vendor: prusa
+open_source: true
+license: AGPL-3.0
+status: active
+first_release: 2016
+stages:
+  - manufacturing
+formats:
+  reads:
+    - stl
+    - 3mf
+    - obj
+    - amf
+    - step
+  writes:
+    - 3mf
+    - gcode
+competes_with:
+  - cura
+website: https://www.prusa3d.com/page/prusaslicer_424/
+summary: Open-source slicer derived from Slic3r; parent of several popular forks.
+plain: >-
+  Free software that prepares 3D models for printing by slicing them into layers and paths for the
+  printer; several popular slicers grew from it.
+workflow: >-
+  A maker loads a model as STL, 3MF, OBJ or STEP, slices it into layers here, and sends the G-code
+  (the printer's line-by-line instructions) or 3MF project to the 3D printer.
+native_files:
+  - ext: .3mf
+    what: Project with objects, settings and modifiers
+    format: 3mf
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.prusa3d.com/page/prusaslicer_424/
+    label: official page
+  - url: https://help.prusa3d.com/article/saving-projects-as-3mf_1773
+    label: native file format (Prusa knowledge base)

@@ -1,0 +1,33 @@
+id: genus
+type: tool
+name: Cadence Genus
+category: eda
+vendor: cadence
+open_source: false
+status: active
+first_release: 2015
+stages:
+  - design
+formats:
+  reads:
+    - verilog
+  writes:
+    - verilog
+competes_with:
+  - design-compiler
+  - yosys
+website: >-
+  https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/synthesis/genus-synthesis-solution.html
+summary: RTL logic synthesis.
+plain: >-
+  Cadence software that turns a chip design written as code into a network of basic logic gates.
+workflow: >-
+  A chip designer hands over the design as Verilog code (text that describes the chip's circuits);
+  Genus turns it into a gate-level netlist (a list of logic gates and their wires, also in Verilog),
+  which goes on to Innovus to be placed and wired into a chip layout.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/synthesis/genus-synthesis-solution.html
+    label: official page

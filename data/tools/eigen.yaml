@@ -1,0 +1,34 @@
+id: eigen
+type: tool
+name: Eigen
+category: solver-library
+vendor: eigen-project
+open_source: true
+license: MPL-2.0
+status: active
+first_release: 2006
+stages:
+  - analysis
+website: https://libeigen.gitlab.io/
+wikipedia: https://en.wikipedia.org/wiki/Eigen_(C%2B%2B_library)
+summary: Header-only C++ linear algebra used everywhere from robotics to geometry.
+plain: >-
+  A free C++ library for the matrix and vector math found in countless programs, from robots to
+  geometry tools.
+workflow: >-
+  Programmers include Eigen in their own code, such as robotics, geometry or simulation programs, so
+  those programs can do their matrix and vector math; the results stay inside those programs.
+files_note: 'A header-only C++ template library for linear algebra that programs include and compile in; it has no file format of its own, and matrices live in the calling program''s memory.'
+notes: >-
+  MPL-2.0 since version 3.1.1 (earlier releases LGPL-3.0-or-later). Pure header template library.
+  Originated in KDE; first_release 2006 not confirmed from a primary source (oldest GitLab tag is a
+  2007 rewrite).
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://libeigen.gitlab.io/
+    label: Eigen official site (MPL2 since 3.1.1, header-only)
+  - url: https://en.wikipedia.org/wiki/Eigen_(C%2B%2B_library)
+    label: Wikipedia
+  - url: https://libeigen.gitlab.io/eigen/docs-nightly/GettingStarted.html
+    label: 'Eigen docs: Getting started'

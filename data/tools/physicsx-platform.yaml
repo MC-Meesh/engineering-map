@@ -1,0 +1,40 @@
+id: physicsx-platform
+type: tool
+name: PhysicsX platform
+category: ml-engineering
+vendor: physicsx
+open_source: false
+status: active
+stages:
+  - design
+  - optimization
+competes_with:
+  - ncs
+  - simai
+website: https://www.physicsx.ai/
+summary: >-
+  AI models and tooling for simulation-heavy engineering in automotive, aerospace and
+  semiconductors.
+plain: >-
+  AI models and tools that predict simulation results quickly, for engineering in cars, aircraft and
+  semiconductors.
+workflow: >-
+  Engineers train AI models on simulation results for cars, aircraft or chips, then use their quick
+  predictions to explore and improve designs before confirming them with full simulation.
+files_note: 'Platform that takes in existing CAD geometry and CFD and FEA field data to train its models; it runs hosted, in a customer cloud, on premises or air-gapped.'
+notes: >-
+  PhysicsX exited stealth in Nov 2023 describing an AI platform; LGM-Aero and Ai.rplane shipped on
+  the platform in Dec 2024 and a private Azure Marketplace release followed in May 2025. No dated
+  general release found.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.physicsx.ai/
+    label: PhysicsX home page
+  - url: >-
+      https://techcrunch.com/2023/11/27/physicsx-emerges-from-stealth-with-32m-for-ai-to-power-engineering-simulations/
+    label: TechCrunch, PhysicsX exits stealth 2023-11-27
+  - url: https://news.siemens.com/en-us/siemens-physicsx/
+    label: Siemens press release, PhysicsX collaboration 2024-12-04
+  - url: https://www.physicsx.ai/platform
+    label: 'PhysicsX: platform page'

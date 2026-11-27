@@ -1,0 +1,17 @@
+id: ptc
+type: vendor
+name: PTC
+kind: company
+hq: US
+founded: 1985
+status: active
+website: https://www.ptc.com/
+wikipedia: https://en.wikipedia.org/wiki/PTC_(software_company)
+summary: Creo, Onshape and Windchill; pioneered parametric feature-based CAD with Pro/ENGINEER.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ptc.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/PTC_(software_company)
+    label: Wikipedia

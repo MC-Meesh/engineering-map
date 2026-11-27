@@ -1,0 +1,18 @@
+id: emss
+type: vendor
+name: EM Software and Systems
+kind: company
+hq: ZA
+founded: 1994
+parent: altair
+status: merged
+summary: FEKO electromagnetic solver.
+notes: Founding year 1994 not confirmed by a primary source.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://microwavejournal.com/articles/22514-altair-and-em-software-systems-close-acquisition-deal
+    label: 'Microwave Journal 2014-06-24: Altair and EMSS close deal'
+  - url: https://blogs.sw.siemens.com/simcenter/simcenter-feko-history-part-1/
+    label: 'Siemens Simcenter blog: Feko history part 1'

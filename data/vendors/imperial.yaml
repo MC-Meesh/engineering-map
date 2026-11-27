@@ -1,0 +1,17 @@
+id: imperial
+type: vendor
+name: Imperial College London
+kind: institution
+hq: GB
+founded: 1907
+status: active
+website: https://www.imperial.ac.uk/
+wikipedia: https://en.wikipedia.org/wiki/Imperial_College_London
+summary: Origin of PyFR and Firedrake.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.imperial.ac.uk/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Imperial_College_London
+    label: Wikipedia

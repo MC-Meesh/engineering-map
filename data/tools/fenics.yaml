@@ -1,0 +1,45 @@
+id: fenics
+type: tool
+name: FEniCS (DOLFINx)
+category: solver-library
+vendor: fenics-project
+open_source: true
+license: LGPL-3.0-or-later
+status: active
+first_release: 2003
+stages:
+  - analysis
+built_on:
+  - petsc
+formats:
+  reads:
+    - xdmf
+    - gmsh-msh
+  writes:
+    - xdmf
+    - vtk-xml
+competes_with:
+  - firedrake
+website: https://fenicsproject.org/
+wikipedia: https://en.wikipedia.org/wiki/FEniCS_Project
+summary: Write the weak form in Python (UFL) and get generated finite element code.
+plain: >-
+  A free Python toolkit where you write the equations of a physics problem in a compact form and it
+  generates the simulation code for you.
+workflow: >-
+  A researcher reads a Gmsh or XDMF mesh (the shape split into small cells), writes the equations in
+  Python, solves them here, often with PETSc, and writes XDMF or VTK results to view in ParaView.
+notes: >-
+  DOLFINx is LGPL-3.0-or-later. PETSc is the main linear algebra backend but optional: pip wheels
+  ship without it. first_release 2003 (project start) not confirmed from a primary source.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://raw.githubusercontent.com/FEniCS/dolfinx/main/README.md
+    label: DOLFINx README (LGPL v3 or later, PETSc optional)
+  - url: https://raw.githubusercontent.com/FEniCS/dolfinx/main/COPYING.LESSER
+    label: DOLFINx COPYING.LESSER
+  - url: https://fenicsproject.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/FEniCS_Project
+    label: Wikipedia

@@ -1,0 +1,17 @@
+id: obj
+type: format
+name: Wavefront OBJ
+extensions:
+  - .obj
+  - .mtl
+kind: tessellated
+steward: Wavefront (de facto)
+open_spec: true
+first_published: 1990
+website: https://en.wikipedia.org/wiki/Wavefront_.obj_file
+summary: Simple text polygon format with materials; universal in graphics and scanning.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/Wavefront_.obj_file
+    label: official page

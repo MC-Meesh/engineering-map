@@ -1,0 +1,272 @@
+---
+import Base from '../layouts/Base.astro';
+import { stats, taxonomy, vendors, tools } from '../lib/data';
+import { LENSES, DEFAULT_LENS } from '../scripts/lenses';
+import { groups as ownerGroups } from '../lib/ownership';
+const topOwners = ownerGroups.slice(0, 6);
+// Vendor filter lists the groups that control at least three tools today.
+const groups = vendors
+  .filter((v) => !v.parent && v.controlledTools >= 3)
+  .sort((a, b) => b.controlledTools - a.controlledTools);
+const domainCount = (d: string) => tools.filter((t) => t.domain === d).length;
+---
+<Base title="The engineering map" section="map" bare>
+  <div class="map-shell">
+    <aside id="controls" class="controls" aria-label="Map controls">
+      <div class="intro">
+        <h1>The engineering map</h1>
+        <p>{stats.toolsAll} tools ({stats.kernels} of them geometry kernels), {stats.vendors} vendors and {stats.formats} file formats, joined by {stats.edges.toLocaleString('en-US')} sourced relationships: who owns what, what it is built on, what it reads and writes.</p>
+      </div>
+      <div class="search">
+        <label for="search">Find a tool, vendor or format <kbd>/</kbd></label>
+        <input id="search" type="search" autocomplete="off" placeholder="Parasolid, STEP, Ansys" role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list" />
+        <ul id="search-results" role="listbox" hidden></ul>
+      </div>
+
+      <fieldset>
+        <legend>Domain</legend>
+        <p id="domain-hint" class="hint"></p>
+        <div class="domains">
+          {taxonomy.domains.map((d) => (
+            <button type="button" data-domain={d.id} aria-pressed="true"><span class="sw" data-d={d.id} aria-hidden="true"></span>{d.name}<span class="num muted">{domainCount(d.id)}</span></button>
+          ))}
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Narrow</legend>
+        <label class="row" for="f-cat">Category
+          <select id="f-cat"><option value="">Any category</option>{taxonomy.categories.map((c) => <option value={c.id}>{c.name}</option>)}</select>
+        </label>
+        <label class="row" for="f-stage">Workflow stage
+          <select id="f-stage"><option value="">Any stage</option>{taxonomy.stages.map((s) => <option value={s.id}>{s.name}</option>)}</select>
+        </label>
+        <label class="row" for="f-vendor">Owned by
+          <select id="f-vendor"><option value="">Any owner</option>{groups.map((g) => <option value={g.id}>{g.name} ({g.controlledTools})</option>)}</select>
+        </label>
+        <label class="check"><input id="f-oss" type="checkbox" /> Open source only</label>
+        <button id="f-reset" type="button" class="linkish">Reset filters</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Show</legend>
+        <label class="check"><input type="checkbox" data-type="tool,kernel" checked /> <span class="sw" data-d="design" aria-hidden="true"></span>Tools and kernels</label>
+        <label class="check"><input type="checkbox" data-type="vendor" checked /> <span class="sw vendor" aria-hidden="true"></span>Vendors</label>
+        <label class="check"><input type="checkbox" data-type="format" checked /> <span class="sw format" aria-hidden="true"></span>Formats</label>
+        <label class="check"><input type="checkbox" data-type="stage" /> Workflow stages</label>
+      </fieldset>
+
+      <fieldset id="edges-fieldset">
+        <legend>Edges drawn</legend>
+        <label class="check"><input type="checkbox" data-edges="made-by,originated-at,subsidiary-of,acquired-by" checked /> Ownership</label>
+        <label class="check"><input type="checkbox" data-edges="built-on,plugin-of" checked /> Built on, plugin of</label>
+        <label class="check"><input type="checkbox" data-edges="alternative-to" checked /> Open-source alternatives</label>
+        <label class="check"><input type="checkbox" data-edges="competes-with,integrates-with" /> Competes, integrates</label>
+        <label class="check"><input type="checkbox" data-edges="reads,writes,stewarded-by" /> Reads and writes formats</label>
+        <p class="hint">Focusing a node always draws all of its edges.</p>
+      </fieldset>
+      <nav class="also" aria-label="Other views">
+        <a class="btn-2" href="/vendors/tree/">Ownership tree</a>
+        <a class="btn-2" href="/tools/">Every tool as a table</a>
+        <a class="btn-2" href="/formats/">File formats</a>
+      </nav>
+    </aside>
+
+    <section class="sheet" aria-label="Graph of the engineering software landscape">
+      <button id="controls-toggle" class="controls-toggle" type="button" aria-expanded="false" aria-controls="controls">
+        <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></svg>Search and filter</button>
+      <div class="frame">
+        <div id="graph" class="graph" role="img" aria-label={`Network of ${stats.toolsAll} engineering tools, ${stats.vendors} vendors and ${stats.formats} formats, opening on the ownership hierarchy. Use the search box to focus a node; the same data is available as tables on the Tools, Vendors and Formats pages and as an indented list on the Ownership page.`}></div>
+        <div class="lensbar" role="group" aria-label="Relationship lens">
+          <div class="lens-buttons">
+            {LENSES.map((l) => <button type="button" data-lens={l.id} aria-pressed={l.id === DEFAULT_LENS ? 'true' : 'false'}>{l.name}</button>)}
+          </div>
+          <label class="lens-select"><span class="sr-only">Relationship lens</span>
+            <select id="lens-select">{LENSES.map((l) => <option value={l.id}>{l.name}</option>)}</select>
+          </label>
+          <p id="lens-blurb" class="lens-blurb"></p>
+          <p id="lens-legend" class="lens-legend" hidden></p>
+          <nav id="lineage" class="lineage" aria-label="Ownership of the focused node" hidden></nav>
+        </div>
+        <div class="zoom" role="group" aria-label="Zoom">
+          <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+          <button id="zoom-out" type="button" aria-label="Zoom out">&minus;</button>
+          <button id="zoom-fit" type="button" aria-label="Fit the view">Fit</button>
+        </div>
+        <div class="key" aria-hidden="true">
+          <span><span class="sw" data-d="design"></span>tool</span>
+          <span><span class="sw kernel" data-d="design" style="outline:1.5px solid var(--ink)"></span>kernel</span>
+          <span><span class="sw vendor"></span>vendor</span>
+          <span><span class="sw format"></span>format</span>
+        </div>
+        <div class="m-help">
+          <p>Each circle is a company; circles inside it are companies it bought; dots are its products. Tap a dot or circle to see who owns it, what it does and its files, or use <b>Search and filter</b>.</p>
+          <p class="m-owners">Largest owners: {topOwners.map((g, i) => <>{i > 0 && ' '}<button type="button" data-focus={g.vendor.id}>{g.vendor.name.replace(/ Digital Industries Software$/, '')} <span class="num">{g.total}</span></button></>)}</p>
+        </div>
+        <div class="titleblock" aria-label="Map information">
+          <div><span>Nodes shown</span><b class="num" id="count" aria-live="polite">{stats.tools + stats.kernels + stats.vendors + stats.formats}</b></div>
+          <div><span>As of</span><b class="num">{stats.as_of}</b></div>
+          <div><span>Sources</span><b class="num">{stats.sources}</b></div>
+        </div>
+      </div>
+      <aside id="detail" class="detail" hidden aria-live="polite" aria-labelledby="detail-title"></aside>
+    </section>
+  </div>
+</Base>
+
+<script>
+  import '../scripts/map.ts';
+</script>
+
+<style is:global>
+  body.bare { overflow: hidden; }
+  .map-shell { display: grid; grid-template-columns: 300px minmax(0, 1fr); height: calc(100dvh - var(--header-h)); }
+  .controls { border-right: 1px solid var(--rule); background: var(--paper); overflow-y: auto; padding: 1.5rem 1.25rem 2rem; font-size: var(--fs-0); scrollbar-width: thin; }
+  .controls .intro h1 { font-size: 1.35rem; margin-bottom: 0.9rem; }
+  .controls .intro h1::after { content: ''; display: block; width: 48px; height: 3px; background: var(--ink); margin-top: 0.7rem; }
+  .controls .intro p { color: var(--ink-2); font-size: var(--fs-0); line-height: 1.6; }
+  .controls fieldset { border: 0; border-top: 1px solid var(--rule); margin: 1.1rem 0 0; padding: 0.9rem 0 0; min-width: 0; }
+  .controls legend { font-weight: 600; padding: 0 0.5rem 0 0; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-2); }
+  .controls legend::before { content: '/ '; }
+  .controls .hint { color: var(--ink-2); margin: 0.25rem 0 0.5rem; font-size: 0.75rem; }
+  .search { position: relative; margin-top: 0.5rem; }
+  .search label { display: flex; justify-content: space-between; align-items: center; font-weight: 600; margin-bottom: 0.45rem; }
+  kbd { font: inherit; font-size: 0.7rem; border: 1px solid var(--rule); padding: 0 0.35rem; color: var(--ink-2); }
+  .search input { width: 100%; font: inherit; font-size: var(--fs-0); padding: 0.65rem 0.7rem; border: 1px solid var(--rule); background: transparent; color: var(--ink); transition: border-color 0.3s; }
+  .search input:focus { border-color: var(--ink); outline: none; }
+  #search-results { position: absolute; left: 0; right: 0; top: 100%; z-index: 30; list-style: none; margin: -1px 0 0; padding: 0; background: var(--paper); border: 1px solid var(--ink); }
+  #search-results li { display: grid; grid-template-columns: auto 1fr; column-gap: 0; padding: 0.5rem 0.65rem; cursor: pointer; border-bottom: 1px solid var(--rule-2); }
+  #search-results li .muted { grid-column: 2; font-size: 0.72rem; }
+  #search-results li[aria-selected='true'], #search-results li:hover { background: var(--red-wash); }
+  #search-results li.empty { cursor: default; color: var(--ink-2); display: block; }
+  .domains { display: grid; gap: 1px; }
+  .domains button { display: flex; align-items: center; gap: 0; font: inherit; font-size: var(--fs-0); text-align: left; padding: 0.4rem 0.5rem; border: 1px solid transparent; background: transparent; color: var(--ink); cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+  .domains button .num { margin-left: auto; }
+  .domains button[aria-pressed='false'] { color: var(--ink-3); }
+  .domains button[aria-pressed='false'] .sw { background: transparent !important; outline: 1.5px solid var(--ink-3); }
+  .domains button:hover { border-color: var(--rule); }
+  .controls .row { display: grid; gap: 0.3rem; margin: 0 0 0.7rem; color: var(--ink-2); }
+  .controls select { width: 100%; font: inherit; font-size: var(--fs-0); padding: 0.45rem; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); }
+  .controls .check { display: flex; align-items: center; gap: 0.5rem; padding: 0.22rem 0; cursor: pointer; }
+  .controls .check input { accent-color: var(--ink); margin: 0; }
+  .controls .also { display: grid; gap: 0.5rem; margin-top: 1.5rem; padding-top: 1.1rem; border-top: 1px solid var(--rule); }
+  .controls .also .btn-2 { justify-content: space-between; }
+  .linkish { font: inherit; background: none; border: 0; padding: 0; color: inherit; text-decoration: underline; text-decoration-color: var(--ink-3); text-underline-offset: 0.2em; cursor: pointer; text-align: left; }
+  .linkish:hover { text-decoration-color: var(--ink); }
+
+  .sheet { position: relative; min-width: 0; background: var(--paper); }
+  .frame { position: relative; height: 100%; background: var(--paper); }
+  .graph { position: absolute; inset: 0; overflow: hidden; }
+  .graph-error { padding: 2rem; max-width: 40ch; }
+  .zoom { position: absolute; left: 20px; bottom: 20px; display: flex; border: 1px solid var(--rule); background: var(--paper); z-index: 5; }
+  .zoom button { font: inherit; font-size: var(--fs-0); min-width: 38px; height: 36px; padding: 0 0.6rem; border: 0; border-right: 1px solid var(--rule); background: transparent; color: var(--ink-2); cursor: pointer; transition: color 0.2s, background 0.2s; }
+  .zoom button:last-child { border-right: 0; }
+  .zoom button:hover { color: var(--ink); background: var(--red-wash); }
+  .titleblock { position: absolute; right: 20px; bottom: 20px; display: flex; border: 1px solid var(--rule); background: var(--panel); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); font-size: 11px; z-index: 4; }
+  .titleblock > div { padding: 0.35rem 0.75rem; border-right: 1px solid var(--rule); }
+  .titleblock > div:last-child { border-right: 0; }
+  .titleblock span { display: block; color: var(--ink-2); font-size: 10px; }
+  .titleblock b { font-weight: 500; white-space: nowrap; }
+  .key { position: absolute; left: 190px; bottom: 20px; height: 38px; display: flex; align-items: center; gap: 1rem; padding: 0 0.75rem; font-size: 11px; color: var(--ink-2); background: var(--paper); border: 1px solid var(--rule); z-index: 4; }
+  .key > span { display: inline-flex; align-items: center; }
+
+  .lensbar { position: absolute; left: 20px; top: 20px; right: 20px; z-index: 5; pointer-events: none; display: grid; justify-items: start; gap: 0.5rem; }
+  .lensbar > * { pointer-events: auto; }
+  .lens-buttons { display: flex; flex-wrap: wrap; border: 1px solid var(--rule); background: var(--panel); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); font-size: 0.78rem; }
+  .lens-buttons button { font: inherit; border: 0; border-right: 1px solid var(--rule); background: transparent; color: var(--ink-2); padding: 0.5rem 0.9rem; cursor: pointer; transition: color 0.2s, background 0.25s; }
+  .lens-buttons button:last-child { border-right: 0; }
+  .lens-buttons button:hover { color: var(--ink); }
+  .lens-buttons button[aria-pressed='true'] { background: var(--ink); color: var(--paper); }
+  /* Keyboard focus only, and drawn differently from the selected lens: a dashed ring inset. */
+  .lens-buttons button:focus { outline: none; }
+  .lens-buttons button:focus-visible { outline: 1px dashed var(--ink-2); outline-offset: -4px; }
+  .lens-buttons button[aria-pressed='true']:focus-visible { outline-color: var(--paper); }
+  .lens-select { display: none; }
+  .lens-blurb { margin: 0; font-size: 0.78rem; color: var(--ink-2); background: var(--paper); padding: 0.3rem 0.5rem; max-width: 62ch; line-height: 1.5; }
+  .lens-legend { margin: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; font-size: 11px; color: var(--ink-2); background: var(--paper); padding: 0.2rem 0.5rem; }
+  .lens-legend > span { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .ekey { display: inline-block; width: 20px; height: 2px; background: var(--c); position: relative; }
+  .ekey.dir::after { content: ''; position: absolute; right: -2px; top: -3px; border-left: 6px solid var(--c); border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+  .hkey { display: inline-block; width: 13px; height: 13px; border-radius: 50%; border: 1px solid var(--ink-3); background: var(--red-wash); }
+  .hkey.sub { border-style: dashed; border-color: var(--ink-3); background: transparent; }
+  .hkey.brand { border-style: dotted; border-color: var(--ink); background: transparent; }
+  .rel-key { display: inline-block; width: 14px; height: 3px; margin-right: 0.45rem; vertical-align: 0.2em; }
+  /* While a node is focused, its lineage replaces the lens description. */
+  .lensbar:has(.lineage:not([hidden])) .lens-blurb, .lensbar:has(.lineage:not([hidden])) .lens-legend { display: none; }
+  .lineage-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; font-size: 0.8rem; }
+  .lineage-list li { display: inline-flex; align-items: center; }
+  .lineage-list li + li::before { content: ''; width: 7px; height: 7px; border-right: 1.5px solid var(--ink-3); border-top: 1.5px solid var(--ink-3); transform: rotate(45deg); margin: 0 0.75rem 0 0.55rem; }
+  .lineage-list button { font: inherit; background: none; border: 0; padding: 0.1rem 0; color: var(--ink-2); cursor: pointer; text-decoration: underline; text-decoration-color: var(--ink-3); text-underline-offset: 0.2em; }
+  .lineage-list button:hover { color: var(--ink); text-decoration-color: var(--ink); }
+  .lineage-list [aria-current] { background: var(--ink); color: var(--paper); padding: 0.1rem 0.45rem; font-weight: 600; }
+  .lin-brand { color: var(--ink); border: 1px dashed var(--ink-3); padding: 0 0.4rem; }
+  .lineage { background: var(--panel); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border: 1px solid var(--rule); padding: 0.45rem 0.7rem; max-width: calc(100% - 420px); animation: rise 0.35s var(--ease); }
+  @keyframes rise { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+
+  .detail { position: absolute; top: 20px; right: 20px; bottom: 76px; width: 380px; overflow-y: auto; background: var(--panel); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border: 1px solid var(--rule); z-index: 6; padding: 1.1rem 1.2rem 1.4rem; font-size: var(--fs-0); opacity: 0; transform: translateX(16px); transition: opacity 0.3s var(--ease), transform 0.4s var(--ease); scrollbar-width: thin; }
+  .detail.in { opacity: 1; transform: none; }
+  /* A fade at the foot says the list goes on. */
+  .detail::after { content: ''; position: sticky; display: block; bottom: -1.4rem; height: 28px; margin: 0 -1.2rem -1.4rem; background: linear-gradient(transparent, var(--paper)); pointer-events: none; }
+  .detail-top { display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
+  .detail-meta { color: var(--ink-2); margin: 0; font-size: 0.75rem; }
+  .detail-close { flex: none; width: 30px; height: 30px; display: grid; place-items: center; background: transparent; border: 1px solid var(--rule); color: var(--ink-2); cursor: pointer; transition: color 0.2s, border-color 0.2s; margin: -0.2rem -0.3rem 0 0; }
+  .detail-close:hover { color: var(--ink); border-color: var(--ink); }
+  .detail-lineage { display: none; }
+  .detail h2 { font-size: 1.2rem; margin: 0.5rem 0 0.7rem; display: flex; align-items: baseline; }
+  .detail-head p { color: var(--ink-2); line-height: 1.6; }
+  .detail-head p.detail-plain { color: var(--ink); }
+  .detail-plain b { font-weight: 600; }
+  .detail-roll .linkish { font: inherit; }
+  .detail-clar { border-left: 2px solid var(--ink); padding-left: 0.5rem; }
+  .detail-roll ul { margin: 0.3rem 0 0; padding-left: 1rem; }
+  .detail-roll li { margin: 0.25rem 0; }
+  .explain-list { margin: 0.6rem 0 0; border-top: 1px solid var(--rule); padding-top: 0.5rem; }
+  .explain-list h3 { font-size: 0.8rem; margin: 0 0 0.3rem; }
+  .explain-list ul { margin: 0; padding-left: 1rem; }
+  .explain-list li { margin: 0.2rem 0; color: var(--ink); }
+  .detail-actions button.btn-2 { font: inherit; cursor: pointer; }
+  .detail-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+  .detail-actions .btn, .detail-actions .btn-2 { font-size: 0.75rem; padding: 0.45rem 0.75rem; }
+  .detail-rel h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 1.25rem 0 0.4rem; color: var(--ink-2); border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; font-weight: 600; }
+  .detail-rel h3.in-lens { color: var(--ink); }
+  .detail-rel ul { list-style: none; margin: 0; padding: 0; }
+  .detail-rel li { padding: 0.14rem 0; display: flex; align-items: baseline; }
+  .detail-none, .lens-note { color: var(--ink) !important; border-left: 2px solid var(--ink); padding-left: 0.6rem; margin: 0.6rem 0 0; font-size: 0.78rem; }
+  .lineage .lens-note { margin: 0.4rem 0 0; }
+  .detail-rel .linkish { color: var(--ink); text-align: left; }
+  .rel-date { font-size: 11px; margin-left: 0.35rem; }
+  .controls-toggle { display: none; }
+  .m-help { display: none; }
+
+  @media (max-width: 1100px) {
+    .key { display: none; }
+    .lineage { max-width: calc(100% - 400px); }
+  }
+  @media (max-width: 860px) {
+    .map-shell { grid-template-columns: 1fr; }
+    .controls { position: fixed; inset: var(--header-h) 0 0 0; z-index: 40; transform: translateX(-100%); visibility: hidden; border-right: 0; transition: transform 0.35s var(--ease), visibility 0.35s; padding: 1rem 16px 2rem; }
+    .controls.open { transform: none; visibility: visible; }
+    .controls .intro { display: none; }
+    .controls-toggle { display: inline-flex; align-items: center; gap: 0.45rem; position: absolute; z-index: 45; top: 12px; right: 16px; font: inherit; font-size: 0.75rem; padding: 0 0.75rem; height: 38px; background: var(--ink); color: var(--paper); border: 1px solid var(--ink); }
+    .controls-toggle[aria-expanded='true'] { position: fixed; top: calc(var(--header-h) + 10px); }
+    .lensbar { left: 16px; top: 12px; right: 178px; gap: 0.4rem; }
+    .lens-buttons, .lens-blurb, .lens-legend { display: none !important; }
+    .lens-select { display: block; width: 100%; }
+    .lens-select select { width: 100%; font: inherit; font-size: 0.8rem; height: 38px; padding: 0 2rem 0 0.6rem; border: 1px solid var(--ink); color: var(--ink); -webkit-appearance: none; appearance: none; background: var(--paper) no-repeat right 0.7rem center / 10px 6px; background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(-45deg, transparent 50%, currentColor 50%); background-size: 5px 5px, 5px 5px; background-position: right 0.95rem center, right 0.65rem center; }
+    .lineage { display: none !important; }
+    .detail { left: 0; right: 0; top: auto; bottom: 0; width: auto; max-height: 50%; border-width: 1px 0 0; transform: translateY(24px); padding: 0.9rem 16px 1.25rem; }
+    .detail-lineage { display: block; margin: 0.6rem 0 0; }
+    .detail-lineage .lineage-list { font-size: 0.75rem; }
+    .detail h2 { margin-top: 0.4rem; }
+    .titleblock { right: 16px; bottom: 16px; }
+    .titleblock > div:nth-child(n+3) { display: none; }
+    .zoom { left: 16px; bottom: 16px; }
+    .sheet:has(.detail:not([hidden])) .titleblock, .sheet:has(.detail:not([hidden])) .zoom { display: none; }
+    /* The space under the circles on a tall phone explains how to read them. */
+    .m-help p { margin: 0 0 0.5rem; }
+    .m-owners { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
+    .m-owners button { font: inherit; font-size: 0.75rem; border: 1px solid var(--rule); background: transparent; color: var(--ink); padding: 0.25rem 0.5rem; cursor: pointer; }
+    body[data-lens='ownership'] .m-help { display: block; position: absolute; left: 16px; right: 16px; bottom: 76px; margin: 0; padding: 0.75rem 0.85rem; font-size: 0.78rem; line-height: 1.55; color: var(--ink-2); border: 1px solid var(--rule); background: var(--paper); z-index: 4; max-width: none; }
+    .sheet:has(.detail:not([hidden])) .m-help { display: none !important; }
+  }
+</style>

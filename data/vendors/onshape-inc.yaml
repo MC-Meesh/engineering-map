@@ -1,0 +1,18 @@
+id: onshape-inc
+type: vendor
+name: Onshape Inc
+kind: company
+hq: US
+founded: 2012
+parent: ptc
+status: merged
+website: https://www.onshape.com/
+wikipedia: https://en.wikipedia.org/wiki/Onshape
+summary: Cloud-native CAD.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.onshape.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Onshape
+    label: Wikipedia

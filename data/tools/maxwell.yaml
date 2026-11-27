@@ -1,0 +1,60 @@
+id: maxwell
+type: tool
+name: Ansys Maxwell
+category: multiphysics
+vendor: ansys
+origin: ansoft
+open_source: false
+status: active
+first_release: 1984
+stages:
+  - analysis
+formats:
+  reads:
+    - gdsii
+    - dxf
+    - dwg
+    - acis-sat
+    - inventor-ipt
+    - catia-v5
+    - creo-prt
+    - iges
+    - jt
+    - nastran-bdf
+    - nx-prt
+    - parasolid-xt
+    - solidworks-native
+    - step
+  writes:
+    - acis-sat
+    - dxf
+    - gdsii
+    - iges
+    - obj
+    - parasolid-xt
+    - step
+    - stl
+    - gltf
+competes_with:
+  - altair-flux
+website: https://ansys.synopsys.com/products/electronics/ansys-maxwell
+summary: Low-frequency electromagnetics for motors, transformers and actuators.
+plain: Simulates magnetic and electric fields in motors, transformers and actuators.
+workflow: >-
+  An engineer brings in a motor, transformer or actuator shape as STEP, Parasolid, CATIA, Creo or NX
+  files, simulates its magnetic and electric fields here, and passes losses and performance on to
+  heat analysis and back to the designers.
+native_files:
+  - ext: .aedt
+    what: 'Ansys Electronics Desktop project file'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://ansys.synopsys.com/products/electronics/ansys-maxwell
+    label: official page
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/Electronics/v252/en/Subsystems/Maxwell/Content/Variables/ImportingFiles.htm
+    label: 'Ansys Maxwell help 2025 R2: importing files'
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/Electronics/v252/en/Subsystems/Maxwell/Content/Variables/Exporting3DModelFiles.htm
+    label: 'Ansys Maxwell help 2025 R2: exporting 3D model files'
+  - url: https://ansyshelp.ansys.com/public/Views/Secured/Electronics/v252/en/Subsystems/Maxwell/Content/Variables/OpeningProjects.htm
+    label: 'Ansys Maxwell help 2025 R2: opening projects (.aedt)'

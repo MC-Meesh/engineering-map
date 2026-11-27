@@ -1,0 +1,48 @@
+id: gazebo
+type: tool
+name: Gazebo
+category: robotics-controls
+vendor: open-robotics
+open_source: true
+license: Apache-2.0
+status: active
+first_release: 2002
+stages:
+  - analysis
+  - test
+formats:
+  reads:
+    - sdformat
+    - urdf
+  writes:
+    - sdformat
+integrates_with:
+  - ros2
+competes_with:
+  - isaac-sim
+  - webots
+website: https://gazebosim.org/
+wikipedia: https://en.wikipedia.org/wiki/Gazebo_(simulator)
+summary: Open robot simulator tightly integrated with ROS.
+plain: >-
+  A free robot simulator for testing robots in a virtual world before trying them for real, closely
+  tied to ROS, the common robot software framework.
+workflow: >-
+  A robotics developer loads a robot as URDF or SDFormat, tests it in a virtual world connected to
+  ROS 2 programs, and then moves the same ROS software onto the real robot.
+notes: >-
+  Began fall 2002 at USC (Andrew Howard, Nate Koenig). The nonprofit OSRF (Open Robotics) has
+  stewarded it since 2012 and kept it when Intrinsic bought the for-profit OSRC arm in Dec 2022.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://classic.gazebosim.org/
+    label: Gazebo Classic history (USC 2002, OSRF steward since 2012)
+  - url: https://www.openrobotics.org/blog/2022/12/15/intrinsic-acquires-osrc-and-osrc-sg
+    label: Open Robotics blog 2022-12-15 (OSRF keeps Gazebo)
+  - url: https://raw.githubusercontent.com/gazebosim/gz-sim/gz-sim9/LICENSE
+    label: gz-sim LICENSE (Apache-2.0)
+  - url: https://gazebosim.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Gazebo_(simulator)
+    label: Wikipedia

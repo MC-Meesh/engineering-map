@@ -1,0 +1,18 @@
+id: solidworks-corp
+type: vendor
+name: SolidWorks Corp
+kind: company
+hq: US
+founded: 1993
+parent: dassault
+status: merged
+website: https://www.solidworks.com/
+wikipedia: https://en.wikipedia.org/wiki/SolidWorks
+summary: Windows-native mid-range parametric CAD.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.solidworks.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/SolidWorks
+    label: Wikipedia

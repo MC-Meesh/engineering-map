@@ -1,0 +1,14 @@
+id: neuraloperator-team
+type: vendor
+name: NeuralOperator team (Caltech, NVIDIA)
+kind: project
+hq: US
+founded: 2020
+status: active
+website: https://neuraloperator.github.io/
+summary: Library for Fourier and other neural operators.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://neuraloperator.github.io/
+    label: official page

@@ -1,0 +1,55 @@
+id: ntop-app
+type: tool
+name: nTop
+category: cad
+vendor: ntop
+open_source: false
+status: active
+first_release: 2016
+stages:
+  - design
+  - optimization
+  - manufacturing
+formats:
+  reads:
+    - step
+    - parasolid-xt
+    - stl
+    - 3mf
+    - obj
+  writes:
+    - stl
+    - 3mf
+    - obj
+    - parasolid-xt
+integrates_with:
+  - magics
+  - fusion
+website: https://www.ntop.com/
+summary: Implicit modeling for lattices, field-driven geometry and parts that B-rep kernels struggle with.
+plain: >-
+  Design software for complex shapes such as lattices and geometry that varies across a part, which
+  ordinary CAD (3D design) tools struggle to build.
+workflow: >-
+  An engineer brings in CAD as STEP or Parasolid, builds lattices and shapes that vary across the
+  part here, and exports STL or 3MF for 3D printing, or Parasolid back to CAD.
+notes: >-
+  Core is nTop's own implicit modeling kernel. Reads and writes Parasolid x_t/x_b per nTop support
+  docs, but no source shows Parasolid licensed as a kernel. 2016 is the first nTopology product
+  (Element); nTop Platform launched July 2019. A new generation of the implicit kernel shipped in
+  nTop 5. nTop Core is a developer library that lets partner applications read .implicit files;
+  Materialise Magics imports .implicit files and there is an nTop add-in for Autodesk Fusion.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ntop.com/
+    label: nTop home page
+  - url: https://support.ntop.com/hc/en-us/articles/360048249514
+    label: nTop support, supported file formats
+  - url: >-
+      https://www.ntop.com/resources/product-updates/better-performing-parts-faster-introducing-ntop-platform/
+    label: nTop, introducing nTop Platform 2019
+  - url: https://www.metal-am.com/?p=3913
+    label: Metal AM, nTopology Element 2016
+  - url: https://www.ntop.com/resources/blog/ntop-5/
+    label: 'nTop 5 blog: new implicit kernel, nTop Core, Magics and Fusion links'

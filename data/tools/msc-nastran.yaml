@@ -1,0 +1,42 @@
+id: msc-nastran
+type: tool
+name: MSC Nastran
+category: cae-fea
+vendor: msc
+origin: nasa
+open_source: false
+status: active
+first_release: 1971
+stages:
+  - analysis
+formats:
+  reads:
+    - nastran-bdf
+  writes:
+    - nastran-bdf
+    - nastran-op2
+competes_with:
+  - simcenter-nastran
+  - optistruct
+website: https://www.cadence.com/en_US/home/tools/msc-software/msc-nastran.html
+wikipedia: https://en.wikipedia.org/wiki/Nastran
+summary: >-
+  Commercial line of the NASA-funded Nastran code; linear statics, dynamics and aeroelasticity, long
+  dominant in aerospace.
+plain: >-
+  Calculates how structures such as aircraft respond to loads, vibration and airflow; long the
+  dominant tool of its kind in aerospace.
+workflow: >-
+  An analyst builds the model in a preparation tool such as Patran, Femap or HyperMesh and saves it
+  as a Nastran input file (BDF); Nastran runs the calculation and writes OP2 result files that
+  stress engineers load back for review.
+notes: MSC Software was sold by Hexagon to Cadence (closed 2026-02-23).
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cadence.com/en_US/home/tools/msc-software/msc-nastran.html
+    label: Cadence MSC Nastran product page
+  - url: https://www.sec.gov/Archives/edgar/data/0000813672/000081367226000047/cdns-20260331.htm
+    label: Cadence 10-Q Q1 2026 (Hexagon D&E acquired 2026-02-23)
+  - url: https://en.wikipedia.org/wiki/Nastran
+    label: Wikipedia

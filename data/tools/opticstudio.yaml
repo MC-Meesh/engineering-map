@@ -1,0 +1,52 @@
+id: opticstudio
+type: tool
+name: Ansys Zemax OpticStudio
+category: multiphysics
+vendor: ansys
+origin: zemax-llc
+open_source: false
+status: active
+first_release: 1990
+stages:
+  - design
+  - analysis
+formats:
+  reads:
+    - step
+    - iges
+    - acis-sat
+    - stl
+  writes:
+    - step
+    - iges
+    - acis-sat
+    - stl
+website: https://ansys.synopsys.com/products/optics/ansys-zemax-opticstudio
+wikipedia: https://en.wikipedia.org/wiki/Zemax
+summary: Lens and optical system design and ray tracing.
+plain: >-
+  Software for designing lenses and optical systems by tracing how light rays pass through them.
+workflow: >-
+  An optical designer sets up a lens or optical system here, traces rays to improve it, and passes
+  the design to mechanical CAD (3D design) tools as STEP, IGES or SAT files, and on to the makers of
+  the optics.
+native_files:
+  - ext: .zmx
+    what: 'Zemax text lens file (full lens description)'
+  - ext: .zos
+    what: 'Zemax binary lens file, since OpticStudio 21.3'
+  - ext: .zprj
+    what: 'Zemax project file bundling the lens and linked files'
+  - ext: .zar
+    what: 'Zemax archive file (compressed set of design files)'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://ansys.synopsys.com/products/optics/ansys-zemax-opticstudio
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Zemax
+    label: Wikipedia
+  - url: https://optics.ansys.com/hc/en-us/articles/42661745091603-Zemax-file-extensions
+    label: 'Ansys Optics KB: Zemax file extensions'
+  - url: https://optics.ansys.com/hc/en-us/articles/42661776495251-How-to-export-a-lens-to-CAD
+    label: 'Ansys Optics KB: how to export a lens to CAD'

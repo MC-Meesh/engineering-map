@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+import Sources from '../../components/Sources.astro';
+import Examples from '../../components/Examples.astro';
+import ExamplePanel from '../../components/ExamplePanel.astro';
+import { formats, toolById, categoryById, vendorById, taxonomy, formatsWithExamples, examplesFor, explainerFor, inspectable } from '../../lib/data';
+import type { Format } from '../../lib/data';
+
+export function getStaticPaths() {
+  return formats.map((f) => ({ params: { id: f.id }, props: { f } }));
+}
+const { f } = Astro.props as { f: Format };
+const kindLabel: Record<string, string> = {
+  'brep-exchange': 'Exact geometry exchange', 'native-cad': 'Native CAD', tessellated: 'Tessellated geometry', mesh: 'Mesh', 'solver-input': 'Solver input deck', results: 'Simulation results', systems: 'Systems and requirements', bim: 'Building information', ecad: 'Electronics manufacturing', ic: 'Integrated circuit design', cam: 'Machining and metrology', robotics: 'Robot description', scene: 'Scene and visualization',
+};
+const ids = [...new Set([...f.readers, ...f.writers])];
+const rows = ids
+  .map((id) => toolById.get(id)!)
+  .sort((a, b) => taxonomy.categories.findIndex((c) => c.id === a.category) - taxonomy.categories.findIndex((c) => c.id === b.category) || a.name.localeCompare(b.name));
+const hasInside = examplesFor(f.id).some((e) => inspectable(e.file)) || !!explainerFor(f.id);
+const both = ids.filter((id) => f.readers.includes(id) && f.writers.includes(id)).length;
+---
+<Base title={f.name} description={f.summary} section="formats">
+  <article class="page fmt-page">
+    <header class="page-head fmt-head">
+      <p class="crumbs"><a href="/formats/">Formats</a> / {kindLabel[f.kind]}</p>
+      <h1><span class="sw format" aria-hidden="true"></span>{f.name}</h1>
+      <p class="lede">{f.summary}</p>
+      <p class="fmt-links"><a class="btn" href={`/#lens=interop&n=${f.id}`}>Show on the map</a><a class="btn-2" href="/formats/matrix/">Interop matrix</a>{hasInside && <a class="btn-2" href={`/formats/${f.id}/inside/`}>Inside the file, full width</a>}</p>
+      <dl class="spec">
+        {f.extensions && <><dt>Extensions</dt><dd class="mono">{f.extensions.join('  ')}</dd></>}
+        <dt>Kind</dt><dd>{kindLabel[f.kind]}</dd>
+        {f.standard && <><dt>Standard</dt><dd>{f.standard}</dd></>}
+        <dt>Steward</dt><dd>{f.steward_vendor ? <a href={`/vendors/${f.steward_vendor}/`}>{f.steward}</a> : f.steward}</dd>
+        <dt>Specification</dt><dd>{f.open_spec ? 'Openly documented' : 'Proprietary; access through the owner or licensed SDKs'}</dd>
+        {f.first_published && <><dt>First published</dt><dd class="num">{f.first_published}</dd></>}
+      </dl>
+    </header>
+    <div class="fmt-panel">
+      <ExamplePanel format={f.id} name={f.name} />
+    </div>
+    <div class="fmt-body">
+      <section>
+        <h2>Who reads and writes it <span class="muted num">{ids.length}</span></h2>
+        {ids.length ? (
+          <>
+            <p class="footnote">{f.readers.length} read it, {f.writers.length} write it, {both} do both.</p>
+            <div class="table-wrap">
+              <table class="data">
+                <thead><tr><th scope="col">Tool</th><th scope="col">Category</th><th scope="col">Reads</th><th scope="col">Writes</th></tr></thead>
+                <tbody>
+                  {rows.map((t) => (
+                    <tr>
+                      <td><span class="sw" data-d={t.domain} aria-hidden="true"></span><a href={`/tools/${t.id}/`}>{t.name}</a></td>
+                      <td>{categoryById.get(t.category)?.name}</td>
+                      <td class="yn">{f.readers.includes(t.id) ? 'Yes' : ''}</td>
+                      <td class="yn">{f.writers.includes(t.id) ? 'Yes' : ''}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        ) : <p>No tool in the dataset records support for this format yet.</p>}
+      </section>
+      <Examples format={f.id} name={f.name} />
+      <Sources sources={f.sources} confidence={f.confidence} as_of={f.as_of} notes={f.notes} file={`data/formats/${f.id}.yaml`} id={f.id} name={f.name} />
+    </div>
+  </article>
+</Base>
+
+<style>
+  /* Text on the left, the example on the right and following the reader down the page;
+     on phones the example sits right under the description. */
+  .fmt-page { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); grid-template-areas: 'head panel' 'body panel'; column-gap: 3rem; align-items: start; }
+  .fmt-head { grid-area: head; margin-bottom: 0; max-width: none; }
+  .fmt-head .spec { margin-top: 1.75rem; }
+  .fmt-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+  /* The example follows the reader down the long reads and writes table. It is sized to fit
+     the screen (the inspector's structure list starts folded), and scrolls inside if not. */
+  .fmt-panel { grid-area: panel; min-width: 0; position: sticky; top: calc(var(--header-h) + 1.5rem); max-height: calc(100dvh - var(--header-h) - 3rem); overflow: auto; scrollbar-width: thin; }
+  .fmt-body { grid-area: body; min-width: 0; }
+  .fmt-body :global(td.yn) { white-space: nowrap; }
+  .fmt-panel :global(.insp-view) { height: auto; max-height: min(40vh, 420px); }
+  @media (max-width: 960px) {
+    .fmt-page { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'head' 'panel' 'body'; }
+    .fmt-panel { position: static; max-height: none; overflow: visible; margin-top: 2rem; }
+  }
+</style>

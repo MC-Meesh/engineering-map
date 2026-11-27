@@ -1,0 +1,18 @@
+id: opencfd
+type: vendor
+name: OpenCFD Ltd
+kind: company
+hq: GB
+founded: 2004
+parent: esi
+status: active
+website: https://www.openfoam.com/
+wikipedia: https://en.wikipedia.org/wiki/OpenFOAM
+summary: Releases the openfoam.com line of OpenFOAM; owns the OpenFOAM trademark.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.openfoam.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/OpenFOAM
+    label: Wikipedia

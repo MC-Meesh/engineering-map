@@ -1,0 +1,11 @@
+id: ptc--intland--2022
+type: acquisition
+acquirer: ptc
+target: intland
+completed: '2022'
+status: completed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ptc.com/en/products/codebeamer
+    label: source

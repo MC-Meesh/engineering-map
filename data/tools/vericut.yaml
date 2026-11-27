@@ -1,0 +1,31 @@
+id: vericut
+type: tool
+name: VERICUT
+category: cam
+vendor: cgtech
+open_source: false
+status: active
+first_release: 1988
+stages:
+  - manufacturing
+  - test
+formats:
+  reads:
+    - gcode
+    - stl
+    - step
+website: https://cgtech.com/
+summary: Simulates G-code against a machine model to catch collisions and gouges before cutting metal.
+plain: >-
+  Simulates the G-code instructions a CNC (computer-controlled) machine will follow against a model
+  of the machine, to catch collisions and bad cuts before cutting metal.
+workflow: >-
+  A machining program arrives as G-code from machining (CAM) software such as Mastercam, with the
+  stock and part as STEP or STL; VERICUT simulates it on a machine model and, once clean, the
+  program goes to the real machine.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://cgtech.com/
+    label: official page
+notes: Product page moved; link points at the site root pending review.

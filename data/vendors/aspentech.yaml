@@ -1,0 +1,23 @@
+id: aspentech
+type: vendor
+name: Aspen Technology
+kind: company
+hq: US
+founded: 1981
+parent: emerson
+status: merged
+website: https://www.aspentech.com/
+wikipedia: https://en.wikipedia.org/wiki/Aspen_Technology
+summary: >-
+  Process simulation and optimization software (Aspen Plus and HYSYS); wholly owned by Emerson since
+  2025.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.emerson.com/en-us/news/2025/emerson-completes-acquisition-of-remaining-outstanding-shares-of-aspentech
+    label: Emerson press release 2025-03-12
+  - url: https://www.aspentech.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Aspen_Technology
+    label: Wikipedia

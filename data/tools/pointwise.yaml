@@ -1,0 +1,34 @@
+id: pointwise
+type: tool
+name: Cadence Fidelity Pointwise
+category: meshing
+vendor: cadence
+origin: pointwise-inc
+open_source: false
+status: active
+first_release: 1994
+stages:
+  - analysis
+formats:
+  reads:
+    - step
+    - iges
+  writes:
+    - cgns
+    - fluent-cas
+    - openfoam-case
+website: >-
+  https://www.cadence.com/en_US/home/tools/system-analysis/computational-fluid-dynamics/pointwise.html
+summary: Structured, overset and hybrid CFD mesh generation, descended from Gridgen.
+plain: >-
+  Builds the grids of cells that fluid flow simulations need, including neat structured grids and
+  overlapping ones.
+workflow: >-
+  An analyst brings in STEP or IGES geometry, builds the grid of cells around it here, and writes
+  CGNS, Fluent or OpenFOAM mesh files that the flow simulation program runs on.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.cadence.com/en_US/home/tools/system-analysis/computational-fluid-dynamics/pointwise.html
+    label: official page

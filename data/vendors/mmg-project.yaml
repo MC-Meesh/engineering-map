@@ -1,0 +1,14 @@
+id: mmg-project
+type: vendor
+name: Mmg project
+kind: project
+hq: FR
+founded: 2004
+status: active
+website: https://www.mmgtools.org/
+summary: Open remeshing and mesh adaptation.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.mmgtools.org/
+    label: official page

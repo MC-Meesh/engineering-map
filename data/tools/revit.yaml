@@ -1,0 +1,58 @@
+id: revit
+type: tool
+name: Revit
+category: cad
+vendor: autodesk
+origin: revit-technology
+open_source: false
+status: active
+first_release: 2000
+stages:
+  - design
+  - lifecycle
+formats:
+  reads:
+    - ifc
+    - dwg
+    - dxf
+    - acis-sat
+  writes:
+    - ifc
+    - dwg
+    - dxf
+competes_with:
+  - archicad
+  - allplan
+  - vectorworks
+website: https://www.autodesk.com/products/revit/overview
+wikipedia: https://en.wikipedia.org/wiki/Autodesk_Revit
+summary: Dominant BIM authoring tool for buildings.
+plain: >-
+  The dominant software for designing buildings as 3D models that carry information about every
+  element (known as BIM).
+workflow: >-
+  An architect or engineer models the building here, shares it as IFC with structural and
+  coordination tools and as DWG or DXF with consultants, and keeps files organized in Vault.
+native_files:
+  - ext: .rvt
+    what: Revit project (model) file
+  - ext: .rfa
+    what: Revit family file
+notes: >-
+  Imports ACIS solids from SAT files up to SAT version 7.0 only. Came to Autodesk with the April
+  2002 purchase of Revit Technology Corporation.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.autodesk.com/products/revit/overview
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Autodesk_Revit
+    label: Wikipedia
+  - url: https://help.autodesk.com/cloudhelp/2021/ENU/Revit-GetStarted/files/GUID-7CEDA377-9C1B-4486-B127-492922233759.htm
+    label: 'native file format (Autodesk Revit help: file types)'
+  - url: https://help.autodesk.com/cloudhelp/2023/ENU/Revit-Model/files/GUID-FC6CC53B-0010-4AF9-BFE2-6B044191A645.htm
+    label: family file format (Autodesk Revit help)
+  - url: https://help.autodesk.com/cloudhelp/2025/ENU/Revit-Model/files/GUID-094576E1-6474-429D-ABC5-C186859D7D2C.htm
+    label: 'Revit 2025 help: SAT import up to version 7.0'
+  - url: https://www.sec.gov/Archives/edgar/data/769397/000119312503002078/d10k.htm
+    label: 'Autodesk FY2003 10-K: Revit Technology Corporation acquired April 2002'

@@ -1,0 +1,18 @@
+id: cd-adapco
+type: vendor
+name: CD-adapco
+kind: company
+hq: US
+founded: 1980
+parent: siemens
+status: merged
+wikipedia: https://en.wikipedia.org/wiki/CD-adapco
+summary: STAR-CD and STAR-CCM+ developer.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://assets.new.siemens.com/siemens/assets/api/uuid:f0d312ca-5d93-4193-af41-aa35071fd149/pr20160125-acquire-cd-adapco.pdf
+    label: Siemens and CD-adapco joint release 2016-01-25
+  - url: https://en.wikipedia.org/wiki/CD-adapco
+    label: Wikipedia

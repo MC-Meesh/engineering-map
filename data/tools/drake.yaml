@@ -1,0 +1,39 @@
+id: drake
+type: tool
+name: Drake
+category: robotics-controls
+vendor: tri
+open_source: true
+license: BSD-3-Clause
+status: active
+first_release: 2014
+stages:
+  - design
+  - analysis
+formats:
+  reads:
+    - urdf
+    - sdformat
+    - mjcf
+website: https://drake.mit.edu/
+summary: Model-based design and verification for robotics; optimization-first dynamics.
+plain: >-
+  A free software toolkit for designing and checking how robots move and are controlled, built
+  around mathematical optimization.
+workflow: >-
+  A robotics researcher loads robot and scene descriptions as URDF, SDFormat or MJCF, designs and
+  checks the motion and control with optimization here, and takes the controllers on to simulation
+  or hardware.
+notes: >-
+  Started by the Robot Locomotion Group at MIT CSAIL; core development now led by Toyota Research
+  Institute. No MIT vendor id exists for origin. first_release 2014 is not confirmed (license
+  copyright runs from 2012).
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://drake.mit.edu/
+    label: Drake home (MIT CSAIL origin, TRI leads development)
+  - url: https://raw.githubusercontent.com/RobotLocomotion/drake/master/LICENSE.TXT
+    label: Drake LICENSE (BSD 3-Clause)
+  - url: https://drake.mit.edu/doxygen_cxx/group__multibody__parsing.html
+    label: Drake parsing docs (URDF, SDFormat, MJCF)

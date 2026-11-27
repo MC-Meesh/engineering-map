@@ -1,0 +1,12 @@
+id: cadence--pointwise-inc--2021
+type: acquisition
+acquirer: cadence
+target: pointwise-inc
+completed: '2021'
+status: completed
+summary: Mesh generation for CFD.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.cadence.com/en_US/home/company/newsroom.html
+    label: source

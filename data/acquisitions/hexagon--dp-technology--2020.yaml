@@ -1,0 +1,18 @@
+id: hexagon--dp-technology--2020
+type: acquisition
+acquirer: hexagon
+target: dp-technology
+announced: '2020-10-29'
+completed: 2020-12
+status: completed
+summary: >-
+  ESPRIT CAM. Agreement announced 2020-10-29; Hexagon's 2020 annual report says the deal closed in
+  December 2020 (exact day not given).
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://bynder.hexagon.com/m/2240308576f0b018/original/Hexagon-Annual-Report-2020.pdf
+    label: Hexagon Annual Report 2020, note 27 (acquired December 2020)
+  - url: >-
+      https://news.cision.com/hexagon/r/hexagon-enhances-its-smart-manufacturing-solutions-portfolio-with-the-acquisition-of-d-p--technology,c3227474
+    label: Hexagon press release 2020-10-29 (agreement)

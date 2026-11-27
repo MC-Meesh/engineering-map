@@ -1,0 +1,41 @@
+id: alias-design
+type: tool
+name: Autodesk Alias
+category: cad
+vendor: autodesk
+origin: alias
+open_source: false
+status: active
+first_release: 1985
+stages:
+  - design
+formats:
+  reads:
+    - step
+    - iges
+  writes:
+    - step
+    - iges
+    - stl
+website: https://www.autodesk.com/products/alias-products/overview
+wikipedia: https://en.wikipedia.org/wiki/Autodesk_Alias
+summary: Class-A surfacing for automotive and industrial design.
+plain: >-
+  Software for shaping the smooth, flowing outer surfaces of products such as cars and consumer
+  goods, where the quality of every curve matters.
+workflow: >-
+  A designer shapes the smooth outer surfaces of a product here from concept sketches, then exports
+  STEP or IGES surfaces to engineering design (CAD) software for the inner parts, or STL for quick
+  prototypes.
+notes: >-
+  1985 is the year Alias/1 was shown at SIGGRAPH 85 (Alias Research founded 1983); seen only in
+  secondary sources. Autodesk product pages blocked automated fetch.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://investors.autodesk.com/node/11396
+    label: 'Autodesk release: completes acquisition of Alias, 2006-01-10'
+  - url: https://www.autodesk.com/products/alias-products/overview
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Autodesk_Alias
+    label: Wikipedia

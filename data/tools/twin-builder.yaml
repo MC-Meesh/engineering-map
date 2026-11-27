@@ -1,0 +1,30 @@
+id: twin-builder
+type: tool
+name: Ansys Twin Builder
+category: digital-twin
+vendor: ansys
+open_source: false
+status: active
+first_release: 2018
+stages:
+  - analysis
+  - lifecycle
+formats:
+  reads:
+    - fmu
+  writes:
+    - fmu
+website: https://www.ansys.com/products/digital-twin/ansys-twin-builder
+summary: Builds simulation-based twins from reduced-order models and system models.
+plain: >-
+  Builds digital twins: working digital copies of products, made from fast simplified versions of
+  detailed simulations and from system models.
+workflow: >-
+  An engineer combines fast simplified versions of detailed simulations (reduced-order models),
+  system models and FMUs (packaged models) here, builds the digital twin, and exports it as FMUs to
+  run alongside the real product.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ansys.com/products/digital-twin/ansys-twin-builder
+    label: official page

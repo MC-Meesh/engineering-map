@@ -1,0 +1,20 @@
+id: dem-solutions
+type: vendor
+name: DEM Solutions
+kind: company
+hq: GB
+founded: 2003
+parent: altair
+status: merged
+summary: EDEM discrete element simulation.
+notes: >-
+  Established in 2003 as DEM Solutions Ltd, Edinburgh (Siemens partner page); Companies House shows
+  incorporation on 2002-12-02 (not checked).
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-gb/ecosystem/dem-solutions-limited/
+    label: 'Siemens ecosystem page: DEM Solutions (2003, Edinburgh)'
+  - url: >-
+      https://news.siemens.com/en-us/altair-acquires-dem-solutions-expanding-solver-portfolio-into-discrete-element-method-analysis/
+    label: Altair release 2019-11-07 (now hosted by Siemens)

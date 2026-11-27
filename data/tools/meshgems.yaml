@@ -1,0 +1,40 @@
+id: meshgems
+type: tool
+name: MeshGems
+category: meshing
+vendor: spatial
+open_source: false
+status: active
+stages:
+  - analysis
+website: https://www.spatial.com/solutions/3d-meshing/csm-cvm
+summary: Surface and volume meshing components licensed into other CAE products.
+plain: >-
+  Software components that other simulation programs build in to split surfaces and solid shapes
+  into a mesh of small cells that a simulation can calculate on; now offered through Spatial.
+workflow: >-
+  Simulation programs build MeshGems in; when a user asks for a mesh, the host program hands over
+  its STL, 3D design or mesh data, MeshGems fills the shape with small cells, and the host program
+  runs its simulation on them.
+files_note: 'Meshing components with a C++ interface that other programs call; Spatial''s CSM and CVM meshers, built on MeshGems, take STL, CAD or mesh data handed over by the host program.'
+notes: >-
+  Developed by Distene (founded 2004, INRIA roots); Dassault Systemes acquired Distene around 2021
+  and MeshGems is now offered through Spatial, whose CSM/CVM meshers are built on MeshGems
+  algorithms. Standalone MeshGems page gone (meshgems.com redirects to 3ds.com). First release year
+  unconfirmed.
+geometry_basis:
+  kind: mesh
+  text: >-
+    Meshes tessellated, CAD or hybrid input through a kernel-agnostic interface, with optional bridges to Spatial's CGM and ACIS kernels; CAD files come in through 3D InterOp, so it has no kernel of its own.
+  url: https://www.spatial.com/products/3d-precise-mesh
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.spatial.com/solutions/3d-meshing/csm-cvm
+    label: Spatial CSM/CVM meshing, based on MeshGems
+  - url: https://blog.spatial.com/newsletters/the-spatial-blend-2021q1-issue
+    label: Spatial newsletter 2021 Q1, Dassault Systemes acquires Distene
+  - url: https://www.digitalengineering247.com/article/distene-meshgems-library-available/news
+    label: Digital Engineering, MeshGems library 2013-12-23
+  - url: https://www.spatial.com/products/3d-precise-mesh
+    label: 'Geometry basis source'

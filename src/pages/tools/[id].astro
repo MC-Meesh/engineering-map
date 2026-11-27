@@ -1,0 +1,351 @@
+---
+import Base from '../../layouts/Base.astro';
+import NodeLink from '../../components/NodeLink.astro';
+import Sources from '../../components/Sources.astro';
+import { tools, categoryById, domainById, stageById, vendorById, ownerLine, alternativesFor, competitorsOf, overlapsOf, integratesOf, builtOnBy, pluginsOf, formatById, toolById, formatsWithExamples, examplesFor, brandOfTool, categoryPlain, termsHtml, ownFormats, dataFlow, stagesInOrder, previewable, inspectable, explainerFor, acquisitions } from '../../lib/data';
+import ExamplePanel from '../../components/ExamplePanel.astro';
+import Relates from '../../components/Relates.astro';
+import Hub3DX from '../../components/Hub3DX.astro';
+import type { Tool } from '../../lib/data';
+
+export function getStaticPaths() {
+  return tools.map((t) => ({ params: { id: t.id }, props: { t } }));
+}
+const { t } = Astro.props as { t: Tool };
+const cat = categoryById.get(t.category)!;
+const dom = domainById.get(t.domain)!;
+const owners = ownerLine(t.vendor);
+const reads = t.formats?.reads ?? [];
+const writes = t.formats?.writes ?? [];
+const ioIds = [...new Set([...reads, ...writes])].sort((a, b) => (formatById.get(a)?.name ?? a).localeCompare(formatById.get(b)?.name ?? b));
+const alts = alternativesFor(t.id);
+const competitors = competitorsOf(t.id).sort();
+const overlaps = overlapsOf(t.id).sort((a, b) => a[0].localeCompare(b[0]));
+const overlapOwners = [...new Set(overlaps.map((o) => o[1]))];
+const integrates = integratesOf(t.id).sort();
+const usedBy = builtOnBy(t.id);
+const plugins = pluginsOf(t.id);
+const sameCatOss = !t.open_source && alts.length === 0
+  ? tools.filter((x) => x.category === t.category && x.open_source && x.id !== t.id)
+  : [];
+const isKernel = t.nodeType === 'kernel';
+// Newcomer answers: owner line, plain explanation, own files, and where the data goes.
+const brand = brandOfTool.get(t.id);
+const cp = categoryPlain(t.category);
+const own = ownFormats(t);
+const flow = dataFlow(t);
+// Downstream, said in two parts: who reads its own files, then what the neutral exports reach.
+const ownIds = new Set(own.map((f) => f.id));
+const ownOut = flow.out.map((g) => ({ ...g, via: g.via.filter((f) => ownIds.has(f.id)) })).filter((g) => g.via.length);
+const ownReaders = (g: any) => g.tools.filter((x: any) => (x.formats?.reads ?? []).some((r: string) => ownIds.has(r)));
+const neutralOut = flow.out.filter((g) => g.via.some((f) => !ownIds.has(f.id)));
+const neutralVia = [...new Set(neutralOut.flatMap((g) => g.via.filter((f) => !ownIds.has(f.id)).map((f) => f.name)))].slice(0, 3);
+const neutralCount = new Set(neutralOut.flatMap((g) => g.tools.map((x) => x.id))).size;
+const list = (xs: string[]) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}`);
+const origin = t.origin && t.origin !== t.vendor ? vendorById.get(t.origin) : undefined;
+const originDeal = origin ? [...acquisitions].reverse().find((a: any) => a.target === origin.id && a.status !== 'terminated') : undefined;
+// The deals that carried the original developer to today's owner (Imagine, then LMS, then Siemens).
+const originPath: any[] = [];
+{
+  let cur = origin?.id, guard = 0;
+  while (cur && guard++ < 4) {
+    const d: any = [...acquisitions].reverse().find((x: any) => x.target === cur && x.status !== 'terminated');
+    if (!d) break;
+    originPath.push(d);
+    if (owners.includes(d.acquirer)) break;
+    cur = d.acquirer;
+  }
+}
+const showBrand = brand && brand.name.toLowerCase() !== t.name.toLowerCase() ? brand : undefined;
+const brandSentence = showBrand ? ' Sold under ' + (showBrand.vendor === t.vendor ? 'its' : (vendorById.get(showBrand.vendor)?.name ?? '') + "'s") + ' ' + showBrand.name + ' brand.' : '';
+const dot = (x?: string) => (x && /[.]$/.test(x) ? x : `${x ?? ''}.`);
+// The file shown on the page: its own format if we host an example, else something it writes,
+// else something it reads (geometry previews first).
+const hosted = (fid: string) => examplesFor(fid).some((e) => e.file && (previewable(e.file) || inspectable(e.file)));
+const geo = (fid: string) => examplesFor(fid).some((e) => previewable(e.file));
+// Formats a newcomer would expect for each kind of tool, best first.
+const KINDS: Record<string, string[]> = {
+  cad: ['native-cad', 'brep-exchange', 'tessellated'], 'geometry-kernel': ['brep-exchange', 'native-cad'], interop: ['brep-exchange', 'native-cad'],
+  'cae-fea': ['solver-input', 'results', 'mesh'], cfd: ['solver-input', 'results', 'mesh'], multiphysics: ['solver-input', 'results', 'mesh'], meshing: ['mesh', 'solver-input'],
+  'solver-library': ['mesh', 'results'], eda: ['ecad', 'ic'], cam: ['cam', 'tessellated'], 'plm-pdm': ['native-cad', 'tessellated', 'systems'], sdm: ['results', 'solver-input'],
+  'digital-twin': ['scene', 'bim'], 'systems-mbse': ['systems'], 'robotics-controls': ['robotics'], optimization: ['solver-input', 'systems'], 'ml-engineering': ['results', 'mesh'], visualization: ['results', 'scene', 'mesh'],
+};
+// A tool that writes a specialised kind (buildings, chips, robots, system models) is shown with it.
+const writesKind = (k: string) => writes.some((w) => (formatById.get(w) as any)?.kind === k);
+// Only where that kind is the tool's own field: a motor simulator that can export GDSII still shows geometry.
+const SPECIAL_FOR: Record<string, string[]> = { bim: ['cad'], ic: ['eda'], robotics: ['robotics-controls'], systems: ['systems-mbse', 'optimization'] };
+const special = Object.keys(SPECIAL_FOR).filter((k) => SPECIAL_FOR[k].includes(t.category) && writesKind(k) && !(k === 'bim' && writesKind('brep-exchange')));
+const pref = [...special, ...(KINDS[t.category] ?? [])];
+const rank = (fid: string) => { const kind = (formatById.get(fid) as any)?.kind; const k = pref.indexOf(kind); if (k >= 0) return k; return SPECIAL_FOR[kind] && !SPECIAL_FOR[kind].includes(t.category) ? 200 : 99; };
+const pick = (ids: string[]) => ids.filter(hosted).sort((a, b) => rank(a) - rank(b) || Number(geo(b)) - Number(geo(a)))[0];
+const nativeFilesAll = ((t as any).native_files ?? []) as any[];
+const ownShown = own.map((f) => f.id).find((fid) => hosted(fid) || explainerFor(fid));
+// Failing a hosted file, a format with a structure explainer still shows what the data is like.
+const explained = (ids: string[]) => ids.filter((fid) => explainerFor(fid)).sort((a, b) => rank(a) - rank(b))[0];
+// What it produces comes before what it takes in: a CFD solver's results, not its CAD input.
+// Last resort when its formats are not recorded: the open format other tools of its kind most
+// often open, labelled as such.
+const catCount = new Map<string, number>();
+for (const x of tools) if (x.category === t.category && x.id !== t.id) for (const f of x.formats?.reads ?? []) catCount.set(f, (catCount.get(f) ?? 0) + 1);
+const typical = [...catCount.entries()].filter(([f]) => hosted(f) && (formatById.get(f) as any)?.open_spec).sort((a, b) => b[1] - a[1])[0]?.[0];
+const showFormatRaw = ownShown ?? pick(writes) ?? explained(writes) ?? pick(reads) ?? explained(reads);
+// A kernel shows its own exchange format (Parasolid .x_t, ACIS .sat) or no sample at all.
+const kernelPage = t.category === 'geometry-kernel';
+const kernelFmt = kernelPage ? [...writes, ...reads].find((f) => { const sv = (formatById.get(f) as any)?.steward_vendor; return sv && (sv === t.vendor || owners.includes(sv)); }) : undefined;
+const showFormat = kernelPage ? kernelFmt : showFormatRaw ?? (!reads.length && !writes.length ? typical : undefined);
+const isTypical = !kernelPage && !showFormatRaw && !!showFormat;
+// When its own format can only be explained (closed, or no sample), also render the closest
+// open format it writes or opens.
+const openToo = !kernelPage && showFormat && !hosted(showFormat) ? (pick(writes) ?? pick(reads)) : undefined;
+const ownFmtClosed = own.some((f) => !(f as any).open_spec);
+const ownClosed = ownFmtClosed || (!t.open_source && nativeFilesAll.some((n: any) => !n.format));
+const nativeFiles = ((t as any).native_files ?? []) as { ext: string; what: string; format?: string }[];
+const filesNote = (t as any).files_note as string | undefined;
+// Ownership with dates: each step up the chain, with the deal that made it.
+const steps = owners.slice(0, -1).map((child, i) => {
+  const parent = owners[i + 1];
+  const deal = [...acquisitions].reverse().find((a: any) => a.target === child && a.acquirer === parent && a.status !== 'terminated');
+  return { child, parent, deal };
+});
+const maker = vendorById.get(t.vendor) as any;
+const yr = (d?: string) => (d ? String(d).slice(0, 4) : '');
+const others = (n: number) => `${n} other tool${n === 1 ? '' : 's'}`;
+const showWhy = showFormat ? (own.some((f) => f.id === showFormat) ? 'its own format' : writes.includes(showFormat) ? 'a format it exports' : reads.includes(showFormat) ? 'a format it opens' : `the open format other ${cat.name} tools most often open (its own exchange formats are not recorded here yet)`) : '';
+const chip = (fid: string) => formatById.get(fid);
+const printerTool = /3D print|slicer|slice/i.test(`${(t as any).plain ?? ''} ${t.summary}`);
+// Lower-case a leading word unless it is an acronym or a name (NX, OpenSCAD).
+const lc = (x: string) => (/^[A-Z][a-z]/.test(x) && !/^[A-Z][a-z]+[A-Z]/.test(x) ? x.charAt(0).toLowerCase() + x.slice(1) : x);
+// Say where the sample comes from, so a shared test part is not taken for this tool's output.
+const madeWith = (e: any) => { const g = (e.generated_by ?? '').replace(/^scripts\/gen_examples\.py with /, ''); return /^this script|hand-written/i.test(g) ? 'written by hand for this site' : `made for this site with ${g}`; };
+const noteFor = (fid?: string) => { const e: any = fid ? (examplesFor(fid).find((x) => x.file && printerTool === /print/i.test(x.file)) ?? examplesFor(fid).find((x) => x.file)) : undefined; const madeByThis = (e: any) => { const w = t.name.split(' ')[0].split('(')[0].toLowerCase(); return w.length > 2 && String(e.generated_by ?? '').toLowerCase().includes(w); };
+  return e ? (e.origin === 'generated' ? (madeByThis(e) ? `This sample is the site's own test file, ${madeWith(e)}: a real ${t.name} file.` : `This sample is the site's own test file, ${madeWith(e)}, not one made with ${t.name}.`) : (fromMaker(e) ? `This sample is a published example from ${fromMaker(e)}, the maker of ${t.name}.` : `This sample is a published third-party file, not one made with ${t.name}.`)) : undefined; };
+// A third-party sample published by the tool's own maker (or the maker's owners) says so.
+function fromMaker(e: any) { for (const o of owners) { const n = vendorById.get(o)?.name ?? ''; const short = n.split(/[\s,]/)[0]; if (short.length > 2 && new RegExp(short, 'i').test(`${e.attribution} ${e.source_url ?? ''}`)) return n; } return ''; }
+const sampleNote = noteFor(showFormat);
+const why = ownClosed ? 'those files are not publicly documented, so no file of them can be shown' : 'we have no sample of its own files we may share yet';
+---
+<Base title={t.name} description={t.summary} section="tools">
+  <article class="page">
+    <header class="page-head">
+      <p class="crumbs"><a href="/categories/">Categories</a> / <a href={`/categories/${cat.id}/`}>{cat.name}</a></p>
+      <h1><span class={`sw ${isKernel ? 'kernel' : ''}`} data-d={t.domain} aria-hidden="true"></span>{t.name}</h1>
+      <p class="lede">{t.summary}</p>
+      {((t as any).clarifies ?? []).map((c: any) => <p class="clarify"><b>Often confused:</b> {c.text} <a class="muted" href={c.url} rel="noopener">source</a></p>)}
+      <p class="tool-links"><a class="btn" href={`/#n=${t.id}`}>Show on the map</a>{brand && <a class="btn-2" href={brand.website} rel="noopener">{brand.name} family</a>}</p>
+    </header>
+
+    <section class="glance" aria-label="At a glance">
+      <dl class="answers">
+        <div>
+          <dt>Who owns it</dt>
+          <dd>
+            <p class="lineage-line">{[...owners].reverse().map((o, i) => <>{i > 0 && <span class="arrow" aria-hidden="true"> &gt; </span>}<a href={`/vendors/${o}/`}>{vendorById.get(o)?.name}</a></>)}{showBrand && <><span class="arrow" aria-hidden="true"> &gt; </span><span class="brand-chip" title="Brand (product family)">{showBrand.name}{showBrand.vendor !== t.vendor && <> brand of {vendorById.get(showBrand.vendor)?.name?.replace(/ Digital Industries Software$/, '')}</>}</span></>}<span class="arrow" aria-hidden="true"> &gt; </span><b>{t.name}</b></p>
+            <p class="muted">Made by {(maker?.founded || maker?.hq) ? maker?.name : dot(maker?.name)}{maker?.founded && <>, founded {maker.founded}</>}{maker?.hq && <> ({maker.hq})</>}{(maker?.founded || maker?.hq) && '.'}{brandSentence}</p>
+            {steps.map((st) => <p class="muted">{vendorById.get(st.child)?.name} {st.deal ? <>was acquired by {vendorById.get(st.parent)?.name} in {yr(st.deal.completed)}{st.deal.status === 'pending' && ' (pending)'}</> : <>is part of {vendorById.get(st.parent)?.name}</>}.</p>)}
+            {!origin && t.first_release && maker?.founded && t.first_release < maker.founded && <p class="muted">First released in {t.first_release}, before {maker.name} was founded in {maker.founded}; where it was first developed is not recorded here.</p>}
+            {origin && <p class="muted">First developed at <a href={`/vendors/${origin.id}/`}>{origin.name}</a>{originPath.length ? originPath.map((d, i) => <>{i === 0 ? ', which ' : '; '}{i > 0 && <>{vendorById.get(d.target)?.name} was in turn acquired by </>}{i === 0 && <>{vendorById.get(d.acquirer)?.name} acquired </>}{i > 0 && vendorById.get(d.acquirer)?.name} in {yr(d.completed)}{d.status === 'pending' && ' (pending)'}</>) : (origin as any).founded ? <> (founded {(origin as any).founded})</> : ''}.</p>}
+            {t.open_source && <p class="muted">Open source ({t.license}).</p>}
+          </dd>
+        </div>
+        <div>
+          <dt>What it does</dt>
+          <dd>
+            <p>{(t as any).plain ?? t.summary}</p>
+            {(t as any).plain ? <p class="muted kind">Kind of software: <a href={`/categories/${cat.id}/`}>{cat.name}</a></p> : cp && <p class="muted kind"><a href={`/categories/${cat.id}/`}>{cat.name}</a>: <span set:html={termsHtml(cp.plain)} /></p>}
+          </dd>
+        </div>
+        <div>
+          <dt>Its files</dt>
+          <dd>
+            {filesNote && <p>{filesNote}</p>}
+            {filesNote && !nativeFiles.length && own.length > 0 && <p>For exchange it uses {own.map((f, i) => <>{i > 0 && ', '}<a class="fmt-chip" href={`/formats/${f.id}/`}>{f.name}</a></>)}{own.length > 1 ? ', formats its maker defines.' : ', a format its maker defines.'}</p>}
+            {filesNote ? null : (nativeFiles.length > 0 || own.length > 0) ? (
+              <p>Its own (<a class="term" href="/glossary/#native-format" title="The format a program saves its own work in, usually defined by its maker.">native</a>) files: {[
+                ...nativeFiles.map((n) => ({ key: n.format ?? n.ext, html: n.format && formatById.get(n.format) ? <a class="fmt-chip own" href={`/formats/${n.format}/`}><span class="mono">{n.ext}</span> ({n.what})</a> : <span class="fmt-chip own"><span class="mono">{n.ext}</span> ({n.what})</span> })),
+                ...own.filter((f) => !nativeFiles.some((n) => n.format === f.id)).map((f) => ({ key: f.id, html: <a class="fmt-chip own" href={`/formats/${f.id}/`}>{f.name}{f.extensions?.[0] && <span class="mono"> {f.extensions[0]}</span>}</a> })),
+              ].map((x, i, arr) => <>{i > 0 && (i === arr.length - 1 ? ' and ' : ', ')}{x.html}</>)}.</p>
+            ) : t.open_source ? (
+              <p class="muted">Its own file type is not recorded here yet.</p>
+            ) : (
+              <p>{t.name}'s own (native) file type is closed and not publicly documented, so it is not named here; it exchanges data with other tools through the formats below.</p>
+            )}
+            {reads.length > 0 && <p>Opens {reads.map((fid, i) => <>{i > 0 && ', '}<a class="fmt-chip" href={`/formats/${fid}/`}>{chip(fid)?.name}</a></>)}.</p>}
+            {writes.length > 0 && <p>Writes {writes.map((fid, i) => <>{i > 0 && ', '}<a class="fmt-chip" href={`/formats/${fid}/`}>{chip(fid)?.name}</a></>)}.</p>}
+            {!reads.length && !writes.length && !filesNote && <p class="muted">No exchange formats recorded yet.</p>}
+          </dd>
+        </div>
+        <div>
+          <dt>Where it fits</dt>
+          <dd>
+            <ol class="stage-strip" aria-label="Workflow stages">
+              {stagesInOrder.map((st: any) => <li class={t.stages.includes(st.id) ? 'on' : ''}><a href={`/workflow/#${st.id}`}>{st.name}</a></li>)}
+            </ol>
+            {(t as any).workflow ? <p>{(t as any).workflow}</p> : cp?.workflow && <p><span class="muted">In a typical workflow:</span> {cp.workflow}</p>}
+            {!(t as any).workflow && flow.in.length > 0 && <p class="muted">Its input comes from {list(flow.in.slice(0, 3).map((g) => `${g.name} tools such as ${g.tools.slice(0, 2).map((x) => x.name).join(' and ')}`))}.</p>}
+            {!(t as any).workflow && ownOut.length > 0 && <p class="muted">Its own files are opened by {list(ownOut.slice(0, 3).map((g) => `${g.name} tools such as ${ownReaders(g).slice(0, 2).map((x: any) => x.name).join(' and ')}`))}.</p>}
+            {!(t as any).workflow && neutralCount > 0 && <p class="muted">{ownOut.length ? 'Through' : 'Through its exports in'} {list(neutralVia)} it hands work to {others(neutralCount)}, mostly {list(neutralOut.slice(0, 2).map((g) => g.name))}.</p>}
+          </dd>
+        </div>
+      </dl>
+      <div class="glance-panel">
+        {showFormat ? (
+          <>
+            <p class="glance-cap">{showWhy === 'its own format' ? <>What its data looks like: <a href={`/formats/${showFormat}/`}>{chip(showFormat)?.name}</a>, {filesNote ? 'a format it uses for exchange' : 'its own format'}.</> : <>{!own.length && !nativeFiles.length && filesNote ? `${t.name} does not keep its work in files of its own (see Its files), so this shows data it exchanges. ` : ''}{!own.length && !nativeFiles.length && !filesNote && !t.open_source ? `${t.name}'s own format is closed and not publicly documented. ` : ''}{own.length || nativeFiles.length ? `${t.name} saves its own files as ${nativeFiles.length ? nativeFiles.map((n) => n.ext).join(', ') : own.map((f) => f.name).join(', ')}, but ${why}. ` : ''}Here is <a href={`/formats/${showFormat}/`}>{chip(showFormat)?.name}</a>, {showWhy}.</>}{sampleNote && <span class="muted"> {sampleNote}</span>}</p>
+            <ExamplePanel format={showFormat} name={chip(showFormat)?.name ?? showFormat} prefer={printerTool ? 'print' : 'mill|bracket'} exclude={printerTool ? undefined : 'print'} />
+            {openToo && <>
+              <p class="glance-cap second">{ownFmtClosed && own.some((f) => f.id === showFormat) ? `${chip(showFormat)?.name} is a closed format. The closest open format is ` : `We have no ${chip(showFormat)?.name} sample to share, so here is `}<a href={`/formats/${openToo}/`}>{chip(openToo)?.name}</a>, which {t.name} {writes.includes(openToo) ? 'writes' : 'opens'}: {noteFor(openToo)?.replace(/^This sample/, 'this sample')}</p>
+              <ExamplePanel format={openToo} name={chip(openToo)?.name ?? openToo} id="example-open" />
+            </>}
+          </>
+        ) : kernelPage ? (
+          <p class="glance-cap muted">{t.name} is used inside other programs, so it has no exchange format of its own to show here.</p>
+        ) : (
+          <p class="glance-cap muted">No example file to show for {t.name}'s formats yet.</p>
+        )}
+      </div>
+    </section>
+
+    <Relates id={t.id} />
+
+    {t.id === '3dexperience' && <Hub3DX />}
+
+    <h2 class="details-h">Details</h2>
+
+    <div class="two-col">
+      <div>
+        <dl class="spec">
+          <dt>Vendor</dt>
+          <dd>{owners.map((o, i) => <>{i > 0 && <span class="muted">, part of </span>}<a href={`/vendors/${o}/`}>{vendorById.get(o)?.name}</a></>)}</dd>
+          {brandOfTool.get(t.id) && <><dt>Brand</dt><dd><a href={brandOfTool.get(t.id)!.website} rel="noopener">{brandOfTool.get(t.id)!.name}</a> <span class="muted">product family of {vendorById.get(brandOfTool.get(t.id)!.vendor)?.name}</span></dd></>}
+          {t.origin && <><dt>Originally from</dt><dd><a href={`/vendors/${t.origin}/`}>{vendorById.get(t.origin)?.name}</a></dd></>}
+          <dt>Category</dt>
+          <dd><span class="sw" data-d={t.domain} aria-hidden="true"></span><a href={`/categories/${cat.id}/`}>{cat.name}</a> <span class="muted">in {dom.name}</span></dd>
+          <dt>Workflow stages</dt>
+          <dd>{t.stages.map((s) => <a class="tag" href={`/workflow/#${s}`}>{stageById.get(s)?.name}</a>)}</dd>
+          <dt>License</dt>
+          <dd>{t.open_source ? <>Open source, <span class="mono">{t.license}</span></> : 'Commercial'}</dd>
+          {t.first_release && <><dt>First release</dt><dd class="num">{t.first_release}</dd></>}
+          <dt>Status</dt>
+          <dd>{t.status === 'active' ? 'Active' : t.status === 'discontinued' ? 'Discontinued' : 'Legacy'}</dd>
+          {t.website && <><dt>Website</dt><dd><a href={t.website} rel="noopener">{new URL(t.website).hostname.replace(/^www\./, '')}</a></dd></>}
+        </dl>
+
+        {(t.built_on?.length || t.plugin_of) && (
+          <section>
+            <h2>Built on</h2>
+            <ul class="node-list">
+              {t.built_on?.map((x) => <li><NodeLink id={x} sub={toolById.get(x)?.nodeType === 'kernel' ? 'kernel' : undefined} /></li>)}
+              {t.plugin_of && <li><NodeLink id={t.plugin_of} sub="runs inside it" /></li>}
+            </ul>
+          </section>
+        )}
+
+        {(usedBy.length > 0 || plugins.length > 0) && (
+          <section>
+            <h2>{isKernel ? 'Products built on this kernel' : 'Built on this'} <span class="muted num">{usedBy.length + plugins.length}</span></h2>
+            <ul class="node-list">
+              {usedBy.map((x) => <li><NodeLink id={x.id} /></li>)}
+              {plugins.map((x) => <li><NodeLink id={x.id} sub="plugin" /></li>)}
+            </ul>
+          </section>
+        )}
+
+        {ioIds.length > 0 && (
+          <section>
+            <h2>Formats <span class="muted num">{ioIds.length}</span></h2>
+            <div class="table-wrap">
+              <table class="data">
+                <thead><tr><th scope="col">Format</th><th scope="col">Extensions</th><th scope="col">Reads</th><th scope="col">Writes</th><th scope="col">Example</th></tr></thead>
+                <tbody>
+                  {ioIds.map((f) => (
+                    <tr>
+                      <td><a href={`/formats/${f}/`}>{formatById.get(f)?.name}</a></td>
+                      <td class="mono">{formatById.get(f)?.extensions?.join(' ')}</td>
+                      <td>{reads.includes(f) ? 'Yes' : ''}</td>
+                      <td>{writes.includes(f) ? 'Yes' : ''}</td>
+                      <td>{formatsWithExamples.has(f) && <a href={`/formats/${f}/#examples`}>{examplesFor(f).some((e) => e.file) ? 'Download' : 'Sample link'}</a>}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p class="footnote">Major documented formats only; most tools support more through add-ons or translators.</p>
+          </section>
+        )}
+      </div>
+
+      <div>
+        {t.open_source_alternative_to?.length ? (
+          <section>
+            <h2>Open-source alternative to</h2>
+            <ul class="node-list">{t.open_source_alternative_to.map((x) => <li><NodeLink id={x} /></li>)}</ul>
+          </section>
+        ) : null}
+        {alts.length > 0 && (
+          <section>
+            <h2>Open-source alternatives</h2>
+            <ul class="node-list">{alts.map((x) => <li><NodeLink id={x.id} sub={x.license} /></li>)}</ul>
+          </section>
+        )}
+        {sameCatOss.length > 0 && (
+          <section>
+            <h2>Open source in this category</h2>
+            <ul class="node-list">{sameCatOss.map((x) => <li><NodeLink id={x.id} /></li>)}</ul>
+          </section>
+        )}
+        {overlapOwners.map((ow) => (
+          <section>
+            <h2>Overlaps within {vendorById.get(ow)?.name?.replace(/ Digital Industries Software$/, '')}</h2>
+            <p class="footnote">Products that do the same job but have the same owner, so they are not rivals.</p>
+            <ul class="node-list">{overlaps.filter((o) => o[1] === ow).map(([x, , y]) => <li><NodeLink id={x} sub={y ? `same owner since ${y}` : 'same maker'} /></li>)}</ul>
+          </section>
+        ))}
+        {competitors.length > 0 && (
+          <section>
+            <h2>Competes with</h2>
+            <ul class="node-list">{competitors.map((x) => <li><NodeLink id={x} /></li>)}</ul>
+          </section>
+        )}
+        {integrates.length > 0 && (
+          <section>
+            <h2>Integrates with</h2>
+            <ul class="node-list">{integrates.map((x) => <li><NodeLink id={x} /></li>)}</ul>
+          </section>
+        )}
+        <Sources sources={t.sources} confidence={t.confidence} as_of={t.as_of} notes={t.notes} file={`data/tools/${t.id}.yaml`} id={t.id} name={t.name} />
+      </div>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .clarify { border-left: 2px solid var(--ink); padding-left: 0.6rem; max-width: 70ch; }
+  .tool-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .glance { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 2.5rem; align-items: start; margin: 0 0 1rem; }
+  .answers { margin: 0; border-top: 1px solid var(--ink); }
+  .answers > div { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--rule); }
+  .answers dt { font-weight: 600; font-size: var(--fs-0); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-2); padding-top: 0.1rem; }
+  .answers dd { margin: 0; }
+  .answers p { margin: 0 0 0.4rem; }
+  .answers p:last-child { margin-bottom: 0; }
+  .answers .kind { font-size: var(--fs-0); }
+  .lineage-line .arrow { color: var(--ink-3); }
+  .brand-chip { border: 1px dashed var(--ink-3); padding: 0 0.35rem; }
+  .fmt-chip { white-space: nowrap; }
+  .fmt-chip.own { white-space: normal; overflow-wrap: anywhere; }
+  .glance-cap.second { margin-top: 1.25rem; }
+  .fmt-chip.own { font-weight: 600; }
+  .stage-strip { list-style: none; display: flex; flex-wrap: wrap; gap: 2px; margin: 0 0 0.6rem; padding: 0; font-size: 0.72rem; }
+  .stage-strip li a { display: block; padding: 0.2rem 0.45rem; border: 1px solid var(--rule); color: var(--ink-3); text-decoration: none; }
+  .stage-strip li.on a { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .glance-panel { position: sticky; top: calc(var(--header-h) + 1.5rem); min-width: 0; }
+  .glance-cap { font-size: var(--fs-0); margin: 0 0 0.5rem; }
+  .glance-panel :global(.insp-view) { height: auto; max-height: min(40vh, 400px); }
+  .details-h { margin-top: 3.5rem; }
+  :global(a.term) { text-decoration-style: dotted; cursor: help; }
+  @media (max-width: 960px) {
+    .glance { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+    .glance-panel { position: static; }
+    .answers > div { grid-template-columns: minmax(0, 1fr); gap: 0.3rem; }
+  }
+</style>

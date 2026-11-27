@@ -1,0 +1,15 @@
+id: vitech
+type: vendor
+name: Vitech
+kind: company
+hq: US
+founded: 1992
+parent: zuken
+status: merged
+website: https://www.vitechcorp.com/
+summary: CORE and GENESYS MBSE.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.vitechcorp.com/
+    label: official page

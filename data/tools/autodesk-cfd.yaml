@@ -1,0 +1,52 @@
+id: autodesk-cfd
+type: tool
+name: Autodesk CFD
+category: cfd
+vendor: autodesk
+origin: blue-ridge
+open_source: false
+status: active
+first_release: 1993
+stages:
+  - analysis
+formats:
+  reads:
+    - inventor-ipt
+    - parasolid-xt
+    - acis-sat
+    - creo-prt
+    - solidworks-native
+    - nx-prt
+    - step
+    - catia-v5
+    - iges
+    - rhino-3dm
+    - jt
+    - nastran-bdf
+competes_with:
+  - solidworks-flow
+website: https://www.autodesk.com/products/cfd/overview
+summary: Designer-oriented CFD and thermal, formerly CFdesign.
+plain: >-
+  Simulates air and liquid flow and heat for product designers, for example to see how a device
+  stays cool. It was formerly called CFdesign.
+workflow: >-
+  A product designer brings in the model from Inventor, SOLIDWORKS, Creo, NX, CATIA or a STEP file,
+  simulates air or liquid flow and heat here, and takes the results back into the design, for
+  example to change vents or fans so a device stays cool.
+notes: Blue Ridge Numerics was founded in 1992; the 1993 first release of CFdesign is not confirmed.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://investors.autodesk.com/node/15571
+    label: 'Autodesk release 2011-03-11: completes acquisition of Blue Ridge Numerics'
+  - url: https://help.autodesk.com/cloudhelp/2027/ENU/SimCFD-WhatsNew/files/WHATS_NEW_2027.htm
+    label: Autodesk CFD 2027 what's new
+  - url: https://www.autodesk.com/products/cfd/overview
+    label: official page
+  - url: https://www.digitalengineering247.com/article/cad-embedded-cfd-overhyped-but-a-good-value-for-some
+    label: Digital Engineering review of CAD-embedded CFD (compared with SOLIDWORKS Flow Simulation)
+  - url: https://help.autodesk.com/cloudhelp/2023/ENU/SimCFD-UsersGuide/files/GUID-D96EFBFC-6C91-445F-AB5B-2F7410F1E7C8.htm
+    label: 'Autodesk CFD 2023 help: launch from a CAD or geometry file (supported file types)'
+  - url: https://help.autodesk.com/cloudhelp/2023/ENU/SimCFD-UsersGuide/files/GUID-9A65BDD9-A15D-4F03-8175-DAC2EBDDFE83.htm
+    label: 'Autodesk CFD 2023 help: launch the model (mesh import from Ideas or Nastran)'

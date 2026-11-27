@@ -1,0 +1,21 @@
+id: adina-rd
+type: vendor
+name: ADINA R and D
+kind: company
+hq: US
+founded: 1986
+parent: bentley
+status: merged
+website: https://www.bentley.com/en/products/adina/
+summary: ADINA nonlinear FEA.
+notes: >-
+  Founded September 1986 by K.J. Bathe in Watertown, Massachusetts. Bentley Systems acquired it in
+  April 2022 (release dated 2022-04-07).
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://investors.bentley.com/news-releases/news-release-details/bentley-systems-announces-acquisition-adina-extend-nonlinear
+    label: Bentley release 2022-04-07 (ADINA acquired)
+  - url: https://www.bentley.com/en/products/adina/
+    label: official page

@@ -1,0 +1,11 @@
+id: autodesk--cadsoft--2016
+type: acquisition
+acquirer: autodesk
+target: cadsoft
+completed: '2016'
+status: completed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/EAGLE_(program)
+    label: source

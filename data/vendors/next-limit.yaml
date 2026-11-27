@@ -1,0 +1,24 @@
+id: next-limit
+type: vendor
+name: Next Limit Dynamics
+kind: company
+hq: ES
+parent: dassault
+status: merged
+website: https://www.3ds.com/products/simulia/xflow
+summary: The XFlow CFD division of Madrid-based Next Limit, sold to Dassault in 2016.
+notes: >-
+  Next Limit Technologies (founded 1998, Madrid) sold only its Next Limit Dynamics unit and XFlow,
+  and stayed independent with RealFlow and Maxwell. No source gives a 2012 founding date for the
+  unit, so founded is left out.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.prnewswire.com/news-releases/next-limit-sells-next-limit-dynamics---xflow-cfd-software-to-dassault-systemes-605610476.html
+    label: 'Next Limit release 2016: sells Next Limit Dynamics and XFlow'
+  - url: https://www.3ds.com/products/simulia/xflow
+    label: official page
+  - url: >-
+      https://www.3ds.com/newsroom/press-releases/dassault-systemes-enriches-computational-fluid-dynamics-simulation-3dexperience-platform
+    label: Dassault release 2016-12-09

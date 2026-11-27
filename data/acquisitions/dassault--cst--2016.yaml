@@ -1,0 +1,13 @@
+id: dassault--cst--2016
+type: acquisition
+acquirer: dassault
+target: cst
+completed: 2016-10
+status: completed
+value: about EUR 220M
+notes: Completion announced 2016-10-03; the release gives no separate closing day.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-completes-cst-acquisition
+    label: 'Dassault release 2016-10-03: completes CST acquisition'

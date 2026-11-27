@@ -1,0 +1,19 @@
+id: red-cedar
+type: vendor
+name: Red Cedar Technology
+kind: company
+hq: US
+founded: 1999
+parent: cd-adapco
+status: merged
+website: https://www.siemens.com/en-us/products/simcenter/integration-solutions/heeds/
+summary: HEEDS design exploration.
+notes: East Lansing, Michigan. Bought by CD-adapco in 2013, which Siemens bought in 2016.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: >-
+      https://www.prnewswire.co.uk/news-releases/cd-adapco-acquires-red-cedar-technology-incorporated-214696451.html
+    label: CD-adapco release 2013-07-09 (East Lansing, MI)
+  - url: https://www.siemens.com/en-us/products/simcenter/integration-solutions/heeds/
+    label: official page

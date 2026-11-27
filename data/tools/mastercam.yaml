@@ -1,0 +1,41 @@
+id: mastercam
+type: tool
+name: Mastercam
+category: cam
+vendor: cnc-software
+open_source: false
+status: active
+first_release: 1983
+stages:
+  - manufacturing
+formats:
+  reads:
+    - step
+    - iges
+    - parasolid-xt
+    - solidworks-native
+    - stl
+    - dxf
+  writes:
+    - gcode
+competes_with:
+  - hypermill
+  - powermill
+  - esprit
+website: https://www.mastercam.com/
+wikipedia: https://en.wikipedia.org/wiki/Mastercam
+summary: One of the most widely installed CAM systems in machine shops.
+plain: >-
+  One of the most widely installed programs in machine shops for turning 3D part designs into
+  cutting instructions for CNC (computer-controlled) milling machines and lathes.
+workflow: >-
+  A machinist opens the part as STEP, Parasolid, SOLIDWORKS or DXF, plans the cutting paths here,
+  and writes G-code (the machine's line-by-line instructions) for the shop's CNC machines; programs
+  can be checked in VERICUT first.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.mastercam.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Mastercam
+    label: Wikipedia

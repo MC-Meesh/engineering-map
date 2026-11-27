@@ -1,0 +1,47 @@
+id: orcad
+type: tool
+name: OrCAD
+category: eda
+vendor: cadence
+open_source: false
+status: active
+first_release: 1985
+stages:
+  - design
+formats:
+  writes:
+    - gerber
+    - excellon
+    - ipc-2581
+    - spice
+competes_with:
+  - altium-designer
+  - pads
+  - kicad
+website: https://www.orcad.com/
+wikipedia: https://en.wikipedia.org/wiki/OrCAD
+summary: Schematic capture, PSpice simulation and PCB layout for mainstream boards.
+plain: >-
+  Cadence software for drawing circuit diagrams, testing them on the computer with the PSpice
+  circuit simulator, and laying out the printed circuit boards they go on.
+workflow: >-
+  An engineer draws the schematic, simulates it with PSpice, lays out the board here, and sends
+  Gerber, drill and IPC-2581 files to the board maker.
+native_files:
+  - ext: .opj
+    what: Project file linking schematic, layout and simulation
+  - ext: .dsn
+    what: Capture schematic design
+  - ext: .olb
+    what: Schematic symbol library
+  - ext: .brd
+    what: Physical board design
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.orcad.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/OrCAD
+    label: Wikipedia
+  - url: https://resources.pcb.cadence.com/blog/2024-orcad-pcb-file-extensions
+    label: 'native file format (Cadence PCB resources: file extensions)'

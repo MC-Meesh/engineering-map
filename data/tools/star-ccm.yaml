@@ -1,0 +1,44 @@
+id: star-ccm
+type: tool
+name: Simcenter STAR-CCM+
+category: cfd
+vendor: siemens
+origin: cd-adapco
+open_source: false
+status: active
+first_release: 2004
+stages:
+  - analysis
+  - optimization
+formats:
+  reads:
+    - step
+    - parasolid-xt
+    - jt
+    - stl
+  writes:
+    - ensight-gold
+competes_with:
+  - fluent
+  - openfoam-com
+website: https://www.siemens.com/en-us/products/simcenter/fluids-thermal-simulation/star-ccm/
+summary: Single-environment CFD and multiphysics with CAD-to-results automation; Fluent's main rival.
+plain: >-
+  Simulates how fluids flow and how heat and other physics act with them, in one environment that
+  goes from 3D design geometry to results automatically.
+workflow: >-
+  An analyst brings in 3D design files as STEP, Parasolid or JT, splits the flow space into small
+  cells and solves the flow here in one environment, and reviews results here or exports EnSight
+  Gold files for other tools.
+native_files:
+  - ext: .sim
+    what: Simulation file holding the whole simulation
+  - ext: .simh
+    what: Solution history file with selected results over time
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.siemens.com/en-us/products/simcenter/fluids-thermal-simulation/star-ccm/
+    label: official page
+  - url: https://blogs.sw.siemens.com/simcenter/less-is-more-only-when-more-is-too-much-in-star-ccm-v12-06/
+    label: native file format (Siemens Simcenter blog)

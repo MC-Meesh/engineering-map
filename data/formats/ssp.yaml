@@ -1,0 +1,17 @@
+id: ssp
+type: format
+name: SSP
+extensions:
+  - .ssp
+kind: systems
+standard: SSP 1.0
+steward: Modelica Association
+open_spec: true
+first_published: 2019
+website: https://ssp-standard.org/
+summary: Describes how FMUs are connected into a system and parameterized.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://ssp-standard.org/
+    label: official page

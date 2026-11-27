@@ -1,0 +1,41 @@
+id: slurm
+type: tool
+name: Slurm
+category: sdm
+vendor: schedmd
+open_source: true
+license: GPL-2.0-or-later
+status: active
+first_release: 2002
+stages:
+  - analysis
+open_source_alternative_to:
+  - pbs-pro
+website: https://slurm.schedmd.com/
+wikipedia: https://en.wikipedia.org/wiki/Slurm_Workload_Manager
+summary: The most common open-source HPC scheduler.
+plain: >-
+  The most common free software for sharing a supercomputer among users by queuing and scheduling
+  their jobs.
+workflow: >-
+  Users submit simulation and research jobs to the supercomputer; Slurm queues and schedules them on
+  its nodes, and the finished results wait in the users' storage.
+files_note: 'Has no file format of its own: it runs jobs from batch scripts submitted with sbatch; jobs read and write their own files on shared storage, and slurmdbd keeps accounting in MySQL or MariaDB.'
+notes: >-
+  Licensed GPL version 2 or any later version, with an extra permission to link OpenSSL.
+  first_release 2002 (LLNL origin) not confirmed from a primary source.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://raw.githubusercontent.com/SchedMD/slurm/master/src/slurmctld/slurmctld.h
+    label: Slurm source header (GPL v2 or later, OpenSSL exception)
+  - url: https://raw.githubusercontent.com/SchedMD/slurm/master/COPYING
+    label: Slurm COPYING
+  - url: https://slurm.schedmd.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Slurm_Workload_Manager
+    label: Wikipedia
+  - url: https://slurm.schedmd.com/accounting.html
+    label: 'Slurm docs: accounting'
+  - url: https://slurm.schedmd.com/sbatch.html
+    label: 'Slurm docs: sbatch'

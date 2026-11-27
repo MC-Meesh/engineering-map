@@ -1,0 +1,17 @@
+id: emerson
+type: vendor
+name: Emerson
+kind: company
+hq: US
+founded: 1890
+status: active
+website: https://www.emerson.com/
+wikipedia: https://en.wikipedia.org/wiki/Emerson_Electric
+summary: Automation group; owns NI (LabVIEW) since 2023 and AspenTech.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.emerson.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Emerson_Electric
+    label: Wikipedia

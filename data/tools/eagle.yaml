@@ -1,0 +1,37 @@
+id: eagle
+type: tool
+name: Autodesk EAGLE
+category: eda
+vendor: autodesk
+origin: cadsoft
+open_source: false
+status: discontinued
+first_release: 1988
+stages:
+  - design
+formats:
+  writes:
+    - gerber
+    - excellon
+competes_with:
+  - kicad
+website: https://www.autodesk.com/eagleannouncement
+wikipedia: https://en.wikipedia.org/wiki/EAGLE_(program)
+summary: >-
+  Long-popular hobbyist PCB tool; Autodesk stopped selling and supporting it on June 7, 2026 and
+  points users to Fusion electronics.
+plain: >-
+  A long-popular circuit board design program used by hobbyists. Autodesk stopped selling and
+  supporting it on June 7, 2026 and points users to Fusion.
+workflow: >-
+  A hobbyist drew the schematic and board here and sent Gerber and drill files to a board maker;
+  since Autodesk ended EAGLE in 2026, users move these designs on to Fusion.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://www.autodesk.com/eagleannouncement
+    label: Autodesk EAGLE announcement and FAQ
+  - url: https://www.autodesk.com/solutions/eagle-subscription-faq
+    label: Autodesk EAGLE subscription FAQ
+  - url: https://en.wikipedia.org/wiki/EAGLE_(program)
+    label: Wikipedia

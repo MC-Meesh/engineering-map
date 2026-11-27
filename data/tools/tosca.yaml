@@ -1,0 +1,58 @@
+id: tosca
+type: tool
+name: Tosca
+category: optimization
+vendor: dassault
+origin: fe-design
+open_source: false
+status: active
+first_release: 1993
+stages:
+  - optimization
+formats:
+  reads:
+    - abaqus-inp
+    - abaqus-odb
+    - ansys-cdb
+  writes:
+    - stl
+    - iges
+    - abaqus-inp
+    - nastran-bdf
+    - ansys-cdb
+integrates_with:
+  - abaqus
+  - ansys-mechanical
+  - msc-nastran
+competes_with:
+  - optistruct
+website: https://www.3ds.com/products/simulia/tosca
+summary: >-
+  Optimization suite from SIMULIA: Tosca Structure for topology, shape and sizing on FEA solvers,
+  and Tosca Fluid for CFD-based topology optimization.
+plain: >-
+  Works out the best shape and material layout for parts, using structural or fluid flow
+  simulations.
+workflow: >-
+  An analyst sets up a structural model for Abaqus, Ansys or MSC Nastran, or a flow model; Tosca
+  runs the simulation repeatedly to find the best shape or material layout and returns it as STL or
+  IGES to 3D design tools.
+native_files:
+  - ext: .onf
+    what: 'Tosca ONF model and optimization result file'
+notes: >-
+  first_release 1993 is unverified (it matches the unsourced FE-DESIGN founding year). Tosca
+  Structure interfaces with Abaqus, ANSYS and MSC Nastran.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/products/simulia/tosca
+    label: official page (Tosca Structure and Tosca Fluid)
+  - url: https://abaqus-docs.mit.edu/2017/English/TsoUserMap/tso-c-usr-solver-ov.htm
+    label: 'Tosca Structure user docs: FE solver interfaces'
+  - url: https://docs.software.vt.edu/abaqusv2025/English/TsoUserMap/tso-c-usr-solver-abaqus-files.htm
+    label: 'Tosca Structure guide (2025 mirror): Abaqus files and formats'
+  - url: https://docs.software.vt.edu/abaqusv2025/English/TsoUserMap/tso-c-usr-solver-ansys-ov.htm
+    label: 'Tosca Structure guide (2025 mirror): ANSYS input formats'
+  - url: https://docs.software.vt.edu/abaqusv2025/English/TsoUserMap/tso-c-usr-validation-smooth-ov.htm
+    label: 'Tosca Structure guide (2025 mirror): SMOOTH output formats'

@@ -1,0 +1,12 @@
+id: autodesk--revit-technology--2002
+type: acquisition
+acquirer: autodesk
+target: revit-technology
+completed: '2002-04'
+status: completed
+value: $139.5M total, of which $133.0M in cash
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://www.sec.gov/Archives/edgar/data/769397/000119312503002078/d10k.htm
+    label: 'Autodesk FY2003 10-K: Revit Technology Corporation, April 2002, $139.5M'

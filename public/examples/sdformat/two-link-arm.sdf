@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- The same two-link arm in SDFormat 1.9. Example for the engineering map (CC0). -->
+<sdf version="1.9">
+  <model name="two_link_arm">
+    <link name="base">
+      <inertial><mass>2.0</mass></inertial>
+      <visual name="v"><geometry><box><size>0.2 0.2 0.05</size></box></geometry></visual>
+      <collision name="c"><geometry><box><size>0.2 0.2 0.05</size></box></geometry></collision>
+    </link>
+    <link name="link1">
+      <pose>0 0 0.175 0 0 0</pose>
+      <inertial><mass>0.5</mass></inertial>
+      <visual name="v"><geometry><cylinder><radius>0.02</radius><length>0.3</length></cylinder></geometry></visual>
+    </link>
+    <link name="link2">
+      <pose>0 0 0.45 0 0 0</pose>
+      <inertial><mass>0.3</mass></inertial>
+      <visual name="v"><geometry><cylinder><radius>0.015</radius><length>0.25</length></cylinder></geometry></visual>
+    </link>
+    <joint name="shoulder" type="revolute">
+      <parent>base</parent><child>link1</child>
+      <pose>0 0 -0.15 0 0 0</pose>
+      <axis><xyz>0 1 0</xyz><limit><lower>-1.57</lower><upper>1.57</upper></limit></axis>
+    </joint>
+    <joint name="elbow" type="revolute">
+      <parent>link1</parent><child>link2</child>
+      <pose>0 0 -0.125 0 0 0</pose>
+      <axis><xyz>0 1 0</xyz><limit><lower>-2.5</lower><upper>2.5</upper></limit></axis>
+    </joint>
+  </model>
+</sdf>

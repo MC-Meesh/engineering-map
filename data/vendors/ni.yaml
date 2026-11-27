@@ -1,0 +1,18 @@
+id: ni
+type: vendor
+name: NI (National Instruments)
+kind: company
+hq: US
+founded: 1976
+parent: emerson
+status: active
+website: https://www.ni.com/
+wikipedia: https://en.wikipedia.org/wiki/National_Instruments
+summary: Test and measurement; LabVIEW. Now Emerson Test and Measurement.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.ni.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/National_Instruments
+    label: Wikipedia

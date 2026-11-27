@@ -1,0 +1,21 @@
+id: synopsys
+type: vendor
+name: Synopsys
+kind: company
+hq: US
+founded: 1986
+status: active
+website: https://www.synopsys.com/
+wikipedia: https://en.wikipedia.org/wiki/Synopsys
+summary: EDA and semiconductor IP leader; became a simulation vendor by acquiring Ansys.
+confidence: high
+as_of: '2026-11-21'
+sources:
+  - url: https://news.synopsys.com/2025-07-17-Synopsys-Completes-Acquisition-of-Ansys
+    label: 'Synopsys release 2025-07-17: Ansys acquisition completed'
+  - url: https://synopsys.com/company/corporate-governance-ethics/board-of-directors.html
+    label: 'Synopsys board page: founded 1986 by Aart de Geus'
+  - url: https://www.synopsys.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Synopsys
+    label: Wikipedia

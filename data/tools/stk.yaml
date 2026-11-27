@@ -1,0 +1,40 @@
+id: stk
+type: tool
+name: Ansys STK
+category: systems-mbse
+vendor: ansys
+origin: agi
+open_source: false
+status: active
+first_release: 1989
+stages:
+  - requirements
+  - analysis
+formats:
+  reads:
+    - gltf
+website: https://www.ansys.com/products/missions/ansys-stk
+wikipedia: https://en.wikipedia.org/wiki/Systems_Tool_Kit
+summary: Systems Tool Kit for orbit, mission and sensor simulation.
+plain: >-
+  Simulates orbits, missions and sensors over time, for example to see what a satellite can observe.
+workflow: >-
+  Mission analysts bring in 3D models of satellites as glTF, model their orbits and sensors here,
+  simulate what each can see and reach over time, and pass the results to system design and mission
+  planning.
+native_files:
+  - ext: .sc
+    what: 'STK scenario file'
+  - ext: .vdf
+    what: 'STK Visual Data File (packaged scenario)'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.ansys.com/products/missions/ansys-stk
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Systems_Tool_Kit
+    label: Wikipedia
+  - url: https://help.agi.com/stk/Content/vo/glTFmodel.htm
+    label: 'STK help: glTF models (.gltf, .glb, glTF 2.0)'
+  - url: https://help.agi.com/stk/Content/gettingstarted/GetStart_SaveLoadTable.htm
+    label: 'STK help: save/load preferences (VDF and SC scenario files)'

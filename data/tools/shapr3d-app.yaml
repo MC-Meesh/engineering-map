@@ -1,0 +1,44 @@
+id: shapr3d-app
+type: tool
+name: Shapr3D
+category: cad
+vendor: shapr3d
+open_source: false
+status: active
+first_release: 2016
+stages:
+  - design
+built_on:
+  - parasolid
+  - d-cubed
+  - hoops-exchange
+formats:
+  reads:
+    - step
+    - parasolid-xt
+  writes:
+    - step
+    - parasolid-xt
+    - stl
+    - obj
+website: https://www.shapr3d.com/
+wikipedia: https://en.wikipedia.org/wiki/Shapr3D
+summary: Direct modeling for iPad, Mac and Windows with pencil-first input.
+plain: >-
+  3D design software for iPad, Mac and Windows where you shape parts directly, designed for use with
+  a pencil.
+workflow: >-
+  A designer sketches and shapes parts directly with a pencil here, then exports STEP or Parasolid
+  to engineering CAD and manufacturing, or STL and OBJ for 3D printing and rendering.
+notes: >-
+  used Open CASCADE until moving to Parasolid in 2017 Uses the D-Cubed 2D DCM for parametric
+  sketching and HOOPS Exchange alongside Parasolid for CAD import and export.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://resources.sw.siemens.com/en-US/case-study-shapr3d
+    label: 'Siemens Shapr3D case study: Parasolid, D-Cubed 2D DCM and HOOPS Exchange'
+  - url: https://www.shapr3d.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Shapr3D
+    label: Wikipedia

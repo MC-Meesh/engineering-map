@@ -1,0 +1,11 @@
+id: autodesk--nei-software--2014
+type: acquisition
+acquirer: autodesk
+target: nei-software
+completed: '2014'
+status: completed
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.autodesk.com/products/nastran/overview
+    label: source

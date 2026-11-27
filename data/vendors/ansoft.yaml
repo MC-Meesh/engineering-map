@@ -1,0 +1,15 @@
+id: ansoft
+type: vendor
+name: Ansoft
+kind: company
+hq: US
+founded: 1984
+parent: ansys
+status: merged
+website: https://en.wikipedia.org/wiki/Ansoft_Corporation
+summary: HFSS and Maxwell electromagnetics.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/Ansoft_Corporation
+    label: official page

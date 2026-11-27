@@ -1,0 +1,125 @@
+---
+// "How it relates" and the stack diagram for one tool, generated from the sourced edges
+// (made-by, brands, runs_on, built_on, integrates_with, competes_with). Nothing is drawn by hand
+// per vendor: the layers come from runs_on (platform), the tool and its platform siblings
+// (applications) and built_on (kernels and components).
+import { nodes, edges, brands, vendorById, toolById } from '../lib/data';
+import { RELATION_TYPES, edgeSentence, kindPhrase } from '../lib/relate';
+import type { RNode, REdge } from '../lib/relate';
+
+const { id } = Astro.props as { id: string };
+const shortV = (v?: string) => (v ? vendorById.get(v)?.name?.replace(/ Digital Industries Software$/, '') : undefined);
+const rn = new Map<string, RNode>(nodes.map((n: any) => [n.id, { id: n.id, name: n.aka?.length && !n.name.includes(n.aka[0]) && n.id !== id ? `${n.name} (formerly ${n.aka[0]})` : n.name, type: n.nodeType ?? n.type, category: n.category, vendor: n.vendor, aka: n.aka, summary: n.summary, owner: shortV(n.ultimateOwner ?? n.vendor) }]));
+for (const b of brands) rn.set(`brand:${b.id}`, { id: `brand:${b.id}`, name: b.name, type: 'brand' });
+const all: REdge[] = edges.map((e: any) => ({ s: e.source, t: e.target, kind: e.kind, date: e.date, status: e.status, same: e.same, since: e.since }));
+for (const b of brands) for (const p of b.products) all.push({ s: p, t: `brand:${b.id}`, kind: 'brand' });
+for (const e of all) if (e.kind === 'runs-on') { const p = rn.get(e.t); if (p) p.platform = true; }
+const me = rn.get(id)!;
+const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+const t = toolById.get(id) as any;
+const name = (x: string) => rn.get(x)?.name ?? x;
+const href = (x: string) => { const n = rn.get(x); if (!n || n.type === 'brand') return undefined; return n.type === 'vendor' ? `/vendors/${x}/` : n.type === 'format' ? `/formats/${x}/` : `/tools/${x}/`; };
+const ownerName = (x: string) => { const o = toolById.get(x) as any; return o ? vendorById.get(o.ultimateOwner ?? o.vendor)?.name?.replace(/ Digital Industries Software$/, '') ?? o.vendor : ''; };
+
+// ---- How it relates: one sentence per edge, grouped by relationship type.
+const mine = all.filter((e) => (e.s === id || e.t === id) && !['reads', 'writes', 'used-in-stage'].includes(e.kind));
+const seen = new Set<string>();
+const groups = RELATION_TYPES.map((g) => {
+  const list = mine.filter((e) => g.kinds.includes(e.kind === 'competes-with' && e.same ? 'overlaps' : e.kind === 'built-on' && e.t === id ? 'built-on:in' : e.kind)).filter((e) => { const k = `${e.s}|${e.t}|${e.kind}`; if (seen.has(k)) return false; seen.add(k); return true; });
+  // Say it from this tool's side: "X is built on Y" or "Y is built on X".
+  const items = list
+    .filter((e) => !(e.kind === 'brand' && rn.get(e.t)?.name.toLowerCase() === me.name.toLowerCase()))
+    // Things this tool is built on come before things built on it.
+    .sort((x, y) => Number(x.s !== id) - Number(y.s !== id))
+    .map((e) => {
+      const other = e.s === id ? e.t : e.s;
+      const text = edgeSentence(e, rn);
+      const h = href(other), nm = name(other);
+      const at = text.indexOf(nm);
+      const html = h && at >= 0 ? `${esc(text.slice(0, at))}<a href="${h}">${esc(nm)}</a>${esc(text.slice(at + nm.length))}` : esc(text);
+      return { other, html };
+    });
+  return { ...g, items };
+}).filter((g) => g.items.length);
+const rivalsCap = 8;
+const clarifies = (t?.clarifies ?? []) as { text: string; url: string }[];
+
+// ---- Stack: platform layer, applications, kernels and components.
+const runsOn = all.filter((e) => e.kind === 'runs-on' && e.s === id).map((e) => e.t);
+const hosted = all.filter((e) => e.kind === 'runs-on' && e.t === id).map((e) => e.s);
+const connectsTo = me.platform ? [] : all.filter((e) => e.kind === 'integrates-with' && (e.s === id || e.t === id)).map((e) => (e.s === id ? e.t : e.s)).filter((x) => rn.get(x)?.platform && !runsOn.includes(x));
+const platforms = me.platform ? [id] : runsOn;
+const apps = me.platform ? hosted : [id, ...new Set(runsOn.flatMap((p) => all.filter((e) => e.kind === 'runs-on' && e.t === p && e.s !== id).map((e) => e.s)))];
+const isComponent = all.some((e) => e.kind === 'built-on' && e.t === id);
+const builtOn = (x: string) => all.filter((e) => e.kind === 'built-on' && e.s === x).map((e) => e.t);
+const comps = [...new Set(apps.flatMap(builtOn))];
+// A kernel or component page shows the stack from below: who is built on it.
+const users = isComponent ? all.filter((e) => e.kind === 'built-on' && e.t === id).map((e) => e.s) : [];
+const showStack = connectsTo.length > 0 || platforms.length > 0 || comps.length > 0 || users.length > 0;
+const usersByOwner = new Map<string, string[]>();
+for (const u of users) { const o = ownerName(u) || 'other'; if (!usersByOwner.has(o)) usersByOwner.set(o, []); usersByOwner.get(o)!.push(u); }
+---
+{showStack && (
+  <section class="stack-sec" aria-labelledby="stack-h">
+    <h2 id="stack-h">Stack</h2>
+    <p class="footnote">How the layers fit: a <b>platform</b> is software other applications run on and share data through; <b>applications</b> are what engineers work in; a <b>geometry kernel</b> is the engine inside an application that builds and edits shapes, and other <b>components</b> handle constraints or solving.</p>
+    {isComponent && !platforms.length && !comps.length ? (
+      <div class="stack" role="list">
+        <div class="layer" role="listitem"><span class="layer-name">Applications built on it</span>
+          <div class="boxes">{[...usersByOwner.entries()].sort((a, b) => b[1].length - a[1].length).map(([o, us]) => <div class="group"><span class="group-name">{o}</span>{us.map((u) => <a class={`box${ownerName(u) !== ownerName(id) ? ' other' : ''}`} href={href(u)}>{name(u)}</a>)}</div>)}</div></div>
+        <div class="layer base" role="listitem"><span class="layer-name">Kernel or component</span>
+          <div class="boxes"><span class="box me">{me.name} <span class="muted">({ownerName(id)})</span></span></div></div>
+      </div>
+    ) : (
+      <div class="stack" role="list">
+        {connectsTo.length > 0 && <div class="layer" role="listitem"><span class="layer-name">Connects to</span>
+          <div class="boxes">{connectsTo.map((p) => <a class="box other-link" href={href(p)}>{name(p)} <span class="muted">(a separate program that connects to it)</span></a>)}</div></div>}
+        {platforms.length > 0 && <div class="layer" role="listitem"><span class="layer-name">Platform</span>
+          <div class="boxes">{platforms.map((p) => <a class={`box${p === id ? ' me' : ''}`} href={href(p)}>{name(p)}</a>)}</div></div>}
+        <div class="layer" role="listitem"><span class="layer-name">{me.category === 'geometry-kernel' ? 'This kernel' : `Applications${platforms.length ? ' on it' : ''}`}</span>
+          <div class="boxes">{(apps.length ? apps : [id]).map((a) => <a class={`box${a === id ? ' me' : ''}`} href={href(a)}>{name(a)}{builtOn(a).length > 0 && <span class="on"> on {builtOn(a).map(name).join(' + ')}</span>}</a>)}</div></div>
+        {comps.length > 0 && <div class="layer base" role="listitem"><span class="layer-name">{me.category === 'geometry-kernel' ? 'Based on' : 'Kernels and components used by these'}</span>
+          <div class="boxes">{comps.map((c) => <a class={`box${ownerName(c) !== ownerName(id) ? ' other' : ''}`} href={href(c)}>{name(c)} <span class="muted">by {ownerName(c)}</span></a>)}</div></div>}
+      </div>
+    )}
+    {comps.some((c) => ownerName(c) !== ownerName(id)) && <p class="footnote">Boxes with a dashed edge come from another company: {[...new Set(comps.filter((c) => ownerName(c) !== ownerName(id)).map((c) => `${name(c)} is owned by ${ownerName(c)}`))].join('; ')}.</p>}
+  </section>
+)}
+<section class="relates" aria-labelledby="relates-h">
+  <h2 id="relates-h">How it relates</h2>
+  <p>{me.name} is {kindPhrase(me)}.</p>
+  {groups.map((g) => (
+    <div class="rel-group">
+      <h3>{g.title}</h3>
+      <p class="footnote">{g.explain}</p>
+      <ul>
+        {(g.id === 'rivals' ? g.items.slice(0, rivalsCap) : g.items).map((it) => <li set:html={it.html} />)}
+        {g.id === 'rivals' && g.items.length > rivalsCap && <li class="muted">And {g.items.length - rivalsCap} more in Details below.</li>}
+      </ul>
+    </div>
+  ))}
+  <p><a href={`/path/?a=${id}`}>How is {me.name} related to something else?</a></p>
+</section>
+<style>
+  .stack { display: grid; gap: 0; border: 1px solid var(--ink); margin: 0.6rem 0; }
+  .layer { display: grid; grid-template-columns: 11rem minmax(0, 1fr); border-top: 1px solid var(--rule); }
+  .layer:first-child { border-top: 0; }
+  .layer.base { background: var(--paper-2, transparent); }
+  .layer-name { padding: 0.55rem 0.7rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-2); border-right: 1px solid var(--rule); }
+  .boxes { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0.5rem; min-width: 0; }
+  .box { display: inline-block; padding: 0.25rem 0.5rem; border: 1px solid var(--ink); text-decoration: none; color: var(--ink); overflow-wrap: anywhere; }
+  .box.me { background: var(--ink); color: var(--paper); }
+  .box.me .muted, .box.me .on { color: var(--paper); opacity: 0.8; }
+  .box.other { border-style: dashed; }
+  .box .on { color: var(--ink-2); font-size: 0.85em; }
+  .group { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; margin-right: 0.6rem; }
+  .group-name { font-size: 0.8rem; color: var(--ink-2); width: 100%; }
+  .relates ul { padding-left: 1.1rem; margin: 0.2rem 0 0.8rem; }
+  .relates li { margin: 0.2rem 0; }
+  .rel-group h3 { margin-bottom: 0.1rem; }
+  .clarify { border-left: 2px solid var(--ink); padding-left: 0.6rem; }
+  @media (max-width: 640px) {
+    .layer { grid-template-columns: minmax(0, 1fr); }
+    .layer-name { border-right: 0; border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; }
+  }
+</style>

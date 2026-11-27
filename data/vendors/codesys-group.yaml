@@ -1,0 +1,14 @@
+id: codesys-group
+type: vendor
+name: CODESYS Group
+kind: company
+hq: DE
+founded: 1994
+status: active
+website: https://www.codesys.com/
+summary: IEC 61131-3 PLC programming environment used by hundreds of device makers.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.codesys.com/
+    label: official page

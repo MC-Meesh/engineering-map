@@ -1,0 +1,30 @@
+id: coppeliasim
+type: tool
+name: CoppeliaSim
+category: robotics-controls
+vendor: coppelia
+open_source: false
+status: active
+first_release: 2010
+stages:
+  - analysis
+  - test
+formats:
+  reads:
+    - urdf
+competes_with:
+  - gazebo
+  - webots
+website: https://www.coppeliarobotics.com/
+summary: Versatile robot simulator, formerly V-REP.
+plain: >-
+  A robot simulator for testing robots and their programs in a virtual world; it was formerly called
+  V-REP.
+workflow: >-
+  A robotics developer imports a robot description as URDF, builds a virtual scene, tests the robot
+  and its programs here, and moves the tested programs onto the real robot.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.coppeliarobotics.com/
+    label: official page

@@ -1,0 +1,21 @@
+id: reqif
+type: format
+name: ReqIF
+extensions:
+  - .reqif
+  - .reqifz
+kind: systems
+standard: OMG ReqIF 1.2
+steward: Object Management Group
+open_spec: true
+first_published: 2011
+website: https://www.omg.org/spec/ReqIF/
+wikipedia: https://en.wikipedia.org/wiki/Requirements_Interchange_Format
+summary: XML exchange of requirements between tools such as DOORS and Polarion.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.omg.org/spec/ReqIF/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Requirements_Interchange_Format
+    label: Wikipedia

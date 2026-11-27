@@ -1,0 +1,59 @@
+id: marc
+type: tool
+name: Marc
+category: cae-fea
+vendor: msc
+open_source: false
+status: active
+first_release: 1971
+stages:
+  - analysis
+formats:
+  reads:
+    - parasolid-xt
+    - iges
+    - acis-sat
+    - step
+    - stl
+    - catia-v5
+    - creo-prt
+    - inventor-ipt
+    - jt
+    - nx-prt
+    - solidworks-native
+    - nastran-bdf
+    - abaqus-inp
+  writes:
+    - obj
+    - parasolid-xt
+    - dxf
+    - iges
+competes_with:
+  - abaqus
+website: >-
+  https://www.cadence.com/en_US/home/resources/datasheets/cadence-marc-advanced-nonlinear-fea-solver-ds.html
+wikipedia: https://en.wikipedia.org/wiki/MSC_Marc
+summary: Nonlinear FEA for large strain, contact and rubber; one of the first commercial nonlinear codes.
+plain: >-
+  Simulates parts that stretch a lot, press against each other or are made of rubber; one of the
+  first commercial tools for these hard cases.
+workflow: >-
+  An analyst brings in the shape as STEP, Parasolid, CATIA or NX files, or a ready Nastran or Abaqus
+  mesh of small cells, simulates rubber, large stretching or parts pressing together here, and
+  reports deformation and stress back to the designers.
+native_files:
+  - ext: .dat
+    what: 'Marc solver input data file'
+notes: >-
+  Developed by MARC Analysis Research Corp (founded 1971); MSC bought it in 1999. Cadence product
+  page URL not confirmed so url points at the Cadence datasheet
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://en.wikipedia.org/wiki/MSC_Marc
+    label: verification source
+  - url: >-
+      https://www.cadence.com/en_US/home/resources/datasheets/cadence-marc-advanced-nonlinear-fea-solver-ds.html
+    label: official page
+  - url: https://documentation-be.hexagon.com/bundle/Marc_2021.2-Release_Guide/raw/resource/enus/Marc_2021.2-Release_Guide.pdf
+    label: 'Marc and Mentat 2021.2 Release Guide: OBJ export, BDF and Abaqus import, CAD translator licenses'

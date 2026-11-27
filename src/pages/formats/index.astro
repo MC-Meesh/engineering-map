@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+import { formats, stats, formatsWithExamples, examplesFor } from '../../lib/data';
+const kindOrder = ['brep-exchange', 'native-cad', 'tessellated', 'scene', 'mesh', 'solver-input', 'results', 'systems', 'bim', 'ecad', 'ic', 'cam', 'robotics'];
+const kindLabel: Record<string, string> = {
+  'brep-exchange': 'Exact geometry exchange', 'native-cad': 'Native CAD', tessellated: 'Tessellated geometry', mesh: 'Mesh', 'solver-input': 'Solver input decks', results: 'Simulation results', systems: 'Systems and requirements', bim: 'Building information', ecad: 'Electronics manufacturing', ic: 'Integrated circuit design', cam: 'Machining and metrology', robotics: 'Robot description', scene: 'Scene and visualization',
+};
+const groups = kindOrder.map((k) => ({ k, items: formats.filter((f) => f.kind === k).sort((a, b) => (b.readers.length + b.writers.length) - (a.readers.length + a.writers.length)) })).filter((g) => g.items.length);
+---
+<Base title="Formats" section="formats" description={`${stats.formats} file formats and standards in engineering software, and which tools read and write each.`}>
+  <div class="page">
+    <header class="page-head">
+      <h1>Formats and standards</h1>
+      <p class="lede">{stats.formats} file formats, from ISO standards to proprietary natives. Formats are where tools actually meet, so each page lists who reads and who writes it. The <a href="/formats/matrix/">interop matrix</a> shows the whole picture at once, and <a href="/formats/examples/">example files</a> cover {formatsWithExamples.size} of them.</p>
+    </header>
+    {groups.map((g) => (
+      <section>
+        <h2>{kindLabel[g.k]}</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th scope="col">Format</th><th scope="col">Extensions</th><th scope="col">Steward</th><th scope="col">Spec</th><th scope="col" class="n">Readers</th><th scope="col" class="n">Writers</th><th scope="col">Example</th></tr></thead>
+            <tbody>
+              {g.items.map((f) => (
+                <tr>
+                  <td><span class="sw format" aria-hidden="true"></span><a href={`/formats/${f.id}/`}>{f.name}</a></td>
+                  <td class="mono">{f.extensions?.join(' ')}</td>
+                  <td>{f.steward}</td>
+                  <td>{f.open_spec ? 'open' : 'proprietary'}</td>
+                  <td class="n">{f.readers.length || ''}</td>
+                  <td class="n">{f.writers.length || ''}</td>
+                  <td>{formatsWithExamples.has(f.id) && <a href={`/formats/${f.id}/#examples`}>{examplesFor(f.id).some((e) => e.file) ? 'files' : 'link'}</a>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>

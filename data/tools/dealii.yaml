@@ -1,0 +1,50 @@
+id: dealii
+type: tool
+name: deal.II
+category: solver-library
+vendor: dealii-project
+open_source: true
+license: (Apache-2.0 WITH LLVM-exception) OR LGPL-2.1-or-later
+status: active
+first_release: 1998
+stages:
+  - analysis
+built_on:
+  - petsc
+  - trilinos
+formats:
+  reads:
+    - gmsh-msh
+    - abaqus-inp
+    - exodus
+    - vtk-legacy
+  writes:
+    - vtk-legacy
+    - vtk-xml
+    - hdf5
+    - xdmf
+website: https://www.dealii.org/
+wikipedia: https://en.wikipedia.org/wiki/Deal.II
+summary: C++ adaptive finite element library.
+plain: >-
+  A free C++ library that programmers use to build their own simulation codes, which split a shape
+  into many small pieces (finite elements) and make the pieces smaller where more detail is needed.
+workflow: >-
+  A programmer writes a simulation code on deal.II, optionally solving with PETSc or Trilinos, loads
+  a Gmsh, Abaqus .inp or Exodus mesh, and writes VTK, HDF5 or XDMF results for viewing in tools such
+  as ParaView.
+files_note: 'A C++ programming library that programs call to build finite element solvers; those programs load meshes with GridIn and write results with DataOut (also Tecplot text, gnuplot, UCD).'
+notes: PETSc and Trilinos are optional backends
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://github.com/dealii/dealii/blob/master/LICENSE.md
+    label: verification source
+  - url: https://www.dealii.org/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Deal.II
+    label: Wikipedia
+  - url: https://www.dealii.org/current/doxygen/deal.II/classGridIn.html
+    label: 'deal.II docs: GridIn'
+  - url: https://www.dealii.org/current/doxygen/deal.II/classDataOutInterface.html
+    label: 'deal.II docs: DataOutInterface'

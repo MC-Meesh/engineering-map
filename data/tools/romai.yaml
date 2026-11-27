@@ -1,0 +1,33 @@
+id: romai
+type: tool
+name: Simcenter RomAI
+category: ml-engineering
+vendor: altair
+open_source: false
+status: active
+stages:
+  - analysis
+formats:
+  writes:
+    - fmu
+integrates_with:
+  - twin-activate
+website: https://www.siemens.com/en-us/products/simcenter/engineering-data-science-ai/romai/
+summary: >-
+  Trains neural-network reduced-order models from simulation or test data and exports them as FMUs,
+  C code or DLLs for system simulation and embedded use (formerly Altair romAI).
+plain: >-
+  Trains neural networks to act as fast stand-ins for detailed simulations, and exports them for use
+  in system simulation and embedded devices.
+workflow: >-
+  An engineer trains a neural network on simulation or test data here, then exports it as an FMU (a
+  packaged model another simulator can run) or code into Twin Activate system models or onto
+  embedded devices.
+notes: The product page does not give a release year.
+confidence: high
+sources:
+  - url: https://www.siemens.com/en-us/products/simcenter/engineering-data-science-ai/romai/
+    label: official page (AI reduced-order models, FMI export)
+  - url: https://blogs.sw.siemens.com/simcenter/beyond-a-name-change-your-altair-rebranding-guide/
+    label: 'Siemens Simcenter blog 2026-06-16: Altair rebranding guide'
+as_of: '2026-11-22'

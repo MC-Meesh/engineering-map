@@ -1,0 +1,21 @@
+id: nastran-bdf
+type: format
+name: Nastran bulk data
+extensions:
+  - .bdf
+  - .dat
+  - .nas
+  - .fem
+kind: solver-input
+steward: de facto (MSC, Siemens, Autodesk dialects)
+open_spec: true
+first_published: 1968
+website: https://en.wikipedia.org/wiki/Nastran
+summary: >-
+  Fixed-field card deck for Nastran models; the closest thing structural FEA has to a common
+  language.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/Nastran
+    label: official page

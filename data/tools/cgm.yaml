@@ -1,0 +1,37 @@
+id: cgm
+type: tool
+name: CGM Modeler
+category: geometry-kernel
+vendor: dassault
+open_source: false
+status: active
+first_release: 1998
+stages:
+  - design
+competes_with:
+  - parasolid
+  - acis
+website: https://www.spatial.com/solutions/3d-modeling/cgm-modeler
+summary: >-
+  Dassault's Convergence Geometric Modeler, the kernel inside CATIA (V5 and the 3DEXPERIENCE
+  generation); offered to other developers by Spatial.
+plain: >-
+  Dassault's geometry engine, the hidden layer inside CATIA that does the math for creating and
+  editing solid 3D shapes; other companies can license it through Spatial.
+workflow: >-
+  CGM runs inside CATIA and 3DEXPERIENCE apps, doing the solid modeling math whenever a designer
+  creates or edits geometry; other companies license it through Spatial for their own programs.
+files_note: 'A 3D modeling kernel SDK with C++ and C# APIs that CAD programs call; it shares B-rep data natively with Dassault V5 and 3DEXPERIENCE, and file exchange goes through 3D InterOp.'
+notes: >-
+  Spatial made CGM licensable in June 2011 (announced 2011-06-28) as the geometric engine used in
+  Dassault's V5 and V6 products. Named outside users include Mitsui Zosen Systems Research (MSR),
+  the first to ship CGM-based software (2011), and the Stäubli Robotics Suite.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.spatial.com/solutions/3d-modeling/cgm-modeler
+    label: Spatial CGM Modeler page (V5 and 3DEXPERIENCE B-rep)
+  - url: https://blog.spatial.com/cgm
+    label: 'Spatial blog 2011-06-28: CGM made licensable; MSR first CGM-based product'
+  - url: https://www.spatial.com/case-studies/staubli
+    label: 'Spatial case study: Stäubli Robotics Suite on CGM'

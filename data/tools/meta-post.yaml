@@ -1,0 +1,36 @@
+id: meta-post
+type: tool
+name: META
+category: visualization
+vendor: cadence
+origin: beta-cae
+open_source: false
+status: active
+first_release: 1999
+stages:
+  - analysis
+formats:
+  reads:
+    - nastran-op2
+    - abaqus-odb
+competes_with:
+  - hyperview
+website: https://www.cadence.com/en_US/home/tools/engineering-simulation/meta-postprocessor.html
+summary: Post-processor paired with ANSA for crash, NVH and CFD results.
+plain: >-
+  Shows the results of crash, vibration and fluid flow simulations as pictures, animations and
+  plots; used together with ANSA.
+workflow: >-
+  Solvers write results such as Nastran OP2 or Abaqus ODB files for models built in ANSA; an analyst
+  loads them here to make pictures, animations and plots for the vehicle team.
+notes: >-
+  Developed by BETA CAE Systems; Cadence completed its acquisition of BETA CAE on 2024-06-03.
+  first_release 1999 not confirmed.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2024/cadence-completes-acquisition-of-beta-cae.html
+    label: Cadence press release 2024-06-03 (BETA CAE acquisition completed)
+  - url: https://www.cadence.com/en_US/home/tools/engineering-simulation/meta-postprocessor.html
+    label: official page

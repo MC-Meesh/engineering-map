@@ -1,0 +1,14 @@
+id: fraunhofer-scai
+type: vendor
+name: Fraunhofer SCAI
+kind: institution
+hq: DE
+founded: 2001
+status: active
+website: https://www.scai.fraunhofer.de/
+summary: Develops the MpCCI coupling interface.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.scai.fraunhofer.de/
+    label: official page

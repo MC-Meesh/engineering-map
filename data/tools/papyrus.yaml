@@ -1,0 +1,34 @@
+id: papyrus
+type: tool
+name: Eclipse Papyrus
+category: systems-mbse
+vendor: eclipse-foundation
+open_source: true
+license: EPL-2.0
+status: active
+first_release: 2008
+stages:
+  - requirements
+formats:
+  reads:
+    - sysml
+  writes:
+    - sysml
+open_source_alternative_to:
+  - cameo
+website: https://eclipse.dev/papyrus/
+wikipedia: https://en.wikipedia.org/wiki/Papyrus_(software)
+summary: Open UML and SysML modeler on Eclipse.
+plain: >-
+  Free software, built on the Eclipse platform, for drawing diagram models of software and of whole
+  systems in the UML and SysML modeling languages.
+workflow: >-
+  Engineers model software and systems here in UML or SysML on Eclipse, and share SysML models with
+  other modeling tools and the teams that build the system.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://eclipse.dev/papyrus/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/Papyrus_(software)
+    label: Wikipedia

@@ -1,0 +1,36 @@
+id: palabos
+type: tool
+name: Palabos
+category: cfd
+vendor: palabos-team
+open_source: true
+license: AGPL-3.0
+status: active
+first_release: 2010
+stages:
+  - analysis
+formats:
+  reads:
+    - stl
+  writes:
+    - vtk-xml
+open_source_alternative_to:
+  - powerflow
+  - xflow
+website: https://palabos.unige.ch/
+summary: Open lattice Boltzmann framework.
+plain: >-
+  A free framework for simulating fluid flow with the lattice Boltzmann method, which models a fluid
+  as particles moving on a grid.
+workflow: >-
+  A researcher writes the flow setup in code, often bringing in an STL shape for the fluid to flow
+  around, runs the lattice Boltzmann simulation here, and writes VTK files that visualization tools
+  open.
+files_note: 'Palabos is a C++ library for lattice Boltzmann CFD: you write a program that calls it. Such programs can read STL surface geometry and write VTK image data (.vti) and binary checkpoints.'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://palabos.unige.ch/
+    label: official page
+  - url: https://palabos.unige.ch/download_file/view/14/238
+    label: 'Palabos user guide PDF: STL geometry, VTK output, checkpointing'

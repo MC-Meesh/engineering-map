@@ -1,0 +1,15 @@
+id: cadsoft
+type: vendor
+name: CadSoft Computer
+kind: company
+hq: DE
+founded: 1988
+parent: autodesk
+status: merged
+website: https://en.wikipedia.org/wiki/EAGLE_(program)
+summary: EAGLE PCB design.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://en.wikipedia.org/wiki/EAGLE_(program)
+    label: official page

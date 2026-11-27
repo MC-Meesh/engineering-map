@@ -1,0 +1,19 @@
+id: defacto
+type: vendor
+name: Defacto Technologies
+kind: company
+hq: FR
+founded: 2003
+status: active
+website: https://defactotech.com/
+summary: Grenoble EDA firm for RTL-level SoC assembly; Siemens agreed to buy it in July 2026.
+notes: >-
+  Siemens announced the deal on 2026-07-21 with undisclosed terms; no closing announcement found as
+  of 2026-11-21.
+confidence: high
+as_of: '2026-11-22'
+sources:
+  - url: https://news.siemens.com/en-us/siemens-to-acquire-defacto-technologies/
+    label: Siemens press release 2026-07-21
+  - url: https://defactotech.com/
+    label: company site

@@ -1,0 +1,16 @@
+id: dassault--engineous--2008
+type: acquisition
+acquirer: dassault
+target: engineous
+announced: '2008-06-17'
+completed: 2008-07
+status: completed
+value: about $40M (estimated)
+notes: >-
+  The announcement expected closing before the end of July 2008; PitchBook (secondary) gives
+  2008-07-21. No primary completion notice opened, so month precision only.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-acquire-engineous-software
+    label: 'Dassault release 2008-06-17: to acquire Engineous'

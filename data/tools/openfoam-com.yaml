@@ -1,0 +1,42 @@
+id: openfoam-com
+type: tool
+name: OpenFOAM (openfoam.com)
+category: cfd
+vendor: opencfd
+open_source: true
+license: GPL-3.0
+status: active
+first_release: 2004
+stages:
+  - analysis
+formats:
+  reads:
+    - openfoam-case
+    - stl
+    - fluent-cas
+    - gmsh-msh
+  writes:
+    - openfoam-case
+    - vtk-legacy
+    - ensight-gold
+competes_with:
+  - openfoam-org
+open_source_alternative_to:
+  - fluent
+  - star-ccm
+website: https://www.openfoam.com/
+wikipedia: https://en.wikipedia.org/wiki/OpenFOAM
+summary: The OpenCFD (Keysight) line of OpenFOAM, released twice yearly.
+plain: >-
+  Free software for simulating how air, water and other fluids flow, with each job set up as a
+  folder of text files; this is the version OpenCFD, part of Keysight, releases twice a year.
+workflow: >-
+  A user brings in STL surfaces or a mesh (the flow space split into small cells) from Gmsh, Fluent,
+  ANSA or Pointwise, runs the flow case here, and writes VTK or EnSight files for ParaView.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.openfoam.com/
+    label: official page
+  - url: https://en.wikipedia.org/wiki/OpenFOAM
+    label: Wikipedia

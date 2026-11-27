@@ -1,0 +1,16 @@
+id: kicad-pcb
+type: format
+name: KiCad board
+extensions:
+  - .kicad_pcb
+kind: ecad
+steward: KiCad project
+steward_vendor: kicad-project
+open_spec: true
+website: https://dev-docs.kicad.org/en/file-formats/sexpr-pcb/
+summary: KiCad's own board file, a readable S-expression text listing layers, nets, footprints, tracks and the board outline.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://dev-docs.kicad.org/en/file-formats/sexpr-pcb/
+    label: KiCad developer documentation, board file format

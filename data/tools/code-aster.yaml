@@ -1,0 +1,43 @@
+id: code-aster
+type: tool
+name: code_aster
+category: cae-fea
+vendor: edf
+open_source: true
+license: GPL-3.0
+status: active
+first_release: 1989
+stages:
+  - analysis
+formats:
+  reads:
+    - med
+  writes:
+    - med
+integrates_with:
+  - salome
+open_source_alternative_to:
+  - abaqus
+  - ansys-mechanical
+website: https://code-aster.org/
+summary: >-
+  EDF's structural mechanics code, open-sourced in 2001; heavily validated for nuclear and civil
+  work.
+plain: >-
+  Free software from the French utility EDF that calculates how structures respond to loads; heavily
+  tested for nuclear and civil engineering work.
+workflow: >-
+  An analyst builds geometry and a MED mesh (the structure split into small cells) in SALOME, writes
+  a command file, runs the structural solution here, and views the MED results back in SALOME.
+native_files:
+  - ext: .comm
+    what: 'Command file: Python with code_aster commands'
+  - ext: .export
+    what: 'Run definition: parameters and input and output files'
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://code-aster.org/
+    label: official page
+  - url: https://codeaster.readthedocs.io/en/latest/devguide/run_aster/run_aster.html
+    label: 'native file format (code_aster documentation: run_aster)'

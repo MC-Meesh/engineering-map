@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import { taxonomy, tools, vendorById } from '../../lib/data';
+const rows = taxonomy.categories.map((c) => {
+  const ts = tools.filter((t) => t.category === c.id);
+  const owners = new Map<string, number>();
+  for (const t of ts) owners.set(t.ultimateOwner, (owners.get(t.ultimateOwner) || 0) + 1);
+  const top = [...owners.entries()].filter(([id]) => vendorById.get(id)?.kind === 'company').sort((a, b) => b[1] - a[1]).slice(0, 3);
+  return { c, n: ts.length, oss: ts.filter((t) => t.open_source).length, top };
+});
+---
+<Base title="Categories" section="categories" description="The engineering software landscape by category, from CAD and geometry kernels to EDA, PLM and ML surrogates.">
+  <div class="page">
+    <header class="page-head">
+      <h1>Categories</h1>
+      <p class="lede">Eighteen categories in seven domains. The domain sets a tool's color on the map; the category is where it competes.</p>
+    </header>
+    {taxonomy.domains.map((d) => (
+      <section>
+        <h2><span class="sw" data-d={d.id} aria-hidden="true"></span>{d.name}</h2>
+        <p class="muted">{d.blurb}</p>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th scope="col">Category</th><th scope="col">What it covers</th><th scope="col" class="n">Tools</th><th scope="col" class="n">Open source</th><th scope="col">Largest owners</th></tr></thead>
+            <tbody>
+              {rows.filter((r) => r.c.domain === d.id).map((r) => (
+                <tr>
+                  <td><a href={`/categories/${r.c.id}/`}>{r.c.name}</a></td>
+                  <td>{r.c.blurb}</td>
+                  <td class="n">{r.n}</td>
+                  <td class="n">{r.oss}</td>
+                  <td>{r.top.map(([id, n], i) => <>{i > 0 && ', '}<a href={`/vendors/${id}/`}>{vendorById.get(id)?.name}</a> <span class="muted num">{n}</span></>)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>

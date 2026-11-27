@@ -1,0 +1,17 @@
+id: awr
+type: vendor
+name: AWR Corporation
+kind: company
+hq: US
+founded: 1994
+parent: cadence
+status: merged
+website: >-
+  https://www.cadence.com/en_US/home/tools/system-analysis/rf-microwave-design/awr-microwave-office.html
+summary: Microwave Office RF design.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: >-
+      https://www.cadence.com/en_US/home/tools/system-analysis/rf-microwave-design/awr-microwave-office.html
+    label: official page

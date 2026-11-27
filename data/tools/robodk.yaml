@@ -1,0 +1,29 @@
+id: robodk
+type: tool
+name: RoboDK
+category: robotics-controls
+vendor: robodk-co
+open_source: false
+status: active
+first_release: 2015
+stages:
+  - manufacturing
+formats:
+  reads:
+    - step
+    - stl
+competes_with:
+  - process-simulate
+website: https://robodk.com/
+summary: Offline programming for industrial robots with posts for most brands.
+plain: >-
+  Lets you program and test industrial robot arms on a computer in a 3D simulation instead of on the
+  factory floor, then turns the program into the robot language of most robot brands.
+workflow: >-
+  A robot programmer brings in parts and cells as STEP or STL, plans and simulates the robot program
+  here, and exports it in the language of the robot's brand for the shop floor.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://robodk.com/
+    label: official page

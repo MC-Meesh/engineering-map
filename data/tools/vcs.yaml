@@ -1,0 +1,30 @@
+id: vcs
+type: tool
+name: Synopsys VCS
+category: eda
+vendor: synopsys
+open_source: false
+status: active
+first_release: 1990
+stages:
+  - test
+formats:
+  reads:
+    - verilog
+competes_with:
+  - xcelium
+  - questa
+website: https://www.synopsys.com/verification/simulation/vcs.html
+summary: High-performance SystemVerilog simulator.
+plain: >-
+  Synopsys software for fast simulation of chip designs written in SystemVerilog, a language for
+  describing chip circuits, to find bugs before the chip is made.
+workflow: >-
+  A verification engineer compiles the SystemVerilog design and tests from the design team, runs
+  fast simulations here, and sends bugs back to the designers before the design is turned into
+  gates.
+confidence: medium
+as_of: '2026-11-21'
+sources:
+  - url: https://www.synopsys.com/verification/simulation/vcs.html
+    label: official page

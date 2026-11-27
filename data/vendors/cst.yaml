@@ -1,0 +1,17 @@
+id: cst
+type: vendor
+name: CST - Computer Simulation Technology AG
+kind: company
+hq: DE
+founded: 1992
+parent: dassault
+status: merged
+wikipedia: https://en.wikipedia.org/wiki/Computer_Simulation_Technology
+summary: CST Studio Suite electromagnetic simulation.
+confidence: medium
+as_of: '2026-11-22'
+sources:
+  - url: https://www.3ds.com/newsroom/press-releases/dassault-systemes-completes-cst-acquisition
+    label: 'Dassault release 2016-10-03: completes CST acquisition'
+  - url: https://en.wikipedia.org/wiki/Computer_Simulation_Technology
+    label: Wikipedia
