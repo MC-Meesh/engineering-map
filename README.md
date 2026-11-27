@@ -1,14 +1,13 @@
 # The engineering map
 
 **Who owns your CAD tool? What geometry kernel is it built on? Which formats can it trade with
-your simulation software?** The engineering map answers those questions for 332 tools across
+your simulation software?** The engineering map answers those questions for hundreds of tools across
 CAD, CAE, CFD, EDA, CAM, PLM and more, with a source behind every fact.
 
 **[Open the map → engineering-map.mchaseallen.com](https://engineering-map.mchaseallen.com)**
 
 [![CI](https://github.com/MC-Meesh/engineering-map/actions/workflows/ci.yml/badge.svg)](https://github.com/MC-Meesh/engineering-map/actions/workflows/ci.yml)
-[![Code: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSE)
-[![Data: CC BY-SA 4.0](https://img.shields.io/badge/data-CC%20BY--SA%204.0-lightgrey)](data/LICENSE)
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/license-CC%20BY--SA%204.0-lightgrey)](LICENSE)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
 
 <picture>
@@ -26,11 +25,11 @@ The map puts that hidden structure in one place, in plain language:
 
 | | |
 |---|---|
-| **332 tools** | CAD, CAE, CFD, EDA, CAM, PLM, MBSE, robotics, ML surrogates; 12 of them geometry kernels |
-| **231 vendors** | with ownership chains back to the group that owns them today |
-| **95 acquisitions** | dated by completion, each with its own source |
-| **66 file formats** | most with a real example file you can download, view in 3D or inspect byte by byte |
-| **2,180 relationships** | every one derived from a sourced field, never drawn by hand |
+| **300+ tools** | CAD, CAE, CFD, EDA, CAM, PLM, MBSE, robotics, ML surrogates, plus the geometry kernels they are built on |
+| **200+ vendors** | with ownership chains back to the group that owns them today |
+| **90+ acquisitions** | dated by completion, each with its own source |
+| **60+ file formats** | most with a real example file you can download, view in 3D or inspect byte by byte |
+| **2,000+ relationships** | every one derived from a sourced field, never drawn by hand |
 
 ## What you can do with it
 
@@ -120,12 +119,13 @@ preview; set `CHROME_PATH` if Chrome is not at `/usr/bin/google-chrome`).
 
 ## License
 
-- **Code** (everything outside `data/` and `public/examples/`): [MIT](LICENSE).
-- **Data** (`data/`): [CC BY-SA 4.0](data/LICENSE). Reuse it freely with attribution, and share
-  changes to the data under the same license.
+Everything in this repository, code and data, is licensed under
+[CC BY-SA 4.0](LICENSE): reuse it freely with attribution, and share your changes under the
+same license. The exceptions are files that carry their own license:
+
 - **Example files** (`public/examples/`): each file's license is in its manifest in
   `data/examples/`. Ours are CC0; third-party files keep their own licenses, shipped beside them.
-- Third-party libraries: [`docs/third-party-licenses.md`](docs/third-party-licenses.md).
+- **Third-party libraries**: [`docs/third-party-licenses.md`](docs/third-party-licenses.md).
 
 Product and company names are trademarks of their owners and are used only to identify them.
 The project is not affiliated with any vendor listed.
