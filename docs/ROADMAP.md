@@ -5,6 +5,11 @@ the map cannot settle yet: if you can find a vendor page, release note or filing
 answers one, open a pull request or an issue (see CONTRIBUTING.md). They are good first
 contributions.
 
+## Dependencies
+- [ ] Upgrade the major versions Dependabot skips: Astro 5 to 7, sigma and @sigma/node-border 3 to 4
+      (a rewrite of the rendering programs, see sigma's v3 to v4 migration guide), js-yaml 4 to 5
+      (no default export; switch to named imports in the build scripts)
+
 ## Data
 - [ ] Open verification items (release years without a primary source,
       Excellicon closing date, a few founding years)
