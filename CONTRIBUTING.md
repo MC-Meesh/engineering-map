@@ -91,5 +91,5 @@ change, read [`docs/decisions/`](docs/decisions/): the visual language (0008), t
 on the map (0009) and the 7-colour domain palette (do not add an 8th) are deliberate. For a
 larger change, open an issue first so we can agree on the direction.
 
-By contributing you agree that your code is licensed under MIT and your data changes under
-CC BY-SA 4.0, as described in the README. Please follow the [code of conduct](CODE_OF_CONDUCT.md).
+By contributing you agree that your contribution, code or data, is licensed under CC BY-SA 4.0,
+as described in the README. Please follow the [code of conduct](CODE_OF_CONDUCT.md).

@@ -31,7 +31,7 @@
     "js-yaml": "^4.1.0",
     "playwright-core": "^1.52.0"
   },
-  "license": "MIT",
+  "license": "CC-BY-SA-4.0",
   "description": "A sourced, navigable map of the engineering software landscape: tools, kernels, vendors, formats and acquisitions.",
   "repository": {
     "type": "git",
